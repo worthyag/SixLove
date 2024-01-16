@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SixLove | Learn</title>
+    <!-- Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="./styles/style.css" />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body id="learn">
+    <!-- ---------------------------- Header ----------------------------  -->
+    <header>
+      <span
+        ><img src="./images/SixLoveLogo.svg" alt="SixLove Logo" width="30px;"
+      /></span>
+      <span id="title">SixLove</span>
+      <a href="./login.html">login</a>
+    </header>
+    <!-- --------------X------------- Header --------------X-------------  -->
+    <!-- ---------------------------- Nav Menu ----------------------------  -->
+    <nav>
+      <a href="./tennis.html"
+        ><img src="./images/tennis-page-icon.svg" alt="Tennis Page Icon" /><span
+          >Tennis</span
+        ></a
+      >
+      <a href="./feed.html"
+        ><img src="./images/feed-page-icon.svg" alt="Feed Page Icon" /><span
+          >Feed</span
+        ></a
+      >
+      <a class="current" href="./learn.html"
+        ><img src="./images/learn-page-icon.svg" alt="Learn Page Icon" /><span
+          >Learn</span
+        ></a
+      >
+      <a href="./history.html"
+        ><img
+          src="./images/history-page-icon.svg"
+          alt="History Page Icon"
+        /><span>History</span></a
+      >
+      <a href="./profile.html"
+        ><img
+          src="./images/profile-page-icon.svg"
+          alt="Profile Page Icon"
+        /><span>Profile</span></a
+      >
+    </nav>
+    <!-- --------------X------------- Nav Menu --------------X-------------  -->
+    <!-- ---------------------------- Main ----------------------------  -->
+    <main>
+      <h1 class="heading">Discover</h1>
+      <!-- ---------------------------- Search Bar ----------------------------  -->
+      <div class="search-bar">
+        <div class="search-container">
+          <input type="text" id="search-input" placeholder="Search..." />
+          <button type="button" id="search-button">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </div>
+        <div class="filters">
+          <button>Videos</button>
+          <button>Articles</button>
+          <button>How-Tos</button>
+        </div>
+      </div>
+      <!-- --------------X------------- Search Bar --------------X-------------  -->
+      <!-- ---------------------------- Search by Topic ----------------------------  -->
+      <div class="search-by-topic">
+        <p class="heading">Search by Topic</p>
+        <div class="tags">
+          <button>Forehand</button>
+          <button>Backhand</button>
+          <button>Serve</button>
+          <button>Agility</button>
+          <button>Return</button>
+          <button>Volley</button>
+        </div>
+      </div>
+      <!-- --------------X------------- Search by Topic --------------X-------------  -->
+      <!-- ---------------------------- Featured Articles ----------------------------  -->
+      <div class="featured-articles">
+        <p class="heading">Featured Articles</p>
+        <div class="articles">
+          <div class="card">
+            <div class="article-img-div"></div>
+            <div class="card-body">
+              <p class="article-date">Published DD-MM-YYYY</p>
+              <p class="article-title card-text">Article Title</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="article-img-div"></div>
+            <div class="card-body">
+              <p class="article-date">Published DD-MM-YYYY</p>
+              <p class="article-title card-text">Article Title</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="article-img-div"></div>
+            <div class="card-body">
+              <p class="article-date">Published DD-MM-YYYY</p>
+              <p class="article-title card-text">Article Title</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- --------------X------------- Featured Articles --------------X-------------  -->
+      <!-- ---------------------------- Tips / Hacks ----------------------------  -->
+      <div class="tips-hacks">
+        <p class="heading">Tips / Hacks</p>
+        <div class="tips">
+          <div class="card">
+            <div class="tips-img-div"></div>
+            <div class="card-body">
+              <p class="tips-title card-text">Warming Up</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="tips-img-div"></div>
+            <div class="card-body">
+              <p class="tips-title card-text">Stretching</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="tips-img-div"></div>
+            <div class="card-body">
+              <p class="tips-title card-text">Cooling Down</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- --------------X------------- Tips / Hacks --------------X-------------  -->
+      <!-- ---------------------------- Featured Tutorials ----------------------------  -->
+      <div class="featured-tutorials">
+        <p class="heading">Featured Tutorials</p>
+        <div class="tutorials">
+          <div class="card">
+            <div class="tutorials-img-div"></div>
+            <div class="card-body">
+              <p class="tutorials-title card-text">Video Title</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="tutorials-img-div"></div>
+            <div class="card-body">
+              <p class="tutorials-title card-text">Video Title</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="tutorials-img-div"></div>
+            <div class="card-body">
+              <p class="tutorials-title card-text">Video Title</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- --------------X------------- Featured Tutorials --------------X-------------  -->
+    </main>
+    <!-- --------------X------------- Main --------------X-------------  -->
+  </body>
+</html>
