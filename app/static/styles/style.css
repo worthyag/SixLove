@@ -625,6 +625,9 @@ body#profile main .background {
   box-sizing: border-box;
   padding: 16px 32px;
 }
+body#profile main .background a {
+  cursor: pointer;
+}
 body#profile main .background p {
   margin: 0;
 }
