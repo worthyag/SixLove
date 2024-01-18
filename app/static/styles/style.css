@@ -773,6 +773,12 @@ body#profile main .profile-achievements-grid-section .award-box .award-info .awa
 body#profile main .profile-achievements-grid-section .award-box .award-info .award-date {
   font-weight: 300;
 }
+body#profile #flexSwitchCheckDefault {
+  transform: scale(1);
+}
+body#profile #flexSwitchCheckDefault:checked {
+  background-color: #3FF09B;
+}
 
 .hide-toggle {
   display: none !important;

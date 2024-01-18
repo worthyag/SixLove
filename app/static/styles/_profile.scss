@@ -199,6 +199,14 @@ body#profile {
       }
     }
   }
+
+  #flexSwitchCheckDefault {
+    transform: scale(1);
+
+    &:checked {
+      background-color: $colour-green;
+    }
+  }
 }
 
 .hide-toggle {
