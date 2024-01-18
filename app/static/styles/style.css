@@ -773,6 +773,23 @@ body#profile main .profile-achievements-grid-section .award-box .award-info .awa
 body#profile main .profile-achievements-grid-section .award-box .award-info .award-date {
   font-weight: 300;
 }
+body#profile #settings-header {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+body#profile #settings-header #settings-back-btn {
+  transform: scale(2);
+  display: block;
+  justify-self: flex-start;
+}
+body#profile #settings-header #settings-back-btn i {
+  color: #3D3D3D;
+}
+body#profile #settings-header .modal-title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin-left: -58px;
+}
 body#profile #settings-body {
   background-color: #F6F6F6;
   padding: 0;
@@ -852,5 +869,14 @@ body#profile .settings-footer p {
   body#profile main .profile-achievements-grid-section .award-box .award-info .award-date {
     font-size: 0.8rem;
     font-weight: 300;
+  }
+  body#profile main #settings-body .settings-section {
+    padding: 24px 18px;
+  }
+  body#profile main #settings-body .settings-section .settings-div p {
+    font-size: 1rem;
+  }
+  body#profile main #settings-body .settings-section .settings-div span {
+    font-size: 0.8rem;
   }
 }/*# sourceMappingURL=style.css.map */

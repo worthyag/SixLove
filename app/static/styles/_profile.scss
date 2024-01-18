@@ -200,6 +200,27 @@ body#profile {
     }
   }
 
+  #settings-header {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    #settings-back-btn {
+      transform: scale(2);
+      display: block;
+      justify-self: flex-start;
+      
+      i {
+        color: $colour-dark;
+      }
+    }
+
+    .modal-title {
+      font-size: 1.5rem;
+      font-weight: 800;
+      margin-left: -58px;
+    }
+  }
+
   #settings-body {
     background-color: $colour-light;
     padding: 0;
@@ -303,6 +324,22 @@ body#profile {
             .award-date {
               font-size: 0.8rem;
               font-weight: 300;
+            }
+          }
+        }
+      }
+
+      #settings-body {
+        .settings-section {
+          padding: 24px 18px;
+    
+          .settings-div {
+            p {
+              font-size: 1rem;
+            }
+    
+            span {
+              font-size: 0.8rem;
             }
           }
         }

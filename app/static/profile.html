@@ -172,11 +172,20 @@
       <div id="SettingsMenu" class="modal fade" tabindex="-1">
         <div class="modal-dialog modal-fullscreen">
           <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title">Settings</h5>
+            <div id="settings-header" class="modal-header">
+              <button
+                id="settings-back-btn"
+                type="button"
+                class="btn"
+                data-bs-dismiss="modal"
+                aria-label="Back"
+              >
+                <i class="fa-solid fa-arrow-left"></i>
+              </button>
+              <p class="modal-title">Settings</p>
               <button
                 type="button"
-                class="btn-close"
+                class="btn-close d-none"
                 data-bs-dismiss="modal"
                 aria-label="Close"
               ></button>
