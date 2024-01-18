@@ -773,11 +773,48 @@ body#profile main .profile-achievements-grid-section .award-box .award-info .awa
 body#profile main .profile-achievements-grid-section .award-box .award-info .award-date {
   font-weight: 300;
 }
-body#profile #flexSwitchCheckDefault {
-  transform: scale(1);
+body#profile #settings-body {
+  background-color: #F6F6F6;
+  padding: 0;
 }
-body#profile #flexSwitchCheckDefault:checked {
+body#profile #settings-body .settings-section {
+  background-color: #FFFFFF;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 24px 32px;
+}
+body#profile #settings-body .settings-section .settings-div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+body#profile #settings-body .settings-section .settings-div p {
+  margin: 0;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+body#profile #settings-body .settings-section .settings-div span {
+  font-size: 0.85rem;
+  font-weight: 300;
+}
+body#profile #settings-body .settings-section .settings-div #flexSwitchCheckDefault {
+  transform: scale(1.5);
+  outline: none;
+}
+body#profile #settings-body .settings-section .settings-div #flexSwitchCheckDefault:checked {
   background-color: #3FF09B;
+}
+body#profile .settings-footer {
+  background-color: #F6F6F6;
+  text-align: center;
+  padding: 8px 0;
+}
+body#profile .settings-footer p {
+  margin: 0;
+  font-family: "Righteous", sans-serif;
+  color: #578DDD;
 }
 
 .hide-toggle {

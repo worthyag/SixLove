@@ -200,11 +200,55 @@ body#profile {
     }
   }
 
-  #flexSwitchCheckDefault {
-    transform: scale(1);
+  #settings-body {
+    background-color: $colour-light;
+    padding: 0;
 
-    &:checked {
-      background-color: $colour-green;
+    .settings-section {
+      background-color: $colour-white;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      padding: 24px 32px;
+
+      .settings-div {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        p {
+          margin: 0;
+          font-weight: bold;
+          font-size: 1.1rem;
+        }
+
+        span {
+          font-size: 0.85rem;
+          font-weight: 300;
+        }
+  
+        #flexSwitchCheckDefault {
+          transform: scale(1.5);
+          outline: none;
+      
+          &:checked {
+            background-color: $colour-green;
+          }
+        }
+      }
+    }
+  }
+
+  .settings-footer {
+    background-color: $colour-light;
+    text-align: center;
+    padding: 8px 0;
+
+    p {
+      margin: 0;
+      font-family: $font-display;
+      color: $colour-brand;
     }
   }
 }
