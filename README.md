@@ -1,5 +1,7 @@
 # SixLove
 
+Working on a new branch.
+
 I might use Django for the project.
 
 Figuring out how to organise my project.
