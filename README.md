@@ -7,3 +7,5 @@ Figuring out how to organise my project.
 Currently watching some tutorials. Found some good tutorials.
 
 Currently working on the user flows.
+
+I am going to get started on the project structure.
