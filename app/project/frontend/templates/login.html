@@ -23,7 +23,7 @@
     <div class="auth-container">
       <img src="{% static 'images/SixLoveLogo.svg' %}" alt="Six Love Logo" />
       <!-- ---------------------------- Form ----------------------------  -->
-      <form action="./profile.html">
+      <form action="{% url 'profile' %}">
         <input type="text" placeholder="Username" />
         <input type="password" name="" id="" placeholder="Password" />
         <input type="submit" value="Login" />
@@ -45,7 +45,7 @@
       <section>
         <p>
           Don't have an account?
-          <a href="./signup.html">Sign Up</a>
+          <a href="{% url 'signup' %}">Sign Up</a>
         </p>
       </section>
       <!-- --------------X------------- Info Action --------------X-------------  -->
