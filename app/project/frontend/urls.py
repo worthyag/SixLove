@@ -9,5 +9,5 @@ urlpatterns = [
     path("feed/", views.feed, name="feed"),
     path("learn/", views.learn, name="learn"),
     path("history/", views.history, name="history"),
-    # path("profile/", views.profile, name="profile"),
+    path("profile/", views.profile, name="profile"),
 ]
