@@ -1,11 +1,11 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+# from django.http import HttpResponse
 
 # Create your views here.
 
 
-def main(request):
-    return HttpResponse("<h1>Hello Frontend</h1>")
+def landing(request, *args, **kwargs):
+    return render(request, "landing.html")
 
 
 def tennis(request, *args, **kwargs):
