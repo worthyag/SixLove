@@ -1,5 +1,4 @@
 from django.shortcuts import render
-# from django.http import HttpResponse
 
 # Create your views here.
 
@@ -17,15 +16,21 @@ def signup(request, *args, **kwargs):
 
 
 def tennis(request, *args, **kwargs):
-    return render(request, "tennis.html")
+    return render(request, "tennis.html", {
+        "use_bootstrap": True
+    })
 
 
 def feed(request, *args, **kwargs):
-    return render(request, "feed.html")
+    return render(request, "feed.html", {
+        "use_bootstrap": True
+    })
 
 
 def learn(request, *args, **kwargs):
-    return render(request, "learn.html")
+    return render(request, "learn.html", {
+        "use_bootstrap": True
+    })
 
 
 def history(request, *args, **kwargs):
@@ -33,4 +38,7 @@ def history(request, *args, **kwargs):
 
 
 def profile(request, *args, **kwargs):
-    return render(request, "profile.html")
+    return render(request, "profile.html", {
+        "page": "profile",
+        "use_bootstrap": True
+    })
