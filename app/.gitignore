@@ -1,0 +1,18 @@
+# Virtual environments
+venv
+
+# Django
+*.log
+*.pot
+*.pyc
+local_settings.py
+db.sqlite3
+
+# Visual Studio Code
+.vscode/
+
+# macOS
+.DS_Store
+
+# Node
+node_modules

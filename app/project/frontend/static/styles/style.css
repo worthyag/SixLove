@@ -1,0 +1,882 @@
+@import url("https://fonts.googleapis.com/css2?family=Righteous&family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
+* {
+  font-family: "Roboto Mono", monospace;
+}
+
+body {
+  margin: 0;
+  padding: 60px 0 75px 0;
+}
+
+body#feed {
+  padding-top: 90px;
+}
+
+body#profile, body#signup, body#login {
+  padding-top: 0;
+}
+
+header {
+  background-color: #578DDD;
+  color: #FFFFFF;
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 8px 32px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header a {
+  color: #FFFFFF;
+  text-decoration: none;
+}
+header #title {
+  font-family: "Righteous", sans-serif;
+  font-size: 2rem;
+}
+
+nav {
+  background-color: #D9D9D9;
+  border-top: 1px solid #000000;
+  position: fixed;
+  z-index: 1000;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 8px 32px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+nav span {
+  display: none;
+}
+nav a img {
+  transform: scale(0.9);
+}
+nav a.current {
+  background-color: #BDFDDB;
+  padding: 4px 8px;
+  border-radius: 8px;
+  box-sizing: border-box;
+  border: 1px solid #000000;
+}
+
+body#login, body#signup {
+  margin: 0;
+  padding: 0;
+  background-color: #578DDD;
+  color: #FFFFFF;
+  height: 100%;
+}
+body#login .auth-container, body#signup .auth-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 100vh;
+}
+body#login .auth-container form, body#signup .auth-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+body#login .auth-container form input, body#signup .auth-container form input {
+  min-width: 300px;
+  width: 50vw;
+  box-sizing: border-box;
+  padding: 12px 24px;
+  border: 1px solid #000000;
+  border-radius: 8px;
+  font-size: 0.9rem;
+}
+body#login .auth-container form input[type=submit], body#signup .auth-container form input[type=submit] {
+  background-color: #BDFDDB;
+  color: #3D3D3D;
+  font-weight: bold;
+  cursor: pointer;
+}
+body#login .auth-container form input[type=submit]:hover, body#signup .auth-container form input[type=submit]:hover {
+  background-color: #8CEDB9;
+}
+body#login .auth-container .hr-line, body#signup .auth-container .hr-line {
+  min-width: 300px;
+  width: 50vw;
+  border: 2px solid #FFFFFF;
+  text-align: center;
+  border-right: none;
+  border-left: none;
+  padding: 8px 0;
+}
+body#login .auth-container .google-login, body#signup .auth-container .google-login {
+  min-width: 300px;
+  width: 50vw;
+  box-sizing: border-box;
+  text-align: center;
+  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+body#login .auth-container .google-login img, body#signup .auth-container .google-login img {
+  padding: 0;
+  margin-top: 8px;
+  width: 32px;
+}
+body#login .auth-container section, body#signup .auth-container section {
+  background-color: #FFFFFF;
+  color: #3D3D3D;
+  min-width: 300px;
+  width: 50vw;
+  text-align: center;
+  border: 1px solid #000000;
+  border-radius: 8px;
+  padding: 0 16px;
+  margin: 48px 0;
+  box-sizing: border-box;
+}
+body#login .auth-container section a, body#signup .auth-container section a {
+  color: #578DDD;
+  font-weight: bold;
+}
+
+/* Styles for screens less than 425px width */
+@media (max-width: 424px) {
+  body#tennis main, body#feed main, body#learn main,
+  body#history main {
+    padding: 0 18px !important;
+  }
+  header {
+    padding: 8px 18px;
+  }
+  nav {
+    padding: 8px 18px;
+  }
+  nav a img {
+    transform: scale(0.7);
+  }
+  nav a.current {
+    padding: 2px 4px;
+  }
+}
+body#landing {
+  margin: 0;
+  padding: 0;
+  background-color: #578DDD;
+  color: #FFFFFF;
+  height: 100%;
+}
+body#landing .auth-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  height: 100vh;
+  margin: 4px 0 32px 0;
+}
+body#landing .auth-container .logo {
+  width: 60px;
+  margin: 0;
+}
+body#landing .auth-container p {
+  font-family: "Righteous", sans-serif;
+  min-width: 300px;
+  width: 50vw;
+  text-align: center;
+  font-size: 1.4rem;
+  letter-spacing: 1px;
+}
+body#landing .auth-container .landing-pic {
+  height: 50vh;
+}
+body#landing .auth-container .action-btns {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+body#landing .auth-container .action-btns button {
+  min-width: 300px;
+  width: 50vw;
+  box-sizing: border-box;
+  padding: 12px 24px;
+  border: 1px solid #000000;
+  border-radius: 8px;
+  font-size: 0.9rem;
+}
+body#landing .auth-container .action-btns button {
+  background-color: #BDFDDB;
+  color: #3D3D3D;
+  font-weight: bold;
+  cursor: pointer;
+}
+body#landing .auth-container .action-btns button:hover {
+  background-color: #8CEDB9;
+}
+
+body#tennis main {
+  padding: 0 32px;
+  width: 100%;
+  box-sizing: border-box;
+}
+body#tennis main h1.heading {
+  font-size: 2rem;
+  margin: 21px 0 36px 0;
+  color: #000000;
+}
+body#tennis main div p {
+  margin: 0;
+}
+body#tennis main div p.heading {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #000000;
+  margin-bottom: 18px;
+}
+body#tennis main .today {
+  margin-bottom: 48px;
+}
+body#tennis main .today .tennis-session-msg {
+  margin-bottom: 16px;
+}
+body#tennis main .today .tennis-session {
+  background-color: #E4EDFF;
+  border-radius: 8px;
+  border: 1px solid #000000;
+}
+body#tennis main .today .tennis-session .s-title {
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+body#tennis main .today .tennis-session .s-notes {
+  font-size: 1.1rem;
+  margin-bottom: 12px;
+}
+body#tennis main .today .tennis-session .s-date {
+  font-size: 0.9rem;
+  font-weight: 300;
+}
+body#tennis main .today .add-session-today-btn button {
+  background-color: #3FF09B;
+  border: 1px solid #000000;
+  border-radius: 8px;
+  padding: 8px 16px;
+  width: 56px;
+  height: 56px;
+  box-sizing: border-box;
+  border-radius: 50%;
+}
+body#tennis main .today .add-session-today-btn button:hover {
+  background-color: #11D979;
+  cursor: pointer;
+}
+body#tennis main .today .add-session-today-btn button i {
+  transform: scale(1.9);
+}
+body#tennis main .planner #session-date-picker {
+  padding: 12px 24px;
+  background-color: #D3DCFD;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2509803922);
+  cursor: pointer;
+  margin-bottom: 32px;
+}
+body#tennis main .planner #session-date-picker:hover {
+  background-color: #ACBDF8;
+}
+body#tennis main .planner .center-calendar {
+  display: flex;
+  justify-content: center;
+}
+body#tennis main .planner .center-calendar .dynamic-calendar {
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+  flex-wrap: wrap;
+  gap: 16px;
+  width: 80vw;
+  min-width: 400px;
+  max-width: 600px;
+}
+body#tennis main .planner .center-calendar .dynamic-calendar button {
+  border: 1px solid #000000;
+  border-radius: 8px;
+  background-color: #365075;
+  color: #FFFFFF;
+  font-size: 2rem;
+  font-weight: bold;
+  width: 64px;
+  height: 64px;
+}
+body#tennis main .planner .center-calendar .dynamic-calendar .current {
+  background-color: #FF3232;
+}
+body#tennis main .planner .btn-div {
+  margin-top: 24px;
+  display: flex;
+  justify-content: center;
+}
+body#tennis main .planner .btn-div .btn-add-session {
+  background-color: #3FF09B;
+  border: 1px solid #000000;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-weight: bold;
+  margin: 32px 0;
+}
+body#tennis main .planner .btn-div .btn-add-session:hover {
+  background-color: #11D979;
+  cursor: pointer;
+}
+
+.modal-content .modal-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+.modal-content .modal-body #modal-title, .modal-content .modal-body #modal-notes {
+  padding: 8px 16px;
+  box-sizing: border-box;
+  min-width: 200px;
+  max-width: 400px;
+  width: 90vw;
+}
+.modal-content .btn-add-session {
+  background-color: #3FF09B;
+  border: 1px solid #000000;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-weight: bold;
+}
+.modal-content .btn-add-session:hover {
+  background-color: #11D979;
+  cursor: pointer;
+}
+.modal-content .btn-add-session:hover {
+  border: 1px solid #000000;
+}
+
+.hide-div {
+  display: none;
+}
+
+/* Styles for screens less than 425px width */
+@media (max-width: 424px) {
+  body#tennis main .planner .center-calendar .dynamic-calendar {
+    min-width: 200px;
+  }
+}
+body#feed main {
+  padding: 0 32px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Styles for screens less than 425px width */
+@media (max-width: 424px) {
+  body#feed main {
+    margin-top: 48px;
+  }
+  .feed-posts .feed-post {
+    margin-bottom: 48px;
+  }
+  .feed-posts .feed-post .card {
+    transform: scale(1.2);
+    margin-bottom: 24px;
+  }
+}
+body#learn main {
+  padding: 0 32px;
+  width: 100%;
+  box-sizing: border-box;
+}
+body#learn main h1 {
+  margin: 16px 0 32px 0;
+}
+body#learn main .heading {
+  font-size: 2rem;
+  margin: 21px 0;
+  color: #000000;
+}
+body#learn main div.search-bar, body#learn main div.search-by-topic,
+body#learn main div.featured-articles, body#learn main div.tips-hacks, body#learn main div.featured-tutorials {
+  margin-bottom: 48px;
+}
+body#learn main div.search-bar div.search-container, body#learn main div.search-bar div.tags, body#learn main div.search-bar div.filters, body#learn main div.search-by-topic div.search-container, body#learn main div.search-by-topic div.tags, body#learn main div.search-by-topic div.filters {
+  width: 100%;
+  height: 100%;
+  white-space: nowrap;
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+body#learn main div.search-bar div.search-container button, body#learn main div.search-bar div.tags button, body#learn main div.search-bar div.filters button, body#learn main div.search-by-topic div.search-container button, body#learn main div.search-by-topic div.tags button, body#learn main div.search-by-topic div.filters button {
+  background-color: #E4EDFF;
+  border: 1px solid #000000;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-weight: 500;
+  font-size: 1.2rem;
+}
+body#learn main div.search-bar div.search-container button:hover, body#learn main div.search-bar div.tags button:hover, body#learn main div.search-bar div.filters button:hover, body#learn main div.search-by-topic div.search-container button:hover, body#learn main div.search-by-topic div.tags button:hover, body#learn main div.search-by-topic div.filters button:hover {
+  cursor: pointer;
+  background-color: #ACBDF8;
+}
+body#learn main div.search-bar {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}
+body#learn main div.search-bar div.search-container {
+  display: flex;
+  margin-bottom: 16px;
+  justify-content: center;
+}
+body#learn main div.search-bar div.filters {
+  text-align: center;
+  margin-bottom: 36px;
+}
+body#learn main div.search-bar div.filters, body#learn main div.search-bar div.search-container {
+  height: unset;
+}
+body#learn main div.search-bar div.filters button, body#learn main div.search-bar div.search-container button {
+  font-size: 0.9rem;
+  background-color: #D9D9D9;
+  border-radius: 24px;
+}
+body#learn main div.search-bar div.filters button:hover, body#learn main div.search-bar div.search-container button:hover {
+  background-color: #D3DCFD;
+  cursor: pointer;
+}
+body#learn main div.search-bar div.filters #search-input, body#learn main div.search-bar div.search-container #search-input {
+  font-size: 0.9rem;
+  padding: 8px 16px;
+  border: 1px solid #000000;
+  border-radius: 24px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  width: 30vw;
+  min-width: 150px;
+  max-width: 500px;
+}
+body#learn main div.search-bar div.filters #search-button, body#learn main div.search-bar div.search-container #search-button {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-left: none;
+  cursor: pointer;
+}
+body#learn main div.search-bar div.filters #search-button:hover, body#learn main div.search-bar div.search-container #search-button:hover {
+  background-color: #D3DCFD;
+}
+body#learn main p.heading {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+body#learn main .featured-articles .articles, body#learn main .featured-articles .tips, body#learn main .featured-articles .tutorials, body#learn main .tips-hacks .articles, body#learn main .tips-hacks .tips, body#learn main .tips-hacks .tutorials,
+body#learn main .featured-tutorials .articles,
+body#learn main .featured-tutorials .tips,
+body#learn main .featured-tutorials .tutorials {
+  display: flex;
+  gap: 24px;
+  overflow-x: scroll;
+}
+body#learn main .featured-articles .articles .card, body#learn main .featured-articles .tips .card, body#learn main .featured-articles .tutorials .card, body#learn main .tips-hacks .articles .card, body#learn main .tips-hacks .tips .card, body#learn main .tips-hacks .tutorials .card,
+body#learn main .featured-tutorials .articles .card,
+body#learn main .featured-tutorials .tips .card,
+body#learn main .featured-tutorials .tutorials .card {
+  width: 18rem;
+  min-width: 250px;
+  border: 1px solid #000000;
+}
+body#learn main .featured-articles .articles .card .article-img-div, body#learn main .featured-articles .articles .card .tips-img-div,
+body#learn main .featured-articles .articles .card .tutorials-img-div, body#learn main .featured-articles .tips .card .article-img-div, body#learn main .featured-articles .tips .card .tips-img-div,
+body#learn main .featured-articles .tips .card .tutorials-img-div, body#learn main .featured-articles .tutorials .card .article-img-div, body#learn main .featured-articles .tutorials .card .tips-img-div,
+body#learn main .featured-articles .tutorials .card .tutorials-img-div, body#learn main .tips-hacks .articles .card .article-img-div, body#learn main .tips-hacks .articles .card .tips-img-div,
+body#learn main .tips-hacks .articles .card .tutorials-img-div, body#learn main .tips-hacks .tips .card .article-img-div, body#learn main .tips-hacks .tips .card .tips-img-div,
+body#learn main .tips-hacks .tips .card .tutorials-img-div, body#learn main .tips-hacks .tutorials .card .article-img-div, body#learn main .tips-hacks .tutorials .card .tips-img-div,
+body#learn main .tips-hacks .tutorials .card .tutorials-img-div,
+body#learn main .featured-tutorials .articles .card .article-img-div,
+body#learn main .featured-tutorials .articles .card .tips-img-div,
+body#learn main .featured-tutorials .articles .card .tutorials-img-div,
+body#learn main .featured-tutorials .tips .card .article-img-div,
+body#learn main .featured-tutorials .tips .card .tips-img-div,
+body#learn main .featured-tutorials .tips .card .tutorials-img-div,
+body#learn main .featured-tutorials .tutorials .card .article-img-div,
+body#learn main .featured-tutorials .tutorials .card .tips-img-div,
+body#learn main .featured-tutorials .tutorials .card .tutorials-img-div {
+  height: 15vw;
+  min-height: 286px;
+  background-color: #D9D9D9;
+  border-bottom: 1px solid #000000;
+  border-radius: 8px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+body#learn main .featured-articles .articles .card .article-img-div img, body#learn main .featured-articles .articles .card .tips-img-div img,
+body#learn main .featured-articles .articles .card .tutorials-img-div img, body#learn main .featured-articles .tips .card .article-img-div img, body#learn main .featured-articles .tips .card .tips-img-div img,
+body#learn main .featured-articles .tips .card .tutorials-img-div img, body#learn main .featured-articles .tutorials .card .article-img-div img, body#learn main .featured-articles .tutorials .card .tips-img-div img,
+body#learn main .featured-articles .tutorials .card .tutorials-img-div img, body#learn main .tips-hacks .articles .card .article-img-div img, body#learn main .tips-hacks .articles .card .tips-img-div img,
+body#learn main .tips-hacks .articles .card .tutorials-img-div img, body#learn main .tips-hacks .tips .card .article-img-div img, body#learn main .tips-hacks .tips .card .tips-img-div img,
+body#learn main .tips-hacks .tips .card .tutorials-img-div img, body#learn main .tips-hacks .tutorials .card .article-img-div img, body#learn main .tips-hacks .tutorials .card .tips-img-div img,
+body#learn main .tips-hacks .tutorials .card .tutorials-img-div img,
+body#learn main .featured-tutorials .articles .card .article-img-div img,
+body#learn main .featured-tutorials .articles .card .tips-img-div img,
+body#learn main .featured-tutorials .articles .card .tutorials-img-div img,
+body#learn main .featured-tutorials .tips .card .article-img-div img,
+body#learn main .featured-tutorials .tips .card .tips-img-div img,
+body#learn main .featured-tutorials .tips .card .tutorials-img-div img,
+body#learn main .featured-tutorials .tutorials .card .article-img-div img,
+body#learn main .featured-tutorials .tutorials .card .tips-img-div img,
+body#learn main .featured-tutorials .tutorials .card .tutorials-img-div img {
+  height: inherit;
+  border-bottom: 1px solid #000000;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+body#learn main .featured-articles .articles .card .card-body, body#learn main .featured-articles .tips .card .card-body, body#learn main .featured-articles .tutorials .card .card-body, body#learn main .tips-hacks .articles .card .card-body, body#learn main .tips-hacks .tips .card .card-body, body#learn main .tips-hacks .tutorials .card .card-body,
+body#learn main .featured-tutorials .articles .card .card-body,
+body#learn main .featured-tutorials .tips .card .card-body,
+body#learn main .featured-tutorials .tutorials .card .card-body {
+  text-align: center;
+}
+body#learn main .featured-articles .articles .card .card-body .article-date, body#learn main .featured-articles .tips .card .card-body .article-date, body#learn main .featured-articles .tutorials .card .card-body .article-date, body#learn main .tips-hacks .articles .card .card-body .article-date, body#learn main .tips-hacks .tips .card .card-body .article-date, body#learn main .tips-hacks .tutorials .card .card-body .article-date,
+body#learn main .featured-tutorials .articles .card .card-body .article-date,
+body#learn main .featured-tutorials .tips .card .card-body .article-date,
+body#learn main .featured-tutorials .tutorials .card .card-body .article-date {
+  font-weight: 300;
+  font-size: 0.8rem;
+}
+body#learn main .featured-articles .articles .card .card-body .article-title, body#learn main .featured-articles .articles .card .card-body .tips-title,
+body#learn main .featured-articles .articles .card .card-body .tutorials-title, body#learn main .featured-articles .tips .card .card-body .article-title, body#learn main .featured-articles .tips .card .card-body .tips-title,
+body#learn main .featured-articles .tips .card .card-body .tutorials-title, body#learn main .featured-articles .tutorials .card .card-body .article-title, body#learn main .featured-articles .tutorials .card .card-body .tips-title,
+body#learn main .featured-articles .tutorials .card .card-body .tutorials-title, body#learn main .tips-hacks .articles .card .card-body .article-title, body#learn main .tips-hacks .articles .card .card-body .tips-title,
+body#learn main .tips-hacks .articles .card .card-body .tutorials-title, body#learn main .tips-hacks .tips .card .card-body .article-title, body#learn main .tips-hacks .tips .card .card-body .tips-title,
+body#learn main .tips-hacks .tips .card .card-body .tutorials-title, body#learn main .tips-hacks .tutorials .card .card-body .article-title, body#learn main .tips-hacks .tutorials .card .card-body .tips-title,
+body#learn main .tips-hacks .tutorials .card .card-body .tutorials-title,
+body#learn main .featured-tutorials .articles .card .card-body .article-title,
+body#learn main .featured-tutorials .articles .card .card-body .tips-title,
+body#learn main .featured-tutorials .articles .card .card-body .tutorials-title,
+body#learn main .featured-tutorials .tips .card .card-body .article-title,
+body#learn main .featured-tutorials .tips .card .card-body .tips-title,
+body#learn main .featured-tutorials .tips .card .card-body .tutorials-title,
+body#learn main .featured-tutorials .tutorials .card .card-body .article-title,
+body#learn main .featured-tutorials .tutorials .card .card-body .tips-title,
+body#learn main .featured-tutorials .tutorials .card .card-body .tutorials-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+body#history main {
+  padding: 0 32px;
+  width: 100%;
+  box-sizing: border-box;
+}
+body#history main .session-date-picker {
+  padding: 12px 24px;
+  background-color: #D3DCFD;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2509803922);
+  cursor: pointer;
+}
+body#history main .session-date-picker:hover {
+  background-color: #ACBDF8;
+}
+body#history main .sessions .session {
+  background-color: #E4EDFF;
+  border-radius: 8px;
+  border: 1px solid #000000;
+  padding: 16px;
+}
+body#history main .sessions .session p {
+  color: #000000;
+}
+body#history main .sessions .session .session-name {
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+body#history main .sessions .session .session-date {
+  font-size: 0.8rem;
+  font-weight: 300;
+}
+
+body#profile {
+  margin: 0;
+  padding: 0 0 100px 0;
+}
+body#profile main {
+  display: flex;
+  flex-direction: column;
+}
+body#profile main .background {
+  background-color: #E4EDFF;
+  width: 100%;
+  height: 20vh;
+  border-bottom: 1px solid #000000;
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding: 16px 32px;
+}
+body#profile main .background a {
+  cursor: pointer;
+}
+body#profile main .background p {
+  margin: 0;
+}
+body#profile main .profile-img-section {
+  display: flex;
+  justify-content: center;
+  margin-top: -72px;
+}
+body#profile main .profile-info-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 64px;
+  margin-top: 24px;
+  border-bottom: 1px solid #000000;
+}
+body#profile main .profile-info-section .profile-info-follow-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: top;
+}
+body#profile main .profile-info-section .profile-info-follow-info p {
+  margin: 0;
+}
+body#profile main .profile-info-section .profile-info-follow-info .count {
+  font-size: 2rem;
+  margin-top: 16px;
+  padding-bottom: 16px;
+}
+body#profile main .profile-bio-section {
+  background-color: #D9D9D9;
+  border-bottom: 1px solid #000000;
+}
+body#profile main .profile-bio-section p {
+  margin: 0;
+}
+body#profile main .profile-bio-section .profile-name {
+  font-size: 1.4rem;
+  font-weight: bold;
+  padding: 24px 32px;
+}
+body#profile main .profile-bio-section .profile-bio {
+  padding: 0 32px 24px 32px;
+}
+body#profile main .profile-toggle-view-section {
+  background-color: #D9D9D9;
+  width: -moz-max-content;
+  width: max-content;
+  padding: 12px 24px;
+  border-radius: 8px;
+  border: 1px solid #000000;
+  align-self: center;
+  margin: 16px 0 48px 0;
+}
+body#profile main .profile-toggle-view-section .toggle-btns {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+body#profile main .profile-toggle-view-section .toggle-btns button {
+  border-radius: 8px;
+  border: 1px solid #000000;
+  padding: 8px 18px;
+  cursor: pointer;
+}
+body#profile main .profile-toggle-view-section .toggle-btns button:hover {
+  background-color: #ACBDF8;
+}
+body#profile main .profile-toggle-view-section .toggle-btns .active {
+  background-color: #BDFDDB;
+}
+body#profile main .profile-toggle-view-section .toggle-btns .active:hover {
+  background-color: #8CEDB9;
+}
+body#profile main .profile-post-grid-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+body#profile main .profile-post-grid-section .posts-row {
+  display: flex;
+  gap: 8px;
+}
+body#profile main .profile-post-grid-section .posts-row .post {
+  background-color: #F2F2F2;
+  width: 25vw;
+  height: 25vw;
+  border-radius: 8px;
+  border: 1px solid #000000;
+}
+body#profile main .profile-achievements-grid-section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+body#profile main .profile-achievements-grid-section .award-box {
+  background-color: #D9D9D9;
+  border-radius: 8px;
+  border: 1px solid #000000;
+  margin: 0 32px;
+  padding: 8px 16px;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 16px;
+}
+body#profile main .profile-achievements-grid-section .award-box p {
+  margin: 0;
+}
+body#profile main .profile-achievements-grid-section .award-box .award-pic {
+  background-color: #E4EDFF;
+  width: 25vw;
+  height: 25vw;
+  min-width: 80px;
+  min-height: 150px;
+  max-width: 380px;
+  max-height: 380px;
+  border: 1px solid #000000;
+  border-radius: 8px;
+}
+body#profile main .profile-achievements-grid-section .award-box .award-pic img {
+  width: inherit;
+  height: inherit;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+body#profile main .profile-achievements-grid-section .award-box .award-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 24px;
+}
+body#profile main .profile-achievements-grid-section .award-box .award-info .award-name {
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+body#profile main .profile-achievements-grid-section .award-box .award-info .award-desc {
+  font-size: 1.2rem;
+}
+body#profile main .profile-achievements-grid-section .award-box .award-info .award-date {
+  font-weight: 300;
+}
+body#profile #settings-header {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+body#profile #settings-header #settings-back-btn {
+  transform: scale(2);
+  display: block;
+  justify-self: flex-start;
+}
+body#profile #settings-header #settings-back-btn i {
+  color: #3D3D3D;
+}
+body#profile #settings-header .modal-title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin-left: -58px;
+}
+body#profile #settings-body {
+  background-color: #F6F6F6;
+  padding: 0;
+}
+body#profile #settings-body .settings-section {
+  background-color: #FFFFFF;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 24px 32px;
+}
+body#profile #settings-body .settings-section .settings-div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+body#profile #settings-body .settings-section .settings-div p {
+  margin: 0;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+body#profile #settings-body .settings-section .settings-div span {
+  font-size: 0.85rem;
+  font-weight: 300;
+}
+body#profile #settings-body .settings-section .settings-div #flexSwitchCheckDefault {
+  transform: scale(1.5);
+  outline: none;
+}
+body#profile #settings-body .settings-section .settings-div #flexSwitchCheckDefault:checked {
+  background-color: #3FF09B;
+}
+body#profile .settings-footer {
+  background-color: #F6F6F6;
+  text-align: center;
+  padding: 8px 0;
+}
+body#profile .settings-footer p {
+  margin: 0;
+  font-family: "Righteous", sans-serif;
+  color: #578DDD;
+}
+
+.hide-toggle {
+  display: none !important;
+}
+
+/* Styles for screens less than 425px width */
+@media (max-width: 424px) {
+  body#profile main .background {
+    padding: 16px 18px;
+  }
+  body#profile main .profile-bio-section .profile-name {
+    padding: 24px 18px;
+  }
+  body#profile main .profile-bio-section .profile-bio {
+    padding: 0 18px 24px 18px;
+  }
+  body#profile main .profile-post-grid-section .posts-row .post {
+    width: 27vw;
+    height: 27vw;
+  }
+  body#profile main .profile-achievements-grid-section .award-box {
+    margin: 0 18px;
+  }
+  body#profile main .profile-achievements-grid-section .award-box .award-info {
+    gap: 8px;
+  }
+  body#profile main .profile-achievements-grid-section .award-box .award-info .award-name {
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+  body#profile main .profile-achievements-grid-section .award-box .award-info .award-desc {
+    font-size: 1rem;
+  }
+  body#profile main .profile-achievements-grid-section .award-box .award-info .award-date {
+    font-size: 0.8rem;
+    font-weight: 300;
+  }
+  body#profile main #settings-body .settings-section {
+    padding: 24px 18px;
+  }
+  body#profile main #settings-body .settings-section .settings-div p {
+    font-size: 1rem;
+  }
+  body#profile main #settings-body .settings-section .settings-div span {
+    font-size: 0.8rem;
+  }
+}/*# sourceMappingURL=style.css.map */

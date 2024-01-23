@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SixLove | Login</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'styles/style.css' %}" />
+  </head>
+  <body id="login">
+    <div class="auth-container">
+      <img src="{% static 'images/SixLoveLogo.svg' %}" alt="Six Love Logo" />
+      <!-- ---------------------------- Form ----------------------------  -->
+      <form action="{% url 'profile' %}">
+        <input type="text" placeholder="Username" />
+        <input type="password" name="" id="" placeholder="Password" />
+        <input type="submit" value="Login" />
+      </form>
+      <!-- --------------X------------- Form --------------X-------------  -->
+      <!-- ---------------------------- Divider ----------------------------  -->
+      <div class="hr-line">OR</div>
+      <!-- --------------X------------- Divider --------------X-------------  -->
+      <!-- ---------------------------- Google Login ----------------------------  -->
+      <p class="google-login">
+        <span>Login with</span>
+        <span
+          ><img src="{% static 'images/GoogleIcon.svg' %}" alt="Google Logo"
+        /></span>
+        <span>Google</span>
+      </p>
+      <!-- --------------X------------- Google Login --------------X-------------  -->
+      <!-- ---------------------------- Info Action ----------------------------  -->
+      <section>
+        <p>
+          Don't have an account?
+          <a href="{% url 'signup' %}">Sign Up</a>
+        </p>
+      </section>
+      <!-- --------------X------------- Info Action --------------X-------------  -->
+    </div>
+  </body>
+</html>
