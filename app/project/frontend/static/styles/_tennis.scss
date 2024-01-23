@@ -1,0 +1,170 @@
+body#tennis {
+  main {
+    padding: 0 32px;
+    width: 100%;
+    box-sizing: border-box;
+
+    h1.heading {
+      font-size: 2rem;
+      margin: 21px 0 36px 0;
+      color: $colour-black;
+    }
+
+    div {
+      p {
+        margin: 0;
+      }
+
+      p.heading {
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: $colour-black;
+        margin-bottom: 18px;
+      }
+    }
+
+    .today {
+      margin-bottom: 48px;
+
+      .tennis-session-msg {
+        margin-bottom: 16px;
+      }
+
+      .tennis-session {
+        background-color: $colour-placeholder;
+        border-radius: 8px;
+        border: 1px solid $colour-black;
+  
+
+        .s-title {
+          font-size: 1.4rem;
+          font-weight: bold;
+          margin-bottom: 12px;
+        }
+
+        .s-notes {
+          font-size: 1.1rem;
+          margin-bottom: 12px;
+        }
+
+        .s-date {
+          font-size: 0.9rem;
+          font-weight: 300;
+        }
+      }
+
+      .add-session-today-btn {
+        button {
+          @include btn-colour;
+          width: 56px;
+          height: 56px;
+          box-sizing: border-box;
+          border-radius: 50%;
+
+          i {
+            transform: scale(1.9);
+          }
+        }
+      }
+    }
+
+    .planner {
+      #session-date-picker {
+        @include date-input();
+        margin-bottom: 32px;
+      }
+
+      .center-calendar {
+        display: flex;
+        justify-content: center;
+
+        .dynamic-calendar {
+          display: flex;
+          justify-content: center;
+          box-sizing: border-box;
+          flex-wrap: wrap;
+          gap: 16px;
+
+          width: 80vw;
+          min-width: 400px;
+          max-width: 600px;
+  
+          button {
+            border: 1px solid $colour-black;
+            border-radius: 8px;
+  
+            background-color: $colour-calendar-day;
+            color: $colour-white;
+  
+            font-size: 2rem;
+            font-weight: bold;
+  
+            width: 64px;
+            height: 64px;
+          }
+  
+          .current {
+            background-color: $colour-calendar-current;
+          }
+        }
+      }
+
+      .btn-div {
+        margin-top: 24px;
+        display: flex;
+        justify-content: center;
+
+        .btn-add-session {
+          @include btn-colour;
+          font-weight: bold;
+          margin: 32px 0;
+        }
+      }
+    }
+  }
+}
+
+.modal-content {
+  .modal-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+
+    #modal-title, #modal-notes {
+      padding: 8px 16px;
+      box-sizing: border-box;
+      min-width: 200px;
+      max-width: 400px;
+      width: 90vw;
+    }
+  }
+
+  .btn-add-session {
+    @include btn-colour();
+    font-weight: bold;
+  
+    &:hover {
+      border: 1px solid $colour-black;
+    }
+  }
+}
+
+.hide-div {
+  display: none;
+}
+
+/* Styles for screens less than 425px width */
+@media (max-width: 424px) {
+  body#tennis {
+    main {
+      .planner {
+        .center-calendar {
+          .dynamic-calendar {
+            min-width: 200px;
+          }
+        }
+      }
+    }
+  }
+}
