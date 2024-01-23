@@ -29,36 +29,36 @@
           width="30px;"
       /></span>
       <span id="title">SixLove</span>
-      <a href="./login.html">login</a>
+      <a href="{% url 'login' %}">login</a>
     </header>
     <!-- --------------X------------- Header --------------X-------------  -->
     <!-- ---------------------------- Nav Menu ----------------------------  -->
     <nav>
-      <a href="./tennis.html"
+      <a href="{% url 'tennis' %}"
         ><img
           src="{% static 'images/tennis-page-icon.svg' %}"
           alt="Tennis Page Icon"
         /><span>Tennis</span></a
       >
-      <a href="./feed.html"
+      <a href="{% url 'feed' %}"
         ><img
           src="{% static 'images/feed-page-icon.svg' %}"
           alt="Feed Page Icon"
         /><span>Feed</span></a
       >
-      <a href="./learn.html"
+      <a href="{% url 'learn' %}"
         ><img
           src="{% static 'images/learn-page-icon.svg' %}"
           alt="Learn Page Icon"
         /><span>Learn</span></a
       >
-      <a class="current" href="./history.html"
+      <a class="current" href="{% url 'history' %}"
         ><img
           src="{% static 'images/history-page-icon.svg' %}"
           alt="History Page Icon"
         /><span>History</span></a
       >
-      <a href="./profile.html"
+      <a href="{% url 'profile' %}"
         ><img
           src="{% static 'images/profile-page-icon.svg' %}"
           alt="Profile Page Icon"
