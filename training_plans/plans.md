@@ -10,12 +10,42 @@ The training plans fall under three different durations:
 
 The training plans fall under two different intensities:
 
-- ExtremeMode (Daily)
+- **ExtremeMode** (Daily)
 
-- ModerateMode (3x per week)
+- **BalancedMode** (3x per week)
   
-  - FreeWeekender (Mon, Wed, Fri)
+  - **FreeWeekender** (Mon, Wed, Fri)
   
-  - Tue, Thu, Sat
+  - **MidWeekBlaster** (Tue, Thu, Sat)
 
-The
+It will be advised to spend at least 15 minutes on each exercise, however it is up to the users discretion and schedule / time restrictions.
+
+## 6 Week (1.5 Month) Plans
+
+### ExtremeMode (Daily)
+
+### BalancedMode (3x per week)
+
+#### FreeWeekender (Mon, Wed, Fri)
+
+#### MidWeekBlaster (Tue, Thu, Sat)
+
+## 12 Week (3 Months) Plans
+
+### ExtremeMode (Daily)
+
+### BalancedMode (3x per week)
+
+#### FreeWeekender (Mon, Wed, Fri)
+
+#### MidWeekBlaster (Tue, Thu, Sat)
+
+## 24 Week (6 Months) Plans
+
+### ExtremeMode (Daily)
+
+### BalancedMode (3x per week)
+
+#### FreeWeekender (Mon, Wed, Fri)
+
+#### MidWeekBlaster (Tue, Thu, Sat)
