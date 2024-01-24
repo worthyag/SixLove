@@ -24,28 +24,46 @@ It will be advised to spend at least 15 minutes on each exercise, however it is 
 
 ### ExtremeMode (Daily)
 
+![](/Users/worthy/Document/uni/Final%20Project/SixLove/training_plans/images/6W_Daily.png)
+
 ### BalancedMode (3x per week)
 
 #### FreeWeekender (Mon, Wed, Fri)
 
+![](/Users/worthy/Document/uni/Final%20Project/SixLove/training_plans/images/6W_MonWedFri.png)
+
 #### MidWeekBlaster (Tue, Thu, Sat)
+
+![](/Users/worthy/Document/uni/Final%20Project/SixLove/training_plans/images/6W_TuesThursSat.png)
 
 ## 12 Week (3 Months) Plans
 
 ### ExtremeMode (Daily)
 
+![](/Users/worthy/Document/uni/Final%20Project/SixLove/training_plans/images/12W_Daily.png)
+
 ### BalancedMode (3x per week)
 
 #### FreeWeekender (Mon, Wed, Fri)
 
+![](/Users/worthy/Document/uni/Final%20Project/SixLove/training_plans/images/12W_MonWedFri.png)
+
 #### MidWeekBlaster (Tue, Thu, Sat)
+
+![](/Users/worthy/Document/uni/Final%20Project/SixLove/training_plans/images/12W_TuesThursSat.png)
 
 ## 24 Week (6 Months) Plans
 
 ### ExtremeMode (Daily)
 
+![](/Users/worthy/Document/uni/Final%20Project/SixLove/training_plans/images/6M_Daily.png)
+
 ### BalancedMode (3x per week)
 
 #### FreeWeekender (Mon, Wed, Fri)
 
+![](/Users/worthy/Document/uni/Final%20Project/SixLove/training_plans/images/6M_MonWedFri.png)
+
 #### MidWeekBlaster (Tue, Thu, Sat)
+
+![](/Users/worthy/Document/uni/Final%20Project/SixLove/training_plans/images/6M_TuesThursSat.png)
