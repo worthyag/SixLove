@@ -25,50 +25,45 @@
       <img class="logo" src="./images/SixLoveLogo.svg" alt="Six Love Logo" />
       <!-- --------------X------------- Logo --------------X-------------  -->
       <!-- ---------------------------- Main ----------------------------  -->
-      <!-- <form action="./success.html">
-        <div>
-          <p>How long would you like your training plan to be?</p>
-          <div>
-            <input type="button" value="RapidFire" />
-            <span>6 weeks</span>
-          </div>
-          <input type="submit" value="ok" />
-        </div>
-      </form> -->
-      <!-- onboarding.html -->
       <form id="onboardingForm" method="post" action="{% url 'onboarding' %}">
-        {% csrf_token %}
+        <!-- {% csrf_token %} -->
         <div id="question1" class="question">
           <p>How long would you like your training plan to be?</p>
-          {{ form.training_duration|render_buttons }}
-          <button type="button" onclick="nextQuestion()">Next</button>
+          <div class="form-btn-group">
+            {{ form.training_duration|render_buttons }}
+          </div>
+          <button class="next-btn" type="button" onclick="nextQuestion()">
+            Next
+          </button>
         </div>
         <div id="question2" class="question" style="display: none">
           <p>How often would you like to train?</p>
-          {{ form.training_frequency|render_buttons }}
-          <button type="button" onclick="nextQuestion()">Next</button>
+          <div class="form-btn-group">
+            {{ form.training_frequency|render_buttons }}
+          </div>
+          <button class="next-btn" type="button" onclick="nextQuestion()">
+            Next
+          </button>
         </div>
         <div id="question3" class="question" style="display: none">
           <p>What days would you like to train on?</p>
-          {{ form.training_days|render_buttons }}
-          <button type="button" onclick="nextQuestion()">Next</button>
+          <div class="form-btn-group">
+            {{ form.training_days|render_buttons }}
+          </div>
+          <button class="next-btn" type="button" onclick="nextQuestion()">
+            Next
+          </button>
         </div>
-        <div id="question4" class="question" style="display: block">
+        <div id="question4" class="question" style="display: none">
           <p>Click the button to build your training plan.</p>
           <div class="form-btn-group">
-            <button type="submit">Build My Plan</button>
+            <button class="child-btn" type="submit">Build My Plan</button>
             <span>You are so close!</span>
           </div>
         </div>
       </form>
 
       <!-- --------------X------------- Main --------------X-------------  -->
-      <!-- ---------------------------- Actions Buttons ----------------------------  -->
-      <div class="action-btns">
-        <a href="./login.html"><button>Login</button></a>
-        <a href="./signup.html"><button>Sign Up</button></a>
-      </div>
-      <!-- --------------X------------- Action Buttons --------------X-------------  -->
     </div>
   </body>
 </html>

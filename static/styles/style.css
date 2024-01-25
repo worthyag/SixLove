@@ -229,8 +229,16 @@ body#success .auth-container .success-celebration {
   font-size: 8rem;
 }
 
+body#onboarding .auth-container {
+  justify-content: center;
+}
 body#onboarding .auth-container p {
   font-family: "Roboto Mono", monospace;
+  letter-spacing: 0px;
+  text-align: center;
+  font-size: 1rem;
+  margin-top: 84px;
+  margin-bottom: 32px;
 }
 body#onboarding .auth-container .form-btn-group {
   background-color: #BDFDDB;
@@ -260,6 +268,21 @@ body#onboarding .auth-container .form-btn-group button {
   color: inherit;
   font-size: 1.2rem;
   font-weight: bold;
+}
+body#onboarding .auth-container .next-btn {
+  background-color: #FFFFFF;
+  color: #3D3D3D;
+  font-weight: bold;
+  min-width: 300px;
+  width: 50vw;
+  margin-top: 48px;
+  padding: 12px 16px;
+  border: 1px solid #000000;
+  border-radius: 8px;
+}
+body#onboarding .auth-container .next-btn:hover {
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.8745098039);
 }
 
 body#tennis main {

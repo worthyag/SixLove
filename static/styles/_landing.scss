@@ -77,10 +77,15 @@ body#success {
 
 body#onboarding {
   .auth-container {
-    // justify-content: center;
+    justify-content: center;
 
     p {
       font-family: $font-main;
+      letter-spacing: 0px;
+      text-align: center;
+      font-size: 1rem;
+      margin-top: 84px;
+      margin-bottom: 32px;
     }
 
     .form-btn-group {
@@ -117,6 +122,24 @@ body#onboarding {
 
         font-size: 1.2rem;
         font-weight: bold;
+      }
+    }
+
+    .next-btn {
+      background-color: $colour-white;
+      color: $colour-dark;
+      font-weight: bold;
+
+      min-width: 300px;
+      width: 50vw;
+      margin-top: 48px;
+      padding: 12px 16px;
+      border: 1px solid $colour-black;
+      border-radius: 8px;
+
+      &:hover {
+        cursor: pointer;
+        background-color: #ffffffdf;
       }
     }
   }
