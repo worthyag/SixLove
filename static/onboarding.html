@@ -3,19 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SixLove | Welcome</title>
-    <!-- Bootstrap -->
-    <!-- <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
-      crossorigin="anonymous"
-    />
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-      crossorigin="anonymous"
-    ></script> -->
+    <title>SixLove | Onboarding</title>
     <link rel="stylesheet" href="./styles/style.css" />
     <script src="./scripts/onboarding.js" defer></script>
   </head>
@@ -32,27 +20,21 @@
           <div class="form-btn-group">
             {{ form.training_duration|render_buttons }}
           </div>
-          <button class="next-btn" type="button" onclick="nextQuestion()">
-            Next
-          </button>
+          <button class="next-btn q1-btn" type="button">Next</button>
         </div>
         <div id="question2" class="question" style="display: none">
           <p>How often would you like to train?</p>
           <div class="form-btn-group">
             {{ form.training_frequency|render_buttons }}
           </div>
-          <button class="next-btn" type="button" onclick="nextQuestion()">
-            Next
-          </button>
+          <button class="next-btn q2-btn" type="button">Next</button>
         </div>
         <div id="question3" class="question" style="display: none">
           <p>What days would you like to train on?</p>
           <div class="form-btn-group">
             {{ form.training_days|render_buttons }}
           </div>
-          <button class="next-btn" type="button" onclick="nextQuestion()">
-            Next
-          </button>
+          <button class="next-btn q3-btn" type="button">Next</button>
         </div>
         <div id="question4" class="question" style="display: none">
           <p>Click the button to build your training plan.</p>
