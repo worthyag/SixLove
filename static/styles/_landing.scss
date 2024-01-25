@@ -1,4 +1,4 @@
-body#landing {
+body#landing, body#success {
   margin: 0;
   padding: 0;
 
@@ -57,6 +57,20 @@ body#landing {
           background-color: $colour-highlight-hover;
         }
       }
+    }
+  }
+}
+
+body#success {
+  .auth-container {
+    justify-content: center;
+
+    .success-msg {
+      font-family: $font-main;
+    }
+
+    .success-celebration {
+      font-size: 8rem;
     }
   }
 }
