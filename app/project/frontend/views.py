@@ -15,6 +15,10 @@ def signup(request, *args, **kwargs):
     return render(request, "signup.html")
 
 
+def onboarding(request, *args, **kwargs):
+    return render(request, "onboarding.html")
+
+
 def tennis(request, *args, **kwargs):
     return render(request, "tennis.html", {
         "use_bootstrap": True

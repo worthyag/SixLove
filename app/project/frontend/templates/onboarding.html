@@ -4,43 +4,66 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SixLove | Onboarding</title>
-    <link rel="stylesheet" href="./styles/style.css" />
-    <script src="./scripts/onboarding.js" defer></script>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'styles/style.css' %}" />
+    <script src="{% static 'scripts/onboarding.js' %}" defer></script>
   </head>
   <body id="onboarding">
     <div class="auth-container">
       <!-- ---------------------------- Logo ----------------------------  -->
-      <img class="logo" src="./images/SixLoveLogo.svg" alt="Six Love Logo" />
+      <img class="logo" src="{% static 'images/SixLoveLogo.svg' %}" alt="Six Love Logo" />
       <!-- --------------X------------- Logo --------------X-------------  -->
       <!-- ---------------------------- Main ----------------------------  -->
       <form id="onboardingForm" method="post" action="{% url 'onboarding' %}">
         <!-- {% csrf_token %} -->
         <div id="question1" class="question">
           <p>How long would you like your training plan to be?</p>
-          <div class="form-btn-group">
-            {{ form.training_duration|render_buttons }}
-          </div>
+          {% comment %}<div class="form-btn-group">{% endcomment %}
+            {% comment %} {{ form.training_duration|render_buttons }} {% endcomment %}
+            <div class="form-btn-group">
+              <button>RapidFire</button>
+              <span>6 weeks</span>
+            </div>
+            <div class="form-btn-group">
+              <button>RapidFire</button>
+              <span>3 months</span>
+            </div>
+            <div class="form-btn-group">
+              <button>RapidFire</button>
+              <span>6 months</span>
+            </div>
+          {% comment %}</div>{% endcomment %}
           <button class="next-btn q1-btn" type="button">Next</button>
         </div>
         <div id="question2" class="question" style="display: none">
           <p>How often would you like to train?</p>
-          <div class="form-btn-group">
-            {{ form.training_frequency|render_buttons }}
-          </div>
+          {% comment %}<div class="form-btn-group">{% endcomment %}
+            {% comment %} {{ form.training_frequency|render_buttons }} {% endcomment %}
+            <div class="form-btn-group">
+              <button>ExtremeMode</button>
+              <span>Daily</span>
+            </div>
+          {% comment %}</div>{% endcomment %}
           <button class="next-btn q2-btn" type="button">Next</button>
         </div>
         <div id="question3" class="question" style="display: none">
           <p>What days would you like to train on?</p>
-          <div class="form-btn-group">
-            {{ form.training_days|render_buttons }}
-          </div>
+          {% comment %}<div class="form-btn-group">{% endcomment %}
+            {% comment %} {{ form.training_days|render_buttons }} {% endcomment %}
+            <div class="form-btn-group">
+              <button>FreeWeekender</button>
+              <span>MONDAY, WEDNESDAY, FRIDAY</span>
+            </div>
+          {% comment %}</div>{% endcomment %}
           <button class="next-btn q3-btn" type="button">Next</button>
         </div>
         <div id="question4" class="question" style="display: none">
           <p>Click the button to build your training plan.</p>
-          <div class="form-btn-group">
-            <button class="child-btn" type="submit">Build My Plan</button>
-            <span>You are so close!</span>
+          <div>
+            <div class="form-btn-group">
+              <button class="child-btn" type="submit">Build My Plan</button>
+              <span>You are so close!</span>
+            </div>
           </div>
         </div>
       </form>
