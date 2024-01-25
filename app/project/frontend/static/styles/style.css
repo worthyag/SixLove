@@ -165,14 +165,14 @@ body#login .auth-container section a, body#signup .auth-container section a {
     padding: 2px 4px;
   }
 }
-body#landing {
+body#landing, body#success, body#onboarding {
   margin: 0;
   padding: 0;
   background-color: #578DDD;
   color: #FFFFFF;
   height: 100%;
 }
-body#landing .auth-container {
+body#landing .auth-container, body#success .auth-container, body#onboarding .auth-container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -180,11 +180,11 @@ body#landing .auth-container {
   height: 100vh;
   margin: 4px 0 32px 0;
 }
-body#landing .auth-container .logo {
+body#landing .auth-container .logo, body#success .auth-container .logo, body#onboarding .auth-container .logo {
   width: 60px;
   margin: 0;
 }
-body#landing .auth-container p {
+body#landing .auth-container p, body#success .auth-container p, body#onboarding .auth-container p {
   font-family: "Righteous", sans-serif;
   min-width: 300px;
   width: 50vw;
@@ -192,15 +192,15 @@ body#landing .auth-container p {
   font-size: 1.4rem;
   letter-spacing: 1px;
 }
-body#landing .auth-container .landing-pic {
+body#landing .auth-container .landing-pic, body#success .auth-container .landing-pic, body#onboarding .auth-container .landing-pic {
   height: 50vh;
 }
-body#landing .auth-container .action-btns {
+body#landing .auth-container .action-btns, body#success .auth-container .action-btns, body#onboarding .auth-container .action-btns {
   display: flex;
   flex-direction: column;
   gap: 16px;
 }
-body#landing .auth-container .action-btns button {
+body#landing .auth-container .action-btns button, body#success .auth-container .action-btns button, body#onboarding .auth-container .action-btns button {
   min-width: 300px;
   width: 50vw;
   box-sizing: border-box;
@@ -209,14 +209,80 @@ body#landing .auth-container .action-btns button {
   border-radius: 8px;
   font-size: 0.9rem;
 }
-body#landing .auth-container .action-btns button {
+body#landing .auth-container .action-btns button, body#success .auth-container .action-btns button, body#onboarding .auth-container .action-btns button {
   background-color: #BDFDDB;
   color: #3D3D3D;
   font-weight: bold;
   cursor: pointer;
 }
-body#landing .auth-container .action-btns button:hover {
+body#landing .auth-container .action-btns button:hover, body#success .auth-container .action-btns button:hover, body#onboarding .auth-container .action-btns button:hover {
   background-color: #8CEDB9;
+}
+
+body#success .auth-container {
+  justify-content: center;
+}
+body#success .auth-container .success-msg {
+  font-family: "Roboto Mono", monospace;
+}
+body#success .auth-container .success-celebration {
+  font-size: 8rem;
+}
+
+body#onboarding .auth-container {
+  justify-content: center;
+}
+body#onboarding .auth-container p {
+  font-family: "Roboto Mono", monospace;
+  letter-spacing: 0px;
+  text-align: center;
+  font-size: 1.1rem;
+  margin-top: 84px;
+  margin-bottom: 32px;
+}
+body#onboarding .auth-container .form-btn-group {
+  background-color: #BDFDDB;
+  color: #3D3D3D;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 300px;
+  width: 50vw;
+  box-sizing: border-box;
+  padding: 12px 24px;
+  border: 1px solid #000000;
+  border-radius: 8px;
+  font-size: 0.9rem;
+}
+body#onboarding .auth-container .form-btn-group:hover {
+  background-color: #8CEDB9;
+  cursor: pointer;
+}
+body#onboarding .auth-container .form-btn-group:hover > button {
+  background-color: #8CEDB9;
+  cursor: pointer;
+}
+body#onboarding .auth-container .form-btn-group button {
+  background-color: #BDFDDB;
+  border: none;
+  color: inherit;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+body#onboarding .auth-container .next-btn {
+  background-color: #FFFFFF;
+  color: #3D3D3D;
+  font-weight: bold;
+  min-width: 300px;
+  width: 50vw;
+  margin-top: 48px;
+  padding: 12px 16px;
+  border: 1px solid #000000;
+  border-radius: 8px;
+}
+body#onboarding .auth-container .next-btn:hover {
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.8745098039);
 }
 
 body#tennis main {
