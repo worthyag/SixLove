@@ -15,14 +15,18 @@ class Plan:
     9
     """
 
-    def __init__(self):
-        pass
+    def __init__(self, duration: str, is_daily: bool,
+                 train_days: str = None):
+        self.duration = duration
+        self.is_daily = is_daily
+
+        if not self.is_daily:
+            self.train_days = train_days.split()
 
     def rapid_fire(self):
         """
         6 Weeks
         """
-        pass
 
     def steady_waters(self):
         """
@@ -35,3 +39,11 @@ class Plan:
         6 Months
         """
         pass
+
+
+p = Plan("6W", True)
+# p.rapid_fire()
+
+print(p.duration)
+print(p.is_daily)
+print(p.train_days)
