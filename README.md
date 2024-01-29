@@ -16,4 +16,4 @@ Created a new branch to create the project structure.
 
 Mon 22th Jan 24- I am in pain today so wasn't able to get anything done.
 
-Working on this tomorrow.
+Still working through the Django tutorial.
