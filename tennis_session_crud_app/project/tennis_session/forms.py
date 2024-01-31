@@ -2,9 +2,9 @@ from django import forms
 from .models import TennisSession
 
 
-class AddTennisSessionForm(forms.ModelForm):
+class TennisSessionForm(forms.ModelForm):
     """
-    Creates a tennis session object / add a tennis session to the database.
+    Creates (adds) / updates a tennis session object / tennis session to the database.
     """
     class Meta:
         model = TennisSession

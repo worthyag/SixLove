@@ -1,11 +1,17 @@
 {% extends './base.html' %} 
 {% block content %}
 <h1>Tennis Sessions</h1>
-<p>This is the index page of the <code>tennis_session</code> app.</p>
 
-<form action="" method="post" novalidate>
-  {% csrf_token %}
-  {{ form.as_p }}
-  <input type="submit" value="Add Tennis Session">
-</form>
+{% for session in tennis_sessions %}
+<div class="session">
+  <p><span>Title: </span>{{ session.title }}</p>
+  <p><span>Notes: </span>{{ session.notes }}</p>
+  <p><span>Date: </span>{{ session.date }}</p>
+  <p><span>is completed: </span>{{ session.is_completed }}</p>
+  <a href="{{ session.id }}/edit"><button>Edit Session</button></a>
+</div>
+{% endfor %}
+
+<a href="{% url 'index' %}"><button style="margin-top: 20px;">Add Tennis Session</button></a>
+
 {% endblock %}
