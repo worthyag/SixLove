@@ -126,14 +126,15 @@ class TennisSessionDeleteViewTests(TestCase):
         """
         Tests the delete view displays the confirmation message.
         """
-        # Getting the initial count.
-        initial_count = TennisSession.objects.count()
-
         # Getting the url for the delete view.
         url = reverse("delete-tennis-session", args=[self.tennis_session.id])
 
-        # Deleting the session via a POST request.
-        self.client.post(url)
+        # Sending a GET response to the delete view.
+        response = self.client.get(url)
 
-        # Checking whether the object count decreased by 1.
-        self.assertEqual(TennisSession.objects.count(), initial_count-1)
+        # Checking whether the delete view displays the message.
+        self.assertContains(
+            response,
+            f'Are you sure you want to delete the session "{
+                self.tennis_session.title}"?'
+        )
