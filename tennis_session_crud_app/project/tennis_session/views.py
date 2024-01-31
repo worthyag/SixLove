@@ -1,4 +1,7 @@
+import datetime
+
 from django.shortcuts import render, redirect, get_object_or_404
+from django.utils import timezone
 # from django.http import HttpResponse
 
 from . import forms
@@ -38,14 +41,30 @@ def success(request):
 
 
 def view_sessions(request):
-    tennis_sessions = models.TennisSession.objects.all()
+    tennis_sessions = models.TennisSession.objects.all().order_by("date")
+
+    today_sessions = [
+        session for session in tennis_sessions if session.is_tennis_session_scheduled_today()]
+    is_today = "No sessions scheduled for today." if len(
+        today_sessions) == 0 else ""
+
+    upcoming_sessions = [session for session in tennis_sessions
+                         if not session.is_tennis_session_scheduled_today() and
+                         session.date > datetime.date.today()]
+
+    past_sessions = [session for session in tennis_sessions
+                     if not session.is_tennis_session_scheduled_today() and
+                     session.date < datetime.date.today()]
 
     return render(
         request,
         "./tennis_session/view_sessions.html",
         {
             "title": "View Sessions",
-            "tennis_sessions": tennis_sessions
+            "today_sessions": today_sessions,
+            "is_today": is_today,
+            "upcoming_sessions": upcoming_sessions,
+            "past_sessions": past_sessions,
         })
 
 
