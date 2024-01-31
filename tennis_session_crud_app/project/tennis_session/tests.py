@@ -83,6 +83,10 @@ class TennisSessionModelTests(TestCase):
         )
 
 
+# class TennisSessionListSessionsViewTests(TestCase):
+#     """Testing the view tennis sessions view."""
+
+
 class TennisSessionDeleteViewTests(TestCase):
     """Testing the delete view."""
 
