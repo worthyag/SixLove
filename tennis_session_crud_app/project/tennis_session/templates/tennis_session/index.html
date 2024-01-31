@@ -1,4 +1,11 @@
-{% extends './base.html' %} {% block content %}
+{% extends './base.html' %} 
+{% block content %}
 <h1>Tennis Page</h1>
 <p>This is the index page of the <code>tennis_session</code> app.</p>
+
+<form action="" method="post" novalidate>
+  {% csrf_token %}
+  {{ form.as_p }}
+  <input type="submit" value="Add Tennis Session">
+</form>
 {% endblock %}
