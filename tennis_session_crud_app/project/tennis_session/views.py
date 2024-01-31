@@ -34,3 +34,12 @@ def success(request):
         {
             "title": "Success"
         })
+
+
+def view_sessions(request):
+    return render(
+        request,
+        "./tennis_session/view_sessions.html",
+        {
+            "title": "View Sessions"
+        })
