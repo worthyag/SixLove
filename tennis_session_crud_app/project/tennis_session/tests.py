@@ -2,18 +2,39 @@ import datetime
 
 from django.test import TestCase
 from django.utils import timezone
+from django.urls import reverse
 
 from .models import TennisSession
 
 # Create your tests here.
 
 
-def create_tennis_session(date):
+def create_tennis_session(days: int = 0):
     """
     Creates a tennis session to reduce code redundancy / repetition 
     when running tests.
     """
-    tennis_session = TennisSession(date=date)
+    time = timezone.now() + datetime.timedelta(days=days)
+    tennis_session = TennisSession(date=time)
+    return tennis_session
+
+
+def create_tennis_session_with_date_str(days: int = 0):
+    """
+    Creates a tennis session using a string rather than the datetime object to reduce
+    repetition when running tests.
+    """
+    date = timezone.now() + datetime.timedelta(days=days)
+    month = date.month if date.month > 10 else f"0{date.month}"
+    day = date.day if date.day > 10 else f"0{date.day}"
+
+    date_str = f"{date.year}-{month}-{day}"
+
+    # For testing.
+    print(f"Date: {date_str}")
+
+    tennis_session = TennisSession(date=date_str)
+    return tennis_session
 
 
 class TennisSessionModelTests(TestCase):
@@ -24,8 +45,7 @@ class TennisSessionModelTests(TestCase):
         is_tennis_session_scheduled_today() returns True if a tennis session
         is scheduled today.
         """
-        date = timezone.now()
-        today_tennis_session = TennisSession(date=date)
+        today_tennis_session = create_tennis_session()
 
         self.assertIs(
             today_tennis_session.is_tennis_session_scheduled_today(), True)
@@ -35,8 +55,7 @@ class TennisSessionModelTests(TestCase):
         is_tennis_session_scheduled_today() returns False when no tennis session
         is scheduled today.
         """
-        date = timezone.now() + datetime.timedelta(days=3)
-        future_tennis_session = TennisSession(date=date)
+        future_tennis_session = create_tennis_session(days=3)
 
         self.assertIs(
             future_tennis_session.is_tennis_session_scheduled_today(), False)
@@ -46,15 +65,7 @@ class TennisSessionModelTests(TestCase):
         Tests whether is_tennis_session_scheduled_today() returns True if a tennis session
         is scheduled today and the date is given in a string format.
         """
-        date = timezone.now()
-        month = date.month if date.month > 10 else f"0{date.month}"
-        day = date.day if date.day > 10 else f"0{date.day}"
-
-        date_str = f"{date.year}-{month}-{day}"
-        today_tennis_session = TennisSession(date=date_str)
-
-        # For testing.
-        print(f"Date: {date_str}")
+        today_tennis_session = create_tennis_session_with_date_str()
 
         self.assertIs(
             today_tennis_session.is_tennis_session_scheduled_today(), True
@@ -65,15 +76,7 @@ class TennisSessionModelTests(TestCase):
         Tests whether is_tennis_session_scheduled_today() returns False if when no tennis session
         is scheduled today and the date is given in a string format.
         """
-        date = timezone.now() + datetime.timedelta(days=3)
-        month = date.month if date.month > 10 else f"0{date.month}"
-        day = date.day if date.day > 10 else f"0{date.day}"
-
-        date_str = f"{date.year}-{month}-{day}"
-        future_tennis_session = TennisSession(date=date_str)
-
-        # For testing.
-        print(f"Date: {date_str}")
+        future_tennis_session = create_tennis_session_with_date_str(days=3)
 
         self.assertIs(
             future_tennis_session.is_tennis_session_scheduled_today(), False
@@ -83,8 +86,54 @@ class TennisSessionModelTests(TestCase):
 class TennisSessionDeleteViewTests(TestCase):
     """Testing the delete view."""
 
-    def test_tennis_sessions_removed_from_db_when_deleted(self):
+    def setUp(self):
+        """Creating a tennis session to test."""
+        self.tennis_session = create_tennis_session(days=1)
+        self.tennis_session.save()
+
+    def test_delete_view_redirects_after_deletion(self):
+        """
+        Tests whether the user is redirected to the tennis session list after
+        deleting a session.
+        """
+        # Getting the url for the delete view.
+        url = reverse("delete-tennis-session", args=[self.tennis_session.id])
+
+        # Deleting the session via a POST request.
+        response = self.client.post(url)
+
+        # Checking whether the response redirects to the view tennis sessions view.
+        self.assertRedirects(response, reverse("tennis-sessions"))
+
+    def test_tennis_sessions_deleted_from_database(self):
         """
         Tests whether tennis sessions are removed from the database when
         deleted.
         """
+        # Getting the initial count.
+        initial_count = TennisSession.objects.count()
+
+        # Getting the url for the delete view.
+        url = reverse("delete-tennis-session", args=[self.tennis_session.id])
+
+        # Deleting the session via a POST request.
+        self.client.post(url)
+
+        # Checking whether the object count decreased by 1.
+        self.assertEqual(TennisSession.objects.count(), initial_count-1)
+
+    def test_delete_view_displays_confirmation(self):
+        """
+        Tests the delete view displays the confirmation message.
+        """
+        # Getting the initial count.
+        initial_count = TennisSession.objects.count()
+
+        # Getting the url for the delete view.
+        url = reverse("delete-tennis-session", args=[self.tennis_session.id])
+
+        # Deleting the session via a POST request.
+        self.client.post(url)
+
+        # Checking whether the object count decreased by 1.
+        self.assertEqual(TennisSession.objects.count(), initial_count-1)
