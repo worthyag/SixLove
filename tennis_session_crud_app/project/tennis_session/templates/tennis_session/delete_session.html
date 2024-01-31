@@ -1,0 +1,16 @@
+{% extends './base.html' %} {% block content %}
+<h1>Delete Tennis Session?</h1>
+<p>Are you sure you want to delete the session "{{ tennis_session.title }}"?</p>
+<form action="" method="post">
+  {% csrf_token %}
+  <button type="submit">Delete Tennis Session</button>
+</form>
+
+
+
+<a href="{% url 'tennis-sessions' %}"
+  ><button style="margin-top: 20px">Back to Tennis Sessions</button></a
+>
+
+
+{% endblock %}

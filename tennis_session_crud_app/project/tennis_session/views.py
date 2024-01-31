@@ -40,7 +40,7 @@ def success(request):
         })
 
 
-def view_sessions(request):
+def view_tennis_sessions(request):
     tennis_sessions = models.TennisSession.objects.all().order_by("date")
 
     today_sessions = [
@@ -68,7 +68,7 @@ def view_sessions(request):
         })
 
 
-def edit_session(request, tennis_session_id):
+def edit_tennis_session(request, tennis_session_id):
     selected_session = get_object_or_404(models.TennisSession,
                                          id=tennis_session_id)
 
@@ -88,4 +88,21 @@ def edit_session(request, tennis_session_id):
         {
             "title": "Edit Session",
             "form": form
+        })
+
+
+def delete_tennis_session(request, tennis_session_id):
+    selected_session = get_object_or_404(models.TennisSession,
+                                         id=tennis_session_id)
+
+    if request.method == "POST":
+        selected_session.delete()
+        return redirect("tennis-sessions")
+
+    return render(
+        request,
+        "./tennis_session/delete_session.html",
+        {
+            "title": "Delete Session",
+            "tennis_session": selected_session
         })

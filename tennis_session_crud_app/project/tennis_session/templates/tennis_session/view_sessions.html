@@ -10,6 +10,7 @@
   <p><span>Date: </span>{{ session.date }}</p>
   <p><span>is completed: </span>{{ session.is_completed }}</p>
   <a href="{{ session.id }}/edit"><button>Edit Session</button></a>
+  <a href="{{ session.id }}/delete"><button>Delete Session</button></a>
 </div>
 {% endfor %}
 
@@ -26,6 +27,7 @@
   <p><span>Date: </span>{{ session.date }}</p>
   <p><span>is completed: </span>{{ session.is_completed }}</p>
   <a href="{{ session.id }}/edit"><button>Edit Session</button></a>
+  <a href="{{ session.id }}/delete"><button>Delete Session</button></a>
 </div>
 {% endfor %}
 
