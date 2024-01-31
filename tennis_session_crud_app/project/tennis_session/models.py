@@ -2,11 +2,13 @@ import datetime
 
 from django.db import models
 from django.utils import timezone
+from django.contrib.auth import get_user_model
 
 # Create your models here.
 
 
 class TennisSession(models.Model):
+    user = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
     title = models.CharField(max_length=150)
     notes = models.TextField()
     date = models.DateField()

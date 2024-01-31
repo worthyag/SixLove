@@ -1,6 +1,7 @@
 import datetime
 
 from django.shortcuts import render, redirect, get_object_or_404
+from django.contrib.auth.decorators import login_required
 from django.utils import timezone
 # from django.http import HttpResponse
 
@@ -10,12 +11,15 @@ from . import models
 # Create your views here.
 
 
+@login_required
 def index(request):
     if request.method == 'POST':
         form = forms.TennisSessionForm(request.POST)
 
         if form.is_valid():
-            form.save()
+            session = form.save(commit=False)
+            session.user = request.user
+            session.save()
             return redirect("success")
     else:
         # Initialising a new form.
@@ -31,6 +35,7 @@ def index(request):
     )
 
 
+@login_required
 def success(request):
     return render(
         request,
@@ -40,8 +45,10 @@ def success(request):
         })
 
 
+@login_required
 def view_tennis_sessions(request):
-    tennis_sessions = models.TennisSession.objects.all().order_by("date")
+    tennis_sessions = models.TennisSession.objects.filter(
+        user=request.user).order_by("date")
 
     today_sessions = [
         session for session in tennis_sessions if session.is_tennis_session_scheduled_today()]
@@ -68,6 +75,7 @@ def view_tennis_sessions(request):
         })
 
 
+@login_required
 def edit_tennis_session(request, tennis_session_id):
     selected_session = get_object_or_404(models.TennisSession,
                                          id=tennis_session_id)
@@ -91,6 +99,7 @@ def edit_tennis_session(request, tennis_session_id):
         })
 
 
+@login_required
 def delete_tennis_session(request, tennis_session_id):
     selected_session = get_object_or_404(models.TennisSession,
                                          id=tennis_session_id)
@@ -108,6 +117,7 @@ def delete_tennis_session(request, tennis_session_id):
         })
 
 
+@login_required
 def calendar(request):
     if request.method == 'POST':
         form = forms.TennisSessionForm(request.POST)
