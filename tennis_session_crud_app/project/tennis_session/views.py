@@ -1,8 +1,14 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+# from django.http import HttpResponse
 
 # Create your views here.
 
 
 def index(request):
-    return HttpResponse("This is the index page of the tennis_session app.")
+    return render(
+        request,
+        "./tennis_session/index.html",
+        {
+            "title": "Tennis Session",
+        }
+    )
