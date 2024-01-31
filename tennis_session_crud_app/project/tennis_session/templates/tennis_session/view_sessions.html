@@ -1,4 +1,10 @@
 {% extends './base.html' %} {% block content %}
+<div>
+  <a href="#">
+    <p style="text-align: right; margin-right: 48px;">login</p>
+  </a>
+  <p style="text-align: right; margin-right: 48px;">> {% firstof username "test_user" %}</p>
+</div>
 <h1>Tennis Sessions</h1>
 <h2>Today</h2>
 <p>{{ is_today }}</p>
@@ -16,7 +22,7 @@
 
 
 <a href="{% url 'index' %}"
-  ><button style="margin-top: 20px">Add Tennis Session</button></a
+  ><button class="add-btn" style="margin-top: 20px;">Add Tennis Session</button></a
 >
 
 <h2>Upcoming sessions</h2>
