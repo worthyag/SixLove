@@ -1,0 +1,219 @@
+* {
+  font-family: $font-main;
+}
+
+body {
+  margin: 0;
+  padding: 60px 0 75px 0;
+}
+
+body#feed {
+  padding-top: 90px;
+}
+
+body#profile, body#signup, body#login {
+  padding-top: 0;
+}
+
+// ======================
+// STYLING THE HEADER.
+// ======================
+header {
+  background-color: $colour-brand;
+  color: $colour-white;
+
+  // Flex.
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 8px 32px;
+  box-sizing: border-box;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  a {
+    color: $colour-white;
+    text-decoration: none;
+  }
+
+  #title {
+    font-family: $font-display;
+    font-size: 2rem;
+  }
+}
+
+// ==========================
+// STYLING THE NAVIGATION.
+// ==========================
+nav {
+  background-color: $colour-nav;
+  border-top: 1px solid $colour-black;
+
+  // Flex.
+  position: fixed;
+  z-index: 1000;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 8px 32px;
+  box-sizing: border-box;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+  span {
+    display: none;
+  }
+
+  a {
+    img {
+      transform: scale(0.9);
+    }
+  }
+
+  a.current {
+    background-color: $colour-highlight;
+    padding: 4px 8px;
+    border-radius: 8px;
+    box-sizing: border-box;
+    border: 1px solid $colour-black;
+  }
+}
+
+// ==========================================
+// STYLING THE LOGIN, SIGN-UP, LANDING PAGES.
+// ==========================================
+body#login, body#signup {
+  margin: 0;
+  padding: 0;
+
+  background-color: $colour-brand;
+  color: $colour-white;
+  height: 100%;
+
+  .auth-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    height: 100vh;
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+
+      input {
+        min-width: 300px;
+        width: 50vw;
+        box-sizing: border-box;
+        padding: 12px 24px;
+        border: 1px solid $colour-black;
+        border-radius: 8px;
+        font-size: 0.9rem;
+      }
+
+      input[type="submit"] {
+        background-color: $colour-highlight;
+        color: $colour-dark;
+        font-weight: bold;
+        cursor: pointer;
+
+        &:hover {
+          background-color: $colour-highlight-hover;
+        }
+      }
+    }
+
+    .hr-line {
+      min-width: 300px;
+      width: 50vw;
+      border: 2px solid $colour-white;
+
+      text-align: center;
+      border-right: none;
+      border-left: none;
+      padding: 8px 0;
+    }
+
+    .google-login {
+      min-width: 300px;
+      width: 50vw;
+      box-sizing: border-box;
+      text-align: center;
+      font-size: 1.4rem;
+
+      // Flex.
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+
+      img {
+        padding: 0;
+        margin-top: 8px;
+        width: 32px;
+      }
+    }
+
+    section {
+      background-color: $colour-white;
+      color: $colour-dark;
+
+      min-width: 300px;
+      width: 50vw;
+      text-align: center;
+
+      border: 1px solid $colour-black;
+      border-radius: 8px;
+      padding: 0 16px;
+      margin: 48px 0;
+      box-sizing: border-box;
+
+      a {
+        color: $colour-brand;
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+/* Styles for screens less than 425px width */
+@media (max-width: 424px) {
+  body#tennis, body#feed, body#learn,
+  body#history {
+    main {
+      padding: 0 18px !important;
+    }
+  }
+
+  // ======================
+  // STYLING THE HEADER.
+  // ======================
+  header {
+    padding: 8px 18px;
+  }
+
+  // ==========================
+  // STYLING THE NAVIGATION.
+  // ==========================
+  nav {
+    padding: 8px 18px;
+
+    a {
+      img {
+        transform: scale(0.7);
+      }
+    }
+
+    a.current {
+      padding: 2px 4px;
+    }
+  }
+}

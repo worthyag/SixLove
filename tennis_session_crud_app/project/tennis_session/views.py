@@ -106,3 +106,23 @@ def delete_tennis_session(request, tennis_session_id):
             "title": "Delete Session",
             "tennis_session": selected_session
         })
+
+
+def calendar(request):
+    if request.method == 'POST':
+        form = forms.TennisSessionForm(request.POST)
+
+        if form.is_valid():
+            form.save()
+            return redirect("success")
+    else:
+        # Initialising a new form.
+        form = forms.TennisSessionForm()
+
+    return render(
+        request,
+        "./tennis_session/calendar.html",
+        {
+            "title": "Calendar",
+            "form": form,
+        })

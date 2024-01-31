@@ -11,4 +11,5 @@ urlpatterns = [
          views.edit_tennis_session, name="edit-tennis-session"),
     path("tennis-sessions/<int:tennis_session_id>/delete",
          views.delete_tennis_session, name="delete-tennis-session"),
+    path("calendar", views.calendar, name="calendar"),
 ]
