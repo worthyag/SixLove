@@ -31,3 +31,41 @@ class TennisSessionModelTests(TestCase):
 
         self.assertIs(
             future_tennis_session.is_tennis_session_scheduled_today(), False)
+
+    def test_date_in_string_format_tennis_session_scheduled_today(self):
+        """
+        Test whether is_tennis_session_scheduled_today() returns True if a tennis session
+        is scheduled today and the date is given in a string format.
+        """
+        date = timezone.now()
+        month = date.month if date.month > 10 else f"0{date.month}"
+        day = date.day if date.day > 10 else f"0{date.day}"
+
+        date_str = f"{date.year}-{month}-{day}"
+        today_tennis_session = TennisSession(date=date_str)
+
+        # For testing.
+        print(f"Date: {date_str}")
+
+        self.assertIs(
+            today_tennis_session.is_tennis_session_scheduled_today(), True
+        )
+
+    def test_date_in_string_format_no_tennis_session_scheduled_today(self):
+        """
+        Test whether is_tennis_session_scheduled_today() returns False if when no tennis session
+        is scheduled today and the date is given in a string format.
+        """
+        date = timezone.now() + datetime.timedelta(days=3)
+        month = date.month if date.month > 10 else f"0{date.month}"
+        day = date.day if date.day > 10 else f"0{date.day}"
+
+        date_str = f"{date.year}-{month}-{day}"
+        future_tennis_session = TennisSession(date=date_str)
+
+        # For testing.
+        print(f"Date: {date_str}")
+
+        self.assertIs(
+            future_tennis_session.is_tennis_session_scheduled_today(), False
+        )

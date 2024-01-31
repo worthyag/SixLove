@@ -13,9 +13,9 @@ def index(request):
         if form.is_valid():
             form.save()
             return redirect("success")
-
-    # Initialising a new form.
-    form = forms.AddTennisSessionForm()
+    else:
+        # Initialising a new form.
+        form = forms.AddTennisSessionForm()
 
     return render(
         request,
@@ -28,4 +28,9 @@ def index(request):
 
 
 def success(request):
-    return render(request, "./tennis_session/success.html")
+    return render(
+        request,
+        "./tennis_session/success.html",
+        {
+            "title": "Success"
+        })
