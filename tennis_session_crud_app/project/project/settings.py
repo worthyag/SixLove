@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'tennis_session.apps.TennisSessionConfig',
     'user_auth.apps.UserAuthConfig',
+    'registration.apps.RegistrationConfig',
 ]
 
 MIDDLEWARE = [
