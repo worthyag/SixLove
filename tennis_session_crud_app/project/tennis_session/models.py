@@ -7,7 +7,7 @@ from django.utils import timezone
 
 
 class TennisSession(models.Model):
-    title = models.CharField()
+    title = models.CharField(max_length=50)
     notes = models.TextField()
     date = models.DateTimeField()
     is_today = models.BooleanField()
