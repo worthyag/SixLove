@@ -1,20 +1,43 @@
 from django.shortcuts import render
-from django.http import HttpResponse
 
 # Create your views here.
 
 
 def home(request):
-    return HttpResponse("You have reached the home page.")
+    return render(
+        request,
+        "./registration/index.html",
+        {
+            "title": "Home"
+        }
+    )
 
 
 def user_login(request):
-    return HttpResponse("You have reached the login page.")
+    return render(
+        request,
+        "./registration/login.html",
+        {
+            "title": "Login"
+        }
+    )
 
 
 def signup(request):
-    return HttpResponse("You have reached the signup page.")
+    return render(
+        request,
+        "./registration/signup.html",
+        {
+            "title": "Sign Up"
+        }
+    )
 
 
 def onboarding(request):
-    return HttpResponse("You have reached the onboarding page.")
+    return render(
+        request,
+        "./registration/onboarding.html",
+        {
+            "title": "Onboarding"
+        }
+    )
