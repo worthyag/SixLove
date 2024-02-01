@@ -18,7 +18,7 @@ def tennis(request):
     today_sessions = [
         session for session in tennis_sessions if session.is_tennis_session_scheduled_today()
     ]
-    is_today = "No sessions scheduled for today." if len(
+    is_today = "No tennis sessions scheduled for today." if len(
         today_sessions) == 0 else ""
 
     upcoming_sessions = [session for session in tennis_sessions
