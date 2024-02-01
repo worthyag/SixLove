@@ -5,4 +5,10 @@ from django.http import HttpResponse
 
 
 def tennis(request):
-    return HttpResponse("This is the tennis app.")
+    return render(
+        request,
+        "./tennis/tennis.html",
+        {
+            "title": "Tennis"
+        }
+    )

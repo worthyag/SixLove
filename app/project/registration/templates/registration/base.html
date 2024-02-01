@@ -22,7 +22,6 @@
         padding: 8px 16px;
       }
 
-
       button:hover {
         cursor: pointer;
         background-color: #207025;
@@ -34,35 +33,44 @@
     </style>
   </head>
   <body>
-      <header style="background-color: #a992fa; padding: 16px; padding-bottom: 50px;">
-        <h1>Links</h1>
-        <ul>
-          <a href="{% url 'home' %}">
-            <li>Home</li>
-          </a>
-          <a href="{% url 'onboarding' %}">
-            <li>Onboarding</li>
-          </a>
-        </ul>
-        
-          <div style="text-align: right; margin-top: -100px;">
-            {% if user.is_authenticated %}
-            <div class="logout">
-              <p>Welcome, {{ user.username }}</p>
-              <!-- <form style="margin-top: 24px;" method="post" action="{% url 'logout' %}?next={% url 'home' %}"> -->
-              <form style="margin-top: 24px;" method="post" action="{% url 'logout' %}">
-                {% csrf_token %}
-                <button type="submit">Logout</button>
-              </form>
-            </div>
-            {% else %}
-            <div style="margin-top: 24px;">
-              <a href="{% url 'login' %}"><button>Login</button></a>
-              <a href="{% url 'signup' %}"><button>Sign Up</button></a>
-            </div>
-            {% endif %}
-          </div>
-      </header>
-      {% block content %}{% endblock %}
+    <header
+      style="background-color: #a992fa; padding: 16px; padding-bottom: 50px"
+    >
+      <h1>Links</h1>
+      <ul>
+        <a href="{% url 'home' %}">
+          <li>Home</li>
+        </a>
+        <a href="{% url 'onboarding' %}">
+          <li>Onboarding</li>
+        </a>
+        <a href="{% url 'tennis:tennis' %}">
+          <li>Tennis</li>
+        </a>
+      </ul>
+
+      <div style="text-align: right; margin-top: -100px">
+        {% if user.is_authenticated %}
+        <div class="logout">
+          <p>Welcome, {{ user.username }}</p>
+          <!-- <form style="margin-top: 24px;" method="post" action="{% url 'logout' %}?next={% url 'home' %}"> -->
+          <form
+            style="margin-top: 24px"
+            method="post"
+            action="{% url 'logout' %}"
+          >
+            {% csrf_token %}
+            <button type="submit">Logout</button>
+          </form>
+        </div>
+        {% else %}
+        <div style="margin-top: 24px">
+          <a href="{% url 'login' %}"><button>Login</button></a>
+          <a href="{% url 'signup' %}"><button>Sign Up</button></a>
+        </div>
+        {% endif %}
+      </div>
+    </header>
+    {% block content %}{% endblock %}
   </body>
 </html>
