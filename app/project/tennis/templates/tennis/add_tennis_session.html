@@ -5,7 +5,7 @@
 
   <form action="" method="post" novalidate>
     {% csrf_token %} {{ form.as_p }}
-    <input type="submit" value="Add Tennis Session" />
+    <input class="btn" type="submit" value="Add Tennis Session" />
   </form>
 
   <a href="{% url 'tennis:tennis' %}"
