@@ -34,7 +34,7 @@
     </style>
   </head>
   <body>
-      <header style="background-color: #a992fa; padding: 16px;">
+      <header style="background-color: #a992fa; padding: 16px; padding-bottom: 50px;">
         <h1>Links</h1>
         <ul>
           <a href="{% url 'home' %}">
@@ -46,16 +46,20 @@
         </ul>
         
           <div style="text-align: right; margin-top: -100px;">
-            <div style="margin-top: 24px;">
-              <a href="{% url 'login' %}"><button>Login</button></a>
-              <a href="{% url 'signup' %}"><button>Sign Up</button></a>
-            </div>
-            <div>
+            {% if user.is_authenticated %}
+            <div class="logout">
+              <p>Welcome, {{ user.username }}</p>
               <form style="margin-top: 24px;" method="post" action="{% url 'logout' %}?next={% url 'home' %}">
                 {% csrf_token %}
                 <button type="submit">Logout</button>
               </form>
             </div>
+            {% else %}
+            <div style="margin-top: 24px;">
+              <a href="{% url 'login' %}"><button>Login</button></a>
+              <a href="{% url 'signup' %}"><button>Sign Up</button></a>
+            </div>
+            {% endif %}
           </div>
       </header>
       {% block content %}{% endblock %}
