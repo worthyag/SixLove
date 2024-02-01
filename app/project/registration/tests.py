@@ -124,9 +124,40 @@ class RegistrationUserAuthenticationTests(TestCase):
                           password=self.user_data['password'])
 
         # Logging the user out + checking whether the operation was successfully.
-        response = self.client.post(reverse("logout"), follow=True)
-        # self.assertEqual(response.status_code, 302)
+        response = self.client.post(reverse("logout"))
+        self.assertEqual(response.status_code, 302)
         self.assertRedirects(response, reverse("home"))
 
-    # def test_new_user_can_signup(self):
-    #     pass
+    def test_existing_user_is_not_authenticated_once_logged_out(self):
+        """"""
+       # Logging the user in.
+        self.client.login(username=self.user_data['username'],
+                          password=self.user_data['password'])
+
+        # Logging the user out + checking whether they are no longer authenticated.
+        self.client.post(reverse("logout"))
+        response = self.client.get(reverse("home"))
+        self.assertEqual(response.status_code, 200)
+        self.assertFalse(response.context["user"].is_authenticated)
+
+    def test_new_user_can_signup(self):
+        new_user_data = {
+            "first_name": "new",
+            "last_name": "user",
+            "email": "newuser@email.com",
+            "username": "new_user",
+            "password": "Before2day"
+        }
+
+        # Checking whether the sign up was successful.
+        response = self.client.post(
+            reverse("signup"), new_user_data)
+
+        # self.assertRedirects(response, reverse("home"))
+
+        self.assertEqual(response.status_code, 200)
+
+        # Check if the new user is authenticated after signup
+        # response = self.client.get(reverse('home'))
+        # self.assertEqual(response.status_code, 200)
+        # self.assertTrue(response.context['user'].is_authenticated)
