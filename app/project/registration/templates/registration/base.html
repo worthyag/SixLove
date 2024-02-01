@@ -34,6 +34,30 @@
     </style>
   </head>
   <body>
+      <header style="background-color: #a992fa; padding: 16px;">
+        <h1>Links</h1>
+        <ul>
+          <a href="{% url 'home' %}">
+            <li>Home</li>
+          </a>
+          <a href="{% url 'onboarding' %}">
+            <li>Onboarding</li>
+          </a>
+        </ul>
+        
+          <div style="text-align: right; margin-top: -100px;">
+            <div style="margin-top: 24px;">
+              <a href="{% url 'login' %}"><button>Login</button></a>
+              <a href="{% url 'signup' %}"><button>Sign Up</button></a>
+            </div>
+            <div>
+              <form style="margin-top: 24px;" method="post" action="{% url 'logout' %}?next={% url 'home' %}">
+                {% csrf_token %}
+                <button type="submit">Logout</button>
+              </form>
+            </div>
+          </div>
+      </header>
       {% block content %}{% endblock %}
   </body>
 </html>
