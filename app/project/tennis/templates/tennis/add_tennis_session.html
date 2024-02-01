@@ -1,0 +1,15 @@
+{% extends '../registration/base.html' %} {% block content %}
+<main style="padding: 16px">
+  <h2>Add Tennis Session</h2>
+  <p>This is the Add tennis session page for SixLove, feel free to add tennis sessions!</p>
+
+  <form action="" method="post" novalidate>
+    {% csrf_token %} {{ form.as_p }}
+    <input type="submit" value="Add Tennis Session" />
+  </form>
+
+  <a href="{% url 'tennis:tennis' %}"
+    ><button style="margin-top: 20px">View Tennis Sessions</button></a
+  >
+</main>
+{% endblock %}
