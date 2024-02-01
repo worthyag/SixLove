@@ -8,6 +8,7 @@ from django.contrib.auth import get_user_model
 
 
 class TennisSession(models.Model):
+    """"""
     user = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
     title = models.CharField(max_length=150)
     notes = models.TextField()
@@ -15,6 +16,7 @@ class TennisSession(models.Model):
     is_completed = models.BooleanField(default=False)
 
     def is_tennis_session_scheduled_today(self):
+        """"""
         today = timezone.now()
 
         if type(self.date) != type(""):
@@ -29,3 +31,8 @@ class TennisSession(models.Model):
                     if today.day == int(self.date[8:11]):
                         return True
             return False
+    
+
+    def __str__(self):
+        """"""
+        return f"{self.user.get_username()} - {self.title}"
