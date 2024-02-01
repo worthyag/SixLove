@@ -7,7 +7,9 @@ app_name = "tennis"
 urlpatterns = [
     path("", views.tennis, name="tennis"),
     path("add/", views.add, name="add"),
-    path("<int:tennis_session_id>/edit/", views.add, name="edit"),
-    path("<int:tennis_session_id>/delete/", views.add, name="delete"),
-    path("success/", views.add, name="success"),
+    path("<int:tennis_session_id>/edit/",
+         views.edit_tennis_session, name="edit"),
+    path("<int:tennis_session_id>/delete/",
+         views.delete_tennis_session, name="delete"),
+    path("success/", views.success, name="success"),
 ]

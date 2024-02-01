@@ -16,7 +16,8 @@ def tennis(request):
         user=request.user).order_by("date")
 
     today_sessions = [
-        session for session in tennis_sessions if session.is_tennis_session_scheduled_today()]
+        session for session in tennis_sessions if session.is_tennis_session_scheduled_today()
+    ]
     is_today = "No sessions scheduled for today." if len(
         today_sessions) == 0 else ""
 
@@ -69,7 +70,8 @@ def add(request):
 @login_required
 def edit_tennis_session(request, tennis_session_id):
     selected_session = get_object_or_404(models.TennisSession,
-                                         id=tennis_session_id)
+                                         id=tennis_session_id,
+                                         user=request.user)
 
     if request.method == "POST":
         form = forms.TennisSessionForm(request.POST,
@@ -94,7 +96,8 @@ def edit_tennis_session(request, tennis_session_id):
 @login_required
 def delete_tennis_session(request, tennis_session_id):
     selected_session = get_object_or_404(models.TennisSession,
-                                         id=tennis_session_id)
+                                         id=tennis_session_id,
+                                         user=request.user)
 
     if request.method == "POST":
         selected_session.delete()

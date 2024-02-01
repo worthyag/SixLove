@@ -44,9 +44,11 @@
         <a href="{% url 'onboarding' %}">
           <li>Onboarding</li>
         </a>
+        {% if user.is_authenticated %}
         <a href="{% url 'tennis:tennis' %}">
           <li>Tennis</li>
         </a>
+        {% endif %}
       </ul>
 
       <div style="text-align: right; margin-top: -100px">
