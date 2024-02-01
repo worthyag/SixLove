@@ -44,9 +44,23 @@ class RegistrationViewsTests(TestCase):
         # Checking whether the home view uses the template.
         self.registration_view_uses_template("home", "index")
 
-    def test_login_view_uses_template(self):
+    def test_user_login_view_uses_template(self):
         """
-        Testing the the login view uses the given template.
+        Testing the the user_login view uses the given template.
         """
         # Checking whether the home view uses the template.
         self.registration_view_uses_template("login", "login")
+
+    def test_signup_view_uses_template(self):
+        """
+        Testing the the signup view uses the given template.
+        """
+        # Checking whether the home view uses the template.
+        self.registration_view_uses_template("signup", "signup")
+
+    def test_onboarding_view_uses_template(self):
+        """
+        Testing the the onboarding view uses the given template.
+        """
+        # Checking whether the home view uses the template.
+        self.registration_view_uses_template("onboarding", "onboarding")
