@@ -15,6 +15,15 @@ class RegistrationViewsTests(TestCase):
 
         Parameters
         ----------
+        url_name : str
+          The name associated with the url (assigned in the views file).
+        template : str
+          The name of the template.
+
+        Notes
+        -----
+        The template parameter requires only the primary domain, e.g: 'index' 
+        rather than './registration/index.html
         """
         # Getting the url for the chosen view
         url = reverse(url_name)
@@ -32,14 +41,12 @@ class RegistrationViewsTests(TestCase):
         """
         Testing the the home view uses the given template.
         """
-        # Getting the url for the home view
-        url = reverse("home")
-
-        # Sending a GET response to the home view.
-        response = self.client.get(url)
-
         # Checking whether the home view uses the template.
-        self.assertTemplateUsed(
-            response,
-            "./registration/index.html"
-        )
+        self.registration_view_uses_template("home", "index")
+
+    def test_login_view_uses_template(self):
+        """
+        Testing the the login view uses the given template.
+        """
+        # Checking whether the home view uses the template.
+        self.registration_view_uses_template("login", "login")
