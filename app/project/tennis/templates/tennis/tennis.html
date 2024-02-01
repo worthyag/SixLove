@@ -1,64 +1,48 @@
 {% extends '../registration/base.html' %} {% block content %}
 <main style="padding: 16px">
   <h2>Tennis</h2>
-  <p>This is the tennis page for SixLove, feel free to add tennis sessions!</p>
+  <p>This is the tennis page for SixLove, you can view your tennis sessions here!</p>
 
-  <form action="" method="post" novalidate>
-    {% csrf_token %} {{ form.as_p }}
-    <input type="submit" value="Add Tennis Session" />
-  </form>
+  <h3 style="margin-top: 48px;">Today</h3>
+  <!-- <p>{{ is_today }}</p> -->
 
-  <a href="{% url 'tennis:tennis' %}"
-    ><button style="margin-top: 20px">View Tennis Sessions</button></a
-  >
-</main>
+  <!-- {% for session in today_sessions %} -->
+  <div class="session">
+    <!-- <p><span>Title: </span>{{ session.title }}</p> -->
+    <!-- <p><span>Notes: </span>{{ session.notes }}</p> -->
+    <!-- <p><span>Date: </span>{{ session.date }}</p> -->
+    <!-- <p><span>is completed: </span>{{ session.is_completed }}</p> -->
+    <!-- <a href="{{ session.id }}/edit"><button>Edit Session</button></a> -->
+    <!-- <a href="{{ session.id }}/delete"><button>Delete Session</button></a> -->
+  </div>
+  <!-- {% endfor %} -->
 
-<div>
-  <a href="#">
-    <p style="text-align: right; margin-right: 48px;">login</p>
+  <a href="{% url 'tennis:add' %}">
+    <button class="add-btn" style="margin-top: 20px;">Add Tennis Session</button>
   </a>
-  <p style="text-align: right; margin-right: 48px;">> {% firstof username "test_user" %}</p>
-</div>
-<h1>Tennis Sessions</h1>
-<h2>Today</h2>
-<p>{{ is_today }}</p>
 
-{% for session in today_sessions %}
-<div class="session">
-  <p><span>Title: </span>{{ session.title }}</p>
-  <p><span>Notes: </span>{{ session.notes }}</p>
-  <p><span>Date: </span>{{ session.date }}</p>
-  <p><span>is completed: </span>{{ session.is_completed }}</p>
-  <a href="{{ session.id }}/edit"><button>Edit Session</button></a>
-  <a href="{{ session.id }}/delete"><button>Delete Session</button></a>
-</div>
-{% endfor %}
+  <h3 style="margin-top: 48px;">Upcoming sessions</h3>
+  <!-- {% for session in upcoming_sessions %} -->
+  <div class="session">
+    <!-- <p><span>Title: </span>{{ session.title }}</p> -->
+    <!-- <p><span>Notes: </span>{{ session.notes }}</p> -->
+    <!-- <p><span>Date: </span>{{ session.date }}</p> -->
+    <!-- <p><span>is completed: </span>{{ session.is_completed }}</p> -->
+    <!-- <a href="{{ session.id }}/edit"><button>Edit Session</button></a> -->
+    <!-- <a href="{{ session.id }}/delete"><button>Delete Session</button></a> -->
+  </div>
+  <!-- {% endfor %} -->
 
+  <h3 style="margin-top: 48px;">History</h3>
+  <!-- {% for session in past_sessions %} -->
+  <!-- <div class="session"> -->
+    <!-- <p><span>Title: </span>{{ session.title }}</p> -->
+    <!-- <p><span>Notes: </span>{{ session.notes }}</p> -->
+    <!-- <p><span>Date: </span>{{ session.date }}</p> -->
+    <!-- <p><span>is completed: </span>{{ session.is_completed }}</p> -->
+    <!-- <a href="{{ session.id }}/edit"><button>Edit Session</button></a> -->
+  <!-- </div> -->
+  <!-- {% endfor %} -->
 
-<a href="{% url 'tennis:add' %}"
-  ><button class="add-btn" style="margin-top: 20px;">Add Tennis Session</button></a
->
-
-<h2>Upcoming sessions</h2>
-{% for session in upcoming_sessions %}
-<div class="session">
-  <p><span>Title: </span>{{ session.title }}</p>
-  <p><span>Notes: </span>{{ session.notes }}</p>
-  <p><span>Date: </span>{{ session.date }}</p>
-  <p><span>is completed: </span>{{ session.is_completed }}</p>
-  <!-- <a href="{{ session.id }}/edit"><button>Edit Session</button></a> -->
-  <!-- <a href="{{ session.id }}/delete"><button>Delete Session</button></a> -->
-</div>
-{% endfor %}
-
-<h2>History</h2>
-{% for session in past_sessions %}
-<div class="session">
-  <p><span>Title: </span>{{ session.title }}</p>
-  <p><span>Notes: </span>{{ session.notes }}</p>
-  <p><span>Date: </span>{{ session.date }}</p>
-  <p><span>is completed: </span>{{ session.is_completed }}</p>
-  <!-- <a href="{{ session.id }}/edit"><button>Edit Session</button></a> -->
-</div>
-{% endfor %}
+</main>
 {% endblock %}
