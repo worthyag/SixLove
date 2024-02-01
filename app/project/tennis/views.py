@@ -69,9 +69,16 @@ def add(request):
 
 @login_required
 def edit_tennis_session(request, tennis_session_id):
-    selected_session = get_object_or_404(models.TennisSession,
-                                         id=tennis_session_id,
-                                         user=request.user)
+    # Stops users from user navigating to the edit page for a tennis
+    # session that doesn't exist or doesn't belong to them.
+    try:
+        selected_session = get_object_or_404(models.TennisSession,
+                                             id=tennis_session_id,
+                                             user=request.user)
+    except models.TennisSession.DoesNotExist:
+        return redirect("tennis:tennis")
+    except:
+        return redirect("tennis:tennis")
 
     if request.method == "POST":
         form = forms.TennisSessionForm(request.POST,
@@ -95,9 +102,16 @@ def edit_tennis_session(request, tennis_session_id):
 
 @login_required
 def delete_tennis_session(request, tennis_session_id):
-    selected_session = get_object_or_404(models.TennisSession,
-                                         id=tennis_session_id,
-                                         user=request.user)
+    # Stops users from user navigating to the delete page for a tennis
+    # session that doesn't exist or doesn't belong to them.
+    try:
+        selected_session = get_object_or_404(models.TennisSession,
+                                             id=tennis_session_id,
+                                             user=request.user)
+    except models.TennisSession.DoesNotExist:
+        return redirect("tennis:tennis")
+    except:
+        return redirect("tennis:tennis")
 
     if request.method == "POST":
         selected_session.delete()
