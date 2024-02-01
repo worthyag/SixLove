@@ -137,3 +137,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Updating the user model.
 AUTH_USER_MODEL = 'registration.CustomUser'
+
+
+# Redirects the user to the home page when they log out.
+LOGOUT_REDIRECT_URL = "home"
