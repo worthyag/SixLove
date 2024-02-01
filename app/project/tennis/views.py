@@ -37,7 +37,8 @@ def tennis(request):
             "is_today": is_today,
             "upcoming_sessions": upcoming_sessions,
             "past_sessions": past_sessions,
-        })
+        }
+    )
 
 
 @login_required
@@ -50,7 +51,7 @@ def add(request):
             session = form.save(commit=False)
             session.user = request.user
             session.save()
-            return redirect("success")
+            return redirect("tennis:success")
     else:
         # Initialising a new form.
         form = forms.TennisSessionForm()
@@ -61,5 +62,60 @@ def add(request):
         {
             "title": "Add Tennis Session",
             "form": form,
+        }
+    )
+
+
+@login_required
+def edit_tennis_session(request, tennis_session_id):
+    selected_session = get_object_or_404(models.TennisSession,
+                                         id=tennis_session_id)
+
+    if request.method == "POST":
+        form = forms.TennisSessionForm(request.POST,
+                                       instance=selected_session)
+
+        if form.is_valid():
+            form.save()
+            return redirect("tennis:success")
+    else:
+        form = forms.TennisSessionForm(instance=selected_session)
+
+    return render(
+        request,
+        "./tennis/edit_tennis_session.html",
+        {
+            "title": "Edit Tennis Session",
+            "form": form
+        }
+    )
+
+
+@login_required
+def delete_tennis_session(request, tennis_session_id):
+    selected_session = get_object_or_404(models.TennisSession,
+                                         id=tennis_session_id)
+
+    if request.method == "POST":
+        selected_session.delete()
+        return redirect("tennis:tennis")
+
+    return render(
+        request,
+        "./tennis/delete_tennis_session.html",
+        {
+            "title": "Delete Tennis Session",
+            "tennis_session": selected_session
+        }
+    )
+
+
+@login_required
+def success(request):
+    return render(
+        request,
+        "./tennis/success.html",
+        {
+            "title": "Success"
         }
     )
