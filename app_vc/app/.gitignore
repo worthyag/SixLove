@@ -11,11 +11,8 @@ db.sqlite3
 # Visual Studio Code
 .vscode/
 
-# MacOS
+# macOS
 .DS_Store
 
 # Node
 node_modules
-
-# My shell scripts
-*.sh
