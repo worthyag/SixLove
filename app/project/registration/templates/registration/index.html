@@ -11,5 +11,9 @@
   <a href="{% url 'onboarding' %}">
     <li>Onboarding</li>
   </a>
+  <form style="margin-top: 24px;" method="post" action="{% url 'logout' %}?next={% url 'home' %}">
+    {% csrf_token %}
+    <button type="submit">Logout</button>
+</form>
 </ul>
 {% endblock %}
