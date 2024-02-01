@@ -1,0 +1,15 @@
+{% extends './base.html' %} 
+{% block content %}
+<h1>Home</h1>
+<ul>
+  <a href="{% url 'login' %}">
+    <li>Login</li>
+  </a>
+  <a href="{% url 'signup' %}">
+    <li>Signup</li>
+  </a>
+  <a href="{% url 'onboarding' %}">
+    <li>Onboarding</li>
+  </a>
+</ul>
+{% endblock %}
