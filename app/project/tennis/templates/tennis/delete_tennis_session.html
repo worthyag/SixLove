@@ -1,5 +1,17 @@
-{% extends '../registration/base.html' %} {% block content %}
-<main style="padding: 16px">
+{% extends '../registration/base.html' %} 
+{% block extra_styles %}
+<style>
+  main {
+      padding: 16px;
+  }
+
+  .view-tennis-sessions-btn {
+    margin-top: 20px;
+  }
+</style>
+{% endblock %}
+{% block content %}
+<main>
   <h2>Delete Tennis Session?</h2>
   <p>Are you sure you want to delete the session "{{ tennis_session.title }}"?</p>
 
@@ -9,7 +21,7 @@
   </form>
 
   <a href="{% url 'tennis:tennis' %}"
-    ><button style="margin-top: 20px">Back to Tennis Sessions</button></a
+    ><button class="view-tennis-sessions-btn">Back to Tennis Sessions</button></a
   >
 </main>
 {% endblock %}

@@ -1,10 +1,22 @@
-{% extends '../registration/base.html' %} {% block content %}
-<main style="padding: 16px">
+{% extends '../registration/base.html' %}
+{% block extra_styles %}
+<style>
+  main {
+      padding: 16px;
+  }
+
+  .view-tennis-sessions-btn {
+    margin-top: 20px;
+  }
+</style>
+{% endblock %}
+{% block content %}
+<main>
   <h2>Success</h2>
   <p>Tennis Session added successfully.</p>
 
   <a href="{% url 'tennis:tennis' %}"
-    ><button style="margin-top: 20px">View Tennis Sessions</button></a
+    ><button class="view-tennis-sessions-btn">View Tennis Sessions</button></a
   >
 </main>
 {% endblock %}

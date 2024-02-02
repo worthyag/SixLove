@@ -1,5 +1,17 @@
-{% extends '../registration/base.html' %} {% block content %}
-<main style="padding: 16px">
+{% extends '../registration/base.html' %} 
+{% block extra_styles %}
+<style>
+  main {
+      padding: 16px;
+  }
+
+  .view-tennis-sessions-btn {
+    margin-top: 20px;
+  }
+</style>
+{% endblock %}
+{% block content %}
+<main>
   <h2>Edit Tennis Session</h2>
   <p>This is the Edit tennis session page for SixLove, you can edit your tennis session.</p>
 
@@ -10,7 +22,7 @@
   </form>
 
   <a href="{% url 'tennis:tennis' %}"
-    ><button style="margin-top: 20px">Back to Tennis Sessions</button></a
+    ><button class="view-tennis-sessions-btn">Back to Tennis Sessions</button></a
   >
 </main>
 {% endblock %}

@@ -1,9 +1,18 @@
 {% extends './base.html' %} 
+{% block extra_styles %}
+<style>
+  main {
+      padding: 16px;
+  }
+</style>
+{% endblock %}
 {% block content %}
-<h1>Login</h1>
-<form action="" method="post">
-  {% csrf_token %}
-  {{ form.as_p }}
-  <button type="submit">Login</button>
-</form>
+<main>
+  <h1>Login</h1>
+  <form action="" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Login</button>
+  </form>
+</main>
 {% endblock %}
