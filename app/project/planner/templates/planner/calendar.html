@@ -1,0 +1,22 @@
+{% extends '../registration/base.html' %}
+{% block extra_styles %}
+<style>
+  main {
+      padding: 16px;
+  }
+
+  .view-tennis-sessions-btn {
+    margin-top: 20px;
+  }
+</style>
+{% endblock %}
+{% block content %}
+<main>
+  <h2>Calendar</h2>
+  <p>Not yet implemented.</p>
+
+  <a href="{% url 'tennis:tennis' %}"
+    ><button class="view-tennis-sessions-btn">View Tennis Sessions</button></a
+  >
+</main>
+{% endblock %}

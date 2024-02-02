@@ -9,7 +9,7 @@ def calendar(request):
     """"""
     return render(
         request,
-        "./planner/tennis.html",
+        "./planner/calendar.html",
         {
             "title": "Calendar",
         }
