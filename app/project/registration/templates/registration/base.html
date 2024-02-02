@@ -10,7 +10,24 @@
           sans-serif;
       }
 
-      button, .btn {
+      body {
+        margin: 0;
+      }
+
+      header {
+        background-color: #a992fa;
+        padding: 32px;
+
+        display: flex;
+        justify-content: space-between;
+      }
+
+      header h1 {
+        margin: 0;
+      }
+
+      button,
+      .btn {
         /* margin-left: 20px; */
         margin-bottom: 16px;
         background-color: #000000;
@@ -22,7 +39,8 @@
         padding: 8px 16px;
       }
 
-      button:hover, .btn:hover {
+      button:hover,
+      .btn:hover {
         cursor: pointer;
         background-color: #207025;
       }
@@ -34,47 +52,51 @@
       a {
         color: #000000;
       }
+
+      .auth {
+        text-align: right;
+        /* margin-top: -100px; */
+      }
+
+      .auth-btns {
+        margin-top: 24px;
+      }
     </style>
     {% block extra_styles %}{% endblock %}
   </head>
   <body>
-    <header
-      style="background-color: #a992fa; padding: 16px; padding-bottom: 50px"
-    >
-      <h1>SixLove</h1>
-      <ul>
-        <a href="{% url 'home' %}">
-          <li>Home</li>
-        </a>
-        <a href="{% url 'onboarding' %}">
-          <li>Onboarding</li>
-        </a>
-        {% if user.is_authenticated %}
-        <a href="{% url 'tennis:tennis' %}">
-          <li>Tennis</li>
-        </a>
-        <a href="{% url 'planner:calendar' %}">
-          <li>Calendar</li>
-        </a>
-        {% endif %}
-      </ul>
+    <header>
+      <div class="extended-nav">
+        <h1>SixLove</h1>
+        <ul>
+          <a href="{% url 'home' %}">
+            <li>Home</li>
+          </a>
+          <a href="{% url 'onboarding' %}">
+            <li>Onboarding</li>
+          </a>
+          {% if user.is_authenticated %}
+          <a href="{% url 'tennis:tennis' %}">
+            <li>Tennis</li>
+          </a>
+          <a href="{% url 'planner:calendar' %}">
+            <li>Calendar</li>
+          </a>
+          {% endif %}
+        </ul>
+      </div>
 
-      <div style="text-align: right; margin-top: -100px">
+      <div class="auth">
         {% if user.is_authenticated %}
         <div class="logout">
           <p>Welcome, {{ user.username }}</p>
-          <!-- <form style="margin-top: 24px;" method="post" action="{% url 'logout' %}?next={% url 'home' %}"> -->
-          <form
-            style="margin-top: 24px"
-            method="post"
-            action="{% url 'logout' %}"
-          >
+          <form class="auth-btns" method="post" action="{% url 'logout' %}">
             {% csrf_token %}
             <button type="submit">Logout</button>
           </form>
         </div>
         {% else %}
-        <div style="margin-top: 24px">
+        <div class="auth-btns">
           <a href="{% url 'login' %}"><button>Login</button></a>
           <a href="{% url 'signup' %}"><button>Sign Up</button></a>
         </div>
