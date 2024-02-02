@@ -2,10 +2,11 @@
 {% block extra_styles %}
 <style>
   .session {
-        border: 1px solid #00000000;
+        /* border: 1px solid #00000000; */
         box-shadow: 4px 4px 20px #00000030;
         border-radius: 8px;
         margin-bottom: 16px;
+        padding: 8px 16px;
   }
 
   .session:hover {
@@ -17,7 +18,11 @@
   }
 
   .session p, .session a {
-        padding-left: 20px;
+        padding: 0 20px;
+  }
+
+  main a {
+    text-decoration: none;
   }
 </style>
 {% endblock %}
@@ -43,9 +48,14 @@
   <p>{{ is_today }}</p>
   {% endif %}
 
-  <a href="{% url 'tennis:add' %}">
-    <button class="tennis-btn" style="margin-top: 20px;">Add Tennis Session</button>
-  </a>
+  <div>
+    <a href="{% url 'tennis:add' %}">
+      <button class="tennis-btn" style="margin-top: 20px;">Add Tennis Session</button>
+    </a>
+    <a href="{% url 'tennis:add' %}">
+      <button class="tennis-btn" style="margin-top: 20px;">View Calendar</button>
+    </a>
+  </div>
 
   <h3 style="margin-top: 48px;">Upcoming sessions</h3>
   {% if upcoming_sessions %}
