@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'registration.apps.RegistrationConfig',
     'tennis.apps.TennisConfig',
+    'planner.apps.PlannerConfig',
 ]
 
 MIDDLEWARE = [
