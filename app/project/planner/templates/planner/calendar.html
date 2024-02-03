@@ -3,10 +3,17 @@
 {% block extra_styles %}
 <link rel="stylesheet" href="{% static './planner/styles/styles.css' %}">
 {% endblock %}
+{% block scripts %}
+<script src="{% static './planner/scripts/calendar.js' %}" defer></script>
+{% endblock %}
 {% block content %}
 <main>
   <h2>Calendar</h2>
   <p>Not implemented yet.</p>
+
+  <section class="calendar">
+
+  </section>
 
   <a href="{% url 'tennis:tennis' %}"
     ><button class="view-tennis-sessions-btn">View Tennis Sessions</button></a
