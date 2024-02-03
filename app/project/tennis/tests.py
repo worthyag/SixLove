@@ -11,6 +11,13 @@ from . import views
 # Create your tests here.
 
 
+def generate_the_current_date():
+    """
+    Gets and returns today's day.
+    """
+    return timezone.now().date()
+
+
 class TennisViewsTest(TestCase):
     """Testing the tennis view work as expected."""
 
@@ -25,8 +32,8 @@ class TennisViewsTest(TestCase):
 
     def helper_get_response_tennis_view(self):
         """
-        A helper function that produces a response for the tennis view.
-        (To reduce code repetition).
+        A helper function that produces a response for the tennis view
+        and logs the user in. (To reduce code repetition).
         """
         # Creating an instance of a GET request.
         request = self.factory.get(reverse("tennis:tennis"))
@@ -41,7 +48,7 @@ class TennisViewsTest(TestCase):
 
     def test_tennis_view_with_no_tennis_sessions(self):
         """"""
-        # Generating the response.
+        # Generating the response / logging in.
         response = self.helper_get_response_tennis_view()
 
         self.assertEqual(response.status_code, 200)
@@ -53,7 +60,7 @@ class TennisViewsTest(TestCase):
     def test_tennis_view_with_tennis_sessions(self):
         """"""
         # Getting today's day.
-        today = timezone.now().date()
+        today = generate_the_current_date()
 
         # Adding a tennis session.
         TennisSession.objects.create(
@@ -63,7 +70,7 @@ class TennisViewsTest(TestCase):
             date=today,
         )
 
-        # Generating the response.
+        # Generating the response / logging in.
         response = self.helper_get_response_tennis_view()
 
         self.assertEqual(response.status_code, 200)
@@ -87,7 +94,8 @@ class AddViewTest(TestCase):
 
     def helper_get_response_add_view(self):
         """
-        A helper function that produces a response for the add view.
+        A helper function that produces a response for the add view
+        and logs the user in.
         """
         # Creating an instance of a GET request.
         request = self.factory.get(reverse("tennis:add"))
@@ -102,7 +110,23 @@ class AddViewTest(TestCase):
 
     def test_add_view_loads(self):
         """"""
-        # Generating the response.
+        # Generating the response / logging in.
         response = self.helper_get_response_add_view()
 
         self.assertEqual(response.status_code, 200)
+
+    def test_add_view_post_valid_form(self):
+        """"""
+        # Generating the response / logging in.
+        response = self.helper_get_response_add_view()
+
+        # Adding tennis sessions using the form.
+        data = {
+            "title": "This is not a drill",
+            "notes": "I repeat, this is not a drill",
+            "date": generate_the_current_date(),
+        }
+
+        response = self.client.post(reverse('tennis:add'), data)
+
+        self.assertEqual(response.status_code, 302)
