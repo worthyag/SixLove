@@ -16,4 +16,28 @@ main {
   height: auto;
   background-color: #ffffff;
   border: 1px solid rgba(0, 0, 0, 0.2196078431);
+}
+.calendar .calendarDiv .dayDiv .day {
+  margin: 0;
+  font-weight: bold;
+  padding: 4px;
+  margin: 2px;
+}
+.calendar .calendarDiv .dayDiv .currentDay {
+  background-color: crimson;
+  color: #ffffff;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  border-radius: 50%;
+}
+.calendar .calendarDiv .dayDiv .task {
+  min-height: 50px;
+  background-color: hotpink;
+  border-radius: 8px;
+  margin: 4px 8px;
+}
+.calendar .calendarDiv .dayDiv .task:hover {
+  cursor: pointer;
+  background-color: #f6459e;
 }/*# sourceMappingURL=styles.css.map */

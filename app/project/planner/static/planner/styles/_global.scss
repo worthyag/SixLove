@@ -20,6 +20,36 @@ margin-bottom: 48px;
   
       background-color: #ffffff;
       border: 1px solid #00000038;
+
+      .day {
+        margin: 0;
+        font-weight: bold;
+        padding: 4px;
+        margin: 2px;
+      }
+
+      .currentDay {
+        background-color: crimson;
+        color: #ffffff;
+        width: 20px;
+        height: 20px;
+        text-align: center;
+
+        // padding: 16px;
+        border-radius: 50%;
+      }
+
+      .task {
+        min-height: 50px;
+        background-color: hotpink;
+        border-radius: 8px;
+        margin: 4px 8px;
+
+         &:hover {
+          cursor: pointer;
+          background-color: #f6459e;
+         }
+      }
     }
   }
 }

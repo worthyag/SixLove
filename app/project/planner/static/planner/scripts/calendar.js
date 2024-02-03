@@ -106,6 +106,22 @@ function buildCalendar() {
   for (let i = 0; i < numberOfDays; i++) {
     const div = document.createElement("div");
     div.classList.add("dayDiv");
+
+    const day = document.createElement("p");
+    day.textContent = i + 1;
+    day.classList.add("day");
+
+    if ((i + 1) === date_info["day"]) {
+      day.classList.add("currentDay");
+    }
+
+    div.appendChild(day);
+
+    // For testing
+    const task1 = document.createElement("div");
+    task1.classList.add("task");
+    div.appendChild(task1);
+
     calendarDiv.appendChild(div);
   }
 
