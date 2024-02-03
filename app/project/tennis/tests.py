@@ -196,3 +196,62 @@ class EditTennisSessionViewTest(TestCase):
 
         # Testing that the page redirects upon successful form submission.
         self.assertEqual(response.status_code, 302)
+
+
+class DeleteTennisSessionViewTest(TestCase):
+    """Testing the delete tennis session view works as expected."""
+
+    def setUp(self) -> None:
+        """"""
+        # Every test needs access to the request factory.
+        self.factory = RequestFactory()
+
+        self.user = CustomUser.objects.create(
+            username="testuser",
+            password="testpassword"
+        )
+
+        # Adding a tennis session.
+        self.tennis_session = TennisSession.objects.create(
+            user=self.user,
+            title="This will be deleted",
+            notes="I will NOT add to this later.",
+            date=generate_the_current_date(),
+        )
+
+    def helper_get_response_delete_tennis_session_view(self):
+        """
+        A helper function that produces a response for the delete tennis
+        session view and logs the user in.
+        """
+        # Getting the delete page.
+        request = self.factory.get(
+            reverse("tennis:delete", args=[self.tennis_session.id])
+        )
+
+        # Simulating a logged-in user manually.
+        request.user = self.user
+
+        # Testing the view.
+        response = views.delete_tennis_session(request, self.tennis_session.id)
+
+        return response
+
+    def test_delete_tennis_session_view_loads(self):
+        """"""
+        # Generating the response / logging in.
+        response = self.helper_get_response_delete_tennis_session_view()
+
+        self.assertEqual(response.status_code, 200)
+
+    def test_delete_tennis_session_view_post_valid_form(self):
+        """"""
+        # Generating the response / logging in.
+        response = self.helper_get_response_delete_tennis_session_view()
+
+        # Submitting the form data.
+        response = self.client.post(reverse('tennis:delete',
+                                            args=[self.tennis_session.id]))
+
+        # Testing that the page redirects upon successful form submission.
+        self.assertEqual(response.status_code, 302)
