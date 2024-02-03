@@ -19,7 +19,7 @@ def generate_the_current_date():
 
 
 class TennisViewsTest(TestCase):
-    """Testing the tennis view work as expected."""
+    """Testing the tennis view works as expected."""
 
     def setUp(self) -> None:
         """"""
@@ -59,15 +59,12 @@ class TennisViewsTest(TestCase):
 
     def test_tennis_view_with_tennis_sessions(self):
         """"""
-        # Getting today's day.
-        today = generate_the_current_date()
-
         # Adding a tennis session.
         TennisSession.objects.create(
             user=self.user,
             title="This is not a drill",
             notes="I repeat, this is not a drill",
-            date=today,
+            date=generate_the_current_date(),
         )
 
         # Generating the response / logging in.
@@ -81,7 +78,7 @@ class TennisViewsTest(TestCase):
 
 
 class AddViewTest(TestCase):
-    """Testing the add view work as expected."""
+    """Testing the add view works as expected."""
 
     def setUp(self) -> None:
         """"""
@@ -127,6 +124,75 @@ class AddViewTest(TestCase):
             "date": generate_the_current_date(),
         }
 
+        # Submitting the form data.
         response = self.client.post(reverse('tennis:add'), data)
 
+        # Testing that the page redirects upon successful form submission.
+        self.assertEqual(response.status_code, 302)
+
+
+class EditTennisSessionViewTest(TestCase):
+    """Testing the edit tennis session view works as expected."""
+
+    def setUp(self) -> None:
+        """"""
+        # Every test needs access to the request factory.
+        self.factory = RequestFactory()
+
+        self.user = CustomUser.objects.create(
+            username="testuser",
+            password="testpassword"
+        )
+
+        # Adding a tennis session.
+        self.tennis_session = TennisSession.objects.create(
+            user=self.user,
+            title="This will be edited",
+            notes="I will add to this later.",
+            date=generate_the_current_date(),
+        )
+
+    def helper_get_response_edit_tennis_session_view(self):
+        """
+        A helper function that produces a response for the edit tennis
+        session view and logs the user in.
+        """
+        # Getting the edit page.
+        request = self.factory.get(
+            reverse("tennis:edit", args=[self.tennis_session.id])
+        )
+
+        # Simulating a logged-in user manually.
+        request.user = self.user
+
+        # Testing the view.
+        response = views.edit_tennis_session(request, self.tennis_session.id)
+
+        return response
+
+    def test_edit_tennis_session_view_loads(self):
+        """"""
+        # Generating the response / logging in.
+        response = self.helper_get_response_edit_tennis_session_view()
+
+        self.assertEqual(response.status_code, 200)
+
+    def test_edit_tennis_session_view_post_valid_form(self):
+        """"""
+        # Generating the response / logging in.
+        response = self.helper_get_response_edit_tennis_session_view()
+
+        # Editing tennis sessions using the form.
+        data = {
+            "title": "Updated session",
+            "notes": "I told you that I would update my notes.",
+            "date": generate_the_current_date(),
+        }
+
+        # Submitting the form data.
+        response = self.client.post(reverse('tennis:edit',
+                                            args=[self.tennis_session.id]),
+                                    data)
+
+        # Testing that the page redirects upon successful form submission.
         self.assertEqual(response.status_code, 302)
