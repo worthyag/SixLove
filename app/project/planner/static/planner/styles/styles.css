@@ -4,4 +4,16 @@ main {
 
 .view-tennis-sessions-btn {
   margin-top: 20px;
+  margin-bottom: 48px;
+}
+
+.calendar .calendarDiv {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+}
+.calendar .calendarDiv .dayDiv {
+  min-height: 150px;
+  height: auto;
+  background-color: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.2196078431);
 }/*# sourceMappingURL=styles.css.map */

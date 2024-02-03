@@ -100,11 +100,16 @@ function buildCalendar() {
   const numberOfDays = getNumberOfDays(date_info["month"][0], date_info["year"]);
   print(numberOfDays);
 
+  const calendarDiv = document.createElement("div");
+  calendarDiv.classList.add("calendarDiv");
+
   for (let i = 0; i < numberOfDays; i++) {
     const div = document.createElement("div");
     div.classList.add("dayDiv");
-    calendar.appendChild(div);
+    calendarDiv.appendChild(div);
   }
+
+  calendar.appendChild(calendarDiv);
 }
 
 buildCalendar();
