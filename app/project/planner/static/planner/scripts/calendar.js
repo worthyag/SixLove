@@ -45,9 +45,7 @@ function getMonth(month) {
   return [month, months[month]];
 }
 
-function getDateInfo() {
-  const date = new Date();
-
+function getDateInfo(date) {
   const date_info = {
     "date": date,
     "year": date.getFullYear(),
@@ -93,9 +91,17 @@ function getNumberOfDays(month, year) {
     return months[month][0]
 }
 
-function buildCalendar() {
-  const date_info = getDateInfo();
-  print(date_info);
+function buildCalendar(date = "today") {
+  const today = new Date();
+  let date_info = "";
+
+  if (date !== "today") {
+    date_info = getDateInfo(date);
+  }
+  else {
+    date_info = getDateInfo(today);
+    print(date_info);
+  }
 
   const numberOfDays = getNumberOfDays(date_info["month"][0], date_info["year"]);
   print(numberOfDays);
@@ -111,7 +117,9 @@ function buildCalendar() {
     day.textContent = i + 1;
     day.classList.add("day");
 
-    if ((i + 1) === date_info["day"]) {
+    // Fix this.
+    if (((i + 1) === date_info["day"]) && 
+    (getDateInfo(today)["month"] == date_info["month"])) {
       day.classList.add("currentDay");
     }
 
