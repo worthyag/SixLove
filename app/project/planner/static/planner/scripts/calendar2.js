@@ -136,4 +136,4 @@ function buildCalendar(date = "today") {
   calendar.appendChild(calendarDiv);
 }
 
-buildCalendar();
+// buildCalendar();
