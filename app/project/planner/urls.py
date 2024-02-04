@@ -5,5 +5,5 @@ from . import views
 app_name = "planner"
 
 urlpatterns = [
-    path("", views.calendar, name="calendar")
+    path("", views.calendar, name="calendar"),
 ]
