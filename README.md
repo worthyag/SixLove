@@ -15,5 +15,3 @@ I am going to get started on the project structure.
 Created a new branch to create the project structure.
 
 Mon 22th Jan 24- I am in pain today so wasn't able to get anything done.
-
-Still working through the Django tutorial.
