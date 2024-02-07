@@ -6,4 +6,5 @@ app_name = "planner"
 
 urlpatterns = [
     path("", views.calendar, name="calendar"),
+    path("<int:year>/<int:month>/", views.calendar, name="calendar"),
 ]

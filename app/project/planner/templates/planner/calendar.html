@@ -13,11 +13,13 @@
     ><button class="view-tennis-sessions-btn">View Tennis Sessions</button></a
   >
 
-  <section class="calendar"></section>
+  <section class="calendar">{{ calendar.monthcalendar }}</section>
 
+  {% comment %}
   <a href="{% url 'planner:calendar' year=prev_year month=prev_month %}">&lt;</a>
   <span>{{ calendar }}</span>
   <a href="{% url 'planner:calendar' year=next_year month=next_month %}">&gt;</a>
+  {% endcomment %}
 
 </main>
 {% endblock %}
