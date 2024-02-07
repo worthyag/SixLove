@@ -15,5 +15,9 @@
 
   <section class="calendar"></section>
 
+  <a href="{% url 'planner:calendar' year=prev_year month=prev_month %}">&lt;</a>
+  <span>{{ calendar }}</span>
+  <a href="{% url 'planner:calendar' year=next_year month=next_month %}">&gt;</a>
+
 </main>
 {% endblock %}

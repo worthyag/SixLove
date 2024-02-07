@@ -5,6 +5,8 @@ from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 from django.utils import timezone
 
+from tennis import models as TennisModels
+
 # Create your views here.
 
 
@@ -48,12 +50,23 @@ class TennisCalendar(HTMLCalendar):
 
 
 @login_required
-def calendar(request):
+def calendar(request, year=None, month=None):
     """"""
+    tennis_sessions = TennisModels.TennisSession.objects.filter(
+        user=request.user
+    )
+    cal = TennisCalendar(tennis_sessions)
+
+    month, year = month if month else timezone.now().date(
+    ).month, year if year else timezone.now().date().year
+
+    html_cal = cal.formatmonth(int(year), int(month), withyear=True)
+
     return render(
         request,
         "./planner/calendar.html",
         {
             "title": "Calendar",
+            "calendar": html_cal
         }
     )
