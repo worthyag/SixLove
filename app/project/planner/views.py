@@ -66,7 +66,7 @@ from tennis import models as TennisModels
 #         return {tennis_session.title: list(items) for tennis_session, items in itertools.groupby(self.tennis_sessions, field)}
 
 
-@login_required
+# @login_required
 class CalendarView(generic.ListView):
     """"""
     model = TennisModels.TennisSession
