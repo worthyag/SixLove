@@ -7,37 +7,41 @@ main {
   margin-bottom: 48px;
 }
 
-.calendar .calendarDiv {
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
+.calendar {
+  width: 98%;
+  margin: auto;
+  font-size: 13px;
 }
-.calendar .calendarDiv .dayDiv {
-  min-height: 150px;
-  height: auto;
-  background-color: #ffffff;
-  border: 1px solid rgba(0, 0, 0, 0.2196078431);
+
+.calendar tr, .calendar td {
+  border: 1px solid black;
 }
-.calendar .calendarDiv .dayDiv .day {
-  margin: 0;
-  font-weight: bold;
-  padding: 4px;
-  margin: 2px;
-}
-.calendar .calendarDiv .dayDiv .currentDay {
-  background-color: crimson;
-  color: #ffffff;
-  width: 20px;
-  height: 20px;
+
+.calendar th {
+  padding: 10px;
   text-align: center;
-  border-radius: 50%;
+  font-size: 18px;
 }
-.calendar .calendarDiv .dayDiv .task {
-  min-height: 50px;
-  background-color: hotpink;
-  border-radius: 8px;
-  margin: 4px 8px;
+
+.calendar td {
+  width: 200px;
+  height: 150px;
+  padding: 20px 0px 0px 5px;
 }
-.calendar .calendarDiv .dayDiv .task:hover {
-  cursor: pointer;
-  background-color: #f6459e;
+
+.month {
+  font-size: 25px;
+}
+
+.date {
+  font-size: 16px;
+}
+
+ul {
+  height: 100%;
+  padding: 0px 5px 0px 20px;
+}
+
+a {
+  color: #17a2b8;
 }/*# sourceMappingURL=styles.css.map */

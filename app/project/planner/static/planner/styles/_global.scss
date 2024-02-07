@@ -8,48 +8,87 @@ margin-bottom: 48px;
 }
 
 // Calendar styling.
-.calendar {
+// .calendar {
 
-  .calendarDiv {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
+//   .calendarDiv {
+//     display: grid;
+//     grid-template-columns: repeat(7, 1fr);
 
-    .dayDiv {
-      min-height: 150px;
-      height: auto;
+//     .dayDiv {
+//       min-height: 150px;
+//       height: auto;
   
-      background-color: #ffffff;
-      border: 1px solid #00000038;
+//       background-color: #ffffff;
+//       border: 1px solid #00000038;
 
-      .day {
-        margin: 0;
-        font-weight: bold;
-        padding: 4px;
-        margin: 2px;
-      }
+//       .day {
+//         margin: 0;
+//         font-weight: bold;
+//         padding: 4px;
+//         margin: 2px;
+//       }
 
-      .currentDay {
-        background-color: crimson;
-        color: #ffffff;
-        width: 20px;
-        height: 20px;
-        text-align: center;
+//       .currentDay {
+//         background-color: crimson;
+//         color: #ffffff;
+//         width: 20px;
+//         height: 20px;
+//         text-align: center;
 
-        // padding: 16px;
-        border-radius: 50%;
-      }
+//         // padding: 16px;
+//         border-radius: 50%;
+//       }
 
-      .task {
-        min-height: 50px;
-        background-color: hotpink;
-        border-radius: 8px;
-        margin: 4px 8px;
+//       .task {
+//         min-height: 50px;
+//         background-color: hotpink;
+//         border-radius: 8px;
+//         margin: 4px 8px;
 
-         &:hover {
-          cursor: pointer;
-          background-color: #f6459e;
-         }
-      }
-    }
-  }
+//          &:hover {
+//           cursor: pointer;
+//           background-color: #f6459e;
+//          }
+//       }
+//     }
+//   }
+// }
+
+.calendar {
+  width: 98%;
+  margin: auto;
+  font-size: 13px;
+}
+
+.calendar tr, .calendar td {
+  border: 1px solid black;
+}
+
+.calendar th {
+  padding: 10px;
+  text-align: center;
+  font-size: 18px;
+}
+
+.calendar td {
+  width: 200px;
+  height: 150px;
+  padding: 20px 0px 0px 5px;
+}
+
+.month {
+  font-size: 25px;
+}
+
+.date {
+  font-size: 16px;
+}
+
+ul {
+  height: 100%;
+  padding: 0px 5px 0px 20px;
+}
+
+a {
+  color: #17a2b8;
 }
