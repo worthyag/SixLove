@@ -1,12 +1,13 @@
-from calendar import HTMLCalendar
 from datetime import datetime, timedelta
-import itertools
 
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 from django.utils import timezone
+from django.views import generic
+from django.utils.safestring import mark_safe
 
-from tennis import models as TennisModels
+from .utils import TennisCalendar
+
 
 # Create your views here.
 
@@ -63,58 +64,13 @@ from tennis import models as TennisModels
 #         return {tennis_session.title: list(items) for tennis_session, items in itertools.groupby(self.tennis_sessions, field)}
 
 
-class TennisCalendar(HTMLCalendar):
-    """"""
-
-    def __init__(self, year=None, month=None, user=None):
-        """"""
-        self.year = year
-        self.month = month
-        self.user = None
-        super(TennisCalendar, self).__init__()
-
-    def formatdate(self, day, tennis_sessions):
-        """
-        Formats a day as a td. Filters events by day.
-        """
-        sessions_per_day = tennis_sessions.filter(date__day=day)
-        d = ""
-
-        for session in sessions_per_day:
-            d += f'<li> {session.title} </li>'
-
-        if day != 0:
-            return f'<td><span class="date">{day}</span><ul> {d} </ul></td>'
-        return f'<td></td>'
-
-    def formatweek(self, theweek, tennis_sessions):
-        """
-        Formats a week as a tr.
-        """
-        week = ""
-
-        for d, weekday in theweek:
-            week += self.formatdate(d, tennis_sessions)
-        return f'<tr> {week} </tr>'
-
-    def formatmonth(self, withyear=True):
-        """
-        Formats a month as a table. Filters events by year and month.
-        """
-        tennis_sessions = TennisModels.TennisSession.objects.filter()
-
-        for d, weekday in theweek:
-            week += self.formatdate(d, tennis_sessions)
-        return f'<tr> {week} </tr>'
-
-
 @login_required
 def calendar(request, year=None, month=None):
     """"""
     tennis_sessions = TennisModels.TennisSession.objects.filter(
         user=request.user
     )
-    cal = TennisCalendar(tennis_sessions)
+    cal = TennisCalendar(tennis_sessions, user=request.user)
 
     month, year = month if month else timezone.now().date(
     ).month, year if year else timezone.now().date().year
