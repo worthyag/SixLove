@@ -157,6 +157,9 @@ a {
 .calendar-section .calendar .days .tennis-session {
   position: relative;
 }
+.calendar-section .calendar .days .tennis-session:hover::after {
+  background-color: #FFFFFF;
+}
 .calendar-section .calendar .days .tennis-session::after {
   content: "";
   position: absolute;
@@ -167,4 +170,7 @@ a {
   transform: translateX(-50%);
   border-radius: 8px;
   background-color: #32ca6f;
+}
+.calendar-section .calendar .days .active.tennis-session::after {
+  background-color: #FFFFFF;
 }/*# sourceMappingURL=styles.css.map */

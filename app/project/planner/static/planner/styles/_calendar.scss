@@ -105,6 +105,10 @@
       .tennis-session {
         position: relative;
 
+        &:hover::after {
+          background-color: $white;
+        }
+
         &::after {
           content: "";
           position: absolute;
@@ -117,6 +121,12 @@
           border-radius: 8px;
 
           background-color: $green;
+        }
+      }
+
+      .active.tennis-session {
+        &::after {
+          background-color: $white;
         }
       }
     }
