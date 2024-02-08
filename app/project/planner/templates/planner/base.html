@@ -1,0 +1,120 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SixLove | {{ title }}</title>
+    <style>
+      * {
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+          Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',
+          sans-serif;
+      }
+
+      body {
+        margin: 0;
+      }
+
+      header {
+        background-color: #a992fa;
+        padding: 32px;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+      }
+
+      header h1 {
+        margin: 0;
+      }
+
+      button,
+      .btn {
+        margin-bottom: 16px;
+        background-color: #000000;
+        color: #ffffff;
+        font-weight: bold;
+
+        border: none;
+        border-radius: 8px;
+        padding: 8px 16px;
+      }
+
+      button:hover,
+      .btn:hover {
+        cursor: pointer;
+        background-color: #207025;
+      }
+
+      .tennis-btn {
+        margin-left: 0;
+      }
+
+      a {
+        color: #000000;
+      }
+
+      .auth {
+        text-align: right;
+      }
+
+      /* .auth-btns {
+        margin-top: 24px;
+      } */
+
+      .login-btns button {
+        width: 100px;
+      }
+
+      @media only screen and (max-width: 1023px) {
+        .login-btns {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+      }
+    </style>
+    {% block extra_styles %}{% endblock %}
+    {% block scripts %}{% endblock %}
+  </head>
+  <body>
+    <header>
+      <div class="extended-nav">
+        <h1>SixLove</h1>
+        <ul>
+          <a href="{% url 'home' %}">
+            <li>Home</li>
+          </a>
+          <a href="{% url 'onboarding' %}">
+            <li>Onboarding</li>
+          </a>
+          {% if user.is_authenticated %}
+          <a href="{% url 'tennis:tennis' %}">
+            <li>Tennis</li>
+          </a>
+          <a href="{% url 'planner:calendar' %}">
+            <li>Calendar</li>
+          </a>
+          {% endif %}
+        </ul>
+      </div>
+
+      <div class="auth">
+        {% if user.is_authenticated %}
+        <div class="logout">
+          <p>Welcome, {{ user.username }}</p>
+          <form class="auth-btns" method="post" action="{% url 'logout' %}">
+            {% csrf_token %}
+            <button type="submit">Logout</button>
+          </form>
+        </div>
+        {% else %}
+        <div class="auth-btns login-btns">
+          <a href="{% url 'login' %}"><button>Login</button></a>
+          <a href="{% url 'signup' %}"><button>Sign Up</button></a>
+        </div>
+        {% endif %}
+      </div>
+    </header>
+    {% block content %}{% endblock %}
+  </body>
+</html>
