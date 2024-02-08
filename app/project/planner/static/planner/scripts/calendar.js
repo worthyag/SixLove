@@ -2,6 +2,10 @@ function print(x) {
   console.log(x);
 }
 
+// Accessing the tennis sessions data in JavaScript
+// const tennisSessions = JSON.parse('{{ tennis_sessions | safe }}');
+// print(tennisSessions);
+
 const calendar = document.querySelector(".calendar");
 const date = document.querySelector(".date");
 const daysDiv = document.querySelector(".days");
@@ -44,6 +48,17 @@ function getMonth(month) {
   return [month - 1, months[month]];
 }
 
+// function isTennisSessionScheduled(day, month, year) {
+//   // Checking if there is a tennis session scheduled for the given day
+//   tennisSessions.some(tennisSession => {
+//     const tennisSessionDate = new Date(tennisSession.date);
+
+//     return tennisSessionDate.getFullYear() === year &&
+//            tennisSessionDate.getMonth() + 1 === month &&
+//            tennisSessionDate.getDate() === day;
+//   });
+// }
+
 function buildCalendar() {
   /** Adds the days to the calendar. */
 
@@ -81,6 +96,7 @@ function buildCalendar() {
 
   // Adding the next month days.
   for (let i = 1; i <= nextDays; i++) {
+    // Checking whether the date has a session scheduled for a particular user.
     days += `<div class="day next-date">${i}</div>`;
   }
 
