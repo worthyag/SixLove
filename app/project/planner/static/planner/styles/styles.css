@@ -173,4 +173,54 @@ a {
 }
 .calendar-section .calendar .days .active.tennis-session::after {
   background-color: #FFFFFF;
+}
+.calendar-section .calendar .selectDate-today {
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 16px;
+  margin: 20px 0;
+  color: #A992FA;
+}
+.calendar-section .calendar .selectDate-today .selectDate {
+  display: flex;
+  box-sizing: border-box;
+  justify-content: center;
+  border: 1px solid #ee7d2c;
+  border-radius: 8px;
+}
+.calendar-section .calendar .selectDate-today .selectDate input {
+  background-color: rgba(255, 255, 255, 0);
+  height: 40px;
+  padding: 0 16px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+.calendar-section .calendar .selectDate-today .selectDate button {
+  height: 40px;
+  margin: 0;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  background-color: #ee7d2c;
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+.calendar-section .calendar .selectDate-today .selectDate button:hover {
+  color: #ee7d2c;
+  background-color: rgba(255, 255, 255, 0);
+  border-left: 1px solid #ee7d2c;
+}
+.calendar-section .calendar .selectDate-today .today-btn {
+  height: 40px;
+  background-color: #ee7d2c;
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+.calendar-section .calendar .selectDate-today .today-btn:hover {
+  color: #ee7d2c;
+  background-color: rgba(255, 255, 255, 0);
+  border: 1px solid #ee7d2c;
 }/*# sourceMappingURL=styles.css.map */

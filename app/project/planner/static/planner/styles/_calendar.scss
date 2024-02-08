@@ -130,5 +130,65 @@
         }
       }
     }
+
+    .selectDate-today {
+      width: 100%;
+      // height: 50px;
+      box-sizing: border-box;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 8px 16px;
+      margin: 20px 0;
+      color: $brand-colour;
+
+      .selectDate {
+        display: flex;
+        box-sizing: border-box;
+        justify-content: center;
+        border: 1px solid $orange;
+        border-radius: 8px;
+
+        input {
+          background-color: #ffffff00;
+          height: 40px;
+          padding: 0 16px;
+          outline: none;
+          border: none;
+          cursor: pointer;
+        }
+
+        button {
+          height: 40px;
+          margin: 0;
+          border-top-left-radius: 0;
+          border-bottom-left-radius: 0;
+
+          background-color: $orange;
+          font-size: 1rem;
+          text-transform: uppercase;
+
+          &:hover {
+            color: $orange;
+            background-color: #ffffff00;
+            border-left: 1px solid $orange;
+          }
+        }
+      }
+
+      .today-btn {
+        height: 40px;
+        background-color: $orange;
+        font-size: 1rem;
+        text-transform: uppercase;
+
+        &:hover {
+          color: $orange;
+          background-color: #ffffff00;
+          border: 1px solid $orange;
+        }
+      }
+    }
   }
 }
