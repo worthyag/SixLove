@@ -79,6 +79,7 @@ a {
 .calendar-section .calendar {
   background-color: #FFFFFF;
   border-radius: 8px;
+  padding: 48px;
 }
 .calendar-section .calendar .month {
   display: flex;
@@ -95,7 +96,7 @@ a {
   text-transform: capitalize;
 }
 .calendar-section .calendar .month i, .calendar-section .calendar .month .prev, .calendar-section .calendar .month .next {
-  color: #A992FA;
+  color: #b0b0b0;
   font-size: 1.1rem;
   cursor: pointer;
 }
@@ -106,6 +107,7 @@ a {
   text-transform: capitalize;
   font-weight: 500;
   font-size: 1rem;
+  color: #b0b0b0;
 }
 .calendar-section .calendar .weekdays div {
   width: 14.2857142857%;
@@ -116,4 +118,20 @@ a {
 }
 .calendar-section .calendar .days {
   display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  font-weight: 500;
+  font-size: 1.3rem;
+  color: #656468;
+}
+.calendar-section .calendar .days .day {
+  width: 14.2857142857%;
+  height: 100px;
+  box-sizing: border-box;
+  border: 1px solid #e9e6e6;
+  color: #A992FA;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
 }/*# sourceMappingURL=styles.css.map */

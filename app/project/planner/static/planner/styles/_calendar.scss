@@ -9,6 +9,7 @@
   .calendar {
     background-color: $white;
     border-radius: 8px;
+    padding: 48px;
 
     .month {
       display: flex;
@@ -27,7 +28,7 @@
       }
 
       i, .prev, .next {
-        color: $brand-colour;
+        color: $white-grey;
         font-size: 1.1rem;
         cursor: pointer;
       }
@@ -41,6 +42,7 @@
       text-transform: capitalize;
       font-weight: 500;
       font-size: 1rem;
+      color: $white-grey;
 
       div {
         width: calc(100%/7);
@@ -54,6 +56,26 @@
 
     .days {
       display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+
+      font-weight: 500;
+      font-size: 1.3rem;
+      color: $light-grey;
+
+      .day {
+        width: calc(100%/7);
+        height: 100px;
+
+        box-sizing: border-box;
+        border: 1px solid #e9e6e6;
+        color: $brand-colour;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+      }
     }
   }
 }
