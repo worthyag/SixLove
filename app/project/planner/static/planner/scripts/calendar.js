@@ -8,6 +8,9 @@ const daysDiv = document.querySelector(".days");
 
 const prevBtn = document.querySelector(".prev-btn");
 const nextBtn = document.querySelector(".next-btn");
+const todayBtn = document.querySelector(".today-btn");
+const selectDateBtn = document.querySelector(".selectDate-btn");
+const datePicker = document.querySelector("#selectDatePicker");
 
 let today = new Date();
 let activeDay;
@@ -105,8 +108,16 @@ function nextMonth() {
 }
 
 // Adding event listeners to the prevBtn and nextBtn.
-prevBtn.addEventListener('click', prevMonth);
-nextBtn.addEventListener('click', nextMonth);
+prevBtn.addEventListener("click", prevMonth);
+nextBtn.addEventListener("click", nextMonth);
+
+// Today btn functionality.
+todayBtn.addEventListener("click", () => {
+  today = new Date();
+  year = today.getFullYear();
+  month = today.getMonth();
+  buildCalendar();
+});
 
 
 // TODO: Turn these functions into a class, with the calendar variable as an attribute.
