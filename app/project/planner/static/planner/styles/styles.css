@@ -98,4 +98,22 @@ a {
   color: #A992FA;
   font-size: 1.1rem;
   cursor: pointer;
+}
+.calendar-section .calendar .weekdays {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-transform: capitalize;
+  font-weight: 500;
+  font-size: 1rem;
+}
+.calendar-section .calendar .weekdays div {
+  width: 14.2857142857%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.calendar-section .calendar .days {
+  display: flex;
 }/*# sourceMappingURL=styles.css.map */

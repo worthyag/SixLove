@@ -9,9 +9,9 @@
 {% block content %}
 <main>
   <h2>Calendar</h2>
-  <a href="{% url 'tennis:tennis' %}"
+  <!-- <a href="{% url 'tennis:tennis' %}"
     ><button class="view-tennis-sessions-btn">View Tennis Sessions</button></a
-  >
+  > -->
 
   <section class="calendar-section">
     <div class="undecided">
@@ -20,6 +20,24 @@
           <span class="prev"><i class="fas fa-chevron-left"></i></span>
           <div class="date">February 2024</div>
           <span class="next"><i class="fas fa-chevron-right"></i></span>
+        </div>
+        <div class="weekdays">
+          <div>mon</div>
+          <div>tue</div>
+          <div>wed</div>
+          <div>thu</div>
+          <div>fri</div>
+          <div>sat</div>
+          <div>sun</div>
+        </div>
+        <div class="days">
+          <div class="day">1</div>
+          <div class="day">2</div>
+          <div class="day">3</div>
+          <div class="day">4</div>
+          <div class="day">5</div>
+          <div class="day">6</div>
+          <div class="day">7</div>
         </div>
       </div>
     </div>

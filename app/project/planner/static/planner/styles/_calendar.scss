@@ -32,5 +32,28 @@
         cursor: pointer;
       }
     }
+
+    .weekdays {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      text-transform: capitalize;
+      font-weight: 500;
+      font-size: 1rem;
+
+      div {
+        width: calc(100%/7);
+        height: 100%;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+
+    .days {
+      display: flex;
+    }
   }
 }
