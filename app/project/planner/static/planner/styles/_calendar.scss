@@ -93,12 +93,13 @@
 
       .today {
         font-size: 2.2rem;
+        background-color: crimson;
+        color: $white;
       }
 
       .active {
         @include calendarDayBox();
         font-size: 2.2rem;
-        box-shadow: 0 0 8px 1px $brand-colour;
       }
 
       .tennis-session {
@@ -115,7 +116,7 @@
           transform: translateX(-50%);
           border-radius: 8px;
 
-          background-color: $brand-colour;
+          background-color: $green;
         }
       }
     }

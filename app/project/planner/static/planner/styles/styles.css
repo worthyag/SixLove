@@ -146,12 +146,13 @@ a {
 }
 .calendar-section .calendar .days .today {
   font-size: 2.2rem;
+  background-color: crimson;
+  color: #FFFFFF;
 }
 .calendar-section .calendar .days .active {
   color: #FFFFFF;
   background-color: #A992FA;
   font-size: 2.2rem;
-  box-shadow: 0 0 8px 1px #A992FA;
 }
 .calendar-section .calendar .days .tennis-session {
   position: relative;
@@ -165,5 +166,5 @@ a {
   height: 12px;
   transform: translateX(-50%);
   border-radius: 8px;
-  background-color: #A992FA;
+  background-color: #32ca6f;
 }/*# sourceMappingURL=styles.css.map */
