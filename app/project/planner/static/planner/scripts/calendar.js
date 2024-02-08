@@ -1,28 +1,21 @@
-console.log("I am the calendar.js file.");
-
-const calendar = document.querySelector(".calendar");
-console.log(calendar);
-
 function print(x) {
   console.log(x);
 }
 
-// TODO: Turn these functions into a class, with the calendar variable as an attribute.
+const calendar = document.querySelector(".calendar");
+const date = document.querySelector(".date");
+const daysDiv = document.querySelector(".days");
 
+const prevBtn = document.querySelector(".prev-btn");
+const nextBtn = document.querySelector(".next-btn");
 
-function getDayOfWeek(day) {
-  const daysOfWeek = {
-    1: "Monday",
-    2: "Tuesday",
-    3: "Wednesday",
-    4: "Thursday",
-    5: "Friday",
-    6: "Saturday",
-    7: "Sunday"
-  };
+let today = new Date();
+let activeDay;
+let year = today.getFullYear();
+let month = today.getMonth();
 
-  return [day, daysOfWeek[day]];
-}
+print(year);
+print(month);
 
 function getMonth(month) {
   month = month + 1;
@@ -42,7 +35,43 @@ function getMonth(month) {
     12: "December",
   };
 
-  return [month, months[month]];
+  return [month - 1, months[month]];
+}
+
+function buildCalendar() {
+  /** Adds the days to the calendar. */
+
+  // Getting info about the previous and current month days.
+  const currentFirstDay = new Date(year, month, 1);
+  const currentLastDay = new Date(year, month + 1, 0);
+  const prevLastDay = new Date(year, month, 0);
+
+  const prevTotalDays = prevLastDay.getDate();
+  const currentTotalDays = currentLastDay.getDate();
+  const day = currentFirstDay.getDate();
+  const nextDays = 7 - currentLastDay.getDay();
+
+  // Updating the date.
+  date.textContent = `${getMonth(month)[1]} ${year}`;
+}
+
+
+
+// TODO: Turn these functions into a class, with the calendar variable as an attribute.
+
+
+function getDayOfWeek(day) {
+  const daysOfWeek = {
+    1: "Monday",
+    2: "Tuesday",
+    3: "Wednesday",
+    4: "Thursday",
+    5: "Friday",
+    6: "Saturday",
+    7: "Sunday"
+  };
+
+  return [day, daysOfWeek[day]];
 }
 
 function getDateInfo(date) {
@@ -91,7 +120,7 @@ function getNumberOfDays(month, year) {
     return months[month][0]
 }
 
-function buildCalendar(date = "today") {
+function buildCalendar2(date = "today") {
   const today = new Date();
   let date_info = "";
 
@@ -136,4 +165,4 @@ function buildCalendar(date = "today") {
   calendar.appendChild(calendarDiv);
 }
 
-// buildCalendar();
+buildCalendar();
