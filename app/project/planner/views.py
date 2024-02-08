@@ -16,16 +16,15 @@ from tennis import models as TennisModels
 @login_required
 def calendar(request, year=None, month=None):
     """"""
-    # tennis_sessions = TennisModels.TennisSession.objects.filter(
-    #     user=request.user
-    # )
-
+    tennis_sessions = TennisModels.TennisSession.objects.filter(
+        user=request.user
+    )
 
     return render(
         request,
         "./planner/calendar.html",
         {
             "title": "Calendar",
-            # 'tennis_sessions': tennis_sessions
+            'tennis_sessions': tennis_sessions
         }
     )

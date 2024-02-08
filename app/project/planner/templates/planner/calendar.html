@@ -1,8 +1,5 @@
 {% extends './base.html' %}
 {% load static %}
-{% block extra_styles %}
-<link rel="stylesheet" href="{% static './planner/styles/styles.css' %}">
-{% endblock %}
 {% block scripts %}
 <script src="{% static './planner/scripts/calendar.js' %}" defer></script>
 {% endblock %}
@@ -13,13 +10,7 @@
     ><button class="view-tennis-sessions-btn">View Tennis Sessions</button></a
   >
 
-  <section class="calendar">{{ calendar }}</section>
-
-  {% comment %}
-  <a href="{% url 'planner:calendar' year=prev_year month=prev_month %}">&lt;</a>
-  <span>{{ calendar }}</span>
-  <a href="{% url 'planner:calendar' year=next_year month=next_month %}">&gt;</a>
-  {% endcomment %}
+  <section class="calendar">{{ tennis_sessions }}</section>
 
 </main>
 {% endblock %}
