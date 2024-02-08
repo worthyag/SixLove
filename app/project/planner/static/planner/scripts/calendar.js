@@ -53,6 +53,16 @@ function buildCalendar() {
 
   // Updating the date.
   date.textContent = `${getMonth(month)[1]} ${year}`;
+
+  // Adding the days to the DOM.
+  let days = "";
+
+  // Adding the previous month days.
+  for (let i = day; i > 0; i--) {
+    days += `<div class="day prev-date">${prevTotalDays - i + 1}</div>`;
+  }
+
+  daysDiv.innerHTML = days;
 }
 
 
