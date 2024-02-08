@@ -1,27 +1,31 @@
 .calendar-section {
-  background-color: $dark-grey;
+  // background-color: $dark-grey;
+  // background-color: #f4f4f4;
   border-radius: 8px;
 
   box-sizing: border-box;
   // width: 500px;
-  padding: 48px;
+  padding: 8px;
 
   .calendar {
+    border: 1px solid #00000023;
     background-color: $white;
     border-radius: 8px;
-    padding: 48px;
+    padding: 8px;
+    box-shadow: 4px 4px 4px #00000027;
 
     .month {
       display: flex;
       justify-content: center;
       align-items: center;
+      text-align: center;
       gap: 16px;
 
       height: 100px;
       padding: 8px;
 
       .date {
-        font-size: 2rem;
+        font-size: 1.8rem;
         font-weight: bold;
         color: $dark-grey;
         text-transform: capitalize;
@@ -75,6 +79,44 @@
         justify-content: center;
         align-items: center;
         cursor: pointer;
+
+        &:not(.prev-date, .next-date) {
+          &:hover {
+            @include calendarDayBox();
+          }
+        }
+      }
+
+      .prev-date, .next-date {
+        color: $disabled;
+      }
+
+      .today {
+        font-size: 2.2rem;
+      }
+
+      .active {
+        @include calendarDayBox();
+        font-size: 2.2rem;
+        box-shadow: 0 0 8px 1px $brand-colour;
+      }
+
+      .tennis-session {
+        position: relative;
+
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: 10%;
+          left: 50%;
+
+          width: 75%;
+          height: 12px;
+          transform: translateX(-50%);
+          border-radius: 8px;
+
+          background-color: $brand-colour;
+        }
       }
     }
   }

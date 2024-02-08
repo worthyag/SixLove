@@ -1,5 +1,5 @@
 main {
-  padding: 16px 32px;
+  padding: 12px 16px;
 }
 
 .view-tennis-sessions-btn {
@@ -71,32 +71,34 @@ a {
   }
 }
 .calendar-section {
-  background-color: #3D3D3D;
   border-radius: 8px;
   box-sizing: border-box;
-  padding: 48px;
+  padding: 8px;
 }
 .calendar-section .calendar {
+  border: 1px solid rgba(0, 0, 0, 0.137254902);
   background-color: #FFFFFF;
   border-radius: 8px;
-  padding: 48px;
+  padding: 8px;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.1529411765);
 }
 .calendar-section .calendar .month {
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
   gap: 16px;
   height: 100px;
   padding: 8px;
 }
 .calendar-section .calendar .month .date {
-  font-size: 2rem;
+  font-size: 1.8rem;
   font-weight: bold;
   color: #3D3D3D;
   text-transform: capitalize;
 }
 .calendar-section .calendar .month i, .calendar-section .calendar .month .prev, .calendar-section .calendar .month .next {
-  color: #b0b0b0;
+  color: #8F8E8E;
   font-size: 1.1rem;
   cursor: pointer;
 }
@@ -107,7 +109,7 @@ a {
   text-transform: capitalize;
   font-weight: 500;
   font-size: 1rem;
-  color: #b0b0b0;
+  color: #8F8E8E;
 }
 .calendar-section .calendar .weekdays div {
   width: 14.2857142857%;
@@ -134,4 +136,34 @@ a {
   justify-content: center;
   align-items: center;
   cursor: pointer;
+}
+.calendar-section .calendar .days .day:not(.prev-date, .next-date):hover {
+  color: #FFFFFF;
+  background-color: #A992FA;
+}
+.calendar-section .calendar .days .prev-date, .calendar-section .calendar .days .next-date {
+  color: #B3B3B3;
+}
+.calendar-section .calendar .days .today {
+  font-size: 2.2rem;
+}
+.calendar-section .calendar .days .active {
+  color: #FFFFFF;
+  background-color: #A992FA;
+  font-size: 2.2rem;
+  box-shadow: 0 0 8px 1px #A992FA;
+}
+.calendar-section .calendar .days .tennis-session {
+  position: relative;
+}
+.calendar-section .calendar .days .tennis-session::after {
+  content: "";
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  width: 75%;
+  height: 12px;
+  transform: translateX(-50%);
+  border-radius: 8px;
+  background-color: #A992FA;
 }/*# sourceMappingURL=styles.css.map */
