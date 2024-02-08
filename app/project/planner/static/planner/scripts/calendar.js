@@ -48,7 +48,7 @@ function buildCalendar() {
 
   const prevTotalDays = prevLastDay.getDate();
   const currentTotalDays = currentLastDay.getDate();
-  const day = currentFirstDay.getDate();
+  const day = currentFirstDay.getDay() - 1;
   const nextDays = 7 - currentLastDay.getDay();
 
   // Updating the date.
@@ -60,6 +60,22 @@ function buildCalendar() {
   // Adding the previous month days.
   for (let i = day; i > 0; i--) {
     days += `<div class="day prev-date">${prevTotalDays - i + 1}</div>`;
+  }
+
+  // Adding the current month days.
+  for (let i = 1; i <= currentTotalDays; i++) {
+    // If the day is the current day, add the today class.
+    if ((i === new Date().getDate()) && (year === new Date().getFullYear()) && 
+        (month === new Date().getMonth()))
+          days += `<div class="day today">${i}</div>`;
+    else
+      days += `<div class="day">${i}</div>`;
+
+  }
+
+  // Adding the next month days.
+  for (let i = 1; i <= nextDays; i++) {
+    days += `<div class="day next-date">${i}</div>`;
   }
 
   daysDiv.innerHTML = days;
