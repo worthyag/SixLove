@@ -131,7 +131,7 @@ a {
   height: 100px;
   box-sizing: border-box;
   border: 1px solid #e9e6e6;
-  color: #A992FA;
+  color: #578DDD;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -139,7 +139,7 @@ a {
 }
 .calendar-section .calendar .days .day:not(.prev-date, .next-date):hover {
   color: #FFFFFF;
-  background-color: #A992FA;
+  background-color: #578DDD;
 }
 .calendar-section .calendar .days .prev-date, .calendar-section .calendar .days .next-date {
   color: #B3B3B3;
@@ -151,7 +151,7 @@ a {
 }
 .calendar-section .calendar .days .active {
   color: #FFFFFF;
-  background-color: #A992FA;
+  background-color: #578DDD;
   font-size: 2.2rem;
 }
 .calendar-section .calendar .days .tennis-session {
@@ -182,7 +182,7 @@ a {
   justify-content: space-between;
   padding: 8px 16px;
   margin: 20px 0;
-  color: #A992FA;
+  color: #578DDD;
 }
 .calendar-section .calendar .selectDate-today .selectDate {
   display: flex;
@@ -193,11 +193,16 @@ a {
 }
 .calendar-section .calendar .selectDate-today .selectDate input {
   background-color: rgba(255, 255, 255, 0);
+  font-weight: bold;
   height: 40px;
   padding: 0 16px;
   outline: none;
   border: none;
   cursor: pointer;
+}
+.calendar-section .calendar .selectDate-today .selectDate input:hover {
+  background-color: #ee7d2c;
+  color: #FFFFFF;
 }
 .calendar-section .calendar .selectDate-today .selectDate button {
   height: 40px;

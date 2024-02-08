@@ -17,6 +17,12 @@ let activeDay;
 let year = today.getFullYear();
 let month = today.getMonth();
 
+// Setting the date picker to begin with.
+let monthDatePicker = (month >= 9) ? month + 1 : `0${month + 1}`;
+parseInt(datePicker.value.slice(5, 7)) - 1;
+datePicker.value = `${year}-${monthDatePicker}`;
+
+
 function getMonth(month) {
   month = month + 1;
 
@@ -118,6 +124,13 @@ todayBtn.addEventListener("click", () => {
   month = today.getMonth();
   buildCalendar();
 });
+
+// Select date functionality.
+datePicker.addEventListener("change", (e) => {
+  year = parseInt(datePicker.value.slice(0, 4));
+  month = parseInt(datePicker.value.slice(5, 7)) - 1;
+  buildCalendar();
+})
 
 
 // TODO: Turn these functions into a class, with the calendar variable as an attribute.

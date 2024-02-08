@@ -152,11 +152,18 @@
 
         input {
           background-color: #ffffff00;
+          font-weight: bold;
           height: 40px;
           padding: 0 16px;
           outline: none;
           border: none;
           cursor: pointer;
+
+          &:hover {
+            background-color: $orange;
+            color: $white;
+            
+          }
         }
 
         button {
