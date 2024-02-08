@@ -69,4 +69,33 @@ a {
     flex-direction: column;
     align-items: center;
   }
+}
+.calendar-section {
+  background-color: #3D3D3D;
+  border-radius: 8px;
+  box-sizing: border-box;
+  padding: 48px;
+}
+.calendar-section .calendar {
+  background-color: #FFFFFF;
+  border-radius: 8px;
+}
+.calendar-section .calendar .month {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  height: 100px;
+  padding: 8px;
+}
+.calendar-section .calendar .month .date {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #3D3D3D;
+  text-transform: capitalize;
+}
+.calendar-section .calendar .month i, .calendar-section .calendar .month .prev, .calendar-section .calendar .month .next {
+  color: #A992FA;
+  font-size: 1.1rem;
+  cursor: pointer;
 }/*# sourceMappingURL=styles.css.map */

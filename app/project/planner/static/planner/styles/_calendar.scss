@@ -1,0 +1,36 @@
+.calendar-section {
+  background-color: $dark-grey;
+  border-radius: 8px;
+
+  box-sizing: border-box;
+  // width: 500px;
+  padding: 48px;
+
+  .calendar {
+    background-color: $white;
+    border-radius: 8px;
+
+    .month {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 16px;
+
+      height: 100px;
+      padding: 8px;
+
+      .date {
+        font-size: 2rem;
+        font-weight: bold;
+        color: $dark-grey;
+        text-transform: capitalize;
+      }
+
+      i, .prev, .next {
+        color: $brand-colour;
+        font-size: 1.1rem;
+        cursor: pointer;
+      }
+    }
+  }
+}
