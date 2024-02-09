@@ -4,7 +4,8 @@ from django.shortcuts import render
 
 
 def connect(request):
-    render(
+    """"""
+    return render(
         request,
         "./community/connect.html",
         {
