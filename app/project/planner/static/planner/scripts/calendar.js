@@ -179,6 +179,13 @@ datePicker.addEventListener("change", (e) => {
   buildCalendar();
 })
 
+function addCloseBtn() {
+  const closeBtn = document.createElement('button');
+  closeBtn.textContent = "Close"
+  closeBtn.addEventListener('click', () => closeSidePanel());
+  sidePanel.appendChild(closeBtn);
+}
+
 function showSidePanel(day) {
   const sidePanel = document.querySelector("#sidePanel");
   sidePanel.innerHTML = ''; // Clear previous content
@@ -194,9 +201,16 @@ function showSidePanel(day) {
   });
 
   if (sessionsForDay.length === 0) {
+    addCloseBtn()
+
     // No tennis sessions scheduled
-    sidePanel.innerHTML = '<p>No tennis sessions scheduled.</p>';
-  } else {
+    const sessionP = document.createElement('p');
+    sessionP.textContent = "No tennis sessions scheduled.";
+    sidePanel.appendChild(sessionP);
+  } 
+  else {
+    addCloseBtn()
+
     // Display tennis session info in the side panel
     sessionsForDay.forEach(session => {
       const sessionDiv = document.createElement('div');
@@ -214,6 +228,11 @@ function showSidePanel(day) {
 
   // Show the side panel
   sidePanel.style.display = 'block';
+}
+
+function closeSidePanel() {
+  // Hide the side panel
+  sidePanel.style.display = 'none';
 }
 
 function editSession(sessionId) {
