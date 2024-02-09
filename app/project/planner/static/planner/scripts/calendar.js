@@ -229,10 +229,10 @@ function showSidePanel(day) {
       sessionDiv.innerHTML = `
         <p><span>Title</span>: ${session.title}</p>
         <p><span>Date</span>: ${getMonth(session.date.getMonth())[1]} ${session.date.getDate()}, ${session.date.getFullYear()} </p>
-        <p>Notes</span>: ${session.notes}</p>
+        <p><span>Notes</span>: ${session.notes}</p>
         <p><span>Completed</span>: ${session.isCompleted ? 'Yes' : 'No'}</p>
-        <button onclick="editSession(${session.id})">Edit</button>
-        <button onclick="deleteSession(${session.id}, '${session.title}')">Delete</button>
+        <button class="edit-session-btn" onclick="editSession(${session.id})">Edit</button>
+        <button class="delete-session-btn" onclick="deleteSession(${session.id}, '${session.title}')">Delete</button>
       `;
 
       sidePanel.appendChild(sessionDiv);

@@ -48,8 +48,8 @@
     <p><span>Notes: </span>{{ session.notes }}</p>
     <p><span>Date: </span>{{ session.date }}</p>
     <p><span>is completed: </span>{{ session.is_completed }}</p>
-    <a href="{{ session.id }}/edit"><button>Edit Session</button></a>
-    <a href="{{ session.id }}/delete"><button>Delete Session</button></a>
+    <a href="{{ session.id }}/edit"><button class="edit-btn">Edit Session</button></a>
+    <a href="{{ session.id }}/delete"><button class="delete-btn">Delete Session</button></a>
   </div>
   {% endfor %}
   {% else %}
@@ -73,8 +73,8 @@
     <p><span>Notes: </span>{{ session.notes }}</p>
     <p><span>Date: </span>{{ session.date }}</p>
     <p><span>is completed: </span>{{ session.is_completed }}</p>
-    <a href="{{ session.id }}/edit"><button>Edit Session</button></a>
-    <a href="{{ session.id }}/delete"><button>Delete Session</button></a>
+    <a href="{{ session.id }}/edit"><button class="edit-btn">Edit Session</button></a>
+    <a href="{{ session.id }}/delete"><button class="delete-btn">Delete Session</button></a>
   </div>
   {% endfor %}
   {% else %}
@@ -89,7 +89,7 @@
     <p><span>Notes: </span>{{ session.notes }}</p>
     <p><span>Date: </span>{{ session.date }}</p>
     <p><span>is completed: </span>{{ session.is_completed }}</p>
-    <a href="{{ session.id }}/edit"><button>Edit Session</button></a>
+    <a href="{{ session.id }}/edit"><button class="edit-btn">Edit Session</button></a>
   </div>
   {% endfor %}
   {% else %}
