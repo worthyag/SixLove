@@ -107,43 +107,14 @@ function buildCalendar() {
 
 
   // Adding the previous month days.
-  // for (let i = day; i > 0; i--) {
-  //   tennisSessions.forEach(session => {
-  //     if (tennisSessionScheduled(new Date(year, month, prevTotalDays - i + 1), session)) {
-  //       days += `<div class="day prev-date tennis-session">${prevTotalDays - i + 1}</div>`;
-  //     }
-  //     else {
-  //       days += `<div class="day prev-date">${prevTotalDays - i + 1}</div>`;
-  //     }
-  //   });
-  // }
-
   for (let i = day; i > 0; i--) {
-    const currentDate = new Date(year, month, prevTotalDays - i + 1);
-    const hasSession = hasTennisSession(currentDate);
-    days += `<div class="day prev-date ${hasSession ? 'tennis-session' : ''}">${prevTotalDays - i + 1}</div>`;
+    // const currentDate = new Date(year, month, prevTotalDays - i + 1);
+    // const hasSession = hasTennisSession(currentDate);
+    // days += `<div class="day prev-date ${hasSession ? 'tennis-session' : ''}">${prevTotalDays - i + 1}</div>`;
+    days += `<div class="day prev-date">${prevTotalDays - i + 1}</div>`;
   }
 
   // Adding the current month days.
-  // for (let i = 1; i <= currentTotalDays; i++) {
-  //   tennisSessions.forEach(session => {
-  //     // If the day is the current day, add the today class.
-  //     if ((i === new Date().getDate()) && (year === new Date().getFullYear()) && 
-  //         (month === new Date().getMonth())) {
-  //           if (tennisSessionScheduled(new Date(year, month, i), session)) {
-  //             days += `<div class="day today tennis-session">${i}</div>`;
-  //           }
-  //           else {
-  //             days += `<div class="day today">${i}</div>`;
-  //           }
-  //         }
-  //     else {
-  //       days += `<div class="day">${i}</div>`;
-  //     }
-  //   });
-
-  // }
-
   for (let i = 1; i <= currentTotalDays; i++) {
     const currentDate = new Date(year, month, i);
     const hasSession = hasTennisSession(currentDate);
@@ -152,22 +123,11 @@ function buildCalendar() {
   }
 
   // Adding the next month days.
-  // for (let i = 1; i <= nextDays; i++) {
-  //   tennisSessions.forEach(session => {
-  //     // Checking whether the date has a session scheduled for a particular user.
-  //     if (tennisSessionScheduled(new Date(year, month, i), session)) {
-  //       days += `<div class="day next-date tennis-session">${i}</div>`;
-  //     }
-  //     else {
-  //       days += `<div class="day next-date">${i}</div>`;
-  //     }
-  //   });
-  // }
-
   for (let i = 1; i <= nextDays; i++) {
-    const currentDate = new Date(year, month + 1, i);
-    const hasSession = hasTennisSession(currentDate);
-    days += `<div class="day next-date ${hasSession ? 'tennis-session' : ''}">${i}</div>`;
+    // const currentDate = new Date(year, month + 1, i);
+    // const hasSession = hasTennisSession(currentDate);
+    // days += `<div class="day next-date ${hasSession ? 'tennis-session' : ''}">${i}</div>`;
+    days += `<div class="day next-date">${i}</div>`;
   }
 
   daysDiv.innerHTML = days;

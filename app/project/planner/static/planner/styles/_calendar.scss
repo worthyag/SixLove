@@ -89,6 +89,7 @@
 
       .prev-date, .next-date {
         color: $disabled;
+        cursor: default;
       }
 
       .today {
