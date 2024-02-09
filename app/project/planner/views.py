@@ -48,7 +48,15 @@ def calendar(request):
             else:
                 return HttpResponseBadRequest("Invalid form data")
         else:
-            print("Add form logic")
+            form = TennisForms.TennisSessionForm(request.POST)
+
+            if form.is_valid():
+                session = form.save(commit=False)
+                session.user = request.user
+                session.save()
+                return redirect("planner:calendar")
+            else:
+                return HttpResponseBadRequest("Invalid form data")
     else:
         # Initialising a new form.
         form = TennisForms.TennisSessionForm()

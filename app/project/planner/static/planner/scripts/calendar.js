@@ -186,10 +186,10 @@ function addCloseBtn() {
   sidePanel.appendChild(closeBtn);
 }
 
-function addAddSessionBtn() {
+function addAddSessionBtn(day) {
   const addSessionBtn = document.createElement('button');
   addSessionBtn.textContent = "Add New Tennis Session"
-  addSessionBtn.addEventListener('click', () => addSession());
+  addSessionBtn.addEventListener('click', () => addSession(day));
   sidePanel.appendChild(addSessionBtn);
 }
 
@@ -215,7 +215,7 @@ function showSidePanel(day) {
     sessionP.textContent = "No tennis sessions scheduled.";
     sidePanel.appendChild(sessionP);
 
-    addAddSessionBtn();
+    addAddSessionBtn(day);
   } 
   else {
     addCloseBtn();
@@ -228,12 +228,12 @@ function showSidePanel(day) {
         <p>Date: ${getMonth(session.date.getMonth())[1]} ${session.date.getDate()}, ${session.date.getFullYear()} </p>
         <p>Notes: ${session.notes}</p>
         <p>Completed: ${session.isCompleted ? 'Yes' : 'No'}</p>
-        <button onclick="openEditModal(${session.id})">Edit</button>
+        <button onclick="editSession(${session.id})">Edit</button>
         <button onclick="deleteSession(${session.id})">Delete</button>
       `;
       sidePanel.appendChild(sessionDiv);
 
-      addAddSessionBtn()
+      addAddSessionBtn(day)
     });
   }
 
@@ -259,12 +259,7 @@ function closeSidePanel() {
 
 // }
 
-function openAddModal() {
-  const modal = document.querySelector("#addModal");
-  modal.style.display = "block";
-}
-
-function openEditModal(sessionId) {
+function editSession(sessionId) {
   const modal = document.querySelector("#editModal");
   // const content = document.querySelector("#modalContent");
   const sessionIdInput = document.querySelector("#session-id");
@@ -272,7 +267,7 @@ function openEditModal(sessionId) {
 
   const titleInput = document.querySelector("#id_title");
   const notesInput = document.querySelector("#id_notes");
-  const dateInput = document.querySelector("#id_date");
+  const dateInput = document.querySelectorAll("#id_date");
   const isCompletedInput = document.querySelector("#id_is_completed");
 
   print(titleInput);
@@ -291,7 +286,11 @@ function openEditModal(sessionId) {
 
       // Create the formatted date string
       const formattedDate = `${year}-${month}-${day}`;
-      dateInput.value = formattedDate;
+
+      dateInput.forEach(input => {
+        input.value = formattedDate;
+      });
+      // dateInput.value = formattedDate;
 
       isCompletedInput.checked = session.isCompleted;
     }
@@ -311,13 +310,53 @@ function deleteSession(sessionId) {
   window.location.href = deleteUrl;
 }
 
-function addSession() {
-  // Implement the logic to open a form or modal for adding the session
-  console.log(`So you want to add a session`);
+// function addSession() {
+//   // Implement the logic to open a form or modal for adding the session
+//   console.log(`So you want to add a session`);
 
-  // Generate the URL for the tennis:add view
-  const addUrl = `../tennis/add/`;
+//   // Generate the URL for the tennis:add view
+//   const addUrl = `../tennis/add/`;
 
-  // Redirect the user to the add page
-  window.location.href = addUrl;
+//   // Redirect the user to the add page
+//   window.location.href = addUrl;
+// }
+
+function addSession(day) {
+  const modal = document.querySelector("#addModal");
+  const dateInput = document.querySelectorAll("#id_date");
+  const date = document.querySelector(".date");
+
+  const months = {
+    "January": 1,
+    "February": 2,
+    "March": 3,
+    "April": 4,
+    "May": 5,
+    "June": 6,
+    "July": 7,
+    "August": 8,
+    "September": 9,
+    "October": 10,
+    "November": 11,
+    "December": 12,
+  };
+
+  console.log(date);
+  console.log(date.textContent.split(" "));
+
+  const calDate = date.textContent.split(" ");
+  const calYear = parseInt(calDate[1]);
+  const calMonth = (months[calDate[0]]).toString().padStart(2, '0');
+  const calDay = day.toString().padStart(2, '0');
+
+
+  const formattedDate = `${calYear}-${calMonth}-${calDay}`;
+  // dateInput.value = formattedDate;
+  print(formattedDate);
+
+  dateInput.forEach(input => {
+    input.value = formattedDate;
+  });
+
+  modal.style.display = "block";
 }
