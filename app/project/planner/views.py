@@ -15,7 +15,7 @@ from tennis import forms as TennisForms
 
 
 @login_required
-def calendar(request, sessionId=None):
+def calendar(request):
     """"""
     tennis_sessions = TennisModels.TennisSession.objects.filter(
         user=request.user
@@ -29,7 +29,7 @@ def calendar(request, sessionId=None):
 
     if request.method == "POST":
         form = TennisForms.TennisSessionForm(request.POST,
-                                             instance=tennis_sessions.filter(id=sessionId))
+                                             instance=tennis_sessions.filter(request.POST["session-id"]))
 
         if form.is_valid():
             form.save()

@@ -135,6 +135,10 @@
         <form action="" method="post" novalidate>
           {% csrf_token %}
           {{ form.as_p }}
+          <div>
+            <label for="session-id">ID: </label>
+            <input type="text" name="session-id" id="session-id" value="X" disabled>
+          </div>
           <input class="btn" type="submit" value="Edit Tennis Session">
         </form>
       </div>

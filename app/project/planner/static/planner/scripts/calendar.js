@@ -225,7 +225,7 @@ function showSidePanel(day) {
       const sessionDiv = document.createElement('div');
       sessionDiv.innerHTML = `
         <p>Title: ${session.title}</p>
-        <p>Date: ${getMonth(session.date.getMonth() - 1)[1]} ${session.date.getDate()}, ${session.date.getFullYear()} </p>
+        <p>Date: ${getMonth(session.date.getMonth())[1]} ${session.date.getDate()}, ${session.date.getFullYear()} </p>
         <p>Notes: ${session.notes}</p>
         <p>Completed: ${session.isCompleted ? 'Yes' : 'No'}</p>
         <button onclick="openEditModal(${session.id})">Edit</button>
@@ -271,6 +271,36 @@ function openEditModal(sessionId) {
   //   });
   const modal = document.querySelector("#editModal");
   const content = document.querySelector("#modalContent");
+  const sessionIdInput = document.querySelector("#session-id");
+  sessionIdInput.value = sessionId;
+
+  const titleInput = document.querySelector("#id_title");
+  const notesInput = document.querySelector("#id_notes");
+  const dateInput = document.querySelector("#id_date");
+  const isCompletedInput = document.querySelector("#id_is_completed");
+
+  print(titleInput);
+  print(notesInput);
+  print(dateInput);
+  print(isCompletedInput);
+
+  tennisSessions.forEach(session => {
+    if (session.id === sessionId) {
+      titleInput.value = session.title;
+      notesInput.textContent = session.notes;
+
+      const year = session.date.getFullYear();
+      const month = (session.date.getMonth() + 1).toString().padStart(2, '0'); // Months are zero-based
+      const day = session.date.getDate().toString().padStart(2, '0');
+
+      // Create the formatted date string
+      const formattedDate = `${year}-${month}-${day}`;
+      dateInput.value = formattedDate;
+
+      isCompletedInput.checked = session.isCompleted;
+
+    }
+  });
 
   // editSession(sessionId);
 
