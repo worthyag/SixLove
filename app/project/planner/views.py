@@ -1,10 +1,12 @@
 from datetime import datetime, timedelta
 import json
 
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.utils import timezone
 from django.http import JsonResponse
+from django.http import HttpResponseBadRequest
+
 
 # from .utils import TennisCalendar
 
@@ -28,12 +30,22 @@ def calendar(request):
     json_data = json.dumps(tennis_sessions_data)
 
     if request.method == "POST":
+        print(request.POST)
+        try:
+            selected_session = get_object_or_404(TennisModels.TennisSession,
+                                                 id=int(
+                                                     request.POST["session-id"]),
+                                                 user=request.user)
+        except:
+            return HttpResponseBadRequest("Invalid request")
         form = TennisForms.TennisSessionForm(request.POST,
-                                             instance=tennis_sessions.filter(request.POST["session-id"]))
+                                             instance=selected_session)
 
         if form.is_valid():
             form.save()
             return redirect("planner:calendar")
+        else:
+            return HttpResponseBadRequest("Invalid form data")
     else:
         # Initialising a new form.
         form = TennisForms.TennisSessionForm()
