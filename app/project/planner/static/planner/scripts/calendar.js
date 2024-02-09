@@ -186,6 +186,13 @@ function addCloseBtn() {
   sidePanel.appendChild(closeBtn);
 }
 
+function addAddSessionBtn() {
+  const addSessionBtn = document.createElement('button');
+  addSessionBtn.textContent = "Add New Tennis Session"
+  addSessionBtn.addEventListener('click', () => addSession());
+  sidePanel.appendChild(addSessionBtn);
+}
+
 function showSidePanel(day) {
   const sidePanel = document.querySelector("#sidePanel");
   sidePanel.innerHTML = ''; // Clear previous content
@@ -201,15 +208,17 @@ function showSidePanel(day) {
   });
 
   if (sessionsForDay.length === 0) {
-    addCloseBtn()
+    addCloseBtn();
 
     // No tennis sessions scheduled
     const sessionP = document.createElement('p');
     sessionP.textContent = "No tennis sessions scheduled.";
     sidePanel.appendChild(sessionP);
+
+    addAddSessionBtn();
   } 
   else {
-    addCloseBtn()
+    addCloseBtn();
 
     // Display tennis session info in the side panel
     sessionsForDay.forEach(session => {
@@ -223,6 +232,8 @@ function showSidePanel(day) {
         <button onclick="deleteSession(${session.id})">Delete</button>
       `;
       sidePanel.appendChild(sessionDiv);
+
+      addAddSessionBtn()
     });
   }
 
@@ -243,4 +254,9 @@ function editSession(sessionId) {
 function deleteSession(sessionId) {
   // Implement the logic to delete the session
   console.log(`Delete session with ID ${sessionId}`);
+}
+
+function addSession() {
+   // Implement the logic to open a form or modal for adding the session
+   console.log(`So you want to add a session`);
 }
