@@ -228,7 +228,7 @@ function showSidePanel(day) {
         <p>Date: ${getMonth(session.date.getMonth() - 1)[1]} ${session.date.getDate()}, ${session.date.getFullYear()} </p>
         <p>Notes: ${session.notes}</p>
         <p>Completed: ${session.isCompleted ? 'Yes' : 'No'}</p>
-        <button onclick="editSession(${session.id})">Edit</button>
+        <button onclick="openEditModal(${session.id})">Edit</button>
         <button onclick="deleteSession(${session.id})">Delete</button>
       `;
       sidePanel.appendChild(sessionDiv);
@@ -255,6 +255,62 @@ function editSession(sessionId) {
 
   // Redirect the user to the edit page
   window.location.href = editUrl;
+
+}
+
+function openEditModal(sessionId) {
+  // Fetch the modal content, e.g., using AJAX
+  // For simplicity, let's assume you have an edit view that returns the form HTML
+  // fetch(`/tennis/${sessionId}/edit/`)
+  //   .then(response => response.text())
+  //   .then(data => {
+  //     document.getElementById("modalContent").innerHTML = data;
+  //     console.log(data);
+  //     document.getElementById("editModal").style.display = "flex";
+  //   });
+  const modal = document.querySelector("#editModal");
+  const content = document.querySelector("#modalContent");
+
+  tennisSessions.forEach(session => {
+    if (session.id === sessionId) {
+      console.log(`Session Id is ${sessionId}`);
+
+      const form = document.createElement("form");
+
+      // Title
+      const titleDiv = document.createElement("div");
+
+      const titleLabel = document.createElement("label");
+      titleLabel.textContent = "Title: ";
+
+      const titleInput = document.createElement("input");
+      titleInput.type = "text";
+      titleInput.value = session.title;
+
+      titleDiv.appendChild(titleLabel);
+      titleDiv.appendChild(titleInput);
+
+      form.appendChild(titleDiv);
+
+      // Notes
+      const notesDiv = document.createElement("div");
+
+      const notesLabel = document.createElement("label");
+      notesLabel.textContent = "Notes: ";
+
+      const notesInput = document.createElement("textArea");
+      notesInput.textContent = session.notes;
+
+      notesDiv.appendChild(notesLabel);
+      notesDiv.appendChild(notesInput);
+
+      form.appendChild(notesDiv);
+
+      content.appendChild(form);
+      modal.style.display = "block";
+    }
+  });
+
 
 }
 
