@@ -249,14 +249,33 @@ function closeSidePanel() {
 function editSession(sessionId) {
   // Implement the logic to open a form or modal for editing the session
   console.log(`Edit session with ID ${sessionId}`);
+  
+  // Generate the URL for the tennis:edit view
+  const editUrl = `../tennis/${sessionId}/edit/`;
+
+  // Redirect the user to the edit page
+  window.location.href = editUrl;
+
 }
 
 function deleteSession(sessionId) {
   // Implement the logic to delete the session
   console.log(`Delete session with ID ${sessionId}`);
+
+  // Generate the URL for the tennis:delete view
+  const deleteUrl = `../tennis/${sessionId}/delete/`;
+
+  // Redirect the user to the delete page
+  window.location.href = deleteUrl;
 }
 
 function addSession() {
-   // Implement the logic to open a form or modal for adding the session
-   console.log(`So you want to add a session`);
+  // Implement the logic to open a form or modal for adding the session
+  console.log(`So you want to add a session`);
+
+  // Generate the URL for the tennis:add view
+  const addUrl = `../tennis/add/`;
+
+  // Redirect the user to the add page
+  window.location.href = addUrl;
 }

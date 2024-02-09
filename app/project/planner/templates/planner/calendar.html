@@ -1,4 +1,6 @@
-{% extends './base.html' %} {% load static %} {% block extra_styles %}
+{% extends './base.html' %} 
+{% load static %} 
+{% block extra_styles %}
 <link
   rel="stylesheet"
   href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
@@ -6,9 +8,11 @@
   crossorigin="anonymous"
   referrerpolicy="no-referrer"
 />
-{% endblock %} {% block scripts %}
+{% endblock %} 
+{% block scripts %}
 <script src="{% static './planner/scripts/calendar.js' %}" defer></script>
-{% endblock %} {% block content %}
+{% endblock %} 
+{% block content %}
 <main>
   <!-- <h2>Calendar</h2> -->
   <!-- <a href="{% url 'tennis:tennis' %}"
