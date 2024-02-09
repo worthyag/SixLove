@@ -2,9 +2,33 @@ function print(x) {
   console.log(x);
 }
 
-// Accessing the tennis sessions data in JavaScript
-// const tennisSessions = JSON.parse('{{ tennis_sessions | safe }}');
-// print(tennisSessions);
+const tennisSessionsDiv = document.querySelector("#TennisSessions");
+
+let tennisSessions = JSON.parse(tennisSessionsDiv.innerHTML);
+
+
+tennisSessions.forEach(session => {
+  if (session.isCompleted === "False")
+    session.isCompleted = false;
+  else
+    session.isCompleted = true;
+
+  let dateParts = session.date.split("-");
+  session.date = new Date(dateParts[0], dateParts[1] - 1, dateParts[2]);
+});
+
+print(tennisSessions);
+
+// function tennisSessionScheduled(date, session) {
+//   if (`${date.getFullYear()}-${date.getMonth()}-${date.getDate()}` ===
+//    `${session.date.getFullYear()}-${session.date.getMonth()}-${session.date.getDate()}`) {
+//     return true;
+//   }
+//   else {
+//     return false;
+//   }
+// }
+
 
 const calendar = document.querySelector(".calendar");
 const date = document.querySelector(".date");
@@ -48,19 +72,10 @@ function getMonth(month) {
   return [month - 1, months[month]];
 }
 
-// function isTennisSessionScheduled(day, month, year) {
-//   // Checking if there is a tennis session scheduled for the given day
-//   tennisSessions.some(tennisSession => {
-//     const tennisSessionDate = new Date(tennisSession.date);
-
-//     return tennisSessionDate.getFullYear() === year &&
-//            tennisSessionDate.getMonth() + 1 === month &&
-//            tennisSessionDate.getDate() === day;
-//   });
-// }
 
 function buildCalendar() {
   /** Adds the days to the calendar. */
+  // print(tennisSessions);
 
   // Getting info about the previous and current month days.
   const currentFirstDay = new Date(year, month, 1);
@@ -78,26 +93,81 @@ function buildCalendar() {
   // Adding the days to the DOM.
   let days = "";
 
+  // Function to check if a date has a tennis session
+  function hasTennisSession(date) {
+    return tennisSessions.some(session => {
+      const sessionDate = new Date(session.date);
+      return (
+        date.getFullYear() === sessionDate.getFullYear() &&
+        date.getMonth() === sessionDate.getMonth() &&
+        date.getDate() === sessionDate.getDate()
+      );
+    });
+  }
+
+
   // Adding the previous month days.
+  // for (let i = day; i > 0; i--) {
+  //   tennisSessions.forEach(session => {
+  //     if (tennisSessionScheduled(new Date(year, month, prevTotalDays - i + 1), session)) {
+  //       days += `<div class="day prev-date tennis-session">${prevTotalDays - i + 1}</div>`;
+  //     }
+  //     else {
+  //       days += `<div class="day prev-date">${prevTotalDays - i + 1}</div>`;
+  //     }
+  //   });
+  // }
+
   for (let i = day; i > 0; i--) {
-    days += `<div class="day prev-date">${prevTotalDays - i + 1}</div>`;
+    const currentDate = new Date(year, month, prevTotalDays - i + 1);
+    const hasSession = hasTennisSession(currentDate);
+    days += `<div class="day prev-date ${hasSession ? 'tennis-session' : ''}">${prevTotalDays - i + 1}</div>`;
   }
 
   // Adding the current month days.
-  for (let i = 1; i <= currentTotalDays; i++) {
-    // If the day is the current day, add the today class.
-    if ((i === new Date().getDate()) && (year === new Date().getFullYear()) && 
-        (month === new Date().getMonth()))
-          days += `<div class="day today">${i}</div>`;
-    else
-      days += `<div class="day">${i}</div>`;
+  // for (let i = 1; i <= currentTotalDays; i++) {
+  //   tennisSessions.forEach(session => {
+  //     // If the day is the current day, add the today class.
+  //     if ((i === new Date().getDate()) && (year === new Date().getFullYear()) && 
+  //         (month === new Date().getMonth())) {
+  //           if (tennisSessionScheduled(new Date(year, month, i), session)) {
+  //             days += `<div class="day today tennis-session">${i}</div>`;
+  //           }
+  //           else {
+  //             days += `<div class="day today">${i}</div>`;
+  //           }
+  //         }
+  //     else {
+  //       days += `<div class="day">${i}</div>`;
+  //     }
+  //   });
 
+  // }
+
+  for (let i = 1; i <= currentTotalDays; i++) {
+    const currentDate = new Date(year, month, i);
+    const hasSession = hasTennisSession(currentDate);
+    const isToday = currentDate.toDateString() === today.toDateString();
+    days += `<div class="day ${isToday ? 'today' : ''} ${hasSession ? 'tennis-session' : ''}">${i}</div>`;
   }
 
   // Adding the next month days.
+  // for (let i = 1; i <= nextDays; i++) {
+  //   tennisSessions.forEach(session => {
+  //     // Checking whether the date has a session scheduled for a particular user.
+  //     if (tennisSessionScheduled(new Date(year, month, i), session)) {
+  //       days += `<div class="day next-date tennis-session">${i}</div>`;
+  //     }
+  //     else {
+  //       days += `<div class="day next-date">${i}</div>`;
+  //     }
+  //   });
+  // }
+
   for (let i = 1; i <= nextDays; i++) {
-    // Checking whether the date has a session scheduled for a particular user.
-    days += `<div class="day next-date">${i}</div>`;
+    const currentDate = new Date(year, month + 1, i);
+    const hasSession = hasTennisSession(currentDate);
+    days += `<div class="day next-date ${hasSession ? 'tennis-session' : ''}">${i}</div>`;
   }
 
   daysDiv.innerHTML = days;
@@ -148,6 +218,33 @@ datePicker.addEventListener("change", (e) => {
   buildCalendar();
 })
 
+// function updateCalendar(tennisSessions) {
+//   // Modify your calendar based on the received data
+//   // ...
+//   console.log("You called the updateCalendar function.");
+// }
+
+
+// // Fetch data using AJAX
+// function fetchData() {
+//   fetch('/planner/ajax-calendar/')
+//     .then(response => response.json())
+//     .then(data => buildCalendar(data.tennis_sessions));
+// }
+
+// fetchData();
+
+// Fetch HTML content using AJAX
+// function fetchData() {
+//   fetch('/planner/calendar/')
+//     .then(response => response.text())
+//     .then(data => {
+//       tennisSessions = data;
+//       buildCalendar()
+//     });
+// }
+
+// fetchData();
 
 // TODO: Turn these functions into a class, with the calendar variable as an attribute.
 
