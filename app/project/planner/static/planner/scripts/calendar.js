@@ -17,17 +17,7 @@ tennisSessions.forEach(session => {
   session.date = new Date(dateParts[0], dateParts[1] - 1, dateParts[2]);
 });
 
-print(tennisSessions);
-
-// function tennisSessionScheduled(date, session) {
-//   if (`${date.getFullYear()}-${date.getMonth()}-${date.getDate()}` ===
-//    `${session.date.getFullYear()}-${session.date.getMonth()}-${session.date.getDate()}`) {
-//     return true;
-//   }
-//   else {
-//     return false;
-//   }
-// }
+// print(tennisSessions); // for testing.
 
 
 const calendar = document.querySelector(".calendar");
@@ -75,7 +65,6 @@ function getMonth(month) {
 
 function buildCalendar() {
   /** Adds the days to the calendar. */
-  // print(tennisSessions);
   // Clear the content of daysDiv
   daysDiv.innerHTML = '';
 
