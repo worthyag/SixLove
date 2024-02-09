@@ -31,21 +31,24 @@ def calendar(request):
 
     if request.method == "POST":
         print(request.POST)
-        try:
-            selected_session = get_object_or_404(TennisModels.TennisSession,
-                                                 id=int(
-                                                     request.POST["session-id"]),
-                                                 user=request.user)
-        except:
-            return HttpResponseBadRequest("Invalid request")
-        form = TennisForms.TennisSessionForm(request.POST,
-                                             instance=selected_session)
+        if (request.POST["session-id"] != "X"):
+            try:
+                selected_session = get_object_or_404(TennisModels.TennisSession,
+                                                     id=int(
+                                                         request.POST["session-id"]),
+                                                     user=request.user)
+            except:
+                return HttpResponseBadRequest("Invalid request")
+            form = TennisForms.TennisSessionForm(request.POST,
+                                                 instance=selected_session)
 
-        if form.is_valid():
-            form.save()
-            return redirect("planner:calendar")
+            if form.is_valid():
+                form.save()
+                return redirect("planner:calendar")
+            else:
+                return HttpResponseBadRequest("Invalid form data")
         else:
-            return HttpResponseBadRequest("Invalid form data")
+            print("Add form logic")
     else:
         # Initialising a new form.
         form = TennisForms.TennisSessionForm()

@@ -246,31 +246,27 @@ function closeSidePanel() {
   sidePanel.style.display = 'none';
 }
 
-function editSession(sessionId) {
-  // Implement the logic to open a form or modal for editing the session
-  console.log(`Edit session with ID ${sessionId}`);
+// function editSession(sessionId) {
+//   // Implement the logic to open a form or modal for editing the session
+//   console.log(`Edit session with ID ${sessionId}`);
   
-  // Generate the URL for the planner:calendar view
-  // const editUrl = `../tennis/${sessionId}/edit/`;
-  const editUrl = `/calendar/${sessionId}`;
+//   // Generate the URL for the planner:calendar view
+//   // const editUrl = `../tennis/${sessionId}/edit/`;
+//   const editUrl = `/calendar/${sessionId}`;
 
-  // Redirect the user to the edit page
-  window.location.href = editUrl;
+//   // Redirect the user to the edit page
+//   window.location.href = editUrl;
 
+// }
+
+function openAddModal() {
+  const modal = document.querySelector("#addModal");
+  modal.style.display = "block";
 }
 
 function openEditModal(sessionId) {
-  // Fetch the modal content, e.g., using AJAX
-  // For simplicity, let's assume you have an edit view that returns the form HTML
-  // fetch(`/tennis/${sessionId}/edit/`)
-  //   .then(response => response.text())
-  //   .then(data => {
-  //     document.getElementById("modalContent").innerHTML = data;
-  //     console.log(data);
-  //     document.getElementById("editModal").style.display = "flex";
-  //   });
   const modal = document.querySelector("#editModal");
-  const content = document.querySelector("#modalContent");
+  // const content = document.querySelector("#modalContent");
   const sessionIdInput = document.querySelector("#session-id");
   sessionIdInput.value = sessionId;
 
@@ -298,107 +294,10 @@ function openEditModal(sessionId) {
       dateInput.value = formattedDate;
 
       isCompletedInput.checked = session.isCompleted;
-
     }
   });
 
-  // editSession(sessionId);
-
-  // tennisSessions.forEach(session => {
-  //   if (session.id === sessionId) {
-  //     console.log(`Session Id is ${sessionId}`);
-
-  //     const form = document.createElement("form");
-
-  //     // Title
-  //     const titleDiv = document.createElement("div");
-
-  //     const titleLabel = document.createElement("label");
-  //     titleLabel.textContent = "Title: ";
-
-  //     const titleInput = document.createElement("input");
-  //     titleInput.type = "text";
-  //     titleInput.value = session.title;
-
-  //     titleDiv.appendChild(titleLabel);
-  //     titleDiv.appendChild(titleInput);
-
-  //     form.appendChild(titleDiv);
-
-  //     // Notes
-  //     const notesDiv = document.createElement("div");
-
-  //     const notesLabel = document.createElement("label");
-  //     notesLabel.textContent = "Notes: ";
-
-  //     const notesInput = document.createElement("textArea");
-  //     notesInput.textContent = session.notes;
-
-  //     notesDiv.appendChild(notesLabel);
-  //     notesDiv.appendChild(notesInput);
-
-  //     form.appendChild(notesDiv);
-
-  //     // Date
-  //     const dateDiv = document.createElement("div");
-
-  //     const dateLabel = document.createElement("label");
-  //     dateLabel.textContent = "Date: ";
-
-  //     const dateInput = document.createElement("input");
-  //     dateInput.type = "date";
-
-  //     const year = session.date.getFullYear();
-  //     const month = (session.date.getMonth() + 1).toString().padStart(2, '0'); // Months are zero-based
-  //     const day = session.date.getDate().toString().padStart(2, '0');
-
-  //     // Create the formatted date string
-  //     const formattedDate = `${year}-${month}-${day}`;
-
-  //     dateInput.value = formattedDate;
-      
-  //     console.log(session.date);
-  //     // dateInput.textContent = session.notes;
-
-  //     dateDiv.appendChild(dateLabel);
-  //     dateDiv.appendChild(dateInput);
-
-  //     form.appendChild(dateDiv);
-
-  //     // isCompleted
-  //     const isCompletedDiv = document.createElement("div");
-
-  //     const isCompletedLabel = document.createElement("label");
-  //     isCompletedLabel.textContent = "Is completed: ";
-
-  //     const isCompletedInput = document.createElement("input");
-  //     isCompletedInput.type = "checkbox";
-  //     isCompletedInput.checked = session.isCompleted;
-
-  //     isCompletedDiv.appendChild(isCompletedLabel);
-  //     isCompletedDiv.appendChild(isCompletedInput);
-
-  //     form.appendChild(isCompletedDiv);
-
-  //     // Submit
-  //     const submitDiv = document.createElement("div");
-
-  //     const submitInput = document.createElement("input");
-  //     submitInput.type = "submit";
-  //     submitInput.value = "Edit Tennis Session";
-
-  //     submitDiv.appendChild(submitInput);
-
-  //     form.appendChild(submitDiv);
-
-  //     // form.setAttribute("action", "{% urls 'planner:calendar' %}");
-
-  //     content.appendChild(form);
-      modal.style.display = "block";
-  //   }
-  // });
-
-
+  modal.style.display = "block";
 }
 
 function deleteSession(sessionId) {
