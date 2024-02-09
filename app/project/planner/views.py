@@ -30,33 +30,53 @@ def calendar(request):
     json_data = json.dumps(tennis_sessions_data)
 
     if request.method == "POST":
-        print(request.POST)
-        if (request.POST["session-id"] != "X"):
-            try:
-                selected_session = get_object_or_404(TennisModels.TennisSession,
-                                                     id=int(
-                                                         request.POST["session-id"]),
-                                                     user=request.user)
-            except:
-                return HttpResponseBadRequest("Invalid request")
-            form = TennisForms.TennisSessionForm(request.POST,
-                                                 instance=selected_session)
+        print(request.POST)  # testing
 
-            if form.is_valid():
-                form.save()
-                return redirect("planner:calendar")
+        session_id = request.POST.get("session-id")
+
+        if session_id is not None:
+
+            if (session_id != "X"):
+                # Editing Tennis Session
+                try:
+                    selected_session = get_object_or_404(TennisModels.TennisSession,
+                                                         id=int(session_id),
+                                                         user=request.user)
+                except:
+                    return HttpResponseBadRequest("Invalid request")
+                form = TennisForms.TennisSessionForm(request.POST,
+                                                     instance=selected_session)
+
+                if form.is_valid():
+                    form.save()
+                    return redirect("planner:calendar")
+                else:
+                    return HttpResponseBadRequest("Invalid form data")
             else:
-                return HttpResponseBadRequest("Invalid form data")
+                # Adding Tennis Session
+                form = TennisForms.TennisSessionForm(request.POST)
+
+                if form.is_valid():
+                    session = form.save(commit=False)
+                    session.user = request.user
+                    session.save()
+                    return redirect("planner:calendar")
+                else:
+                    return HttpResponseBadRequest("Invalid form data")
+
         else:
-            form = TennisForms.TennisSessionForm(request.POST)
+            # Delete Tennis Session
+            if (request.POST["delete-id"] != "delete"):
+                try:
+                    selected_session = get_object_or_404(TennisModels.TennisSession,
+                                                         id=int(
+                                                             request.POST["delete-id"]),
+                                                         user=request.user)
+                except:
+                    return HttpResponseBadRequest("Invalid request")
 
-            if form.is_valid():
-                session = form.save(commit=False)
-                session.user = request.user
-                session.save()
+                selected_session.delete()
                 return redirect("planner:calendar")
-            else:
-                return HttpResponseBadRequest("Invalid form data")
     else:
         # Initialising a new form.
         form = TennisForms.TennisSessionForm()

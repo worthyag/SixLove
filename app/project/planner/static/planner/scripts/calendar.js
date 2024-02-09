@@ -229,7 +229,7 @@ function showSidePanel(day) {
         <p>Notes: ${session.notes}</p>
         <p>Completed: ${session.isCompleted ? 'Yes' : 'No'}</p>
         <button onclick="editSession(${session.id})">Edit</button>
-        <button onclick="deleteSession(${session.id})">Delete</button>
+        <button onclick="deleteSession(${session.id}, '${session.title}')">Delete</button>
       `;
       sidePanel.appendChild(sessionDiv);
 
@@ -299,27 +299,18 @@ function editSession(sessionId) {
   modal.style.display = "block";
 }
 
-function deleteSession(sessionId) {
-  // Implement the logic to delete the session
-  console.log(`Delete session with ID ${sessionId}`);
+function deleteSession(sessionId, title) {
+  print("Click delete");
+  const modal = document.querySelector("#deleteModal");
 
-  // Generate the URL for the tennis:delete view
-  const deleteUrl = `../tennis/${sessionId}/delete/`;
+  const sessionIdInput = document.querySelector("#delete-id");
+  sessionIdInput.value = sessionId;
 
-  // Redirect the user to the delete page
-  window.location.href = deleteUrl;
+  const deleteMsg = document.querySelector("#deleteMsg");
+  deleteMsg.textContent = `Are you sure you want to delete the session '${title}'?`;
+
+  modal.style.display = "block";
 }
-
-// function addSession() {
-//   // Implement the logic to open a form or modal for adding the session
-//   console.log(`So you want to add a session`);
-
-//   // Generate the URL for the tennis:add view
-//   const addUrl = `../tennis/add/`;
-
-//   // Redirect the user to the add page
-//   window.location.href = addUrl;
-// }
 
 function addSession(day) {
   const modal = document.querySelector("#addModal");

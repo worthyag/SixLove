@@ -161,6 +161,24 @@
       </div>
     </div>
   </div>
+
+  <div id="deleteModal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal('#deleteModal')">&times;</span>
+      <div id="modalContent">
+        <form action="" method="post" novalidate>
+          <p id="deleteMsg"></p>
+          {% csrf_token %}
+          <div style="display: none;">
+            <label for="delete-id">ID: </label>
+            <input type="hidden" type="text" name="delete-id" id="delete-id" value="delete">
+          </div>
+          <input class="btn" type="submit" value="Delete Tennis Session">
+        </form>
+      </div>
+    </div>
+  </div>
+
 </main>
 <script>
   function closeModal(id) {
