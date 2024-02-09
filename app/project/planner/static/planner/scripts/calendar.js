@@ -47,7 +47,7 @@ let month = today.getMonth();
 
 // Setting the date picker to begin with.
 let monthDatePicker = (month >= 9) ? month + 1 : `0${month + 1}`;
-parseInt(datePicker.value.slice(5, 7)) - 1;
+// parseInt(datePicker.value.slice(5, 7)) - 1;
 datePicker.value = `${year}-${monthDatePicker}`;
 
 
@@ -76,6 +76,8 @@ function getMonth(month) {
 function buildCalendar() {
   /** Adds the days to the calendar. */
   // print(tennisSessions);
+  // Clear the content of daysDiv
+  daysDiv.innerHTML = '';
 
   // Getting info about the previous and current month days.
   const currentFirstDay = new Date(year, month, 1);
@@ -108,10 +110,11 @@ function buildCalendar() {
 
   // Adding the previous month days.
   for (let i = day; i > 0; i--) {
-    // const currentDate = new Date(year, month, prevTotalDays - i + 1);
-    // const hasSession = hasTennisSession(currentDate);
-    // days += `<div class="day prev-date ${hasSession ? 'tennis-session' : ''}">${prevTotalDays - i + 1}</div>`;
-    days += `<div class="day prev-date">${prevTotalDays - i + 1}</div>`;
+    const dayElement = document.createElement('div');
+    dayElement.classList.add('day', 'prev-date');
+    dayElement.textContent = prevTotalDays - i + 1;
+
+    daysDiv.appendChild(dayElement);
   }
 
   // Adding the current month days.
@@ -119,18 +122,27 @@ function buildCalendar() {
     const currentDate = new Date(year, month, i);
     const hasSession = hasTennisSession(currentDate);
     const isToday = currentDate.toDateString() === today.toDateString();
-    days += `<div class="day ${isToday ? 'today' : ''} ${hasSession ? 'tennis-session' : ''}">${i}</div>`;
+
+    
+    const dayElement = document.createElement('div');
+    dayElement.classList.add('day', isToday ? 'today' : 'day', hasSession ? 'tennis-session' : 'day');
+    dayElement.textContent = i;
+
+    dayElement.addEventListener('click', () => showSidePanel(i));
+
+    daysDiv.appendChild(dayElement);
   }
 
   // Adding the next month days.
   for (let i = 1; i <= nextDays; i++) {
-    // const currentDate = new Date(year, month + 1, i);
-    // const hasSession = hasTennisSession(currentDate);
-    // days += `<div class="day next-date ${hasSession ? 'tennis-session' : ''}">${i}</div>`;
-    days += `<div class="day next-date">${i}</div>`;
+    const dayElement = document.createElement('div');
+    dayElement.classList.add('day', 'next-date');
+    dayElement.textContent = i;
+
+    daysDiv.appendChild(dayElement);
   }
 
-  daysDiv.innerHTML = days;
+  // daysDiv.innerHTML = days;
 }
 
 buildCalendar();
@@ -178,35 +190,49 @@ datePicker.addEventListener("change", (e) => {
   buildCalendar();
 })
 
-// function updateCalendar(tennisSessions) {
-//   // Modify your calendar based on the received data
-//   // ...
-//   console.log("You called the updateCalendar function.");
-// }
+function showSidePanel(day) {
+  const sidePanel = document.querySelector("#sidePanel");
+  sidePanel.innerHTML = ''; // Clear previous content
 
+  // Check if there are tennis sessions for the clicked day
+  const sessionsForDay = tennisSessions.filter(session => {
+    const sessionDate = new Date(session.date);
+    return (
+      year === sessionDate.getFullYear() &&
+      month === sessionDate.getMonth() &&
+      day === sessionDate.getDate()
+    );
+  });
 
-// // Fetch data using AJAX
-// function fetchData() {
-//   fetch('/planner/ajax-calendar/')
-//     .then(response => response.json())
-//     .then(data => buildCalendar(data.tennis_sessions));
-// }
+  if (sessionsForDay.length === 0) {
+    // No tennis sessions scheduled
+    sidePanel.innerHTML = '<p>No tennis sessions scheduled.</p>';
+  } else {
+    // Display tennis session info in the side panel
+    sessionsForDay.forEach(session => {
+      const sessionDiv = document.createElement('div');
+      sessionDiv.innerHTML = `
+        <p>Title: ${session.title}</p>
+        <p>Date: ${getMonth(session.date.getMonth() - 1)[1]} ${session.date.getDate()}, ${session.date.getFullYear()} </p>
+        <p>Notes: ${session.notes}</p>
+        <p>Completed: ${session.isCompleted ? 'Yes' : 'No'}</p>
+        <button onclick="editSession(${session.id})">Edit</button>
+        <button onclick="deleteSession(${session.id})">Delete</button>
+      `;
+      sidePanel.appendChild(sessionDiv);
+    });
+  }
 
-// fetchData();
+  // Show the side panel
+  sidePanel.style.display = 'block';
+}
 
-// Fetch HTML content using AJAX
-// function fetchData() {
-//   fetch('/planner/calendar/')
-//     .then(response => response.text())
-//     .then(data => {
-//       tennisSessions = data;
-//       buildCalendar()
-//     });
-// }
+function editSession(sessionId) {
+  // Implement the logic to open a form or modal for editing the session
+  console.log(`Edit session with ID ${sessionId}`);
+}
 
-// fetchData();
-
-// TODO: Turn these functions into a class, with the calendar variable as an attribute.
-
-
-
+function deleteSession(sessionId) {
+  // Implement the logic to delete the session
+  console.log(`Delete session with ID ${sessionId}`);
+}
