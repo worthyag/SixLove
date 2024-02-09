@@ -22,4 +22,5 @@ urlpatterns = [
     path('', include("registration.urls")),
     path('tennis/', include("tennis.urls")),
     path('calendar/', include("planner.urls")),
+    path('connect/', include("community.urls")),
 ]

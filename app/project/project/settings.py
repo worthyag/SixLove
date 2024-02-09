@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'registration.apps.RegistrationConfig',
     'tennis.apps.TennisConfig',
     'planner.apps.PlannerConfig',
+    'community.apps.CommunityConfig',
 ]
 
 MIDDLEWARE = [
