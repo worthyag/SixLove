@@ -131,7 +131,13 @@
   <div id="editModal" class="modal">
     <div class="modal-content">
       <span class="close-btn" onclick="closeModal()">&times;</span>
-      <div id="modalContent"></div>
+      <div id="modalContent">
+        <form action="" method="post" novalidate>
+          {% csrf_token %}
+          {{ form.as_p }}
+          <input class="btn" type="submit" value="Edit Tennis Session">
+        </form>
+      </div>
     </div>
   </div>
 </main>
