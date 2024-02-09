@@ -181,7 +181,8 @@ datePicker.addEventListener("change", (e) => {
 
 function addCloseBtn() {
   const closeBtn = document.createElement('button');
-  closeBtn.textContent = "Close"
+  closeBtn.innerHTML = "&times;";
+  closeBtn.classList.add("side-panel-close-btn");
   closeBtn.addEventListener('click', () => closeSidePanel());
   sidePanel.appendChild(closeBtn);
 }
@@ -223,14 +224,17 @@ function showSidePanel(day) {
     // Display tennis session info in the side panel
     sessionsForDay.forEach(session => {
       const sessionDiv = document.createElement('div');
+      sessionDiv.classList.add("side-panel-session-div");
+
       sessionDiv.innerHTML = `
-        <p>Title: ${session.title}</p>
-        <p>Date: ${getMonth(session.date.getMonth())[1]} ${session.date.getDate()}, ${session.date.getFullYear()} </p>
-        <p>Notes: ${session.notes}</p>
-        <p>Completed: ${session.isCompleted ? 'Yes' : 'No'}</p>
+        <p><span>Title</span>: ${session.title}</p>
+        <p><span>Date</span>: ${getMonth(session.date.getMonth())[1]} ${session.date.getDate()}, ${session.date.getFullYear()} </p>
+        <p>Notes</span>: ${session.notes}</p>
+        <p><span>Completed</span>: ${session.isCompleted ? 'Yes' : 'No'}</p>
         <button onclick="editSession(${session.id})">Edit</button>
         <button onclick="deleteSession(${session.id}, '${session.title}')">Delete</button>
       `;
+
       sidePanel.appendChild(sessionDiv);
 
       addAddSessionBtn(day)
@@ -238,26 +242,13 @@ function showSidePanel(day) {
   }
 
   // Show the side panel
-  sidePanel.style.display = 'block';
+  sidePanel.style.display = 'flex';
 }
 
 function closeSidePanel() {
   // Hide the side panel
   sidePanel.style.display = 'none';
 }
-
-// function editSession(sessionId) {
-//   // Implement the logic to open a form or modal for editing the session
-//   console.log(`Edit session with ID ${sessionId}`);
-  
-//   // Generate the URL for the planner:calendar view
-//   // const editUrl = `../tennis/${sessionId}/edit/`;
-//   const editUrl = `/calendar/${sessionId}`;
-
-//   // Redirect the user to the edit page
-//   window.location.href = editUrl;
-
-// }
 
 function editSession(sessionId) {
   const modal = document.querySelector("#editModal");
