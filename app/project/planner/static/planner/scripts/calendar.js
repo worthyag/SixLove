@@ -136,6 +136,14 @@ function buildCalendar() {
 
 buildCalendar();
 
+function updateDatePicker() {
+  const datePicker = document.querySelector("#selectDatePicker");
+
+  // Updating the date picker value.
+  let monthDatePicker = (month >= 9) ? month + 1 : `0${month + 1}`;
+  datePicker.value = `${year}-${monthDatePicker}`;
+}
+
 function prevMonth() {
   /** */
   month--;
@@ -144,6 +152,9 @@ function prevMonth() {
     month = 11;
     year--;
   }
+
+  // Updating the date picker value.
+  updateDatePicker();
 
   buildCalendar();
 }
@@ -156,6 +167,9 @@ function nextMonth() {
     month = 0;
     year++;
   }
+
+  // Updating the date picker value.
+  updateDatePicker();
 
   buildCalendar();
 }
