@@ -37,7 +37,7 @@ class CalendarViewTest(TestCase):
         return response
 
     def test_calendar_view_loads(self):
-        """"""
+        """Testing that the calendar page loads."""
         # Sending a GET response to the calendar view.
         response = self.helper_get_response_calendar_view()
 
@@ -45,8 +45,7 @@ class CalendarViewTest(TestCase):
         self.assertEqual(response.status_code, 200)
 
     def test_calendar_edit_tennis_session(self):
-        """"""
-        # Testing editing a TennisSession
+        """Testing editing a TennisSession."""
         session = TennisSession.objects.create(
             user=self.user,
             title="Test Session",
@@ -80,7 +79,7 @@ class CalendarViewTest(TestCase):
         self.assertEqual(updated_session.title, "Updated Session")
 
     def test_calendar_add_session(self):
-        """"""
+        """Testing adding a TennisSession."""
         # Creating an instance of a POST request.
         request = self.factory.post(reverse("planner:calendar"),
                                     {
@@ -107,8 +106,7 @@ class CalendarViewTest(TestCase):
         self.assertEqual(new_session.notes, "New Notes")
 
     def test_calendar_delete_session(self):
-        """"""
-        # Testing deleting a TennisSession
+        """Testing deleting a TennisSession."""
         session = TennisSession.objects.create(
             user=self.user,
             title="Test Session",
@@ -133,3 +131,21 @@ class CalendarViewTest(TestCase):
         # Check if the TennisSession was deleted
         with self.assertRaises(TennisSession.DoesNotExist):
             TennisSession.objects.get(id=session.id)
+
+    def test_calendar_invalid_form_data(self):
+        """Testing posting invalid form data."""
+        # Creating an instance of a POST request.
+        request = self.factory.post(reverse("planner:calendar"),
+                                    {
+            "session-id": "X",
+            "title": "Invalid Session",
+        })
+
+        # Simulating a logged-in user manually.
+        request.user = self.user
+
+        # Testing the view.
+        response = views.calendar(request)
+
+        # Expecting a bad request.
+        self.assertEqual(response.status_code, 400)
