@@ -255,6 +255,7 @@ a {
 }
 .calendar-section .side-panel .side-panel-session-div {
   background-color: #FFFFFF;
+  width: 90%;
   border: 1px solid rgba(0, 0, 0, 0.031372549);
   box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
   border-radius: 8px;

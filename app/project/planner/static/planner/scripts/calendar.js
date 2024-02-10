@@ -203,8 +203,9 @@ function addCloseBtn() {
 
 function addAddSessionBtn(day) {
   const addSessionBtn = document.createElement('button');
-  addSessionBtn.textContent = "Add New Tennis Session"
+  addSessionBtn.textContent = "Add New Tennis Session";
   addSessionBtn.addEventListener('click', () => addSession(day));
+  addSessionBtn.style.marginBottom = "64px";
   sidePanel.appendChild(addSessionBtn);
 }
 
@@ -230,7 +231,7 @@ function showSidePanel(day) {
     sessionP.textContent = "No tennis sessions scheduled.";
     sidePanel.appendChild(sessionP);
 
-    addAddSessionBtn(day);
+    // addAddSessionBtn(day);
   } 
   else {
     addCloseBtn();
@@ -251,9 +252,11 @@ function showSidePanel(day) {
 
       sidePanel.appendChild(sessionDiv);
 
-      addAddSessionBtn(day)
+      // addAddSessionBtn(day);
     });
   }
+
+  addAddSessionBtn(day);
 
   // Show the side panel
   sidePanel.style.display = 'flex';
