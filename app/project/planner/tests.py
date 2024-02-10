@@ -70,3 +70,37 @@ class CalendarViewTest(TestCase):
     #         response,
     #         "./planner/calendar.html"
     #     )
+
+    def test_calendar_edit_tennis_session(self):
+        """"""
+        # Testing editing a TennisSession
+        session = TennisSession.objects.create(
+            user=self.user,
+            title='Test Session',
+            notes='Test Notes',
+            date='2024-02-01',
+            is_completed=False
+        )
+
+        # Creating an instance of a POST request.
+        request = self.factory.post(reverse("planner:calendar"),
+                                    {
+            'session-id': session.id,
+            'title': 'Updated Session',
+            'notes': session.notes,
+            'date': session.date,
+            'is_completed': session.is_completed
+        })
+
+        # Simulating a logged-in user manually.
+        request.user = self.user
+
+        # Testing the view.
+        response = views.calendar(request)
+
+        self.assertEqual(response.status_code, 302)  # Expecting a redirect
+
+        # Checking if the TennisSession was updated
+        updated_session = TennisSession.objects.get(id=session.id)
+
+        self.assertEqual(updated_session.title, 'Updated Session')
