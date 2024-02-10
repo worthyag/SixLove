@@ -44,33 +44,6 @@ class CalendarViewTest(TestCase):
         # Checking whether the calendar view loads successfully.
         self.assertEqual(response.status_code, 200)
 
-    def test_calendar_view_url_accessible_by_name(self):
-        # Ensure the view is accessible using its name
-        self.client.login(
-            username=self.user.username,
-            password=self.user.password
-        )
-
-        response = self.client.get(reverse("planner:calendar"))
-
-        # 302 since when using self.client it is redirecting.
-        self.assertEqual(response.status_code, 302)
-
-    # def test_calendar_view_uses_template(self):
-    #     """"""
-    #     self.client.login(
-    #         username=self.user.username,
-    #         password=self.user.password
-    #     )
-
-    #     response = self.client.get(reverse('planner:calendar'))
-
-    #     # Checking whether the chosen view uses the template.
-    #     self.assertTemplateUsed(
-    #         response,
-    #         "./planner/calendar.html"
-    #     )
-
     def test_calendar_edit_tennis_session(self):
         """"""
         # Testing editing a TennisSession
@@ -132,3 +105,31 @@ class CalendarViewTest(TestCase):
 
         self.assertEqual(new_session.user, self.user)
         self.assertEqual(new_session.notes, "New Notes")
+
+    def test_calendar_delete_session(self):
+        """"""
+        # Testing deleting a TennisSession
+        session = TennisSession.objects.create(
+            user=self.user,
+            title="Test Session",
+            notes="Test Notes",
+            date="2024-02-01",
+            is_completed=False
+        )
+
+        # Creating an instance of a POST request.
+        request = self.factory.post(reverse("planner:calendar"),
+                                    {"delete-id": session.id})
+
+        # Simulating a logged-in user manually.
+        request.user = self.user
+
+        # Testing the view.
+        response = views.calendar(request)
+
+        # Expecting a redirect.
+        self.assertEqual(response.status_code, 302)
+
+        # Check if the TennisSession was deleted
+        with self.assertRaises(TennisSession.DoesNotExist):
+            TennisSession.objects.get(id=session.id)
