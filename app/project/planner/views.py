@@ -1,14 +1,9 @@
-from datetime import datetime, timedelta
 import json
 
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
-from django.utils import timezone
-from django.http import JsonResponse
 from django.http import HttpResponseBadRequest
 
-
-# from .utils import TennisCalendar
 
 from tennis import models as TennisModels
 from tennis import forms as TennisForms
