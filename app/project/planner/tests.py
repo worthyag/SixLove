@@ -51,7 +51,7 @@ class CalendarViewTest(TestCase):
             password=self.user.password
         )
 
-        response = self.client.get(reverse('planner:calendar'))
+        response = self.client.get(reverse("planner:calendar"))
 
         # 302 since when using self.client it is redirecting.
         self.assertEqual(response.status_code, 302)
@@ -76,20 +76,20 @@ class CalendarViewTest(TestCase):
         # Testing editing a TennisSession
         session = TennisSession.objects.create(
             user=self.user,
-            title='Test Session',
-            notes='Test Notes',
-            date='2024-02-01',
+            title="Test Session",
+            notes="Test Notes",
+            date="2024-02-01",
             is_completed=False
         )
 
         # Creating an instance of a POST request.
         request = self.factory.post(reverse("planner:calendar"),
                                     {
-            'session-id': session.id,
-            'title': 'Updated Session',
-            'notes': session.notes,
-            'date': session.date,
-            'is_completed': session.is_completed
+            "session-id": session.id,
+            "title": "Updated Session",
+            "notes": session.notes,
+            "date": session.date,
+            "is_completed": session.is_completed
         })
 
         # Simulating a logged-in user manually.
@@ -98,9 +98,37 @@ class CalendarViewTest(TestCase):
         # Testing the view.
         response = views.calendar(request)
 
-        self.assertEqual(response.status_code, 302)  # Expecting a redirect
+        # Expecting a redirect.
+        self.assertEqual(response.status_code, 302)
 
         # Checking if the TennisSession was updated
         updated_session = TennisSession.objects.get(id=session.id)
 
-        self.assertEqual(updated_session.title, 'Updated Session')
+        self.assertEqual(updated_session.title, "Updated Session")
+
+    def test_calendar_add_session(self):
+        """"""
+        # Creating an instance of a POST request.
+        request = self.factory.post(reverse("planner:calendar"),
+                                    {
+            "session-id": "X",
+            "title": "New Session",
+            "notes": "New Notes",
+            "date": "2024-03-01",
+            "is_completed": "False"
+        })
+
+        # Simulating a logged-in user manually.
+        request.user = self.user
+
+        # Testing the view.
+        response = views.calendar(request)
+
+        # Expecting a redirect.
+        self.assertEqual(response.status_code, 302)
+
+        # Checking if the new TennisSession was added.
+        new_session = TennisSession.objects.get(title="New Session")
+
+        self.assertEqual(new_session.user, self.user)
+        self.assertEqual(new_session.notes, "New Notes")
