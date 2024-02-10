@@ -46,6 +46,7 @@ class CalendarViewTest(TestCase):
 
     def test_calendar_edit_tennis_session(self):
         """Testing editing a TennisSession."""
+        # Creating a tennis session.
         session = TennisSession.objects.create(
             user=self.user,
             title="Test Session",
@@ -107,6 +108,7 @@ class CalendarViewTest(TestCase):
 
     def test_calendar_delete_session(self):
         """Testing deleting a TennisSession."""
+        # Creating a tennis session.
         session = TennisSession.objects.create(
             user=self.user,
             title="Test Session",
@@ -128,7 +130,7 @@ class CalendarViewTest(TestCase):
         # Expecting a redirect.
         self.assertEqual(response.status_code, 302)
 
-        # Check if the TennisSession was deleted
+        # Check if the TennisSession was deleted.
         with self.assertRaises(TennisSession.DoesNotExist):
             TennisSession.objects.get(id=session.id)
 
