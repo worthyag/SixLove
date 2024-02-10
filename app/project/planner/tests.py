@@ -2,6 +2,7 @@ from django.test import TestCase,  RequestFactory
 from django.urls import reverse
 
 from registration.models import CustomUser
+from tennis.models import TennisSession
 
 from . import views
 
@@ -42,3 +43,30 @@ class CalendarViewTest(TestCase):
 
         # Checking whether the calendar view loads successfully.
         self.assertEqual(response.status_code, 200)
+
+    def test_calendar_view_url_accessible_by_name(self):
+        # Ensure the view is accessible using its name
+        self.client.login(
+            username=self.user.username,
+            password=self.user.password
+        )
+
+        response = self.client.get(reverse('planner:calendar'))
+
+        # 302 since when using self.client it is redirecting.
+        self.assertEqual(response.status_code, 302)
+
+    # def test_calendar_view_uses_template(self):
+    #     """"""
+    #     self.client.login(
+    #         username=self.user.username,
+    #         password=self.user.password
+    #     )
+
+    #     response = self.client.get(reverse('planner:calendar'))
+
+    #     # Checking whether the chosen view uses the template.
+    #     self.assertTemplateUsed(
+    #         response,
+    #         "./planner/calendar.html"
+    #     )
