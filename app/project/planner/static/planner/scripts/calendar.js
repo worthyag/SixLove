@@ -183,6 +183,10 @@ todayBtn.addEventListener("click", () => {
   today = new Date();
   year = today.getFullYear();
   month = today.getMonth();
+
+  // Updating the date picker value.
+  updateDatePicker();
+
   buildCalendar();
 });
 
