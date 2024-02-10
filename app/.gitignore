@@ -20,5 +20,3 @@ node_modules
 # My shell scripts
 *.sh
 shell
-
-cal_test.py
