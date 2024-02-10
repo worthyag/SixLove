@@ -12,4 +12,5 @@ urlpatterns = [
     path("<int:tennis_session_id>/delete/",
          views.delete_tennis_session, name="delete"),
     path("success/", views.success, name="success"),
+    path("learn/", views.learn, name="learn"),
 ]

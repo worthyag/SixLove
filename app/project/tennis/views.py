@@ -136,3 +136,14 @@ def success(request):
             "title": "Success"
         }
     )
+
+
+@login_required
+def learn(request):
+    return render(
+        request,
+        "./tennis/learn.html",
+        {
+            "title": "Learn"
+        }
+    )
