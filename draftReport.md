@@ -833,7 +833,194 @@ class TennisSessionForm(forms.ModelForm):
 
 Most of the work for both the `registration` and `tennis` app was focused on creating models and forms. My primary focus was on how the data would be stored, and figuring out the most effective ways to design the database and its interactions- resulting in a lot of my time being allocated to that. This allowed the implementation to feel more intuitive and less complex.
 
-With the database table and its corresponding form completed, I created the views.
+With the database table and its corresponding form completed, I created the views. **Code snippet 7** displays the tennis view. All of the views use the `@login_required` decorator. Decorators are a way to modify the behaviour of functions or methods in Python, and this particular decorator is provided by Django to protect views  (functions), since users are required to be logged in. All the views within the `tennis` app, are only accessible to users that are logged in.
+
+
+
+
+
+
+
+```python
+...
+@login_required
+def tennis(request):
+    ...
+    tennis_sessions = models.TennisSession.objects.filter(
+        user=request.user).order_by("date")
+
+    today_sessions = [
+        session for session in tennis_sessions if session.is_tennis_session_scheduled_today()
+    ]
+    is_today = "No tennis sessions scheduled for today." if len(
+        today_sessions) == 0 else ""
+
+    upcoming_sessions = [session for session in tennis_sessions
+                         if not session.is_tennis_session_scheduled_today() and
+                         session.date > datetime.date.today()]
+
+    past_sessions = [session for session in tennis_sessions
+                     if not session.is_tennis_session_scheduled_today() and
+                     session.date < datetime.date.today()]
+
+    return render(
+        request,
+        "./tennis/tennis.html",
+        {
+            "title": "Tennis",
+            "today_sessions": today_sessions,
+            "is_today": is_today,
+            "upcoming_sessions": upcoming_sessions,
+            "past_sessions": past_sessions,
+        }
+    )
+```
+
+**Code Snippet 7** The `tennis` view of the `tennis` app.
+
+
+
+
+
+```python
+...
+@login_required
+def tennis(request):
+    ...
+    tennis_sessions = models.TennisSession.objects.filter(
+        user=request.user).order_by("date")
+
+    today_sessions = [
+        session for session in tennis_sessions if session.is_tennis_session_scheduled_today()
+    ]
+    is_today = "No tennis sessions scheduled for today." if len(
+        today_sessions) == 0 else ""
+
+    upcoming_sessions = [session for session in tennis_sessions
+                         if not session.is_tennis_session_scheduled_today() and
+                         session.date > datetime.date.today()]
+
+    past_sessions = [session for session in tennis_sessions
+                     if not session.is_tennis_session_scheduled_today() and
+                     session.date < datetime.date.today()]
+
+    return render(
+        request,
+        "./tennis/tennis.html",
+        {
+            "title": "Tennis",
+            "today_sessions": today_sessions,
+            "is_today": is_today,
+            "upcoming_sessions": upcoming_sessions,
+            "past_sessions": past_sessions,
+        }
+    )
+
+
+@login_required
+def add(request):
+    ...
+    if request.method == 'POST':
+        form = forms.TennisSessionForm(request.POST)
+
+        if form.is_valid():
+            session = form.save(commit=False)
+            session.user = request.user
+            session.save()
+            return redirect("tennis:success")
+    else:
+        # Initialising a new form.
+        form = forms.TennisSessionForm()
+
+    return render(
+        request,
+        "./tennis/add_tennis_session.html",
+        {
+            "title": "Add Tennis Session",
+            "form": form,
+        }
+    )
+
+
+@login_required
+def edit_tennis_session(request, tennis_session_id):
+    # Stops users from user navigating to the edit page for a tennis
+    # session that doesn't exist or doesn't belong to them.
+    try:
+        selected_session = get_object_or_404(models.TennisSession,
+                                             id=tennis_session_id,
+                                             user=request.user)
+    except models.TennisSession.DoesNotExist:
+        return redirect("tennis:tennis")
+    except:
+        return redirect("tennis:tennis")
+
+    if request.method == "POST":
+        form = forms.TennisSessionForm(request.POST,
+                                       instance=selected_session)
+
+        if form.is_valid():
+            form.save()
+            return redirect("tennis:success")
+    else:
+        form = forms.TennisSessionForm(instance=selected_session)
+
+    return render(
+        request,
+        "./tennis/edit_tennis_session.html",
+        {
+            "title": "Edit Tennis Session",
+            "form": form
+        }
+    )
+
+
+@login_required
+def delete_tennis_session(request, tennis_session_id):
+    # Stops users from user navigating to the delete page for a tennis
+    # session that doesn't exist or doesn't belong to them.
+    try:
+        selected_session = get_object_or_404(models.TennisSession,
+                                             id=tennis_session_id,
+                                             user=request.user)
+    except models.TennisSession.DoesNotExist:
+        return redirect("tennis:tennis")
+    except:
+        return redirect("tennis:tennis")
+
+    if request.method == "POST":
+        selected_session.delete()
+        return redirect("tennis:tennis")
+
+    return render(
+        request,
+        "./tennis/delete_tennis_session.html",
+        {
+            "title": "Delete Tennis Session",
+            "tennis_session": selected_session
+        }
+    )
+
+
+@login_required
+def success(request):
+    # similar to the home page (registration app).
+
+
+@login_required
+def learn(request):
+    # similar to the home page (registration app).
+```
+
+
+
+
+
+
+
+login required
+
+
 
 
 
@@ -853,9 +1040,7 @@ At this point, it is clear to see that there is a pattern emerging. I begin by c
 
 
 
-Modified UML.
 
-Friends / community not yet implemented.
 
 ## 4.3 The `planner` app
 
