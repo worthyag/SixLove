@@ -647,7 +647,7 @@ class CustomUser(AbstractUser):
     date_of_birth = models.DateField(null=True, blank=True)
 ```
 
-**Code Snippet 1** The CustomUser model.<br/><br>
+**Code Snippet 1** The `CustomUser` model.<br/><br>
 
 Each attribute displayed in **code snippet 1** corresponds to a field within the database. In addition to the fields displayed, Django will add the other fields that are specified within `AbstractUser`, such as the user's `id` and `password` among some other things. With the database table created, I created a form that uses the `CustomUser` model to build a form with fields that correspond to the models attributes. **Code snippet 2** displays a reduced version of the code for the form.
 
@@ -666,7 +666,7 @@ class CustomUserCreationForm(UserCreationForm):
                   'date_of_birth',) + UserCreationForm.Meta.fields
 ```
 
-**Code Snippet 2** The CustomUserCreationForm form.<br><br>
+**Code Snippet 2** The `CustomUserCreationForm` form.<br><br>
 
 This form was used to create the forms displayed to the user, for both the login and sign up pages (which can be seen in **figures 22 and 23**). I then created the views corresponding to the pages previously mentioned, **code snippet 3** displays a condensed version of the code for this.
 
@@ -774,14 +774,12 @@ Like the `registration` app, I began with a model. **Figure 24** displays the fi
 
 
 
-When I started writing the code for the model, I realised that it would be better to make `isToday` a method rather than an attribute.
-
-
+When I started writing the code for the model, I realised that it would be better to make `isToday` a method rather than an attribute. This is because, `isToday` is dependent on the date, it is not an attribute of a the tennis session.  **Code snippet 5** displays the code for the model.
 
 ```python
 ...
 class TennisSession(models.Model):
-    """"""
+    ...
     user = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
     title = models.CharField(max_length=150)
     notes = models.TextField()
@@ -789,7 +787,7 @@ class TennisSession(models.Model):
     is_completed = models.BooleanField(default=False)
 
     def is_tennis_session_scheduled_today(self):
-        """"""
+        ...
         today = timezone.now()
 
         if type(self.date) != type(""):
@@ -804,15 +802,36 @@ class TennisSession(models.Model):
                     if today.day == int(self.date[8:11]):
                         return True
             return False
-    
-
     ...
-
 ```
 
-
+**Code Snippet 5** The `TennisSession` model.<br>
 
 <br>
+
+
+
+I also created a form that coincides with the model. It is the form used for all communication with the `TennisSession` database table. Code snippet 6 displays the form code.
+
+```python
+...
+class TennisSessionForm(forms.ModelForm):
+    ...
+    class Meta:
+        model = TennisSession
+        fields = ['title', 'notes', 'date', 'is_completed']
+        widgets = {
+            'date': forms.DateInput(attrs={'type': 'date'})
+        }
+```
+
+**Code Snippet 6** The `TennisSessionForm` form.<br>
+
+<br>
+
+
+
+
 
 Modified UML.
 
