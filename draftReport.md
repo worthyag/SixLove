@@ -604,49 +604,33 @@ I decided that I wanted to start building SixLove's functionality in a somewhat 
 
 **Figure 16** The project's current calendar page. (Screenshot of the developer tools view to get a view of the whole page- 50% zoom).<br><br>
 
-
-
 <img title="" src="images/calendar-page-side-panel.png" alt="">
 
 **Figure 17** The project's current side panel for the calendar page. (Screenshot of the developer tools view to get a view of the whole page- 50% zoom).<br><br>
-
-
 
 <img title="" src="images/calendar-page-edit-session.png" alt="">
 
 **Figure 18** The project's current edit tennis session popup for the calendar page. (Screenshot of the developer tools view to get a view of the whole page- 50% zoom).<br><br>
 
-
-
 <img title="" src="images/calendar-page-add-session.png" alt="">
 
 **Figure 19** The project's current add tennis session popup for the calendar page. (Screenshot of the developer tools view to get a view of the whole page- 50% zoom).<br><br>
-
-
 
 <img title="" src="images/calendar-page-delete-session.png" alt="">
 
 **Figure 20** The project's current delete tennis session popup for the calendar page. (Screenshot of the developer tools view to get a view of the whole page- 50% zoom).<br><br>
 
-
-
 <img title="" src="images/tennis-page.png" alt="">
 
 **Figure 21** The project's current tennis page. (Screenshot of the developer tools view to get a view of the whole page- 50% zoom).<br><br>
-
-
 
 <img title="" src="images/login-page.png" alt="">
 
 **Figure 22** The project's current login page. (Screenshot of the developer tools view to get a view of the whole page- 50% zoom).<br><br>
 
-
-
 <img title="" src="images/sign-up-page.png" alt="">
 
 **Figure 23** The project's current sign up page. (Screenshot of the developer tools view to get a view of the whole page- 50% zoom).<br><br>
-
-
 
 ## 4.1 The `registration` app
 
@@ -673,8 +657,6 @@ class CustomUser(AbstractUser):
 
 **Code Snippet 1** The CustomUser model.<br/><br>
 
-
-
 Each attribute displayed in **code snippet 1** corresponds to a field within the database. In addition to the fields displayed, Django will add the other fields that are specified within `AbstractUser`, such as the user's `id` and `password` among some other things. With the database table created, I created a form that uses the `CustomUser` model to create a form with fields that correspond to the models attributes. **Code snippet 2** displays a reduced version of the code for the form.
 
 ```python
@@ -690,26 +672,16 @@ class CustomUserCreationForm(UserCreationForm):
         model = CustomUser
         fields = ('first_name', 'last_name', 'email',
                   'date_of_birth',) + UserCreationForm.Meta.fields
-
 ```
 
 **Code Snippet 2** The CustomUserCreationForm form.<br><br>
 
-This form is used to create the forms displayed to the user, for both the login and sign up pages (which can be seen in **figures 22 and 23**).
-
-
-
-I created the views corresponding to the pages previously mentioned, **code snippet 3** display some of the code for this.
+This form was used to create the forms displayed to the user, for both the login and sign up pages (which can be seen in **figures 22 and 23**). I then created the views corresponding to the pages previously mentioned, **code snippet 3** displays a condensed version of the code for this.
 
 ```python
-from django.shortcuts import render, redirect
-from django.contrib.auth.forms import AuthenticationForm
-from django.contrib.auth import login
-
-from .forms import CustomUserCreationForm
-
+...
 def home(request):
-    """"""
+    ...
     return render(
         request,
         "./registration/index.html",
@@ -720,7 +692,7 @@ def home(request):
 
 
 def signup(request):
-    """"""
+    ...
     if request.method == "POST":
         form = CustomUserCreationForm(request.POST)
 
@@ -742,42 +714,43 @@ def signup(request):
 
 
 def onboarding(request):
-    """"""
-    return render(
-        request,
-        "./registration/onboarding.html",
-        {
-            "title": "Onboarding"
-        }
-    )
+    # Similar to the home view.
 
 
 def user_login(request):
-    """"""
+    ...
     if request.method == "POST":
         form = AuthenticationForm(request, request.POST)
 
         if form.is_valid():
-            user = form.get_user()
-            login(request, user)
-            return redirect("home")
+            # The same as the signup view.
     else:
         form = AuthenticationForm()
 
     return render(
-        request,
-        "./registration/login.html",
-        {
-            "title": "Login",
-            "form": form
-        }
+        # Similar to the signup view.
     )
-
 ```
 
+**Code Snippet 3** The `registration` app views.<br>
+
+<br>
 
 
 
+**Code snippet 3** displays how I use the form create users and authenticate users. I passed the form to a html file (more specifically a Django template file), where it is then rendered (**code snippet 4** shows some of the code for the signup template).
+
+```python
+...
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Sign Up</button>
+</form>
+...
+```
+
+**Code Snippet 4** The `signup` html template.
 
 
 
