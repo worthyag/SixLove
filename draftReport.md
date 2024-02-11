@@ -877,51 +877,9 @@ def tennis(request):
 
 
 
-In addition to using the `@login_required` decorator, **code snippet 7** demonstrates that I further filter information based on the user who sent the request.
-
-
-
-
-
-
-
-
+In addition to using the `@login_required` decorator, **code snippet 7** demonstrates how I further filter information based on the user who sent the request. This is to make sure that users can also see tennis sessions associated with their account. **Code snippet 8**, displays some of the other views within the `tennis` app (the success and learn views are not displayed).
 
 ```python
-...
-@login_required
-def tennis(request):
-    ...
-    tennis_sessions = models.TennisSession.objects.filter(
-        user=request.user).order_by("date")
-
-    today_sessions = [
-        session for session in tennis_sessions if session.is_tennis_session_scheduled_today()
-    ]
-    is_today = "No tennis sessions scheduled for today." if len(
-        today_sessions) == 0 else ""
-
-    upcoming_sessions = [session for session in tennis_sessions
-                         if not session.is_tennis_session_scheduled_today() and
-                         session.date > datetime.date.today()]
-
-    past_sessions = [session for session in tennis_sessions
-                     if not session.is_tennis_session_scheduled_today() and
-                     session.date < datetime.date.today()]
-
-    return render(
-        request,
-        "./tennis/tennis.html",
-        {
-            "title": "Tennis",
-            "today_sessions": today_sessions,
-            "is_today": is_today,
-            "upcoming_sessions": upcoming_sessions,
-            "past_sessions": past_sessions,
-        }
-    )
-
-
 @login_required
 def add(request):
     ...
@@ -934,7 +892,7 @@ def add(request):
             session.save()
             return redirect("tennis:success")
     else:
-        # Initialising a new form.
+        # Initialising anew form.
         form = forms.TennisSessionForm()
 
     return render(
@@ -1006,18 +964,15 @@ def delete_tennis_session(request, tennis_session_id):
         }
     )
 
-
-@login_required
-def success(request):
-    # similar to the home page (registration app).
-
-
-@login_required
-def learn(request):
-    # similar to the home page (registration app).
 ```
 
+**Code Snippet 8** The `add_tennis_session`, `edit_tennis_session`, and `delete_tennis_session` views of the `tennis` app.<br>
 
+<br>
+
+
+
+The views displayed in **code snippet 8** are those that specifically deal with the tennis sessions.
 
 
 
