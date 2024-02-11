@@ -600,11 +600,11 @@ The calendar is currently dynamically rendered. The user can change what month t
 
 
 
-I decided that I wanted to start building SixLove's functionality in a somewhat chronological order. Chronological order referring to the user's flow- what route will potential users use when navigating the app. That meant starting with the landing page, then moving onto the sign up and login pages, then the pages that allow the users to add, edit, and delete tennis sessions. Since though I have stated SixLove's aim and objectives, at their very core user authentication and tennis sessions play a huge role in whether the aims and objectives are met.
+I decided that I wanted to start building SixLove's functionality in a somewhat chronological order. Chronological order referring to the user's flow, for instance, what route will potential users take when navigating the app? That meant starting with the landing page, then moving onto the sign up and login pages, then to the pages that allow the users to add, edit, and delete tennis sessions. I have previously stated SixLove's aims and objectives, at their very core user authentication and tennis sessions play a huge role in whether the aims and objectives are met, so using this order made the most logical sense. I must mention however, at this stage the goal was to program the functionality, therefore I did very minimal styling- currently the user interface is not fully fleshed out (or quite minimal- refer to figures # to # to see what I mean), and there will be upcoming changes to the wireframes based on user input and accessibility matters.
 
 ## 4.1 The `registration` app
 
-The first major
+User authentication is a primary requirement of the app. SixLove's purpose is to allow its users to keep track of their tennis sessions, follow a training schedule, and feel a sense of community. User authentication is needed for this to work. Users can only keep track of their sessions if they are able to log in. In addition, users should only be able to access their tennis sessions and no other users (other than in the case of joint sessions).
 
 ## 4.2 The `tennis` app
 
