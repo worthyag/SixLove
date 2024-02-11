@@ -978,21 +978,23 @@ A **view** in Django is the user interface (UI). More specifically, it is a hand
 
 A **template** in Django is a file that defines the structure of the UI. It can be a file of any type, though in this project I have used HTML files. Templates are able to receive data from the view and render it to the UI.
 
-
-
 ## 4.3 The `planner` app
+
+With the tennis session functionality implemented, I was ready to extend it to the calendar page. The goal for the calendar was to allow users to view and interact with their tennis sessions in a more user-friendly manner.
 
 The `planner` app has the following pages:
 
-- Calendar
+- Calendar- the page that displays a calendar to the user. Users can use this page to add, edit, and delete tennis sessions.
+
+As mentioned earlier the `planner` app also allows user to add, edit, and delete tennis sessions.
+
+
 
 Update the above text to highlight the following:
 
 0 Go through all the logs to make sure everything is covered.
 
-0 (The registration app)- User authentication- describe how you achieved this, refer to logs. Explain about other parts of the registration app. Explain why you did what you did.
 
-0 (The tennis app)- The ability to add tennis sessions- describe how you achieved this, refer to logs. Explain about other parts of the tennis app. Explain why you did what you did.
 
 Describe the rest of implementations:
 
