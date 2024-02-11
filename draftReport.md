@@ -1347,11 +1347,7 @@ function addSession(day) {
 
 Once I completed most of the calendar functionality, I wrote some unit tests that will be expanded upon in [section 5.1](#51-unit-testing).
 
-<br>
 
-
-
-0 The community / connect app- future implementation.
 
 # 5 Evaluation
 
