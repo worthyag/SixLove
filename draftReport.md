@@ -598,13 +598,19 @@ In terms of user authentication the prototype is quite good, though the next ste
 
 The calendar is currently dynamically rendered. The user can change what month they are viewing by utilising the date picker. Though the functionality for this is not yet complete, the goal is for the calendar to be newly rendered whenever a new date is selected (if it is is a different month). However, due to the nature of the html date input, an `onChange` events refers to any valid date- which may not necessarily be the date the user wanted to select. This  would result in an app that displays the calendar for a date not wanted by the user, therefore this is something that must be kept in mind while working on the planner's functionality.
 
+
+
+I decided that I wanted to start building SixLove's functionality in a somewhat chronological order. Chronological order referring to the user's flow- what route will potential users use when navigating the app. That meant starting with the landing page, then moving onto the sign up and login pages, then the pages that allow the users to add, edit, and delete tennis sessions. Since though I have stated SixLove's aim and objectives, at their very core user authentication and tennis sessions play a huge role in whether the aims and objectives are met.
+
 ## 4.1 The `registration` app
+
+The first major
 
 ## 4.2 The `tennis` app
 
 ## 4.3 The `planner` app
 
-Update the above test to highlight the following:
+Update the above text to highlight the following:
 
 0 Go through all the logs to make sure everything is covered.
 
