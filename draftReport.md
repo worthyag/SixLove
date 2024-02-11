@@ -671,7 +671,7 @@ class CustomUser(AbstractUser):
     date_of_birth = models.DateField(null=True, blank=True)
 ```
 
-**Code Snippet 1** The CustomUser model.<br>
+**Code Snippet 1** The CustomUser model.<br/>
 
 
 
