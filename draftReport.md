@@ -593,17 +593,25 @@ In terms of user authentication the prototype is quite good, though the next ste
 
 The calendar is currently dynamically rendered. The user can change what month they are viewing by utilising the date picker. Though the functionality for this is not yet complete, the goal is for the calendar to be newly rendered whenever a new date is selected (if it is is a different month). However, due to the nature of the html date input, an `onChange` events refers to any valid date- which may not necessarily be the date the user wanted to select. This  would result in an app that displays the calendar for a date not wanted by the user, therefore this is something that must be kept in mind while working on the planner's functionality.
 
+Describe my implementation.
+
 # 5 Evaluation
 
 *Evaluation...*
 
-The features that the prototype focuses on are user authentication and the ability to add tennis sessions. ...
+Testing where I am.
+
+Write about some of the tests I have, and what I have left of the project (in my case, I have done the calendar, and the ability to track workouts etc).
+
+Decide what to do next.
+
+Describe the things that you are currently working on / will start working on (In my case it is the community aspect).
 
 # 6 Conclusion
 
 *Conclusion...*
 
-The features that the prototype focuses on are user authentication and the ability to add tennis sessions. ...
+Short section: summarise what I have done, or speak about things that hasn’t come up in other sections, or suggest some future work.
 
 # 7 References
 
