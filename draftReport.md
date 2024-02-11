@@ -669,6 +669,8 @@ class CustomUserCreationForm(UserCreationForm):
 
 **Code Snippet 2** The `CustomUserCreationForm` form.<br><br>
 
+
+
 This form was used to create the forms displayed to the user, for both the login and sign up pages (which can be seen in **figures 22 and 23**). I then created the views corresponding to the pages previously mentioned, **code snippet 3** displays a condensed version of the code for this.
 
 ```python
@@ -958,19 +960,9 @@ def delete_tennis_session(request, tennis_session_id):
 
 The views displayed in **code snippet 8** are those that specifically deal with the tennis sessions. These are the views that provide the users with the ability interact with the tennis sessions. These views communicate with the `TennisSession` database table. Other than the `delete` view, the views pass a form to their associated HTML templates. These templates contain forms that allow users to make changes to their tennis sessions, in a similar fashion to **code snippet 4**.
 
-
-
-
-
-
-
-
-
-
-
 ### 4.2.1 The MVT Pattern
 
-At this point, it is clear to see that there is a pattern emerging. I begin by creating some model(s), then I create some view(s) that seems to be linked to some template that I have created. This is the Django work cycle.
+At this point, it is clear to see that there is a pattern emerging. I begin by creating some model(s), then I create some view(s) that seems to be linked to some template that I have created. This is the Django work cycle. Django has a model-view-template (MVT) architecture, as displayed in **figure 25**.
 
 
 
