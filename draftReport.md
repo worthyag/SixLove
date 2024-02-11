@@ -1001,7 +1001,9 @@ The next thing I did was to add functionality to the arrows, so that the users c
 
 {add code snippet}
 
-Once the calendar was fully functional, the next stage was to incorporate the tennis sessions with the calendar. I began by creating a side panel and three modals. The side panel displays the tennis sessions to the user when they click on a day (refer to **figure 17**)- though at this stage it just displayed the message "No tennis sessions scheduled".
+Once the calendar was fully functional, the next stage was to incorporate the tennis sessions with the calendar. I began by creating a side panel and three modals. The side panel displays the tennis sessions to the user when they click on a day (refer to **figure 17**)- though at this stage it just displayed the message "No tennis sessions scheduled", and the add tennis session button. The three modals refers to the 'add session modal' (**figure 19**), the 'edit session modal' (**figure 18**), and the 'delete session modal' (**figure 20**). I incorporated the modals with the forms created by the `TennisSessionForm` class previously written in order to communicate with the `TennisSession` database table with ease.
+
+{add code snippet}
 
 
 
