@@ -1013,6 +1013,8 @@ With that, I wrote corresponding javascript code that provided the interactivity
 
 {add code snippet}
 
+Once I completed most of the calendar functionality, I wrote some unit tests that will be expanded upon in [section 5.1](#51-unit-testing).
+
 <br>
 
 Update the above text to highlight the following:
