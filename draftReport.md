@@ -657,7 +657,7 @@ class CustomUser(AbstractUser):
 
 **Code Snippet 1** The CustomUser model.<br/><br>
 
-Each attribute displayed in **code snippet 1** corresponds to a field within the database. In addition to the fields displayed, Django will add the other fields that are specified within `AbstractUser`, such as the user's `id` and `password` among some other things. With the database table created, I created a form that uses the `CustomUser` model to create a form with fields that correspond to the models attributes. **Code snippet 2** displays a reduced version of the code for the form.
+Each attribute displayed in **code snippet 1** corresponds to a field within the database. In addition to the fields displayed, Django will add the other fields that are specified within `AbstractUser`, such as the user's `id` and `password` among some other things. With the database table created, I created a form that uses the `CustomUser` model to build a form with fields that correspond to the models attributes. **Code snippet 2** displays a reduced version of the code for the form.
 
 ```python
 ...
@@ -738,7 +738,7 @@ def user_login(request):
 
 
 
-**Code snippet 3** displays how I use the form create users and authenticate users. I passed the form to a html file (more specifically a Django template file), where it is then rendered (**code snippet 4** shows some of the code for the signup template).
+**Code snippet 3** displays how I use the form to create users and authenticate users. I passed the form to a html file (more specifically a Django template file), where it was then rendered (**code snippet 4** shows some of the code for the signup template).
 
 ```python
 ...
@@ -754,7 +754,7 @@ def user_login(request):
 
 
 
-I created a superuser so that I could create a manual pretest, then I wrote some unit tests to t
+With that completed, I had written most of the functionality for user authentication, and had a bare bone version of the `registration` app. I then created a superuser in order to conduct a manual pretest, then I wrote some unit tests to test everything thoroughly (this will be expanded on in [section 5.1](#51-unit-testing).
 
 ## 4.2 The `tennis` app
 
