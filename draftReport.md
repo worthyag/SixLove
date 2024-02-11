@@ -1117,12 +1117,12 @@ todayBtn.addEventListener("click", () => {
 
 
 
-Once the calendar was fully functional, the next stage was to incorporate the tennis sessions with the calendar. I began by creating a side panel (**code snippet 12**) and three modals. The side panel displays the tennis sessions to the user when they click on a day (refer to **figure 17**)- though at this stage it just displayed the message "No tennis sessions scheduled", and the add tennis session button. The three modals refers to the 'add session modal' (**figure 19**), the 'edit session modal' (**figure 18**), and the 'delete session modal' (**figure 20**). I incorporated the modals with the forms created by the `TennisSessionForm` class previously written in order to communicate with the `TennisSession` database table with ease.
+Once the calendar was fully functional, the next stage was to incorporate the tennis sessions with the calendar. I began by creating a side panel (**code snippet 12**) and three modals (code snippet 13). The side panel displays the tennis sessions to the user when they click on a day (refer to **figure 17**)- though at this stage it just displayed the message "No tennis sessions scheduled", and the add tennis session button. The three modals refers to the 'add session modal' (**figure 19**), the 'edit session modal' (**figure 18**), and the 'delete session modal' (**figure 20**). I incorporated the modals with the forms created by the `TennisSessionForm` class previously written in order to communicate with the `TennisSession` database table with ease.
 
 ```javascript
 function showSidePanel(day) {
   ...
-  // Check if there are tennis sessions for the clicked day
+  // Checking if there are tennis sessions for the clicked day.
   const sessionsForDay = tennisSessions.filter(session => {
     // Similar to HasTennisSession function.
   });
@@ -1136,7 +1136,7 @@ function showSidePanel(day) {
   else {
     addCloseBtn();
 
-    // Display tennis session info in the side panel
+    // Displaying tennis session info in the side panel.
     sessionsForDay.forEach(session => {
       const sessionDiv = document.createElement('div');
       sessionDiv.classList.add("side-panel-session-div");
@@ -1165,7 +1165,35 @@ function closeSidePanel() {
 }
 ```
 
-**Code Snippet 12** Side panel javascript functionality.
+**Code Snippet 12** Side panel javascript functionality.<br>
+
+<br>
+
+```html
+<div id="editModal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal('#editModal')">
+        &times;
+      </span>
+      <div id="modalContent">
+        <form action="" method="post" novalidate>
+          {% csrf_token %}
+          {{ form.as_p }}
+          <div style="display: none;">
+            <label for="session-id">ID: </label>
+            <input type="hidden" type="text" name="session-id" 
+                   id="session-id" value="X">
+          </div>
+          <input class="btn" type="submit" value="Edit Tennis Session">
+        </form>
+      </div>
+    </div>
+  </div>
+```
+
+**Code Snippet 13** Edit modal HTML.<br>
+
+<br>
 
 
 
