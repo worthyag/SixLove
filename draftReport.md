@@ -831,6 +831,10 @@ class TennisSessionForm(forms.ModelForm):
 
 
 
+Most of the work for both the `registration` and `tennis` app was focused on creating models and forms. My primary focus was on how the data would be stored, and figuring our the most effective ways to design the database and its interactions- resulting in a lot of my time being allocated to that. This allowed the implementation feel more intuitive and less complex.
+
+
+
 
 
 Modified UML.
