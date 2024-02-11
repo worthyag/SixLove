@@ -502,7 +502,7 @@ The wireframing and design in SixLove utilises a mobile first approach. This app
 
 **Figure 14** displays a tabular version of the entity relation diagram, while highlighting the primary keys and foreign keys. It was important to establish a database schema earlier on in the process, since it can be altered further down the line, and the SixLove application relies heavily on data.
 
-<img title="" src="./images/SixLoveUML.png" alt="" data-align="center">
+<img title="" src="images/SixLoveUML.png" alt="">
 
 **Figure 14** The project's UML Diagram.
 
@@ -644,9 +644,7 @@ User authentication is a primary requirement of the app. SixLove's purpose is to
 
 - Login- the page that authenticates the user.
 
-
-
-In order to authenticate the users, I needed to first create a table in my database that would store users information.
+In order to authenticate the users, I needed to first create a table in my database that would store users information. In Django, this is facilitated through the creation of a model. The UML diagram for users can be seen in **figure 14**.
 
 ## 4.2 The `tennis` app
 
