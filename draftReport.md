@@ -953,7 +953,11 @@ I also added the variable in **code snippet 9** to the settings file to ensure t
 LOGOUT_REDIRECT_URL = "home"
 ```
 
-**Code Snippet 9** The `LOGOUT_REDIRECT_URL` variable located in the settings file.
+**Code Snippet 9** The `LOGOUT_REDIRECT_URL` variable located in the settings file.<br>
+
+<br>
+
+
 
 I then wrote some unit tests to ensure that the `tennis` app was working as aspected (refer to [section 5.1](#51-unit-testing)).
 
@@ -999,7 +1003,6 @@ I did not have to create a model for the `planner` app since it works with the m
 function buildCalendar() {
   ...
 
-
   // Getting info about the previous and current month days.
   const currentFirstDay = new Date(year, month, 1);
   const currentLastDay = new Date(year, month + 1, 0);
@@ -1016,7 +1019,7 @@ function buildCalendar() {
   // Adding the days to the DOM.
   let days = "";
 
-  // Function to check if a date has a tennis session
+  // Function that checks if a date has a tennis session.
   function hasTennisSession(date) {
     return tennisSessions.some(session => {
       const sessionDate = new Date(session.date);
@@ -1027,7 +1030,6 @@ function buildCalendar() {
       );
     });
   }
-
 
   // Adding the previous month days.
   for (let i = day; i > 0; i--) {
@@ -1043,12 +1045,11 @@ function buildCalendar() {
     const currentDate = new Date(year, month, i);
     const hasSession = hasTennisSession(currentDate);
     const isToday = currentDate.toDateString() === today.toDateString();
-
     
     const dayElement = document.createElement('div');
-    dayElement.classList.add('day', isToday ? 'today' : 'day', hasSession ? 'tennis-session' : 'day');
+    dayElement.classList.add('day', isToday ? 'today' : 'day', 
+                            hasSession ? 'tennis-session' : 'day');
     dayElement.textContent = i;
-
     dayElement.addEventListener('click', () => showSidePanel(i));
 
     daysDiv.appendChild(dayElement);
@@ -1056,18 +1057,14 @@ function buildCalendar() {
 
   // Adding the next month days.
   for (let i = 1; i <= nextDays; i++) {
-    const dayElement = document.createElement('div');
-    dayElement.classList.add('day', 'next-date');
-    dayElement.textContent = i;
-
-    daysDiv.appendChild(dayElement);
+    // Similar to the prev month days.
   }
-
-  // daysDiv.innerHTML = days;
 }
-
-buildCalendar();
 ```
+
+**Code Snippet 10** The `BuildCalendar` function.<br>
+
+<br>
 
 
 
