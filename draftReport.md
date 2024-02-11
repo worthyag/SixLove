@@ -960,6 +960,17 @@ def delete_tennis_session(request, tennis_session_id):
 
 The views displayed in **code snippet 8** are those that specifically deal with the tennis sessions. These are the views that provide the users with the ability interact with the tennis sessions. These views communicate with the `TennisSession` database table. Other than the `delete` view, the views pass a form to their associated HTML templates. These templates contain forms that allow users to make changes to their tennis sessions, in a similar fashion to **code snippet 4**.
 
+I also added the variable in **code snippet 9** to the settings file to ensure that the user is always redirected to the home (landing) page when they logout. The settings file is a file that "*contains all the configuration of your Django installation*" [19].
+
+```python
+# Redirects the user to the home page when they log out.
+LOGOUT_REDIRECT_URL = "home"
+```
+
+**Code Snippet 9** The `LOGOUT_REDIRECT_URL` variable located in the settings file.
+
+I then wrote some unit tests to ensure that the `tennis` app was working as aspected (refer to [section 5.1](#51-unit-testing)).
+
 ### 4.2.1 The MVT Pattern
 
 At this point, it is clear to see that there is a pattern emerging. I begin by creating some model(s), then I create some view(s) that seems to be linked to some template that I have created. This is the Django work cycle. Django has a model-view-template (MVT) architecture, as displayed in **figure 25**.
@@ -972,7 +983,7 @@ At this point, it is clear to see that there is a pattern emerging. I begin by c
 
 
 
-A **model** in Django is defined as the "**the interface of your data*"[19]. It is an object that defines the structure of the data in a Django app. This means that models are responsible for maintaining the entire application’s data and enables you to perform CRUD operations on the data.
+A **model** in Django is defined as the "**the interface of your data*"[20]. It is an object that defines the structure of the data in a Django app. This means that models are responsible for maintaining the entire application’s data and enables you to perform CRUD operations on the data.
 
 A **view** in Django is the user interface (UI). More specifically, it is a handler function that accepts HTTP requests, processes them, and returns the HTTP response. The view uses models to retrieve data, and then renders them to the UI using templates. Views in Django also have the functionality to create HTML pages, populating a HTML template dynamically- this is what I have done so far.
 
@@ -980,21 +991,19 @@ A **template** in Django is a file that defines the structure of the UI. It can 
 
 ## 4.3 The `planner` app
 
-With the tennis session functionality implemented, I was ready to extend it to the calendar page. The goal for the calendar was to allow users to view and interact with their tennis sessions in a more user-friendly manner.
+With the tennis session functionality implemented, I was ready to extend it to the calendar page. The goal for the calendar page was to allow users to view and interact with their tennis sessions in a more user-friendly manner.
 
 The `planner` app has the following pages:
 
-- Calendar- the page that displays a calendar to the user. Users can use this page to add, edit, and delete tennis sessions.
+- Calendar- the page that displays a calendar to the user.
 
-As mentioned earlier the `planner` app also allows user to add, edit, and delete tennis sessions.
+As mentioned earlier the `planner` app also allows user to add, edit, and delete tennis sessions, this is all facilitated through the interactive calendar that is located on the calendar page (**figures 16** to **20** display the calendar page).
 
 
 
 Update the above text to highlight the following:
 
 0 Go through all the logs to make sure everything is covered.
-
-
 
 Describe the rest of implementations:
 
@@ -1049,4 +1058,8 @@ Short section: summarise what I have done, or speak about things that hasn’t c
 
 
 
-[19] "*Django Project MVT Structure*" [Online]. Available: [Django Project MVT Structure - GeeksforGeeks](https://www.geeksforgeeks.org/django-project-mvt-structure/) [Accessed February 2024]
+[19] "*Django settings*" [Online]. Available: [[Django settings | Django documentation | Django](https://docs.djangoproject.com/en/5.0/topics/settings/)](https://www.geeksforgeeks.org/django-project-mvt-structure/) [Accessed February 2024]<br>
+
+
+
+[20] "*Django Project MVT Structure*" [Online]. Available: [Django Project MVT Structure - GeeksforGeeks](https://www.geeksforgeeks.org/django-project-mvt-structure/) [Accessed February 2024]<br>
