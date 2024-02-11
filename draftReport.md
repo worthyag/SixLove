@@ -39,6 +39,9 @@
   - [3.2 Work plan](#32-work-plan)
   - [3.3 Evaluation strategy](#33-evaluation-strategy)
 - [4 The Implementation](#4-the-implementation)
+  - [4.1 The `registration` app](#41-the-registration-app)
+  - [4.2 The `tennis` app](#42-the-tennis-app)
+  - [4.3 The `planner` app](#43-the-planner-app)
 - [5 Evaluation](#5-evaluation)
   - [5.1 Unit testing](#51-unit-testing)
   - [5.2 Overall project evaluation](#52-overall-project-evaluation)
@@ -594,6 +597,12 @@ The prototype works quite well. Users can log in and add tennis sessions- but th
 In terms of user authentication the prototype is quite good, though the next step would be making the sign up process more robust. Users should also be able to sign up / log in using their Google accounts, and the database must take this into account. It is also important to consider appropriate form validation, though there would need to be a balance between being secure and being a nuisance.
 
 The calendar is currently dynamically rendered. The user can change what month they are viewing by utilising the date picker. Though the functionality for this is not yet complete, the goal is for the calendar to be newly rendered whenever a new date is selected (if it is is a different month). However, due to the nature of the html date input, an `onChange` events refers to any valid date- which may not necessarily be the date the user wanted to select. This  would result in an app that displays the calendar for a date not wanted by the user, therefore this is something that must be kept in mind while working on the planner's functionality.
+
+## 4.1 The `registration` app
+
+## 4.2 The `tennis` app
+
+## 4.3 The `planner` app
 
 Update the above test to highlight the following:
 
