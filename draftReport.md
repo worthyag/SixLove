@@ -999,6 +999,18 @@ The `planner` app has the following pages:
 
 As mentioned earlier the `planner` app also allows user to add, edit, and delete tennis sessions, this is all facilitated through the interactive calendar that is located on the calendar page (**figures 16** to **20** display the calendar page).
 
+I wanted users to be able to interact with the calendar. My aim was to build a calendar that the allows users to do the following:
+
+- Click a specific day and be able to add, view, edit, and delete sessions.
+
+- Navigate to different months using a date picker or the arrows on the calendar.
+
+- View which days have tennis sessions and which don't based on just looking at the camera.
+
+I originally wanted to use the 'FullCalendar' javascript library to build the calendar, however I didn't want to deal with the licensing. I then decided to use the calendar python library, more specifically the HTMLCalendar. However, after reading the documentation, and researching other projects that had incorporated it, it did not feel right for this project.  Though I know that I could have built upon it, the library felt too limited. In the end, I decided to build a calendar from scratch myself, in order to focus on the things needed for SixLove. Building a calendar from scratch will also allow me to make alterations with ease- especially since I know all the workings of it.
+
+
+
 
 
 Update the above text to highlight the following:
