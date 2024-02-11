@@ -993,9 +993,83 @@ I wanted users to be able to interact with the calendar. My aim was to build a c
 
 I originally wanted to use the 'FullCalendar' javascript library to build the calendar, however I didn't want to deal with the licensing. I then decided to use the calendar python library, more specifically the HTMLCalendar. However, after reading the documentation, and researching other projects that had incorporated it, it did not feel right for this project.  Though I know that I could have built upon it, the library felt too limited. In the end, I decided to build a calendar from scratch myself, in order to focus on the things needed for SixLove. Building a calendar from scratch will also allow me to make alterations with ease- especially since I know all the workings of it.
 
-I did not have to create a model for the `planner` app since it works with the models already created. Therefore I began by creating a simple view, so that I could begin working on the calendar itself. The first stage was to work on the logic for the calendar interface. At this stage, my goal was to build a calendar using HTML and CSS/SCSS, that displayed the date above it and a date picker beneath it. Once I hard coded the calendar, I then modified my code, to use javascript to dynamically render the calendar. I created a `buildCalendar()` function that rendered the calendar based on today's date.
+I did not have to create a model for the `planner` app since it works with the models already created. Therefore I began by creating a simple view, so that I could begin working on the calendar itself. The first stage was to work on the logic for the calendar interface. At this stage, my goal was to build a calendar using HTML and CSS/SCSS, that displayed the date above it and a date picker beneath it. Once I hard coded the calendar, I then modified my code, to use javascript to dynamically render the calendar. I created a `buildCalendar()` function that rendered the calendar based on today's date. **Code snippet 10** displays the most important parts of the function.
 
-{add code snippet}
+```javascript
+function buildCalendar() {
+  ...
+
+
+  // Getting info about the previous and current month days.
+  const currentFirstDay = new Date(year, month, 1);
+  const currentLastDay = new Date(year, month + 1, 0);
+  const prevLastDay = new Date(year, month, 0);
+
+  const prevTotalDays = prevLastDay.getDate();
+  const currentTotalDays = currentLastDay.getDate();
+  const day = currentFirstDay.getDay() - 1;
+  const nextDays = 7 - currentLastDay.getDay();
+
+  // Updating the date.
+  date.textContent = `${getMonth(month)[1]} ${year}`;
+
+  // Adding the days to the DOM.
+  let days = "";
+
+  // Function to check if a date has a tennis session
+  function hasTennisSession(date) {
+    return tennisSessions.some(session => {
+      const sessionDate = new Date(session.date);
+      return (
+        date.getFullYear() === sessionDate.getFullYear() &&
+        date.getMonth() === sessionDate.getMonth() &&
+        date.getDate() === sessionDate.getDate()
+      );
+    });
+  }
+
+
+  // Adding the previous month days.
+  for (let i = day; i > 0; i--) {
+    const dayElement = document.createElement('div');
+    dayElement.classList.add('day', 'prev-date');
+    dayElement.textContent = prevTotalDays - i + 1;
+
+    daysDiv.appendChild(dayElement);
+  }
+
+  // Adding the current month days.
+  for (let i = 1; i <= currentTotalDays; i++) {
+    const currentDate = new Date(year, month, i);
+    const hasSession = hasTennisSession(currentDate);
+    const isToday = currentDate.toDateString() === today.toDateString();
+
+    
+    const dayElement = document.createElement('div');
+    dayElement.classList.add('day', isToday ? 'today' : 'day', hasSession ? 'tennis-session' : 'day');
+    dayElement.textContent = i;
+
+    dayElement.addEventListener('click', () => showSidePanel(i));
+
+    daysDiv.appendChild(dayElement);
+  }
+
+  // Adding the next month days.
+  for (let i = 1; i <= nextDays; i++) {
+    const dayElement = document.createElement('div');
+    dayElement.classList.add('day', 'next-date');
+    dayElement.textContent = i;
+
+    daysDiv.appendChild(dayElement);
+  }
+
+  // daysDiv.innerHTML = days;
+}
+
+buildCalendar();
+```
+
+
 
 The next thing I did was to add functionality to the arrows, so that the users could navigate to different months using the arrows. I also adding functionality to the date picker and the today button.
 
@@ -1017,13 +1091,7 @@ Once I completed most of the calendar functionality, I wrote some unit tests tha
 
 <br>
 
-Update the above text to highlight the following:
 
-0 Go through all the logs to make sure everything is covered.
-
-Describe the rest of implementations:
-
-0 The calendar app.
 
 0 The community / connect app- future implementation.
 
