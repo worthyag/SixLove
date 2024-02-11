@@ -317,7 +317,7 @@ Nike Training Club is a general fitness app that offers a variety of workout rou
 
 *Exploring tennis novice linear progression.*
 
-[Section 1.1](#11-introduction-and-background) delineated the fundamental features and principles of Novice LP. Now, the focus shifts to customising and applying these concepts to the realm of tennis. This brings us to the definition of tennis novice linear progression (TNLP). TNLP represents a structured and incremental approach to skill development for novice tennis players. It places emphasis on foundational strokes, court awareness, fitness, and overall improvement in tennis proficiency. TNLP is built upon five core principles:
+[Section 1.1](#11-introduction-and-background) delineated the fundamental features and principles of Novice LP. Now, the focus shifts to customising and applying these concepts to the realm of tennis. This brings us to the definition of tennis novice linear progression (TNLP)- a program that I have created based on Novice LP. TNLP represents a structured and incremental approach to skill development for novice tennis players. It places emphasis on foundational strokes, court awareness, fitness, and overall improvement in tennis proficiency. TNLP is built upon five core principles:
 
 1. Fundamental tennis strokes
 2. Linear progression in skill development
@@ -372,20 +372,16 @@ The libraries and technologies that will be used in this project are as follows:
     - For styling and user interactivity.
     
     - Though other frameworks such as React may end up being used in conjunction.
-  
-  - NodeJS, ExpressJS
-    
-    - To serve static assets and handle API requests from the frontend.
 
 - **Backend**
   
-  - NodeJS, ExpressJS
+  - Django
     
-    - Initially used to connect the database, and for other backend functionality.
+    - To serve static assets and handle API requests from the frontend.
+    - Used to connect the database, and for other backend functionality.
+    - To enhance the backend capabilities.
   
-  - Django REST Framework
-    
-    - Later used to enhance the backend capabilities.
+  - 
 
 - **Database**
   
