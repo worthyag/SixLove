@@ -972,11 +972,11 @@ At this point, it is clear to see that there is a pattern emerging. I begin by c
 
 
 
-A **model** in Django is defined as acting as the "**the interface of your data*"[19]. It is an object that defines the structure of the data in a Django app. This means that models are responsible for maintaining the entire application’s data for which enables you to perform CRUD operations on the data.
+A **model** in Django is defined as the "**the interface of your data*"[19]. It is an object that defines the structure of the data in a Django app. This means that models are responsible for maintaining the entire application’s data and enables you to perform CRUD operations on the data.
 
-A **view** in Django is the user interface (UI). More specifically, it is a handler function that accepts HTTP requests, processes them, and returns the HTTP response. The view uses models to retrieve data, and then renders them to the UI using templates. Views in Django also have the functionality to create HTML pages, populating a HTML template dynamically.
+A **view** in Django is the user interface (UI). More specifically, it is a handler function that accepts HTTP requests, processes them, and returns the HTTP response. The view uses models to retrieve data, and then renders them to the UI using templates. Views in Django also have the functionality to create HTML pages, populating a HTML template dynamically- this is what I have done so far.
 
-
+A **template** in Django is a file that defines the structure of the UI. It can be a file of any type, though in this project I have used HTML files. Templates are able to receive data from the view and render it to the UI.
 
 
 
