@@ -1009,7 +1009,7 @@ I wanted users to be able to interact with the calendar. My aim was to build a c
 
 I originally wanted to use the 'FullCalendar' javascript library to build the calendar, however I didn't want to deal with the licensing. I then decided to use the calendar python library, more specifically the HTMLCalendar. However, after reading the documentation, and researching other projects that had incorporated it, it did not feel right for this project.  Though I know that I could have built upon it, the library felt too limited. In the end, I decided to build a calendar from scratch myself, in order to focus on the things needed for SixLove. Building a calendar from scratch will also allow me to make alterations with ease- especially since I know all the workings of it.
 
-I begin with the logic for the interface. I have built an interactive calendar from scratch in the past, however that calendar did not display the days of the previous and next month
+I begin with the logic for the interface. I have built an interactive calendar from scratch in the past, however that calendar did not display the days of the previous and next month (refer to figure 26) like a typically calendar would. 
 
 
 
