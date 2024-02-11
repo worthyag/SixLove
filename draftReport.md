@@ -106,16 +106,16 @@ With the mention of the users comes the project domain. Though alluded to and sp
    - Provide a structured training program covering fundamental tennis strokes.
 2. **User engagement and social interaction**
    - Implement user authentication and profiles, displaying achievements and progress.
-   - Enable friend management features, including friend requests and connections.
-   - Facilitate program and session management, allowing joint workouts and shared goals with friends.
+   - Enable users to connect with each other.
+   - Facilitate tennis session management, allowing joint tennis sessions.
 3. **Customisation and personalisation**
    - Allow users to track progress.
-   - Allow users to set  training intensity and personal goals.
+   - Allow users to add their own tennis sessions.
 4. **User interface (UI/UX)**
    - Design an intuitive and visually appealing interface.
    - Ensure a dynamic and responsive UI for an enhanced user experience.
 5. **Community engagement**
-   - Create an activity stream showcasing friends' achievements, linked sessions, and program updates.
+   - Create an activity stream showcasing friends' achievements and posts.
 
 # 2 Literature
 
