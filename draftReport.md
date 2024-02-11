@@ -598,61 +598,55 @@ In terms of user authentication the prototype is quite good, though the next ste
 
 The calendar is currently dynamically rendered. The user can change what month they are viewing by utilising the date picker. Though the functionality for this is not yet complete, the goal is for the calendar to be newly rendered whenever a new date is selected (if it is is a different month). However, due to the nature of the html date input, an `onChange` events refers to any valid date- which may not necessarily be the date the user wanted to select. This  would result in an app that displays the calendar for a date not wanted by the user, therefore this is something that must be kept in mind while working on the planner's functionality.
 
-
-
-I decided that I wanted to start building SixLove's functionality in a somewhat chronological order. Chronological order referring to the user's flow, for instance, what route will potential users take when navigating the app? That meant starting with the landing page, then moving onto the sign up and login pages, then to the pages that allow the users to add, edit, and delete tennis sessions. I have previously stated SixLove's aims and objectives, and at their very core user authentication and tennis sessions play a huge role in whether the aims and objectives are met, so using this order made the most logical sense. I must mention however, at this stage my goal was to program the functionality, therefore I did very minimal styling- currently the user interface is not fully fleshed out (or quite minimal- refer to **figures 16** to **23** to see what I mean), and there will be upcoming changes to the wireframes based on user input and accessibility matters.
+I decided that I wanted to start building SixLove's functionality in a somewhat chronological order. Chronological order referring to the user's flow, for instance, what route will potential users take when navigating the app? That meant starting with the landing page, then moving on to the sign up and login pages, then to the pages that allow the users to add, edit, and delete tennis sessions. I have previously stated SixLove's aims and objectives, and at their very core user authentication and tennis sessions play a huge role in whether the aims and objectives are met, so using this approach made the most logical sense. I must mention however, at this stage my goal was to program the functionality, therefore I did very minimal styling- currently the user interface is not fully fleshed out (or quite minimal- refer to **figures 16** to **23** to see what I mean), and there will be upcoming changes to the wireframes based on user input and accessibility matters.
 
 <img title="" src="images/calendar-page.png" alt="">
 
 **Figure 16** The project's current calendar page. (Screenshot of the developer tools view to get a view of the whole page- 50% zoom).
 
-
-
 <img title="" src="images/calendar-page-side-panel.png" alt="">
 
 **Figure 17** The project's current side panel for the calendar page. (Screenshot of the developer tools view to get a view of the whole page- 50% zoom).
-
-
 
 <img title="" src="images/calendar-page-edit-session.png" alt="">
 
 **Figure 18** The project's current edit tennis session popup for the calendar page. (Screenshot of the developer tools view to get a view of the whole page- 50% zoom).
 
-
-
 <img title="" src="images/calendar-page-add-session.png" alt="">
 
 **Figure 19** The project's current add tennis session popup for the calendar page. (Screenshot of the developer tools view to get a view of the whole page- 50% zoom).
-
-
 
 <img title="" src="images/calendar-page-delete-session.png" alt="">
 
 **Figure 20** The project's current delete tennis session popup for the calendar page. (Screenshot of the developer tools view to get a view of the whole page- 50% zoom).
 
-
-
 <img title="" src="images/tennis-page.png" alt="">
 
 **Figure 21** The project's current tennis page. (Screenshot of the developer tools view to get a view of the whole page- 50% zoom).
-
-
 
 <img title="" src="images/login-page.png" alt="">
 
 **Figure 22** The project's current login page. (Screenshot of the developer tools view to get a view of the whole page- 50% zoom).
 
-
-
 <img title="" src="images/sign-up-page.png" alt="">
 
 **Figure 23** The project's current sign up page. (Screenshot of the developer tools view to get a view of the whole page- 50% zoom).
 
-
-
 ## 4.1 The `registration` app
 
-User authentication is a primary requirement of the app. SixLove's purpose is to allow its users to keep track of their tennis sessions, follow a training schedule, and feel a sense of community. User authentication is needed for this to work. Users can only keep track of their sessions if they are able to log in. In addition, users should only be able to access their tennis sessions and no other users (other than in the case of joint sessions).
+User authentication is a primary requirement of the app. SixLove's purpose is to allow its users to keep track of their tennis sessions, follow a training schedule, and feel a sense of community. User authentication is needed for this to work. Users can only keep track of their sessions if they are able to log in. In addition, users should only be able to access their tennis sessions and not another user's one (other than in the case of joint sessions). User authentication is housed within the `registration` app. The app has the following pages:
+
+- Home- the page that the user lands on when they navigate to the SixLove web application as a new or logged out user.
+
+- Sign up- the page that allows the user to sign up.
+
+- Onboarding- subject to change, however currently, it is the page that gains information about the user to help create a schedule.
+
+- Login- the page that authenticates the user.
+
+
+
+In order to authenticate the users, I needed to first create a table in my database that would store users information.
 
 ## 4.2 The `tennis` app
 
