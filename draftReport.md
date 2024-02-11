@@ -669,8 +669,6 @@ class CustomUserCreationForm(UserCreationForm):
 
 **Code Snippet 2** The `CustomUserCreationForm` form.<br><br>
 
-
-
 This form was used to create the forms displayed to the user, for both the login and sign up pages (which can be seen in **figures 22 and 23**). I then created the views corresponding to the pages previously mentioned, **code snippet 3** displays a condensed version of the code for this.
 
 ```python
@@ -765,8 +763,6 @@ The next order of business was to create the `tennis` app. The ability to add, e
 
 *The planner app also allows users to add, edit, and delete tennis sessions (this is expanded upon in [section 4.3](#43-the-planner-app).
 
-
-
 Like the `registration` app, I began with a model. **Figure 24** displays the fields and the name of the table that I created with the model (this is a simplified version of the TennisSession table displayed in **Figure 14**, since the friends aspect wasn't implemented at this stage). 
 
 <img title="" src="images/TennisSessionUML.png" alt="">
@@ -774,8 +770,6 @@ Like the `registration` app, I began with a model. **Figure 24** displays the fi
 **Figure 24** TennisSession UML table.<br>
 
 <br>
-
-
 
 When I started writing the code for the model, I realised that it would be better to make `isToday` a method rather than an attribute. This is because, `isToday` is dependent on the date, it is not an attribute of a the tennis session.  **Code snippet 5** displays the code for the model.
 
@@ -812,8 +806,6 @@ class TennisSession(models.Model):
 
 <br>
 
-
-
 I also created a form that coincides with the model. It is the form used for all communication with the `TennisSession` database table (adding, editing, and deleting). **Code snippet 6** displays the form code.
 
 ```python
@@ -831,8 +823,6 @@ class TennisSessionForm(forms.ModelForm):
 **Code Snippet 6** The `TennisSessionForm` form.<br>
 
 <br>
-
-
 
 Most of the work for both the `registration` and `tennis` app was focused on creating models and forms. My primary focus was on how the data would be stored, and figuring out the most effective ways to design the database and its interactions- resulting in a lot of my time being allocated to that. This allowed the implementation to feel more intuitive and less complex.
 
@@ -876,8 +866,6 @@ def tennis(request):
 **Code Snippet 7** The `tennis` view of the `tennis` app.<br>
 
 <br>
-
-
 
 In addition to using the `@login_required` decorator, **code snippet 7** demonstrates how I further filter information based on the user who sent the request. This is to make sure that users can only see tennis sessions associated with their account. **Code snippet 8**, displays some of the other views within the `tennis` app (the success and learn views are not displayed).
 
@@ -956,8 +944,6 @@ def delete_tennis_session(request, tennis_session_id):
 
 <br>
 
-
-
 The views displayed in **code snippet 8** are those that specifically deal with the tennis sessions. These are the views that provide the users with the ability interact with the tennis sessions. These views communicate with the `TennisSession` database table. Other than the `delete` view, the views pass a form to their associated HTML templates. These templates contain forms that allow users to make changes to their tennis sessions, in a similar fashion to **code snippet 4**.
 
 I also added the variable in **code snippet 9** to the settings file to ensure that the user is always redirected to the home (landing) page when they logout. The settings file is a file that "*contains all the configuration of your Django installation*" [19].
@@ -980,8 +966,6 @@ At this point, it is clear to see that there is a pattern emerging. I begin by c
 **Figure 25** Django project structure.<br>
 
 <br>
-
-
 
 A **model** in Django is defined as the "**the interface of your data*"[20]. It is an object that defines the structure of the data in a Django app. This means that models are responsible for maintaining the entire application’s data and enables you to perform CRUD operations on the data.
 
@@ -1009,19 +993,21 @@ I wanted users to be able to interact with the calendar. My aim was to build a c
 
 I originally wanted to use the 'FullCalendar' javascript library to build the calendar, however I didn't want to deal with the licensing. I then decided to use the calendar python library, more specifically the HTMLCalendar. However, after reading the documentation, and researching other projects that had incorporated it, it did not feel right for this project.  Though I know that I could have built upon it, the library felt too limited. In the end, I decided to build a calendar from scratch myself, in order to focus on the things needed for SixLove. Building a calendar from scratch will also allow me to make alterations with ease- especially since I know all the workings of it.
 
-I begin with the logic for the interface. I have built an interactive calendar from scratch in the past, however that calendar did not display the days of the previous and next month (refer to figure 26) like a typically calendar would. 
+I did not have to create a model for the `planner` app since it works with the models already created. Therefore I began by creating a simple view, so that I could begin working on the calendar itself. The first stage was to work on the logic for the calendar interface. At this stage, my goal was to build a calendar using HTML and CSS/SCSS, that displayed the date above it and a date picker beneath it. Once I hard coded the calendar, I then modified my code, to use javascript to dynamically render the calendar. I created a `buildCalendar()` function that rendered the calendar based on today's date.
+
+{add code snippet}
+
+The next thing I did was to add functionality to the arrows, so that the users could navigate to different months using the arrows. I also adding functionality to the date picker and the today button.
+
+{add code snippet}
+
+Once the calendar was fully functional, the next stage was to incorporate the tennis sessions with the calendar. I began by creating a side panel and three modals. The side panel displays the tennis sessions to the user when they click on a day (refer to **figure 17**)- though at this stage it just displayed the message "No tennis sessions scheduled".
 
 
 
 
-
-<img title="" src="images/previous-calendar.png" alt="">
-
-**Figure 26** Previously created calendar.<br>
 
 <br>
-
-
 
 Update the above text to highlight the following:
 
@@ -1078,10 +1064,6 @@ Short section: summarise what I have done, or speak about things that hasn’t c
 [17] Pamela Attree PhD, Beverley French PhD, Beth Milton PhD, Susan Povall PhD, Margaret Whitehead PhD FFPH, Jennie Popay BA (Hons) MA. 8 December, 2010. "*The experience of community engagement for individuals: a rapid review of evidence*", vol. 19, issue 3, pp. 250-260. doi: 10.1111/j.1365-2524.2010.00976.x.<br>
 [18] "*Customizing authentication in Django*" [Online]. Available: [Customizing authentication in Django | Django documentation | Django](https://docs.djangoproject.com/en/5.0/topics/auth/customizing/) [Accessed February 2024]<br>
 
-
-
 [19] "*Django settings*" [Online]. Available: [[Django settings | Django documentation | Django](https://docs.djangoproject.com/en/5.0/topics/settings/)](https://www.geeksforgeeks.org/django-project-mvt-structure/) [Accessed February 2024]<br>
-
-
 
 [20] "*Django Project MVT Structure*" [Online]. Available: [Django Project MVT Structure - GeeksforGeeks](https://www.geeksforgeeks.org/django-project-mvt-structure/) [Accessed February 2024]<br>
