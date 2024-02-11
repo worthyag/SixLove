@@ -40,6 +40,8 @@
   - [3.3 Evaluation strategy](#33-evaluation-strategy)
 - [4 The Implementation](#4-the-implementation)
 - [5 Evaluation](#5-evaluation)
+  - [5.1 Unit testing](#51-unit-testing)
+  - [5.2 Overall project evaluation](#52-overall-project-evaluation)
 - [6 Conclusion](#6-conclusion)
 - [7 References](#7-references)
 
@@ -593,13 +595,31 @@ In terms of user authentication the prototype is quite good, though the next ste
 
 The calendar is currently dynamically rendered. The user can change what month they are viewing by utilising the date picker. Though the functionality for this is not yet complete, the goal is for the calendar to be newly rendered whenever a new date is selected (if it is is a different month). However, due to the nature of the html date input, an `onChange` events refers to any valid date- which may not necessarily be the date the user wanted to select. This  would result in an app that displays the calendar for a date not wanted by the user, therefore this is something that must be kept in mind while working on the planner's functionality.
 
-Describe my implementation.
+Update the above test to highlight the following:
+
+0 Go through all the logs to make sure everything is covered.
+
+0 (The registration app)- User authentication- describe how you achieved this, refer to logs. Explain about other parts of the registration app. Explain why you did what you did.
+
+0 (The tennis app)- The ability to add tennis sessions- describe how you achieved this, refer to logs. Explain about other parts of the tennis app. Explain why you did what you did.
+
+Describe the rest of implementations:
+
+0 The calendar app.
+
+0 The community / connect app- future implementation.
 
 # 5 Evaluation
 
 *Evaluation...*
 
-Testing where I am.
+## 5.1 Unit testing
+
+0 Go into detail about the unit testing that you have conducted, and why you chose particular tests (for instance, `test_calendar_view_loads`). When you were explaining the implementations in the previous section, make sure that you pointed to this section, to go into detail about the tests. (Could be its own section).
+
+## 5.2 Overall project evaluation
+
+Evaluate what stage you are are by evaluating the aims and objectives.
 
 Write about some of the tests I have, and what I have left of the project (in my case, I have done the calendar, and the ability to track workouts etc).
 
