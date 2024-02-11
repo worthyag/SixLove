@@ -1005,9 +1005,13 @@ Once the calendar was fully functional, the next stage was to incorporate the te
 
 {add code snippet}
 
+I then had to make sure that the tennis session data was being sent to calendar page, and that the calendar view knew what to do depending on which modal was submitting the form. This logic was achieved through the use of a hidden id input that I added to the form. This meant that the calendar view new which sessions to edit and which sessions to delete- this wasn't necessary for adding tennis sessions.
 
+{add code snippet}
 
+With that, I wrote corresponding javascript code that provided the interactivity needed for the user to be able to add, edit, delete, and view their tennis sessions.
 
+{add code snippet}
 
 <br>
 
