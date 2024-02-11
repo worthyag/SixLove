@@ -752,19 +752,19 @@ With that completed, I had written most of the functionality for user authentica
 
 The next order of business was to create the `tennis` app. The ability to add, edit, and delete tennis sessions is the heart of SixLove. Users must be able to add tennis sessions to their calendar, and also view and update their schedule. The `tennis` app has the following pages:
 
-- Tennis
+- Tennis- the page that displays the user's tennis sessions.
 
-- Add
+- Add- the page where users can add tennis sessions.
 
-- Edit
+- Edit- the page where users can edit tennis sessions.
 
-- Delete
+- Delete- the page where users can delete tennis sessions.
 
-- Success
+- Success- the page that lets users know that they successfully completed their task.
 
-- Learn
+- Learn- the page that provides users with learning / tennis resources.
 
-
+*The planner app also allows users to add, edit, and delete tennis sessions (this is expanded upon in [section 4.3](#43-the-planner-app).
 
 
 
