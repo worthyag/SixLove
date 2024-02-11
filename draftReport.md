@@ -1117,9 +1117,57 @@ todayBtn.addEventListener("click", () => {
 
 
 
-Once the calendar was fully functional, the next stage was to incorporate the tennis sessions with the calendar. I began by creating a side panel and three modals. The side panel displays the tennis sessions to the user when they click on a day (refer to **figure 17**)- though at this stage it just displayed the message "No tennis sessions scheduled", and the add tennis session button. The three modals refers to the 'add session modal' (**figure 19**), the 'edit session modal' (**figure 18**), and the 'delete session modal' (**figure 20**). I incorporated the modals with the forms created by the `TennisSessionForm` class previously written in order to communicate with the `TennisSession` database table with ease.
+Once the calendar was fully functional, the next stage was to incorporate the tennis sessions with the calendar. I began by creating a side panel (**code snippet 12**) and three modals. The side panel displays the tennis sessions to the user when they click on a day (refer to **figure 17**)- though at this stage it just displayed the message "No tennis sessions scheduled", and the add tennis session button. The three modals refers to the 'add session modal' (**figure 19**), the 'edit session modal' (**figure 18**), and the 'delete session modal' (**figure 20**). I incorporated the modals with the forms created by the `TennisSessionForm` class previously written in order to communicate with the `TennisSession` database table with ease.
 
-{add code snippet}
+```javascript
+function showSidePanel(day) {
+  ...
+  // Check if there are tennis sessions for the clicked day
+  const sessionsForDay = tennisSessions.filter(session => {
+    // Similar to HasTennisSession function.
+  });
+
+  if (sessionsForDay.length === 0) {
+    addCloseBtn();
+
+    // If no tennis sessions scheduled display a message.
+    ...
+  } 
+  else {
+    addCloseBtn();
+
+    // Display tennis session info in the side panel
+    sessionsForDay.forEach(session => {
+      const sessionDiv = document.createElement('div');
+      sessionDiv.classList.add("side-panel-session-div");
+
+      sessionDiv.innerHTML = `
+        <p><span>Title</span>: ${session.title}</p>
+        <p><span>Date</span>: ${getMonth(session.date.getMonth())[1]} ${session.date.getDate()}, ${session.date.getFullYear()} </p>
+        <p><span>Notes</span>: ${session.notes}</p>
+        <p><span>Completed</span>: ${session.isCompleted ? 'Yes' : 'No'}</p>
+        <button class="edit-session-btn" onclick="editSession(${session.id})">Edit</button>
+        <button class="delete-session-btn" onclick="deleteSession(${session.id}, '${session.title}')">Delete</button>
+      `;
+
+      sidePanel.appendChild(sessionDiv);
+    });
+  }
+
+  addAddSessionBtn(day);
+
+  // Show the side panel.
+  ...
+}
+
+function closeSidePanel() {
+  ...
+}
+```
+
+**Code Snippet 12** Side panel javascript functionality.
+
+
 
 I then had to make sure that the tennis session data was being sent to calendar page, and that the calendar view knew what to do depending on which modal was submitting the form. This logic was achieved through the use of a hidden id input that I added to the form. This meant that the calendar view new which sessions to edit and which sessions to delete- this wasn't necessary for adding tennis sessions.
 
