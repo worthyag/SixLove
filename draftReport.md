@@ -768,6 +768,20 @@ The next order of business was to create the `tennis` app. The ability to add, e
 
 
 
+<img title="" src="images/TennisSessionUML.png" alt="">
+
+**Figure 24** TennisSession UML table.<br>
+
+<br>
+
+
+
+Modified UML.
+
+Friends / community not yet implemented.
+
+
+
 ## 4.3 The `planner` app
 
 The `planner` app has the following pages:
