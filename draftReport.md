@@ -38,8 +38,10 @@
     - [3.1.3 Database Tables](#313-database-tables)
   - [3.2 Work plan](#32-work-plan)
   - [3.3 Evaluation strategy](#33-evaluation-strategy)
-- [4 The (feature) prototype](#4-the-feature-prototype)
-- [5 References](#5-references)
+- [4 The Implementation](#4-the-implementation)
+- [5 Evaluation](#5-evaluation)
+- [6 Conclusion](#6-conclusion)
+- [7 References](#7-references)
 
 <!-- /code_chunk_output -->
 
@@ -380,8 +382,6 @@ The libraries and technologies that will be used in this project are as follows:
     - To serve static assets and handle API requests from the frontend.
     - Used to connect the database, and for other backend functionality.
     - To enhance the backend capabilities.
-  
-  - 
 
 - **Database**
   
@@ -581,7 +581,7 @@ SixLove  will be evaluated using four categories which are as follows:
   
   - It will be decided whether or not SixLove delivered the planned functionality (or how much of its functionality has been completed).
 
-# 4 The (feature) prototype
+# 4 The Implementation
 
 *Implementation review.*
 
@@ -593,7 +593,19 @@ In terms of user authentication the prototype is quite good, though the next ste
 
 The calendar is currently dynamically rendered. The user can change what month they are viewing by utilising the date picker. Though the functionality for this is not yet complete, the goal is for the calendar to be newly rendered whenever a new date is selected (if it is is a different month). However, due to the nature of the html date input, an `onChange` events refers to any valid date- which may not necessarily be the date the user wanted to select. This  would result in an app that displays the calendar for a date not wanted by the user, therefore this is something that must be kept in mind while working on the planner's functionality.
 
-# 5 References
+# 5 Evaluation
+
+*Evaluation...*
+
+The features that the prototype focuses on are user authentication and the ability to add tennis sessions. ...
+
+# 6 Conclusion
+
+*Conclusion...*
+
+The features that the prototype focuses on are user authentication and the ability to add tennis sessions. ...
+
+# 7 References
 
 *List of all the sources used for this project.*
 
