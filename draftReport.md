@@ -811,7 +811,7 @@ class TennisSession(models.Model):
 
 
 
-I also created a form that coincides with the model. It is the form used for all communication with the `TennisSession` database table. Code snippet 6 displays the form code.
+I also created a form that coincides with the model. It is the form used for all communication with the `TennisSession` database table (adding, editing, and deleting). **Code snippet 6** displays the form code.
 
 ```python
 ...
@@ -831,7 +831,13 @@ class TennisSessionForm(forms.ModelForm):
 
 
 
-Most of the work for both the `registration` and `tennis` app was focused on creating models and forms. My primary focus was on how the data would be stored, and figuring our the most effective ways to design the database and its interactions- resulting in a lot of my time being allocated to that. This allowed the implementation feel more intuitive and less complex.
+Most of the work for both the `registration` and `tennis` app was focused on creating models and forms. My primary focus was on how the data would be stored, and figuring out the most effective ways to design the database and its interactions- resulting in a lot of my time being allocated to that. This allowed the implementation to feel more intuitive and less complex.
+
+With the database table and its corresponding form completed, I created the views.
+
+
+
+At this point, it is clear to see that there is a pattern emerging. I begin by creating some model(s), then I create some view(s) that seems to be linked to some template that I have created. This is the Django work cycle.
 
 
 
