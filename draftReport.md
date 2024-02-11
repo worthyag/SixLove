@@ -843,6 +843,16 @@ At this point, it is clear to see that there is a pattern emerging. I begin by c
 
 
 
+<img title="" src="images/django-structure.png" alt="">
+
+**Figure 25** Django project structure.<br>
+
+<br>
+
+
+
+
+
 Modified UML.
 
 Friends / community not yet implemented.
