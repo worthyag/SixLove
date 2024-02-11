@@ -136,7 +136,7 @@ With the mention of the users comes the project domain. Though alluded to and sp
 
 <img title="" src="./images/tennis-pal.png" alt="" data-align="center" width="420">
 
-**Figure 1** TennisPAL's User Interface<br>
+**Figure 1** TennisPAL's User Interface<br><br>
 
 TennisPAL is an app designed specifically for tennis players. It includes features for finding tennis partners and tracking match scores. It also allows users to improve their game through training exercises. **Figure 1** displays TennisPAL's user interface.
 
@@ -192,7 +192,7 @@ TennisPAL is an app designed specifically for tennis players. It includes featur
 
 <img title="" src="./images/my-fitness-pal.jpg" alt="" data-align="center" width="427">
 
-**Figure 2** MyFitnessPal's User Interface<br>
+**Figure 2** MyFitnessPal's User Interface<br><br>
 
 MyFitnessPal is not tennis specific. However, it is a popular fitness app that allows users to track workouts, set fitness goals, and log nutrition. Tennis players can use the app to monitor their overall fitness and nutrition. **Figure 2** displays MyFitnessPal's user interface.
 
@@ -240,7 +240,7 @@ MyFitnessPal is not tennis specific. However, it is a popular fitness app that a
 
 <img title="" src="./images/top-court.png" alt="" data-align="center" width="445">
 
-**Figure 3** TopCourt's User Interface<br>
+**Figure 3** TopCourt's User Interface<br><br>
 
 TopCourt offers video lessons from professional tennis players. This helps users improve their skill and fitness on the court. It also motivates novice tennis players, since they get the opportunity to learn from the very best. **Figure 3** displays TopCourt's user interface.
 
@@ -280,7 +280,7 @@ TopCourt offers video lessons from professional tennis players. This helps users
 
 <img title="" src="./images/nike-training-club.jpg" alt="" data-align="center" width="470">
 
-**Figure 4** Nike Training Club's User Interface<br>
+**Figure 4** Nike Training Club's User Interface<br><br>
 
 Nike Training Club is a general fitness app that offers a variety of workout routines, including some designed for specific sports. Tennis players are able to use the app to find workouts that focus on agility, strength, and endurance. **Figure 4** displays Nike Training Club's user interface.
 
@@ -438,45 +438,45 @@ The wireframing and design in SixLove utilises a mobile first approach. This app
 
 <img title="" src="./images/login-page-wireframe.png" alt="" data-align="center">
 
-**Figure 5** SixLove's Landing, login, and signup pages.<br>
+**Figure 5** SixLove's Landing, login, and signup pages.<br><br>
 
 **Figure 6** displays SixLove's profile page and settings page. This too is the 1st iteration. The figures highlights the decisions to be made between the two settings logo based on any user feedback.  The settings icon on the left seems to be a lot more intuitive, however the other icon is fairly prevalent in apps that are commonly used.
 
 <img title="" src="./images/profile-page-wireframe.png" alt="" data-align="center">
 
-**Figure 6** SixLove's profile and settings pages.<br>
+**Figure 6** SixLove's profile and settings pages.<br><br>
 
 **Figures 7 to 9** display SixLove's tennis program page. Each figure represents an iteration. **Figure 7** was the first iteration of the page and **figure 9** the most recent. The annotations on the figures themselves explain why certain changes were made, but in general the goal was to increase the accessibility of the design based on the user feedback. The `+` buttons in the day boxes of the calendar were brought about as a concern. Therefore the following iterations, were primarily focused on the size of input elements and making the app more accessible.
 
 <img title="" src="./images/tennis-page-wireframe-1.png" alt="" data-align="center">
 
-**Figure 7** SixLove's tennis program page (1st iteration).<br>
+**Figure 7** SixLove's tennis program page (1st iteration).<br><br>
 
 <img title="" src="./images/tennis-page-wireframe-2.png" alt="" data-align="center">
 
-**Figure 8** SixLove's tennis program page (2nd iteration).<br>
+**Figure 8** SixLove's tennis program page (2nd iteration).<br><br>
 
 <img title="" src="./images/tennis-page-wireframe-3.png" alt="" data-align="center">
 
-**Figure 9** SixLove's tennis program page (3rd iteration).<br>
+**Figure 9** SixLove's tennis program page (3rd iteration).<br><br>
 
 **Figure 10** displays SixLove's learning resources page, the aim of this page is to be a hub of information for users so that SixLove can be a sort of one stop shop. It was found that many people prefer to have all their functionality is one place, rather than in many places. Providing users with this bundled functionality aids in increasing their user experience.
 
 <img title="" src="./images/learning-page-wireframe.png" alt="" data-align="center">
 
-**Figure 10** SixLove's learning resources page.<br>
+**Figure 10** SixLove's learning resources page.<br><br>
 
 **Figure 11** displays SixLove's history page. The design is quite elementary since it is in its first iteration. The goal of the page is to allow users to look at their past tennis sessions. But rather than just listing them there, a date input is provided so that they can filter for specific days.
 
 <img title="" src="./images/history-page-wireframe.png" alt="" data-align="center">
 
-**Figure 11** SixLove's history page.<br>
+**Figure 11** SixLove's history page.<br><br>
 
 **Figure 12** displays SixLove's feed page. This is an important part of the app. It was essential to hone in on the community aspect of sports and fitness. Community is something that is integral in our lives and impacts us greatly. It was found that people who were "*actively involved in initiatives utilising community engagement approaches experienced positive benefits, in terms of physical and emotional health and well-being, self-confidence, self-esteem, social relationships and individual empowerment*" [17]. Therefore incorporating community in a sports app seemed fitting.
 
 <img title="" src="./images/feed-page-wireframe.png" alt="" data-align="center">
 
-**Figure 12** SixLove's feed page.<br>
+**Figure 12** SixLove's feed page.<br><br>
 
 ### 3.1.2 Entity-Relationship Diagram
 
@@ -496,7 +496,7 @@ The wireframing and design in SixLove utilises a mobile first approach. This app
 
 <img title="" src="./images/SixLoveER.png" alt="" data-align="center">
 
-**Figure 13** The project's Entity Relationship Diagram.<br>
+**Figure 13** The project's Entity Relationship Diagram.<br><br>
 
 ### 3.1.3 Database Tables
 
@@ -504,7 +504,7 @@ The wireframing and design in SixLove utilises a mobile first approach. This app
 
 <img title="" src="images/SixLoveUML.png" alt="">
 
-**Figure 14** The project's UML Diagram.<br>
+**Figure 14** The project's UML Diagram.<br><br>
 
 ### 3.1.4 SixLove Pages
 
@@ -552,7 +552,7 @@ The SixLove app will have the following pages:
 
 <img title="" src="./workplan/FP-workplan.png" alt="" data-align="center">
 
-**Figure 15** The project's Gantt Chart.<br>
+**Figure 15** The project's Gantt Chart.<br><br>
 
 ## 3.3 Evaluation strategy
 
@@ -602,49 +602,49 @@ I decided that I wanted to start building SixLove's functionality in a somewhat 
 
 <img title="" src="images/calendar-page.png" alt="">
 
-**Figure 16** The project's current calendar page. (Screenshot of the developer tools view to get a view of the whole page- 50% zoom).<br>
+**Figure 16** The project's current calendar page. (Screenshot of the developer tools view to get a view of the whole page- 50% zoom).<br><br>
 
 
 
 <img title="" src="images/calendar-page-side-panel.png" alt="">
 
-**Figure 17** The project's current side panel for the calendar page. (Screenshot of the developer tools view to get a view of the whole page- 50% zoom).<br>
+**Figure 17** The project's current side panel for the calendar page. (Screenshot of the developer tools view to get a view of the whole page- 50% zoom).<br><br>
 
 
 
 <img title="" src="images/calendar-page-edit-session.png" alt="">
 
-**Figure 18** The project's current edit tennis session popup for the calendar page. (Screenshot of the developer tools view to get a view of the whole page- 50% zoom).<br>
+**Figure 18** The project's current edit tennis session popup for the calendar page. (Screenshot of the developer tools view to get a view of the whole page- 50% zoom).<br><br>
 
 
 
 <img title="" src="images/calendar-page-add-session.png" alt="">
 
-**Figure 19** The project's current add tennis session popup for the calendar page. (Screenshot of the developer tools view to get a view of the whole page- 50% zoom).<br>
+**Figure 19** The project's current add tennis session popup for the calendar page. (Screenshot of the developer tools view to get a view of the whole page- 50% zoom).<br><br>
 
 
 
 <img title="" src="images/calendar-page-delete-session.png" alt="">
 
-**Figure 20** The project's current delete tennis session popup for the calendar page. (Screenshot of the developer tools view to get a view of the whole page- 50% zoom).<br>
+**Figure 20** The project's current delete tennis session popup for the calendar page. (Screenshot of the developer tools view to get a view of the whole page- 50% zoom).<br><br>
 
 
 
 <img title="" src="images/tennis-page.png" alt="">
 
-**Figure 21** The project's current tennis page. (Screenshot of the developer tools view to get a view of the whole page- 50% zoom).<br>
+**Figure 21** The project's current tennis page. (Screenshot of the developer tools view to get a view of the whole page- 50% zoom).<br><br>
 
 
 
 <img title="" src="images/login-page.png" alt="">
 
-**Figure 22** The project's current login page. (Screenshot of the developer tools view to get a view of the whole page- 50% zoom).<br>
+**Figure 22** The project's current login page. (Screenshot of the developer tools view to get a view of the whole page- 50% zoom).<br><br>
 
 
 
 <img title="" src="images/sign-up-page.png" alt="">
 
-**Figure 23** The project's current sign up page. (Screenshot of the developer tools view to get a view of the whole page- 50% zoom).<br>
+**Figure 23** The project's current sign up page. (Screenshot of the developer tools view to get a view of the whole page- 50% zoom).<br><br>
 
 
 
@@ -671,7 +671,7 @@ class CustomUser(AbstractUser):
     date_of_birth = models.DateField(null=True, blank=True)
 ```
 
-**Code Snippet 1** The CustomUser model.<br/>
+**Code Snippet 1** The CustomUser model.<br/><br>
 
 
 
@@ -693,7 +693,7 @@ class CustomUserCreationForm(UserCreationForm):
 
 ```
 
-**Code Snippet 2** The CustomUserCreationForm form.<br>
+**Code Snippet 2** The CustomUserCreationForm form.<br><br>
 
 This form is used to create the forms displayed to the user, for both the login and sign up pages (which can be seen in **figures 22 and 23**).
 
