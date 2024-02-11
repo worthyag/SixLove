@@ -1117,7 +1117,7 @@ todayBtn.addEventListener("click", () => {
 
 
 
-Once the calendar was fully functional, the next stage was to incorporate the tennis sessions with the calendar. I began by creating a side panel (**code snippet 12**) and three modals (code snippet 13). The side panel displays the tennis sessions to the user when they click on a day (refer to **figure 17**)- though at this stage it just displayed the message "No tennis sessions scheduled", and the add tennis session button. The three modals refers to the 'add session modal' (**figure 19**), the 'edit session modal' (**figure 18**), and the 'delete session modal' (**figure 20**). I incorporated the modals with the forms created by the `TennisSessionForm` class previously written in order to communicate with the `TennisSession` database table with ease.
+Once the calendar was fully functional, the next stage was to incorporate the tennis sessions with the calendar. I began by creating a side panel (**code snippet 12**) and three modals (**code snippet 13**). The side panel displays the tennis sessions to the user when they click on a day (refer to **figure 17**)- though at this stage it just displayed the message "No tennis sessions scheduled", and the add tennis session button. The three modals refers to the 'add session modal' (**figure 19**), the 'edit session modal' (**figure 18**), and the 'delete session modal' (**figure 20**). I incorporated the modals with the forms created by the `TennisSessionForm` class previously written in order to communicate with the `TennisSession` database table with ease.
 
 ```javascript
 function showSidePanel(day) {
@@ -1197,13 +1197,153 @@ function closeSidePanel() {
 
 
 
-I then had to make sure that the tennis session data was being sent to calendar page, and that the calendar view knew what to do depending on which modal was submitting the form. This logic was achieved through the use of a hidden id input that I added to the form. This meant that the calendar view new which sessions to edit and which sessions to delete- this wasn't necessary for adding tennis sessions.
+I then had to make sure that the tennis session data was being sent to calendar page, and that the calendar view (**code snippet 14**) knew what to do depending on which modal was submitting the form. This logic was achieved through the use of a hidden id input that I added to the form. This meant that the calendar view new which sessions to edit and which sessions to delete- this wasn't necessary for adding tennis sessions.
 
-{add code snippet}
+```python
+
+...
+
+@login_required
+def calendar(request):
+    """"""
+    tennis_sessions = TennisModels.TennisSession.objects.filter(
+        user=request.user
+    )
+
+    # Converting the QuerySet to a list of dictionaries
+    tennis_sessions_data = [{
+                             'title': session.title, 
+                             'date': session.date.strftime("%Y-%m-%d"),
+                             'notes': session.notes, 
+                             'isCompleted': str(session.is_completed), 
+                             'id': session.id
+                            } 
+                            for session in tennis_sessions]
+
+    json_data = json.dumps(tennis_sessions_data)
+
+    if request.method == "POST":
+        session_id = request.POST.get("session-id")
+
+        if session_id is not None:
+
+            if (session_id != "X"):
+                # Editing Tennis Session
+                try:
+                    selected_session = get_object_or_404(TennisModels.TennisSession,
+                                                         id=int(session_id),
+                                                         user=request.user)
+                except:
+                    return HttpResponseBadRequest("Invalid request")
+                form = TennisForms.TennisSessionForm(request.POST,
+                                                     instance=selected_session)
+
+                if form.is_valid():
+                    form.save()
+                    return redirect("planner:calendar")
+                else:
+                    return HttpResponseBadRequest("Invalid form data")
+            else:
+                # Adding Tennis Session
+                form = TennisForms.TennisSessionForm(request.POST)
+
+                if form.is_valid():
+                    session = form.save(commit=False)
+                    session.user = request.user
+                    session.save()
+                    return redirect("planner:calendar")
+                else:
+                    return HttpResponseBadRequest("Invalid form data")
+
+        else:
+            # Delete Tennis Session
+            if (request.POST["delete-id"] != "delete"):
+                try:
+                    selected_session = get_object_or_404(TennisModels.TennisSession,
+                                                         id=int(
+                                                             request.POST["delete-id"]),
+                                                         user=request.user)
+                except:
+                    return HttpResponseBadRequest("Invalid request")
+
+                selected_session.delete()
+                return redirect("planner:calendar")
+    else:
+        # Initialising a new form.
+        form = TennisForms.TennisSessionForm()
+
+    return render(
+        request,
+        "./planner/calendar.html",
+        {
+            "title": "Calendar",
+            "tennis_sessions": json_data,
+            "form": form
+        }
+    )
+```
+
+**Code Snippet 14** The `calendar` view.<br>
+
+<br>
+
+
 
 With that, I wrote corresponding javascript code that provided the interactivity needed for the user to be able to add, edit, delete, and view their tennis sessions.
 
-{add code snippet}
+```javascript
+function editSession(sessionId) {
+// Displays the edit modal when the user clicks the edit btn.
+  ...
+  tennisSessions.forEach(session => {
+    if (session.id === sessionId) {
+      titleInput.value = session.title;
+      notesInput.textContent = session.notes;
+
+      const year = session.date.getFullYear();
+      const month = (session.date.getMonth() + 1).toString().padStart(2, '0'); // Months are zero-based
+      const day = session.date.getDate().toString().padStart(2, '0');
+      const formattedDate = `${year}-${month}-${day}`;
+
+      dateInput.forEach(input => {
+        input.value = formattedDate;
+      });
+
+      isCompletedInput.checked = session.isCompleted;
+    }
+  });
+  ...
+}
+
+function deleteSession(sessionId, title) {
+  // Displays the delete modal when the user clicks the delete btn.
+  ...
+}
+
+function addSession(day) {
+// Displays the add modal when the user clicks the add btn.
+  ...
+  const months = {
+    "January": 1,
+    "February": 2,
+    ...
+    "December": 12,
+  };
+
+  const calDate = date.textContent.split(" ");
+  const calYear = parseInt(calDate[1]);
+  const calMonth = (months[calDate[0]]).toString().padStart(2, '0');
+  const calDay = day.toString().padStart(2, '0');
+  const formattedDate = `${calYear}-${calMonth}-${calDay}`;
+  ...
+}
+```
+
+**Code Snippet 15** The functionality for the modals.<br>
+
+<br>
+
+
 
 Once I completed most of the calendar functionality, I wrote some unit tests that will be expanded upon in [section 5.1](#51-unit-testing).
 
