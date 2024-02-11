@@ -644,10 +644,9 @@ User authentication is a primary requirement of the app. SixLove's purpose is to
 
 - Login- the page that authenticates the user.
 
-In order to authenticate the users, I needed to first create a table in my database that would store users information. In Django, this is facilitated through the creation of a model. The UML diagram for users can be seen in **figure 14**. Django has their own user model, but for the purpose of this project, I wanted to create my own- or expand upon it rather. It was important that I created the modified user model before making migrations (specifically, before running migrations of the Django `auth` app), since it would result in an `ValueError` . This I learnt this the hard way, when I created a mock trial of the app, and was forced to clear all the databases tables and delete the migrations folder. The **code snippet 1** displays the model that I created to store user information. It inherits from the `AbstractUser` class. The official Django site describes the class as a '**model [that] behaves identically to the default user model*' [18].
+In order to authenticate the users, I needed to first create a table in my database that would store users information. In Django, this is facilitated through the creation of a model. The UML diagram for users can be seen in **figure 14**. Django has its own user model, but for the purpose of this project, I wanted to create my own- or expand upon it rather. It was important that I created the modified user model before making migrations (specifically, before running migrations of the Django `auth` app), since it would result in an `ValueError` . This I learnt the hard way, when I created a mock trial of the app, and was forced to clear all the databases tables and delete the migrations folder. The **code snippet 1** displays the model that I created to store user information. It inherits from the `AbstractUser` class. The official Django site describes the class as a '*model [that] behaves identically to the default user model*' [18]. The documentation advises developers to setup a custom user model beforehand, in case they want to later customise it in the future.
 
 ```python
-
 ...
 
 from django.contrib.auth.models import AbstractUser
@@ -657,10 +656,13 @@ class CustomUser(AbstractUser):
     last_name = models.CharField(max_length=50)
     email = models.EmailField(unique=True)
     date_of_birth = models.DateField(null=True, blank=True)
-
 ```
 
 **Code Snippet 1** The CustomUser model.
+
+
+
+Each attribute displayed in **code snippet 1** corresponds to a field within the database. In addition to the fields displayed, Django will add the other fields that are specified within `AbstractUser`, such the user's `id` and `password` among some other things.
 
 ## 4.2 The `tennis` app
 
