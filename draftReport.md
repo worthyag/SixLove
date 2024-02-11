@@ -604,33 +604,49 @@ I decided that I wanted to start building SixLove's functionality in a somewhat 
 
 **Figure 16** The project's current calendar page. (Screenshot of the developer tools view to get a view of the whole page- 50% zoom).
 
+
+
 <img title="" src="images/calendar-page-side-panel.png" alt="">
 
 **Figure 17** The project's current side panel for the calendar page. (Screenshot of the developer tools view to get a view of the whole page- 50% zoom).
+
+
 
 <img title="" src="images/calendar-page-edit-session.png" alt="">
 
 **Figure 18** The project's current edit tennis session popup for the calendar page. (Screenshot of the developer tools view to get a view of the whole page- 50% zoom).
 
+
+
 <img title="" src="images/calendar-page-add-session.png" alt="">
 
 **Figure 19** The project's current add tennis session popup for the calendar page. (Screenshot of the developer tools view to get a view of the whole page- 50% zoom).
+
+
 
 <img title="" src="images/calendar-page-delete-session.png" alt="">
 
 **Figure 20** The project's current delete tennis session popup for the calendar page. (Screenshot of the developer tools view to get a view of the whole page- 50% zoom).
 
+
+
 <img title="" src="images/tennis-page.png" alt="">
 
 **Figure 21** The project's current tennis page. (Screenshot of the developer tools view to get a view of the whole page- 50% zoom).
+
+
 
 <img title="" src="images/login-page.png" alt="">
 
 **Figure 22** The project's current login page. (Screenshot of the developer tools view to get a view of the whole page- 50% zoom).
 
+
+
 <img title="" src="images/sign-up-page.png" alt="">
 
 **Figure 23** The project's current sign up page. (Screenshot of the developer tools view to get a view of the whole page- 50% zoom).
+
+
 
 ## 4.1 The `registration` app
 
@@ -648,9 +664,6 @@ In order to authenticate the users, I needed to first create a table in my datab
 
 ```python
 ...
-
-from django.contrib.auth.models import AbstractUser
-
 class CustomUser(AbstractUser):
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
@@ -662,11 +675,31 @@ class CustomUser(AbstractUser):
 
 
 
-Each attribute displayed in **code snippet 1** corresponds to a field within the database. In addition to the fields displayed, Django will add the other fields that are specified within `AbstractUser`, such as the user's `id` and `password` among some other things. With the database table created, I created a form that uses the `CustomUser` model to create a form with fields that correspond to the models attributes.
+Each attribute displayed in **code snippet 1** corresponds to a field within the database. In addition to the fields displayed, Django will add the other fields that are specified within `AbstractUser`, such as the user's `id` and `password` among some other things. With the database table created, I created a form that uses the `CustomUser` model to create a form with fields that correspond to the models attributes. **Code snippet 2** displays a reduced version of the code for the form.
+
+```python
+...
+class CustomUserCreationForm(UserCreationForm):
+    first_name = forms.CharField(required=True, max_length=50)
+    last_name = forms.CharField(max_length=50)
+    email = forms.EmailField(required=True)
+    date_of_birth = forms.DateField(
+        required=False, widget=forms.DateInput(attrs={'type': 'date'}))
+
+    class Meta:
+        model = CustomUser
+        fields = ('first_name', 'last_name', 'email',
+                  'date_of_birth',) + UserCreationForm.Meta.fields
+
+```
+
+**Code Snippet 2** The CustomUserCreationForm form.
+
+This form is used to create the forms displayed to the user, for both the login and sign up pages (which can be seen in **figures 22 and 23**).
 
 
 
-I created the views corresponding to the pages previously mentioned, **code snippet 2** display some of the code for this.
+I created the views corresponding to the pages previously mentioned, **code snippet 3** display some of the code for this.
 
 ```python
 from django.shortcuts import render, redirect
