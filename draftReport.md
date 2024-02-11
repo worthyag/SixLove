@@ -621,11 +621,9 @@ Describe the rest of implementations:
 
 Evaluate what stage you are are by evaluating the aims and objectives.
 
-Write about some of the tests I have, and what I have left of the project (in my case, I have done the calendar, and the ability to track workouts etc).
+Describe the things that you are currently working on / will start working on (in your case it is the community aspect).
 
-Decide what to do next.
-
-Describe the things that you are currently working on / will start working on (In my case it is the community aspect).
+Decide / describe what you will do next.
 
 # 6 Conclusion
 
