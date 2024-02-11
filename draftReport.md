@@ -644,7 +644,9 @@ User authentication is a primary requirement of the app. SixLove's purpose is to
 
 - Login- the page that authenticates the user.
 
-In order to authenticate the users, I needed to first create a table in my database that would store users information. In Django, this is facilitated through the creation of a model. The UML diagram for users can be seen in **figure 14**.
+In order to authenticate the users, I needed to first create a table in my database that would store users information. In Django, this is facilitated through the creation of a model. The UML diagram for users can be seen in **figure 14**. Django has their own user model, but for the purpose of this project, I wanted to create my own- or expand upon it rather. It was important that I created the modified user model before making migrations (specifically, before running migrations of the Django `auth` app), since it would result in an error. 
+
+This I learnt this the hard way, when I created a mock trial of the app, and was forced to clear all the databases tables and delete the migrations folder.
 
 ## 4.2 The `tennis` app
 
