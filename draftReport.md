@@ -41,6 +41,7 @@
 - [4 The Implementation](#4-the-implementation)
   - [4.1 The `registration` app](#41-the-registration-app)
   - [4.2 The `tennis` app](#42-the-tennis-app)
+    - [4.2.1 The MVT Pattern](#421-the-mvt-pattern)
   - [4.3 The `planner` app](#43-the-planner-app)
 - [5 Evaluation](#5-evaluation)
   - [5.1 Unit testing](#51-unit-testing)
@@ -833,13 +834,7 @@ class TennisSessionForm(forms.ModelForm):
 
 Most of the work for both the `registration` and `tennis` app was focused on creating models and forms. My primary focus was on how the data would be stored, and figuring out the most effective ways to design the database and its interactions- resulting in a lot of my time being allocated to that. This allowed the implementation to feel more intuitive and less complex.
 
-With the database table and its corresponding form completed, I created the views. **Code snippet 7** displays the tennis view. All of the views use the `@login_required` decorator. Decorators are a way to modify the behaviour of functions or methods in Python, and this particular decorator is provided by Django to protect views  (functions), since users are required to be logged in. All the views within the `tennis` app, are only accessible to users that are logged in.
-
-
-
-
-
-
+With the database table and its corresponding form completed, I created the views. **Code snippet 7** displays the tennis view. All of the views use the `@login_required` decorator. Decorators are a way to modify the behaviour of functions or methods in Python, and the `@login_required` decorator is provided by Django to protect views  (functions), since users are required to be logged in. All the views within the `tennis` app, are only accessible to users that are logged in.
 
 ```python
 ...
@@ -876,7 +871,17 @@ def tennis(request):
     )
 ```
 
-**Code Snippet 7** The `tennis` view of the `tennis` app.
+**Code Snippet 7** The `tennis` view of the `tennis` app.<br>
+
+<br>
+
+
+
+In addition to using the `@login_required` decorator, **code snippet 7** demonstrates that I further filter information based on the user who sent the request.
+
+
+
+
 
 
 
@@ -1023,6 +1028,8 @@ login required
 
 
 
+
+### 4.2.1 The MVT Pattern
 
 At this point, it is clear to see that there is a pattern emerging. I begin by creating some model(s), then I create some view(s) that seems to be linked to some template that I have created. This is the Django work cycle.
 
