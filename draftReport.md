@@ -964,10 +964,6 @@ The views displayed in **code snippet 8** are those that specifically deal with 
 
 At this point, it is clear to see that there is a pattern emerging. I begin by creating some model(s), then I create some view(s) that seems to be linked to some template that I have created. This is the Django work cycle. Django has a model-view-template (MVT) architecture, as displayed in **figure 25**.
 
-
-
-
-
 <img title="" src="images/django-structure.png" alt="">
 
 **Figure 25** Django project structure.<br>
@@ -975,6 +971,10 @@ At this point, it is clear to see that there is a pattern emerging. I begin by c
 <br>
 
 
+
+A **model** in Django is defined as acting as the "**the interface of your data*"[19]. It is an object that defines the structure of the data in a Django app. This means that models are responsible for maintaining the entire application’s data for which enables you to perform CRUD operations on the data.
+
+A **view** in Django is the user interface (UI). More specifically, it is a handler function that accepts HTTP requests, processes them, and returns the HTTP response. The view uses models to retrieve data, and then renders them to the UI using templates. Views in Django also have the functionality to create HTML pages, populating a HTML template dynamically.
 
 
 
@@ -1044,3 +1044,7 @@ Short section: summarise what I have done, or speak about things that hasn’t c
 [16] "*Linear Progression vs. Conjugate Method: Quick Start Guide*" [Online]. Available: [Linear Progression vs. Conjugate Method: Quick Start Guide](https://www.boostcamp.app/blogs/linear-progression-vs-conjugate-method) [Accessed January 2024]
 [17] Pamela Attree PhD, Beverley French PhD, Beth Milton PhD, Susan Povall PhD, Margaret Whitehead PhD FFPH, Jennie Popay BA (Hons) MA. 8 December, 2010. "*The experience of community engagement for individuals: a rapid review of evidence*", vol. 19, issue 3, pp. 250-260. doi: 10.1111/j.1365-2524.2010.00976.x.<br>
 [18] "*Customizing authentication in Django*" [Online]. Available: [Customizing authentication in Django | Django documentation | Django](https://docs.djangoproject.com/en/5.0/topics/auth/customizing/) [Accessed February 2024]<br>
+
+
+
+[19] "*Django Project MVT Structure*" [Online]. Available: [Django Project MVT Structure - GeeksforGeeks](https://www.geeksforgeeks.org/django-project-mvt-structure/) [Accessed February 2024]
