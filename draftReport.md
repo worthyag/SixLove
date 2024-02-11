@@ -600,7 +600,35 @@ The calendar is currently dynamically rendered. The user can change what month t
 
 
 
-I decided that I wanted to start building SixLove's functionality in a somewhat chronological order. Chronological order referring to the user's flow, for instance, what route will potential users take when navigating the app? That meant starting with the landing page, then moving onto the sign up and login pages, then to the pages that allow the users to add, edit, and delete tennis sessions. I have previously stated SixLove's aims and objectives, and at their very core user authentication and tennis sessions play a huge role in whether the aims and objectives are met, so using this order made the most logical sense. I must mention however, at this stage the goal was to program the functionality, therefore I did very minimal styling- currently the user interface is not fully fleshed out (or quite minimal- refer to figures # to # to see what I mean), and there will be upcoming changes to the wireframes based on user input and accessibility matters.
+I decided that I wanted to start building SixLove's functionality in a somewhat chronological order. Chronological order referring to the user's flow, for instance, what route will potential users take when navigating the app? That meant starting with the landing page, then moving onto the sign up and login pages, then to the pages that allow the users to add, edit, and delete tennis sessions. I have previously stated SixLove's aims and objectives, and at their very core user authentication and tennis sessions play a huge role in whether the aims and objectives are met, so using this order made the most logical sense. I must mention however, at this stage my goal was to program the functionality, therefore I did very minimal styling- currently the user interface is not fully fleshed out (or quite minimal- refer to figures # to # to see what I mean), and there will be upcoming changes to the wireframes based on user input and accessibility matters.
+
+<img title="" src="images/calendar-page.png" alt="">
+
+**Figure 16** The project's current calendar page.
+
+<img title="" src="images/calendar-page-side-panel.png" alt="">
+
+**Figure 17** The project's current side panel for the calendar page.
+
+<img title="" src="images/calendar-page-edit-session.png" alt="">
+
+**Figure 18** The project's current edit tennis session popup for the calendar page.
+
+<img title="" src="images/calendar-page-add-session.png" alt="">
+
+**Figure 19** The project's current add tennis session popup for the calendar page.
+
+<img title="" src="images/calendar-page-delete-session.png" alt="">
+
+**Figure 20** The project's current delete tennis session popup for the calendar page.
+
+<img title="" src="images/tennis-page.png" alt="">
+
+<img title="" src="images/login-page.png" alt="">
+
+<img title="" src="images/sign-up-page.png" alt="">
+
+
 
 ## 4.1 The `registration` app
 
