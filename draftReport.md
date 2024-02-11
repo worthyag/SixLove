@@ -1068,9 +1068,54 @@ function buildCalendar() {
 
 
 
-The next thing I did was to add functionality to the arrows, so that the users could navigate to different months using the arrows. I also adding functionality to the date picker and the today button.
+The next thing I did was add functionality to the arrows, so that the users could navigate to different months using the arrows. I also adding functionality to the date picker and the today button. **Code snippet 11** displays some of the code for that functionality.
 
-{add code snippet}
+```javascript
+function updateDatePicker() {
+  const datePicker = document.querySelector("#selectDatePicker");
+  let monthDatePicker = (month >= 9) ? month + 1 : `0${month + 1}`;
+  datePicker.value = `${year}-${monthDatePicker}`;
+}
+
+function prevMonth() {
+  ...
+  month--;
+  if (month < 0) {
+    month = 11;
+    year--;
+  }
+
+  updateDatePicker();
+  buildCalendar();
+}
+
+function nextMonth() {
+  ...
+  // Similar to the prevMonth().
+}
+
+// Event listeners for prevBtn and nextBtn here.
+...
+
+// Today btn functionality.
+todayBtn.addEventListener("click", () => {
+  today = new Date();
+  year = today.getFullYear();
+  month = today.getMonth();
+
+  updateDatePicker();
+  buildCalendar();
+});
+
+// Select date functionality here.
+...
+```
+
+**Code Snippet 11** Added functionality to the arrows, date picker and today button.<br>
+
+<br>
+
+
 
 Once the calendar was fully functional, the next stage was to incorporate the tennis sessions with the calendar. I began by creating a side panel and three modals. The side panel displays the tennis sessions to the user when they click on a day (refer to **figure 17**)- though at this stage it just displayed the message "No tennis sessions scheduled", and the add tennis session button. The three modals refers to the 'add session modal' (**figure 19**), the 'edit session modal' (**figure 18**), and the 'delete session modal' (**figure 20**). I incorporated the modals with the forms created by the `TennisSessionForm` class previously written in order to communicate with the `TennisSession` database table with ease.
 
