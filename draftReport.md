@@ -728,8 +728,6 @@ def user_login(request):
 
 <br>
 
-
-
 **Code snippet 3** displays how I use the form to create users and authenticate users. I passed the form to a html file (more specifically a Django template file), where it was then rendered (**code snippet 4** shows some of the code for the signup template).
 
 ```python
@@ -743,8 +741,6 @@ def user_login(request):
 ```
 
 **Code Snippet 4** The `signup` html template.
-
-
 
 With that completed, I had written most of the functionality for user authentication, and had a bare bone version of the `registration` app. I then created a superuser in order to conduct a manual pretest, then I wrote some unit tests to test everything thoroughly (this will be expanded on in [section 5.1](#51-unit-testing).
 
@@ -768,6 +764,8 @@ The next order of business was to create the `tennis` app. The ability to add, e
 
 
 
+Like the `registration` app, I began with a model. **Figure 24** displays the fields and the name of the table that I created with the model (this is a simplified version of the TennisSession table displayed in **Figure 14**, since the friends aspect wasn't implemented at this stage). 
+
 <img title="" src="images/TennisSessionUML.png" alt="">
 
 **Figure 24** TennisSession UML table.<br>
@@ -776,23 +774,55 @@ The next order of business was to create the `tennis` app. The ability to add, e
 
 
 
+When I started writing the code for the model, I realised that it would be better to make `isToday` a method rather than an attribute.
+
+
+
+```python
+...
+class TennisSession(models.Model):
+    """"""
+    user = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
+    title = models.CharField(max_length=150)
+    notes = models.TextField()
+    date = models.DateField()
+    is_completed = models.BooleanField(default=False)
+
+    def is_tennis_session_scheduled_today(self):
+        """"""
+        today = timezone.now()
+
+        if type(self.date) != type(""):
+            if today.year == self.date.year:
+                if today.month == self.date.month:
+                    if today.day == self.date.day:
+                        return True
+            return False
+        else:
+            if today.year == int(self.date[:4]):
+                if today.month == int(self.date[5:7]):
+                    if today.day == int(self.date[8:11]):
+                        return True
+            return False
+    
+
+    ...
+
+```
+
+
+
+<br>
+
 Modified UML.
 
 Friends / community not yet implemented.
-
-
 
 ## 4.3 The `planner` app
 
 The `planner` app has the following pages:
 
 - Calendar
-
-
-
-
-
-
 
 Update the above text to highlight the following:
 
