@@ -2,7 +2,7 @@
 
 # SixLove - Can novice linear progression be applied to tennis?
 
-*Taking on the task of creating a tennis app that takes users from novices to confident, well-rounded amateur players.*
+*Taking on the task of creating a tennis app that provides users with the tools to go from novices to confident, well-rounded amateur players.*
 
 <!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
 
