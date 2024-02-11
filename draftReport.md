@@ -662,7 +662,93 @@ class CustomUser(AbstractUser):
 
 
 
-Each attribute displayed in **code snippet 1** corresponds to a field within the database. In addition to the fields displayed, Django will add the other fields that are specified within `AbstractUser`, such the user's `id` and `password` among some other things.
+Each attribute displayed in **code snippet 1** corresponds to a field within the database. In addition to the fields displayed, Django will add the other fields that are specified within `AbstractUser`, such as the user's `id` and `password` among some other things. With the database table created, I created a form that uses the `CustomUser` model to create a form with fields that correspond to the models attributes.
+
+
+
+I created the views corresponding to the pages previously mentioned, **code snippet 2** display some of the code for this.
+
+```python
+from django.shortcuts import render, redirect
+from django.contrib.auth.forms import AuthenticationForm
+from django.contrib.auth import login
+
+from .forms import CustomUserCreationForm
+
+def home(request):
+    """"""
+    return render(
+        request,
+        "./registration/index.html",
+        {
+            "title": "Home"
+        }
+    )
+
+
+def signup(request):
+    """"""
+    if request.method == "POST":
+        form = CustomUserCreationForm(request.POST)
+
+        if form.is_valid():
+            user = form.save()
+            login(request, user)
+            return redirect("home")
+    else:
+        form = CustomUserCreationForm()
+
+    return render(
+        request,
+        "./registration/signup.html",
+        {
+            "title": "Sign Up",
+            "form": form
+        }
+    )
+
+
+def onboarding(request):
+    """"""
+    return render(
+        request,
+        "./registration/onboarding.html",
+        {
+            "title": "Onboarding"
+        }
+    )
+
+
+def user_login(request):
+    """"""
+    if request.method == "POST":
+        form = AuthenticationForm(request, request.POST)
+
+        if form.is_valid():
+            user = form.get_user()
+            login(request, user)
+            return redirect("home")
+    else:
+        form = AuthenticationForm()
+
+    return render(
+        request,
+        "./registration/login.html",
+        {
+            "title": "Login",
+            "form": form
+        }
+    )
+
+```
+
+
+
+
+
+
+
+I created a superuser so that I could create a manual pretest, then I wrote some unit tests to t
 
 ## 4.2 The `tennis` app
 
