@@ -590,8 +590,6 @@ SixLove  will be evaluated using four categories which are as follows:
 
 *Implementation review.*
 
-
-
 I decided that I wanted to start building SixLove's functionality in a somewhat chronological order. Chronological order referring to the user's flow, for instance, what route will potential users take when navigating the app? That meant starting with the landing page, then moving on to the sign up and login pages, then to the pages that allow the users to add, edit, and delete tennis sessions. I have previously stated SixLove's aims and objectives, and at their very core user authentication and tennis sessions play a huge role in whether the aims and objectives are met, so using this approach made the most logical sense. I must mention however, at this stage my goal was to program the functionality, therefore I did very minimal styling- currently the user interface is not fully fleshed out (or quite minimal- refer to **figures 16** to **23** to see what I mean), and there will be upcoming changes to the wireframes based on user input and accessibility matters.
 
 <img title="" src="images/calendar-page.png" alt="">
@@ -752,9 +750,35 @@ With that completed, I had written most of the functionality for user authentica
 
 ## 4.2 The `tennis` app
 
-The next order business was to create the `tennis` app. The ability to add, edit, and delete tennis sessions is the heart of SixLove. Users must be able to add tennis sessions to their calendar, and also view and update their schedule.
+The next order of business was to create the `tennis` app. The ability to add, edit, and delete tennis sessions is the heart of SixLove. Users must be able to add tennis sessions to their calendar, and also view and update their schedule. The `tennis` app has the following pages:
+
+- Tennis
+
+- Add
+
+- Edit
+
+- Delete
+
+- Success
+
+- Learn
+
+
+
+
 
 ## 4.3 The `planner` app
+
+The `planner` app has the following pages:
+
+- Calendar
+
+
+
+
+
+
 
 Update the above text to highlight the following:
 
