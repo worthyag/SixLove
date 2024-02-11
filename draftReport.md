@@ -604,29 +604,49 @@ I decided that I wanted to start building SixLove's functionality in a somewhat 
 
 <img title="" src="images/calendar-page.png" alt="">
 
-**Figure 16** The project's current calendar page.
+**Figure 16** The project's current calendar page. (Screenshot of the developer tools view to get a view of the whole page- 50% zoom).
+
+
 
 <img title="" src="images/calendar-page-side-panel.png" alt="">
 
-**Figure 17** The project's current side panel for the calendar page.
+**Figure 17** The project's current side panel for the calendar page. (Screenshot of the developer tools view to get a view of the whole page- 50% zoom).
+
+
 
 <img title="" src="images/calendar-page-edit-session.png" alt="">
 
-**Figure 18** The project's current edit tennis session popup for the calendar page.
+**Figure 18** The project's current edit tennis session popup for the calendar page. (Screenshot of the developer tools view to get a view of the whole page- 50% zoom).
+
+
 
 <img title="" src="images/calendar-page-add-session.png" alt="">
 
-**Figure 19** The project's current add tennis session popup for the calendar page.
+**Figure 19** The project's current add tennis session popup for the calendar page. (Screenshot of the developer tools view to get a view of the whole page- 50% zoom).
+
+
 
 <img title="" src="images/calendar-page-delete-session.png" alt="">
 
-**Figure 20** The project's current delete tennis session popup for the calendar page.
+**Figure 20** The project's current delete tennis session popup for the calendar page. (Screenshot of the developer tools view to get a view of the whole page- 50% zoom).
+
+
 
 <img title="" src="images/tennis-page.png" alt="">
 
+**Figure 21** The project's current tennis page. (Screenshot of the developer tools view to get a view of the whole page- 50% zoom).
+
+
+
 <img title="" src="images/login-page.png" alt="">
 
+**Figure 22** The project's current login page. (Screenshot of the developer tools view to get a view of the whole page- 50% zoom).
+
+
+
 <img title="" src="images/sign-up-page.png" alt="">
+
+**Figure 23** The project's current sign up page. (Screenshot of the developer tools view to get a view of the whole page- 50% zoom).
 
 
 
