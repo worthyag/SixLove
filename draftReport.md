@@ -877,7 +877,7 @@ def tennis(request):
 
 
 
-In addition to using the `@login_required` decorator, **code snippet 7** demonstrates how I further filter information based on the user who sent the request. This is to make sure that users can also see tennis sessions associated with their account. **Code snippet 8**, displays some of the other views within the `tennis` app (the success and learn views are not displayed).
+In addition to using the `@login_required` decorator, **code snippet 7** demonstrates how I further filter information based on the user who sent the request. This is to make sure that users can only see tennis sessions associated with their account. **Code snippet 8**, displays some of the other views within the `tennis` app (the success and learn views are not displayed).
 
 ```python
 @login_required
@@ -892,7 +892,7 @@ def add(request):
             session.save()
             return redirect("tennis:success")
     else:
-        # Initialising anew form.
+        # Initialising a new form.
         form = forms.TennisSessionForm()
 
     return render(
@@ -929,12 +929,7 @@ def edit_tennis_session(request, tennis_session_id):
         form = forms.TennisSessionForm(instance=selected_session)
 
     return render(
-        request,
-        "./tennis/edit_tennis_session.html",
-        {
-            "title": "Edit Tennis Session",
-            "form": form
-        }
+        # Similar to the add_tennis_session function.
     )
 
 
@@ -943,27 +938,16 @@ def delete_tennis_session(request, tennis_session_id):
     # Stops users from user navigating to the delete page for a tennis
     # session that doesn't exist or doesn't belong to them.
     try:
-        selected_session = get_object_or_404(models.TennisSession,
-                                             id=tennis_session_id,
-                                             user=request.user)
-    except models.TennisSession.DoesNotExist:
-        return redirect("tennis:tennis")
-    except:
-        return redirect("tennis:tennis")
+        # the same as the edit_tennis_session function.
 
     if request.method == "POST":
         selected_session.delete()
         return redirect("tennis:tennis")
 
     return render(
-        request,
-        "./tennis/delete_tennis_session.html",
-        {
-            "title": "Delete Tennis Session",
-            "tennis_session": selected_session
-        }
+         # Also similar to the add_tennis_session function but doesn't 
+         # send a form.
     )
-
 ```
 
 **Code Snippet 8** The `add_tennis_session`, `edit_tennis_session`, and `delete_tennis_session` views of the `tennis` app.<br>
@@ -972,13 +956,13 @@ def delete_tennis_session(request, tennis_session_id):
 
 
 
-The views displayed in **code snippet 8** are those that specifically deal with the tennis sessions.
+The views displayed in **code snippet 8** are those that specifically deal with the tennis sessions. These are the views that provide the users with the ability interact with the tennis sessions. These views communicate with the `TennisSession` database table. Other than the `delete` view, the views pass a form to their associated HTML templates. These templates contain forms that allow users to make changes to their tennis sessions, in a similar fashion to **code snippet 4**.
 
 
 
 
 
-login required
+
 
 
 
