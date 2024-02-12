@@ -739,7 +739,7 @@ SixLove  will be evaluated using four categories which are as follows:
 
 # 4 The Implementation
 
-*The core functionality development.*
+*Core functionality development.*
 
 I decided that I wanted to start building SixLove's functionality in a somewhat chronological order. Chronological order referring to the user's flow, for instance, what route will potential users take when navigating the app? That meant starting with the landing page, then moving on to the sign up and login pages, then to the pages that allow the users to add, edit, and delete tennis sessions. I have previously stated SixLove's aims and objectives, and at their very core user authentication and tennis sessions play a huge role in whether the aims and objectives are met, so using this approach made the most logical sense. I must mention however, at this stage my goal was to program the functionality, therefore I did very minimal styling- currently the user interface is not fully fleshed out (or quite minimal- refer to **figures 17** to **24** to see what I mean), and there will be upcoming changes to the wireframes based on user input and accessibility matters.
 
@@ -1125,7 +1125,7 @@ At this point, it is clear to see that there is a pattern emerging. I begin by c
 
 <br>
 
-A **model** in Django is defined as the "**the interface of your data*"[20]. It is an object that defines the structure of the data in a Django app. This means that models are responsible for maintaining the entire application’s data and enables you to perform CRUD operations on the data.
+A **model** in Django is defined as the "*the interface of your data*"[20]. It is an object that defines the structure of the data in a Django app. This means that models are responsible for maintaining the entire application’s data and enables you to perform create-read-update-delete operations on the data.
 
 A **view** in Django is the user interface (UI). More specifically, it is a handler function that accepts HTTP requests, processes them, and returns the HTTP response. The view uses models to retrieve data, and then renders them to the UI using templates. Views in Django also have the functionality to create HTML pages, populating a HTML template dynamically- this is what I have done so far.
 
