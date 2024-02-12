@@ -689,7 +689,7 @@ Since SixLove is built with Django, the project has the following structure (**f
   
   - For all the community aspects.
 
-
+I chose to use Django for this project since I like its focus on modularity, and the structure it gives to applications. Django is very stable and secure, and with developing an application that has a community aspect, and stores users data this is incredibly important. I also picked it due to the time aspect, since it was designed to enable developers to build applications as quickly as possible. The Django slogan is "*the web framework for perfectionists with deadlines*"[22] which was also fitting for this project.
 
 ## 3.2 Work plan
 
@@ -1971,3 +1971,7 @@ At this point of the project a lot has done but there is still more functionalit
 
 
 [21] "*Writing your first Django app, part 1*" [Online]. Available: [Writing your first Django app, part 1 | Django documentation | Django](https://docs.djangoproject.com/en/5.0/intro/tutorial01/) [Accessed February 2024]<br>
+
+
+
+[22] "*Django*" [Online]. Available: [Django](https://www.djangoproject.com/) [Accessed February 2024]
