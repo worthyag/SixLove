@@ -661,6 +661,12 @@ Since SixLove is built according to the structure below.
 .gitignore
 ```
 
+**Figure 15** The project's structure.<br>
+
+<br>
+
+
+
 
 
 {speak about apps and projects}.
@@ -677,7 +683,7 @@ Since SixLove is built according to the structure below.
 
 <img title="" src="./workplan/FP-workplan.png" alt="" data-align="center">
 
-**Figure 15** The project's Gantt Chart.<br><br>
+**Figure 16** The project's Gantt Chart.<br><br>
 
 ## 3.3 Evaluation strategy
 
@@ -715,39 +721,39 @@ SixLove  will be evaluated using four categories which are as follows:
 
 *Implementation review.*
 
-I decided that I wanted to start building SixLove's functionality in a somewhat chronological order. Chronological order referring to the user's flow, for instance, what route will potential users take when navigating the app? That meant starting with the landing page, then moving on to the sign up and login pages, then to the pages that allow the users to add, edit, and delete tennis sessions. I have previously stated SixLove's aims and objectives, and at their very core user authentication and tennis sessions play a huge role in whether the aims and objectives are met, so using this approach made the most logical sense. I must mention however, at this stage my goal was to program the functionality, therefore I did very minimal styling- currently the user interface is not fully fleshed out (or quite minimal- refer to **figures 16** to **23** to see what I mean), and there will be upcoming changes to the wireframes based on user input and accessibility matters.
+I decided that I wanted to start building SixLove's functionality in a somewhat chronological order. Chronological order referring to the user's flow, for instance, what route will potential users take when navigating the app? That meant starting with the landing page, then moving on to the sign up and login pages, then to the pages that allow the users to add, edit, and delete tennis sessions. I have previously stated SixLove's aims and objectives, and at their very core user authentication and tennis sessions play a huge role in whether the aims and objectives are met, so using this approach made the most logical sense. I must mention however, at this stage my goal was to program the functionality, therefore I did very minimal styling- currently the user interface is not fully fleshed out (or quite minimal- refer to **figures 17** to **24** to see what I mean), and there will be upcoming changes to the wireframes based on user input and accessibility matters.
 
 <img title="" src="images/calendar-page.png" alt="">
 
-**Figure 16** The project's current calendar page. (Screenshot of the developer tools view to get a view of the whole page- 50% zoom).<br><br>
+**Figure 17** The project's current calendar page. (Screenshot of the developer tools view to get a view of the whole page- 50% zoom).<br><br>
 
 <img title="" src="images/calendar-page-side-panel.png" alt="">
 
-**Figure 17** The project's current side panel for the calendar page. (Screenshot of the developer tools view to get a view of the whole page- 50% zoom).<br><br>
+**Figure 18** The project's current side panel for the calendar page. (Screenshot of the developer tools view to get a view of the whole page- 50% zoom).<br><br>
 
 <img title="" src="images/calendar-page-edit-session.png" alt="">
 
-**Figure 18** The project's current edit tennis session popup for the calendar page. (Screenshot of the developer tools view to get a view of the whole page- 50% zoom).<br><br>
+**Figure 19** The project's current edit tennis session popup for the calendar page. (Screenshot of the developer tools view to get a view of the whole page- 50% zoom).<br><br>
 
 <img title="" src="images/calendar-page-add-session.png" alt="">
 
-**Figure 19** The project's current add tennis session popup for the calendar page. (Screenshot of the developer tools view to get a view of the whole page- 50% zoom).<br><br>
+**Figure 20** The project's current add tennis session popup for the calendar page. (Screenshot of the developer tools view to get a view of the whole page- 50% zoom).<br><br>
 
 <img title="" src="images/calendar-page-delete-session.png" alt="">
 
-**Figure 20** The project's current delete tennis session popup for the calendar page. (Screenshot of the developer tools view to get a view of the whole page- 50% zoom).<br><br>
+**Figure 21** The project's current delete tennis session popup for the calendar page. (Screenshot of the developer tools view to get a view of the whole page- 50% zoom).<br><br>
 
 <img title="" src="images/tennis-page.png" alt="">
 
-**Figure 21** The project's current tennis page. (Screenshot of the developer tools view to get a view of the whole page- 50% zoom).<br><br>
+**Figure 22** The project's current tennis page. (Screenshot of the developer tools view to get a view of the whole page- 50% zoom).<br><br>
 
 <img title="" src="images/login-page.png" alt="">
 
-**Figure 22** The project's current login page. (Screenshot of the developer tools view to get a view of the whole page- 50% zoom).<br><br>
+**Figure 23** The project's current login page. (Screenshot of the developer tools view to get a view of the whole page- 50% zoom).<br><br>
 
 <img title="" src="images/sign-up-page.png" alt="">
 
-**Figure 23** The project's current sign up page. (Screenshot of the developer tools view to get a view of the whole page- 50% zoom).<br><br>
+**Figure 24** The project's current sign up page. (Screenshot of the developer tools view to get a view of the whole page- 50% zoom).<br><br>
 
 ## 4.1 The `registration` app
 
@@ -887,11 +893,11 @@ The next order of business was to create the `tennis` app. The ability to add, e
 
 *The planner app also allows users to add, edit, and delete tennis sessions (this is expanded upon in [section 4.3](#43-the-planner-app).
 
-Like the `registration` app, I began with a model. **Figure 24** displays the fields and the name of the table that I created with the model (this is a simplified version of the TennisSession table displayed in **Figure 14**, since the friends aspect wasn't implemented at this stage). 
+Like the `registration` app, I began with a model. **Figure 25** displays the fields and the name of the table that I created with the model (this is a simplified version of the TennisSession table displayed in **Figure 14**, since the friends aspect wasn't implemented at this stage). 
 
 <img title="" src="images/TennisSessionUML.png" alt="">
 
-**Figure 24** TennisSession UML table.<br>
+**Figure 25** TennisSession UML table.<br>
 
 <br>
 
@@ -1085,11 +1091,11 @@ I then wrote some unit tests to ensure that the `tennis` app was working as aspe
 
 ### 4.2.1 The MVT Pattern
 
-At this point, it is clear to see that there is a pattern emerging. I begin by creating some model(s), then I create some view(s) that seems to be linked to some template that I have created. This is the Django work cycle. Django has a model-view-template (MVT) architecture, as displayed in **figure 25**.
+At this point, it is clear to see that there is a pattern emerging. I begin by creating some model(s), then I create some view(s) that seems to be linked to some template that I have created. This is the Django work cycle. Django has a model-view-template (MVT) architecture, as displayed in **figure 26**.
 
 <img title="" src="images/django-structure.png" alt="">
 
-**Figure 25** Django project structure.<br>
+**Figure 26** Django project structure.<br>
 
 <br>
 
@@ -1107,7 +1113,7 @@ The `planner` app has the following pages:
 
 - Calendar- the page that displays a calendar to the user.
 
-As mentioned earlier the `planner` app also allows user to add, edit, and delete tennis sessions, this is all facilitated through the interactive calendar that is located on the calendar page (**figures 16** to **20** display the calendar page).
+As mentioned earlier the `planner` app also allows user to add, edit, and delete tennis sessions, this is all facilitated through the interactive calendar that is located on the calendar page (**figures 17** to **21** display the calendar page).
 
 I wanted users to be able to interact with the calendar. My aim was to build a calendar that the allows users to do the following:
 
