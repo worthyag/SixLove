@@ -387,7 +387,7 @@ The libraries and technologies that will be used in this project are as follows:
 
 - **Backend**
   
-  - Django
+  - Django (Django 5)
     
     - To serve static assets and handle API requests from the frontend.
     - Used to connect the database, query the database, and for other backend functionality.
@@ -667,11 +667,9 @@ Since SixLove is built with Django, the project has the following structure (**f
 
 
 
-**Figure 15** displays a parent `project` folder with many children folders that follow a similar structure. An application built with Django is made up of a project that is made up of a collection of apps. A Django project is "*a collection of settings for an instance of Django, including database configuration, Django-specific options and application-specific settings*".
+**Figure 15** displays a parent `project` folder with many children folders that follow a similar structure. An application built with Django is made up of a project that is made up of a collection of apps. A Django project is a "*collection of configuration and apps for a particular website*" [21]. A Django app is a "*web application that does something*"[21]. The difference between the two is that a project is a "*can contain multiple apps*" [21], whereas an app "*can be in multiple projects*"[21].
 
-{speak about apps and projects}.
 
-{Django 5}
 
 
 
