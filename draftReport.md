@@ -733,7 +733,7 @@ SixLove  will be evaluated using four categories which are as follows:
 
 # 4 The Implementation
 
-*Implementation review.*
+*The core functionality development.*
 
 I decided that I wanted to start building SixLove's functionality in a somewhat chronological order. Chronological order referring to the user's flow, for instance, what route will potential users take when navigating the app? That meant starting with the landing page, then moving on to the sign up and login pages, then to the pages that allow the users to add, edit, and delete tennis sessions. I have previously stated SixLove's aims and objectives, and at their very core user authentication and tennis sessions play a huge role in whether the aims and objectives are met, so using this approach made the most logical sense. I must mention however, at this stage my goal was to program the functionality, therefore I did very minimal styling- currently the user interface is not fully fleshed out (or quite minimal- refer to **figures 17** to **24** to see what I mean), and there will be upcoming changes to the wireframes based on user input and accessibility matters.
 
@@ -1479,7 +1479,7 @@ Once I completed most of the calendar functionality, I wrote some unit tests tha
 
 # 5 Evaluation
 
-*Evaluation...*
+*Breaking the project down.*
 
 ## 5.1 Unit testing
 
@@ -1915,6 +1915,8 @@ class CalendarViewTest(TestCase):
 
 ## 5.2 Overall project evaluation
 
+*Where my head is current at.*
+
 Based on the aims and objectives of SixLove the project is about two thirds complete in terms of development, though most of the objectives and aims left to achieve centre around community and the UI. The UI aspect of the project is not very hefty (since most the planning and designing is done), it is just important that the UI is built with users and accessibility in mind. The UI will be developed iteratively taking user feedback and making appropriate changes. Therefore it seems that more time will be spent on the community aspect, which will not only result in the addition of another app, but will also reflect changes project wide. 
 
 ### 5.2.1 Proposed changes
@@ -1929,7 +1931,7 @@ To go a step further, I could also add a `rank` attribute, allowing users to rat
 
 # 6 Conclusion
 
-*Conclusion...*
+*To conclude...*
 
 At this point of the project a lot has done but there is still more functionality to write. Outside of that, the questions posed in the [section 5.2.1](#521-proposed-changes) also highlight a slight discrepancy in the project's aims and objectives. Going forward, I will be focusing on the community and learning aspect of the app, which will most likely result in changes to the models that I have already built. I will also focus on the UI, ensuring that SixLove users have a good user experience. The goal is to make the UI very intuitive and accessible, with important tasks having simple user flows. In addition, I will be spending a lot of my time on the report, making sure that concepts are explained in a concise manner, and that my project core is clearly depicted.
 
