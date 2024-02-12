@@ -713,7 +713,7 @@ SixLove  will be evaluated using four categories which are as follows:
 
 - Functionality
   
-  - Functionality refers to functionality testing which is where all features (up to the point at which evaluation is ensued) are evaluated based on whether they work as intended.
+  - Functionality refers to functionality testing which is where all features (up to the point at which evaluation is ensued) are evaluated based on whether they work as intended. (This will be done in the form of unit testing).
   
   - Different scenarios will be tested, including but not limited to, valid and invalid inputs, performing certain tasks, etc.
 
@@ -1346,7 +1346,7 @@ function closeSidePanel() {
 
 <br>
 
-I then had to make sure that the tennis session data was being sent to calendar page, and that the calendar view (**code snippet 14**) knew what to do depending on which modal was submitting the form. This logic was achieved through the use of a hidden id input that I added to the form. This meant that the calendar view new which sessions to edit and which sessions to delete- this wasn't necessary for adding tennis sessions.
+I then had to make sure that the tennis session data was being sent to calendar page, and that the calendar view (**code snippet 14**) knew what to do depending on which modal was submitting the form. This logic was achieved through the use of a hidden id input that I added to the form. This meant that the calendar view knew which sessions to edit and which sessions to delete, though this wasn't necessary for adding tennis sessions.
 
 ```python
 ...
@@ -1434,7 +1434,7 @@ def calendar(request):
 
 <br>
 
-With that, I wrote corresponding javascript code that provided the interactivity needed for the user to be able to add, edit, delete, and view their tennis sessions.
+With that, I wrote corresponding javascript code (**code snippet 15**) that provided the interactivity needed for the user to be able to add, edit, delete, and view their tennis sessions.
 
 ```javascript
 function editSession(sessionId) {
@@ -1488,7 +1488,7 @@ function addSession(day) {
 
 <br>
 
-Once I completed most of the calendar functionality, I wrote some unit tests that will be expanded upon in [section 5.1.3](#513-the-planner-app), though I a few unit tests as I went along.
+Once I completed most of the calendar functionality, I wrote some unit tests that will be expanded upon in [section 5.1.3](#513-the-planner-app), though I wrote a few unit tests as I went along.
 
 # 5 Evaluation
 
@@ -1649,7 +1649,7 @@ class RegistrationUserAuthenticationTests(TestCase):
 
 *The app that houses the learning resources and tennis sessions.*
 
-For the `tennis` app it was important for me to test the functionality of the tennis sessions. The unit tests can be seen in **code snippet 19**. I began the tests however by testing whether certain messages were displayed to the user since I wrote these tests as I was going along. I then tested the add, edit, and delete functionality that can be seen in the code snippet.
+For the `tennis` app it was important for me to test the functionality of the tennis sessions. The unit tests can be seen in **code snippet 19**. I began the tests however by testing whether certain messages were displayed to the user since I wrote those tests as I was going along. I then tested the add, edit, and delete functionality that can be seen in the code snippet.
 
 ```python
 ...
@@ -1808,7 +1808,7 @@ class DeleteTennisSessionViewTest(TestCase):
 
 *The app that houses the calendar.*
 
-In terms of the `planner` app it was imperative that I tested that the page loaded without error, and that users are able to use the calendar to add, edit, view, and delete tennis sessions. I also had to ensure that those changes were in fact reflected in the database. **Code snippet 20** displays the unit tests that I conducted.
+In terms of the `planner` app it was imperative that I tested that the page loaded without error, and that users were able to use the calendar to add, edit, view, and delete tennis sessions. I also had to ensure that those changes were in fact reflected in the database. **Code snippet 20** displays the unit tests that I conducted.
 
 ```python
 ...
@@ -1948,9 +1948,9 @@ The main focus of SixLove is to guide users with little to no tennis experience 
 
 In terms of TNLP, one solution I propose is to dedicate a page to TNLP, and give users examples of training schedules and ideas. SixLove could also reward users that follow a somewhat consistent regiment through an awards system. 
 
-In terms of structure, there seems to be a fine line. The following aim "*SixLove should provide a structured and comprehensive training program*" can potentially clash with this aim "*SixLove users should be able to add tennis sessions and create their own schedule*". A way around this is to add more structure to the `TennisSession` model itself. Instead of just the `title`, `notes`, `date`, and `is_complete` attributes, there could also be a `fundamentals` attribute which would manifest as a selector element. This `fundamentals` attribute would have the fundamental tennis strokes as options (for example, forehand, backhand etc)- this would represent the focus of the tennis session. In this way, users gain a little structure without losing flexibility. Adding to that,  the `fundamentals` attribute would useful for data visualisation and progress tracking. This is because users will be able to filter past tennis sessions or view graphs to see what fundamental strokes they have been working on, and what hasn’t been covered as much.
+In terms of structure, there seems to be a fine line. The following aim "*SixLove should provide a structured and comprehensive training program*" can potentially clash with this aim "*SixLove users should be able to add tennis sessions and create their own schedule*". A way around this is to add more structure to the `TennisSession` model itself. Instead of just the `title`, `notes`, `date`, and `is_complete` attributes, there could also be a `fundamentals` attribute which would manifest as a selector element. This `fundamentals` attribute would have the fundamental tennis strokes as options (for example, forehand, backhand etc)- this would represent the focus of the tennis session. In this way, users gain a little structure without losing flexibility. Adding to that,  the `fundamentals` attribute would be useful for data visualisation and progress tracking. This is because users would be able to filter past tennis sessions or view graphs to see what fundamental strokes they had been working on, and what hadn’t been covered as much.
 
-To go a step further, I could also add a `rank` attribute, allowing users to rate their skill level for the chosen fundamental stroke when they add the tennis session. This will enable users to track their progression in terms of skill development. It will also result in four (1, 2, 3, 5) of the five principles of TNLP being covered (refer to [section 2.2.1](#221-the-theory)).
+To go a step further, I could also add a `rank` attribute, allowing users to rate their skill level for the chosen fundamental stroke when they add the tennis session. This would enable users to track their progression in terms of skill development. It would also result in four (1, 2, 3, 5) of the five principles of TNLP being covered (refer to [section 2.2.1](#221-the-theory)).
 
 # 6 Conclusion
 
