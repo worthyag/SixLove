@@ -746,7 +746,7 @@ def user_login(request):
 
 **Code Snippet 4** The `signup` html template.
 
-With that completed, I had written most of the functionality for user authentication, and had a bare bone version of the `registration` app. I then created a superuser in order to conduct a manual pretest, then I wrote some unit tests to test everything thoroughly (this will be expanded on in [section 5.1.1](#511-the-registration-app).
+With that completed, I had written most of the functionality for user authentication, and had a bare bone version of the `registration` app. I then created a superuser in order to conduct a manual pretest, then I wrote some unit tests to test everything thoroughly (this will be expanded on in [section 5.1.1](#511-the-registration-app), though I had written some unit tests as I went along.
 
 ## 4.2 The `tennis` app
 
@@ -962,7 +962,7 @@ LOGOUT_REDIRECT_URL = "home"
 
 
 
-I then wrote some unit tests to ensure that the `tennis` app was working as aspected (refer to [section 5.1.2](#512-the-tennis-app)).
+I then wrote some unit tests to ensure that the `tennis` app was working as aspected (refer to [section 5.1.2](#512-the-tennis-app)), though I wrote some unit tests whenever I wrote new functionality.
 
 ### 4.2.1 The MVT Pattern
 
@@ -1348,7 +1348,7 @@ function addSession(day) {
 
 
 
-Once I completed most of the calendar functionality, I wrote some unit tests that will be expanded upon in [section 5.1.3](#513-the-planner-app).
+Once I completed most of the calendar functionality, I wrote some unit tests that will be expanded upon in [section 5.1.3](#513-the-planner-app), though I a few unit tests as I went along.
 
 # 5 Evaluation
 
@@ -1397,26 +1397,9 @@ I wanted to keep redirection functionality outside of the templates, therefore I
 ```python
 ...
 class RegistrationViewsTests(TestCase):
-    """
-    Testing the registration views work as expected.
-    """
-
+    ...
     def registration_view_uses_template(self, url_name: str, template: str):
-        """
-        Helper function to minimise code repetition.
-
-        Parameters
-        ----------
-        url_name : str
-          The name associated with the url (assigned in the views file).
-        template : str
-          The name of the template.
-
-        Notes
-        -----
-        The template parameter requires only the primary domain, e.g: 'index' 
-        rather than './registration/index.html
-        """
+        ...
         # Getting the url for the chosen view
         url = reverse(url_name)
 
@@ -1433,39 +1416,23 @@ class RegistrationViewsTests(TestCase):
         """
         Testing the the home view uses the given template.
         """
-        # Checking whether the home view uses the template.
+        # Checking whethr the home view uses the template.
         self.registration_view_uses_template("home", "index")
 
     def test_user_login_view_uses_template(self):
-        """
-        Testing the the user_login view uses the given template.
-        """
-        # Checking whether the home view uses the template.
-        self.registration_view_uses_template("login", "login")
+        # Similar to the previous tests.
 
     def test_signup_view_uses_template(self):
-        """
-        Testing the the signup view uses the given template.
-        """
-        # Checking whether the home view uses the template.
-        self.registration_view_uses_template("signup", "signup")
+        # Similar to the previous tests.
 
     def test_onboarding_view_uses_template(self):
-        """
-        Testing the the onboarding view uses the given template.
-        """
-        # Checking whether the home view uses the template.
-        self.registration_view_uses_template("onboarding", "onboarding")
+        # Similar to the previous tests.
 
 
 class RegistrationUserAuthenticationTests(TestCase):
-    """
-    Testing the user authentication mechanism works as expected.
-    """
-
+    ...
     def setUp(self):
-        """Creating a user to test."""
-
+       ...
         self.user_data = {
             "first_name": "test",
             "last_name": "user",
@@ -1486,19 +1453,15 @@ class RegistrationUserAuthenticationTests(TestCase):
         return response
 
     def test_existing_user_can_login(self):
-        """"""
+        ...
         response = self.create_login_response()
-        # Checking that login is successful.
         self.assertEqual(response.status_code, 302)
 
     def test_existing_user_is_redirected_logged_in(self):
-        """"""
-        response = self.create_login_response()
-        # Checking that the user is redirected to the home page once logged in.
-        self.assertRedirects(response, reverse("home"))
+        ...
 
     def test_existing_user_is_authenticated(self):
-        """"""
+        ...
         # Logging the user in.
         self.create_login_response()
 
@@ -1508,18 +1471,10 @@ class RegistrationUserAuthenticationTests(TestCase):
         self.assertTrue(response.context['user'].is_authenticated)
 
     def test_existing_user_can_logout(self):
-        """"""
-        # Logging the user in.
-        self.client.login(username=self.user_data['username'],
-                          password=self.user_data['password'])
-
-        # Logging the user out + checking whether the operation was successfully.
-        response = self.client.post(reverse("logout"))
-        self.assertEqual(response.status_code, 302)
-        self.assertRedirects(response, reverse("home"))
+        ...
 
     def test_existing_user_is_not_authenticated_once_logged_out(self):
-        """"""
+        ...
        # Logging the user in.
         self.client.login(username=self.user_data['username'],
                           password=self.user_data['password'])
@@ -1543,14 +1498,7 @@ class RegistrationUserAuthenticationTests(TestCase):
         response = self.client.post(
             reverse("signup"), new_user_data)
 
-        # self.assertRedirects(response, reverse("home"))
-
         self.assertEqual(response.status_code, 200)
-
-        # Check if the new user is authenticated after signup
-        # response = self.client.get(reverse('home'))
-        # self.assertEqual(response.status_code, 200)
-        # self.assertTrue(response.context['user'].is_authenticated)
 
 ```
 
