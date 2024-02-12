@@ -36,6 +36,8 @@
     - [3.1.1 Wireframing](#311-wireframing)
     - [3.1.2 Entity-Relationship Diagram](#312-entity-relationship-diagram)
     - [3.1.3 Database Tables](#313-database-tables)
+    - [3.1.4 SixLove Pages](#314-sixlove-pages)
+    - [3.1.5 Django Structure](#315-django-structure)
   - [3.2 Work plan](#32-work-plan)
   - [3.3 Evaluation strategy](#33-evaluation-strategy)
 - [4 The Implementation](#4-the-implementation)
@@ -545,6 +547,8 @@ The SixLove app will have the following main pages:
   - Home (Landing) page for when users first reach the site.
 - Onboarding
   - When users sign up, they will get asked questions regarding their tennis goals. 
+
+### 3.1.5 Django structure
 
 Since SixLove is built 
 
