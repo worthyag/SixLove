@@ -507,6 +507,8 @@ The wireframing and design in SixLove utilises a mobile first approach. This app
 
 ### 3.1.3 Database Tables
 
+*The tables that will be turned into models.*
+
 **Figure 14** displays a tabular version of the entity relation diagram, while highlighting the primary keys and foreign keys. It was important to establish a database schema earlier on in the process, since it can be altered further down the line, and the SixLove application relies heavily on data.
 
 <img title="" src="images/SixLoveUML.png" alt="">
@@ -514,6 +516,8 @@ The wireframing and design in SixLove utilises a mobile first approach. This app
 **Figure 14** The project's UML Diagram.<br><br>
 
 ### 3.1.4 SixLove Pages
+
+*The main pages.*
 
 Though the entities, relationships, and design of the project have been showcased, the app's structure in terms of pages has yet to be addressed.
 
@@ -549,6 +553,8 @@ The SixLove app will have the following main pages:
   - When users sign up, they will get asked questions regarding their tennis goals. 
 
 ### 3.1.5 Django structure
+
+*The overall code structure.*
 
 Since SixLove is built with Django, the project has the following structure (**figure 15**).
 
@@ -771,6 +777,8 @@ I decided that I wanted to start building SixLove's functionality in a somewhat 
 
 ## 4.1 The `registration` app
 
+*Building the `CustomUser`.*
+
 User authentication is a primary requirement of the app. SixLove's purpose is to allow its users to keep track of their tennis sessions, follow a training schedule, and feel a sense of community. User authentication is needed for this to work. Users can only keep track of their sessions if they are able to log in. In addition, users should only be able to access their tennis sessions and not another user's one (other than in the case of joint sessions). User authentication is housed within the `registration` app. The app has the following pages:
 
 - Home- the page that the user lands on when they navigate to the SixLove web application as a new or logged out user.
@@ -890,6 +898,8 @@ def user_login(request):
 With that completed, I had written most of the functionality for user authentication, and had a bare bone version of the `registration` app. I then created a superuser in order to conduct a manual pretest, then I wrote some unit tests to test everything thoroughly (this will be expanded on in [section 5.1.1](#511-the-registration-app), though I had written some unit tests as I went along.
 
 ## 4.2 The `tennis` app
+
+*The creation of the `TennisSession` database table.*
 
 The next order of business was to create the `tennis` app. The ability to add, edit, and delete tennis sessions is the heart of SixLove. Users must be able to add tennis sessions to their calendar, and also view and update their schedule. The `tennis` app has the following pages:
 
@@ -1105,6 +1115,8 @@ I then wrote some unit tests to ensure that the `tennis` app was working as aspe
 
 ### 4.2.1 The MVT Pattern
 
+*The structure my project follows.*
+
 At this point, it is clear to see that there is a pattern emerging. I begin by creating some model(s), then I create some view(s) that seems to be linked to some template that I have created. This is the Django work cycle. Django has a model-view-template (MVT) architecture, as displayed in **figure 26**.
 
 <img title="" src="images/django-structure.png" alt="">
@@ -1120,6 +1132,8 @@ A **view** in Django is the user interface (UI). More specifically, it is a hand
 A **template** in Django is a file that defines the structure of the UI. It can be a file of any type, though in this project I have used HTML files. Templates are able to receive data from the view and render it to the UI.
 
 ## 4.3 The `planner` app
+
+*How I created the calendar.*
 
 With the tennis session functionality implemented, I was ready to extend it to the calendar page. The goal for the calendar page was to allow users to view and interact with their tennis sessions in a more user-friendly manner.
 
@@ -1483,7 +1497,11 @@ Once I completed most of the calendar functionality, I wrote some unit tests tha
 
 ## 5.1 Unit testing
 
+*Testing the code.*
+
 ### 5.1.1 The `registration` app
+
+*The app that focuses on the user.*
 
 Once I finished a significant portion of the `registration` app functionality. I wrote some unit tests. The `test_existing_user_can_logout()` test displayed in **code snippet 17** allowed me to realise that there was a problem with when my page redirects. The page was only redirecting due to line of code displayed in **code snippet 16**.
 
@@ -1629,6 +1647,8 @@ class RegistrationUserAuthenticationTests(TestCase):
 <br>
 
 ### 5.1.2 The `tennis` app
+
+*The app that houses the learning resources and tennis sessions.*
 
 For the `tennis` app it was important for me to test the functionality of the tennis sessions. The unit tests can be seen in **code snippet 19**. I began the tests however by testing whether certain messages were displayed to the user since I wrote these tests as I was going along. I then tested the add, edit, and delete functionality that can be seen in the code snippet.
 
@@ -1787,6 +1807,8 @@ class DeleteTennisSessionViewTest(TestCase):
 
 ### 5.1.3 The `planner` app
 
+*The app that houses the calendar.*
+
 In terms of the `planner` app it was imperative that I tested that the page loaded without error, and that users are able to use the calendar to add, edit, view, and delete tennis sessions. I also had to ensure that those changes were in fact reflected in the database. **Code snippet 20** displays the unit tests that I conducted.
 
 ```python
@@ -1915,11 +1937,13 @@ class CalendarViewTest(TestCase):
 
 ## 5.2 Overall project evaluation
 
-*Where my head is current at.*
+*Where my head is currently at.*
 
 Based on the aims and objectives of SixLove the project is about two thirds complete in terms of development, though most of the objectives and aims left to achieve centre around community and the UI. The UI aspect of the project is not very hefty (since most the planning and designing is done), it is just important that the UI is built with users and accessibility in mind. The UI will be developed iteratively taking user feedback and making appropriate changes. Therefore it seems that more time will be spent on the community aspect, which will not only result in the addition of another app, but will also reflect changes project wide. 
 
 ### 5.2.1 Proposed changes
+
+*What I will be doing going forward.*
 
 The main focus of SixLove is to guide users with little to no tennis experience through a structured tennis training program. However, SixLove users add their own tennis sessions, so are technically free to create any schedule that they like. This begs the question, how can SixLove guide its users through a structured tennis training program while still giving those same users the freedom to add their own sessions, and decide when they want to train? With that, how do I get users to follow TNLP (which is fundamental for a user's success) on their own accord?
 
