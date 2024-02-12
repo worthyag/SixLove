@@ -49,6 +49,7 @@
     - [5.1.2 The `tennis` app](#512-the-tennis-app)
     - [5.1.3 The `planner` app](#513-the-planner-app)
   - [5.2 Overall project evaluation](#52-overall-project-evaluation)
+    - [5.2.1 Proposed changes](#521-proposed-changes)
 - [6 Conclusion](#6-conclusion)
 - [7 References](#7-references)
 
@@ -1774,13 +1775,15 @@ class CalendarViewTest(TestCase):
 
 ## 5.2 Overall project evaluation
 
-Based on the aims and objectives of SixLove the project is half complete in terms of development, though most of the objectives and aims left to achieve centre around community and the UI. The UI aspect of the project is not very hefty (since most the planning and designing is done), it is just important that the UI is built with users and accessibility in mind. The UI will also be developed iteratively taking user feedback and making appropriate changes. Therefore it seems that more time will be spent on the community aspect, which will not only be the addition of another app, but will also reflect changes project wide.
+Based on the aims and objectives of SixLove the project is about two thirds complete in terms of development, though most of the objectives and aims left to achieve centre around community and the UI. The UI aspect of the project is not very hefty (since most the planning and designing is done), it is just important that the UI is built with users and accessibility in mind. The UI will be developed iteratively taking user feedback and making appropriate changes. Therefore it seems that more time will be spent on the community aspect, which will not only be the addition of another app, but will also reflect changes project wide.
 
-Going forward, I will be focusing on the community and learning aspect of the app. This means that it is possible that some changes will be made to the models (database tables) that I have already created.
+Going forward, I will be focusing on the community and learning aspect of the app- possibly resulting in changes to the models (database tables) that I have already created.
+
+### 5.2.1 Proposed changes
 
 
 
-Describe the things that you are currently working on / will start working on (in your case it is the community aspect).
+
 
 # 6 Conclusion
 
