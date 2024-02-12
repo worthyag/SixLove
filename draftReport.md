@@ -469,7 +469,9 @@ The wireframing and design in SixLove utilises a mobile first approach. This app
 
 **Figure 10** SixLove's learning resources page.<br><br>
 
-**Figure 11** displays SixLove's history page. The design is quite elementary since it is in its first iteration. The goal of the page is to allow users to look at their past tennis sessions. But rather than just listing them there, a date input is provided so that they can filter for specific days.
+**Figure 11** displays SixLove's history page. The design is quite elementary since it is in its first iteration. The goal of the page is to allow users to look at their past tennis sessions. But rather than just listing them there, a date input is provided so that they can filter for specific days. 
+
+*Side note: the history page will be scrapped in favour of the  calendar having its own page. The tennis page will no longer house the calendar, and history can be seen on both the calendar and tennis pages.
 
 <img title="" src="./images/history-page-wireframe.png" alt="" data-align="center">
 
@@ -513,7 +515,7 @@ The wireframing and design in SixLove utilises a mobile first approach. This app
 
 Though the entities, relationships, and design of the project have been showcased, the app's structure in terms of pages has yet to be addressed.
 
-The SixLove app will have the following pages:
+The SixLove app will have the following main pages:
 
 - Profile page
   - This displays the users posts, and biography.
@@ -523,29 +525,28 @@ The SixLove app will have the following pages:
 - Tennis page
   - Displays the users tennis schedule, and  whether or not they have a tennis session scheduled for today or not.
   - Tennis sessions are displayed as a card, with notes and a date.
+  - Users can add, edit, view, and delete tennis sessions here.
+- Calendar page
   - Displays a calendar that allows users to add tennis sessions to their schedule.
-  - Users can click on a day to add a tennis session, and to see what sessions are already there.
+  - Users can click on a day to add, edit, view, and delete a tennis session.
+  - Users can use the date picker to navigate to different dates.
 - Learning page
   - This pages gives users access to a variety of resources pertaining to tennis.
   - These resources can be in the form of links, blog posts, and links to videos etc.
-- History page
-  - Displays a date picker (when no date is selected, yesterday's date is selected).
-  - Users can use the date picker to select past days, and see what sessions they have completed.
 - Feed page
   - Since users can follow / friend other users, the feed page displays the user’s post and the post of those they are following.
   - Users can like, comment, and interact with posts.
-- Setting page
-  - Users can alter their training days, intensity, plan length.
+- Settings page
   - Users can alter their biography, picture, and privacy settings.
   - User can alter their email etc.
 - Other pages
   - Login page
   - Sign up page
-  - Landing page for when users first reach the site.
+  - Home (Landing) page for when users first reach the site.
 - Onboarding
-  - When users sign up, they will get asked to pick their training days, intensity, and plan length. 
-  - Then tennis sessions will be assigned accordingly. (Tennis sessions can also be joint).
-  - Users also have the option to pick pre selected training schedules based on research.
+  - When users sign up, they will get asked questions regarding their tennis goals. 
+
+Since SixLove is built 
 
 ## 3.2 Work plan
 
