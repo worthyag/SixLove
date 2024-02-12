@@ -1669,7 +1669,7 @@ class DeleteTennisSessionViewTest(TestCase):
 
 ### 5.1.3 The `planner` app
 
-Hello
+In terms of the `planner` app it was imperative that I the page loads, and that users are able to use the calendar to add, edit, view, and delete tennis sessions. I also had to ensure that those changes were in fact reflected in the database.
 
 ```python
 ...
@@ -1792,9 +1792,9 @@ class CalendarViewTest(TestCase):
 
 ```
 
+**Code Snippet 20** Tests for the `planner` app.<br>
 
-
-
+<br>
 
 
 
