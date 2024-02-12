@@ -1781,7 +1781,7 @@ Based on the aims and objectives of SixLove the project is about two thirds comp
 
 The main focus of SixLove is to guide users with little to no tennis experience through a structured tennis training program. However, SixLove users add their own tennis sessions, so are technically free to create any schedule that they like. This begs the question, how can SixLove guide its users through a structured tennis training program while still giving those same users the freedom to add their own sessions, and decide when they want to train? With that, how do I get users to follow TNLP (which is fundamental for a user's success) on their own accord?
 
-One solution I propose is to dedicate a page to TNLP, and give users examples of training schedules and ideas. SixLove could also reward users that follow a somewhat consistent regiment through an awards system.
+In terms of TNLP, one solution I propose is to dedicate a page to TNLP, and give users examples of training schedules and ideas. SixLove could also reward users that follow a somewhat consistent regiment through an awards system. In terms of structure, there seems to be a fine line. The following aim "*SixLove should provide a structured and comprehensive training program*" can potentially clash with this aim "*SixLove users should be able to add tennis sessions and create their own schedule*".
 
 
 
