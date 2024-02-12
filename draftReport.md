@@ -667,9 +667,27 @@ Since SixLove is built with Django, the project has the following structure (**f
 
 
 
-**Figure 15** displays a parent `project` folder with many children folders that follow a similar structure. An application built with Django is made up of a project that is made up of a collection of apps. A Django project is a "*collection of configuration and apps for a particular website*" [21]. A Django app is a "*web application that does something*"[21]. The difference between the two is that a project is a "*can contain multiple apps*" [21], whereas an app "*can be in multiple projects*"[21].
+**Figure 15** displays a parent `project` folder with many children folders that follow a similar structure. An application built with Django is a project that is made up of a collection of apps. A Django project is defined as a "*collection of configuration and apps for a particular website*" [21]. A Django app is a "*web application that does something*"[21]. The difference between the two is that a project "*can contain multiple apps*" [21], whereas an app "*can be in multiple projects*"[21]. SixLove will be made up of the following apps:
 
+- Project
+  
+  - The actual Python package for SixLove.
 
+- Registration
+  
+  - For user authentication and creation.
+
+- Tennis
+  
+  - For adding, viewing, editing, deleting tennis sessions and for providing the user with learning resources.
+
+- Planner
+  
+  - For calendar functionality.
+
+- Community
+  
+  - For all the community aspects.
 
 
 
