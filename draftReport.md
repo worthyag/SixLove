@@ -1205,7 +1205,6 @@ I then had to make sure that the tennis session data was being sent to calendar 
 ```python
 
 ...
-
 @login_required
 def calendar(request):
     """"""
@@ -1221,7 +1220,7 @@ def calendar(request):
                              'isCompleted': str(session.is_completed), 
                              'id': session.id
                             } 
-                            for session in tennis_sessions]
+                            for session in tennis_sessions]
 
     json_data = json.dumps(tennis_sessions_data)
 
@@ -1392,7 +1391,7 @@ def test_existing_user_can_logout(self):
 
 
 
-I wanted to keep redirection functionality outside of the templates, therefore I didn't want to use `next` since it is set in the template. In addition, it wasn’t producing the redirection code (302)- and so was producing an error, because technically it wasn’t redirecting. I solved this issue by adding the line of code in **code snippet 9**, and removing the `?next={% url 'home' %}` from **code snippet 16**. **Code snipper 18** displays some of the other unit testing that I did for the `registration` app.
+I wanted to keep redirection functionality outside of the templates, therefore I didn't want to use `next` since it is set in the template. In addition, it wasn’t producing the redirection code (302)- and so was producing an error, because technically it wasn’t redirecting. I solved this issue by adding the line of code in **code snippet 9**, and removing the `?next={% url 'home' %}` from **code snippet 16**. **Code snippet 18** displays some of the other unit testing that I did for the `registration` app.
 
 ```python
 ...
@@ -1502,9 +1501,171 @@ class RegistrationUserAuthenticationTests(TestCase):
 
 ```
 
+**Code Snippet 18** Tests for the `registration` app.<br>
+
+<br>
+
 
 
 ### 5.1.2 The `tennis` app
+
+```python
+...
+def generate_the_current_date():
+    ...
+    return timezone.now().date()
+
+
+class TennisViewsTest(TestCase):
+    ...
+
+    def setUp(self) -> None:
+        ...
+        # Every test needs access to the request factory.
+        self.factory = RequestFactory()
+        self.user = CustomUser.objects.create(
+            username="testuser",
+            password="testpassword"
+        )
+
+    def helper_get_response_tennis_view(self):
+        ...
+        # Creating an instance of a GET request.
+        request = self.factory.get(reverse("tennis:tennis"))
+
+        # Simulating a logged-in user manually.
+        request.user = self.user
+
+        # Testing the view.
+        response = views.tennis(request)
+
+        return response
+
+    def test_tennis_view_with_no_tennis_sessions(self):
+        ...
+        # Generating the response / logging in.
+        response = self.helper_get_response_tennis_view()
+
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(
+            response,
+            "No tennis sessions scheduled for today."
+        )
+
+    def test_tennis_view_with_tennis_sessions(self):
+        ...
+        # Adding a tennis session.
+        TennisSession.objects.create(
+            user=self.user,
+            title="This is not a drill",
+            notes="I repeat, this is not a drill",
+            date=generate_the_current_date(),
+        )
+
+        response = self.helper_get_response_tennis_view()
+
+        self.assertEqual(response.status_code, 200)
+        self.assertNotContains(
+            response,
+            "No tennis sessions scheduled for today."
+        )
+
+
+class AddViewTest(TestCase):
+    ...
+    def setUp(self) -> None:
+        # The same as the TennisViewTest class.
+
+    def helper_get_response_add_view(self):
+        # Similar to the helper_get_response_tennis_view() method.
+
+    def test_add_view_loads(self):
+        ...
+        response = self.helper_get_response_add_view()
+        self.assertEqual(response.status_code, 200)
+
+    def test_add_view_post_valid_form(self):
+        ...
+        response = self.helper_get_response_add_view()
+
+        data = {
+            "title": "This is not a drill",
+            "notes": "I repeat, this is not a drill",
+            "date": generate_the_current_date(),
+        }
+
+        response = self.client.post(reverse('tennis:add'), data)
+        self.assertEqual(response.status_code, 302)
+
+
+class EditTennisSessionViewTest(TestCase):
+    ...
+    def setUp(self) -> None:
+        ...
+        # The same as the previous TennisViewTest class.
+
+        self.tennis_session = TennisSession.objects.create(
+            user=self.user,
+            title="This will be edited",
+            notes="I will add to this later.",
+            date=generate_the_current_date(),
+        )
+
+    def helper_get_response_edit_tennis_session_view(self):
+        # Similar to the helper_get_response_tennis_view() method.
+
+    def test_edit_tennis_session_view_loads(self):
+        ...
+        response = self.helper_get_response_edit_tennis_session_view()
+        self.assertEqual(response.status_code, 200)
+
+    def test_edit_tennis_session_view_post_valid_form(self):
+        ...
+        response = self.helper_get_response_edit_tennis_session_view()
+
+        # Editing tennis sessions using the form.
+        data = {
+            "title": "Updated session",
+            "notes": "I told you that I would update my notes.",
+            "date": generate_the_current_date(),
+        }
+
+        response = self.client.post(reverse('tennis:edit',
+                                            args=[self.tennis_session.id]),
+                                    data)
+        self.assertEqual(response.status_code, 302)
+
+
+class DeleteTennisSessionViewTest(TestCase):
+    ...
+    def setUp(self) -> None:
+        ...
+        # The same as the EditTennisSessionViewTest class.
+
+    def helper_get_response_delete_tennis_session_view(self):
+        # Similar to the helper_get_response_tennis_view() method.
+
+    def test_delete_tennis_session_view_loads(self):
+        ...
+        response = self.helper_get_response_delete_tennis_session_view()
+        self.assertEqual(response.status_code, 200)
+
+    def test_delete_tennis_session_view_post_valid_form(self):
+        ...
+        response = self.helper_get_response_delete_tennis_session_view()
+        response = self.client.post(reverse('tennis:delete',
+                                            args=[self.tennis_session.id]))
+        self.assertEqual(response.status_code, 302)
+
+```
+
+**Code Snippet 19** Tests for the `tennis` app.<br>
+
+<br>
+
+
+
+
 
 ### 5.1.3 The `planner` app
 
