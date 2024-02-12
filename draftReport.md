@@ -1667,11 +1667,136 @@ class DeleteTennisSessionViewTest(TestCase):
 
 
 
-
-
 ### 5.1.3 The `planner` app
 
-0 Go into detail about the unit testing that you have conducted, and why you chose particular tests (for instance, `test_calendar_view_loads`). 
+Hello
+
+```python
+...
+class CalendarViewTest(TestCase):
+    ...
+    def setUp(self) -> None:
+        ...
+        self.factory = RequestFactory()
+        self.user = CustomUser.objects.create(
+            username="testuser",
+            password="testpassword"
+        )
+
+    def helper_get_response_calendar_view(self):
+        ...
+        # Creating an instance of a GET request.
+        request = self.factory.get(reverse("planner:calendar"))
+
+        # Simulating a logged-in user manually.
+        request.user = self.user
+
+        # Testing the view.
+        response = views.calendar(request)
+
+        return response
+
+    def test_calendar_view_loads(self):
+        ...
+        response = self.helper_get_response_calendar_view()
+        self.assertEqual(response.status_code, 200)
+
+    def test_calendar_edit_tennis_session(self):
+        ...
+        # Creating a tennis session.
+        session = TennisSession.objects.create(
+            user=self.user,
+            title="Test Session",
+            notes="Test Notes",
+            date="2024-02-01",
+            is_completed=False
+        )
+
+        # Creating an instance of a POST request.
+        request = self.factory.post(reverse("planner:calendar"),
+                                    {
+            "session-id": session.id,
+            "title": "Updated Session",
+            "notes": session.notes,
+            "date": session.date,
+            "is_completed": session.is_completed
+        })
+
+        # Simulating a logged-in user manually.
+        request.user = self.user
+
+        # Testing the view.
+        response = views.calendar(request)
+
+        # Expecting a redirect.
+        self.assertEqual(response.status_code, 302)
+
+        # Checking if the TennisSession was updated
+        updated_session = TennisSession.objects.get(id=session.id)
+
+        self.assertEqual(updated_session.title, "Updated Session")
+
+    def test_calendar_add_session(self):
+        ...
+        # Creating an instance of a POST request.
+        request = self.factory.post(reverse("planner:calendar"),
+                                    {
+            "session-id": "X",
+            "title": "New Session",
+            "notes": "New Notes",
+            "date": "2024-03-01",
+            "is_completed": "False"
+        })
+
+        request.user = self.user
+        response = views.calendar(request)
+        self.assertEqual(response.status_code, 302)
+
+        new_session = TennisSession.objects.get(title="New Session")
+
+        self.assertEqual(new_session.user, self.user)
+        self.assertEqual(new_session.notes, "New Notes")
+
+    def test_calendar_delete_session(self):
+        ...
+        session = TennisSession.objects.create(
+            user=self.user,
+            title="Test Session",
+            notes="Test Notes",
+            date="2024-02-01",
+            is_completed=False
+        )
+
+        request = self.factory.post(reverse("planner:calendar"),
+                                    {"delete-id": session.id})
+
+        request.user = self.user
+        response = views.calendar(request)
+        self.assertEqual(response.status_code, 302)
+
+        # Checking if the TennisSession was deleted.
+        with self.assertRaises(TennisSession.DoesNotExist):
+            TennisSession.objects.get(id=session.id)
+
+    def test_calendar_invalid_form_data(self):
+        ...
+        request = self.factory.post(reverse("planner:calendar"),
+                                    {
+            "session-id": "X",
+            "title": "Invalid Session",
+        })
+
+        request.user = self.user
+        response = views.calendar(request)
+        self.assertEqual(response.status_code, 400)
+
+```
+
+
+
+
+
+
 
 ## 5.2 Overall project evaluation
 
