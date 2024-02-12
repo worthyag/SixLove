@@ -1669,7 +1669,7 @@ class DeleteTennisSessionViewTest(TestCase):
 
 ### 5.1.3 The `planner` app
 
-In terms of the `planner` app it was imperative that I tested that the page loaded without error, and that users are able to use the calendar to add, edit, view, and delete tennis sessions. I also had to ensure that those changes were in fact reflected in the database. Code snippet 20 displays the unit tests that I conducted.
+In terms of the `planner` app it was imperative that I tested that the page loaded without error, and that users are able to use the calendar to add, edit, view, and delete tennis sessions. I also had to ensure that those changes were in fact reflected in the database. **Code snippet 20** displays the unit tests that I conducted.
 
 ```python
 ...
@@ -1800,11 +1800,17 @@ class CalendarViewTest(TestCase):
 
 ## 5.2 Overall project evaluation
 
+-Evaluate the overall-
+
+With the `registration`, `tennis`, and `planner` apps complete, I can now focus on the community and learning aspect of the app. This means that it is possible that some changes will be made to the models (database tables) that I have already created.
+
+
+
+
+
 Evaluate what stage you are are by evaluating the aims and objectives.
 
 Describe the things that you are currently working on / will start working on (in your case it is the community aspect).
-
-Decide / describe what you will do next.
 
 # 6 Conclusion
 
