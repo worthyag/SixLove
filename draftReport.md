@@ -550,7 +550,124 @@ The SixLove app will have the following main pages:
 
 ### 3.1.5 Django structure
 
-Since SixLove is built 
+Since SixLove is built according to the structure below.
+
+```
+/project
+		/project
+		    __init__.py
+				asgi.py
+				settings.py
+				urls.py
+				wsgi.py
+	  /community
+				/migrations
+				/static
+						/community
+								scripts/
+								styles/
+										_base.scss
+										_global.scss
+										_mixins.scss
+										_variables.scss
+										styles.css
+										styles.css.map
+										styles.scss
+				/templates
+						/community
+								base.html
+								connect.html
+								profile.html
+								feed.html
+				__init__.py
+				admin.py
+				apps.py
+				models.py
+				tests.py
+				urls.py
+				views.py
+	  /planner
+				/migrations
+				/static
+						/planner
+								scripts/
+										calendar.js
+								styles/
+										_base.scss
+										_calendar.scss
+										_global.scss
+										_mixins.scss
+										_variables.scss
+										styles.css
+										styles.css.map
+										styles.scss
+				/templates
+						/planner
+								base.html
+								calendar.html
+				__init__.py
+				admin.py
+				apps.py
+				models.py
+				tests.py
+				urls.py
+				views.py
+	  /registration
+				/migrations
+				/static
+						/registration
+								scripts/
+								styles/
+				/templates
+						/registration
+								base.html
+								index.html
+								login.html
+								onboarding.html
+								signup.html
+				__init__.py
+				admin.py
+				apps.py
+				forms.py
+				models.py
+				tests.py
+				urls.py
+				views.py
+	  /tennis
+				/migrations
+				/static
+						/tennis
+								scripts/
+								styles/
+				/templates
+						/tennis
+								base.html
+								add_tennis_session.html
+								delete_tennis_session.html
+								edit_tennis_session.html
+								learn.html
+								success.html
+								tennis.html
+				__init__.py
+				admin.py
+				apps.py
+				forms.py
+				models.py
+				tests.py
+				urls.py
+				views.py
+		manage.py
+/venv
+.gitignore
+```
+
+
+
+{speak about apps and projects}.
+
+{Django 5}
+
+
 
 ## 3.2 Work plan
 
