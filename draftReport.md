@@ -381,16 +381,14 @@ The libraries and technologies that will be used in this project are as follows:
   
   - HTML, CSS / SCSS, Bootstrap, JavaScript
     
-    - For styling and user interactivity.
-    
-    - Though other frameworks such as React may end up being used in conjunction.
+    - For styling, user interactivity, and calendar functionality.
 
 - **Backend**
   
   - Django
     
     - To serve static assets and handle API requests from the frontend.
-    - Used to connect the database, and for other backend functionality.
+    - Used to connect the database, query the database, and for other backend functionality.
     - To enhance the backend capabilities.
 
 - **Database**
