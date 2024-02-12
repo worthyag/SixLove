@@ -550,7 +550,7 @@ The SixLove app will have the following main pages:
 
 ### 3.1.5 Django structure
 
-Since SixLove is built according to the structure below.
+Since SixLove is built with Django, the project has the following structure (**figure 15**).
 
 ```
 /project
@@ -667,7 +667,7 @@ Since SixLove is built according to the structure below.
 
 
 
-
+**Figure 15** displays a parent `project` folder with many children folders that follow a similar structure. An application built with Django is made up of a project that is made up of a collection of apps. A Django project is "*a collection of settings for an instance of Django, including database configuration, Django-specific options and application-specific settings*".
 
 {speak about apps and projects}.
 
@@ -1944,6 +1944,14 @@ At this point of the project a lot has done but there is still more functionalit
 [17] Pamela Attree PhD, Beverley French PhD, Beth Milton PhD, Susan Povall PhD, Margaret Whitehead PhD FFPH, Jennie Popay BA (Hons) MA. 8 December, 2010. "*The experience of community engagement for individuals: a rapid review of evidence*", vol. 19, issue 3, pp. 250-260. doi: 10.1111/j.1365-2524.2010.00976.x.<br>
 [18] "*Customizing authentication in Django*" [Online]. Available: [Customizing authentication in Django | Django documentation | Django](https://docs.djangoproject.com/en/5.0/topics/auth/customizing/) [Accessed February 2024]<br>
 
+
+
 [19] "*Django settings*" [Online]. Available: [[Django settings | Django documentation | Django](https://docs.djangoproject.com/en/5.0/topics/settings/)](https://www.geeksforgeeks.org/django-project-mvt-structure/) [Accessed February 2024]<br>
 
+
+
 [20] "*Django Project MVT Structure*" [Online]. Available: [Django Project MVT Structure - GeeksforGeeks](https://www.geeksforgeeks.org/django-project-mvt-structure/) [Accessed February 2024]<br>
+
+
+
+[21] "*Writing your first Django app, part 1*" [Online]. Available: [Writing your first Django app, part 1 | Django documentation | Django](https://docs.djangoproject.com/en/5.0/intro/tutorial01/) [Accessed February 2024]<br>
