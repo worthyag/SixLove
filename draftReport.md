@@ -1125,11 +1125,11 @@ At this point, it is clear to see that there is a pattern emerging. I begin by c
 
 <br>
 
-A **model** in Django is defined as the "*the interface of your data*"[20]. It is an object that defines the structure of the data in a Django app. This means that models are responsible for maintaining the entire application’s data and enables you to perform create-read-update-delete operations on the data.
+A **model** in Django is defined as the "*the interface of your data*"[20]. It is an "*object that defines the structure of the data in a Django app*"[23]. This means that models are in charge of maintaining all of an application’s data and enables you to perform add, edit, delete, and view operations on the data.
 
-A **view** in Django is the user interface (UI). More specifically, it is a handler function that accepts HTTP requests, processes them, and returns the HTTP response. The view uses models to retrieve data, and then renders them to the UI using templates. Views in Django also have the functionality to create HTML pages, populating a HTML template dynamically- this is what I have done so far.
+A **view** in Django is the user interface (UI). More specifically, it is a "*handler function that accepts HTTP requests, processes them, and returns the HTTP response*" [23]. The view uses models to retrieve data, and then renders them to the UI using templates. Views in Django also have the functionality to create HTML pages, populating a HTML template dynamically- this is what I have done so far.
 
-A **template** in Django is a file that defines the structure of the UI. It can be a file of any type, though in this project I have used HTML files. Templates are able to receive data from the view and render it to the UI.
+A **template** in Django is a "*file that defines the structure of the UI*" [23]. It can be a file of any type, though in this project I have used HTML files. Templates are able to receive data from the view and render it to the UI.
 
 ## 4.3 The `planner` app
 
@@ -1987,4 +1987,6 @@ At this point of the project a lot has done but there is still more functionalit
 
 [21] "*Writing your first Django app, part 1*" [Online]. Available: [Writing your first Django app, part 1 | Django documentation | Django](https://docs.djangoproject.com/en/5.0/intro/tutorial01/) [Accessed February 2024]<br>
 
-[22] "*Django*" [Online]. Available: [Django](https://www.djangoproject.com/) [Accessed February 2024]
+[22] "*Django*" [Online]. Available: [Django](https://www.djangoproject.com/) [Accessed February 2024]<br>
+
+[23] "*What is MVT structure in Django?*" [Online]. Available: [Educative Answers - Trusted Answers to Developer Questions](https://www.educative.io/answers/what-is-mvt-structure-in-django) [Accessed February 2024]<br>
