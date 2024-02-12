@@ -554,109 +554,109 @@ Since SixLove is built with Django, the project has the following structure (**f
 
 ```
 /project
-	/project
-		__init__.py
-		asgi.py
-		settings.py
-		urls.py
-		wsgi.py
-	/community
-		/migrations
-		/static
-		    /community
-				scripts/
-				styles/
-				    _base.scss
-					_global.scss
-					_mixins.scss
-					_variables.scss
-					styles.css
-					styles.css.map
-					styles.scss
-				/templates
-				    /community
-					    base.html
-						connect.html
-						profile.html
-						feed.html
-		__init__.py
-		admin.py
-		apps.py
-		models.py
-		tests.py
-		urls.py
-		views.py
-	/planner
-	    /migrations
-		/static
-		    /planner
-			    scripts/
-				    calendar.js
-				styles/
-				    _base.scss
-					_calendar.scss
-					_global.scss
-					_mixins.scss
-					_variables.scss
-					styles.css
-					styles.css.map
-					styles.scss
-				/templates
-				    /planner
-					    base.html
-						calendar.html
-		__init__.py
-		admin.py
-		apps.py
-		models.py
-		tests.py
-		urls.py
-		views.py
-	/registration
-		/migrations
-		/static
-		    /registration
-			    scripts/
-				styles/
-		/templates
-			/registration
-			    base.html
-				index.html
-				login.html
-				onboarding.html
-				signup.html
-		__init__.py
-		admin.py
-		apps.py
-		forms.py
-		models.py
-		tests.py
-		urls.py
-		views.py
-	/tennis
-	    /migrations
-		/static
-		    /tennis
-			    scripts/
-				styles/
-		/templates
-		    /tennis
-			    base.html
-				add_tennis_session.html
-				delete_tennis_session.html
-				edit_tennis_session.html
-				learn.html
-				success.html
-				tennis.html
-		__init__.py
-		admin.py
-		apps.py
-		forms.py
-		models.py
-		tests.py
-		urls.py
-		views.py
-	manage.py
+    /project
+        __init__.py
+        asgi.py
+        settings.py
+        urls.py
+        wsgi.py
+    /community
+        /migrations
+        /static
+            /community
+                scripts/
+                styles/
+                    _base.scss
+                    _global.scss
+                    _mixins.scss
+                    _variables.scss
+                    styles.css
+                    styles.css.map
+                    styles.scss
+                /templates
+                    /community
+                        base.html
+                        connect.html
+                        profile.html
+                        feed.html
+        __init__.py
+        admin.py
+        apps.py
+        models.py
+        tests.py
+        urls.py
+        views.py
+    /planner
+        /migrations
+        /static
+            /planner
+                scripts/
+                    calendar.js
+                styles/
+                    _base.scss
+                    _calendar.scss
+                    _global.scss
+                    _mixins.scss
+                    _variables.scss
+                    styles.css
+                    styles.css.map
+                    styles.scss
+                /templates
+                    /planner
+                        base.html
+                        calendar.html
+        __init__.py
+        admin.py
+        apps.py
+        models.py
+        tests.py
+        urls.py
+        views.py
+    /registration
+        /migrations
+        /static
+            /registration
+                scripts/
+                styles/
+        /templates
+            /registration
+                base.html
+                index.html
+                login.html
+                onboarding.html
+                signup.html
+        __init__.py
+        admin.py
+        apps.py
+        forms.py
+        models.py
+        tests.py
+        urls.py
+        views.py
+    /tennis
+        /migrations
+        /static
+            /tennis
+                scripts/
+                styles/
+        /templates
+            /tennis
+                base.html
+                add_tennis_session.html
+                delete_tennis_session.html
+                edit_tennis_session.html
+                learn.html
+                success.html
+                tennis.html
+        __init__.py
+        admin.py
+        apps.py
+        forms.py
+        models.py
+        tests.py
+        urls.py
+        views.py
+    manage.py
 /venv
 .gitignore
 ```
@@ -664,8 +664,6 @@ Since SixLove is built with Django, the project has the following structure (**f
 **Figure 15** The project's structure.<br>
 
 <br>
-
-
 
 **Figure 15** displays a parent `project` folder with many children folders that follow a similar structure. An application built with Django is a project that is made up of a collection of apps. A Django project is defined as a "*collection of configuration and apps for a particular website*" [21]. A Django app is a "*web application that does something*"[21]. The difference between the two is that a project "*can contain multiple apps*" [21], whereas an app "*can be in multiple projects*"[21]. SixLove will be made up of the following apps:
 
@@ -1929,8 +1927,6 @@ In terms of structure, there seems to be a fine line. The following aim "*SixLov
 
 To go a step further, I could also add a `rank` attribute, allowing users to rate their skill level for the chosen fundamental stroke when they add the tennis session. This will enable users to track their progression in terms of skill development. It will also result in four (1, 2, 3, 5) of the five principles of TNLP being covered (refer to [section 2.2.1](#221-the-theory)).
 
-
-
 # 6 Conclusion
 
 *Conclusion...*
@@ -1960,18 +1956,10 @@ At this point of the project a lot has done but there is still more functionalit
 [17] Pamela Attree PhD, Beverley French PhD, Beth Milton PhD, Susan Povall PhD, Margaret Whitehead PhD FFPH, Jennie Popay BA (Hons) MA. 8 December, 2010. "*The experience of community engagement for individuals: a rapid review of evidence*", vol. 19, issue 3, pp. 250-260. doi: 10.1111/j.1365-2524.2010.00976.x.<br>
 [18] "*Customizing authentication in Django*" [Online]. Available: [Customizing authentication in Django | Django documentation | Django](https://docs.djangoproject.com/en/5.0/topics/auth/customizing/) [Accessed February 2024]<br>
 
-
-
 [19] "*Django settings*" [Online]. Available: [[Django settings | Django documentation | Django](https://docs.djangoproject.com/en/5.0/topics/settings/)](https://www.geeksforgeeks.org/django-project-mvt-structure/) [Accessed February 2024]<br>
-
-
 
 [20] "*Django Project MVT Structure*" [Online]. Available: [Django Project MVT Structure - GeeksforGeeks](https://www.geeksforgeeks.org/django-project-mvt-structure/) [Accessed February 2024]<br>
 
-
-
 [21] "*Writing your first Django app, part 1*" [Online]. Available: [Writing your first Django app, part 1 | Django documentation | Django](https://docs.djangoproject.com/en/5.0/intro/tutorial01/) [Accessed February 2024]<br>
-
-
 
 [22] "*Django*" [Online]. Available: [Django](https://www.djangoproject.com/) [Accessed February 2024]
