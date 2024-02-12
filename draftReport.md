@@ -1509,7 +1509,7 @@ class RegistrationUserAuthenticationTests(TestCase):
 
 ### 5.1.2 The `tennis` app
 
-For the `tennis` app it was important for me to test the functionality around the tennis sessions. The unit tests can be seen in **code snippet 19**. I began the tests however by testing whether certain messages were displayed to the user since I wrote these tests as I was going along.
+For the `tennis` app it was important for me to test the functionality of the tennis sessions. The unit tests can be seen in **code snippet 19**. I began the tests however by testing whether certain messages were displayed to the user since I wrote these tests as I was going along. I then tested the add, edit, and delete functionality that can be seen in the code snippet.
 
 ```python
 ...
