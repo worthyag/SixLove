@@ -1,4 +1,4 @@
-*Preliminary Report - Final Project (CM3070)*
+*Draft Report - Final Project (CM3070)*
 
 # SixLove - Can novice linear progression be applied to tennis?
 
@@ -960,8 +960,6 @@ LOGOUT_REDIRECT_URL = "home"
 
 <br>
 
-
-
 I then wrote some unit tests to ensure that the `tennis` app was working as aspected (refer to [section 5.1.2](#512-the-tennis-app)), though I wrote some unit tests whenever I wrote new functionality.
 
 ### 4.2.1 The MVT Pattern
@@ -1048,7 +1046,7 @@ function buildCalendar() {
     const currentDate = new Date(year, month, i);
     const hasSession = hasTennisSession(currentDate);
     const isToday = currentDate.toDateString() === today.toDateString();
-    
+
     const dayElement = document.createElement('div');
     dayElement.classList.add('day', isToday ? 'today' : 'day', 
                             hasSession ? 'tennis-session' : 'day');
@@ -1068,8 +1066,6 @@ function buildCalendar() {
 **Code Snippet 10** The `BuildCalendar` function.<br>
 
 <br>
-
-
 
 The next thing I did was add functionality to the arrows, so that the users could navigate to different months using the arrows. I also adding functionality to the date picker and the today button. **Code snippet 11** displays some of the code for that functionality.
 
@@ -1117,8 +1113,6 @@ todayBtn.addEventListener("click", () => {
 **Code Snippet 11** Added functionality to the arrows, date picker and today button.<br>
 
 <br>
-
-
 
 Once the calendar was fully functional, the next stage was to incorporate the tennis sessions with the calendar. I began by creating a side panel (**code snippet 12**) and three modals (**code snippet 13**). The side panel displays the tennis sessions to the user when they click on a day (refer to **figure 17**)- though at this stage it just displayed the message "No tennis sessions scheduled", and the add tennis session button. The three modals refers to the 'add session modal' (**figure 19**), the 'edit session modal' (**figure 18**), and the 'delete session modal' (**figure 20**). I incorporated the modals with the forms created by the `TennisSessionForm` class previously written in order to communicate with the `TennisSession` database table with ease.
 
@@ -1176,7 +1170,7 @@ function closeSidePanel() {
 <div id="editModal" class="modal">
     <div class="modal-content">
       <span class="close-btn" onclick="closeModal('#editModal')">
-        &times;
+        ×
       </span>
       <div id="modalContent">
         <form action="" method="post" novalidate>
@@ -1198,12 +1192,9 @@ function closeSidePanel() {
 
 <br>
 
-
-
 I then had to make sure that the tennis session data was being sent to calendar page, and that the calendar view (**code snippet 14**) knew what to do depending on which modal was submitting the form. This logic was achieved through the use of a hidden id input that I added to the form. This meant that the calendar view new which sessions to edit and which sessions to delete- this wasn't necessary for adding tennis sessions.
 
 ```python
-
 ...
 @login_required
 def calendar(request):
@@ -1289,8 +1280,6 @@ def calendar(request):
 
 <br>
 
-
-
 With that, I wrote corresponding javascript code that provided the interactivity needed for the user to be able to add, edit, delete, and view their tennis sessions.
 
 ```javascript
@@ -1345,8 +1334,6 @@ function addSession(day) {
 
 <br>
 
-
-
 Once I completed most of the calendar functionality, I wrote some unit tests that will be expanded upon in [section 5.1.3](#513-the-planner-app), though I a few unit tests as I went along.
 
 # 5 Evaluation
@@ -1369,8 +1356,6 @@ action="{% url 'logout' %}?next={% url 'home' %}">
 
 <br>
 
-
-
 ```python
 def test_existing_user_can_logout(self):
         ...
@@ -1388,8 +1373,6 @@ def test_existing_user_can_logout(self):
 **Code Snippet 17** The `test_existing_user_can_logout()` test.<br>
 
 <br>
-
-
 
 I wanted to keep redirection functionality outside of the templates, therefore I didn't want to use `next` since it is set in the template. In addition, it wasn’t producing the redirection code (302)- and so was producing an error, because technically it wasn’t redirecting. I solved this issue by adding the line of code in **code snippet 9**, and removing the `?next={% url 'home' %}` from **code snippet 16**. **Code snippet 18** displays some of the other unit testing that I did for the `registration` app.
 
@@ -1498,14 +1481,11 @@ class RegistrationUserAuthenticationTests(TestCase):
             reverse("signup"), new_user_data)
 
         self.assertEqual(response.status_code, 200)
-
 ```
 
 **Code Snippet 18** Tests for the `registration` app.<br>
 
 <br>
-
-
 
 ### 5.1.2 The `tennis` app
 
@@ -1658,14 +1638,11 @@ class DeleteTennisSessionViewTest(TestCase):
         response = self.client.post(reverse('tennis:delete',
                                             args=[self.tennis_session.id]))
         self.assertEqual(response.status_code, 302)
-
 ```
 
 **Code Snippet 19** Tests for the `tennis` app.<br>
 
 <br>
-
-
 
 ### 5.1.3 The `planner` app
 
@@ -1789,26 +1766,19 @@ class CalendarViewTest(TestCase):
         request.user = self.user
         response = views.calendar(request)
         self.assertEqual(response.status_code, 400)
-
 ```
 
 **Code Snippet 20** Tests for the `planner` app.<br>
 
 <br>
 
-
-
 ## 5.2 Overall project evaluation
 
--Evaluate the overall-
+Based on the aims and objectives of SixLove the project is half complete in terms of development, though most of the objectives and aims left to achieve centre around community and the UI. The UI aspect of the project is not very hefty (since most the planning and designing is done), it is just important that the UI is built with users and accessibility in mind. The UI will also be developed iteratively taking user feedback and making appropriate changes. Therefore it seems that more time will be spent on the community aspect, which will not only be the addition of another app, but will also reflect changes project wide.
 
-With the `registration`, `tennis`, and `planner` apps complete, I can now focus on the community and learning aspect of the app. This means that it is possible that some changes will be made to the models (database tables) that I have already created.
-
-
+Going forward, I will be focusing on the community and learning aspect of the app. This means that it is possible that some changes will be made to the models (database tables) that I have already created.
 
 
-
-Evaluate what stage you are are by evaluating the aims and objectives.
 
 Describe the things that you are currently working on / will start working on (in your case it is the community aspect).
 
