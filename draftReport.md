@@ -45,6 +45,9 @@
   - [4.3 The `planner` app](#43-the-planner-app)
 - [5 Evaluation](#5-evaluation)
   - [5.1 Unit testing](#51-unit-testing)
+    - [5.1.1 The `registration` app](#511-the-registration-app)
+    - [5.1.2 The `tennis` app](#512-the-tennis-app)
+    - [5.1.3 The `planner` app](#513-the-planner-app)
   - [5.2 Overall project evaluation](#52-overall-project-evaluation)
 - [6 Conclusion](#6-conclusion)
 - [7 References](#7-references)
@@ -743,7 +746,7 @@ def user_login(request):
 
 **Code Snippet 4** The `signup` html template.
 
-With that completed, I had written most of the functionality for user authentication, and had a bare bone version of the `registration` app. I then created a superuser in order to conduct a manual pretest, then I wrote some unit tests to test everything thoroughly (this will be expanded on in [section 5.1](#51-unit-testing).
+With that completed, I had written most of the functionality for user authentication, and had a bare bone version of the `registration` app. I then created a superuser in order to conduct a manual pretest, then I wrote some unit tests to test everything thoroughly (this will be expanded on in [section 5.1.1](#511-the-registration-app).
 
 ## 4.2 The `tennis` app
 
@@ -959,7 +962,7 @@ LOGOUT_REDIRECT_URL = "home"
 
 
 
-I then wrote some unit tests to ensure that the `tennis` app was working as aspected (refer to [section 5.1](#51-unit-testing)).
+I then wrote some unit tests to ensure that the `tennis` app was working as aspected (refer to [section 5.1.2](#512-the-tennis-app)).
 
 ### 4.2.1 The MVT Pattern
 
@@ -1345,9 +1348,7 @@ function addSession(day) {
 
 
 
-Once I completed most of the calendar functionality, I wrote some unit tests that will be expanded upon in [section 5.1](#51-unit-testing).
-
-
+Once I completed most of the calendar functionality, I wrote some unit tests that will be expanded upon in [section 5.1.3](#513-the-planner-app).
 
 # 5 Evaluation
 
@@ -1355,7 +1356,51 @@ Once I completed most of the calendar functionality, I wrote some unit tests tha
 
 ## 5.1 Unit testing
 
-0 Go into detail about the unit testing that you have conducted, and why you chose particular tests (for instance, `test_calendar_view_loads`). When you were explaining the implementations in the previous section, make sure that you pointed to this section, to go into detail about the tests. (Could be its own section).
+### 5.1.1 The `registration` app
+
+Once I finished a significant portion of the `registration` app functionality. I wrote some unit tests. The `test_existing_user_can_logout()` test displayed in **code snippet 17** allowed me to realise that there was a problem with when my page redirects. The page was only redirecting due to line of code displayed in **code snippet 16**.
+
+```html
+<form style="margin-top: 24px;" method="post" 
+action="{% url 'logout' %}?next={% url 'home' %}">
+</form>
+```
+
+**Code Snippet 16** Previous code.<br>
+
+<br>
+
+
+
+```python
+def test_existing_user_can_logout(self):
+        ...
+        # Logging the user in.
+        self.client.login(username=self.user_data['username'],
+                          password=self.user_data['password'])
+
+        # Logging the user out + checking whether the operation was
+        # successfully.
+        response = self.client.post(reverse("logout"))
+        self.assertEqual(response.status_code, 302)
+        self.assertRedirects(response, reverse("home"))
+```
+
+**Code Snippet 17** The `test_existing_user_can_logout()` test.<br>
+
+<br>
+
+
+
+I wanted to keep redirection functionality outside of the templates, therefore I didn't want to use `next` since it is set in the template. In addition, it wasn’t producing the redirection code (302)- and so was producing an error, because technically it wasn’t redirecting. I solved this issue by adding the line of code in **code snippet 9**, and removing the `?next={% url 'home' %}` from code snippet 16.
+
+
+
+### 5.1.2 The `tennis` app
+
+### 5.1.3 The `planner` app
+
+0 Go into detail about the unit testing that you have conducted, and why you chose particular tests (for instance, `test_calendar_view_loads`). 
 
 ## 5.2 Overall project evaluation
 
