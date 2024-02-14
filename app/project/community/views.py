@@ -12,3 +12,25 @@ def connect(request):
             "title": "Connect",
         }
     )
+
+
+def feed(request):
+    """"""
+    return render(
+        request,
+        "./community/feed.html",
+        {
+            "title": "Feed",
+        }
+    )
+
+
+def profile(request):
+    """"""
+    return render(
+        request,
+        "./community/profile.html",
+        {
+            "title": "Profile",
+        }
+    )
