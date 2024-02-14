@@ -1,25 +1,41 @@
-{% extends './base.html' %} 
-{% load static %} 
-{% block content %}
-<main>
-  <h2>Profile</h2>
-  <div class="cover-photo">Background</div>
-  <div class="profile-photo">
-    <img src="{% static './community/images/profile-pic-temp.png' %}" alt="Profile Photo">
-  </div>
-  <div class="followers-following">
-    <div class="followers">
-      <div class="follower-text">followers</div>
-      <div class="follower-count">34</div>
+{% extends './base.html' %} {% load static %} {% block content %}
+<main id="profile">
+  <!-- <h2>Profile</h2> -->
+  <div class="profile-top">
+    <div class="profile-header">
+      <div class="profile-photo">
+        <img
+          src="{% static './community/images/profile-pic-temp.png' %}"
+          alt="Profile Photo"
+        />
+      </div>
+      <div class="profile-username-action-btns">
+        <p class="profile-username">thenoirespace</p>
+        <div class="profile-action-btns">
+          <button class="follow">Follow</button>
+          <button class="message">Message</button>
+        </div>
+      </div>
     </div>
-    <div class="following">
-      <div class="following-text">following</div>
-      <div class="following-count">18</div>
+    <div class="info">
+      <div class="profile-name">The Noire Space</div>
+      <div class="profile-bio">
+        The Safe Haven for Black Women to express themselves, interact and be
+        free!🖤🫶🏾 🥂Content on Self-discovery,Sisterhood and more. 👩🏾‍💻Find more
+        below! ↙️
+      </div>
     </div>
-  </div>
-  <div class="info">
-    <div class="user-name">Name</div>
-    <div class="user-bio">Bio</div>
+
+    <div class="followers-following">
+      <div class="followers">
+        <div class="follower-text ff-text">followers</div>
+        <div class="follower-count ff-count">34</div>
+      </div>
+      <div class="following">
+        <div class="following-text ff-text">following</div>
+        <div class="following-count ff-count">18</div>
+      </div>
+    </div>
   </div>
   <div class="toggle-feed-view">...</div>
   <div class="feed">
