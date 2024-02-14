@@ -3,6 +3,32 @@
 {% block content %}
 <main>
   <h2>Profile</h2>
-  <p>Not implemented yet.</p>
+  <div class="cover-photo">Background</div>
+  <div class="profile-photo">
+    <img src="{% static './community/images/profile-pic-temp.png' %}" alt="Profile Photo">
+  </div>
+  <div class="followers-following">
+    <div class="followers">
+      <div class="follower-text">followers</div>
+      <div class="follower-count">34</div>
+    </div>
+    <div class="following">
+      <div class="following-text">following</div>
+      <div class="following-count">18</div>
+    </div>
+  </div>
+  <div class="info">
+    <div class="user-name">Name</div>
+    <div class="user-bio">Bio</div>
+  </div>
+  <div class="toggle-feed-view">...</div>
+  <div class="feed">
+    <div class="feed-post">1</div>
+    <div class="feed-post">2</div>
+    <div class="feed-post">3</div>
+    <div class="feed-post">4</div>
+    <div class="feed-post">5</div>
+    <div class="feed-post">6</div>
+  </div>
 </main>
 {% endblock %}
