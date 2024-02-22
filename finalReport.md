@@ -2,7 +2,7 @@ _Report - Final Project (CM3070)_
 
 # SixLove - Can novice linear progression be applied to tennis?
 
-*Taking on the task of creating a tennis app that provides users with the tools to go from novices to confident, well-rounded amateur players.*
+_Taking on the task of creating a tennis app that provides users with the tools to go from novices to confident, well-rounded amateur players._
 
 <!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
 
@@ -66,15 +66,15 @@ _Report - Final Project (CM3070)_
 
 ## 1.1 Introduction and background
 
-*Taking you back to the beginning.*
+_Taking you back to the beginning._
 
-Health is wealth- a sentiment echoed by millions across the globe. However, according to *ScienceDaily* over "*95% of the world's population [have] health problems*" [1]. Though we cannot single-handedly gift health to 95% of the world, as fellow humans we have a duty to help facilitate the process of getting healthy. Now where does tennis fit into all this? Tennis is a great sport for those wanting to improve their health. It does not bear the initial intimidation of going to the gym for the first time, but also allows for social interaction. Most important to note is that tennis allows those playing it to improve their cardiovascular endurance, agility, and coordination- it provides a full body workout. *Mayo Clinic Proceedings* published a study (The Copenhagen City Heart Study) in which it was found that tennis players added 9.7 years to their lives in comparison to sedentary individuals [2]. An article published in the *British Journal of Sports Medicine* found that playing tennis for 3 hours a week reduced your risk of heart disease by 56%[3]. Tennis was also found to be linked to "*improved aerobic fitness, a lower body fat percentage, a more favourable lipid profile, reduced risk for developing cardiovascular disease, and improved bone health*" [4].
+Health is wealth- a sentiment echoed by millions across the globe. However, according to _ScienceDaily_ over "_95% of the world's population [have] health problems_" [1]. Though we cannot single-handedly gift health to 95% of the world, as fellow humans we have a duty to help facilitate the process of getting healthy. Now where does tennis fit into all this? Tennis is a great sport for those wanting to improve their health. It does not bear the initial intimidation of going to the gym for the first time, but also allows for social interaction. Most important to note is that tennis allows those playing it to improve their cardiovascular endurance, agility, and coordination- it provides a full body workout. _Mayo Clinic Proceedings_ published a study (The Copenhagen City Heart Study) in which it was found that tennis players added 9.7 years to their lives in comparison to sedentary individuals [2]. An article published in the _British Journal of Sports Medicine_ found that playing tennis for 3 hours a week reduced your risk of heart disease by 56%[3]. Tennis was also found to be linked to "_improved aerobic fitness, a lower body fat percentage, a more favourable lipid profile, reduced risk for developing cardiovascular disease, and improved bone health_" [4].
 
 ## 1.2 Concept and motivations
 
-*Formally specifying the how.*
+_Formally specifying the how._
 
-The template chosen for this project is the 'CM3055 Interaction Design: Introducing novices to strength' template. I will be creating an app entitled 'SixLove'. This project is centred around novice linear progression. Novice linear progression (Novice LP) is defined as a program where "*weight on the bar increases, linearly, every workout for each lift*" [5]. What makes Novice LP so potent is that it provides a simple and structured approach for novices, allowing them to build strength efficiently and safely. What does this mean in practice? Novice LP can be be summarised into five key features / principles:
+The template chosen for this project is the 'CM3055 Interaction Design: Introducing novices to strength' template. I will be creating an app entitled 'SixLove'. This project is centred around novice linear progression. Novice linear progression (Novice LP) is defined as a program where "_weight on the bar increases, linearly, every workout for each lift_" [5]. What makes Novice LP so potent is that it provides a simple and structured approach for novices, allowing them to build strength efficiently and safely. What does this mean in practice? Novice LP can be be summarised into five key features / principles:
 
 1. Basic movements
 2. Linear progression
@@ -82,9 +82,9 @@ The template chosen for this project is the 'CM3055 Interaction Design: Introduc
 4. Simple structure
 5. Goal-orientated
 
-Basic movements refers to this idea of the fundamentals. This feature allows novices to learn the elemental barbell exercises, thus building the foundation required for strength. Linear progression represents the linear nature of the program (as defined earlier). This linearity helps to stimulate muscle growth and strength gains. The program is implemented three days a week "*on non-consecutive days, i.e. Mon/Wed/Fri, Tues/Thurs/Sat or similar*" [7]- allowing for sufficient recovery. Novice LP is simple in its nature with an emphasis on using a small number of exercises and sets, making it accessible for novices. Goal-orientated points to novices being encouraged to set specific and measurable strength goals- helping them stay motivated and track their progress.
+Basic movements refers to this idea of the fundamentals. This feature allows novices to learn the elemental barbell exercises, thus building the foundation required for strength. Linear progression represents the linear nature of the program (as defined earlier). This linearity helps to stimulate muscle growth and strength gains. The program is implemented three days a week "_on non-consecutive days, i.e. Mon/Wed/Fri, Tues/Thurs/Sat or similar_" [7]- allowing for sufficient recovery. Novice LP is simple in its nature with an emphasis on using a small number of exercises and sets, making it accessible for novices. Goal-orientated points to novices being encouraged to set specific and measurable strength goals- helping them stay motivated and track their progress.
 
-The real challenge of this project, is taking the fundamental principles of this technique and applying it to tennis. (In [Section 2.2.1](#221-the-theory), an exploration will be undertaken to elaborate on how these principles will be tailored and applied to tennis). In greater detail, the idea is to create an application that helps take users from novices to confident, well-rounded amateur tennis players. Well, what is a novice tennis player? Or rather, what is an amateur tennis player? How is that any good? In the world of tennis, a novice tennis player refers to a beginner. Whereas an amateur tennis player refers to anything upwards of and including intermediate, so long as they are not professional- though these definitions can change based on the source. For the purpose of this project, a novice tennis player is an individual completely new to tennis, and an amateur tennis player is an individual who has learnt the basics but may still need to "*develop their shots and learn more about tactics*" [6]. 
+The real challenge of this project, is taking the fundamental principles of this technique and applying it to tennis. (In [Section 2.2.1](#221-the-theory), an exploration will be undertaken to elaborate on how these principles will be tailored and applied to tennis). In greater detail, the idea is to create an application that helps take users from novices to confident, well-rounded amateur tennis players. Well, what is a novice tennis player? Or rather, what is an amateur tennis player? How is that any good? In the world of tennis, a novice tennis player refers to a beginner. Whereas an amateur tennis player refers to anything upwards of and including intermediate, so long as they are not professional- though these definitions can change based on the source. For the purpose of this project, a novice tennis player is an individual completely new to tennis, and an amateur tennis player is an individual who has learnt the basics but may still need to "_develop their shots and learn more about tactics_" [6]. 
 
 It is now relatively simple to infer the users that this project was conceptualised for- they include but are not limited to:
 
@@ -93,7 +93,7 @@ It is now relatively simple to infer the users that this project was conceptuali
 - Fitness enthusiasts
 - Aspiring amateur tennis competitors
 
-With the mention of the users comes the project domain. Though alluded to and specified earlier, the domain can broadly be described as '*novice tennis training*'. Expanding upon that, this project will result in the creation of a web based application that is centred around guiding individuals with little or no tennis experience through a structured tennis training program.
+With the mention of the users comes the project domain. Though alluded to and specified earlier, the domain can broadly be described as '_novice tennis training_'. Expanding upon that, this project will result in the creation of a web based application that is centred around guiding individuals with little or no tennis experience through a structured tennis training program.
 
 ## 1.3 SixLove's Users
 
@@ -102,14 +102,13 @@ With the mention of the users comes the project domain. Though alluded to and sp
 ### 1.3.3 Fitness Enthusiasts
 ### 1.3.4 Aspiring Amateur Tennis Competitors
 
-
 ## 1.4 Proposed approach
 
-*Breaking down how I will go about this project.*
+_Breaking down how I will go about this project._
 
 ### 1.4.1 Aims
 
-*Goals for the development of SixLove and for its evaluation.*
+_Goals for the development of SixLove and for its evaluation._
 
 1. **Comprehensive training program**
    - SixLove should provide a structured and comprehensive training program.
@@ -127,7 +126,7 @@ With the mention of the users comes the project domain. Though alluded to and sp
 
 ### 1.4.2 Objectives
 
-*The core objectives of SixLove.*
+_The core objectives of SixLove._
 
 1. **Skill development**
    - Provide a structured training program covering fundamental tennis strokes.
@@ -146,11 +145,11 @@ With the mention of the users comes the project domain. Though alluded to and sp
 
 # 2 Literature
 
-*What has been done and what is to come.*
+_What has been done and what is to come._
 
 ## 2.1 Existing solutions
 
-*Scoping out the current market.*
+_Scoping out the current market._
 
 ### 2.1.1 TennisPAL
 
@@ -338,11 +337,11 @@ Nike Training Club is a general fitness app that offers a variety of workout rou
 
 ## 2.2 Techniques and methods
 
-*Exploring the various software libraries, algorithms, and research methodologies.*
+_Exploring the various software libraries, algorithms, and research methodologies._
 
 ### 2.2.1 The theory
 
-*Exploring tennis novice linear progression.*
+_Exploring tennis novice linear progression._
 
 [Section 1.1](#11-introduction-and-background) delineated the fundamental features and principles of Novice LP. Now, the focus shifts to customising and applying these concepts to the realm of tennis. This brings us to the definition of tennis novice linear progression (TNLP)- a program that I have created based on Novice LP. TNLP represents a structured and incremental approach to skill development for novice tennis players. It places emphasis on foundational strokes, court awareness, fitness, and overall improvement in tennis proficiency. TNLP is built upon five core principles:
 
@@ -354,31 +353,31 @@ Nike Training Club is a general fitness app that offers a variety of workout rou
 
 #### 2.2.1.1 Fundamental tennis strokes
 
-*The 'basic movements' of Novice LP.*
+_The 'basic movements' of Novice LP._
 
 The first core principle of TNLP encompasses the fundamental tennis strokes, namely the groundstrokes—forehand and backhand—and the serve. In order for novices to succeed in tennis, they must fully grasp the foundational shots. A good foundation leads to a more well-rounded tennis player.
 
 #### 2.2.1.2 Linear progression in skill development
 
-*The 'linear progression' of Novice LP.*
+_The 'linear progression' of Novice LP._
 
-While linearity in Novice LP involves an incremental increase in weight per workout, promoting strength development, in TNLP, it denotes continuous skill enhancement through consistent practice. This is achieved through the gradual increase in the complexity of tennis drills and exercises. Thus resulting in systematic progression through skill levels. TNLP encourages regular practice sessions to reinforce fundamental techniques and build muscle memory. TNLP hones in on the notion that "*repetition is the key*" [9]. This notion will be better understood when the laws of muscle memory are explored in [section 2.3.1](#231-the-laws-of-muscle-memory).
+While linearity in Novice LP involves an incremental increase in weight per workout, promoting strength development, in TNLP, it denotes continuous skill enhancement through consistent practice. This is achieved through the gradual increase in the complexity of tennis drills and exercises. Thus resulting in systematic progression through skill levels. TNLP encourages regular practice sessions to reinforce fundamental techniques and build muscle memory. TNLP hones in on the notion that "_repetition is the key_" [9]. This notion will be better understood when the laws of muscle memory are explored in [section 2.3.1](#231-the-laws-of-muscle-memory).
 
 #### 2.2.1.3 Structured training sessions
 
-*The 'three workouts per week' of Novice LP.*
+_The 'three workouts per week' of Novice LP._
 
 Novice LP used three workouts per week to gradually increase the novices strength while allowing for recovery. In terms of TNLP, structured tennis sessions are utilised to build muscle memory, so that (tennis) strokes can become instinctual. This is also linked to the laws of muscle memory.
 
 #### 2.2.1.4 Cardiovascular endurance and agility
 
-*The 'simple structure' of Novice LP.*
+_The 'simple structure' of Novice LP._
 
-The structure of Novice LP is simple in nature, allowing users to "*develop a strong foundation and learn proper lifting techniques*" [16]. This foundation is what enables novices to build strength and muscle mass. In terms of fitness for tennis, cardiovascular endurance and agility are key. Tennis matches do not have a set time and can go on for hours at a time. The tennis court is quite big, and points are typically won by making use of its angles. These features calls for a strong foundation in agility and good stamina. Though it is unlikely for novices to play against others novices who have the skills to make use of the whole tennis court, this a fundamental skill that is needed for their journey as a tennis enthusiast and amateur.
+The structure of Novice LP is simple in nature, allowing users to "_develop a strong foundation and learn proper lifting techniques_" [16]. This foundation is what enables novices to build strength and muscle mass. In terms of fitness for tennis, cardiovascular endurance and agility are key. Tennis matches do not have a set time and can go on for hours at a time. The tennis court is quite big, and points are typically won by making use of its angles. These features calls for a strong foundation in agility and good stamina. Though it is unlikely for novices to play against others novices who have the skills to make use of the whole tennis court, this a fundamental skill that is needed for their journey as a tennis enthusiast and amateur.
 
 #### 2.2.1.5 Progress tracking
 
-*The 'goal-orientated' of Novice LP.*
+_The 'goal-orientated' of Novice LP._
 
 Novice LP makes use of progress tracking to linearly increase weight, and monitor a novice's progress. In TNLP, setting goals is imperative. The exercises and practices may seem repetitive, but they are necessary for building muscle memory and improving technique. Being goal-orientated allows users to focus on what is important and remember their reasons for picking up tennis.
 
@@ -386,7 +385,7 @@ Novice LP makes use of progress tracking to linearly increase weight, and monito
 
 The libraries and technologies that will be used in this project are as follows:
 
-*Though this is subject to change due to unforeseeable circumstances.*
+_Though this is subject to change due to unforeseeable circumstances._
 
 - **Frontend**
   
@@ -418,27 +417,27 @@ The libraries and technologies that will be used in this project are as follows:
 
 ## 2.3 External research studies
 
-*Diving into external research to increase the effectiveness of SixLove.*
+_Diving into external research to increase the effectiveness of SixLove._
 
 ### 2.3.1 The laws of muscle memory
 
-*From beginners luck to second nature.*
+_From beginners luck to second nature._
 
-As mentioned in [section 2.2.1](#221-the-theory),TNLP is centred around this idea of muscle memory.  Therefore in order to gain a deeper understanding of the concept it is imperative to consider the laws of muscle memory. The laws of muscle memory as stated in Archie Dan Smith's "*Muscle Memory Application to Tennis*" paper are the following:
+As mentioned in [section 2.2.1](#221-the-theory),TNLP is centred around this idea of muscle memory.  Therefore in order to gain a deeper understanding of the concept it is imperative to consider the laws of muscle memory. The laws of muscle memory as stated in Archie Dan Smith's "_Muscle Memory Application to Tennis_" paper are the following:
 
-1. "*Your tennis strokes are due to muscle memory.*
+1. "_Your tennis strokes are due to muscle memory._
 
-2. *Muscle memory is the result of permanent changes in the brain, nerves, and muscles.*
+2. _Muscle memory is the result of permanent changes in the brain, nerves, and muscles._
 
-3. *Permanent changes occur through repetition in a concentrated period of time.*
+3. _Permanent changes occur through repetition in a concentrated period of time._
 
-4. *Repetition by doing it right in practice is how you hit good strokes during a match.*
+4. _Repetition by doing it right in practice is how you hit good strokes during a match._
 
-5. *Learning different patterns back to back may cause forgetting of the initial one.*
+5. _Learning different patterns back to back may cause forgetting of the initial one._
 
-6. *Once your muscle memory is in place it “forgets” slowly, if at all.*
+6. _Once your muscle memory is in place it “forgets” slowly, if at all._
 
-7. *The temporary improvement that occurs during practice or matches should not be considered learning, but rather a transient performance effect*."[11]
+7. _The temporary improvement that occurs during practice or matches should not be considered learning, but rather a transient performance effect_."[11]
 
 The laws of muscle memory will not be addressed in too much detail in this report, since at this stage it isn't necessary to do so. However, these laws illustrate why many of the principles of TNLP are focused around this idea of mastering the fundamentals, repetition and consistency. When creating TNLP I made sure to take into account these laws and Novice LP. TNLP is a concept that requires dedicated use, however if one is free to apply their self, they can improve quickly in tennis as opposed to when taking a more traditional approach (this will be discussed further in the final report). 
 
@@ -446,7 +445,7 @@ The laws of muscle memory will not be addressed in too much detail in this repor
 
 ## 3.1 Project structure
 
-*Getting into the specifics: tackling the overall structure and important technologies and/or methods.*
+_Getting into the specifics: tackling the overall structure and important technologies and/or methods._
 
 ### 3.1.1 Wireframing
 
@@ -492,7 +491,7 @@ The wireframing and design in SixLove utilises a mobile first approach. This app
 
 **Figure 11** SixLove's history page.<br><br>
 
-**Figure 12** displays SixLove's feed page. This is an important part of the app. It was essential to hone in on the community aspect of sports and fitness. Community is something that is integral in our lives and impacts us greatly. It was found that people who were "*actively involved in initiatives utilising community engagement approaches experienced positive benefits, in terms of physical and emotional health and well-being, self-confidence, self-esteem, social relationships and individual empowerment*" [17]. Therefore incorporating community in a sports app seemed fitting.
+**Figure 12** displays SixLove's feed page. This is an important part of the app. It was essential to hone in on the community aspect of sports and fitness. Community is something that is integral in our lives and impacts us greatly. It was found that people who were "_actively involved in initiatives utilising community engagement approaches experienced positive benefits, in terms of physical and emotional health and well-being, self-confidence, self-esteem, social relationships and individual empowerment_" [17]. Therefore incorporating community in a sports app seemed fitting.
 
 <img title="" src="./images/feed-page-wireframe.png" alt="" data-align="center">
 
@@ -520,7 +519,7 @@ The wireframing and design in SixLove utilises a mobile first approach. This app
 
 ### 3.1.3 Database Tables
 
-*The tables that will be turned into models.*
+_The tables that will be turned into models._
 
 **Figure 14** displays a tabular version of the entity relation diagram, while highlighting the primary keys and foreign keys. It was important to establish a database schema earlier on in the process, since it can be altered further down the line, and the SixLove application relies heavily on data.
 
@@ -530,7 +529,7 @@ The wireframing and design in SixLove utilises a mobile first approach. This app
 
 ### 3.1.4 SixLove Pages
 
-*The main pages.*
+_The main pages._
 
 Though the entities, relationships, and design of the project have been showcased, the app's structure in terms of pages has yet to be addressed.
 
@@ -567,7 +566,7 @@ The SixLove app will have the following main pages:
 
 ### 3.1.5 Django structure
 
-*The overall code structure.*
+_The overall code structure._
 
 Since SixLove is built with Django, the project has the following structure (**figure 15**).
 
@@ -684,7 +683,7 @@ Since SixLove is built with Django, the project has the following structure (**f
 
 <br>
 
-**Figure 15** displays a parent `project` folder with many children folders that follow a similar structure. An application built with Django is a project that is made up of a collection of apps. A Django project is defined as a "*collection of configuration and apps for a particular website*" [21]. A Django app is a "*web application that does something*"[21]. The difference between the two is that a project "*can contain multiple apps*" [21], whereas an app "*can be in multiple projects*"[21]. SixLove will be made up of the following apps:
+**Figure 15** displays a parent `project` folder with many children folders that follow a similar structure. An application built with Django is a project that is made up of a collection of apps. A Django project is defined as a "_collection of configuration and apps for a particular website_" [21]. A Django app is a "_web application that does something_"[21]. The difference between the two is that a project "_can contain multiple apps_" [21], whereas an app "_can be in multiple projects_"[21]. SixLove will be made up of the following apps:
 
 - Project
   
@@ -706,11 +705,11 @@ Since SixLove is built with Django, the project has the following structure (**f
   
   - For all the community aspects.
 
-I chose to use Django for this project since I like its focus on modularity, and the structure it gives to applications. Django is very stable and secure, and with developing an application that has a community aspect, and stores users data this is incredibly important. I also picked it due to the time aspect, since it was designed to enable developers to build applications as quickly as possible. The Django slogan is "*the web framework for perfectionists with deadlines*"[22] which was also fitting for this project.
+I chose to use Django for this project since I like its focus on modularity, and the structure it gives to applications. Django is very stable and secure, and with developing an application that has a community aspect, and stores users data this is incredibly important. I also picked it due to the time aspect, since it was designed to enable developers to build applications as quickly as possible. The Django slogan is "_the web framework for perfectionists with deadlines_"[22] which was also fitting for this project.
 
 ## 3.2 Work plan
 
-*My project roadmap.*
+_My project roadmap._
 
 **Figure 15** displays the SixLove's Gantt chart that contains all the major tasks and when they should be completed. Most tasks are given a duration of at least 4 to 7 days. The chart also doesn't allow work to be assigned on the weekends, and weekends are not accounted for when displaying how many days a task has been given.
 
@@ -720,7 +719,7 @@ I chose to use Django for this project since I like its focus on modularity, and
 
 ## 3.3 Evaluation strategy
 
-*Now that there is a plan, how will I test and evaluate the project progress?*
+_Now that there is a plan, how will I test and evaluate the project progress?_
 
 SixLove  will be evaluated using four categories which are as follows:
 
@@ -752,7 +751,7 @@ SixLove  will be evaluated using four categories which are as follows:
 
 # 4 The Implementation
 
-*Core functionality development.*
+_Core functionality development._
 
 I decided that I wanted to start building SixLove's functionality in a somewhat chronological order. Chronological order referring to the user's flow, for instance, what route will potential users take when navigating the app? That meant starting with the landing page, then moving on to the sign up and login pages, then to the pages that allow the users to add, edit, and delete tennis sessions. I have previously stated SixLove's aims and objectives, and at their very core user authentication and tennis sessions play a huge role in whether the aims and objectives are met, so using this approach made the most logical sense. I must mention however, at this stage my goal was to program the functionality, therefore I did very minimal styling- currently the user interface is not fully fleshed out (or quite minimal- refer to **figures 17** to **24** to see what I mean), and there will be upcoming changes to the wireframes based on user input and accessibility matters.
 
@@ -790,7 +789,7 @@ I decided that I wanted to start building SixLove's functionality in a somewhat 
 
 ## 4.1 The `registration` app
 
-*Building the `CustomUser`.*
+_Building the `CustomUser`._
 
 User authentication is a primary requirement of the app. SixLove's purpose is to allow its users to keep track of their tennis sessions, follow a training schedule, and feel a sense of community. User authentication is needed for this to work. Users can only keep track of their sessions if they are able to log in. In addition, users should only be able to access their tennis sessions and not another user's one (other than in the case of joint sessions). User authentication is housed within the `registration` app. The app has the following pages:
 
@@ -802,7 +801,7 @@ User authentication is a primary requirement of the app. SixLove's purpose is to
 
 - Login- the page that authenticates the user.
 
-In order to authenticate the users, I needed to first create a table in my database that would store users information. In Django, this is facilitated through the creation of a model. The UML diagram for users can be seen in **figure 14**. Django has its own user model, but for the purpose of this project, I wanted to create my own- or expand upon it rather. It was important that I created the modified user model before making migrations (specifically, before running migrations of the Django `auth` app), since it would result in an `ValueError` . This I learnt the hard way, when I created a mock trial of the app, and was forced to clear all the databases tables and delete the migrations folder. The **code snippet 1** displays the model that I created to store user information. It inherits from the `AbstractUser` class. The official Django site describes the class as a '*model [that] behaves identically to the default user model*' [18]. The documentation advises developers to setup a custom user model beforehand, in case they want to later customise it in the future.
+In order to authenticate the users, I needed to first create a table in my database that would store users information. In Django, this is facilitated through the creation of a model. The UML diagram for users can be seen in **figure 14**. Django has its own user model, but for the purpose of this project, I wanted to create my own- or expand upon it rather. It was important that I created the modified user model before making migrations (specifically, before running migrations of the Django `auth` app), since it would result in an `ValueError` . This I learnt the hard way, when I created a mock trial of the app, and was forced to clear all the databases tables and delete the migrations folder. The **code snippet 1** displays the model that I created to store user information. It inherits from the `AbstractUser` class. The official Django site describes the class as a '_model [that] behaves identically to the default user model_' [18]. The documentation advises developers to setup a custom user model beforehand, in case they want to later customise it in the future.
 
 ```python
 ...
@@ -912,7 +911,7 @@ With that completed, I had written most of the functionality for user authentica
 
 ## 4.2 The `tennis` app
 
-*The creation of the `TennisSession` database table.*
+_The creation of the `TennisSession` database table._
 
 The next order of business was to create the `tennis` app. The ability to add, edit, and delete tennis sessions is the heart of SixLove. Users must be able to add tennis sessions to their calendar, and also view and update their schedule. The `tennis` app has the following pages:
 
@@ -1113,7 +1112,7 @@ def delete_tennis_session(request, tennis_session_id):
 
 The views displayed in **code snippet 8** are those that specifically deal with the tennis sessions. These are the views that provide the users with the ability interact with the tennis sessions. These views communicate with the `TennisSession` database table. Other than the `delete` view, the views pass a form to their associated HTML templates. These templates contain forms that allow users to make changes to their tennis sessions, in a similar fashion to **code snippet 4**.
 
-I also added the variable in **code snippet 9** to the settings file to ensure that the user is always redirected to the home (landing) page when they logout. The settings file is a file that "*contains all the configuration of your Django installation*" [19].
+I also added the variable in **code snippet 9** to the settings file to ensure that the user is always redirected to the home (landing) page when they logout. The settings file is a file that "*_ontains all the configuration of your Django installation_" [19].
 
 ```python
 # Redirects the user to the home page when they log out.
@@ -1128,7 +1127,7 @@ I then wrote some unit tests to ensure that the `tennis` app was working as aspe
 
 ### 4.2.1 The MVT Pattern
 
-*The structure my project follows.*
+_The structure my project follows._
 
 At this point, it is clear to see that there is a pattern emerging. I begin by creating some model(s), then I create some view(s) that seems to be linked to some template that I have created. This is the Django work cycle. Django has a model-view-template (MVT) architecture, as displayed in **figure 26**.
 
@@ -1138,15 +1137,15 @@ At this point, it is clear to see that there is a pattern emerging. I begin by c
 
 <br>
 
-A **model** in Django is defined as the "*the interface of your data*"[20]. It is an "*object that defines the structure of the data in a Django app*"[23]. This means that models are in charge of maintaining all of an application’s data and enables you to perform add, edit, delete, and view operations on the data.
+A **model** in Django is defined as the "_the interface of your data_"[20]. It is an "_object that defines the structure of the data in a Django app_"[23]. This means that models are in charge of maintaining all of an application’s data and enables you to perform add, edit, delete, and view operations on the data.
 
-A **view** in Django is the user interface (UI). More specifically, it is a "*handler function that accepts HTTP requests, processes them, and returns the HTTP response*" [23]. The view uses models to retrieve data, and then renders them to the UI using templates. Views in Django also have the functionality to create HTML pages, populating a HTML template dynamically- this is what I have done so far.
+A **view** in Django is the user interface (UI). More specifically, it is a "_handler function that accepts HTTP requests, processes them, and returns the HTTP response_" [23]. The view uses models to retrieve data, and then renders them to the UI using templates. Views in Django also have the functionality to create HTML pages, populating a HTML template dynamically- this is what I have done so far.
 
-A **template** in Django is a "*file that defines the structure of the UI*" [23]. It can be a file of any type, though in this project I have used HTML files. Templates are able to receive data from the view and render it to the UI.
+A **template** in Django is a "_file that defines the structure of the UI_" [23]. It can be a file of any type, though in this project I have used HTML files. Templates are able to receive data from the view and render it to the UI.
 
 ## 4.3 The `planner` app
 
-*How I created the calendar.*
+_How I created the calendar._
 
 With the tennis session functionality implemented, I was ready to extend it to the calendar page. The goal for the calendar page was to allow users to view and interact with their tennis sessions in a more user-friendly manner.
 
@@ -1505,15 +1504,15 @@ Once I completed most of the calendar functionality, I wrote some unit tests tha
 
 # 5 Evaluation
 
-*Breaking the project down.*
+_Breaking the project down._
 
 ## 5.1 Unit testing
 
-*Testing the code.*
+_Testing the code._
 
 ### 5.1.1 The `registration` app
 
-*The app that focuses on the user.*
+_The app that focuses on the user._
 
 Once I finished a significant portion of the `registration` app functionality. I wrote some unit tests. The `test_existing_user_can_logout()` test displayed in **code snippet 17** allowed me to realise that there was a problem with when my page redirects. The page was only redirecting due to line of code displayed in **code snippet 16**.
 
@@ -1660,7 +1659,7 @@ class RegistrationUserAuthenticationTests(TestCase):
 
 ### 5.1.2 The `tennis` app
 
-*The app that houses the learning resources and tennis sessions.*
+_The app that houses the learning resources and tennis sessions._
 
 For the `tennis` app it was important for me to test the functionality of the tennis sessions. The unit tests can be seen in **code snippet 19**. I began the tests however by testing whether certain messages were displayed to the user since I wrote those tests as I was going along. I then tested the add, edit, and delete functionality that can be seen in the code snippet.
 
@@ -1819,7 +1818,7 @@ class DeleteTennisSessionViewTest(TestCase):
 
 ### 5.1.3 The `planner` app
 
-*The app that houses the calendar.*
+_The app that houses the calendar._
 
 In terms of the `planner` app it was imperative that I tested that the page loaded without error, and that users were able to use the calendar to add, edit, view, and delete tennis sessions. I also had to ensure that those changes were in fact reflected in the database. **Code snippet 20** displays the unit tests that I conducted.
 
@@ -1949,52 +1948,52 @@ class CalendarViewTest(TestCase):
 
 ## 5.2 Overall project evaluation
 
-*Where my head is currently at.*
+_Where my head is currently at._
 
 Based on the aims and objectives of SixLove the project is about two thirds complete in terms of development, though most of the objectives and aims left to achieve centre around community and the UI. The UI aspect of the project is not very hefty (since most the planning and designing is done), it is just important that the UI is built with users and accessibility in mind. The UI will be developed iteratively taking user feedback and making appropriate changes. Therefore it seems that more time will be spent on the community aspect, which will not only result in the addition of another app, but will also reflect changes project wide. 
 
 ### 5.2.1 Proposed changes
 
-*What I will be doing going forward.*
+_What I will be doing going forward._
 
 The main focus of SixLove is to guide users with little to no tennis experience through a structured tennis training program. However, SixLove users add their own tennis sessions, so are technically free to create any schedule that they like. This begs the question, how can SixLove guide its users through a structured tennis training program while still giving those same users the freedom to add their own sessions, and decide when they want to train? With that, how do I get users to follow TNLP (which is fundamental for a user's success) on their own accord?
 
 In terms of TNLP, one solution I propose is to dedicate a page to TNLP, and give users examples of training schedules and ideas. SixLove could also reward users that follow a somewhat consistent regiment through an awards system. 
 
-In terms of structure, there seems to be a fine line. The following aim "*SixLove should provide a structured and comprehensive training program*" can potentially clash with this aim "*SixLove users should be able to add tennis sessions and create their own schedule*". A way around this is to add more structure to the `TennisSession` model itself. Instead of just the `title`, `notes`, `date`, and `is_complete` attributes, there could also be a `fundamentals` attribute which would manifest as a selector element. This `fundamentals` attribute would have the fundamental tennis strokes as options (for example, forehand, backhand etc)- this would represent the focus of the tennis session. In this way, users gain a little structure without losing flexibility. Adding to that,  the `fundamentals` attribute would be useful for data visualisation and progress tracking. This is because users would be able to filter past tennis sessions or view graphs to see what fundamental strokes they had been working on, and what hadn’t been covered as much.
+In terms of structure, there seems to be a fine line. The following aim "_SixLove should provide a structured and comprehensive training program_" can potentially clash with this aim "_SixLove users should be able to add tennis sessions and create their own schedule_". A way around this is to add more structure to the `TennisSession` model itself. Instead of just the `title`, `notes`, `date`, and `is_complete` attributes, there could also be a `fundamentals` attribute which would manifest as a selector element. This `fundamentals` attribute would have the fundamental tennis strokes as options (for example, forehand, backhand etc)- this would represent the focus of the tennis session. In this way, users gain a little structure without losing flexibility. Adding to that,  the `fundamentals` attribute would be useful for data visualisation and progress tracking. This is because users would be able to filter past tennis sessions or view graphs to see what fundamental strokes they had been working on, and what hadn’t been covered as much.
 
 To go a step further, I could also add a `rank` attribute, allowing users to rate their skill level for the chosen fundamental stroke when they add the tennis session. This would enable users to track their progression in terms of skill development. It would also result in four (1, 2, 3, 5) of the five principles of TNLP being covered (refer to [section 2.2.1](#221-the-theory)).
 
 # 6 Conclusion
 
-*To conclude...*
+_To conclude..._
 
 At this point of the project a lot has done but there is still more functionality to write. Outside of that, the questions posed in the [section 5.2.1](#521-proposed-changes) also highlight a slight discrepancy in the project's aims and objectives. Going forward, I will be focusing on the community and learning aspect of the app, which will most likely result in changes to the models that I have already built. I will also focus on the UI, ensuring that SixLove users have a good user experience. The goal is to make the UI very intuitive and accessible, with important tasks having simple user flows. In addition, I will be spending a lot of my time on the report, making sure that concepts are explained in a concise manner, and that my project core is clearly depicted.
 
 # 7 References
 
-*List of all the sources used for this project.*
+_List of all the sources used for this project._
 
-[1] The Lancet. 8 June 2015. "*Over 95% of the world’s population has health problems, with over a third having more than five ailments*." *ScienceDaily*. [Online]. Available: https://www.sciencedaily.com/releases/2015/06/150608081753.htm [Accessed 29 November 2023]<br>
-[2] Peter Schnohr, MD, DMSc, James H. O’Keefe, MD, Andreas Holtermann, PhD, Carl J. Lavie, MD, Peter Lange, MD, DMSc, Gorm Boje Jensen, MD, DMSc, Jacob Louis Marott, MSc. September 04, 2018. "*Various Leisure-Time Physical Activities Associated With Widely Divergent Life Expectancies: The Copenhagen City Heart Study*", *Mayo Clinic Proceedings*, vol. 93, issue 12, pp. 1775-1785. doi: 10.1016/j.mayocp.2018.06.025.<br>
-[3] Babette M Pluim, Jack L Groppel, Dave Miley, Miguel Crespo, Michael S Turner.  2018. "*Health benefits of tennis*", *British Journal of Sports Medicine*, vol. 52, issue 3, pp. 201-202. doi: 10.1136/bjsports-2017-098623.<br>
-[4] Babette M Pluim, J Bart Staal, Bonita L Marks, Stuart Miller, Dave Miley. November, 2007. "*Health benefits of tennis*", *British Journal of Sports Medicine*, vol. 41, issue 11, pp. 760-768. doi: 10.1136/bjsm.2006.034967.<br>
-[5] "*Novice Linear Progression Program Explained*" *Barbell Logic* [Online]. Available: https://barbell-logic.com/novice-linear-progression-explained. [Accessed 29 November 2023]<br>
-[6] "*Tennis Beginner vs Intermediate (Main Differences)*" *My Tennis HQ* [Online]. Available: https://mytennishq.com/tennis-beginner-vs-intermediate-main-differences/ [Accessed 29 November 2023]<br>
-[7] "*The Starting Strength Program*" *Starting Strength* [Online]. Available: https://startingstrength.com/get-started/programs. [Accessed 30 November 2023]<br>
-[8] "*Novice LP: Why We Love It and You Should Too*" *Barbell Logic* [Online]. Available: https://barbell-logic.com/why-novice-linear-progression/. [Accessed 30 November 2023]<br>
-[9] Jack Edward. "*How to improve your tennis as an adult - and get the most from coaching*" *Talking Tennis* [Online]. Available: https://talkingtennis.net/blog-posts/how-to-get-improve-your-tennis-as-an-adult-and-get-the-most-from-coaching [Accessed 1 December 2023]<br>
-[10] Archie Dan Smith. April, 2018. "*Muscle memory and imagery: Better tennis. An introduction*", *International Tennis Federation: Coaching & Sport Science Review*, issue 74, pp. 22-25. doi: 10.52383/itfcoaching.v26i74.266.<br>
-[11] Archie Dan Smith. January, 2018. "*Muscle Memory Application to Tennis*", doi: 10.13140/RG.2.2.12047.69287.<br>
-[12] "*TennisPAL*" [Online]. Available: [https://tennispal.com/](https://tennispal.com/) [Accessed 15 November 2023]<br>
-[13] "*MyFitnessPal*" [Online]. Available: [https://www.myfitnesspal.com/](https://www.myfitnesspal.com/) [Accessed 15 November 2023]<br>
-[14] "*TopCourt*" [Online]. Available: [https://www.topcourt.com/](https://www.topcourt.com/) [Accessed 15 November 2023]<br>
-[15] "*Nike Training Club*" [Online]. Available: https://apps.apple.com/gb/app/nike-training-club-fitness/id301521403 [Accessed 15 November 2023]<br>
-[16] "*Linear Progression vs. Conjugate Method: Quick Start Guide*" [Online]. Available: [Linear Progression vs. Conjugate Method: Quick Start Guide](https://www.boostcamp.app/blogs/linear-progression-vs-conjugate-method) [Accessed January 2024]
-[17] Pamela Attree PhD, Beverley French PhD, Beth Milton PhD, Susan Povall PhD, Margaret Whitehead PhD FFPH, Jennie Popay BA (Hons) MA. 8 December, 2010. "*The experience of community engagement for individuals: a rapid review of evidence*", vol. 19, issue 3, pp. 250-260. doi: 10.1111/j.1365-2524.2010.00976.x.<br>
-[18] "*Customizing authentication in Django*" [Online]. Available: [Customizing authentication in Django | Django documentation | Django](https://docs.djangoproject.com/en/5.0/topics/auth/customizing/) [Accessed February 2024]<br>
-[19] "*Django settings*" [Online]. Available: [[Django settings | Django documentation | Django](https://docs.djangoproject.com/en/5.0/topics/settings/)](https://www.geeksforgeeks.org/django-project-mvt-structure/) [Accessed February 2024]<br>
-[20] "*Django Project MVT Structure*" [Online]. Available: [Django Project MVT Structure - GeeksforGeeks](https://www.geeksforgeeks.org/django-project-mvt-structure/) [Accessed February 2024]<br>
-[21] "*Writing your first Django app, part 1*" [Online]. Available: [Writing your first Django app, part 1 | Django documentation | Django](https://docs.djangoproject.com/en/5.0/intro/tutorial01/) [Accessed February 2024]<br>
-[22] "*Django*" [Online]. Available: [Django](https://www.djangoproject.com/) [Accessed February 2024]<br>
-[23] "*What is MVT structure in Django?*" [Online]. Available: [Educative Answers - Trusted Answers to Developer Questions](https://www.educative.io/answers/what-is-mvt-structure-in-django) [Accessed February 2024]<br>
+[1] The Lancet. 8 June 2015. "_Over 95% of the world’s population has health problems, with over a third having more than five ailments_." _ScienceDaily_. [Online]. Available: https://www.sciencedaily.com/releases/2015/06/150608081753.htm [Accessed 29 November 2023]<br>
+[2] Peter Schnohr, MD, DMSc, James H. O’Keefe, MD, Andreas Holtermann, PhD, Carl J. Lavie, MD, Peter Lange, MD, DMSc, Gorm Boje Jensen, MD, DMSc, Jacob Louis Marott, MSc. September 04, 2018. "_Various Leisure-Time Physical Activities Associated With Widely Divergent Life Expectancies: The Copenhagen City Heart Study_", _Mayo Clinic Proceedings_, vol. 93, issue 12, pp. 1775-1785. doi: 10.1016/j.mayocp.2018.06.025.<br>
+[3] Babette M Pluim, Jack L Groppel, Dave Miley, Miguel Crespo, Michael S Turner.  2018. "_Health benefits of tennis_", _British Journal of Sports Medicine_, vol. 52, issue 3, pp. 201-202. doi: 10.1136/bjsports-2017-098623.<br>
+[4] Babette M Pluim, J Bart Staal, Bonita L Marks, Stuart Miller, Dave Miley. November, 2007. "_Health benefits of tennis_", _British Journal of Sports Medicine_, vol. 41, issue 11, pp. 760-768. doi: 10.1136/bjsm.2006.034967.<br>
+[5] "_Novice Linear Progression Program Explained_" _Barbell Logic_ [Online]. Available: https://barbell-logic.com/novice-linear-progression-explained. [Accessed 29 November 2023]<br>
+[6] "_Tennis Beginner vs Intermediate (Main Differences)_" _My Tennis HQ_ [Online]. Available: https://mytennishq.com/tennis-beginner-vs-intermediate-main-differences/ [Accessed 29 November 2023]<br>
+[7] "_The Starting Strength Program_" _Starting Strength_ [Online]. Available: https://startingstrength.com/get-started/programs. [Accessed 30 November 2023]<br>
+[8] "_Novice LP: Why We Love It and You Should Too_" _Barbell Logic_ [Online]. Available: https://barbell-logic.com/why-novice-linear-progression/. [Accessed 30 November 2023]<br>
+[9] Jack Edward. "_How to improve your tennis as an adult - and get the most from coaching_" _Talking Tennis_ [Online]. Available: https://talkingtennis.net/blog-posts/how-to-get-improve-your-tennis-as-an-adult-and-get-the-most-from-coaching [Accessed 1 December 2023]<br>
+[10] Archie Dan Smith. April, 2018. "_Muscle memory and imagery: Better tennis. An introduction_", _International Tennis Federation: Coaching & Sport Science Review_, issue 74, pp. 22-25. doi: 10.52383/itfcoaching.v26i74.266.<br>
+[11] Archie Dan Smith. January, 2018. "_Muscle Memory Application to Tennis_", doi: 10.13140/RG.2.2.12047.69287.<br>
+[12] "_TennisPAL_" [Online]. Available: [https://tennispal.com/](https://tennispal.com/) [Accessed 15 November 2023]<br>
+[13] "_MyFitnessPal_" [Online]. Available: [https://www.myfitnesspal.com/](https://www.myfitnesspal.com/) [Accessed 15 November 2023]<br>
+[14] "_TopCourt_" [Online]. Available: [https://www.topcourt.com/](https://www.topcourt.com/) [Accessed 15 November 2023]<br>
+[15] "_Nike Training Club_" [Online]. Available: https://apps.apple.com/gb/app/nike-training-club-fitness/id301521403 [Accessed 15 November 2023]<br>
+[16] "_Linear Progression vs. Conjugate Method: Quick Start Guide_" [Online]. Available: [Linear Progression vs. Conjugate Method: Quick Start Guide](https://www.boostcamp.app/blogs/linear-progression-vs-conjugate-method) [Accessed January 2024]
+[17] Pamela Attree PhD, Beverley French PhD, Beth Milton PhD, Susan Povall PhD, Margaret Whitehead PhD FFPH, Jennie Popay BA (Hons) MA. 8 December, 2010. "_The experience of community engagement for individuals: a rapid review of evidence_", vol. 19, issue 3, pp. 250-260. doi: 10.1111/j.1365-2524.2010.00976.x.<br>
+[18] "_Customizing authentication in Django_" [Online]. Available: [Customizing authentication in Django | Django documentation | Django](https://docs.djangoproject.com/en/5.0/topics/auth/customizing/) [Accessed February 2024]<br>
+[19] "_Django settings_" [Online]. Available: [[Django settings | Django documentation | Django](https://docs.djangoproject.com/en/5.0/topics/settings/)](https://www.geeksforgeeks.org/django-project-mvt-structure/) [Accessed February 2024]<br>
+[20] "_Django Project MVT Structure_" [Online]. Available: [Django Project MVT Structure - GeeksforGeeks](https://www.geeksforgeeks.org/django-project-mvt-structure/) [Accessed February 2024]<br>
+[21] "_Writing your first Django app, part 1_" [Online]. Available: [Writing your first Django app, part 1 | Django documentation | Django](https://docs.djangoproject.com/en/5.0/intro/tutorial01/) [Accessed February 2024]<br>
+[22] "_Django_" [Online]. Available: [Django](https://www.djangoproject.com/) [Accessed February 2024]<br>
+[23] "_What is MVT structure in Django?_" [Online]. Available: [Educative Answers - Trusted Answers to Developer Questions](https://www.educative.io/answers/what-is-mvt-structure-in-django) [Accessed February 2024]<br>
