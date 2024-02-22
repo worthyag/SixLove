@@ -1,4 +1,4 @@
-*Report - Final Project (CM3070)*
+_Report - Final Project (CM3070)_
 
 # SixLove - Can novice linear progression be applied to tennis?
 
