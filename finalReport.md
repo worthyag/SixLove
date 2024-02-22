@@ -1,4 +1,4 @@
-*Draft Report - Final Project (CM3070)*
+*Report - Final Project (CM3070)*
 
 # SixLove - Can novice linear progression be applied to tennis?
 
@@ -12,9 +12,20 @@
 - [1 Aims, objectives, and background](#1-aims-objectives-and-background)
   - [1.1 Introduction and background](#11-introduction-and-background)
   - [1.2 Concept and motivations](#12-concept-and-motivations)
-  - [1.3 Proposed approach](#13-proposed-approach)
-    - [1.3.1 Aims](#131-aims)
-    - [1.3.2 Objectives](#132-objectives)
+    - 
+  
+  - [1.3 SixLoves's Users](#13-sixloves-users)
+    
+    - [1.3.1 Novice Tennis Players](#131-novice-tennis-players)
+    
+    - [1.3.2 Tennis Enthusiasts](#132-tennis-enthusiasts)
+    
+    - [1.3.3 Fitness Enthusiasts](#133-fitness-enthusiasts)
+    
+    - [1.3.4 Aspiring Amateur Tennis Competitors](#134-aspiring-amateur-tennis-competitors)
+  - [1.4 Proposed approach](#14-proposed-approach)
+    - [1.4.1 Aims](#141-aims)
+    - [1.4.2 Objectives](#142-objectives)
 - [2 Literature](#2-literature)
   - [2.1 Existing solutions](#21-existing-solutions)
     - [2.1.1 TennisPAL](#211-tennispal)
@@ -90,11 +101,15 @@ It is now relatively simple to infer the users that this project was conceptuali
 
 With the mention of the users comes the project domain. Though alluded to and specified earlier, the domain can broadly be described as '*novice tennis training*'. Expanding upon that, this project will result in the creation of a web based application that is centred around guiding individuals with little or no tennis experience through a structured tennis training program.
 
-## 1.3 Proposed approach
+## 1.3 SixLove's Users
+
+he
+
+## 1.4 Proposed approach
 
 *Breaking down how I will go about this project.*
 
-### 1.3.1 Aims
+### 1.4.1 Aims
 
 *Goals for the development of SixLove and for its evaluation.*
 
@@ -112,7 +127,7 @@ With the mention of the users comes the project domain. Though alluded to and sp
    - SixLove's design should be intuitive and visually appealing.
    - SixLove's design should ensure accessibility for a wide range of users.
 
-### 1.3.2 Objectives
+### 1.4.2 Objectives
 
 *The core objectives of SixLove.*
 
