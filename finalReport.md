@@ -12,16 +12,10 @@
 - [1 Aims, objectives, and background](#1-aims-objectives-and-background)
   - [1.1 Introduction and background](#11-introduction-and-background)
   - [1.2 Concept and motivations](#12-concept-and-motivations)
-    - 
-  
   - [1.3 SixLoves's Users](#13-sixloves-users)
-    
     - [1.3.1 Novice Tennis Players](#131-novice-tennis-players)
-    
     - [1.3.2 Tennis Enthusiasts](#132-tennis-enthusiasts)
-    
     - [1.3.3 Fitness Enthusiasts](#133-fitness-enthusiasts)
-    
     - [1.3.4 Aspiring Amateur Tennis Competitors](#134-aspiring-amateur-tennis-competitors)
   - [1.4 Proposed approach](#14-proposed-approach)
     - [1.4.1 Aims](#141-aims)
@@ -103,7 +97,11 @@ With the mention of the users comes the project domain. Though alluded to and sp
 
 ## 1.3 SixLove's Users
 
-he
+### 1.3.1 Novice Tennis Players
+### 1.3.2 Tennis Enthusiasts
+### 1.3.3 Fitness Enthusiasts
+### 1.3.4 Aspiring Amateur Tennis Competitors
+
 
 ## 1.4 Proposed approach
 
