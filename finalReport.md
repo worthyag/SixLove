@@ -154,7 +154,6 @@ _Scoping out the current market._
 ### 2.1.1 TennisPAL
 
 <img title="" src="./images/tennis-pal.png" alt="" data-align="center" width="420">
-![TennisPAL](./images/tennis-pal.png)
 
 **Figure 1** TennisPAL's User Interface<br><br>
 
