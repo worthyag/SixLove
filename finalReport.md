@@ -158,7 +158,7 @@ In order to better describe the types of users that SixLove targets, I created u
 
 <img title="" src="./images/user-persona-6.png" alt="" data-align="center">
 
-**Figure 11**Other Potential Users User Persona <br><br>
+**Figure 11** Other Potential Users User Persona <br><br>
 
 <img title="" src="./images/solution-6.png" alt="" data-align="center">
 
@@ -168,7 +168,7 @@ In order to better describe the types of users that SixLove targets, I created u
 
 <img title="" src="./images/user-persona-7.png" alt="" data-align="center">
 
-**Figure 13**Other Potential Users User Persona <br><br>
+**Figure 13** Other Potential Users User Persona <br><br>
 
 <img title="" src="./images/solution-7.png" alt="" data-align="center">
 
