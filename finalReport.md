@@ -212,9 +212,9 @@ _Scoping out the current market._
 
 <img title="" src="./images/tennis-pal.png" alt="" data-align="center" width="420">
 
-**Figure 1** TennisPAL's User Interface<br><br>
+**Figure 15** TennisPAL's User Interface<br><br>
 
-TennisPAL is an app designed specifically for tennis players. It includes features for finding tennis partners and tracking match scores. It also allows users to improve their game through training exercises. **Figure 1** displays TennisPAL's user interface.
+TennisPAL is an app designed specifically for tennis players. It includes features for finding tennis partners and tracking match scores. It also allows users to improve their game through training exercises. **Figure 15** displays TennisPAL's user interface.
 
 #### Some of the pros of TennisPAL include:
 
@@ -268,9 +268,9 @@ TennisPAL is an app designed specifically for tennis players. It includes featur
 
 <img title="" src="./images/my-fitness-pal.jpg" alt="" data-align="center" width="427">
 
-**Figure 2** MyFitnessPal's User Interface<br><br>
+**Figure 16** MyFitnessPal's User Interface<br><br>
 
-MyFitnessPal is not tennis specific. However, it is a popular fitness app that allows users to track workouts, set fitness goals, and log nutrition. Tennis players can use the app to monitor their overall fitness and nutrition. **Figure 2** displays MyFitnessPal's user interface.
+MyFitnessPal is not tennis specific. However, it is a popular fitness app that allows users to track workouts, set fitness goals, and log nutrition. Tennis players can use the app to monitor their overall fitness and nutrition. **Figure 16** displays MyFitnessPal's user interface.
 
 #### Some of the pros of MyFitnessPal include:
 
@@ -316,9 +316,9 @@ MyFitnessPal is not tennis specific. However, it is a popular fitness app that a
 
 <img title="" src="./images/top-court.png" alt="" data-align="center" width="445">
 
-**Figure 3** TopCourt's User Interface<br><br>
+**Figure 17** TopCourt's User Interface<br><br>
 
-TopCourt offers video lessons from professional tennis players. This helps users improve their skill and fitness on the court. It also motivates novice tennis players, since they get the opportunity to learn from the very best. **Figure 3** displays TopCourt's user interface.
+TopCourt offers video lessons from professional tennis players. This helps users improve their skill and fitness on the court. It also motivates novice tennis players, since they get the opportunity to learn from the very best. **Figure 17** displays TopCourt's user interface.
 
 #### Some of the pros of TopCourt include:
 
@@ -356,9 +356,9 @@ TopCourt offers video lessons from professional tennis players. This helps users
 
 <img title="" src="./images/nike-training-club.jpg" alt="" data-align="center" width="470">
 
-**Figure 4** Nike Training Club's User Interface<br><br>
+**Figure 18** Nike Training Club's User Interface<br><br>
 
-Nike Training Club is a general fitness app that offers a variety of workout routines, including some designed for specific sports. Tennis players are able to use the app to find workouts that focus on agility, strength, and endurance. **Figure 4** displays Nike Training Club's user interface.
+Nike Training Club is a general fitness app that offers a variety of workout routines, including some designed for specific sports. Tennis players are able to use the app to find workouts that focus on agility, strength, and endurance. **Figure 18** displays Nike Training Club's user interface.
 
 #### Some of the pros of Nike Training Club include:
 
@@ -508,55 +508,55 @@ _Getting into the specifics: tackling the overall structure and important techno
 
 The wireframing and design in SixLove utilises a mobile first approach. This approach  is used since a vast majority of the SixLove app users will be accessing the app from their phone- due to the nature of the app. People are more likely to tracks things on their mobile devices as opposed to a desktop device.
 
-**Figure 5** displays SixLove's landing page, login page, and sign up page. The designs are quite rudimentary (for now), since the focus was on designing for optimal app functionality. **Figure 5** displays the first iteration for the aforementioned pages. The next iteration for these pages will be making adjustments to the size of input elements and font-size.
+**Figure 19** displays SixLove's landing page, login page, and sign up page. The designs are quite rudimentary (for now), since the focus was on designing for optimal app functionality. **Figure 19** displays the first iteration for the aforementioned pages. The next iteration for these pages will be making adjustments to the size of input elements and font-size.
 
 <img title="" src="./images/login-page-wireframe.png" alt="" data-align="center">
 
-**Figure 5** SixLove's Landing, login, and signup pages.<br><br>
+**Figure 19** SixLove's Landing, login, and signup pages.<br><br>
 
-**Figure 6** displays SixLove's profile page and settings page. This too is the 1st iteration. The figures highlights the decisions to be made between the two settings logo based on any user feedback.  The settings icon on the left seems to be a lot more intuitive, however the other icon is fairly prevalent in apps that are commonly used.
+**Figure 20** displays SixLove's profile page and settings page. This too is the 1st iteration. The figures highlights the decisions to be made between the two settings logo based on any user feedback.  The settings icon on the left seems to be a lot more intuitive, however the other icon is fairly prevalent in apps that are commonly used.
 
 <img title="" src="./images/profile-page-wireframe.png" alt="" data-align="center">
 
-**Figure 6** SixLove's profile and settings pages.<br><br>
+**Figure 20** SixLove's profile and settings pages.<br><br>
 
-**Figures 7 to 9** display SixLove's tennis program page. Each figure represents an iteration. **Figure 7** was the first iteration of the page and **figure 9** the most recent. The annotations on the figures themselves explain why certain changes were made, but in general the goal was to increase the accessibility of the design based on the user feedback. The `+` buttons in the day boxes of the calendar were brought about as a concern. Therefore the following iterations, were primarily focused on the size of input elements and making the app more accessible.
+**Figures 21 to 23** display SixLove's tennis program page. Each figure represents an iteration. **Figure 21** was the first iteration of the page and **figure 23** the most recent. The annotations on the figures themselves explain why certain changes were made, but in general the goal was to increase the accessibility of the design based on the user feedback. The `+` buttons in the day boxes of the calendar were brought about as a concern. Therefore the following iterations, were primarily focused on the size of input elements and making the app more accessible.
 
 <img title="" src="./images/tennis-page-wireframe-1.png" alt="" data-align="center">
 
-**Figure 7** SixLove's tennis program page (1st iteration).<br><br>
+**Figure 21** SixLove's tennis program page (1st iteration).<br><br>
 
 <img title="" src="./images/tennis-page-wireframe-2.png" alt="" data-align="center">
 
-**Figure 8** SixLove's tennis program page (2nd iteration).<br><br>
+**Figure 22** SixLove's tennis program page (2nd iteration).<br><br>
 
 <img title="" src="./images/tennis-page-wireframe-3.png" alt="" data-align="center">
 
-**Figure 9** SixLove's tennis program page (3rd iteration).<br><br>
+**Figure 23** SixLove's tennis program page (3rd iteration).<br><br>
 
-**Figure 10** displays SixLove's learning resources page, the aim of this page is to be a hub of information for users so that SixLove can be a sort of one stop shop. It was found that many people prefer to have all their functionality is one place, rather than in many places. Providing users with this bundled functionality aids in increasing their user experience.
+**Figure 24** displays SixLove's learning resources page, the aim of this page is to be a hub of information for users so that SixLove can be a sort of one stop shop. It was found that many people prefer to have all their functionality is one place, rather than in many places. Providing users with this bundled functionality aids in increasing their user experience.
 
 <img title="" src="./images/learning-page-wireframe.png" alt="" data-align="center">
 
-**Figure 10** SixLove's learning resources page.<br><br>
+**Figure 24** SixLove's learning resources page.<br><br>
 
-**Figure 11** displays SixLove's history page. The design is quite elementary since it is in its first iteration. The goal of the page is to allow users to look at their past tennis sessions. But rather than just listing them there, a date input is provided so that they can filter for specific days. 
+**Figure 25** displays SixLove's history page. The design is quite elementary since it is in its first iteration. The goal of the page is to allow users to look at their past tennis sessions. But rather than just listing them there, a date input is provided so that they can filter for specific days. 
 
 *Side note: the history page will be scrapped in favour of the  calendar having its own page. The tennis page will no longer house the calendar, and history can be seen on both the calendar and tennis pages.
 
 <img title="" src="./images/history-page-wireframe.png" alt="" data-align="center">
 
-**Figure 11** SixLove's history page.<br><br>
+**Figure 25** SixLove's history page.<br><br>
 
-**Figure 12** displays SixLove's feed page. This is an important part of the app. It was essential to hone in on the community aspect of sports and fitness. Community is something that is integral in our lives and impacts us greatly. It was found that people who were "_actively involved in initiatives utilising community engagement approaches experienced positive benefits, in terms of physical and emotional health and well-being, self-confidence, self-esteem, social relationships and individual empowerment_" [17]. Therefore incorporating community in a sports app seemed fitting.
+**Figure 26** displays SixLove's feed page. This is an important part of the app. It was essential to hone in on the community aspect of sports and fitness. Community is something that is integral in our lives and impacts us greatly. It was found that people who were "_actively involved in initiatives utilising community engagement approaches experienced positive benefits, in terms of physical and emotional health and well-being, self-confidence, self-esteem, social relationships and individual empowerment_" [17]. Therefore incorporating community in a sports app seemed fitting.
 
 <img title="" src="./images/feed-page-wireframe.png" alt="" data-align="center">
 
-**Figure 12** SixLove's feed page.<br><br>
+**Figure 26** SixLove's feed page.<br><br>
 
 ### 3.1.2 Entity-Relationship Diagram
 
- **Figure 13** displays the entities and relationships that the SixLove app will potentially / initially have. Here is a brief summary of some of the potential relationships:
+ **Figure 27** displays the entities and relationships that the SixLove app will potentially / initially have. Here is a brief summary of some of the potential relationships:
 
 - Each user can have multiple posts, followers, tennis sessions, and history entries.
 
@@ -572,17 +572,17 @@ The wireframing and design in SixLove utilises a mobile first approach. This app
 
 <img title="" src="./images/SixLoveER.png" alt="" data-align="center">
 
-**Figure 13** The project's Entity Relationship Diagram.<br><br>
+**Figure 27** The project's Entity Relationship Diagram.<br><br>
 
 ### 3.1.3 Database Tables
 
 _The tables that will be turned into models._
 
-**Figure 14** displays a tabular version of the entity relation diagram, while highlighting the primary keys and foreign keys. It was important to establish a database schema earlier on in the process, since it can be altered further down the line, and the SixLove application relies heavily on data.
+**Figure 28** displays a tabular version of the entity relation diagram, while highlighting the primary keys and foreign keys. It was important to establish a database schema earlier on in the process, since it can be altered further down the line, and the SixLove application relies heavily on data.
 
 <img title="" src="images/SixLoveUML.png" alt="">
 
-**Figure 14** The project's UML Diagram.<br><br>
+**Figure 28** The project's UML Diagram.<br><br>
 
 ### 3.1.4 SixLove Pages
 
@@ -625,7 +625,7 @@ The SixLove app will have the following main pages:
 
 _The overall code structure._
 
-Since SixLove is built with Django, the project has the following structure (**figure 15**).
+Since SixLove is built with Django, the project has the following structure (**figure 29**).
 
 ```
 /project
@@ -736,11 +736,11 @@ Since SixLove is built with Django, the project has the following structure (**f
 .gitignore
 ```
 
-**Figure 15** The project's structure.<br>
+**Figure 29** The project's structure.<br>
 
 <br>
 
-**Figure 15** displays a parent `project` folder with many children folders that follow a similar structure. An application built with Django is a project that is made up of a collection of apps. A Django project is defined as a "_collection of configuration and apps for a particular website_" [21]. A Django app is a "_web application that does something_"[21]. The difference between the two is that a project "_can contain multiple apps_" [21], whereas an app "_can be in multiple projects_"[21]. SixLove will be made up of the following apps:
+**Figure 29** displays a parent `project` folder with many children folders that follow a similar structure. An application built with Django is a project that is made up of a collection of apps. A Django project is defined as a "_collection of configuration and apps for a particular website_" [21]. A Django app is a "_web application that does something_"[21]. The difference between the two is that a project "_can contain multiple apps_" [21], whereas an app "_can be in multiple projects_"[21]. SixLove will be made up of the following apps:
 
 - Project
   
@@ -768,11 +768,11 @@ I chose to use Django for this project since I like its focus on modularity, and
 
 _My project roadmap._
 
-**Figure 15** displays the SixLove's Gantt chart that contains all the major tasks and when they should be completed. Most tasks are given a duration of at least 4 to 7 days. The chart also doesn't allow work to be assigned on the weekends, and weekends are not accounted for when displaying how many days a task has been given.
+**Figure 30** displays the SixLove's Gantt chart that contains all the major tasks and when they should be completed. Most tasks are given a duration of at least 4 to 7 days. The chart also doesn't allow work to be assigned on the weekends, and weekends are not accounted for when displaying how many days a task has been given.
 
 <img title="" src="./workplan/FP-workplan.png" alt="" data-align="center">
 
-**Figure 16** The project's Gantt Chart.<br><br>
+**Figure 30** The project's Gantt Chart.<br><br>
 
 ## 3.3 Evaluation strategy
 
@@ -810,39 +810,39 @@ SixLove  will be evaluated using four categories which are as follows:
 
 _Core functionality development._
 
-I decided that I wanted to start building SixLove's functionality in a somewhat chronological order. Chronological order referring to the user's flow, for instance, what route will potential users take when navigating the app? That meant starting with the landing page, then moving on to the sign up and login pages, then to the pages that allow the users to add, edit, and delete tennis sessions. I have previously stated SixLove's aims and objectives, and at their very core user authentication and tennis sessions play a huge role in whether the aims and objectives are met, so using this approach made the most logical sense. I must mention however, at this stage my goal was to program the functionality, therefore I did very minimal styling- currently the user interface is not fully fleshed out (or quite minimal- refer to **figures 17** to **24** to see what I mean), and there will be upcoming changes to the wireframes based on user input and accessibility matters.
+I decided that I wanted to start building SixLove's functionality in a somewhat chronological order. Chronological order referring to the user's flow, for instance, what route will potential users take when navigating the app? That meant starting with the landing page, then moving on to the sign up and login pages, then to the pages that allow the users to add, edit, and delete tennis sessions. I have previously stated SixLove's aims and objectives, and at their very core user authentication and tennis sessions play a huge role in whether the aims and objectives are met, so using this approach made the most logical sense. I must mention however, at this stage my goal was to program the functionality, therefore I did very minimal styling- currently the user interface is not fully fleshed out (or quite minimal- refer to **figures 31** to **38** to see what I mean), and there will be upcoming changes to the wireframes based on user input and accessibility matters.
 
 <img title="" src="images/calendar-page.png" alt="">
 
-**Figure 17** The project's current calendar page. (Screenshot of the developer tools view to get a view of the whole page- 50% zoom).<br><br>
+**Figure 31** The project's current calendar page. (Screenshot of the developer tools view to get a view of the whole page- 50% zoom).<br><br>
 
 <img title="" src="images/calendar-page-side-panel.png" alt="">
 
-**Figure 18** The project's current side panel for the calendar page. (Screenshot of the developer tools view to get a view of the whole page- 50% zoom).<br><br>
+**Figure 32** The project's current side panel for the calendar page. (Screenshot of the developer tools view to get a view of the whole page- 50% zoom).<br><br>
 
 <img title="" src="images/calendar-page-edit-session.png" alt="">
 
-**Figure 19** The project's current edit tennis session popup for the calendar page. (Screenshot of the developer tools view to get a view of the whole page- 50% zoom).<br><br>
+**Figure 33** The project's current edit tennis session popup for the calendar page. (Screenshot of the developer tools view to get a view of the whole page- 50% zoom).<br><br>
 
 <img title="" src="images/calendar-page-add-session.png" alt="">
 
-**Figure 20** The project's current add tennis session popup for the calendar page. (Screenshot of the developer tools view to get a view of the whole page- 50% zoom).<br><br>
+**Figure 34** The project's current add tennis session popup for the calendar page. (Screenshot of the developer tools view to get a view of the whole page- 50% zoom).<br><br>
 
 <img title="" src="images/calendar-page-delete-session.png" alt="">
 
-**Figure 21** The project's current delete tennis session popup for the calendar page. (Screenshot of the developer tools view to get a view of the whole page- 50% zoom).<br><br>
+**Figure 35** The project's current delete tennis session popup for the calendar page. (Screenshot of the developer tools view to get a view of the whole page- 50% zoom).<br><br>
 
 <img title="" src="images/tennis-page.png" alt="">
 
-**Figure 22** The project's current tennis page. (Screenshot of the developer tools view to get a view of the whole page- 50% zoom).<br><br>
+**Figure 36** The project's current tennis page. (Screenshot of the developer tools view to get a view of the whole page- 50% zoom).<br><br>
 
 <img title="" src="images/login-page.png" alt="">
 
-**Figure 23** The project's current login page. (Screenshot of the developer tools view to get a view of the whole page- 50% zoom).<br><br>
+**Figure 37** The project's current login page. (Screenshot of the developer tools view to get a view of the whole page- 50% zoom).<br><br>
 
 <img title="" src="images/sign-up-page.png" alt="">
 
-**Figure 24** The project's current sign up page. (Screenshot of the developer tools view to get a view of the whole page- 50% zoom).<br><br>
+**Figure 38** The project's current sign up page. (Screenshot of the developer tools view to get a view of the whole page- 50% zoom).<br><br>
 
 ## 4.1 The `registration` app
 
@@ -858,7 +858,7 @@ User authentication is a primary requirement of the app. SixLove's purpose is to
 
 - Login- the page that authenticates the user.
 
-In order to authenticate the users, I needed to first create a table in my database that would store users information. In Django, this is facilitated through the creation of a model. The UML diagram for users can be seen in **figure 14**. Django has its own user model, but for the purpose of this project, I wanted to create my own- or expand upon it rather. It was important that I created the modified user model before making migrations (specifically, before running migrations of the Django `auth` app), since it would result in an `ValueError` . This I learnt the hard way, when I created a mock trial of the app, and was forced to clear all the databases tables and delete the migrations folder. The **code snippet 1** displays the model that I created to store user information. It inherits from the `AbstractUser` class. The official Django site describes the class as a '_model [that] behaves identically to the default user model_' [18]. The documentation advises developers to setup a custom user model beforehand, in case they want to later customise it in the future.
+In order to authenticate the users, I needed to first create a table in my database that would store users information. In Django, this is facilitated through the creation of a model. The UML diagram for users can be seen in **figure 28**. Django has its own user model, but for the purpose of this project, I wanted to create my own- or expand upon it rather. It was important that I created the modified user model before making migrations (specifically, before running migrations of the Django `auth` app), since it would result in an `ValueError` . This I learnt the hard way, when I created a mock trial of the app, and was forced to clear all the databases tables and delete the migrations folder. The **code snippet 1** displays the model that I created to store user information. It inherits from the `AbstractUser` class. The official Django site describes the class as a '_model [that] behaves identically to the default user model_' [18]. The documentation advises developers to setup a custom user model beforehand, in case they want to later customise it in the future.
 
 ```python
 ...
@@ -890,7 +890,7 @@ class CustomUserCreationForm(UserCreationForm):
 
 **Code Snippet 2** The `CustomUserCreationForm` form.<br><br>
 
-This form was used to create the forms displayed to the user, for both the login and sign up pages (which can be seen in **figures 22 and 23**). I then created the views corresponding to the pages previously mentioned, **code snippet 3** displays a condensed version of the code for this.
+This form was used to create the forms displayed to the user, for both the login and sign up pages (which can be seen in **figures 36 and 37**). I then created the views corresponding to the pages previously mentioned, **code snippet 3** displays a condensed version of the code for this.
 
 ```python
 ...
@@ -986,11 +986,11 @@ The next order of business was to create the `tennis` app. The ability to add, e
 
 *The planner app also allows users to add, edit, and delete tennis sessions (this is expanded upon in [section 4.3](#43-the-planner-app).
 
-Like the `registration` app, I began with a model. **Figure 25** displays the fields and the name of the table that I created with the model (this is a simplified version of the TennisSession table displayed in **Figure 14**, since the friends aspect wasn't implemented at this stage). 
+Like the `registration` app, I began with a model. **Figure 39** displays the fields and the name of the table that I created with the model (this is a simplified version of the TennisSession table displayed in **Figure 28**, since the friends aspect wasn't implemented at this stage). 
 
 <img title="" src="images/TennisSessionUML.png" alt="">
 
-**Figure 25** TennisSession UML table.<br>
+**Figure 39** TennisSession UML table.<br>
 
 <br>
 
@@ -1186,11 +1186,11 @@ I then wrote some unit tests to ensure that the `tennis` app was working as aspe
 
 _The structure my project follows._
 
-At this point, it is clear to see that there is a pattern emerging. I begin by creating some model(s), then I create some view(s) that seems to be linked to some template that I have created. This is the Django work cycle. Django has a model-view-template (MVT) architecture, as displayed in **figure 26**.
+At this point, it is clear to see that there is a pattern emerging. I begin by creating some model(s), then I create some view(s) that seems to be linked to some template that I have created. This is the Django work cycle. Django has a model-view-template (MVT) architecture, as displayed in **figure 40**.
 
 <img title="" src="images/django-structure.png" alt="">
 
-**Figure 26** Django project structure.<br>
+**Figure 40** Django project structure.<br>
 
 <br>
 
@@ -1210,7 +1210,7 @@ The `planner` app has the following pages:
 
 - Calendar- the page that displays a calendar to the user.
 
-As mentioned earlier the `planner` app also allows user to add, edit, and delete tennis sessions, this is all facilitated through the interactive calendar that is located on the calendar page (**figures 17** to **21** display the calendar page).
+As mentioned earlier the `planner` app also allows user to add, edit, and delete tennis sessions, this is all facilitated through the interactive calendar that is located on the calendar page (**figures 31** to **35** display the calendar page).
 
 I wanted users to be able to interact with the calendar. My aim was to build a calendar that allows users to do the following:
 
@@ -1337,7 +1337,7 @@ todayBtn.addEventListener("click", () => {
 
 <br>
 
-Once the calendar was fully functional, the next stage was to incorporate the tennis sessions with the calendar. I began by creating a side panel (**code snippet 12**) and three modals (**code snippet 13**). The side panel displays the tennis sessions to the user when they click on a day (refer to **figure 17**)- though at this stage it just displayed the message "No tennis sessions scheduled", and the `add tennis session` button. The three modals refers to the `add session modal` (**figure 19**), the `edit session modal` (**figure 18**), and the `delete session modal` (**figure 20**). I incorporated the modals with the form created by the `TennisSessionForm` class previously written in order to communicate with the `TennisSession` database table with ease (though I did add some changes to the forms).
+Once the calendar was fully functional, the next stage was to incorporate the tennis sessions with the calendar. I began by creating a side panel (**code snippet 12**) and three modals (**code snippet 13**). The side panel displays the tennis sessions to the user when they click on a day (refer to **figure 31**)- though at this stage it just displayed the message "No tennis sessions scheduled", and the `add tennis session` button. The three modals refers to the `add session modal` (**figure 33**), the `edit session modal` (**figure 32**), and the `delete session modal` (**figure 34**). I incorporated the modals with the form created by the `TennisSessionForm` class previously written in order to communicate with the `TennisSession` database table with ease (though I did add some changes to the forms).
 
 ```javascript
 function showSidePanel(day) {
