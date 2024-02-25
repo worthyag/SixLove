@@ -88,6 +88,9 @@ Basic movements refers to this idea of the fundamentals. This feature allows nov
 The real challenge of this project, is taking the fundamental principles of this technique and applying it to tennis. (In [Section 2.2.1](#221-the-theory), an exploration will be undertaken to elaborate on how these principles will be tailored and applied to tennis). In greater detail, the idea is to create an application that helps take users from novices to confident, well-rounded amateur tennis players. Well, what is a novice tennis player? Or rather, what is an amateur tennis player? How is that any good? In the world of tennis, a novice tennis player refers to a beginner. Whereas an amateur tennis player refers to anything upwards of and including intermediate, so long as they are not professional- though these definitions can change based on the source. For the purpose of this project, a novice tennis player is an individual completely new to tennis, and an amateur tennis player is an individual who has learnt the basics but may still need to "_develop their shots and learn more about tactics_" [6]. 
 
 ## 1.3 SixLove's Users
+
+_The target audiences._
+
 In order to better describe the types of users that SixLove targets, I created user personas using Figma. Each persona represents a group of potential users. Users are grouped by the users mentioned below and by their age, or other categorising factor.
 
 Users that this project was conceptualised for- include but are not limited to:
