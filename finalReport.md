@@ -154,7 +154,7 @@ In order to better describe the types of users that SixLove targets, I created u
 **Figure 10** Potential SixLove Solution <br><br>
 
 ### 1.3.5 Other Potential Users
-**Figure 11** displays a persona for a user within the `parent of young player` category, this person is a dad that has a very young child that is interested in playing tennis, the child watches the sport, and dreams of becoming a tennis player. The dad wants to be able to have all his child tennis needs in one place, and want positive feedback / reinforcement for his child when completing tennis sessions.
+**Figure 11** displays a persona for a user within the `parent of young player` category, this person is a dad that has a very young child that is interested in playing tennis, the child watches the sport, and dreams of becoming a tennis player. The dad wants to be able to have all his child's tennis needs in one place, and want positive feedback / reinforcement for his child when completing tennis sessions.
 
 <img title="" src="./images/user-persona-6.png" alt="" data-align="center">
 
@@ -164,7 +164,7 @@ In order to better describe the types of users that SixLove targets, I created u
 
 **Figure 12** Potential SixLove Solution <br><br>
 
-**Figure 13** displays a persona for a user within the `busy professional category`, this person is in their 40s to 50s and is learning tennis for to stay in shape and because they have always wanted to learn it.
+**Figure 13** displays a persona for a user within the `busy professional category`, this person is in their 40s to 50s and is learning tennis to stay in shape and because they have always wanted to learn it.
 
 <img title="" src="./images/user-persona-7.png" alt="" data-align="center">
 
