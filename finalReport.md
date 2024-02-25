@@ -174,7 +174,7 @@ In order to better describe the types of users that SixLove targets, I created u
 
 **Figure 14** Potential SixLove Solution <br><br>
 
-There are of course other potential users or other ways to group the users, but the personas in section 1.3 provide good examples of SixLove's target audiences.
+There are of course other potential users or other ways to group the users, but the personas in [section 1.3](#sixloves-users) provide good examples of SixLove's target audiences.
 
 ## 1.4 Proposed approach
 
