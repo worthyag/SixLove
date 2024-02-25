@@ -17,6 +17,7 @@ _Taking on the task of creating a tennis app that provides users with the tools 
     - [1.3.2 Tennis Enthusiasts](#132-tennis-enthusiasts)
     - [1.3.3 Fitness Enthusiasts](#133-fitness-enthusiasts)
     - [1.3.4 Aspiring Amateur Tennis Competitors](#134-aspiring-amateur-tennis-competitors)
+    - [1.3.5 Other Potential Users](#135-other-potential-users)
   - [1.4 Proposed approach](#14-proposed-approach)
     - [1.4.1 Aims](#141-aims)
     - [1.4.2 Objectives](#142-objectives)
@@ -98,9 +99,12 @@ With the mention of the users comes the project domain. Though alluded to and sp
 ## 1.3 SixLove's Users
 
 ### 1.3.1 Novice Tennis Players
+<img title="" src="./images/user-persona-1.png" alt="" data-align="center">
+
 ### 1.3.2 Tennis Enthusiasts
 ### 1.3.3 Fitness Enthusiasts
 ### 1.3.4 Aspiring Amateur Tennis Competitors
+### 1.3.5 Other Potential Users
 
 ## 1.4 Proposed approach
 
