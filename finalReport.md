@@ -87,17 +87,15 @@ Basic movements refers to this idea of the fundamentals. This feature allows nov
 
 The real challenge of this project, is taking the fundamental principles of this technique and applying it to tennis. (In [Section 2.2.1](#221-the-theory), an exploration will be undertaken to elaborate on how these principles will be tailored and applied to tennis). In greater detail, the idea is to create an application that helps take users from novices to confident, well-rounded amateur tennis players. Well, what is a novice tennis player? Or rather, what is an amateur tennis player? How is that any good? In the world of tennis, a novice tennis player refers to a beginner. Whereas an amateur tennis player refers to anything upwards of and including intermediate, so long as they are not professional- though these definitions can change based on the source. For the purpose of this project, a novice tennis player is an individual completely new to tennis, and an amateur tennis player is an individual who has learnt the basics but may still need to "_develop their shots and learn more about tactics_" [6]. 
 
-It is now relatively simple to infer the users that this project was conceptualised for- they include but are not limited to:
+## 1.3 SixLove's Users
+In order to better describe the types of users that SixLove targets, I created user personas using Figma. Each persona represents a group of potential users. Users are grouped by the users mentioned below and by their age, or other categorising factor.
+
+Users that this project was conceptualised for- include but are not limited to:
 
 - Novice tennis players
 - Tennis enthusiasts
 - Fitness enthusiasts
 - Aspiring amateur tennis competitors
-
-With the mention of the users comes the project domain. Though alluded to and specified earlier, the domain can broadly be described as '_novice tennis training_'. Expanding upon that, this project will result in the creation of a web based application that is centred around guiding individuals with little or no tennis experience through a structured tennis training program.
-
-## 1.3 SixLove's Users
-In order to better describe the types of users that SixLove targets, I created user personas using Figma. Each persona represents a group of potential users. Users are grouped by the users mentioned in [section 1.2](#concept-and-motivations) and by their age, or other categorising factor.
 
 ### 1.3.1 Novice Tennis Players
 **Figure 1** displays a persona for a user within the `novice tennis player` category, this person is a senior and is learning tennis for fitness and to socialise.
@@ -175,6 +173,8 @@ In order to better describe the types of users that SixLove targets, I created u
 **Figure 14** Potential SixLove Solution <br><br>
 
 There are of course other potential users or other ways to group the users, but the personas in [section 1.3](#sixloves-users) provide good examples of SixLove's target audiences.
+
+With the mention of the users comes the project domain. Though alluded to and specified earlier, the domain can broadly be described as '_novice tennis training_'. Expanding upon that, this project will result in the creation of a web based application that is centred around guiding individuals with little or no tennis experience through a structured tennis training program.
 
 ## 1.4 Proposed approach
 
