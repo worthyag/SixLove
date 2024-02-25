@@ -100,11 +100,29 @@ With the mention of the users comes the project domain. Though alluded to and sp
 
 ### 1.3.1 Novice Tennis Players
 <img title="" src="./images/user-persona-1.png" alt="" data-align="center">
+<img title="" src="./images/solution-1.png" alt="" data-align="center">
+
+<img title="" src="./images/user-persona-2.png" alt="" data-align="center">
+<img title="" src="./images/solution-2.png" alt="" data-align="center">
 
 ### 1.3.2 Tennis Enthusiasts
+<img title="" src="./images/user-persona-3.png" alt="" data-align="center">
+<img title="" src="./images/solution-3.png" alt="" data-align="center">
+
 ### 1.3.3 Fitness Enthusiasts
+<img title="" src="./images/user-persona-4.png" alt="" data-align="center">
+<img title="" src="./images/solution-4.png" alt="" data-align="center">
+
 ### 1.3.4 Aspiring Amateur Tennis Competitors
+<img title="" src="./images/user-persona-5.png" alt="" data-align="center">
+<img title="" src="./images/solution-5.png" alt="" data-align="center">
+
 ### 1.3.5 Other Potential Users
+<img title="" src="./images/user-persona-6.png" alt="" data-align="center">
+<img title="" src="./images/solution-6.png" alt="" data-align="center">
+
+<img title="" src="./images/user-persona-7.png" alt="" data-align="center">
+<img title="" src="./images/solution-7.png" alt="" data-align="center">
 
 ## 1.4 Proposed approach
 
