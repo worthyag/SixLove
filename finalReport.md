@@ -100,7 +100,7 @@ With the mention of the users comes the project domain. Though alluded to and sp
 In order to better describe the types of users that SixLove targets, I created user personas using Figma. Each persona represents a group of potential users. Users are grouped by the users mentioned in [section 1.2](#concept-and-motivations) and by their age, or other categorising factor.
 
 ### 1.3.1 Novice Tennis Players
-**Figure 1** displays a persona for a user within the novice tennis player category, this person is a senior and is learning tennis for fitness and to socialise.
+**Figure 1** displays a persona for a user within the `novice tennis player` category, this person is a senior and is learning tennis for fitness and to socialise.
 
 <img title="" src="./images/user-persona-1.png" alt="" data-align="center">
 
@@ -110,7 +110,7 @@ In order to better describe the types of users that SixLove targets, I created u
 
 **Figure 2** Potential SixLove Solution <br><br>
 
-**Figure 3** displays a persona for a user within the novice tennis player category, this person is in his late 20s and is learning tennis since he has recently developed a passion for it, and is very competitive and wants to beat his friend that has been playing tennis for much longer.
+**Figure 3** displays a persona for a user within the `novice tennis player` category, this person is in his late 20s and is learning tennis since he has recently developed a passion for it, and is very competitive and wants to beat his friend that has been playing tennis for much longer.
 
 <img title="" src="./images/user-persona-2.png" alt="" data-align="center">
 
@@ -121,7 +121,7 @@ In order to better describe the types of users that SixLove targets, I created u
 **Figure 4** Potential SixLove Solution <br><br>
 
 ### 1.3.2 Tennis Enthusiasts
-**Figure 5** displays a persona for a user within the tennis enthusiast category who is deeply passionate about tennis, this person is a young adult and they already play tennis here and there, but are looking to take it more seriously.
+**Figure 5** displays a persona for a user within the `tennis enthusiast` category who is deeply passionate about tennis, this person is a young adult and they already play tennis here and there, but are looking to take it more seriously.
 
 <img title="" src="./images/user-persona-3.png" alt="" data-align="center">
 
@@ -132,7 +132,7 @@ In order to better describe the types of users that SixLove targets, I created u
 **Figure 6** Potential SixLove Solution <br><br>
 
 ### 1.3.3 Fitness Enthusiasts
-**Figure 7** displays a persona for a user within the fitness enthusiast category, this person is in their mid 30s to 50s and is learning tennis to lose weight and implement healthy practices into their lives.
+**Figure 7** displays a persona for a user within the `fitness enthusiast` category, this person is in their mid 30s to 50s and is learning tennis to lose weight and implement healthy practices into their lives.
 
 <img title="" src="./images/user-persona-4.png" alt="" data-align="center">
 
@@ -143,7 +143,7 @@ In order to better describe the types of users that SixLove targets, I created u
 **Figure 8** Potential SixLove Solution <br><br>
 
 ### 1.3.4 Aspiring Amateur Tennis Competitors
-**Figure 9** displays a persona for a user within the aspiring amateur tennis competitor category, this person is in her early teens and is learning tennis to either become a professional tennis player or earn a tennis scholarship for university.
+**Figure 9** displays a persona for a user within the `aspiring amateur tennis competitor` category, this person is in her early teens and is learning tennis to either become a professional tennis player or earn a tennis scholarship for university.
 
 <img title="" src="./images/user-persona-5.png" alt="" data-align="center">
 
@@ -154,7 +154,7 @@ In order to better describe the types of users that SixLove targets, I created u
 **Figure 10** Potential SixLove Solution <br><br>
 
 ### 1.3.5 Other Potential Users
-**Figure 11** displays a persona for a user within the parent of young player category, this person is a dad that has a very young child that is interested in playing tennis, the child watches the sport, and dreams of becoming a tennis player. The dad wants to be able to have all his child tennis needs in one place, and want positive feedback / reinforcement for his child when completing tennis sessions.
+**Figure 11** displays a persona for a user within the `parent of young player` category, this person is a dad that has a very young child that is interested in playing tennis, the child watches the sport, and dreams of becoming a tennis player. The dad wants to be able to have all his child tennis needs in one place, and want positive feedback / reinforcement for his child when completing tennis sessions.
 
 <img title="" src="./images/user-persona-6.png" alt="" data-align="center">
 
@@ -164,7 +164,7 @@ In order to better describe the types of users that SixLove targets, I created u
 
 **Figure 12** Potential SixLove Solution <br><br>
 
-**Figure 13** displays a persona for a user within the busy professional category, this person is in their 40s to 50s and is learning tennis for to stay in shape and because they have always wanted to learn it.
+**Figure 13** displays a persona for a user within the `busy professional category`, this person is in their 40s to 50s and is learning tennis for to stay in shape and because they have always wanted to learn it.
 
 <img title="" src="./images/user-persona-7.png" alt="" data-align="center">
 
@@ -173,6 +173,8 @@ In order to better describe the types of users that SixLove targets, I created u
 <img title="" src="./images/solution-7.png" alt="" data-align="center">
 
 **Figure 14** Potential SixLove Solution <br><br>
+
+There are of course other potential users or other ways to group the users, but the personas in section 1.3 provide good examples of SixLove's target audiences.
 
 ## 1.4 Proposed approach
 
