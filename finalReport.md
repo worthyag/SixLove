@@ -97,6 +97,7 @@ It is now relatively simple to infer the users that this project was conceptuali
 With the mention of the users comes the project domain. Though alluded to and specified earlier, the domain can broadly be described as '_novice tennis training_'. Expanding upon that, this project will result in the creation of a web based application that is centred around guiding individuals with little or no tennis experience through a structured tennis training program.
 
 ## 1.3 SixLove's Users
+In order to better describe the types of users that SixLove targets, I created user personas using Figma. Each persona represents a group of potential users. Users are grouped by the users mentioned in [section 1.2](#concept-and-motivations) and by their age, or other categorising factor.
 
 ### 1.3.1 Novice Tennis Players
 <img title="" src="./images/user-persona-1.png" alt="" data-align="center">
