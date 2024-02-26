@@ -48,8 +48,7 @@ _Taking on the task of creating a tennis app that provides users with the tools 
   - [3.3 Evaluation strategy](#33-evaluation-strategy)
       - [3.3.1 Functionality](#331-functionality)
       - [3.3.2 Usability](#332-usability)
-      - [3.3.3 Performance](#333-performance)
-      - [3.3.4 Goals Accomplished](#334-goals-accomplished)
+      - [3.3.3 Goals Accomplished](#333-goals-accomplished)
 - [4 The Implementation](#4-the-implementation)
   - [4.1 The `registration` app](#41-the-registration-app)
   - [4.2 The `tennis` app](#42-the-tennis-app)
@@ -813,8 +812,6 @@ SixLove  will be evaluated using four categories which are as follows:
 
 - Usability
 
-- Performance
-
 - Goals (aims and objectives) accomplished
 
 I will expand upon these in the following sections.
@@ -837,12 +834,8 @@ Functionality refers to functionality testing which is where all features are ev
 - Other forms of user testing can be performed in conjunction, such as:
     - User acceptance testing.
     - Task evaluation- how well users are able to complete key tasks.
-  
-### 3.3.3 Performance
 
-- The performance of SixLove will be tested by checking its responsiveness and load times.
-
-### 3.3.4 Goals Accomplished
+### 3.3.3 Goals Accomplished
 
 For this evaluation metric, the SixLove app will be evaluated against it's initial aims and objectives (and requirements). It will be decided whether or not SixLove delivered the planned functionality (or how much of its functionality has been completed). **Figures 33** and **34** display the table that will be filled in to evaluation the project.
 
