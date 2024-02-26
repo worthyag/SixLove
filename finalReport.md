@@ -806,7 +806,7 @@ _My project roadmap._
 
 _Now that there is a plan, how will I test and evaluate the project progress?_
 
-*All diagrams in this section were made using Figma.
+*I created all the diagrams in this section using Figma.
 
 SixLove  will be evaluated using four categories which are as follows:
 
