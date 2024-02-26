@@ -830,10 +830,7 @@ Functionality refers to functionality testing which is where all features are ev
 
 ### 3.3.2 Usability
 
-- Usability refers to usability testing, which will be focused on ensuring that the SixLove app is user-friendly, intuitive, and accessible.
-- Other forms of user testing can be performed in conjunction, such as:
-    - User acceptance testing.
-    - Task evaluation- how well users are able to complete key tasks.
+Usability refers to usability testing, which will display itself in the form of task evaluation. **Figure 33** displays the survey that will be filled by users for specific tasks. The survey results will then be evaluated in order to evaluate the overall usability of SixLove.
  
   <img title="" src="./images/usability-survey.png" alt="" data-align="center">
 
