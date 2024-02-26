@@ -46,6 +46,10 @@ _Taking on the task of creating a tennis app that provides users with the tools 
     - [3.1.5 Django Structure](#315-django-structure)
   - [3.2 Work plan](#32-work-plan)
   - [3.3 Evaluation strategy](#33-evaluation-strategy)
+      - [3.3.1 Functionality](#331-functionality)
+      - [3.3.2 Usability](#332-usability)
+      - [3.3.3 Performance](#333-performance)
+      - [3.3.4 Goals Accomplished](#334-goals-accomplished)
 - [4 The Implementation](#4-the-implementation)
   - [4.1 The `registration` app](#41-the-registration-app)
   - [4.2 The `tennis` app](#42-the-tennis-app)
@@ -101,6 +105,7 @@ Users that this project was conceptualised for- include but are not limited to:
 - Aspiring amateur tennis competitors
 
 ### 1.3.1 Novice Tennis Players
+
 **Figure 1** displays a persona for a user within the `novice tennis player` category, this person is a senior and is learning tennis for fitness and to socialise.
 
 <img title="" src="./images/user-persona-1.png" alt="" data-align="center">
@@ -122,6 +127,7 @@ Users that this project was conceptualised for- include but are not limited to:
 **Figure 4** Potential SixLove Solution <br><br>
 
 ### 1.3.2 Tennis Enthusiasts
+
 **Figure 5** displays a persona for a user within the `tennis enthusiast` category who is deeply passionate about tennis, this person is a young adult and they already play tennis here and there, but are looking to take it more seriously.
 
 <img title="" src="./images/user-persona-3.png" alt="" data-align="center">
@@ -133,6 +139,7 @@ Users that this project was conceptualised for- include but are not limited to:
 **Figure 6** Potential SixLove Solution <br><br>
 
 ### 1.3.3 Fitness Enthusiasts
+
 **Figure 7** displays a persona for a user within the `fitness enthusiast` category, this person is in their mid 30s to 50s and is learning tennis to lose weight and implement healthy practices into their lives.
 
 <img title="" src="./images/user-persona-4.png" alt="" data-align="center">
@@ -144,6 +151,7 @@ Users that this project was conceptualised for- include but are not limited to:
 **Figure 8** Potential SixLove Solution <br><br>
 
 ### 1.3.4 Aspiring Amateur Tennis Competitors
+
 **Figure 9** displays a persona for a user within the `aspiring amateur tennis competitor` category, this person is in her early teens and is learning tennis to either become a professional tennis player or earn a tennis scholarship for university.
 
 <img title="" src="./images/user-persona-5.png" alt="" data-align="center">
@@ -155,6 +163,7 @@ Users that this project was conceptualised for- include but are not limited to:
 **Figure 10** Potential SixLove Solution <br><br>
 
 ### 1.3.5 Other Potential Users
+
 **Figure 11** displays a persona for a user within the `parent of young player` category, this person is a dad that has a very young child that is interested in playing tennis, the child watches the sport, and dreams of becoming a tennis player. The dad wants to be able to have all his child's tennis needs in one place, and want positive feedback / reinforcement for his child when completing tennis sessions.
 
 <img title="" src="./images/user-persona-6.png" alt="" data-align="center">
@@ -801,30 +810,29 @@ _Now that there is a plan, how will I test and evaluate the project progress?_
 SixLove  will be evaluated using four categories which are as follows:
 
 - Functionality
-  
-  - Functionality refers to functionality testing which is where all features (up to the point at which evaluation is ensued) are evaluated based on whether they work as intended. (This will be done in the form of unit testing).
-  
-  - Different scenarios will be tested, including but not limited to, valid and invalid inputs, performing certain tasks, etc.
 
 - Usability
-  
-  - Usability refers to usability testing, which will be focused on ensuring that the SixLove app is user-friendly, intuitive, and accessible.
-  
-  - Other forms of user testing can be performed in conjunction, such as:
-    
-    - User acceptance testing.
-    
-    - Task evaluation- how well users are able to complete key tasks.
 
 - Performance
-  
-  - The performance of SixLove will be tested by checking its responsiveness and load times.
 
 - Goals (aims and objectives) accomplished
+ 
+### 3.3.1 Functionality
+- Functionality refers to functionality testing which is where all features (up to the point at which evaluation is ensued) are evaluated based on whether they work as intended. (This will be done in the form of unit testing).
+- Different scenarios will be tested, including but not limited to, valid and invalid inputs, performing certain tasks, etc.
+
+### 3.3.2 Usability
+- Usability refers to usability testing, which will be focused on ensuring that the SixLove app is user-friendly, intuitive, and accessible.
+- Other forms of user testing can be performed in conjunction, such as:
+    - User acceptance testing.
+    - Task evaluation- how well users are able to complete key tasks.
   
-  - The SixLove app will be evaluated against it's initial aims and objectives (and requirements).
-  
-  - It will be decided whether or not SixLove delivered the planned functionality (or how much of its functionality has been completed).
+### 3.3.3 Performance
+- The performance of SixLove will be tested by checking its responsiveness and load times.
+
+### 3.3.4 Goals Accomplished
+- The SixLove app will be evaluated against it's initial aims and objectives (and requirements).
+- It will be decided whether or not SixLove delivered the planned functionality (or how much of its functionality has been completed).
 
 # 4 The Implementation
 
