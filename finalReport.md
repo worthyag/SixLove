@@ -824,6 +824,10 @@ I will expand upon these in the following sections.
 - Functionality refers to functionality testing which is where all features (up to the point at which evaluation is ensued) are evaluated based on whether they work as intended. (This will be done in the form of unit testing).
 - Different scenarios will be tested, including but not limited to, valid and invalid inputs, performing certain tasks, etc.
 
+<img title="" src="./images/feature-effectiveness.png" alt="" data-align="center">
+
+  **Figure 31** The Evaluation of Features Table.<br><br>
+
 ### 3.3.2 Usability
 
 - Usability refers to usability testing, which will be focused on ensuring that the SixLove app is user-friendly, intuitive, and accessible.
@@ -837,15 +841,15 @@ I will expand upon these in the following sections.
 
 ### 3.3.4 Goals Accomplished
 
-For this evaluation metric, the SixLove app will be evaluated against it's initial aims and objectives (and requirements). It will be decided whether or not SixLove delivered the planned functionality (or how much of its functionality has been completed). **Figures 31** and **32** display the table that will be filled in to evaluation the project.
+For this evaluation metric, the SixLove app will be evaluated against it's initial aims and objectives (and requirements). It will be decided whether or not SixLove delivered the planned functionality (or how much of its functionality has been completed). **Figures 32** and **33** display the table that will be filled in to evaluation the project.
 
   <img title="" src="./images/aims-evaluation.png" alt="" data-align="center">
 
-  **Figure 31** Aims Evaluation.<br><br>
+  **Figure 32** Aims Evaluation Table.<br><br>
 
   <img title="" src="./images/objectives-evaluation.png" alt="" data-align="center">
 
-  **Figure 32** Objectives Evaluation.<br><br>
+  **Figure 33** Objectives Evaluation Table.<br><br>
 
 # 4 The Implementation
 
