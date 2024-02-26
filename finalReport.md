@@ -816,21 +816,27 @@ SixLove  will be evaluated using four categories which are as follows:
 - Performance
 
 - Goals (aims and objectives) accomplished
+
+  I will expand upon these in the following sections.
  
 ### 3.3.1 Functionality
+
 - Functionality refers to functionality testing which is where all features (up to the point at which evaluation is ensued) are evaluated based on whether they work as intended. (This will be done in the form of unit testing).
 - Different scenarios will be tested, including but not limited to, valid and invalid inputs, performing certain tasks, etc.
 
 ### 3.3.2 Usability
+
 - Usability refers to usability testing, which will be focused on ensuring that the SixLove app is user-friendly, intuitive, and accessible.
 - Other forms of user testing can be performed in conjunction, such as:
     - User acceptance testing.
     - Task evaluation- how well users are able to complete key tasks.
   
 ### 3.3.3 Performance
+
 - The performance of SixLove will be tested by checking its responsiveness and load times.
 
 ### 3.3.4 Goals Accomplished
+
 - The SixLove app will be evaluated against it's initial aims and objectives (and requirements).
 - It will be decided whether or not SixLove delivered the planned functionality (or how much of its functionality has been completed).
 
