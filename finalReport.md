@@ -840,6 +840,14 @@ I will expand upon these in the following sections.
 - The SixLove app will be evaluated against it's initial aims and objectives (and requirements).
 - It will be decided whether or not SixLove delivered the planned functionality (or how much of its functionality has been completed).
 
+  <img title="" src="./images/aims-evaluation.png" alt="" data-align="center">
+
+  **Figure 31** Aims Evaluation.<br><br>
+
+  <img title="" src="./images/objectives-evaluation.png" alt="" data-align="center">
+
+  **Figure 32** Objectives Evaluation.<br><br>
+
 # 4 The Implementation
 
 _Core functionality development._
