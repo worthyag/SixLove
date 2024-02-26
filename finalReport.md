@@ -834,18 +834,22 @@ Functionality refers to functionality testing which is where all features are ev
 - Other forms of user testing can be performed in conjunction, such as:
     - User acceptance testing.
     - Task evaluation- how well users are able to complete key tasks.
+ 
+  <img title="" src="./images/usability-survey.png" alt="" data-align="center">
+
+  **Figure 33** Usability Survey.<br><br>
 
 ### 3.3.3 Goals Accomplished
 
-For this evaluation metric, the SixLove app will be evaluated against it's initial aims and objectives (and requirements). It will be decided whether or not SixLove delivered the planned functionality (or how much of its functionality has been completed). **Figures 33** and **34** display the table that will be filled in to evaluation the project.
+For this evaluation metric, the SixLove app will be evaluated against it's initial aims and objectives (and requirements). It will be decided whether or not SixLove delivered the planned functionality (or how much of its functionality has been completed). **Figures 34** and **35** display the table that will be filled in to evaluation the project.
 
   <img title="" src="./images/aims-evaluation.png" alt="" data-align="center">
 
-  **Figure 33** Aims Evaluation Table.<br><br>
+  **Figure 34** Aims Evaluation Table.<br><br>
 
   <img title="" src="./images/objectives-evaluation.png" alt="" data-align="center">
 
-  **Figure 34** Objectives Evaluation Table.<br><br>
+  **Figure 35** Objectives Evaluation Table.<br><br>
 
 # 4 The Implementation
 
