@@ -837,8 +837,7 @@ I will expand upon these in the following sections.
 
 ### 3.3.4 Goals Accomplished
 
-- The SixLove app will be evaluated against it's initial aims and objectives (and requirements).
-- It will be decided whether or not SixLove delivered the planned functionality (or how much of its functionality has been completed).
+For this evaluation metric, the SixLove app will be evaluated against it's initial aims and objectives (and requirements). It will be decided whether or not SixLove delivered the planned functionality (or how much of its functionality has been completed). **Figures 31** and **32** display the table that will be filled in to evaluation the project.
 
   <img title="" src="./images/aims-evaluation.png" alt="" data-align="center">
 
