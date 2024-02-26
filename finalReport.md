@@ -821,7 +821,7 @@ I will expand upon these in the following sections.
  
 ### 3.3.1 Functionality
 
-- Functionality refers to functionality testing which is where all features (up to the point at which evaluation is ensued) are evaluated based on whether they work as intended. (This will be done in the form of unit testing).
+- Functionality refers to functionality testing which is where all features (up to the point at which evaluation is ensued) are evaluated based on whether they work as intended. (This will be done in the form of unit testing- refer to [section 5.1](#sixloves-users)).
 - Different scenarios will be tested, including but not limited to, valid and invalid inputs, performing certain tasks, etc.
 
 <img title="" src="./images/feature-effectiveness.png" alt="" data-align="center">
