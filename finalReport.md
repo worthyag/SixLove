@@ -817,7 +817,7 @@ SixLove  will be evaluated using four categories which are as follows:
 
 - Goals (aims and objectives) accomplished
 
-  I will expand upon these in the following sections.
+I will expand upon these in the following sections.
  
 ### 3.3.1 Functionality
 
