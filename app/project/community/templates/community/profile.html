@@ -1,5 +1,8 @@
 {% extends './base.html' %} 
 {% load static %} 
+{% block scripts %}
+<script src="{% static './community/scripts/toggle-posts.js' %}"></script>
+{% endblock %}
 {% block content %}
 <main id="profile">
   <!-- <h2>Profile</h2> -->
@@ -55,7 +58,7 @@
       </button>
     </div>
   </div>
-  <div class="feed" style="display: none;">
+  <div class="feed">
     <div class="feed-post"></div>
     <div class="feed-post"></div>
     <div class="feed-post"></div>
@@ -64,7 +67,7 @@
     <div class="feed-post"></div>
   </div>
 
-  <div class="achievements">
+  <div class="achievements" style="display: none;">
     <div class="award">
       <div class="award-img"></div>
       <div class="award-info">
