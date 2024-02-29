@@ -1,7 +1,7 @@
 {% extends './base.html' %} 
 {% load static %} 
 {% block scripts %}
-<script src="{% static './community/scripts/toggle-posts.js' %}"></script>
+<script src="{% static './community/scripts/toggle-posts.js' %}" defer></script>
 {% endblock %}
 {% block content %}
 <main id="profile">
@@ -67,7 +67,7 @@
     <div class="feed-post"></div>
   </div>
 
-  <div class="achievements" style="display: none;">
+  <div class="achievements toggle-posts">
     <div class="award">
       <div class="award-img"></div>
       <div class="award-info">
