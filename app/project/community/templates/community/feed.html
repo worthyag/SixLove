@@ -22,8 +22,10 @@
         <span class="username">{{ post.user_profile.username }}</span>
         <span class="caption-text">{{ post.post_caption }}</span>
       </div>
-      <div class="post-comments">View all 12 comments</div>
-      <div class="post-date">2 days ago</div>
+      {% for comment in post.comments %}
+      <div class="post-comments">{{ comment.text }}</div>
+      {% endfor %}
+      <div class="post-date">{{ comment.created_at }}</div>
     </div>
     {% endfor %}
 
