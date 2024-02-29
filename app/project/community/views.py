@@ -23,7 +23,7 @@ def connect(request):
 def feed(request):
     """"""
     if request.method == 'POST':
-        form = forms.UserPostsForm(request.POST)
+        form = forms.UserPostsForm(request.POST, request.FILES)
 
         if form.is_valid():
             post = form.save(commit=False)
