@@ -5,6 +5,7 @@ main#feed {
       border: 1px solid $black;
 
       width: max-content;
+      padding-bottom: 12px;
 
       .post-img {
         width: 100%;
@@ -18,11 +19,44 @@ main#feed {
       .post-btns {
         display: flex;
         gap: 12px;
+        padding: 8px;
 
         button {
           background-color: #FFFFFF00;
           padding: 0;
+          margin: 0;
+
+          img {
+            width: 20px;
+            height: 20px;
+          }
         }
+      }
+
+      .post-likes, .post-caption, 
+      .post-comments, .post-date {
+        padding: 0 8px;
+      }
+
+      .post-caption {
+        margin: 12px 0;
+        .username {
+          font-weight: 700;
+        }
+      }
+
+      .post-comments {
+        font-size: 0.9rem;
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+
+      .post-date {
+        font-weight: 300;
+        font-size: 0.8rem;
+        padding-top: 8px;
       }
     }
   }
