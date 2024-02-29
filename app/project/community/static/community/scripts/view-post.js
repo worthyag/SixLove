@@ -1,5 +1,3 @@
-console.log("View posts!");
-
 const feed_posts = document.querySelectorAll(".feed-post");
 
 for (const feed_post of feed_posts) {
