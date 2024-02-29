@@ -27,8 +27,15 @@ def feed(request):
 
         if form.is_valid():
             post = form.save(commit=False)
-            post.user_profile.user = request.user
-            post.save()
+
+            try:
+                user_profile = models.UserProfile.objects.get(
+                    user=request.user)
+                post.user_profile = user_profile
+                post.save()
+            except models.UserProfile.DoesNotExist:
+                print("User profile does not exist.")
+
             return redirect("community:feed")
     else:
         # Initialising a new form.
