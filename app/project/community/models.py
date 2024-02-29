@@ -45,3 +45,10 @@ class Like(models.Model):
 
 class Comment(models.Model):
     """"""
+    user_profile = models.ForeignKey(UserProfile, on_delete=models.CASCADE)
+    post = models.ForeignKey(UserPosts, on_delete=models.CASCADE)
+    text = models.TextField()
+    created_at = models.DateTimeField(default=timezone.now())
+
+    def __str__(self):
+        return f"{self.user_profile.username}'s comment on {self.post.user_profile.username}'s post"
