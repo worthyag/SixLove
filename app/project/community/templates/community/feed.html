@@ -94,9 +94,23 @@
 
 </main>
 {% else %}
-<main>
+<main id="feed">
   <p>No posts to display.</p>
   <button class="create-post-btn">Create New Post</button>
+
+  <!-- Modal for creating a post -->
+  <div id="createPostModal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal('#createPostModal')">&times;</span>
+      <div id="modalContent">
+        <form action="" method="post" novalidate enctype="multipart/form-data">
+          {% csrf_token %} 
+          {{ form.as_p }}
+          <input class="btn" type="submit" value="Create Post" />
+        </form>
+      </div>
+    </div>
+  </div>
 </main>
 {% endif %}
 {% else %}
