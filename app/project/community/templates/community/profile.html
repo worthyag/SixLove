@@ -5,8 +5,8 @@
 <script src="{% static './community/scripts/view-post.js' %}" defer></script>
 {% endblock %}
 {% block content %}
+{% if user_profile %}
 <main id="profile">
-  <!-- <h2>Profile</h2> -->
   <div class="profile-top">
     <div class="profile-header">
       <div class="profile-photo">
@@ -61,12 +61,14 @@
     </div>
   </div>
   <div class="feed">
-    <!-- {% for post in user_posts %}
-    <div class="feed-post"></div>
-    {% endfor %} -->
+    {% for post in user_posts %}
+    <div class="feed-post">
+      <img src="{{ post.post_picture.url }}" alt="user post">
+    </div>
+    {% endfor %}
 
     <div class="feed-post">
-      <img src="{% static './community/images/test.jpeg' %}" alt="">
+      <img src="{% static './community/images/test.jpeg' %}" alt="user post">
     </div>
     <div class="feed-post"></div>
     <div class="feed-post"></div>
@@ -109,7 +111,7 @@
         <div id="modalContent">
           <div class="post">
             <div class="post-img">
-              <img src="{% static './community/images/test.jpeg' %}" alt="">
+              <img src="{% static './community/images/test.jpeg' %}" alt="user post">
             </div>
             <div class="post-btns">
               <button class="post-like-btn"><img src="{% static './community/images/like-icon.svg'%}" alt="like button"></button>
@@ -127,6 +129,11 @@
           </div>
     </div>
 </main>
+{% else %}
+<main>
+  <p>You don't have a user profile.</p>
+</main>
+{% endif %}
 <script>
   function closeModal(id) {
     const closeBtn = document.querySelector(id);
