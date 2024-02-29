@@ -6,19 +6,18 @@
 <script src="{% static './community/scripts/create-profile.js' %}" defer></script>
 {% endblock %}
 {% block content %}
-{% comment %}{% if user_profile %}{% endcomment %}
+{% if user_profile %}
 <main id="profile">
   <div class="profile-top">
     <div class="profile-header">
       <div class="profile-photo">
         <img
-          {% comment %}src="{{ user_profile.profile_picture.url }}"{% endcomment %}
-          src="{% static './community/images/profile-pic-temp.png' %}"
+          src="{{ user_profile.profile_picture.url }}"
           alt="Profile Photo"
         />
       </div>
       <div class="profile-username-action-btns">
-        <p class="profile-username">\{\{ user_profile.username \}\}</p>
+        <p class="profile-username">{{ user_profile.username }}</p>
         <div class="profile-action-btns">
           <button class="follow">Follow</button>
           <button class="message">Message</button>
@@ -26,22 +25,18 @@
       </div>
     </div>
     <div class="info">
-      <div class="profile-name">\{\{ user_profile.profile_name \}\}</div>
-      <div class="profile-bio">
-      \{\{ user_profile.bio \}\}
-      </div>
+      <div class="profile-name">{{ user_profile.profile_name }}</div>
+      <div class="profile-bio">{{ user_profile.bio }}</div>
     </div>
 
     <div class="followers-following">
       <div class="followers">
         <div class="follower-text ff-text">followers</div>
-        {% comment %}<div class="follower-count ff-count">{{ user_profile.get_followers_count }}</div>{% endcomment %}
-        <div class="follower-count ff-count">34</div>
+        <div class="follower-count ff-count">{{ user_profile.get_followers_count }}</div>
       </div>
       <div class="following">
         <div class="following-text ff-text">following</div>
-        {% comment %}<div class="following-count ff-count">{{ user_profile.get_following_count }}</div>{% endcomment %}
-        <div class="following-count ff-count">18</div>
+        <div class="following-count ff-count">{{ user_profile.get_following_count }}</div>
       </div>
     </div>
   </div>
@@ -130,7 +125,7 @@
           </div>
     </div>
   </main>
-  {% comment %}{% else %}{% endcomment %}
+{% else %}
 <main id="profile">
   <p>You haven't created your user profile yet.</p>
   <button class="create-profile-btn">Create Profile</button>
@@ -149,7 +144,7 @@
     </div>
   </div>
 </main>
-{% comment %}{% endif %}{% endcomment %}
+{% endif %}
 <script>
   function closeModal(id) {
     const closeBtn = document.querySelector(id);
