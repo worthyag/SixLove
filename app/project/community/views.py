@@ -1,7 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 
 from . import models
+from . import forms
 
 # Create your views here.
 
@@ -21,6 +22,18 @@ def connect(request):
 @login_required
 def feed(request):
     """"""
+    if request.method == 'POST':
+        form = forms.UserPostsForm(request.POST)
+
+        if form.is_valid():
+            post = form.save(commit=False)
+            post.user_profile.user = request.user
+            post.save()
+            return redirect("community:feed")
+    else:
+        # Initialising a new form.
+        form = forms.UserPostsForm()
+
     try:
         user_profile = models.UserProfile.objects.get(user=request.user)
         following_users = user_profile.following.all()
@@ -34,7 +47,8 @@ def feed(request):
         "./community/feed.html",
         {
             "title": "Feed",
-            "posts": following_posts
+            "posts": following_posts,
+            "form": form
         }
     )
 
