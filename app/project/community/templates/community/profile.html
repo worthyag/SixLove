@@ -60,17 +60,32 @@
     {% for post in user_posts %}
     <div class="feed-post">
       <img src="{{ post.post_picture.url }}" alt="user post">
+      <div class="post-details" style="display: none;">
+        <span class="likes-data">{{ post.get_like_count }}</span>
+        <span class="username-data">{{ post.user_profile.username }}</span>
+        <span class="captionText-data">{{ post.post_caption }}</span>
+        <div class="comments-data">
+          {% for comment in post.comments.all %}
+          <span class="comments-data">{{ comment }}</span>
+          {% endfor %}
+        </div>
+        <span class="date-data">{{ post.created_at }}</span>
+
+        <!-- <div class="post-likes"><span class="like-count">124</span> likes</div>
+            <div class="post-caption">
+              <span class="username">username</span>
+              <span class="caption-text">caption text will be placed...</span>
+            </div>
+            <div class="post-comments">View all 12 comments</div>
+            <div class="post-date">2 days ago</div>
+      </div> -->
     </div>
     {% endfor %}
 
-    <div class="feed-post">
+    <!-- <div class="feed-post">
       <img src="{% static './community/images/test.jpeg' %}" alt="user post">
-    </div>
-    <div class="feed-post"></div>
-    <div class="feed-post"></div>
-    <div class="feed-post"></div>
-    <div class="feed-post"></div>
-    <div class="feed-post"></div>
+    </div> -->
+    <!-- <div class="feed-post"></div> -->
   </div>
 
   <div class="achievements toggle-posts">
@@ -107,7 +122,7 @@
         <div id="modalContent">
           <div class="post">
             <div class="post-img">
-              <img src="{% static './community/images/test.jpeg' %}" alt="user post">
+              <img src="" alt="user post">
             </div>
             <div class="post-btns">
               <button class="post-like-btn"><img src="{% static './community/images/like-icon.svg'%}" alt="like button"></button>
@@ -120,9 +135,9 @@
             </div>
             <div class="post-comments">View all 12 comments</div>
             <div class="post-date">2 days ago</div>
-              </div>
-            </div>
           </div>
+        </div>
+      </div>
     </div>
   </main>
 {% else %}

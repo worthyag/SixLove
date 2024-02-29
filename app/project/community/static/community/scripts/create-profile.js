@@ -1,9 +1,11 @@
 const createProfileBtn = document.querySelector(".create-profile-btn");
 
-createProfileBtn.addEventListener("click", () => {
-  console.log("You clicked me!");
-  createProfile();
-});
+if (createProfileBtn) {
+  createProfileBtn.addEventListener("click", () => {
+    console.log("You clicked me!");
+    createProfile();
+  });
+}
 
 
 function createProfile() {
