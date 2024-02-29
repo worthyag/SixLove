@@ -15,6 +15,13 @@
       border-radius: 8px 8px 0 0;
       border-bottom: 1px solid $black;
 
+      img {
+        width: inherit;
+        height: inherit;
+        object-fit: cover;
+        border-radius: 8px 8px 0 0;
+      }
+
     }
 
     .post-btns {

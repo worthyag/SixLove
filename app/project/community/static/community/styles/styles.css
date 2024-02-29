@@ -250,6 +250,13 @@ main#profile .modal .modal-content .post .post-img {
   border-radius: 8px 8px 0 0;
   border-bottom: 1px solid #000000;
 }
+main#profile .modal .modal-content .post .post-img img {
+  width: inherit;
+  height: inherit;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 8px 8px 0 0;
+}
 main#profile .modal .modal-content .post .post-btns {
   display: flex;
   gap: 12px;
@@ -328,6 +335,13 @@ main#feed .posts .post .post-img {
   background-color: lightblue;
   border-radius: 8px 8px 0 0;
   border-bottom: 1px solid #000000;
+}
+main#feed .posts .post .post-img img {
+  width: inherit;
+  height: inherit;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 8px 8px 0 0;
 }
 main#feed .posts .post .post-btns {
   display: flex;
