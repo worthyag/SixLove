@@ -1,5 +1,5 @@
 from django import forms
-from .models import UserPosts
+from .models import UserPosts, UserProfile
 
 
 class UserPostsForm(forms.ModelForm):
@@ -10,3 +10,13 @@ class UserPostsForm(forms.ModelForm):
     class Meta:
         model = UserPosts
         fields = ['post_picture', 'post_caption']
+
+
+class UserProfileForm(forms.ModelForm):
+    """
+    Creates a user profile for the user.
+    """
+
+    class Meta:
+        model = UserPosts
+        fields = ['username', 'profile_name', 'profile_picture', 'bio']
