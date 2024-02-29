@@ -16,7 +16,8 @@
   <p>This is the Add tennis session page for SixLove, feel free to add tennis sessions!</p>
 
   <form action="" method="post" novalidate>
-    {% csrf_token %} {{ form.as_p }}
+    {% csrf_token %} 
+    {{ form.as_p }}
     <input class="btn" type="submit" value="Add Tennis Session" />
   </form>
 
