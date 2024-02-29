@@ -7,7 +7,7 @@ from django.utils import timezone
 
 class UserProfile(models.Model):
     """"""
-    user = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
+    user = models.OneToOneField(get_user_model(), on_delete=models.CASCADE)
     profile_picture = models.ImageField(
         upload_to='profile_pics/',
         default='./community/images/profile-pic-temp.png'
@@ -16,16 +16,43 @@ class UserProfile(models.Model):
     username = models.CharField(max_length=50)
     profile_name = models.CharField(max_length=50)
 
+    # Represents the many-to-many relationships between users for followers and following.
+    # Allows me to retrieve the set of users who are followers and whom a user is following.
+    followers = models.ManyToManyField(
+        'self', symmetrical=False, related_name='following', blank=True)
+    following = models.ManyToManyField(
+        'self', symmetrical=False, related_name='followers', blank=True)
+
     def __str__(self):
         return self.username
+
+    def follow(self, user_to_follow):
+        """"""
+        self.following.add(user_to_follow)
+        user_to_follow.followers.add(self)
+
+    def unfollow(self, user_to_unfollow):
+        """"""
+        self.following.remove(user_to_unfollow)
+        user_to_unfollow.followers.remove(self)
+
+    # Dynamically get the follower count.
+    def get_followers_count(self):
+        """"""
+        return self.followers.count()
+
+    # Dynamically get the following count.
+    def get_following_count(self):
+        """"""
+        return self.following.count()
 
 
 class Follow(models.Model):
     """"""
     follower = models.ForeignKey(
-        UserProfile, related_name="following", on_delete=models.CASCADE)
+        UserProfile, related_name="following_set", on_delete=models.CASCADE)
     followed = models.ForeignKey(
-        UserProfile, related_name="followers", on_delete=models.CASCADE)
+        UserProfile, related_name="followers_set", on_delete=models.CASCADE)
 
     def __str__(self):
         return f'{self.follower} follows {self.followed}'
@@ -42,44 +69,58 @@ class UserPosts(models.Model):
     likes = models.ManyToManyField(
         UserProfile,
         related_name='post_likes',
-        through=Like)
+        through='Like')
     comments = models.ManyToManyField(
         UserProfile,
         related_name='post_comments',
-        through=Comment)
+        through='Comment')
 
     def __str__(self):
         return f"{self.user_profile.username}'s post - {self.created_at}"
 
     def like(self, user_profile):
         """"""
-        Like.objects.create(user_profile=user_profile, post=self)
-        self.likes.add(user_profile)
+        like_instance, created = Like.objects.get_or_create(
+            user_profile=user_profile,
+            post=self
+        )
+
+        if created:
+            self.likes.add(user_profile)
 
     def remove_like(self, user_profile):
         """"""
         like_instance = Like.objects.filter(
-            user=user_profile, post=self).first()
+            user_profile=user_profile, post=self
+        ).first()
+
         if like_instance:
             like_instance.delete()
             self.likes.remove(user_profile)
 
     def comment(self, user_profile, text):
         """"""
-        Comment.objects.create(user_profile=user_profile, post=self, text=text)
-        self.comments.add(user_profile)
-
-    def remove_comment(self, user_profile, text):
-        """"""
-        comment_instance = Comment.objects.filter(
-            user=user_profile,
+        comment_instance = Comment.objects.create(
+            user_profile=user_profile,
             post=self,
             text=text
-        ).first()
+        )
 
-        if comment_instance:
+        self.comments.add(comment_instance)
+
+    def remove_comment(self, comment_instance):
+        """"""
+        if comment_instance in self.comments.all():
             comment_instance.delete()
-            self.comments.remove(user_profile)
+            self.comments.remove(comment_instance)
+
+    def get_like_count(self):
+        """"""
+        return self.likes.count()
+
+    def get_comment_count(self):
+        """"""
+        return self.comments.count()
 
 
 class Like(models.Model):
