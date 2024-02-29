@@ -169,6 +169,12 @@ main#profile .feed .feed-post {
   border-radius: 8px;
   border: 1px solid #000000;
 }
+main#profile .achievements {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
 main#profile .achievements .award {
   display: flex;
   align-items: center;
@@ -177,6 +183,7 @@ main#profile .achievements .award {
   border-radius: 8px;
   width: -moz-max-content;
   width: max-content;
+  height: auto;
   padding: 8px 16px;
   background-color: #F2F2F2;
 }
@@ -207,5 +214,11 @@ main#profile .achievements .award .award-info .award-date {
   }
   main#profile div.profile-top div.profile-header .profile-username-action-btns .profile-username {
     font-size: 1.3rem;
+  }
+  main#profile .achievements .award {
+    flex-direction: column;
+  }
+  main#profile .achievements .award .award-img {
+    width: 100%;
   }
 }/*# sourceMappingURL=styles.css.map */

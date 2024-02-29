@@ -126,6 +126,11 @@ main#profile {
   }
 
   .achievements {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+
     .award {
       display: flex;
       align-items: center;
@@ -133,7 +138,10 @@ main#profile {
 
       border: 1px solid $black;
       border-radius: 8px;
+
       width: max-content;
+      height: auto;
+
       padding: 8px 16px;
       background-color: $posts;
 
@@ -178,6 +186,17 @@ main#profile {
             font-size: 1.3rem;
           }
         }
+      }
+    }
+
+    .achievements {
+      .award {
+        flex-direction: column;
+
+        .award-img {
+          width: 100%;
+        }
+
       }
     }
   }
