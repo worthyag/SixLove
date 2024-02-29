@@ -76,6 +76,25 @@ main#profile {
       }
     }
   }
+
+  .feed {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    place-items: center;
+    row-gap: 2vw;
+
+    .feed-post {
+      background-color: $posts;
+      height: 30vw;
+      width: 30vw;
+
+      min-height: 100px;
+      min-width: 100px;
+
+      border-radius: 8px;
+      border: 1px solid $black;
+    }
+  }
 }
 
 @media only screen and (max-width: 400px) {

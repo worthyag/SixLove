@@ -129,6 +129,21 @@ main#profile div.profile-top .followers-following div .ff-text {
 main#profile div.profile-top .followers-following div .ff-count {
   font-size: 1.5rem;
 }
+main#profile .feed {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  place-items: center;
+  row-gap: 2vw;
+}
+main#profile .feed .feed-post {
+  background-color: #F2F2F2;
+  height: 30vw;
+  width: 30vw;
+  min-height: 100px;
+  min-width: 100px;
+  border-radius: 8px;
+  border: 1px solid #000000;
+}
 
 @media only screen and (max-width: 400px) {
   main#profile div.profile-top {
