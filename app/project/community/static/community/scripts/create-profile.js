@@ -2,7 +2,7 @@ const createProfileBtn = document.querySelector(".create-profile-btn");
 
 createProfileBtn.addEventListener("click", () => {
   console.log("You clicked me!");
-  // createPost();
+  createProfile();
 });
 
 
