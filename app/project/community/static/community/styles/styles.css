@@ -82,9 +82,18 @@ main#profile div.profile-top div.profile-header {
   align-items: center;
   gap: 32px;
 }
-main#profile div.profile-top div.profile-header .profile-photo img {
+main#profile div.profile-top div.profile-header .profile-photo {
   width: 150px;
   height: 150px;
+  border-radius: 50%;
+  border: 1px solid #000000;
+}
+main#profile div.profile-top div.profile-header .profile-photo img {
+  width: inherit;
+  height: inherit;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 50%;
 }
 main#profile div.profile-top div.profile-header .profile-username-action-btns {
   display: flex;

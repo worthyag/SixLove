@@ -6,7 +6,7 @@
 <script src="{% static './community/scripts/create-profile.js' %}" defer></script>
 {% endblock %}
 {% block content %}
-{% if user_profile %}
+{% comment %}{% if user_profile %}{% endcomment %}
 <main id="profile">
   <div class="profile-top">
     <div class="profile-header">
@@ -130,7 +130,7 @@
           </div>
     </div>
   </main>
-{% else %}
+  {% comment %}{% else %}{% endcomment %}
 <main id="profile">
   <p>You haven't created your user profile yet.</p>
   <button class="create-profile-btn">Create Profile</button>
@@ -149,7 +149,7 @@
     </div>
   </div>
 </main>
-{% endif %}
+{% comment %}{% endif %}{% endcomment %}
 <script>
   function closeModal(id) {
     const closeBtn = document.querySelector(id);
