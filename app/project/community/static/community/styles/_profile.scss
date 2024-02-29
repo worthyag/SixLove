@@ -122,6 +122,13 @@ main#profile {
 
       border-radius: 8px;
       border: 1px solid $black;
+
+      img {
+        width: inherit;
+        height: inherit;
+        object-fit: cover;
+        border-radius: 8px;
+      }
     }
   }
 

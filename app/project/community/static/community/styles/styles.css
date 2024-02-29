@@ -169,6 +169,13 @@ main#profile .feed .feed-post {
   border-radius: 8px;
   border: 1px solid #000000;
 }
+main#profile .feed .feed-post img {
+  width: inherit;
+  height: inherit;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 8px;
+}
 main#profile .achievements {
   display: flex;
   flex-direction: column;

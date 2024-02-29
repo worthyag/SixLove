@@ -10,12 +10,13 @@
     <div class="profile-header">
       <div class="profile-photo">
         <img
+          {% comment %}src="{{ user_profile.profile_picture.url }}"{% endcomment %}
           src="{% static './community/images/profile-pic-temp.png' %}"
           alt="Profile Photo"
         />
       </div>
       <div class="profile-username-action-btns">
-        <p class="profile-username">thenoirespace</p>
+        <p class="profile-username">\{\{ user_profile.username \}\}</p>
         <div class="profile-action-btns">
           <button class="follow">Follow</button>
           <button class="message">Message</button>
@@ -23,21 +24,21 @@
       </div>
     </div>
     <div class="info">
-      <div class="profile-name">The Noire Space</div>
+      <div class="profile-name">\{\{ user_profile.profile_name \}\}</div>
       <div class="profile-bio">
-        The Safe Haven for Black Women to express themselves, interact and be
-        free!🖤🫶🏾 🥂Content on Self-discovery,Sisterhood and more. 👩🏾‍💻Find more
-        below! ↙️
+      \{\{ user_profile.bio \}\}
       </div>
     </div>
 
     <div class="followers-following">
       <div class="followers">
         <div class="follower-text ff-text">followers</div>
+        {% comment %}<div class="follower-count ff-count">{{ user_profile.get_followers_count }}</div>{% endcomment %}
         <div class="follower-count ff-count">34</div>
       </div>
       <div class="following">
         <div class="following-text ff-text">following</div>
+        {% comment %}<div class="following-count ff-count">{{ user_profile.get_following_count }}</div>{% endcomment %}
         <div class="following-count ff-count">18</div>
       </div>
     </div>
@@ -59,7 +60,13 @@
     </div>
   </div>
   <div class="feed">
+    <!-- {% for post in user_posts %}
     <div class="feed-post"></div>
+    {% endfor %} -->
+
+    <div class="feed-post">
+      <img src="{% static './community/images/test.jpeg' %}" alt="">
+    </div>
     <div class="feed-post"></div>
     <div class="feed-post"></div>
     <div class="feed-post"></div>
