@@ -314,6 +314,54 @@ main#profile .modal .modal-content .post .post-date {
     width: 100%;
   }
 }
+main#feed .modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  justify-content: center;
+  align-items: center;
+}
+main#feed .modal .modal-content {
+  background-color: #fefefe;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  max-width: 400px;
+  margin: 0 auto;
+}
+main#feed .modal .modal-content .close-btn {
+  display: flex;
+  justify-content: flex-end;
+  cursor: pointer;
+  font-size: 3rem;
+}
+main#feed .modal .modal-content form p {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 8px;
+  align-items: flex-start;
+}
+main#feed .modal .modal-content form input, main#feed .modal .modal-content form textarea {
+  width: 100%;
+  height: 2rem;
+  font-size: 0.9rem;
+}
+main#feed .modal .modal-content form input#id_is_completed {
+  width: 30px;
+}
+main#feed .modal .modal-content form textarea {
+  height: 200px;
+}
+main#feed .modal .modal-content form label {
+  font-size: 1.2rem;
+  font-weight: bold;
+  width: 100%;
+}
 main#feed .posts {
   display: flex;
   flex-direction: column;

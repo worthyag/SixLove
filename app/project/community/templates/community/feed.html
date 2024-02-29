@@ -2,11 +2,12 @@
 {% load static %} 
 {% block scripts %}
 <script src="{% static './community/scripts/toggle-like.js' %}" defer></script>
+<script src="{% static './community/scripts/create-post.js' %}" defer></script>
 {% endblock %}
 {% block content %}
 <main id="feed">
   <h2>Feed</h2>
-  <button>Create New Post</button>
+  <button class="create-post-btn">Create New Post</button>
   <div class="posts">
     {% for post in posts %}
     <div class="post">
