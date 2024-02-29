@@ -9,7 +9,11 @@ class UserPostsForm(forms.ModelForm):
 
     class Meta:
         model = UserPosts
-        fields = ['post_picture', 'post_caption']
+        fields = ['user_profile', 'post_picture', 'post_caption', 'created_at']
+        widgets = {
+            'user_profile': forms.HiddenInput(),
+            'created_at': forms.HiddenInput(),
+        }
 
 
 class UserProfileForm(forms.ModelForm):
@@ -19,4 +23,8 @@ class UserProfileForm(forms.ModelForm):
 
     class Meta:
         model = UserProfile
-        fields = ['username', 'profile_name', 'profile_picture', 'bio']
+        fields = ['user', 'username', 'profile_name', 'profile_picture', 'bio']
+
+        widgets = {
+            'user': forms.HiddenInput(),
+        }
