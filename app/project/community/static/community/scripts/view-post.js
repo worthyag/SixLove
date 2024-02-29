@@ -27,7 +27,9 @@ function viewPost(url, infoDiv) {
   document.querySelector(".username").textContent = username;
   document.querySelector(".caption-text").textContent = caption;
 
-  const postComments = querySelector(".post-comments");
+  const postComments = document.querySelector(".post-comments");
+  postComments.textContent = "";
+  
   const comments = infoGroup[3].children;
 
   for (const comment of comments) {
@@ -38,7 +40,7 @@ function viewPost(url, infoDiv) {
   }
 
   const date = infoGroup[4].innerText;
-  console.log(date);
+  document.querySelector(".post-date").textContent = date;
 
   modal.style.display = "block";
 }
