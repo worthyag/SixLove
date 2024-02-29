@@ -14,27 +14,31 @@ for (const feedPost of feedPosts) {
 function viewPost(url, infoDiv) {
   const modal = document.querySelector("#viewPostModal");
   const postImgDiv = document.querySelector(".post-img");
-  const img = postImgDiv.children[0]
-  img.setAttribute("src", url)
+  const img = postImgDiv.children[0];
+  img.setAttribute("src", url);
 
-  const infoGroup = infoDiv.children
+  const infoGroup = infoDiv.children;
 
-  const likeCount = infoGroup[0].innerText
-  const username = infoGroup[1].innerText
-  const caption = infoGroup[2].innerText
+  const likeCount = infoGroup[0].innerText;
+  const username = infoGroup[1].innerText;
+  const caption = infoGroup[2].innerText;
 
-  document.querySelector(".like-count").textContent = likeCount
-  document.querySelector(".username").textContent = username
-  document.querySelector(".caption-text").textContent = caption
+  document.querySelector(".like-count").textContent = likeCount;
+  document.querySelector(".username").textContent = username;
+  document.querySelector(".caption-text").textContent = caption;
 
-  const comments = infoGroup[3].children
+  const postComments = querySelector(".post-comments");
+  const comments = infoGroup[3].children;
+
   for (const comment of comments) {
-    const comment = comment.innerText
-    console.log(comment)
+    const p = document.createElement("p");
+    p.textContent = comment.innerText;
+    p.classList.add("comment");
+    postComments.appendChild(p);
   }
 
-  const date = infoGroup[4].innerText
-  console.log(date)
+  const date = infoGroup[4].innerText;
+  console.log(date);
 
   modal.style.display = "block";
 }
