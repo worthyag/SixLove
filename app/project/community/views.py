@@ -58,6 +58,18 @@ def feed(request):
 @login_required
 def profile(request):
     """"""
+    if request.method == 'POST':
+        form = forms.UserProfileForm(request.POST)
+
+        if form.is_valid():
+            user_profile = form.save(commit=False)
+            user_profile.user = request.user
+            user_profile.save()
+            return redirect("community:profile")
+    else:
+        # Initialising a new form.
+        form = forms.UserProfileForm()
+
     try:
         user_profile = models.UserProfile.objects.get(user=request.user)
         user_posts = models.UserPosts.objects.filter(
@@ -72,6 +84,7 @@ def profile(request):
         {
             "title": "Profile",
             "user_profile": user_profile,
-            "user_posts": user_posts
+            "user_posts": user_posts,
+            "form": form
         }
     )
