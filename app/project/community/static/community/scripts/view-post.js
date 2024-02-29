@@ -1,7 +1,7 @@
-const feed_posts = document.querySelectorAll(".feed-post");
+const feedPosts = document.querySelectorAll(".feed-post");
 
-for (const feed_post of feed_posts) {
-  feed_post.addEventListener("click", (post) => {
+for (const feedPost of feedPosts) {
+  feedPost.addEventListener("click", (post) => {
     console.log("You clicked me!");
 
     viewPost(post);
