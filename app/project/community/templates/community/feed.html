@@ -5,6 +5,8 @@
 <script src="{% static './community/scripts/create-post.js' %}" defer></script>
 {% endblock %}
 {% block content %}
+{% if user_profile %}
+{% if posts %}
 <main id="feed">
   <h2>Feed</h2>
   <button class="create-post-btn">Create New Post</button>
@@ -90,6 +92,17 @@
     </div>
   </div>
 </main>
+{% else %}
+<main>
+  <p>No posts to display.</p>
+  <button class="create-post-btn">Create New Post</button>
+</main>
+{% endif %}
+{% else %}
+<main>
+  <p>You haven't created your user profile yet.</p>
+</main>
+{% endif %}
 <script>
   function closeModal(id) {
     const closeBtn = document.querySelector(id);

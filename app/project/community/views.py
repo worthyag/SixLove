@@ -40,6 +40,7 @@ def feed(request):
         following_posts = models.UserPosts.objects.filter(
             user_profile__in=following_users).order_by('-created_at')
     except:
+        user_profile = None
         following_posts = None
 
     return render(
@@ -47,6 +48,7 @@ def feed(request):
         "./community/feed.html",
         {
             "title": "Feed",
+            "user_profile": user_profile,
             "posts": following_posts,
             "form": form
         }
