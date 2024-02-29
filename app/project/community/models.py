@@ -19,9 +19,9 @@ class UserProfile(models.Model):
     # Represents the many-to-many relationships between users for followers and following.
     # Allows me to retrieve the set of users who are followers and whom a user is following.
     followers = models.ManyToManyField(
-        'self', symmetrical=False, related_name='following', blank=True)
+        'self', symmetrical=False, related_name='followers_set', blank=True)
     following = models.ManyToManyField(
-        'self', symmetrical=False, related_name='followers', blank=True)
+        'self', symmetrical=False, related_name='following_set', blank=True)
 
     def __str__(self):
         return self.username
@@ -50,9 +50,9 @@ class UserProfile(models.Model):
 class Follow(models.Model):
     """"""
     follower = models.ForeignKey(
-        UserProfile, related_name="following_set", on_delete=models.CASCADE)
+        UserProfile, related_name="followed_by", on_delete=models.CASCADE)
     followed = models.ForeignKey(
-        UserProfile, related_name="followers_set", on_delete=models.CASCADE)
+        UserProfile, related_name="following_user", on_delete=models.CASCADE)
 
     def __str__(self):
         return f'{self.follower} follows {self.followed}'
@@ -65,7 +65,7 @@ class UserPosts(models.Model):
         upload_to='post_pics/'
     )
     post_caption = models.TextField()
-    created_at = models.DateTimeField(default=timezone.now())
+    created_at = models.DateTimeField(default=timezone.now)
     likes = models.ManyToManyField(
         UserProfile,
         related_name='post_likes',
@@ -127,7 +127,7 @@ class Like(models.Model):
     """"""
     user_profile = models.ForeignKey(UserProfile, on_delete=models.CASCADE)
     post = models.ForeignKey(UserPosts, on_delete=models.CASCADE)
-    created_at = models.DateTimeField(default=timezone.now())
+    created_at = models.DateTimeField(default=timezone.now)
 
     def __str__(self):
         return f"{self.user_profile.username} likes {self.post.user_profile.username}'s post"
@@ -138,7 +138,7 @@ class Comment(models.Model):
     user_profile = models.ForeignKey(UserProfile, on_delete=models.CASCADE)
     post = models.ForeignKey(UserPosts, on_delete=models.CASCADE)
     text = models.TextField()
-    created_at = models.DateTimeField(default=timezone.now())
+    created_at = models.DateTimeField(default=timezone.now)
 
     def __str__(self):
         return f"{self.user_profile.username}'s comment on {self.post.user_profile.username}'s post"
