@@ -44,8 +44,12 @@ def feed(request):
     try:
         user_profile = models.UserProfile.objects.get(user=request.user)
         following_users = user_profile.following.all()
+
+        # Get posts from user's profile and users they are following.
         following_posts = models.UserPosts.objects.filter(
-            user_profile__in=following_users).order_by('-created_at')
+            user_profile__in=following_users) | models.UserPosts.objects.filter(
+            user_profile=user_profile)
+        following_posts = following_posts.order_by('-created_at').distinct()
     except:
         user_profile = None
         following_posts = None
