@@ -58,8 +58,11 @@ def feed(request):
 @login_required
 def profile(request):
     """"""
+    # user_profile, created = models.UserProfile.objects.get_or_create(
+    #     user=request.user)
+
     if request.method == 'POST':
-        form = forms.UserProfileForm(request.POST)
+        form = forms.UserProfileForm(request.POST, request.FILES)
 
         if form.is_valid():
             user_profile = form.save(commit=False)
@@ -73,18 +76,50 @@ def profile(request):
     try:
         user_profile = models.UserProfile.objects.get(user=request.user)
         user_posts = models.UserPosts.objects.filter(
-            user=request.user).order_by('-created_at')
-    except:
+            user_profile=user_profile).order_by('-created_at')
+
+    except models.UserProfile.DoesNotExist:
         user_profile = None
         user_posts = None
 
-    return render(
-        request,
-        "./community/profile.html",
-        {
-            "title": "Profile",
-            "user_profile": user_profile,
-            "user_posts": user_posts,
-            "form": form
-        }
-    )
+    if user_profile:
+        user_posts = models.UserPosts.objects.filter(
+            user_profile=user_profile).order_by('-created_at')
+        return render(
+            request,
+            "./community/profile.html",
+            {
+                "title": "Profile",
+                "user_profile": user_profile,
+                "user_posts": user_posts,
+            }
+        )
+    else:
+        # If there is no profile, render the template without user_profile and user_posts
+        return render(
+            request,
+            "./community/profile.html",
+            {
+                "title": "Profile",
+                "form": form
+            }
+        )
+
+    # try:
+    #     user_profile = models.UserProfile.objects.get(user=request.user)
+    #     user_posts = models.UserPosts.objects.filter(
+    #         user=request.user).order_by('-created_at')
+    # except:
+    #     user_profile = None
+    #     user_posts = None
+
+    # return render(
+    #     request,
+    #     "./community/profile.html",
+    #     {
+    #         "title": "Profile",
+    #         "user_profile": user_profile,
+    #         "user_posts": user_posts,
+    #         "form": form
+    #     }
+    # )
