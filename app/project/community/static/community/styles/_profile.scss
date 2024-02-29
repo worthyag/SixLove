@@ -204,6 +204,7 @@ main#profile {
     }
 
     @include post(100%, 100%);
+    @include form();
 
   }
 }
