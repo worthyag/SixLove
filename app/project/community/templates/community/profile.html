@@ -107,18 +107,22 @@
       <div class="modal-content">
         <span class="close-btn" onclick="closeModal('#viewPostModal')">&times;</span>
         <div id="modalContent">
-          <!-- <form action="" method="post" novalidate>
-            {% csrf_token %}
-            {{ form.as_p }}
-            <div style="display: none;">
-              <label for="session-id">ID: </label>
-              <input type="hidden" type="text" name="session-id" id="session-id" value="X">
+          <div class="post">
+            <div class="post-img"></div>
+            <div class="post-btns">
+              <button class="post-like-btn"><img src="{% static './community/images/like-icon.svg'%}" alt="like button"></button>
+              <button class="post-comment-btn"><img src="{% static './community/images/comments-icon.svg'%}" alt="comment button"></button>
             </div>
-            <input class="btn" type="submit" value="Edit Tennis Session">
-          </form> -->
-          <p>Hello World</p>
-        </div>
-      </div>
+            <div class="post-likes"><span class="like-count">124</span> likes</div>
+            <div class="post-caption">
+              <span class="username">username</span>
+              <span class="caption-text">caption text will be placed...</span>
+            </div>
+            <div class="post-comments">View all 12 comments</div>
+            <div class="post-date">2 days ago</div>
+              </div>
+            </div>
+          </div>
     </div>
 </main>
 <script>

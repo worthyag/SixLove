@@ -5,66 +5,6 @@ main#feed {
     align-items: center;
     gap: 24px;
 
-    .post {
-      border-radius: 8px;
-      border: 1px solid $black;
-
-      width: max-content;
-      padding-bottom: 12px;
-
-      .post-img {
-        width: 45vw;
-        min-width: 300px;
-        height: 30vw;
-        min-height: 200px;
-        background-color: lightblue;
-        border-radius: 8px 8px 0 0;
-        border-bottom: 1px solid $black;
-
-      }
-
-      .post-btns {
-        display: flex;
-        gap: 12px;
-        padding: 8px;
-
-        button {
-          background-color: #FFFFFF00;
-          padding: 0;
-          margin: 0;
-
-          img {
-            width: 20px;
-            height: 20px;
-          }
-        }
-      }
-
-      .post-likes, .post-caption, 
-      .post-comments, .post-date {
-        padding: 0 8px;
-      }
-
-      .post-caption {
-        margin: 12px 0;
-        .username {
-          font-weight: 700;
-        }
-      }
-
-      .post-comments {
-        font-size: 0.9rem;
-
-        &:hover {
-          cursor: pointer;
-        }
-      }
-
-      .post-date {
-        font-weight: 300;
-        font-size: 0.8rem;
-        padding-top: 8px;
-      }
-    }
+    @include post(max-content, 45vw);
   }
 }
