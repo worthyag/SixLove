@@ -21,11 +21,20 @@ def connect(request):
 @login_required
 def feed(request):
     """"""
+    try:
+        user_profile = models.UserProfile.objects.get(user=request.user)
+        following_users = user_profile.following.all()
+        following_posts = models.UserPosts.objects.filter(
+            user_profile__in=following_users).order_by('-created_at')
+    except:
+        following_posts = None
+
     return render(
         request,
         "./community/feed.html",
         {
             "title": "Feed",
+            "posts": following_posts
         }
     )
 

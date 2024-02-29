@@ -6,7 +6,27 @@
 {% block content %}
 <main id="feed">
   <h2>Feed</h2>
+  <button>Create New Post</button>
   <div class="posts">
+    {% for post in posts %}
+    <div class="post">
+      <div class="post-img">
+        <img src="{{ post.post_picture.url }}" alt="User post">
+      </div>
+      <div class="post-btns">
+        <button class="post-like-btn"><img src="{% static './community/images/like-icon.svg'%}" alt="like button"></button>
+        <button class="post-comment-btn"><img src="{% static './community/images/comments-icon.svg'%}" alt="comment button"></button>
+      </div>
+      <div class="post-likes"><span class="like-count">{{ post.get_like_count }}</span> likes</div>
+      <div class="post-caption">
+        <span class="username">{{ post.user_profile.username }}</span>
+        <span class="caption-text">{{ post.post_caption }}</span>
+      </div>
+      <div class="post-comments">View all 12 comments</div>
+      <div class="post-date">2 days ago</div>
+    </div>
+    {% endfor %}
+
     <div class="post">
       <div class="post-img"></div>
       <div class="post-btns">
