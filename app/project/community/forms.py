@@ -28,6 +28,10 @@ class UserProfileForm(forms.ModelForm):
     Creates a user profile for the user.
     """
 
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['user'].required = False
+
     class Meta:
         model = UserProfile
         fields = ['user', 'username', 'profile_name', 'profile_picture', 'bio']

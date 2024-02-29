@@ -57,22 +57,26 @@
     </div>
   </div>
   <div class="feed">
-    {% for post in user_posts %}
-    <div class="feed-post">
-      <img src="{{ post.post_picture.url }}" alt="user post">
-      <div class="post-details" style="display: none;">
-        <span class="likes-data">{{ post.get_like_count }}</span>
-        <span class="username-data">{{ post.user_profile.username }}</span>
-        <span class="captionText-data">{{ post.post_caption }}</span>
-        <div class="comments-data">
-          {% for comment in post.comments.all %}
-          <span class="comments-data">{{ comment }}</span>
-          {% endfor %}
+    {% if user_posts%}
+      {% for post in user_posts %}
+      <div class="feed-post">
+        <img src="{{ post.post_picture.url }}" alt="user post">
+        <div class="post-details" style="display: none;">
+          <span class="likes-data">{{ post.get_like_count }}</span>
+          <span class="username-data">{{ post.user_profile.username }}</span>
+          <span class="captionText-data">{{ post.post_caption }}</span>
+          <div class="comments-data">
+            {% for comment in post.comments.all %}
+            <span class="comments-data">{{ comment }}</span>
+            {% endfor %}
+          </div>
+          <span class="date-data">{{ post.created_at }}</span>
         </div>
-        <span class="date-data">{{ post.created_at }}</span>
       </div>
-    </div>
-    {% endfor %}
+      {% endfor %}
+    {% else %}
+    <p>No posts yet.</p>
+    {% endif %}
 
     <!-- <div class="feed-post">
       <img src="{% static './community/images/test.jpeg' %}" alt="user post">
