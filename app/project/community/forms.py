@@ -10,10 +10,16 @@ class UserPostsForm(forms.ModelForm):
     class Meta:
         model = UserPosts
         fields = ['user_profile', 'post_picture', 'post_caption', 'created_at']
+
         widgets = {
             'user_profile': forms.HiddenInput(),
             'created_at': forms.HiddenInput(),
         }
+
+        def __init__(self, *args, **kwargs):
+            super().__init__(*args, **kwargs)
+            # Set the field as not required
+            self.fields['user_profile'].required = False
 
 
 class UserProfileForm(forms.ModelForm):
