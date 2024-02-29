@@ -1,4 +1,6 @@
-{% extends './base.html' %} {% load static %} {% block content %}
+{% extends './base.html' %} 
+{% load static %} 
+{% block content %}
 <main id="profile">
   <!-- <h2>Profile</h2> -->
   <div class="profile-top">
@@ -37,16 +39,21 @@
       </div>
     </div>
   </div>
-  <div class="toggle-feed-view">
-    <button>
-      <img src="{% static './community/images/menu.png' %}" alt="" />
-    </button>
-    <button>
-      <img
-        src="{% static './community/images/achievements-icon.png' %}"
-        alt=""
-      />
-    </button>
+  <div class="toggle-container">
+    <div class="toggle-feed-view">
+      <button class="posts-btn active">
+        <img
+          src="{% static './community/images/menu.png' %}"
+          alt="Post menu icon"
+        />
+      </button>
+      <button class="achievements-btn">
+        <img
+          src="{% static './community/images/achievements-icon.png' %}"
+          alt="Achievements icon"
+        />
+      </button>
+    </div>
   </div>
   <div class="feed">
     <div class="feed-post"></div>

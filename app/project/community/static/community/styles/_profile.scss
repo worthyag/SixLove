@@ -77,6 +77,35 @@ main#profile {
     }
   }
 
+  .toggle-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 24px 0;
+
+    .toggle-feed-view {
+      background-color: $white-grey;
+      width: fit-content;
+      padding: 8px 16px;
+      border-radius: 8px;
+      border: 1px solid $black;
+
+      button.active {
+        background-color: $green;
+      }
+
+      button {
+        background-color: $white;
+        border: 1px solid $black;
+        margin-bottom: 0px;
+
+        &:hover {
+          background-color: $green;
+        }
+      }
+    }
+  }
+
   .feed {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
