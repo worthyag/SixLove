@@ -21,7 +21,8 @@ class UserProfile(models.Model):
 
 
 class UserPosts(models.Model):
-    user = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
+    """"""
+    user_profile = models.ForeignKey(UserProfile, on_delete=models.CASCADE)
     post_picture = models.ImageField(
         upload_to='post_pics/'
     )
@@ -29,4 +30,18 @@ class UserPosts(models.Model):
     created_at = models.DateTimeField(default=timezone.now())
 
     def __str__(self):
-        return f"{self.user.username}'s post - {self.created_at}"
+        return f"{self.user_profile.username}'s post - {self.created_at}"
+
+
+class Like(models.Model):
+    """"""
+    user_profile = models.ForeignKey(UserProfile, on_delete=models.CASCADE)
+    post = models.ForeignKey(UserPosts, on_delete=models.CASCADE)
+    created_at = models.DateTimeField(default=timezone.now())
+
+    def __str__(self):
+        return f"{self.user_profile.username} likes {self.post.user_profile.username}'s post"
+
+
+class Comment(models.Model):
+    """"""
