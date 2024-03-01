@@ -8,6 +8,53 @@ from . import forms
 # Create your views here.
 
 
+# def create_post(request, user_profile, redirect_url):
+#     """Helper function to create a new post."""
+#     # Creating a new post.
+#     form = forms.UserPostsForm(request.POST, request.FILES)
+
+#     if form.is_valid():
+#         post = form.save(commit=False)
+#         post.user_profile = user_profile
+#         post.save()
+#     else:
+#         return HttpResponseBadRequest("Invalid form data")
+
+#     return redirect(redirect_url)
+
+
+# def edit_post(request, selected_post, redirect_url):
+#     """Helper function to edit a post."""
+#     form = forms.UserPostsForm(
+#         request.POST, request.FILES, instance=selected_post)
+
+#     # Getting the request user's user profile.
+#     user_profile = models.UserProfile.objects.get(user=request.user)
+
+#     if form.is_valid():
+#         post = form.save(commit=False)
+
+#         if user_profile and post.user_profile == user_profile:
+#             post.post_picture = selected_post.post_picture
+#             post.save()
+#     else:
+#         return HttpResponseBadRequest("Invalid form data")
+
+#     return redirect(redirect_url)
+
+
+# def delete_post(request, selected_post, redirect_url):
+#     """Helper function to delete a post."""
+#     user_profile = models.UserProfile.objects.get(user=request.user)
+
+#     if user_profile and selected_post.user_profile == user_profile:
+#         selected_post.delete()
+#     else:
+#         return HttpResponseBadRequest("Invalid request")
+
+#     return redirect(redirect_url)
+
+
 @login_required
 def connect(request):
     """"""
