@@ -4,6 +4,7 @@
 <script src="{% static './community/scripts/toggle-like.js' %}" defer></script>
 <script src="{% static './community/scripts/create-post.js' %}" defer></script>
 <script src="{% static './community/scripts/post-menu.js' %}" defer></script>
+<script src="{% static './community/scripts/edit-delete-post.js' %}" defer></script>
 {% endblock %}
 {% block content %}
 {% if user_profile %}
@@ -25,8 +26,8 @@
           <div class="post-action-group">
             <button class="post-more-btn"><img src="{% static './community/images/more-icon.svg'%}" alt="more button"></button>
             <div class="post-action-btns hide-action-btns">
-              <span>Edit Post</span>
-              <span>Delete Post</span>
+              <span class="edit-post-btn">Edit Post</span>
+              <span class="delete-post-btn">Delete Post</span>
             </div>
           </div>
         </div>
