@@ -11,6 +11,9 @@ main#feed {
     justify-content: center;
     align-items: center;
 
+    // To put on top of the buttons.
+    z-index: 2;
+
     .modal-content {
       background-color: #fefefe;
       padding: 20px;

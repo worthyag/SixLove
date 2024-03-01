@@ -197,37 +197,40 @@ main#profile {
   }
 
   // Modal styles
-.modal {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
-  justify-content: center;
-  align-items: center;
+  .modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
 
-  .modal-content {
-    background-color: #fefefe;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    max-width: 400px;
-    margin: 0 auto;
+    // To put on top of the buttons.
+    z-index: 2;
 
-    .close-btn {
-      display: flex;
-      justify-content: flex-end;
-      cursor: pointer;
-      font-size: 3rem;
+    .modal-content {
+      background-color: #fefefe;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      max-width: 400px;
+      margin: 0 auto;
+
+      .close-btn {
+        display: flex;
+        justify-content: flex-end;
+        cursor: pointer;
+        font-size: 3rem;
+      }
+
+      @include post(100%);
+      @include form();
+
     }
-
-    @include post(100%);
-    @include form();
-
   }
-}
 }
 
 @media only screen and (max-width: 400px) {

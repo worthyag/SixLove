@@ -1,15 +1,20 @@
-const editPostBtn = document.querySelector(".edit-post-btn");
-const deletePostBtn = document.querySelector(".delete-post-btn");
+const editPostButtons = document.querySelectorAll(".edit-post-btn");
+const deletePostButtons = document.querySelectorAll(".delete-post-btn");
 
-editPostBtn.addEventListener("click", () => {
-  console.log("You clicked edit!");
-  editPost();
-});
 
-deletePostBtn.addEventListener("click", () => {
-  console.log("You clicked delete!");
-  deletePost();
-});
+for (const editPostBtn of editPostButtons) {
+  editPostBtn.addEventListener("click", () => {
+    console.log("You clicked edit!");
+    editPost();
+  });
+}
+
+for (const deletePostBtn of deletePostButtons) {
+  deletePostBtn.addEventListener("click", () => {
+    console.log("You clicked delete!");
+    deletePost();
+  });
+}
 
 
 function editPost() {

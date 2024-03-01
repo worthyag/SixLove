@@ -239,6 +239,7 @@ main#profile .modal {
   background-color: rgba(0, 0, 0, 0.7);
   justify-content: center;
   align-items: center;
+  z-index: 2;
 }
 main#profile .modal .modal-content {
   background-color: #fefefe;
@@ -413,6 +414,7 @@ main#feed .modal {
   background-color: rgba(0, 0, 0, 0.7);
   justify-content: center;
   align-items: center;
+  z-index: 2;
 }
 main#feed .modal .modal-content {
   background-color: #fefefe;
