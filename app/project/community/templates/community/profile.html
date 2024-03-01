@@ -73,6 +73,7 @@
             {% endfor %}
           </div>
           <span class="date-data">{{ post.created_at }}</span>
+          <span class="post-id-data">{{ post.id }}</span>
         </div>
       </div>
       {% endfor %}
@@ -159,7 +160,7 @@
             <div style="display: none;">
               <label for="post-id">ID: </label>
               <input type="hidden" type="text" name="post-id" id="post-id" value="edit">
-              <input type="hidden" type="text" name="post-id-to-edit" id="post-id-to-edit" value="{{ post.id }}">
+              <input type="hidden" type="text" name="post-id-to-edit" id="post-id-to-edit" value="X">
             </div>
             <input class="btn" type="submit" value="Edit Post" />
           </form>
@@ -178,7 +179,7 @@
             <div style="display: none;">
               <label for="post-id">ID: </label>
               <input type="hidden" type="text" name="post-id" id="post-id" value="delete">
-              <input type="hidden" type="text" name="post-id-to-delete" id="post-id-to-delete" value="{{ post.id }}">
+              <input type="hidden" type="text" name="post-id-to-delete" id="post-id-to-delete" value="X">
             </div>
             <input class="btn" type="submit" value="Delete Post" />
           </form>
