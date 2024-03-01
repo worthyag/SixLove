@@ -37,6 +37,18 @@
         gap: 12px;
       }
 
+      .post-action-group {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+
+        .post-action-btns {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-end;
+        }
+      }
+
       button {
         background-color: #FFFFFF00;
         padding: 0;

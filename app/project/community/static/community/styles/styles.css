@@ -288,6 +288,16 @@ main#profile .modal .modal-content .post .post-btns .interactive-btns {
   display: flex;
   gap: 12px;
 }
+main#profile .modal .modal-content .post .post-btns .post-action-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+main#profile .modal .modal-content .post .post-btns .post-action-group .post-action-btns {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
 main#profile .modal .modal-content .post .post-btns button {
   background-color: rgba(255, 255, 255, 0);
   padding: 0;
@@ -459,6 +469,16 @@ main#feed .posts .post .post-btns {
 main#feed .posts .post .post-btns .interactive-btns {
   display: flex;
   gap: 12px;
+}
+main#feed .posts .post .post-btns .post-action-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+main#feed .posts .post .post-btns .post-action-group .post-action-btns {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
 }
 main#feed .posts .post .post-btns button {
   background-color: rgba(255, 255, 255, 0);

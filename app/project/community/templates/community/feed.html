@@ -22,8 +22,12 @@
             <button class="post-like-btn"><img src="{% static './community/images/like-icon.svg'%}" alt="like button"></button>
             <button class="post-comment-btn"><img src="{% static './community/images/comments-icon.svg'%}" alt="comment button"></button>
           </div>
-          <div>
+          <div class="post-action-group">
             <button class="post-more-btn"><img src="{% static './community/images/more-icon.svg'%}" alt="more button"></button>
+            <div class="post-action-btns">
+              <span>Edit Post</span>
+              <span>Delete Post</span>
+            </div>
           </div>
         </div>
         <div class="post-likes"><span class="like-count">{{ post.get_like_count }}</span> likes</div>
@@ -41,8 +45,13 @@
       <!-- <div class="post">
         <div class="post-img"></div>
         <div class="post-btns">
-          <button class="post-like-btn"><img src="{% static './community/images/like-icon.svg'%}" alt="like button"></button>
-          <button class="post-comment-btn"><img src="{% static './community/images/comments-icon.svg'%}" alt="comment button"></button>
+          <div class="interactive-btns">
+            <button class="post-like-btn"><img src="{% static './community/images/like-icon.svg'%}" alt="like button"></button>
+            <button class="post-comment-btn"><img src="{% static './community/images/comments-icon.svg'%}" alt="comment button"></button>
+          </div>
+          <div>
+            <button class="post-more-btn"><img src="{% static './community/images/more-icon.svg'%}" alt="more button"></button>
+          </div>
         </div>
         <div class="post-likes"><span class="like-count">124</span> likes</div>
         <div class="post-caption">
