@@ -268,8 +268,12 @@ main#profile .modal .modal-content .post .post-img img {
 }
 main#profile .modal .modal-content .post .post-btns {
   display: flex;
-  gap: 12px;
+  justify-content: space-between;
   padding: 8px;
+}
+main#profile .modal .modal-content .post .post-btns .interactive-btns {
+  display: flex;
+  gap: 12px;
 }
 main#profile .modal .modal-content .post .post-btns button {
   background-color: rgba(255, 255, 255, 0);
@@ -431,8 +435,12 @@ main#feed .posts .post .post-img img {
 }
 main#feed .posts .post .post-btns {
   display: flex;
-  gap: 12px;
+  justify-content: space-between;
   padding: 8px;
+}
+main#feed .posts .post .post-btns .interactive-btns {
+  display: flex;
+  gap: 12px;
 }
 main#feed .posts .post .post-btns button {
   background-color: rgba(255, 255, 255, 0);

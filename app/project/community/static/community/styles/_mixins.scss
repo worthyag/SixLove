@@ -26,8 +26,13 @@
 
     .post-btns {
       display: flex;
-      gap: 12px;
+      justify-content: space-between;
       padding: 8px;
+
+      .interactive-btns {
+        display: flex;
+        gap: 12px;
+      }
 
       button {
         background-color: #FFFFFF00;

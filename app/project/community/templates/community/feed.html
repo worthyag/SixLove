@@ -17,8 +17,10 @@
           <img src="{{ post.post_picture.url }}" alt="User post">
         </div>
         <div class="post-btns">
-          <button class="post-like-btn"><img src="{% static './community/images/like-icon.svg'%}" alt="like button"></button>
-          <button class="post-comment-btn"><img src="{% static './community/images/comments-icon.svg'%}" alt="comment button"></button>
+          <div class="interactive-btns">
+            <button class="post-like-btn"><img src="{% static './community/images/like-icon.svg'%}" alt="like button"></button>
+            <button class="post-comment-btn"><img src="{% static './community/images/comments-icon.svg'%}" alt="comment button"></button>
+          </div>
           <div>
             <button class="post-more-btn"><img src="{% static './community/images/more-icon.svg'%}" alt="more button"></button>
           </div>
