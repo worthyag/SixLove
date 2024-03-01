@@ -56,18 +56,24 @@ def feed(request):
                                                   )
             except:
                 return HttpResponseBadRequest("Invalid request")
+
+            # Creating a form instance with the provided data and the
+            # instance to be updated.
             form = forms.UserPostsForm(request.POST,
                                        request.FILES,
                                        instance=selected_post)
 
             if form.is_valid():
-                post = form.save()
+                post = form.save(commit=False)
 
                 # Only the user who created the post can edit it.
                 try:
                     user_profile = models.UserProfile.objects.get(
                         user=request.user)
                     post.user_profile = user_profile
+
+                    # Ensure that no new picture is given.
+                    post.post_picture = selected_post.post_picture
                     post.save()
                 except models.UserProfile.DoesNotExist:
                     print("User profile does not exist.")
