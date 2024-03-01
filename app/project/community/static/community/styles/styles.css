@@ -187,8 +187,10 @@ main#profile .feed .feed-post {
   border: 1px solid #000000;
 }
 main#profile .feed .feed-post img {
-  width: inherit;
-  height: inherit;
+  width: 30vw;
+  height: 30vw;
+  min-height: 100px;
+  min-width: 100px;
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 8px;

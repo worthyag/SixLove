@@ -141,8 +141,11 @@ main#profile {
       border: 1px solid $black;
 
       img {
-        width: inherit;
-        height: inherit;
+        width: 30vw;
+        height: 30vw;
+        min-height: 100px;
+        min-width: 100px;
+
         object-fit: cover;
         border-radius: 8px;
       }
