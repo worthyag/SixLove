@@ -295,6 +295,7 @@ main#profile .modal .modal-content .post .post-caption {
   margin: 12px 0;
   width: 100%;
   min-width: 300px;
+  box-sizing: border-box;
 }
 main#profile .modal .modal-content .post .post-caption .username {
   font-weight: 700;
@@ -466,6 +467,7 @@ main#feed .posts .post .post-caption {
   margin: 12px 0;
   width: 45vw;
   min-width: 300px;
+  box-sizing: border-box;
 }
 main#feed .posts .post .post-caption .username {
   font-weight: 700;
