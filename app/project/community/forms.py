@@ -10,6 +10,7 @@ class UserPostsForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.fields['user_profile'].required = False
+        self.fields['post_picture'].required = False
 
     class Meta:
         model = UserPosts
