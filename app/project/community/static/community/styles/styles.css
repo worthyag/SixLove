@@ -261,8 +261,10 @@ main#profile .modal .modal-content .post .post-img {
   border-bottom: 1px solid #000000;
 }
 main#profile .modal .modal-content .post .post-img img {
-  width: inherit;
+  width: 100%;
+  min-width: 300px;
   height: inherit;
+  min-height: 200px;
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 8px 8px 0 0;
@@ -430,8 +432,10 @@ main#feed .posts .post .post-img {
   border-bottom: 1px solid #000000;
 }
 main#feed .posts .post .post-img img {
-  width: inherit;
+  width: 45vw;
+  min-width: 300px;
   height: inherit;
+  min-height: 200px;
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 8px 8px 0 0;

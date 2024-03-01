@@ -17,8 +17,10 @@
       border-bottom: 1px solid $black;
 
       img {
-        width: inherit;
+        width: $width;
+        min-width: 300px;
         height: inherit;
+        min-height: 200px;
         object-fit: cover;
         border-radius: 8px 8px 0 0;
       }
