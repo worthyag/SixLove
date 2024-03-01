@@ -78,6 +78,16 @@ class UserPosts(models.Model):
     def __str__(self):
         return f"{self.user_profile.username}'s post - {self.created_at}"
 
+    def delete(self, *args, **kwargs):
+        """"""
+        # Deleting the associated picture when the post is deleted.
+        try:
+            storage, path = self.post_picture.storage, self.post_picture.path
+            super(UserPosts, self).delete(*args, **kwargs)
+            storage.delete(path)
+        except FileNotFoundError:
+            print("File does not exist.")
+
     def like(self, user_profile):
         """"""
         like_instance, created = Like.objects.get_or_create(

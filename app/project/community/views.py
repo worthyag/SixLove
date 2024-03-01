@@ -97,7 +97,7 @@ def feed(request):
                 user_profile = models.UserProfile.objects.get(
                     user=request.user)
 
-                if (user_profile):
+                if user_profile and selected_post.user_profile == user_profile:
                     selected_post.delete()
                     return redirect("community:feed")
 
@@ -138,9 +138,6 @@ def feed(request):
 @login_required
 def profile(request):
     """"""
-    # user_profile, created = models.UserProfile.objects.get_or_create(
-    #     user=request.user)
-
     if request.method == 'POST':
         form = forms.UserProfileForm(request.POST, request.FILES)
 
@@ -184,22 +181,3 @@ def profile(request):
                 "form": form
             }
         )
-
-    # try:
-    #     user_profile = models.UserProfile.objects.get(user=request.user)
-    #     user_posts = models.UserPosts.objects.filter(
-    #         user=request.user).order_by('-created_at')
-    # except:
-    #     user_profile = None
-    #     user_posts = None
-
-    # return render(
-    #     request,
-    #     "./community/profile.html",
-    #     {
-    #         "title": "Profile",
-    #         "user_profile": user_profile,
-    #         "user_posts": user_posts,
-    #         "form": form
-    #     }
-    # )
