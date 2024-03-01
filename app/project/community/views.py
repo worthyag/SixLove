@@ -1,5 +1,6 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
+from django.http import HttpResponseBadRequest
 
 from . import models
 from . import forms
@@ -27,21 +28,78 @@ def feed(request):
 
         post_id = request.POST.get("post-id")
 
+        if post_id == "create":
+            # Creating a new post.
+            form = forms.UserPostsForm(request.POST, request.FILES)
 
-        form = forms.UserPostsForm(request.POST, request.FILES)
+            if form.is_valid():
+                post = form.save(commit=False)
 
-        if form.is_valid():
-            post = form.save(commit=False)
+                try:
+                    user_profile = models.UserProfile.objects.get(
+                        user=request.user)
+                    post.user_profile = user_profile
+                    post.save()
+                except models.UserProfile.DoesNotExist:
+                    print("User profile does not exist.")
 
+                return redirect("community:feed")
+            else:
+                return HttpResponseBadRequest("Invalid form data")
+
+        elif post_id == "edit":
+            # Editing the post.
+            try:
+                selected_post = get_object_or_404(models.UserPosts,
+                                                  id=int(
+                                                      request.POST["post-id-to-edit"])
+                                                  )
+            except:
+                return HttpResponseBadRequest("Invalid request")
+            form = forms.UserPostsForm(request.POST,
+                                       request.FILES,
+                                       instance=selected_post)
+
+            if form.is_valid():
+                post = form.save()
+
+                # Only the user who created the post can edit it.
+                try:
+                    user_profile = models.UserProfile.objects.get(
+                        user=request.user)
+                    post.user_profile = user_profile
+                    post.save()
+                except models.UserProfile.DoesNotExist:
+                    print("User profile does not exist.")
+
+                return redirect("community:feed")
+            else:
+                return HttpResponseBadRequest("Invalid form data")
+
+        elif post_id == "delete":
+            # Deleting a post.
+            try:
+                selected_post = get_object_or_404(models.UserPosts,
+                                                  id=int(
+                                                      request.POST["post-id-to-delete"])
+                                                  )
+            except:
+                return HttpResponseBadRequest("Invalid request")
+
+            # Only the user who created the post can delete it.
             try:
                 user_profile = models.UserProfile.objects.get(
                     user=request.user)
-                post.user_profile = user_profile
-                post.save()
+
+                if (user_profile):
+                    selected_post.delete()
+                    return redirect("community:feed")
+
             except models.UserProfile.DoesNotExist:
                 print("User profile does not exist.")
 
-            return redirect("community:feed")
+        else:
+            pass
     else:
         # Initialising a new form.
         form = forms.UserPostsForm()
