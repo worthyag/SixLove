@@ -30,6 +30,7 @@
     .post-btns {
       display: flex;
       justify-content: space-between;
+      align-items: flex-start;
       padding: 8px;
 
       .interactive-btns {
@@ -51,7 +52,13 @@
           border: 1px solid $black;
           border-radius: 8px;
           padding: 8px;
-          margin-top: 12px;
+
+          // Putting the buttons on top.
+          z-index: 1;
+          background-color: $white;
+          position: absolute;
+          margin-top: 24px;
+
 
           span {
             width: 100px;
@@ -63,6 +70,10 @@
               border-bottom: 1px solid $black;
             }
           }
+        }
+
+        .hide-action-btns {
+          visibility: hidden;
         }
       }
 
