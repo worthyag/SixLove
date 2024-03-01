@@ -209,7 +209,7 @@ def profile(request):
                     except models.UserProfile.DoesNotExist:
                         print("User profile does not exist.")
 
-                    return redirect("community:feed")
+                    return redirect("community:profile")
                 else:
                     return HttpResponseBadRequest("Invalid form data")
 
@@ -230,7 +230,7 @@ def profile(request):
 
                     if user_profile and selected_post.user_profile == user_profile:
                         selected_post.delete()
-                        return redirect("community:feed")
+                        return redirect("community:profile")
 
                 except models.UserProfile.DoesNotExist:
                     print("User profile does not exist.")
