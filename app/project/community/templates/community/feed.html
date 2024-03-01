@@ -77,6 +77,34 @@
       </div>
     </div>
 
+    <!-- Modal for editing a post -->
+    <div id="editPostModal" class="modal">
+      <div class="modal-content">
+        <span class="close-btn" onclick="closeModal('#editPostModal')">&times;</span>
+        <div id="modalContent">
+          <form action="" method="post" novalidate enctype="multipart/form-data">
+            {% csrf_token %} 
+            {{ form.as_p }}
+            <input class="btn" type="submit" value="Edit Post" />
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal for deleting a post -->
+    <div id="deletePostModal" class="modal">
+      <div class="modal-content">
+        <span class="close-btn" onclick="closeModal('#deletePostModal')">&times;</span>
+        <div id="modalContent">
+          <form action="" method="post" novalidate enctype="multipart/form-data">
+            {% csrf_token %} 
+            {{ form.as_p }}
+            <input class="btn" type="submit" value="Delete Post" />
+          </form>
+        </div>
+      </div>
+    </div>
+
   </main>
   {% else %}
   <main id="feed">
