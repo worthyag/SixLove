@@ -31,6 +31,9 @@
             </div>
           </div>
         </div>
+        <div class="post-id-details" style="display: none;">
+          <span class="post-id-data">{{ post.id }}</span>
+        </div>
         <div class="post-likes"><span class="like-count">{{ post.get_like_count }}</span> likes</div>
         <div class="post-caption">
           <span class="username">{{ post.user_profile.username }}</span>
@@ -40,9 +43,6 @@
         <div class="post-comments">{{ comment.text }}</div>
         {% endfor %}
         <div class="post-date">{{ post.created_at }}</div>
-        <div class="post-id-details" style="display: none;">
-          <span class="post-id-data">{{ post.id }}</span>
-        </div>
       </div>
       {% endfor %}
 
