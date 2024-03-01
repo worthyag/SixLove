@@ -26,6 +26,7 @@ function viewPost(url, infoDiv) {
   document.querySelector(".like-count").textContent = likeCount;
   document.querySelector(".username").textContent = username;
   document.querySelector(".caption-text").textContent = caption;
+  // document.querySelector(".post-id-data").textContent = id;
 
   const postComments = document.querySelector(".post-comments");
   postComments.textContent = "";
@@ -41,6 +42,9 @@ function viewPost(url, infoDiv) {
 
   const date = infoGroup[4].innerText;
   document.querySelector(".post-date").textContent = date;
+
+  const id = infoGroup[5].innerText;
+  document.querySelector(".post-id-details").children[0].textContent = id;
 
   modal.style.display = "block";
 }
