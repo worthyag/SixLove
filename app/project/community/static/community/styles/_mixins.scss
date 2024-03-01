@@ -1,13 +1,14 @@
-@mixin post($post-width, $img-width) {
+@mixin post($width) {
   .post {
     border-radius: 8px;
     border: 1px solid $black;
 
-    width: $post-width;
+    width: $width;
+    min-width: 300px;
     padding-bottom: 12px;
 
     .post-img {
-      width: $img-width;
+      width: $width;
       min-width: 300px;
       height: 30vw;
       min-height: 200px;
@@ -53,6 +54,9 @@
 
     .post-caption {
       margin: 12px 0;
+      width: $width;
+      min-width: 300px;
+
       .username {
         font-weight: 700;
       }

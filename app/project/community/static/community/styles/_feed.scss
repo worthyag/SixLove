@@ -37,6 +37,6 @@ main#feed {
     align-items: center;
     gap: 24px;
 
-    @include post(max-content, 45vw);
+    @include post(45vw);
   }
 }

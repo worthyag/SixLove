@@ -210,7 +210,7 @@ main#profile {
       font-size: 3rem;
     }
 
-    @include post(100%, 100%);
+    @include post(100%);
     @include form();
 
   }

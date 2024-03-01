@@ -248,6 +248,7 @@ main#profile .modal .modal-content .post {
   border-radius: 8px;
   border: 1px solid #000000;
   width: 100%;
+  min-width: 300px;
   padding-bottom: 12px;
 }
 main#profile .modal .modal-content .post .post-img {
@@ -290,6 +291,8 @@ main#profile .modal .modal-content .post .post-comments, main#profile .modal .mo
 }
 main#profile .modal .modal-content .post .post-caption {
   margin: 12px 0;
+  width: 100%;
+  min-width: 300px;
 }
 main#profile .modal .modal-content .post .post-caption .username {
   font-weight: 700;
@@ -413,8 +416,8 @@ main#feed .posts {
 main#feed .posts .post {
   border-radius: 8px;
   border: 1px solid #000000;
-  width: -moz-max-content;
-  width: max-content;
+  width: 45vw;
+  min-width: 300px;
   padding-bottom: 12px;
 }
 main#feed .posts .post .post-img {
@@ -457,6 +460,8 @@ main#feed .posts .post .post-comments, main#feed .posts .post .post-date {
 }
 main#feed .posts .post .post-caption {
   margin: 12px 0;
+  width: 45vw;
+  min-width: 300px;
 }
 main#feed .posts .post .post-caption .username {
   font-weight: 700;
