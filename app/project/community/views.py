@@ -23,6 +23,11 @@ def connect(request):
 def feed(request):
     """"""
     if request.method == 'POST':
+        print(request.POST)  # testing
+
+        post_id = request.POST.get("post-id")
+
+
         form = forms.UserPostsForm(request.POST, request.FILES)
 
         if form.is_valid():
