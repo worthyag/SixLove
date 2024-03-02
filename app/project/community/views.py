@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseBadRequest, JsonResponse
+from django.db.models import Exists, OuterRef
 
 from . import models
 from . import forms
@@ -161,12 +162,21 @@ def feed(request):
         user_profile = models.UserProfile.objects.get(user=request.user)
         following_users = user_profile.following.all()
 
-        # Get posts from user's profile and users they are following.
+        # Getting the posts from user's profile and users they are following.
         following_posts = models.UserPosts.objects.filter(
             user_profile__in=following_users) | models.UserPosts.objects.filter(
             user_profile=user_profile)
+
+        # Annotating each post with info about whether the current user has liked it.
+        following_posts = following_posts.annotate(
+            user_has_liked=Exists(models.Like.objects.filter(
+                user_profile=user_profile, post=OuterRef("pk")
+            ))
+        )
+
+        # Ordering the posts and making sure that there are no duplicates.
         following_posts = following_posts.order_by('-created_at').distinct()
-    except:
+    except models.UserProfile.DoesNotExist:
         user_profile = None
         following_posts = None
 
@@ -221,6 +231,13 @@ def profile(request):
     else:
         user_posts = models.UserPosts.objects.filter(
             user_profile=user_profile).order_by('-created_at')
+
+        # Annotating each post with info about whether the current user has liked it.
+        user_posts = user_posts.annotate(
+            user_has_liked=Exists(models.Like.objects.filter(
+                user_profile=user_profile, post=OuterRef("pk")
+            ))
+        )
 
         if request.method == 'POST':
             post_id = request.POST.get("post-id")
@@ -295,6 +312,15 @@ def profile(request):
             following_posts = models.UserPosts.objects.filter(
                 user_profile__in=following_users) | models.UserPosts.objects.filter(
                 user_profile=user_profile)
+
+            # Annotating each post with info about whether the current user has liked it.
+            following_posts = following_posts.annotate(
+                user_has_liked=Exists(models.Like.objects.filter(
+                    user_profile=user_profile, post=OuterRef("pk")
+                ))
+            )
+
+            # Ordering the posts and making sure that there are no duplicates.
             following_posts = following_posts.order_by(
                 '-created_at').distinct()
         except:

@@ -23,7 +23,11 @@
         </div>
         <div class="post-btns">
           <div class="interactive-btns">
-            <button class="post-like-btn"><img src="{% static './community/images/like-icon.svg'%}" alt="like button"></button>
+            {% if post.user_has_liked %}
+              <button class="post-like-btn"><img src="{% static './community/images/liked-icon.svg'%}" alt="like button"></button>
+            {% else %}
+              <button class="post-like-btn"><img src="{% static './community/images/like-icon.svg'%}" alt="like button"></button>
+            {% endif %}
             <button class="post-comment-btn"><img src="{% static './community/images/comments-icon.svg'%}" alt="comment button"></button>
           </div>
           <div class="post-action-group">
