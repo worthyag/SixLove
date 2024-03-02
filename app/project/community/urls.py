@@ -8,4 +8,5 @@ urlpatterns = [
     path("", views.connect, name="connect"),
     path("feed/", views.feed, name="feed"),
     path("profile/", views.profile, name="profile"),
+    path("toggle-like/<int:post_id>", views.toggle_like, name="toggle-like"),
 ]
