@@ -4,16 +4,6 @@ const likeButtons = document.querySelectorAll(".post-like-btn");
 
 for (const likeButton of likeButtons) {
   likeButton.addEventListener("click", async () => {
-    // const feedPost = likeButton.closest(".post");
-    
-    // if (!feedPost) {
-    //   console.error("Could not find .feed-post element");
-    //   return;
-    // }
-    // else {
-    //   console.log("Found it");
-    //   return;
-    // }
     const postId = likeButton.closest(".post")
                               .querySelector(".post-id-details")
                               .children[0]
@@ -30,13 +20,6 @@ for (const likeButton of likeButtons) {
           "X-CSRFToken": csrfToken,
         }
       });
-      // const response = await fetch(`/toggle-like/${postId}/`, {
-      //   method: "POST",
-      //   headers: {
-      //     "Content-Type": "application/json",
-      //     "X-CSRFToken": csrfToken,
-      //   }
-      // });
 
       const data = await response.json();
 
