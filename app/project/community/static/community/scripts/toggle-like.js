@@ -2,7 +2,7 @@
 
 const likeButtons = document.querySelectorAll(".post-like-btn");
 
-for (const likeButton of likeButtons) {
+for (const [index, likeButton] of likeButtons.entries()) {
   likeButton.addEventListener("click", async () => {
     const postId = likeButton.closest(".post")
                               .querySelector(".post-id-details")
@@ -36,6 +36,9 @@ for (const likeButton of likeButtons) {
       const like = "/static/community/images/like-icon.svg";
 
       img.setAttribute("src", (url === like) ? liked : like);
+
+      // Reloading the page after updating the like.
+      location.reload();
 
     } catch (error) {
         console.error("Error toggling the like: ", error);

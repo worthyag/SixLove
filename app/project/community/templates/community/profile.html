@@ -78,6 +78,7 @@
           </div>
           <span class="date-data">{{ post.created_at }}</span>
           <span class="post-id-data">{{ post.id }}</span>
+          <span class="user_has_liked-data">{{ post.user_has_liked }}</span>
         </div>
       </div>
       {% endfor %}
@@ -130,11 +131,7 @@
             </div>
             <div class="post-btns">
               <div class="interactive-btns">
-                {% if post.user_has_liked %}
-                  <button class="post-like-btn"><img src="{% static './community/images/liked-icon.svg'%}" alt="like button"></button>
-                {% else %}
-                  <button class="post-like-btn"><img src="{% static './community/images/like-icon.svg'%}" alt="like button"></button>
-                {% endif %}
+                <button class="post-like-btn"><img src="{% static './community/images/liked-icon.svg'%}" alt="like button"></button>
                 <button class="post-comment-btn"><img src="{% static './community/images/comments-icon.svg'%}" alt="comment button"></button>
               </div>
               <div class="post-action-group">

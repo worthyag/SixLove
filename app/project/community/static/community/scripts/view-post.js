@@ -46,5 +46,13 @@ function viewPost(url, infoDiv) {
   const id = infoGroup[5].innerText;
   document.querySelector(".post-id-details").children[0].textContent = id;
 
+  const userHasLiked = infoGroup[6].innerText.toLowerCase();
+  const likeImg = document.querySelector(".post-like-btn").children[0];
+
+  const liked = "/static/community/images/liked-icon.svg";
+  const like = "/static/community/images/like-icon.svg";
+
+  likeImg.setAttribute("src", (userHasLiked === "true") ? liked : like);
+
   modal.style.display = "block";
 }
