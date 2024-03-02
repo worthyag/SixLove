@@ -380,7 +380,11 @@ def toggle_like(request, post_id):
 
     # Returning the updated like count and whether the user has liked the post.
     like_count = post.get_like_count()
-    return JsonResponse({
+    response_data = {
         "like_count": like_count,
         "liked": liked
-    })
+    }
+
+    print("Response Data:", response_data)
+
+    return JsonResponse(response_data)

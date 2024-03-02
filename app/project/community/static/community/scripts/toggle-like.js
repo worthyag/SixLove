@@ -1,3 +1,5 @@
+// const toggleLikeUrl = "community/toggle-like/__post_id__/";
+
 const likeButtons = document.querySelectorAll(".post-like-btn");
 
 for (const likeButton of likeButtons) {
@@ -18,11 +20,28 @@ for (const likeButton of likeButtons) {
                               .innerText;
 
     try {
-      const response = await fetch(`/toggle-like/${postId}/`, {method: "POST" });
+      const csrfToken = document.querySelector("input[name=csrfmiddlewaretoken]").value;
+      
+
+      const response = await fetch(toggleLikeUrl.replace("__post_id__", postId), {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "X-CSRFToken": csrfToken,
+        }
+      });
+      // const response = await fetch(`/toggle-like/${postId}/`, {
+      //   method: "POST",
+      //   headers: {
+      //     "Content-Type": "application/json",
+      //     "X-CSRFToken": csrfToken,
+      //   }
+      // });
+
       const data = await response.json();
 
       // Updating the like count.
-      const likeCountElement = likeButton.closest(".feed-post")
+      const likeCountElement = likeButton.closest(".post")
                                           .querySelector(".like-count");
       likeCountElement.innerText = data.like_count;
 

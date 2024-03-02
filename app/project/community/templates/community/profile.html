@@ -1,6 +1,9 @@
 {% extends './base.html' %} 
 {% load static %} 
 {% block scripts %}
+<script>
+  const toggleLikeUrl = "{% url 'community:toggle-like' post_id=0 %}".replace("0", "__post_id__");
+</script>
 <script src="{% static './community/scripts/toggle-like.js' %}" defer></script>
 <script src="{% static './community/scripts/toggle-posts.js' %}" defer></script>
 <script src="{% static './community/scripts/view-post.js' %}" defer></script>
