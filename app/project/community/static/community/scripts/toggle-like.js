@@ -2,8 +2,19 @@ const likeButtons = document.querySelectorAll(".post-like-btn");
 
 for (const likeButton of likeButtons) {
   likeButton.addEventListener("click", async () => {
-    const postId = likeButton.closest(".feed-post")
-                              .querySelector(".post-id-data")
+    // const feedPost = likeButton.closest(".post");
+    
+    // if (!feedPost) {
+    //   console.error("Could not find .feed-post element");
+    //   return;
+    // }
+    // else {
+    //   console.log("Found it");
+    //   return;
+    // }
+    const postId = likeButton.closest(".post")
+                              .querySelector(".post-id-details")
+                              .children[0]
                               .innerText;
 
     try {
