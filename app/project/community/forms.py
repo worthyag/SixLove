@@ -32,11 +32,17 @@ class UserProfileForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.fields['user'].required = False
+        self.fields['followers'].required = False
+        self.fields['following'].required = False
 
     class Meta:
         model = UserProfile
-        fields = ['user', 'username', 'profile_name', 'profile_picture', 'bio']
+        fields = ['user', 'username', 'profile_name',
+                  'profile_picture', 'bio',
+                  'followers', 'following']
 
         widgets = {
             'user': forms.HiddenInput(),
+            'followers': forms.HiddenInput(),
+            'following': forms.HiddenInput(),
         }
