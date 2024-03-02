@@ -414,3 +414,25 @@ def toggle_like(request, post_id):
     print("Response Data:", response_data)
 
     return JsonResponse(response_data)
+
+
+@login_required
+def get_like_info(request, post_id):
+    """"""
+    # Getting the post.
+    post = get_object_or_404(models.UserPosts, id=post_id)
+
+    # Getting the like count for the post.
+    like_count = post.likes.count()
+
+    # Checking if the current user has liked the post.
+    user_has_liked = models.Like.objects.filter(
+        user_profile=request.user.userprofile, post=post).exists()
+
+    # Preparing the JSON response.
+    like_info = {
+        'like_count': like_count,
+        'user_has_liked': user_has_liked,
+    }
+
+    return JsonResponse(like_info)

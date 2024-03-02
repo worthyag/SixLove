@@ -1,17 +1,17 @@
 const feedPosts = document.querySelectorAll(".feed-post");
 
-for (const feedPost of feedPosts) {
+for (const [index, feedPost] of feedPosts.entries()) {
   feedPost.addEventListener("click", (post) => {
-    const img = feedPost.children[0]
-    const info = feedPost.children[1]
-    const url = img.getAttribute("src")
+    const img = feedPost.children[0];
+    const info = feedPost.children[1];
+    const url = img.getAttribute("src");
 
-    viewPost(url, info);
+    viewPost(url, info, index);
   });
 }
 
 
-function viewPost(url, infoDiv) {
+async function viewPost(url, infoDiv, index) {
   const modal = document.querySelector("#viewPostModal");
   const postImgDiv = document.querySelector(".post-img");
   const img = postImgDiv.children[0];
@@ -53,6 +53,22 @@ function viewPost(url, infoDiv) {
   const like = "/static/community/images/like-icon.svg";
 
   likeImg.setAttribute("src", (userHasLiked === "true") ? liked : like);
+
+  // Fetching the updated like info for a specific post.
+  try {
+    const response = await fetch(likeInfoUrl.replace("__post_id__", id));
+    const likeInfo = await response.json();
+
+    // Updating the like count in the modal.
+    document.querySelector(".like-count").textContent = likeInfo.like_count;
+
+    // Updating the user_has_liked attribute for the like button.
+    const hasLikedData = document.querySelectorAll(".user_has_liked-data")[index];
+    hasLikedData.textContent = likeInfo.user_has_liked.toString();
+
+  } catch (error) {
+    console.error("Error fetching the like info: ", error);
+  }
 
   modal.style.display = "block";
 }

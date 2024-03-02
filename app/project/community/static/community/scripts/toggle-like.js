@@ -38,7 +38,7 @@ for (const [index, likeButton] of likeButtons.entries()) {
       img.setAttribute("src", (url === like) ? liked : like);
 
       // Reloading the page after updating the like.
-      location.reload();
+      // location.reload();
 
     } catch (error) {
         console.error("Error toggling the like: ", error);
