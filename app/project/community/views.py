@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
-from django.http import HttpResponseBadRequest
+from django.http import HttpResponseBadRequest, JsonResponse
 
 from . import models
 from . import forms
@@ -354,3 +354,33 @@ def profile(request):
     #             "form": form
     #         }
     #     )
+
+
+@login_required
+def toggle_like(request, post_id):
+    """"""
+    # Getting the user profile of the request user.
+    user_profile = get_object_or_404(models.UserProfile, user=request.user)
+    # Getting the post object using the post id.
+    post = get_object_or_404(models.UserPosts, id=post_id)
+
+    liked = post.toggle_like(user_profile)
+
+    # try:
+    #     # Checking whether the user has already liked the post.
+    #     like = models.Like.objects.get(user_profile=user_profile, post=post)
+
+    #     # If the have liked the post before, the like will be deleted.
+    #     like.delete()
+    #     liked = False
+    # except models.Like.DoesNotExist:
+    #     # If the user hasn't liked the post before, a like will be added.
+    #     models.Like.objects.create(user_profile=user_profile, post=post)
+    #     liked = True
+
+    # Returning the updated like count and whether the user has liked the post.
+    like_count = post.get_like_count()
+    return JsonResponse({
+        "like_count": like_count,
+        "liked": liked
+    })

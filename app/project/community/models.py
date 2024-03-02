@@ -88,8 +88,28 @@ class UserPosts(models.Model):
         except FileNotFoundError:
             print("File does not exist.")
 
-    def like(self, user_profile):
-        """"""
+    # def like(self, user_profile):
+    #     """"""
+    #     like_instance, created = Like.objects.get_or_create(
+    #         user_profile=user_profile,
+    #         post=self
+    #     )
+
+    #     if created:
+    #         self.likes.add(user_profile)
+
+    # def remove_like(self, user_profile):
+    #     """"""
+    #     like_instance = Like.objects.filter(
+    #         user_profile=user_profile, post=self
+    #     ).first()
+
+    #     if like_instance:
+    #         like_instance.delete()
+    #         self.likes.remove(user_profile)
+
+    def toggle_like(self, user_profile):
+        """Toggle like on the post."""
         like_instance, created = Like.objects.get_or_create(
             user_profile=user_profile,
             post=self
@@ -97,16 +117,13 @@ class UserPosts(models.Model):
 
         if created:
             self.likes.add(user_profile)
-
-    def remove_like(self, user_profile):
-        """"""
-        like_instance = Like.objects.filter(
-            user_profile=user_profile, post=self
-        ).first()
-
-        if like_instance:
+            liked = True
+        else:
             like_instance.delete()
             self.likes.remove(user_profile)
+            liked = False
+
+        return liked
 
     def comment(self, user_profile, text):
         """"""
