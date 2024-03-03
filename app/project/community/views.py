@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseBadRequest, JsonResponse
-from django.db.models import Exists, OuterRef, Q, Count, Max
+from django.db.models import Exists, OuterRef, Q, Count, Max, Subquery
 
 from . import models
 from . import forms
@@ -27,7 +27,7 @@ def connect(request):
     # Applying additional filters based on the filter_option.
     if filter_option == "last_posted":
         user_profiles_query = user_profiles_query.annotate(
-            last_posted=Max("userposts__created_at")
+            last_posted=Max("user_posts__created_at")
         ).order_by("-last_posted")
 
     elif filter_option == "most_followers":

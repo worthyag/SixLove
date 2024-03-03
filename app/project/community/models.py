@@ -60,7 +60,8 @@ class Follow(models.Model):
 
 class UserPosts(models.Model):
     """"""
-    user_profile = models.ForeignKey(UserProfile, on_delete=models.CASCADE)
+    user_profile = models.ForeignKey(
+        UserProfile, on_delete=models.CASCADE, related_name='user_posts')
     post_picture = models.ImageField(
         upload_to='post_pics/'
     )

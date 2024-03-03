@@ -8,7 +8,7 @@
   </form>
 
   <!-- Filter Option -->
-  <div class="filter-options">
+  <form method="get" class="filter-options">
     <label for="filter">Filter by:</label>
     <div class="filter-action-element">
       <select name="filter" id="filter">
@@ -22,7 +22,7 @@
       </select>
       <button type="submit">Apply Filter</button>
     </div>
-  </div>
+  </form>
 
   <div class="users">
     {% for user_profile_id, user_profile_data in user_profiles_data.items %}
