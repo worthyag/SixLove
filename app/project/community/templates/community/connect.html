@@ -1,8 +1,17 @@
 {% extends './base.html' %} 
 {% load static %} 
 {% block content %}
-<main>
+<main id="connect">
   <h2>Connect</h2>
-  <p>Not implemented yet.</p>
+  
+  {% for user_profile_id, user_profile_data in user_profiles_data.items %}
+    <div>
+      <p>{{ user_profile_id }}</p>
+      <p>{{ user_profile_data.username }}</p>
+      <p>{{ user_profile_data.profile_picture }}</p>
+      <p>{{ user_profile_data.profile_name }}</p>
+      <a href="{% url 'community:user' user_profile_id=user_profile_id %}">View profile</a>
+    </div>
+  {% endfor %}
 </main>
 {% endblock %}

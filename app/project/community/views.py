@@ -21,12 +21,14 @@ def connect(request):
         for user_profile in models.UserProfile.objects.all()
     }
 
+    print(user_profiles_data)
+
     return render(
         request,
         "./community/connect.html",
         {
             "title": "Connect",
-            "user_profiles": user_profiles_data
+            "user_profiles_data": user_profiles_data
         }
     )
 
