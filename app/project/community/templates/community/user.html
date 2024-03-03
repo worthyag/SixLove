@@ -24,7 +24,15 @@
       <div class="profile-username-action-btns">
         <p class="profile-username">{{ user_profile.username }}</p>
         <div class="profile-action-btns">
-          <button class="follow">Follow</button>
+          <form action="" method="post" style="display: inline-block;">
+            {% if request.user_profile in user_profile.followers.all %}
+            <button data-action="unfollow" class="follow unfollow-button"
+            data-target-user-id="{{ user_profile.id }}" >Unfollow</button>
+            {% else %}
+            <button data-action="follow" class="follow follow-button"
+            data-target-user-id="{{ user_profile.id }}">Follow</button>
+            {% endif %}
+          </form>
           <button class="message">Message</button>
         </div>
       </div>
