@@ -4,6 +4,8 @@
 <script>
   const toggleLikeUrl = "{% url 'community:toggle-like' post_id=0 %}".replace("0", "__post_id__");
   const likeInfoUrl = "{% url 'community:get-like-info' post_id=0 %}".replace("0", "__post_id__");
+  const toggleFollowUrl = "{% url 'community:toggle-follow' user_profile_id=0 %}"
+                          .replace("0", "__user_profile_id__");
 </script>
 <script src="{% static './community/scripts/toggle-like.js' %}" defer></script>
 <script src="{% static './community/scripts/toggle-posts.js' %}" defer></script>
@@ -26,11 +28,12 @@
         <p class="profile-username">{{ user_profile.username }}</p>
         <div class="profile-action-btns">
           <form action="" method="post" style="display: inline-block;">
+            {% csrf_token %} 
             {% if request.user_profile in user_profile.followers.all %}
-            <button data-action="unfollow" class="follow unfollow-button"
+            <button data-action="unfollow" class="follow follow-btn unfollow-button"
             data-target-user-id="{{ user_profile.id }}" >Unfollow</button>
             {% else %}
-            <button data-action="follow" class="follow follow-button"
+            <button data-action="follow" class="follow follow-btn follow-button"
             data-target-user-id="{{ user_profile.id }}">Follow</button>
             {% endif %}
           </form>

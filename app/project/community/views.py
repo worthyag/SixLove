@@ -474,6 +474,29 @@ def toggle_like(request, post_id):
 
 
 @login_required
+def toggle_follow(request, user_profile_id):
+    """"""
+    # Getting the user profile of the request user.
+    request_profile = get_object_or_404(models.UserProfile, user=request.user)
+
+    # Getting the user profile of the current page profile.
+    user_profile = get_object_or_404(models.UserProfile, id=user_profile_id)
+
+    liked = post.toggle_like(user_profile)
+
+    # Returning the updated like count and whether the user has liked the post.
+    like_count = post.get_like_count()
+    response_data = {
+        "like_count": like_count,
+        "liked": liked
+    }
+
+    print("Response Data:", response_data)
+
+    return JsonResponse(response_data)
+
+
+@login_required
 def get_like_info(request, post_id):
     """"""
     # Getting the post.
