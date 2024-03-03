@@ -134,6 +134,7 @@
         p {
           display: flex;
           flex-direction: column;
+          box-sizing: border-box;
 
           label {
             display: none;
@@ -149,6 +150,14 @@
     .hide-comment-form {
       display: none;
     }
+
+    #id_post, #id_user_profile {
+      display: none;
+    }
+    // .hidden-id {
+    //   display: none;
+    // }
+
 
     .post-comments {
       font-size: 0.9rem;

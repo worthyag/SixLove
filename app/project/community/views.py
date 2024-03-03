@@ -173,20 +173,23 @@ def feed(request):
                 print("User profile does not exist.")
 
         elif 'comment-submit' in request.POST:
-            request_profile = models.UserProfile.objects.filter(
+            request_profile = models.UserProfile.objects.get(
                 user=request.user)
 
             comment_form = forms.CommentForm(request.POST)
 
             if comment_form.is_valid():
                 text = comment_form.cleaned_data['text']
+
                 post = get_object_or_404(
                     models.UserPosts,
-                    id=int(request.POST.get("post-id-to-comment"))
+                    id=int(post_id)
                 )
 
                 post.comment(user_profile=request_profile, text=text)
-
+                return redirect("community:feed")
+            else:
+                return HttpResponseBadRequest("Invalid form data")
         else:
             pass
     else:
@@ -517,34 +520,47 @@ def get_like_info(request, post_id):
     return JsonResponse(like_info)
 
 
-@login_required
-def post_comment(request, post_id):
-    if request.method == 'POST':
-        post = get_object_or_404(models.UserPosts, id=post_id)
-        comment_form = forms.CommentForm(request.POST)
+# @login_required
+# def post_comment(request, post_id):
+#     if request.method == 'POST':
+#         request_profile = models.UserProfile.objects.get(
+#             user=request.user)
 
-        if comment_form.is_valid():
-            text = comment_form.cleaned_data['text']
-            post.comment(user_profile=request.user.userprofile, text=text)
+#         post = get_object_or_404(models.UserPosts, id=post_id)
+#         # comment_form = forms.CommentForm(
+#         #     user_profile=request_profile,
+#         #     post=post_id,
+#         #     text=request.POST.get("text")
+#         # )
 
-            # Return updated comments
-            comments = post.comments.all()
-            comments_data = [
-                {
-                    'username': comment.user_profile.username,
-                    'text': comment.text
-                } for comment in comments
-            ]
+#         print(post)
 
-            return JsonResponse(
-                {
-                    'success': True,
-                    'comments': comments_data
-                }
-            )
+#         # print(comment_form)
 
-    return JsonResponse(
-        {
-            'success': False
-        }
-    )
+#         # if comment_form.is_valid():
+#         #     text = comment_form.cleaned_data['text']
+#         #     user_profile = models.UserProfile.objects.get(user=request.user)
+
+#         #     post.comment(user_profile=user_profile, text=text)
+
+#         #     # Return updated comments
+#         #     comments = post.comments.all()
+#         #     comments_data = [
+#         #         {
+#         #             'username': comment.user_profile.username,
+#         #             'text': comment.text
+#         #         } for comment in comments
+#         #     ]
+
+#         #     return JsonResponse(
+#         #         {
+#         #             'success': True,
+#         #             'comments': comments_data
+#         #         }
+#         #     )
+
+#     return JsonResponse(
+#         {
+#             'success': False
+#         }
+#     )

@@ -4,13 +4,6 @@ for (const [index, commentButton] of commentButtons.entries()) {
   console.log(commentButton);
 
   commentButton.addEventListener("click", () => {
-    // const postId = commentButton.closest(".post")
-    //                           .querySelector(".post-id-details")
-    //                           .children[0]
-    //                           .innerText;
-
-    // console.log(`You clicked me! ${postId}`); 
-    
     displayCommentForm(index)
   })
 }

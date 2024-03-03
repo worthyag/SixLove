@@ -62,5 +62,5 @@ class CommentForm(forms.ModelForm):
 
         widgets = {
             'user_profile': forms.HiddenInput(),
-            'post': forms.HiddenInput(),
+            # 'post': forms.HiddenInput(),
         }
