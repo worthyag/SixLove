@@ -7,6 +7,23 @@
     <button type="submit">Search</button>
   </form>
 
+  <!-- Filter Option -->
+  <div class="filter-options">
+    <label for="filter">Filter by:</label>
+    <div class="filter-action-element">
+      <select name="filter" id="filter">
+        <option value="" {% if not filter_option %}selected{% endif %}>All</option>
+        <option value="last_posted" {% if filter_option == 'last_posted' %}selected{% endif %}>
+          Last Posted
+        </option>
+        <option value="most_followers" {% if filter_option == 'most_followers' %}selected{% endif %}>
+          Most Followers
+        </option>
+      </select>
+      <button type="submit">Apply Filter</button>
+    </div>
+  </div>
+
   <div class="users">
     {% for user_profile_id, user_profile_data in user_profiles_data.items %}
     <a href="{% url 'community:user' user_profile_id=user_profile_id %}">

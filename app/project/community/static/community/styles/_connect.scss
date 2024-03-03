@@ -30,6 +30,37 @@ main#connect {
     }
   }
 
+  .filter-options {
+    // display: flex;
+    // align-items: center;
+
+    .filter-action-element {
+      display: flex;
+      margin: 16px 0;
+
+      select {
+        width: 30vw;
+        min-width: 200px;
+
+        border-bottom-left-radius: 8px;
+        border-top-left-radius: 8px;
+      }
+
+      select, button {
+        height: 40px;
+        padding: 0 8px;
+      }
+
+      button {
+        width: 15vw;
+        min-width: 91px;
+  
+        border-bottom-left-radius: 0;
+        border-top-left-radius: 0;
+      }
+    }
+  }
+
   .users {
     // background-color: aqua;
     display: flex;

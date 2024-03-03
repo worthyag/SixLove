@@ -590,6 +590,26 @@ main#connect .search-form button {
   border-bottom-left-radius: 0;
   border-top-left-radius: 0;
 }
+main#connect .filter-options .filter-action-element {
+  display: flex;
+  margin: 16px 0;
+}
+main#connect .filter-options .filter-action-element select {
+  width: 30vw;
+  min-width: 200px;
+  border-bottom-left-radius: 8px;
+  border-top-left-radius: 8px;
+}
+main#connect .filter-options .filter-action-element select, main#connect .filter-options .filter-action-element button {
+  height: 40px;
+  padding: 0 8px;
+}
+main#connect .filter-options .filter-action-element button {
+  width: 15vw;
+  min-width: 91px;
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+}
 main#connect .users {
   display: flex;
   flex-direction: column;
