@@ -1,6 +1,11 @@
 {% extends './base.html' %} {% load static %} {% block content %}
 <main id="connect">
   <h2>Connect</h2>
+  <!-- Search Form -->
+  <form action="" method="get">
+    <input type="text" name="user-search" placeholder="Search users" value="{{ search_query }}">
+    <button type="submit">Search</button>
+  </form>
 
   <div class="users">
     {% for user_profile_id, user_profile_data in user_profiles_data.items %}

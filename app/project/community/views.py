@@ -14,7 +14,7 @@ def connect(request):
     """"""
     # To allow the user to search through the list of users.
     # Getting the search query from the request.
-    query = request.GET.get("q", "")
+    query = request.GET.get("user-search", "")
 
     user_profiles_query = models.UserProfile.objects.filter(
         Q(username__icontains=query) | Q(profile_name__icontains=query)
