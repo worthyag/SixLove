@@ -19,6 +19,12 @@
         <option value="most_followers" {% if filter_option == 'most_followers' %}selected{% endif %}>
           Most Followers
         </option>
+        <option value="most_posts" {% if filter_option == 'most_posts' %}selected{% endif %}>
+          Most Posts
+      </option>
+      <option value="last_active" {% if filter_option == 'last_active' %}selected{% endif %}>
+          Last Active
+      </option>
       </select>
       <button type="submit">Apply Filter</button>
     </div>

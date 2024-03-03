@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseBadRequest, JsonResponse
-from django.db.models import Exists, OuterRef, Q, Count, Max, Subquery
+from django.db.models import Exists, OuterRef, Q, Count, Max, F
 
 from . import models
 from . import forms
@@ -34,6 +34,16 @@ def connect(request):
         user_profiles_query = user_profiles_query.annotate(
             follower_count=Count("followers")
         ).order_by("-follower_count")
+
+    elif filter_option == "most_posts":
+        user_profiles_query = user_profiles_query.annotate(
+            post_count=Count("user_posts")
+        ).order_by("-post_count")
+
+    elif filter_option == "last_active":
+        user_profiles_query = user_profiles_query.annotate(
+            last_active=F("user__last_login")
+        ).order_by("-last_active")
 
     user_profiles_data = {
         user_profile.id: {
