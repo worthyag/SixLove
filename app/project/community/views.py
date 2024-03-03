@@ -48,6 +48,16 @@ def connect(request):
             last_active=F("user__last_login")
         ).order_by("-last_active")
 
+    elif filter_option == "followers":
+        # Those that are following the request user.
+        user_profiles_query = user_profiles_query.filter(
+            following=request_profile)
+
+    elif filter_option == "following":
+        # Those that are followed by the request user.
+        user_profiles_query = user_profiles_query.filter(
+            followers=request_profile)
+
     user_profiles_data = {
         user_profile.id: {
             "username": user_profile.username,

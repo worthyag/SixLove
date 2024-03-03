@@ -25,6 +25,12 @@
       <option value="last_active" {% if filter_option == 'last_active' %}selected{% endif %}>
           Last Active
       </option>
+      <option value="followers" {% if filter_option == 'followers' %}selected{% endif %}>
+          Users following you
+      </option>
+      <option value="following" {% if filter_option == 'following' %}selected{% endif %}>
+          Users you follow
+      </option>
       </select>
       <button type="submit">Apply Filter</button>
     </div>
