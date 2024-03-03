@@ -482,13 +482,17 @@ def toggle_follow(request, user_profile_id):
     # Getting the user profile of the current page profile.
     user_profile = get_object_or_404(models.UserProfile, id=user_profile_id)
 
-    liked = post.toggle_like(user_profile)
+    # Toggling the follow status.
+    is_following = request_profile.toggle_follow(user_profile)
 
-    # Returning the updated like count and whether the user has liked the post.
-    like_count = post.get_like_count()
+    # Returning the updated followers and following count.
+    followers_count = user_profile.get_followers_count()
+    following_count = user_profile.get_following_count()
+
     response_data = {
-        "like_count": like_count,
-        "liked": liked
+        "followers_count": followers_count,
+        "following_count": following_count,
+        "is_following": is_following
     }
 
     print("Response Data:", response_data)

@@ -36,6 +36,15 @@ class UserProfile(models.Model):
         self.following.remove(user_to_unfollow)
         user_to_unfollow.followers.remove(self)
 
+    def toggle_follow(self, other_user_profile):
+        """"""
+        if self.following.filter(id=other_user_profile.id).exists():
+            self.unfollow(other_user_profile)
+            return False
+        else:
+            self.follow(other_user_profile)
+            return True
+
     # Dynamically get the follower count.
     def get_followers_count(self):
         """"""

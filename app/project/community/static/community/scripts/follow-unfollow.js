@@ -4,10 +4,10 @@ followButton.addEventListener("click", (e) => {
   // Preventing the default form submission.
   e.preventDefault(); 
 
-  const userProfileId = button.dataset.targetUserId;
-  const action = button.dataset.action;
+  const userProfileId = followButton.dataset.targetUserId;
+  const action = followButton.dataset.action;
 
-  toggleFollow(userProfileId, action, button);
+  toggleFollow(userProfileId, action, followButton);
 });
 
 // Function to handle follow or unfollow action
