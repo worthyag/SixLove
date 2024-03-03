@@ -348,9 +348,17 @@ main#profile .modal .modal-content .post .comment-form {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 8px 24px;
   width: 100%;
   min-width: 300px;
   box-sizing: border-box;
+}
+main#profile .modal .modal-content .post .comment-form .close-btn {
+  align-self: flex-end;
+  font-size: 2rem;
+}
+main#profile .modal .modal-content .post .comment-form .close-btn:hover {
+  cursor: pointer;
 }
 main#profile .modal .modal-content .post .comment-form .form-elements p {
   display: flex;
@@ -575,9 +583,17 @@ main#feed .posts .post .comment-form {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 8px 24px;
   width: 45vw;
   min-width: 300px;
   box-sizing: border-box;
+}
+main#feed .posts .post .comment-form .close-btn {
+  align-self: flex-end;
+  font-size: 2rem;
+}
+main#feed .posts .post .comment-form .close-btn:hover {
+  cursor: pointer;
 }
 main#feed .posts .post .comment-form .form-elements p {
   display: flex;

@@ -49,6 +49,18 @@ class UserProfileForm(forms.ModelForm):
 
 
 class CommentForm(forms.ModelForm):
+    """"""
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['user_profile'].required = False
+        self.fields['post'].required = False
+
     class Meta:
         model = Comment
-        fields = ['text']
+        fields = ['user_profile', 'post', 'text']
+
+        widgets = {
+            'user_profile': forms.HiddenInput(),
+            'post': forms.HiddenInput(),
+        }

@@ -56,6 +56,7 @@
           </div>
           <!-- Comment form -->
           <form class="comment-form hide-comment-form" method="post" action="">
+            <span class="close-btn">&times;</span>
             {% csrf_token %}
             <div class="form-elements">
               {{ comment_form.as_p }}

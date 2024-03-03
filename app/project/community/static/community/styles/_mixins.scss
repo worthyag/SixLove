@@ -115,10 +115,20 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      padding: 8px 24px;
 
       width: $width;
       min-width: 300px;
       box-sizing: border-box;
+
+      .close-btn {
+        align-self: flex-end;
+        font-size: 2rem;
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
 
       .form-elements {
         p {
