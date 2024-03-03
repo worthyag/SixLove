@@ -201,6 +201,10 @@ def feed(request):
             user_profile__in=following_users) | models.UserPosts.objects.filter(
             user_profile=user_profile)
 
+        # Annotating each post with the comment count.
+        following_posts = following_posts.annotate(
+            comment_count=Count("comments"))
+
         # Annotating each post with info about whether the current user has liked it.
         following_posts = following_posts.annotate(
             user_has_liked=Exists(models.Like.objects.filter(

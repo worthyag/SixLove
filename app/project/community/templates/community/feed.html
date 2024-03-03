@@ -55,7 +55,8 @@
             <span class="caption-text">{{ post.post_caption }}</span>
           </div>
           <!-- Comment form -->
-          <form class="comment-form hide-comment-form" method="post" action="">
+          <form class="comment-form hide-comment-form" method="post" action=""
+          data-post-id="{{ post.id }}">
             <span class="close-btn">&times;</span>
             {% csrf_token %}
             <div class="form-elements">
@@ -63,11 +64,12 @@
             </div>
             <button type="submit" name="comment-submit">Post Comment</button>
           </form>
-          {% for comment in post.comments.all %}
-            <div class="post-comments">
-              {{ comment.text }}
-            </div>
-          {% endfor %}
+          <div class="post-comments">
+            <span class="post-comments-count">{{ post.comment_count }} comments</span>
+            {% for comment in post.comments.all %}
+              <div class="expanded-comments"></div>
+            {% endfor %}
+          </div>
           <div class="post-date">{{ post.created_at }}</div>
         </div>
       {% endfor %}
