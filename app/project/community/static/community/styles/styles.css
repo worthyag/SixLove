@@ -564,6 +564,9 @@ main#feed .posts .post .post-date {
   padding-top: 8px;
 }
 
+main#connect {
+  margin-bottom: 32px;
+}
 main#connect .search-form {
   display: flex;
 }
