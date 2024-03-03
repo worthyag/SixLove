@@ -1,4 +1,33 @@
 main#connect {
+  .search-form {
+    display: flex;
+
+    input {
+      width: 90vw;
+      min-width: 200px;
+      padding: 8px 16px;
+
+      border-bottom-right-radius: 0;
+      border-top-right-radius: 0;
+      border-bottom-left-radius: 8px;
+      border-top-left-radius: 8px;
+      border: 1px solid $black;
+    }
+
+    input, button {
+      height: 50px;
+      font-size: 1.1rem;
+    }
+
+    button {
+      width: 10vw;
+      min-width: 91px;
+
+      border-bottom-left-radius: 0;
+      border-top-left-radius: 0;
+    }
+  }
+
   .users {
     // background-color: aqua;
     display: flex;

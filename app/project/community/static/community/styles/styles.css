@@ -564,6 +564,29 @@ main#feed .posts .post .post-date {
   padding-top: 8px;
 }
 
+main#connect .search-form {
+  display: flex;
+}
+main#connect .search-form input {
+  width: 90vw;
+  min-width: 200px;
+  padding: 8px 16px;
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+  border-bottom-left-radius: 8px;
+  border-top-left-radius: 8px;
+  border: 1px solid #000000;
+}
+main#connect .search-form input, main#connect .search-form button {
+  height: 50px;
+  font-size: 1.1rem;
+}
+main#connect .search-form button {
+  width: 10vw;
+  min-width: 91px;
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+}
 main#connect .users {
   display: flex;
   flex-direction: column;
