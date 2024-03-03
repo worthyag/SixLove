@@ -379,7 +379,7 @@ def user(request, user_profile_id):
         if request_profile != user_profile:
             return render(
                 request,
-                "./community/profile.html",
+                "./community/user.html",
                 {
                     "title": "Profile",
                     "user_profile": user_profile,
