@@ -30,13 +30,16 @@ def connect(request):
         for user_profile in user_profiles_query
     }
 
+    request_profile_id = models.UserProfile.objects.get(user=request.user).id
+
     return render(
         request,
         "./community/connect.html",
         {
             "title": "Connect",
             "user_profiles_data": user_profiles_data,
-            "search_query": query
+            "search_query": query,
+            "request_profile_id": request_profile_id,
         }
     )
 
