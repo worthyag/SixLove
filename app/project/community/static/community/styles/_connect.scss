@@ -1,0 +1,31 @@
+main#connect {
+  a {
+    text-decoration: none;
+
+    .user-info {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+
+      background-color: hotpink;
+  
+      .user-photo {
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+        transform: scale(0.8);
+
+        border-radius: 50%;
+        border: 1px solid $black;
+      }
+
+      p {
+        margin: 0;
+      }
+
+      .username {
+        font-weight: 700;
+      }
+    }
+  }
+}
