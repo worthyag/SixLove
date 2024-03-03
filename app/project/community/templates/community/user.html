@@ -1,0 +1,165 @@
+{% extends './base.html' %} 
+{% load static %} 
+{% block scripts %}
+<script>
+  const toggleLikeUrl = "{% url 'community:toggle-like' post_id=0 %}".replace("0", "__post_id__");
+  const likeInfoUrl = "{% url 'community:get-like-info' post_id=0 %}".replace("0", "__post_id__");
+</script>
+<script src="{% static './community/scripts/toggle-like.js' %}" defer></script>
+<script src="{% static './community/scripts/toggle-posts.js' %}" defer></script>
+<script src="{% static './community/scripts/view-post.js' %}" defer></script>
+<script src="{% static './community/scripts/post-menu.js' %}" defer></script>
+{% endblock %}
+{% block content %}
+{% if user_profile %}
+<main id="profile">
+  <div class="profile-top">
+    <div class="profile-header">
+      <div class="profile-photo">
+        <img
+          src="{{ user_profile.profile_picture.url }}"
+          alt="Profile Photo"
+        />
+      </div>
+      <div class="profile-username-action-btns">
+        <p class="profile-username">{{ user_profile.username }}</p>
+        <div class="profile-action-btns">
+          <button class="follow">Follow</button>
+          <button class="message">Message</button>
+        </div>
+      </div>
+    </div>
+    <div class="info">
+      <div class="profile-name">{{ user_profile.profile_name }}</div>
+      <div class="profile-bio">{{ user_profile.bio }}</div>
+    </div>
+
+    <div class="followers-following">
+      <div class="followers">
+        <div class="follower-text ff-text">followers</div>
+        <div class="follower-count ff-count">{{ user_profile.get_followers_count }}</div>
+      </div>
+      <div class="following">
+        <div class="following-text ff-text">following</div>
+        <div class="following-count ff-count">{{ user_profile.get_following_count }}</div>
+      </div>
+    </div>
+  </div>
+  <div class="toggle-container">
+    <div class="toggle-feed-view">
+      <button class="posts-btn active">
+        <img
+          src="{% static './community/images/menu.png' %}"
+          alt="Post menu icon"
+        />
+      </button>
+      <button class="achievements-btn">
+        <img
+          src="{% static './community/images/achievements-icon.png' %}"
+          alt="Achievements icon"
+        />
+      </button>
+    </div>
+  </div>
+  <div class="feed">
+    {% if user_posts%}
+      {% for post in user_posts %}
+      <div class="feed-post">
+        <img src="{{ post.post_picture.url }}" alt="user post">
+        <div class="post-details" style="display: none;">
+          <span class="likes-data">{{ post.get_like_count }}</span>
+          <span class="username-data">{{ post.user_profile.username }}</span>
+          <span class="captionText-data">{{ post.post_caption }}</span>
+          <div class="comments-data">
+            {% for comment in post.comments.all %}
+            <span class="comments-data">{{ comment }}</span>
+            {% endfor %}
+          </div>
+          <span class="date-data">{{ post.created_at }}</span>
+          <span class="post-id-data">{{ post.id }}</span>
+          <span class="user_has_liked-data">{{ post.user_has_liked }}</span>
+        </div>
+      </div>
+      {% endfor %}
+    {% else %}
+    <p>This user hasn't created any posts.</p>
+    {% endif %}
+  
+  </div>
+
+  <div class="achievements toggle-posts">
+    <div class="award">
+      <div class="award-img"></div>
+      <div class="award-info">
+        <p class="award-name">Award Name</p>
+        <p class="award-desc">Award description goes here...</p>
+        <p class="award-date">Awarded DD-MM-YYYY</p>
+      </div>
+    </div>
+    <div class="award">
+      <div class="award-img"></div>
+      <div class="award-info">
+        <p class="award-name">Award Name</p>
+        <p class="award-desc">Award description goes here...</p>
+        <p class="award-date">Awarded DD-MM-YYYY</p>
+      </div>
+    </div>
+    <div class="award">
+      <div class="award-img"></div>
+      <div class="award-info">
+        <p class="award-name">Award Name</p>
+        <p class="award-desc">Award description goes here...</p>
+        <p class="award-date">Awarded DD-MM-YYYY</p>
+      </div>
+    </div>
+  </div>
+
+    <!-- Modals for viewing the post -->
+    <div id="viewPostModal" class="modal">
+      <div class="modal-content">
+        <span class="close-btn" onclick="closeModal('#viewPostModal')">&times;</span>
+        <div id="modalContent">
+          <div class="post">
+            <div class="post-img">
+              <img src="" alt="user post">
+            </div>
+            <div class="post-btns">
+              <div class="interactive-btns">
+                <button class="post-like-btn"><img src="{% static './community/images/liked-icon.svg'%}" alt="like button"></button>
+                <button class="post-comment-btn"><img src="{% static './community/images/comments-icon.svg'%}" alt="comment button"></button>
+              </div>
+              <div class="post-action-group">
+                <button class="post-more-btn"><img src="{% static './community/images/more-icon.svg'%}" alt="more button"></button>
+                <div class="post-action-btns hide-action-btns">
+                  <span class="edit-post-btn">Edit Post</span>
+                  <span class="delete-post-btn">Delete Post</span>
+                </div>
+              </div>
+            </div>
+            <div class="post-id-details" style="display: none;">
+              <span class="post-id-data">X</span>
+            </div>
+            <div class="post-likes"><span class="like-count">124</span> likes</div>
+            <div class="post-caption">
+              <span class="username">username</span>
+              <span class="caption-text">caption text will be placed...</span>
+            </div>
+            <div class="post-comments">View all 12 comments</div>
+            <div class="post-date">2 days ago</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+{% else %}
+<main id="profile">
+  <p>User profile does not exists.</p>
+</main>
+{% endif %}
+<script>
+  function closeModal(id) {
+    const closeBtn = document.querySelector(id);
+    closeBtn.style.display = "none";
+  }
+</script>
+{% endblock %}
