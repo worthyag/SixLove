@@ -355,9 +355,9 @@ def user(request, user_profile_id):
     if not user_profile:
         return render(
             request,
-            "./community/profile.html",
+            "./community/user.html",
             {
-                "title": "Profile",
+                "title": f"{user_profile.username}'s Profile",
                 "user_profile": user_profile,
                 "user_posts": user_posts,
             }
@@ -381,7 +381,7 @@ def user(request, user_profile_id):
                 request,
                 "./community/user.html",
                 {
-                    "title": "Profile",
+                    "title": f"{user_profile.username}'s Profile",
                     "user_profile": user_profile,
                     "user_posts": user_posts,
                 }
