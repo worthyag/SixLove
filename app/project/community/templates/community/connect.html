@@ -2,17 +2,19 @@
 <main id="connect">
   <h2>Connect</h2>
 
-  {% for user_profile_id, user_profile_data in user_profiles_data.items %}
-  <a href="{% url 'community:user' user_profile_id=user_profile_id %}">
-    <div class="user-info">
-      <img class="user-photo" src="{{ user_profile_data.profile_picture }}" alt="" />
-      <div class="user-dets">
-        <p class="username">{{ user_profile_data.username }}</p>
-        <p class="name">{{ user_profile_data.profile_name }}</p>
-        <p class="following">Not following</p>
+  <div class="users">
+    {% for user_profile_id, user_profile_data in user_profiles_data.items %}
+    <a href="{% url 'community:user' user_profile_id=user_profile_id %}">
+      <div class="user-info">
+        <img class="user-photo" src="{{ user_profile_data.profile_picture }}" alt="" />
+        <div class="user-dets">
+          <p class="username">{{ user_profile_data.username }}</p>
+          <p class="name">{{ user_profile_data.profile_name }}</p>
+          <p class="following">Not following</p>
+        </div>
       </div>
-    </div>
-  </a>
-  {% endfor %}
+    </a>
+    {% endfor %}
+  </div>
 </main>
 {% endblock %}

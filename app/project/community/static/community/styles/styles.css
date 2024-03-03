@@ -564,16 +564,26 @@ main#feed .posts .post .post-date {
   padding-top: 8px;
 }
 
-main#connect a {
+main#connect .users {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+main#connect .users a {
   text-decoration: none;
 }
-main#connect a .user-info {
+main#connect .users a .user-info {
   display: flex;
   gap: 12px;
   align-items: center;
-  background-color: hotpink;
+  border: 1px solid #000000;
+  border-radius: 8px;
+  box-shadow: 4px 4px 14px rgba(0, 0, 0, 0.0705882353);
 }
-main#connect a .user-info .user-photo {
+main#connect .users a .user-info:hover {
+  box-shadow: 4px 4px 14px rgba(0, 0, 0, 0.2980392157);
+}
+main#connect .users a .user-info .user-photo {
   width: 100px;
   height: 100px;
   -o-object-fit: cover;
@@ -582,9 +592,15 @@ main#connect a .user-info .user-photo {
   border-radius: 50%;
   border: 1px solid #000000;
 }
-main#connect a .user-info p {
+main#connect .users a .user-info p {
   margin: 0;
 }
-main#connect a .user-info .username {
+main#connect .users a .user-info .username {
   font-weight: 700;
+}
+main#connect .users a .user-info .name, main#connect .users a .user-info .following {
+  font-weight: 300;
+}
+main#connect .users a .user-info .following {
+  font-size: 0.85rem;
 }/*# sourceMappingURL=styles.css.map */

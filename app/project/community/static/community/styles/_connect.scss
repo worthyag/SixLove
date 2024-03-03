@@ -1,31 +1,55 @@
 main#connect {
-  a {
-    text-decoration: none;
+  .users {
+    // background-color: aqua;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
 
-    .user-info {
-      display: flex;
-      gap: 12px;
-      align-items: center;
-
-      background-color: hotpink;
+    a {
+      text-decoration: none;
   
-      .user-photo {
-        width: 100px;
-        height: 100px;
-        object-fit: cover;
-        transform: scale(0.8);
+      .user-info {
+        display: flex;
+        gap: 12px;
+        align-items: center;
 
-        border-radius: 50%;
         border: 1px solid $black;
-      }
+        border-radius: 8px;
+        box-shadow: 4px 4px 14px #00000012;
 
-      p {
-        margin: 0;
-      }
+        &:hover {
+          box-shadow: 4px 4px 14px #0000004c;
+        }
+  
+        // background-color: hotpink;
+    
+        .user-photo {
+          width: 100px;
+          height: 100px;
+          object-fit: cover;
+          transform: scale(0.8);
+  
+          border-radius: 50%;
+          border: 1px solid $black;
+        }
+  
+        p {
+          margin: 0;
+        }
+  
+        .username {
+          font-weight: 700;
+        }
 
-      .username {
-        font-weight: 700;
+        .name, .following {
+          font-weight: 300;
+        }
+
+        .following {
+          font-size: 0.85rem;
+        }
       }
     }
   }
+  
 }
