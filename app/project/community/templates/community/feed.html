@@ -31,7 +31,7 @@
               {% endif %}
               <button class="post-comment-btn"><img src="{% static './community/images/comments-icon.svg'%}" alt="comment button"></button>
             </div>
-            {% if user_profile.user == request.user %}
+            {% if user_profile == post.user_profile %}
             <div class="post-action-group">
               <button class="post-more-btn"><img src="{% static './community/images/more-icon.svg'%}" alt="more button"></button>
               <div class="post-action-btns hide-action-btns">
