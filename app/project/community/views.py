@@ -89,18 +89,10 @@ def feed(request):
     """"""
     # Initialising a new form.
     form = forms.UserPostsForm()
+    comment_form = forms.CommentForm()
 
     if request.method == 'POST':
         print(request.POST)  # testing
-
-        request_profile = models.UserProfile.objects.filter(user=request.user)
-
-        # Comment submission
-        if 'comment-submit' in request.POST:
-            comment_form = forms.CommentForm(request.POST)
-            if comment_form.is_valid():
-                text = comment_form.cleaned_data['text']
-                post.comment(user_profile=request_profile, text=text)
 
         post_id = request.POST.get("post-id")
 
@@ -180,6 +172,21 @@ def feed(request):
             except models.UserProfile.DoesNotExist:
                 print("User profile does not exist.")
 
+        elif 'comment-submit' in request.POST:
+            request_profile = models.UserProfile.objects.filter(
+                user=request.user)
+
+            comment_form = forms.CommentForm(request.POST)
+
+            if comment_form.is_valid():
+                text = comment_form.cleaned_data['text']
+                post = get_object_or_404(
+                    models.UserPosts,
+                    id=int(request.POST.get("post-id-to-comment"))
+                )
+
+                post.comment(user_profile=request_profile, text=text)
+
         else:
             pass
     else:
@@ -207,8 +214,6 @@ def feed(request):
     except models.UserProfile.DoesNotExist:
         user_profile = None
         following_posts = None
-
-    comment_form = forms.CommentForm()
 
     return render(
         request,

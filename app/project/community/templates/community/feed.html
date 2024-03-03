@@ -64,7 +64,9 @@
             <button type="submit" name="comment-submit">Post Comment</button>
           </form>
           {% for comment in post.comments.all %}
-            <div class="post-comments">{{ comment.text }}</div>
+            <div class="post-comments">
+              {{ comment.text }}
+            </div>
           {% endfor %}
           <div class="post-date">{{ post.created_at }}</div>
         </div>
