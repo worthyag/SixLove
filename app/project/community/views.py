@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseBadRequest, JsonResponse
-from django.db.models import Exists, OuterRef
+from django.db.models import Exists, OuterRef, Q
 
 from . import models
 from . import forms
@@ -12,23 +12,31 @@ from . import forms
 @login_required
 def connect(request):
     """"""
+    # To allow the user to search through the list of users.
+    # Getting the search query from the request.
+    query = request.GET.get("q", "")
+
+    user_profiles_query = models.UserProfile.objects.filter(
+        Q(username__icontains=query) | Q(profile_name__icontains=query)
+    )
+
     user_profiles_data = {
         user_profile.id: {
             'username': user_profile.username,
             'profile_picture': user_profile.profile_picture.url if user_profile.profile_picture else None,
             'profile_name': user_profile.profile_name,
         }
-        for user_profile in models.UserProfile.objects.all()
+        # for user_profile in models.UserProfile.objects.all()
+        for user_profile in user_profiles_query
     }
-
-    print(user_profiles_data)
 
     return render(
         request,
         "./community/connect.html",
         {
             "title": "Connect",
-            "user_profiles_data": user_profiles_data
+            "user_profiles_data": user_profiles_data,
+            "search_query": query
         }
     )
 
