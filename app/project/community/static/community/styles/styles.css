@@ -342,6 +342,29 @@ main#profile .modal .modal-content .post .post-caption {
 main#profile .modal .modal-content .post .post-caption .username {
   font-weight: 700;
 }
+main#profile .modal .modal-content .post .comment-form {
+  background-color: #578DDD;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-width: 300px;
+  box-sizing: border-box;
+}
+main#profile .modal .modal-content .post .comment-form .form-elements p {
+  display: flex;
+  flex-direction: column;
+}
+main#profile .modal .modal-content .post .comment-form .form-elements p label {
+  display: none;
+}
+main#profile .modal .modal-content .post .comment-form button {
+  width: 300px;
+}
+main#profile .modal .modal-content .post .hide-comment-form {
+  display: none;
+}
 main#profile .modal .modal-content .post .post-comments {
   font-size: 0.9rem;
 }
@@ -545,6 +568,29 @@ main#feed .posts .post .post-caption {
 }
 main#feed .posts .post .post-caption .username {
   font-weight: 700;
+}
+main#feed .posts .post .comment-form {
+  background-color: #578DDD;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 45vw;
+  min-width: 300px;
+  box-sizing: border-box;
+}
+main#feed .posts .post .comment-form .form-elements p {
+  display: flex;
+  flex-direction: column;
+}
+main#feed .posts .post .comment-form .form-elements p label {
+  display: none;
+}
+main#feed .posts .post .comment-form button {
+  width: 300px;
+}
+main#feed .posts .post .hide-comment-form {
+  display: none;
 }
 main#feed .posts .post .post-comments {
   font-size: 0.9rem;

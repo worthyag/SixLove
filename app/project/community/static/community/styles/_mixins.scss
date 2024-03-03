@@ -109,6 +109,37 @@
       // }
     }
 
+    .comment-form {
+      background-color: $brand-colour;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      width: $width;
+      min-width: 300px;
+      box-sizing: border-box;
+
+      .form-elements {
+        p {
+          display: flex;
+          flex-direction: column;
+
+          label {
+            display: none;
+          }
+        }
+      }
+
+      button {
+        width: 300px;
+      }
+    }
+
+    .hide-comment-form {
+      display: none;
+    }
+
     .post-comments {
       font-size: 0.9rem;
 
