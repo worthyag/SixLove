@@ -34,6 +34,13 @@ function toggleFollow(userProfileId, action, followButton) {
               followButton.classList.add('follow-button');
               followButton.classList.remove('unfollow-button');
           }
+
+          // Updating follower and following counts in the UI.
+          const followersCountElement = document.querySelector('.follower-count');
+          const followingCountElement = document.querySelector('.following-count');
+
+          followersCountElement.textContent = data.followers_count;
+          followingCountElement.textContent = data.following_count;
       })
       .catch(error => console.error('Error:', error));
 }
