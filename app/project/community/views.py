@@ -93,6 +93,15 @@ def feed(request):
     if request.method == 'POST':
         print(request.POST)  # testing
 
+        request_profile = models.UserProfile.objects.filter(user=request.user)
+
+        # Comment submission
+        if 'comment-submit' in request.POST:
+            comment_form = forms.CommentForm(request.POST)
+            if comment_form.is_valid():
+                text = comment_form.cleaned_data['text']
+                post.comment(user_profile=request_profile, text=text)
+
         post_id = request.POST.get("post-id")
 
         if post_id == "create":
@@ -199,6 +208,8 @@ def feed(request):
         user_profile = None
         following_posts = None
 
+    comment_form = forms.CommentForm()
+
     return render(
         request,
         "./community/feed.html",
@@ -206,7 +217,8 @@ def feed(request):
             "title": "Feed",
             "user_profile": user_profile,
             "posts": following_posts,
-            "form": form
+            "form": form,
+            "comment_form": comment_form,
         }
     )
 
@@ -494,3 +506,36 @@ def get_like_info(request, post_id):
     }
 
     return JsonResponse(like_info)
+
+
+@login_required
+def post_comment(request, post_id):
+    if request.method == 'POST':
+        post = get_object_or_404(models.UserPosts, id=post_id)
+        comment_form = forms.CommentForm(request.POST)
+
+        if comment_form.is_valid():
+            text = comment_form.cleaned_data['text']
+            post.comment(user_profile=request.user.userprofile, text=text)
+
+            # Return updated comments
+            comments = post.comments.all()
+            comments_data = [
+                {
+                    'username': comment.user_profile.username,
+                    'text': comment.text
+                } for comment in comments
+            ]
+
+            return JsonResponse(
+                {
+                    'success': True,
+                    'comments': comments_data
+                }
+            )
+
+    return JsonResponse(
+        {
+            'success': False
+        }
+    )

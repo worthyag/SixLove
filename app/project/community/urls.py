@@ -15,4 +15,5 @@ urlpatterns = [
          views.toggle_follow, name="toggle-follow"),
     path("get-like-info/<int:post_id>",
          views.get_like_info, name="get-like-info"),
+    path("post-comment/<int:post_id>", views.post_comment, name="post-comment"),
 ]

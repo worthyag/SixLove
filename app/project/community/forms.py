@@ -1,5 +1,5 @@
 from django import forms
-from .models import UserPosts, UserProfile
+from .models import UserPosts, UserProfile, Comment
 
 
 class UserPostsForm(forms.ModelForm):
@@ -46,3 +46,9 @@ class UserProfileForm(forms.ModelForm):
             'followers': forms.HiddenInput(),
             'following': forms.HiddenInput(),
         }
+
+
+class CommentForm(forms.ModelForm):
+    class Meta:
+        model = Comment
+        fields = ['text']

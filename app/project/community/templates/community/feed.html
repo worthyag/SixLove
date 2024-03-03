@@ -46,9 +46,19 @@
           </div>
           <div class="post-likes"><span class="like-count">{{ post.get_like_count }}</span> likes</div>
           <div class="post-caption">
-            <span class="username">{{ post.user_profile.username }}</span>
+            <span class="username">
+              <a href="{% url 'community:user' user_profile_id=post.user_profile.id %}">
+                {{ post.user_profile.username }}
+              </a>
+            </span>
             <span class="caption-text">{{ post.post_caption }}</span>
           </div>
+          <!-- Comment form -->
+          <form method="post" action="">
+            {% csrf_token %}
+            {{ comment_form.as_p }}
+            <button type="submit" name="comment-submit">Post Comment</button>
+          </form>
           {% for comment in post.comments.all %}
             <div class="post-comments">{{ comment.text }}</div>
           {% endfor %}
