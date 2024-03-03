@@ -12,6 +12,9 @@ from . import forms
 @login_required
 def connect(request):
     """"""
+    # Getting the profile of the request user.
+    request_profile = models.UserProfile.objects.get(user=request.user)
+
     # To allow the user to search through the list of users.
     # Getting the search query from the request.
     query = request.GET.get("user-search", "")
@@ -47,15 +50,16 @@ def connect(request):
 
     user_profiles_data = {
         user_profile.id: {
-            'username': user_profile.username,
-            'profile_picture': user_profile.profile_picture.url if user_profile.profile_picture else None,
-            'profile_name': user_profile.profile_name,
+            "username": user_profile.username,
+            "profile_picture": user_profile.profile_picture.url if user_profile.profile_picture else None,
+            "profile_name": user_profile.profile_name,
+            "is_following": request_profile.following.filter(id=user_profile.id).exists()
         }
         # for user_profile in models.UserProfile.objects.all()
         for user_profile in user_profiles_query
     }
 
-    request_profile_id = models.UserProfile.objects.get(user=request.user).id
+    request_profile_id = request_profile.id
 
     return render(
         request,
@@ -381,9 +385,8 @@ def user(request, user_profile_id):
             ))
         )
 
-        is_following = True if request_profile.following.filter(
-            id=user_profile.id
-        ).exists() else False
+        is_following = request_profile.following.filter(
+            id=user_profile.id).exists()
 
         if request_profile != user_profile:
             return render(
@@ -398,50 +401,6 @@ def user(request, user_profile_id):
             )
         else:
             return redirect("community:profile")
-
-    # if request.method == 'POST':
-    #     form = forms.UserProfileForm(request.POST, request.FILES)
-
-    #     if form.is_valid():
-    #         user_profile = form.save(commit=False)
-    #         user_profile.user = request.user
-    #         user_profile.save()
-    #         return redirect("community:profile")
-    # else:
-    #     # Initialising a new form.
-    #     form = forms.UserProfileForm()
-
-    # try:
-    #     user_profile = models.UserProfile.objects.get(user=request.user)
-    #     user_posts = models.UserPosts.objects.filter(
-    #         user_profile=user_profile).order_by('-created_at')
-
-    # except models.UserProfile.DoesNotExist:
-    #     user_profile = None
-    #     user_posts = None
-
-    # if user_profile:
-    #     user_posts = models.UserPosts.objects.filter(
-    #         user_profile=user_profile).order_by('-created_at')
-    #     return render(
-    #         request,
-    #         "./community/profile.html",
-    #         {
-    #             "title": "Profile",
-    #             "user_profile": user_profile,
-    #             "user_posts": user_posts,
-    #         }
-    #     )
-    # else:
-    #     # If there is no profile, render the template without user_profile and user_posts
-    #     return render(
-    #         request,
-    #         "./community/profile.html",
-    #         {
-    #             "title": "Profile",
-    #             "form": form
-    #         }
-    #     )
 
 
 @login_required

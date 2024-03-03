@@ -39,9 +39,11 @@
           <p class="username">{{ user_profile_data.username }}</p>
           <p class="name">{{ user_profile_data.profile_name }}</p>
           {% if request_profile_id ==  user_profile_id%}
-          <p class="following">Your profile</p>
+            <p class="following">Your profile</p>
+          {% elif user_profile_data.is_following %}
+            <p class="following">Following</p>
           {% else %}
-          <p class="following">Not following</p>
+            <p class="following">Not following</p>
           {% endif %}
         </div>
       </div>
