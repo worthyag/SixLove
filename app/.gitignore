@@ -20,3 +20,7 @@ node_modules
 # My shell scripts
 *.sh
 shell
+
+# Image files
+*/post_pics
+*/profile_pics
