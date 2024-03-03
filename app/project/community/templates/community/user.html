@@ -29,7 +29,7 @@
         <div class="profile-action-btns">
           <form action="" method="post" style="display: inline-block;">
             {% csrf_token %} 
-            {% if request.user_profile in user_profile.followers.all %}
+            {% if is_following %}
             <button data-action="unfollow" class="follow follow-btn unfollow-button"
             data-target-user-id="{{ user_profile.id }}" >Unfollow</button>
             {% else %}

@@ -381,6 +381,10 @@ def user(request, user_profile_id):
             ))
         )
 
+        is_following = True if request_profile.following.filter(
+            id=user_profile.id
+        ).exists() else False
+
         if request_profile != user_profile:
             return render(
                 request,
@@ -389,6 +393,7 @@ def user(request, user_profile_id):
                     "title": f"{user_profile.username}'s Profile",
                     "user_profile": user_profile,
                     "user_posts": user_posts,
+                    "is_following": is_following,
                 }
             )
         else:
