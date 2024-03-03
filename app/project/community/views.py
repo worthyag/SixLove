@@ -71,6 +71,9 @@ def connect(request):
 @login_required
 def feed(request):
     """"""
+    # Initialising a new form.
+    form = forms.UserPostsForm()
+
     if request.method == 'POST':
         print(request.POST)  # testing
 
@@ -155,8 +158,7 @@ def feed(request):
         else:
             pass
     else:
-        # Initialising a new form.
-        form = forms.UserPostsForm()
+        pass
 
     try:
         user_profile = models.UserProfile.objects.get(user=request.user)
@@ -176,6 +178,7 @@ def feed(request):
 
         # Ordering the posts and making sure that there are no duplicates.
         following_posts = following_posts.order_by('-created_at').distinct()
+
     except models.UserProfile.DoesNotExist:
         user_profile = None
         following_posts = None
@@ -357,7 +360,7 @@ def user(request, user_profile_id):
             request,
             "./community/user.html",
             {
-                "title": f"{user_profile.username}'s Profile",
+                "title": "User Profile",
                 "user_profile": user_profile,
                 "user_posts": user_posts,
             }

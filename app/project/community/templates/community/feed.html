@@ -10,87 +10,70 @@
 <script src="{% static './community/scripts/edit-delete-post.js' %}" defer></script>
 {% endblock %}
 {% block content %}
+
+<main id="feed">
 {% if user_profile %}
   {% if posts %}
-  <main id="feed">
     <h2>Feed</h2>
     <button class="create-post-btn">Create New Post</button>
     <div class="posts">
       {% for post in posts %}
-      <div class="post">
-        <div class="post-img">
-          <img src="{{ post.post_picture.url }}" alt="User post">
-        </div>
-        <div class="post-btns">
-          <div class="interactive-btns">
-            {% if post.user_has_liked %}
-              <button class="post-like-btn"><img src="{% static './community/images/liked-icon.svg'%}" alt="like button"></button>
-            {% else %}
-              <button class="post-like-btn"><img src="{% static './community/images/like-icon.svg'%}" alt="like button"></button>
-            {% endif %}
-            <button class="post-comment-btn"><img src="{% static './community/images/comments-icon.svg'%}" alt="comment button"></button>
+        <div class="post">
+          <div class="post-img">
+            <img src="{{ post.post_picture.url }}" alt="User post">
           </div>
-          <div class="post-action-group">
-            <button class="post-more-btn"><img src="{% static './community/images/more-icon.svg'%}" alt="more button"></button>
-            <div class="post-action-btns hide-action-btns">
-              <span class="edit-post-btn">Edit Post</span>
-              <span class="delete-post-btn">Delete Post</span>
+          <div class="post-btns">
+            <div class="interactive-btns">
+              {% if post.user_has_liked %}
+                <button class="post-like-btn"><img src="{% static './community/images/liked-icon.svg'%}" alt="like button"></button>
+              {% else %}
+                <button class="post-like-btn"><img src="{% static './community/images/like-icon.svg'%}" alt="like button"></button>
+              {% endif %}
+              <button class="post-comment-btn"><img src="{% static './community/images/comments-icon.svg'%}" alt="comment button"></button>
+            </div>
+            <div class="post-action-group">
+              <button class="post-more-btn"><img src="{% static './community/images/more-icon.svg'%}" alt="more button"></button>
+              <div class="post-action-btns hide-action-btns">
+                <span class="edit-post-btn">Edit Post</span>
+                <span class="delete-post-btn">Delete Post</span>
+              </div>
             </div>
           </div>
+          <div class="post-id-details" style="display: none;">
+            <span class="post-id-data">{{ post.id }}</span>
+          </div>
+          <div class="post-likes"><span class="like-count">{{ post.get_like_count }}</span> likes</div>
+          <div class="post-caption">
+            <span class="username">{{ post.user_profile.username }}</span>
+            <span class="caption-text">{{ post.post_caption }}</span>
+          </div>
+          {% for comment in post.comments.all %}
+            <div class="post-comments">{{ comment.text }}</div>
+          {% endfor %}
+          <div class="post-date">{{ post.created_at }}</div>
         </div>
-        <div class="post-id-details" style="display: none;">
-          <span class="post-id-data">{{ post.id }}</span>
-        </div>
-        <div class="post-likes"><span class="like-count">{{ post.get_like_count }}</span> likes</div>
-        <div class="post-caption">
-          <span class="username">{{ post.user_profile.username }}</span>
-          <span class="caption-text">{{ post.post_caption }}</span>
-        </div>
-        {% for comment in post.comments.all %}
-        <div class="post-comments">{{ comment.text }}</div>
-        {% endfor %}
-        <div class="post-date">{{ post.created_at }}</div>
-      </div>
       {% endfor %}
+    </div>
 
-      <!-- <div class="post">
-        <div class="post-img"></div>
-        <div class="post-btns">
-          <div class="interactive-btns">
-            <button class="post-like-btn"><img src="{% static './community/images/like-icon.svg'%}" alt="like button"></button>
-            <button class="post-comment-btn"><img src="{% static './community/images/comments-icon.svg'%}" alt="comment button"></button>
-          </div>
-          <div>
-            <button class="post-more-btn"><img src="{% static './community/images/more-icon.svg'%}" alt="more button"></button>
-          </div>
+    <!-- <div class="post">
+      <div class="post-img"></div>
+      <div class="post-btns">
+        <div class="interactive-btns">
+          <button class="post-like-btn"><img src="{% static './community/images/like-icon.svg'%}" alt="like button"></button>
+          <button class="post-comment-btn"><img src="{% static './community/images/comments-icon.svg'%}" alt="comment button"></button>
         </div>
-        <div class="post-likes"><span class="like-count">124</span> likes</div>
-        <div class="post-caption">
-          <span class="username">username</span>
-          <span class="caption-text">caption text will be placed...</span>
-        </div>
-        <div class="post-comments">View all 12 comments</div>
-        <div class="post-date">2 days ago</div>
-      </div> -->
-      
-
-    <!-- Modal for creating a post -->
-    <div id="createPostModal" class="modal">
-      <div class="modal-content">
-        <span class="close-btn" onclick="closeModal('#createPostModal')">&times;</span>
-        <div id="modalContent">
-          <form action="" method="post" novalidate enctype="multipart/form-data">
-            {% csrf_token %} 
-            {{ form.as_p }}
-            <div style="display: none;">
-              <label for="post-id">ID: </label>
-              <input type="hidden" type="text" name="post-id" id="post-id" value="create">
-            </div>
-            <input class="btn" type="submit" value="Create Post" />
-          </form>
+        <div>
+          <button class="post-more-btn"><img src="{% static './community/images/more-icon.svg'%}" alt="more button"></button>
         </div>
       </div>
-    </div>
+      <div class="post-likes"><span class="like-count">124</span> likes</div>
+      <div class="post-caption">
+        <span class="username">username</span>
+        <span class="caption-text">caption text will be placed...</span>
+      </div>
+      <div class="post-comments">View all 12 comments</div>
+      <div class="post-date">2 days ago</div>
+    </div> -->
 
     <!-- Modal for editing a post -->
     <div id="editPostModal" class="modal">
@@ -130,15 +113,12 @@
         </div>
       </div>
     </div>
-
-  </main>
   {% else %}
-  <main id="feed">
     <p>No posts to display.</p>
     <button class="create-post-btn">Create New Post</button>
 
     <!-- Modal for creating a post -->
-    <div id="createPostModal" class="modal">
+    <!-- <div id="createPostModal" class="modal">
       <div class="modal-content">
         <span class="close-btn" onclick="closeModal('#createPostModal')">&times;</span>
         <div id="modalContent">
@@ -149,15 +129,40 @@
           </form>
         </div>
       </div>
-    </div>
-  </main>
+    </div> -->
   {% endif %}
+  <!-- Modal for creating a post -->
+  <div id="createPostModal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal('#createPostModal')">&times;</span>
+      <div id="modalContent">
+        <form action="" method="post" novalidate enctype="multipart/form-data">
+          {% csrf_token %} 
+          {{ form.as_p }}
+          <div style="display: none;">
+            <label for="post-id">ID: </label>
+            <input type="hidden" type="text" name="post-id" id="post-id" value="create">
+          </div>
+          <input class="btn" type="submit" value="Create Post" />
+        </form>
+      </div>
+    </div>
+  </div>
 {% else %}
-<main>
   <p>You haven't created your user profile yet.</p>
   <a href="{% url 'community:profile' %}"><button>Go to Profile page</button></a>
-</main>
 {% endif %}
+</main>
+  
+
+<!-- <main id="feed"> -->
+<!-- </main> -->
+
+<!-- <main>
+  <p>You haven't created your user profile yet.</p>
+  <a href="{% url 'community:profile' %}"><button>Go to Profile page</button></a>
+</main> -->
+
 <script>
   function closeModal(id) {
     const closeBtn = document.querySelector(id);
