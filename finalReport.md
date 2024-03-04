@@ -458,13 +458,13 @@ Novice LP used three workouts per week to gradually increase the novices strengt
 
 _The 'simple structure' of Novice LP._
 
-The structure of Novice LP is simple in nature, allowing users to "_develop a strong foundation and learn proper lifting techniques_" [16]. This foundation is what enables novices to build strength and muscle mass. In terms of fitness for tennis, cardiovascular endurance and agility are key. Tennis matches do not have a set time and can go on for hours at a time. The tennis court is quite big, and points are typically won by making use of its angles. These features calls for a strong foundation in agility and good stamina. Though it is unlikely for novices to play against others novices who have the skills to make use of the whole tennis court, this a fundamental skill that is needed for their journey as a tennis enthusiast and amateur.
+The structure of Novice LP is simple in nature, allowing users to "_develop a strong foundation and learn proper lifting techniques_" [16]. This foundation is what enables novices to build strength and muscle mass. In terms of fitness for tennis, cardiovascular endurance and agility are key. Tennis matches do not have a set time and can go on for hours. The tennis court is quite big, and points are typically won by making use of its angles. These features call for a strong foundation in agility and good stamina. Though it is unlikely for novices to play against others novices who have the skills to make use of the whole tennis court, this a fundamental skill that is needed for their journey as a tennis enthusiast and amateur.
 
 #### 2.2.1.5 Progress tracking
 
 _The 'goal-orientated' of Novice LP._
 
-Novice LP makes use of progress tracking to linearly increase weight, and monitor a novice's progress. In TNLP, setting goals is imperative. The exercises and practices may seem repetitive, but they are necessary for building muscle memory and improving technique. Being goal-orientated allows users to focus on what is important and remember their reasons for picking up tennis.
+Novice LP makes use of goals to encourage novices stay motivated and track their progress. Being goal-orientated allows users to focus on what is important and remember their reasons for picking up weight training. In TNLP, progress tracking is imperative. The exercises and practices may seem repetitive, but they are necessary for building muscle memory and improving technique. Progress tracking allows users to see the benefits of the seemingly repetitive tasks. Progress tracking helps monitor a novice's progression and provides motivation.
 
 ### 2.2.2 Software libraries
 
