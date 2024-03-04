@@ -1213,7 +1213,7 @@ def delete_tennis_session(request, tennis_session_id):
 
 The views displayed in **code snippet 8** are those that specifically deal with the tennis sessions. These are the views that provide the users with the ability interact with the tennis sessions. These views communicate with the `TennisSession` database table. Other than the `delete` view, the views pass a form to their associated HTML templates. These templates contain forms that allow users to make changes to their tennis sessions, in a similar fashion to **code snippet 4**.
 
-I also added the variable in **code snippet 9** to the settings file to ensure that the user is always redirected to the home (landing) page when they logout. The settings file is a file that "*_ontains all the configuration of your Django installation_" [19].
+I also added the variable in **code snippet 9** to the settings file to ensure that the user is always redirected to the home (landing) page when they logout. The settings file is a file that "_contains all the configuration of your Django installation_" [19].
 
 ```python
 # Redirects the user to the home page when they log out.
