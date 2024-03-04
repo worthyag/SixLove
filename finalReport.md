@@ -808,7 +808,7 @@ _Now that there is a plan, how will I test and evaluate the project progress?_
 
 *I created all the diagrams in this section using Figma.
 
-SixLove  will be evaluated using four categories which are as follows:
+SixLove  will be evaluated using three categories which are as follows:
 
 - Functionality
 
