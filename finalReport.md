@@ -508,7 +508,7 @@ _Diving into external research to increase the effectiveness of SixLove._
 
 _From beginners luck to second nature._
 
-As mentioned in [section 2.2.1](#221-the-theory),TNLP is centred around this idea of muscle memory.  Therefore in order to gain a deeper understanding of the concept it is imperative to consider the laws of muscle memory. The laws of muscle memory as stated in Archie Dan Smith's "_Muscle Memory Application to Tennis_" paper are the following:
+As mentioned in [section 2.2.1](#221-the-theory), TNLP is centred around this idea of muscle memory.  Therefore in order to gain a deeper understanding of the concept it is imperative to consider the laws of muscle memory. The laws of muscle memory as stated in Archie Dan Smith's "_Muscle Memory Application to Tennis_" paper are the following:
 
 1. "_Your tennis strokes are due to muscle memory._
 
