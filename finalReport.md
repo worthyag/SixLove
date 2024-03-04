@@ -412,7 +412,7 @@ Nike Training Club is a general fitness app that offers a variety of workout rou
 
 3. Tailoring to novices.
    
-   Nike Training Club offers workouts for all fitness levels, however it does not specifically tailor content to novice tennis players who need foundational instruction.
+   - Nike Training Club offers workouts for all fitness levels, however it does not specifically tailor content to novice tennis players who need foundational instruction.
 
 #### Areas of Improvement
 
