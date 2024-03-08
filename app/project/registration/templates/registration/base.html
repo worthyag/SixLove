@@ -51,7 +51,11 @@
           <img src="{% static './registration/images/connect-page-icon.svg' %}" alt="Connect Page">
         </a>
         <a href="{% url 'community:profile' %}">
-          <img src="{% static './registration/images/profile-page-icon.svg' %}" alt="Profile Page">
+          {% if user_profile and user_profile.profile_picture.url %}
+          <img src="{{ user_profile.profile_picture.url }}" alt="Profile Page" class="profile-page-pic">
+          {% else %}
+            <img src="{% static './registration/images/profile-page-icon.svg' %}" alt="Profile Page">
+          {% endif %}
         </a>
       {% endif %}
     </nav>

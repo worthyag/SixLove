@@ -129,6 +129,14 @@ nav a {
 nav a:hover {
   background-color: #9ABCEF;
 }
+nav a .profile-page-pic {
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  width: 32px;
+  height: 32px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
 
 main {
   padding: 16px 32px;
