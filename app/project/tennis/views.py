@@ -165,6 +165,13 @@ def resource2(request, resource_id):
     sections = resource.article_sections.all(
     ) if resource.resource_type == "article" else None
 
+    # Splitting content for sections with type "bullet_points" or "paragraph"
+    if sections is not None:
+        for section in sections:
+            if (section.section_type == 'bullet_points') or \
+                    (section.section_type == 'paragraph'):
+                section.split_content = section.content.split("\n")
+
     return render(
         request,
         "./tennis/resource.html",
