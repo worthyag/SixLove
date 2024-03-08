@@ -27,7 +27,7 @@ main#profile div.profile-top div.profile-header .profile-photo {
   min-width: 80px;
   min-height: 80px;
   border-radius: 50%;
-  border: 1px solid #000000;
+  border: 1px solid rgba(0, 0, 0, 0.2);
 }
 main#profile div.profile-top div.profile-header .profile-photo img {
   width: 10vw;
@@ -90,19 +90,17 @@ main#profile .toggle-container {
   margin: 24px 0;
 }
 main#profile .toggle-container .toggle-feed-view {
-  background-color: #8F8E8E;
+  background-color: #578DDD;
   width: -moz-fit-content;
   width: fit-content;
   padding: 8px 16px;
   border-radius: 8px;
-  border: 1px solid #000000;
 }
 main#profile .toggle-container .toggle-feed-view button.active {
   background-color: #32ca6f;
 }
 main#profile .toggle-container .toggle-feed-view button {
   background-color: #FFFFFF;
-  border: 1px solid #000000;
   margin-bottom: 0px;
 }
 main#profile .toggle-container .toggle-feed-view button:hover {
@@ -121,7 +119,7 @@ main#profile .feed .feed-post {
   min-height: 100px;
   min-width: 100px;
   border-radius: 8px;
-  border: 1px solid #000000;
+  border: 1px solid rgba(0, 0, 0, 0.2);
 }
 main#profile .feed .feed-post img {
   width: 30vw;

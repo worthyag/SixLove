@@ -22,7 +22,7 @@ main#profile {
         min-height: 80px;
 
         border-radius: 50%;
-        border: 1px solid $black;
+        border: 1px solid #00000033;
 
         img {
           width: 10vw;
@@ -101,11 +101,10 @@ main#profile {
     margin: 24px 0;
 
     .toggle-feed-view {
-      background-color: $white-grey;
+      background-color: $brand-colour;
       width: fit-content;
       padding: 8px 16px;
       border-radius: 8px;
-      border: 1px solid $black;
 
       button.active {
         background-color: $green;
@@ -113,7 +112,6 @@ main#profile {
 
       button {
         background-color: $white;
-        border: 1px solid $black;
         margin-bottom: 0px;
 
         &:hover {
@@ -138,7 +136,7 @@ main#profile {
       min-width: 100px;
 
       border-radius: 8px;
-      border: 1px solid $black;
+      border: 1px solid #00000033;
 
       img {
         width: 30vw;
