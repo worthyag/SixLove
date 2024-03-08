@@ -15,8 +15,16 @@ header {
   }
 
   .brand-group {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    img {
+      width: 48px;
+    }
+
     .brand-name {
-      font-size: 2.4rem;
+      font-size: 2.6rem;
       font-weight: bold;
       font-family: $display-font;
       color: $brand-colour;

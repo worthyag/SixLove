@@ -18,8 +18,16 @@ header {
 header a {
   text-decoration: none;
 }
+header .brand-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+header .brand-group img {
+  width: 48px;
+}
 header .brand-group .brand-name {
-  font-size: 2.4rem;
+  font-size: 2.6rem;
   font-weight: bold;
   font-family: "Paytone One", sans-serif;
   color: #578DDD;
