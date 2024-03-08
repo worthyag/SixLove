@@ -76,8 +76,26 @@ a {
 }
 
 nav {
+  display: flex;
+  justify-content: space-between;
+  width: 100vw;
+
+  box-sizing: border-box;
+  padding: 12px 16px;
+  background-color: $white;
+
+  position: fixed;
+  bottom: 0;
+  border-top: 1px solid #00000033;
+
   a {
     text-decoration: none;
+    padding: 6px;
+    border-radius: 8px;
+
+    &:hover {
+      background-color: $hover-colour;
+    }
   }
 }
 

@@ -71,8 +71,24 @@ a {
   width: 100px;
 }
 
+nav {
+  display: flex;
+  justify-content: space-between;
+  width: 100vw;
+  box-sizing: border-box;
+  padding: 12px 16px;
+  background-color: #FFFFFF;
+  position: fixed;
+  bottom: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
+}
 nav a {
   text-decoration: none;
+  padding: 6px;
+  border-radius: 8px;
+}
+nav a:hover {
+  background-color: #9ABCEF;
 }
 
 main {
