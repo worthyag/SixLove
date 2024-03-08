@@ -1,0 +1,44 @@
+main#resource {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .back-btn {
+    align-self: flex-start;
+  }
+
+  img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    margin: 32px 0;
+  }
+
+  .resource-video {
+    width: 75vw;
+    height: 550px;
+    margin: 32px 0;
+
+    border: 10px solid $brand-colour;
+  }
+
+  .resource-content {
+    width: 75%;
+    text-align: justify;
+
+    .subheading {
+      font-size: 1.4rem;
+      font-weight: 500;
+    }
+
+    p, li {
+      line-height: 2rem;
+    }
+  }
+
+  a {
+    .resource-link {
+      margin-top: 48px;
+    }
+  }
+}
