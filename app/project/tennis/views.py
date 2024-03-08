@@ -3,6 +3,7 @@ import datetime
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.utils import timezone
+from django.db.models import Exists, OuterRef, Q
 
 from . import forms
 from . import models
@@ -140,7 +141,16 @@ def success(request):
 
 @login_required
 def learn(request):
-    resources = models.Resource.objects.all().order_by("title")
+    # resources = models.Resource.objects.all().order_by("title")
+
+    # To allow the user to search through the list of users.
+    # Getting the search query from the request.
+    query = request.GET.get("resource-search", "")
+
+    # Querying the data.
+    resources = models.Resource.objects.filter(
+        Q(title__icontains=query) | Q(tags__name__icontains=query)
+    )
 
     return render(
         request,
@@ -148,6 +158,7 @@ def learn(request):
         {
             "title": "Learn",
             "resources": resources,
+            "search_query": query,
         }
     )
 
