@@ -107,7 +107,7 @@ main#profile {
       border-radius: 8px;
 
       button.active {
-        background-color: $green;
+        background-color: $active;
       }
 
       button {
@@ -115,7 +115,7 @@ main#profile {
         margin-bottom: 0px;
 
         &:hover {
-          background-color: $green;
+          background-color: $hover-colour;
         }
       }
     }
@@ -161,21 +161,21 @@ main#profile {
       align-items: center;
       gap: 12px;
 
-      border: 1px solid $black;
+      border: 1px solid #00000033;
       border-radius: 8px;
 
       width: max-content;
       height: auto;
 
       padding: 8px 16px;
-      background-color: $posts;
+      background-color: $white;
 
       .award-img {
         background-color: lightblue;
         width: 100px;
         height: 100px;
         border-radius: 8px;
-        border: 1px solid $black;
+        border: 1px solid #00000033;
       }
 
       .award-info {

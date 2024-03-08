@@ -97,14 +97,14 @@ main#profile .toggle-container .toggle-feed-view {
   border-radius: 8px;
 }
 main#profile .toggle-container .toggle-feed-view button.active {
-  background-color: #32ca6f;
+  background-color: #BDFDDB;
 }
 main#profile .toggle-container .toggle-feed-view button {
   background-color: #FFFFFF;
   margin-bottom: 0px;
 }
 main#profile .toggle-container .toggle-feed-view button:hover {
-  background-color: #32ca6f;
+  background-color: #9ABCEF;
 }
 main#profile .feed {
   display: grid;
@@ -140,20 +140,20 @@ main#profile .achievements .award {
   display: flex;
   align-items: center;
   gap: 12px;
-  border: 1px solid #000000;
+  border: 1px solid rgba(0, 0, 0, 0.2);
   border-radius: 8px;
   width: -moz-max-content;
   width: max-content;
   height: auto;
   padding: 8px 16px;
-  background-color: #F2F2F2;
+  background-color: #FFFFFF;
 }
 main#profile .achievements .award .award-img {
   background-color: lightblue;
   width: 100px;
   height: 100px;
   border-radius: 8px;
-  border: 1px solid #000000;
+  border: 1px solid rgba(0, 0, 0, 0.2);
 }
 main#profile .achievements .award .award-info .award-name {
   font-weight: 700;
