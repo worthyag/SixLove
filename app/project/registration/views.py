@@ -42,15 +42,15 @@ def signup(request):
     )
 
 
-def onboarding(request):
-    """"""
-    return render(
-        request,
-        "./registration/onboarding.html",
-        {
-            "title": "Onboarding"
-        }
-    )
+# def onboarding(request):
+#     """"""
+#     return render(
+#         request,
+#         "./registration/onboarding.html",
+#         {
+#             "title": "Onboarding"
+#         }
+#     )
 
 
 def user_login(request):
