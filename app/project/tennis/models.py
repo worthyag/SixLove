@@ -108,6 +108,9 @@ class ArticleSection(models.Model):
     image = models.ImageField(upload_to="article_images/",
                               blank=True, null=True)
 
+    class Meta:
+        ordering = ['resource', 'id']
+
     def __str__(self):
         """"""
         return f"{self.section_type} - {self.resource.title} - \
