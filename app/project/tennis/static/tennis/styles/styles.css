@@ -54,7 +54,7 @@ main#learn .filter-options .filter-action-element button {
 }
 main#learn .resources {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   gap: 24px;
 }
 main#learn .resources a {
@@ -62,8 +62,12 @@ main#learn .resources a {
 }
 main#learn .resources a .resource {
   display: flex;
-  gap: 12px;
+  flex-direction: column;
   align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  width: 200px;
+  height: 200px;
   border: 1px solid #000000;
   border-radius: 8px;
   box-shadow: 4px 4px 14px rgba(0, 0, 0, 0.0705882353);
@@ -72,26 +76,22 @@ main#learn .resources a .resource {
 main#learn .resources a .resource:hover {
   box-shadow: 4px 4px 14px rgba(0, 0, 0, 0.2980392157);
 }
-main#learn .resources a .resource .user-photo {
-  width: 100px;
-  height: 100px;
-  -o-object-fit: cover;
-     object-fit: cover;
-  transform: scale(0.8);
-  border-radius: 50%;
-  border: 1px solid #000000;
-}
 main#learn .resources a .resource p {
   margin: 0;
 }
-main#learn .resources a .resource .username {
+main#learn .resources a .resource .resource-title {
   font-weight: 700;
 }
-main#learn .resources a .resource .name, main#learn .resources a .resource .following {
+main#learn .resources a .resource .resource-content {
   font-weight: 300;
 }
-main#learn .resources a .resource .following {
+main#learn .resources a .resource .resource-tag {
   font-size: 0.85rem;
+  font-weight: 500;
+  background-color: #578DDD;
+  color: #FFFFFF;
+  padding: 8px 16px;
+  border-radius: 8px;
 }
 
 main#resource {

@@ -17,7 +17,15 @@
     {% for resource in resources %}
     <a href="{% url 'tennis:resource' resource_id=resource.id %}">
       <div class="resource">
-        <p>{{ resource }}</p>
+        <p class="resource-title">{{ resource.title }}</p>
+        {% if resource.resource_type != "video" %}
+          {% with first_section=resource.sections.first %}
+            {% if first_section %}
+              <p class="resource-content">{{ first_section.content|slice:":120" }}...</p>
+            {% endif %}
+          {% endwith %}
+        {% endif %}
+        <p class="resource-tag">{{ resource.tags.first.name }}</p>
       </div>
     </a>
     {% endfor %}
