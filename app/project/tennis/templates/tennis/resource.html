@@ -22,13 +22,15 @@
         {% if section.section_type == "heading" %}
           <p class="subheading">{{ section.content }}</p>
         {% elif section.section_type == "paragraph" %}
-          <p>{{ section.content }}</p>
+          {% for para in section.content.split('\n') %}
+              <p>{{ para }}</p>
+            {% endfor %}
         {% elif section.section_type == "image" %}
           <img src="{{ section.image.url }}" alt="Section Image">
         {% elif section.section_type == "bullet_points" %}
           <ul>
-            {% for line in section.content.split('\n') %}
-              <li>{{ line }}</li>
+            {% for point in section.content.split('\n') %}
+              <li>{{ point }}</li>
             {% endfor %}
           </ul>
         {% endif %}
