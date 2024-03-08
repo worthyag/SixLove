@@ -1,18 +1,16 @@
 {% extends '../registration/base.html' %}
-{% block extra_styles %}
-<style>
-  main {
-      padding: 16px 32px; 
-  }
-
-  .view-tennis-sessions-btn {
-    margin-top: 20px;
-  }
-</style>
-{% endblock %}
+{% load static %} 
 {% block content %}
-<main>
-  <h2>Resource Title</h2>
-  <p>Not implemented yet.</p>
+<main id="resource">
+  <h2>{{title}}</h2>
+  <img class="resource-img" src="{% static './community/images/profile-pic-temp.png' %}" alt="Resource img">
+  <div>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit quia similique doloribus officiis neque nobis voluptatum quae, blanditiis sapiente provident quasi assumenda? Omnis vero eligendi quidem ut ullam velit ipsam distinctio modi dolorum at hic esse commodi repudiandae ex quam voluptas doloremque voluptates est vel aperiam perspiciatis, magnam, corrupti facilis. Quo voluptatibus maiores incidunt fugit pariatur eligendi odio iusto. Repudiandae natus, molestias odit quae voluptatum, cupiditate dolorem beatae repellendus ut, voluptatem pariatur deserunt! Doloremque delectus possimus placeat recusandae perferendis! Maiores esse natus sit earum dolor quia maxime repellendus amet veritatis quasi nisi illo, consequatur tenetur. Pariatur velit provident nemo quia.</p>
+
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit quia similique doloribus officiis neque nobis voluptatum quae, blanditiis sapiente provident quasi assumenda? Omnis vero eligendi quidem ut ullam velit ipsam distinctio modi dolorum at hic esse commodi repudiandae ex quam voluptas doloremque voluptates est vel aperiam perspiciatis, magnam, corrupti facilis. Quo voluptatibus maiores incidunt fugit pariatur eligendi odio iusto. Repudiandae natus, molestias odit quae voluptatum, cupiditate dolorem beatae repellendus ut, voluptatem pariatur deserunt! Doloremque delectus possimus placeat recusandae perferendis! Maiores esse natus sit earum dolor quia maxime repellendus amet veritatis quasi nisi illo, consequatur tenetur. Pariatur velit provident nemo quia.</p>
+  </div>
+  <a href="">
+    <p>Resource reference.</p>
+  </a>
 </main>
 {% endblock %}

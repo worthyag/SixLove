@@ -147,3 +147,14 @@ def learn(request):
             "title": "Learn"
         }
     )
+
+
+@login_required
+def resource(request):
+    return render(
+        request,
+        "./tennis/resource.html",
+        {
+            "title": "Resource Title"
+        }
+    )
