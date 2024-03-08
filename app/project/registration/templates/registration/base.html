@@ -10,35 +10,9 @@
   </head>
   <body>
     <header>
-      <div class="extended-nav">
+      <a href="{% url 'home' %}">
         <h1>SixLove</h1>
-        <ul>
-          <a href="{% url 'home' %}">
-            <li>Home</li>
-          </a>
-          {% if user.is_authenticated %}
-          <a href="{% url 'tennis:tennis' %}">
-            <li>Tennis</li>
-          </a>
-          <a href="{% url 'tennis:learn' %}">
-            <li>Learn</li>
-          </a>
-          <a href="{% url 'planner:calendar' %}">
-            <li>Calendar</li>
-          </a>
-          <a href="{% url 'community:connect' %}">
-            <li>Connect</li>
-          </a>
-          <a href="{% url 'community:feed' %}">
-            <li>Feed</li>
-          </a>
-          <a href="{% url 'community:profile' %}">
-            <li>Profile</li>
-          </a>
-          {% endif %}
-        </ul>
-      </div>
-
+      </a>
       <div class="auth">
         {% if user.is_authenticated %}
         <div class="logout">
@@ -56,6 +30,28 @@
         {% endif %}
       </div>
     </header>
+    <nav>
+      {% if user.is_authenticated %}
+        <a href="{% url 'tennis:tennis' %}">
+          <img src="{% static './registration/images/tennis-page-icon.svg' %}" alt="Tennis Page">
+        </a>
+        <a href="{% url 'community:feed' %}">
+          <img src="{% static './registration/images/feed-page-icon.svg' %}" alt="Feed Page">
+        </a>
+        <a href="{% url 'tennis:learn' %}">
+          <img src="{% static './registration/images/learn-page-icon.svg' %}" alt="Learn Page">
+        </a>
+        <a href="{% url 'planner:calendar' %}">
+          <img src="{% static './registration/images/calendar-page-icon.svg' %}" alt="Calendar Page">
+        </a>
+        <a href="{% url 'community:connect' %}">
+          <img src="{% static './registration/images/connect-page-icon.svg' %}" alt="Connect Page">
+        </a>
+        <a href="{% url 'community:profile' %}">
+          <img src="{% static './registration/images/profile-page-icon.svg' %}" alt="Profile Page">
+        </a>
+      {% endif %}
+    </nav>
     {% block content %}{% endblock %}
   </body>
 </html>
