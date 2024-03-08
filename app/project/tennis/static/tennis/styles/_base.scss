@@ -1,6 +1,6 @@
-body {
-  background-color: hotpink;
-}
+// body {
+//   background-color: hotpink;
+// }
 
 main {
   padding: 16px 32px;
@@ -8,4 +8,36 @@ main {
 
 .view-tennis-sessions-btn {
   margin-top: 20px;
+}
+
+main#resource {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .back-btn {
+    align-self: flex-start;
+  }
+
+  img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    margin: 32px 0;
+  }
+
+  .resource-content {
+    width: 75%;
+    text-align: justify;
+
+    p {
+      line-height: 2rem;
+    }
+  }
+
+  a {
+    .resource-link {
+      margin-top: 48px;
+    }
+  }
 }

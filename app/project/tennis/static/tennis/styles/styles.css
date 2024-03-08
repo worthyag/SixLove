@@ -1,11 +1,33 @@
-body {
-  background-color: hotpink;
-}
-
 main {
   padding: 16px 32px;
 }
 
 .view-tennis-sessions-btn {
   margin-top: 20px;
+}
+
+main#resource {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+main#resource .back-btn {
+  align-self: flex-start;
+}
+main#resource img {
+  width: 300px;
+  height: 300px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin: 32px 0;
+}
+main#resource .resource-content {
+  width: 75%;
+  text-align: justify;
+}
+main#resource .resource-content p {
+  line-height: 2rem;
+}
+main#resource a .resource-link {
+  margin-top: 48px;
 }/*# sourceMappingURL=styles.css.map */
