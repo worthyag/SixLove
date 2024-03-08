@@ -61,7 +61,7 @@ main#learn {
     }
   }
 
-  .users {
+  .resources {
     // background-color: aqua;
     display: flex;
     flex-direction: column;
@@ -70,7 +70,7 @@ main#learn {
     a {
       text-decoration: none;
   
-      .user-info {
+      .resource {
         display: flex;
         gap: 12px;
         align-items: center;
@@ -78,6 +78,7 @@ main#learn {
         border: 1px solid $black;
         border-radius: 8px;
         box-shadow: 4px 4px 14px #00000012;
+        padding: 8px 16px;
 
         &:hover {
           box-shadow: 4px 4px 14px #0000004c;

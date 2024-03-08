@@ -6,6 +6,94 @@ main {
   margin-top: 20px;
 }
 
+main#learn {
+  margin-bottom: 32px;
+}
+main#learn .search-form {
+  display: flex;
+}
+main#learn .search-form input {
+  width: 90vw;
+  min-width: 200px;
+  padding: 8px 16px;
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+  border-bottom-left-radius: 8px;
+  border-top-left-radius: 8px;
+  border: 1px solid #000000;
+}
+main#learn .search-form input, main#learn .search-form button {
+  height: 50px;
+  font-size: 1.1rem;
+}
+main#learn .search-form button {
+  width: 10vw;
+  min-width: 91px;
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+}
+main#learn .filter-options .filter-action-element {
+  display: flex;
+  margin: 16px 0;
+}
+main#learn .filter-options .filter-action-element select {
+  width: 30vw;
+  min-width: 200px;
+  border-bottom-left-radius: 8px;
+  border-top-left-radius: 8px;
+}
+main#learn .filter-options .filter-action-element select, main#learn .filter-options .filter-action-element button {
+  height: 40px;
+  padding: 0 8px;
+}
+main#learn .filter-options .filter-action-element button {
+  width: 15vw;
+  min-width: 91px;
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+}
+main#learn .resources {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+main#learn .resources a {
+  text-decoration: none;
+}
+main#learn .resources a .resource {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  border: 1px solid #000000;
+  border-radius: 8px;
+  box-shadow: 4px 4px 14px rgba(0, 0, 0, 0.0705882353);
+  padding: 8px 16px;
+}
+main#learn .resources a .resource:hover {
+  box-shadow: 4px 4px 14px rgba(0, 0, 0, 0.2980392157);
+}
+main#learn .resources a .resource .user-photo {
+  width: 100px;
+  height: 100px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transform: scale(0.8);
+  border-radius: 50%;
+  border: 1px solid #000000;
+}
+main#learn .resources a .resource p {
+  margin: 0;
+}
+main#learn .resources a .resource .username {
+  font-weight: 700;
+}
+main#learn .resources a .resource .name, main#learn .resources a .resource .following {
+  font-weight: 300;
+}
+main#learn .resources a .resource .following {
+  font-size: 0.85rem;
+}
+
 main#resource {
   display: flex;
   flex-direction: column;

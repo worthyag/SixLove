@@ -15,9 +15,11 @@
   
   <div class="resources">
     {% for resource in resources %}
-    <div class="resource">
-      <p>{{ resource }}</p>
-    </div>
+    <a href="{% url 'tennis:resource' resource_id=resource.id %}">
+      <div class="resource">
+        <p>{{ resource }}</p>
+      </div>
+    </a>
     {% endfor %}
   </div>
 </main>
