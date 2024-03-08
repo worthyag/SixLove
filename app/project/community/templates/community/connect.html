@@ -1,4 +1,9 @@
-{% extends './base.html' %} {% load static %} {% block content %}
+{% extends '../registration/base.html' %} 
+{% load static %} 
+{% block extra_styles %}
+<link rel="stylesheet" href="{% static './community/styles/styles.css' %}">
+{% endblock %}
+{% block content %}
 <main id="connect">
   <h2>Connect</h2>
   <!-- Search Form -->
