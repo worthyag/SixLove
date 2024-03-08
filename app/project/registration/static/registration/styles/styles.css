@@ -15,14 +15,18 @@ header {
   justify-content: space-between;
   align-items: flex-start;
 }
-header .brand-name {
+header a {
+  text-decoration: none;
+}
+header .brand-group .brand-name {
   font-size: 2.4rem;
   font-weight: bold;
   font-family: "Paytone One", sans-serif;
   color: #578DDD;
 }
-header a {
-  text-decoration: none;
+header .auth button:hover {
+  cursor: pointer;
+  background-color: #578DDD;
 }
 
 header h1 {

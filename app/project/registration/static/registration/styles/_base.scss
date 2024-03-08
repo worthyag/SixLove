@@ -10,16 +10,29 @@ header {
   background-color: $white;
   border-bottom: 1px solid #00000033;
 
-  .brand-name {
-    font-size: 2.4rem;
-    font-weight: bold;
-    font-family: $display-font;
-    color: $brand-colour;
-  }
-
   a {
     text-decoration: none;
   }
+
+  .brand-group {
+    .brand-name {
+      font-size: 2.4rem;
+      font-weight: bold;
+      font-family: $display-font;
+      color: $brand-colour;
+    }
+  }
+
+  .auth {
+      button {
+        &:hover {
+          cursor: pointer;
+          background-color: $brand-colour;
+        }
+    }
+  }
+
+  
 
   padding: 32px;
 

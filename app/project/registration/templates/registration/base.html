@@ -17,20 +17,12 @@
         <a href="{% url 'home' %}" class="brand-name">SixLove</a>
       </div>
       <div class="auth">
-        {% if user.is_authenticated %}
-        <div class="logout">
-          <p>Welcome, {{ user.username }}</p>
-          <form class="auth-btns" method="post" action="{% url 'logout' %}">
-            {% csrf_token %}
-            <button type="submit">Logout</button>
-          </form>
-        </div>
-        {% else %}
+        
         <div class="auth-btns login-btns">
           <a href="{% url 'login' %}"><button>Login</button></a>
           <a href="{% url 'signup' %}"><button>Sign Up</button></a>
         </div>
-        {% endif %}
+
       </div>
     </header>
     <nav>
