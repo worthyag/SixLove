@@ -18,6 +18,5 @@ urlpatterns = [
          views.delete_tennis_session, name="delete"),
     path("success/", views.success, name="success"),
     path("learn/", views.learn, name="learn"),
-    path("resource/", views.resource, name="resource"),
     path("resource/<int:resource_id>", views.resource, name="resource"),
 ]

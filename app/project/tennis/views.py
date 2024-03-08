@@ -150,17 +150,7 @@ def learn(request):
 
 
 @login_required
-def resource(request):
-    return render(
-        request,
-        "./tennis/resource.html",
-        {
-            "title": "Resource Title"
-        }
-    )
-
-
-def resource2(request, resource_id):
+def resource(request, resource_id):
     resource = get_object_or_404(models.Resource, id=resource_id)
     sections = resource.article_sections.all(
     ) if resource.resource_type == "article" else None
