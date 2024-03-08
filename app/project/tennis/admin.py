@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import TennisSession, Resource, ArticleSection
+from .models import TennisSession, Resource, ArticleSection, Tag
 
 # Register your models here.
 
@@ -12,5 +12,6 @@ class TennisSessionAdmin(admin.ModelAdmin):
 
 
 admin.site.register(TennisSession, TennisSessionAdmin)
+admin.site.register(Tag)
 admin.site.register(Resource)
 admin.site.register(ArticleSection)

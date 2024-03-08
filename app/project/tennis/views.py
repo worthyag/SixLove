@@ -153,15 +153,12 @@ def learn(request):
 def resource(request, resource_id):
     try:
         resource = get_object_or_404(models.Resource, id=resource_id)
-
-        sections = resource.article_sections.all(
-        ) if resource.resource_type == "article" else None
+        sections = resource.sections.all() if resource.resource_type == "article" else None
 
         # Splitting content for sections with type "bullet_points" or "paragraph"
         if sections is not None:
             for section in sections:
-                if (section.section_type == 'bullet_points') or \
-                        (section.section_type == 'paragraph'):
+                if section.section_type in ["bullet_points", "paragraph"]:
                     section.split_content = section.content.split("\n")
 
         return render(

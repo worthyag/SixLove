@@ -37,13 +37,8 @@ class TennisSession(models.Model):
         return f"{self.user.get_username()} - {self.title}"
 
 
-class Resource(models.Model):
+class Tag(models.Model):
     """"""
-    RESOURCE_TYPES = [
-        ("video", "Video"),
-        ("article", "Article")
-    ]
-
     RESOURCE_TAGS = [
         ("backhand", "Backhand"),
         ("forehand", "Forehand"),
@@ -59,22 +54,38 @@ class Resource(models.Model):
         ("other", "Other")
     ]
 
+    name = models.CharField(max_length=255, unique=True, choices=RESOURCE_TAGS)
+
+    def __str__(self):
+        return self.name
+
+
+class Resource(models.Model):
+    """"""
+    RESOURCE_TYPES = [
+        ("video", "Video"),
+        ("article", "Article")
+    ]
+
     title = models.CharField(max_length=255)
     resource_type = models.CharField(max_length=20, choices=RESOURCE_TYPES)
-    tags = models.ManyToManyField("self", blank=True, choices=RESOURCE_TAGS,
-                                  related_name="related_tags")
+    tags = models.ManyToManyField(Tag, blank=True)
     reference = models.URLField()
     # video_url = models.URLField(blank=True, null=True)
     video_url = models.CharField(max_length=20, blank=True, null=True)
     article_image = models.ImageField(upload_to="article_images/",
                                       blank=True, null=True)
 
-    # Extras for future extensions.
-    created_at = models.DateTimeField(auto_now_add=True)
-    created_by = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
+    # created_at = models.DateTimeField(auto_now_add=True)
+    # created_by = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
+
+    # Many-to-Many relationship with ArticleSection
+    sections = models.ManyToManyField(
+        "ArticleSection", blank=True, related_name="resources")
 
     def __str__(self):
-        return f"{self.created_by} - {self.title}"
+        """"""
+        return f"{self.title}"
 
 
 class ArticleSection(models.Model):
@@ -86,13 +97,18 @@ class ArticleSection(models.Model):
         ("bullet_points", "Bullet Points")
     ]
 
-    article = models.ForeignKey(Resource, on_delete=models.CASCADE,
-                                related_name="article_sections",
-                                blank=True, null=True)
+    # article = models.ForeignKey(Resource, on_delete=models.CASCADE,
+    # related_name="article_sections",
+    # blank=True, null=True)
+    resource = models.ForeignKey(Resource, on_delete=models.CASCADE,
+                                 related_name="article_sections",
+                                 default=None)
     section_type = models.CharField(max_length=15, choices=SECTION_TYPES)
     content = models.TextField(blank=True, null=True)
     image = models.ImageField(upload_to="article_images/",
                               blank=True, null=True)
 
     def __str__(self):
-        return f"{self.section_type} for {self.article.title if self.article else 'No Resource'}"
+        """"""
+        return f"{self.section_type} - {self.resource.title} - \
+            {self.content[:20] if self.content else 'No Content'}"
