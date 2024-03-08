@@ -8,11 +8,36 @@
   <a class="back-btn" href="{% url 'tennis:learn' %}"
     ><button>Back to Learn</button></a
   >
-  <h1 class="resource-title">{{title}}</h1>
-  <iframe class="resource-video" src="https://www.youtube.com/embed/dE6J82QSIIk" frameborder="0"></iframe>
-  <img class="resource-img" src="{% static './community/images/profile-pic-temp.png' %}" alt="Resource img">
+  <h1 class="resource-title">{{ title }}</h1>
+
+  {% if resource.resource_type == "video" %}
+    <iframe class="resource-video" src="https://www.youtube.com/embed/dE6J82QSIIk" frameborder="0"></iframe>
+  {% elif resource.resource_type == "article" %}
+    <img class="resource-img" src="{{ resource.article_img.url }}" alt="Article image">
+
+    {% if sections %}
+      <!-- Iterating through sections for articles -->
+      {% for section in sections %}
+        <!-- Rendering section content based on section_type -->
+        {% if section.section_type == "heading" %}
+          <p class="subheading">{{ section.content }}</p>
+        {% elif section.section_type == "paragraph" %}
+          <p>{{ section.content }}</p>
+        {% elif section.section_type == "image" %}
+          <img src="{{ section.image.url }}" alt="Section Image">
+        {% elif section.section_type == "bullet_points" %}
+          <ul>
+            {% for line in section.content.split('\n') %}
+              <li>{{ line }}</li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+  {% endif %}
+
+
   <div class="resource-content">
-    <p class="subheading">Subheading</p>
     <ul>
       <li><span>Lorem, ipsum dolor sit</span> amet consectetur adipisicing elit. Reprehenderit quia similique doloribus officiis neque nobis voluptatum quae, blanditiis sapiente provident quasi assumenda?</li>
       <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit quia similique doloribus officiis neque nobis voluptatum quae, blanditiis sapiente provident quasi assumenda?</li>
@@ -22,7 +47,7 @@
     <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit quia similique doloribus officiis neque nobis voluptatum quae, blanditiis sapiente provident quasi assumenda? Omnis vero eligendi quidem ut ullam velit ipsam distinctio modi dolorum at hic esse commodi repudiandae ex quam voluptas doloremque voluptates est vel aperiam perspiciatis, magnam, corrupti facilis. Quo voluptatibus maiores incidunt fugit pariatur eligendi odio iusto. Repudiandae natus, molestias odit quae voluptatum, cupiditate dolorem beatae repellendus ut, voluptatem pariatur deserunt! Doloremque delectus possimus placeat recusandae perferendis! Maiores esse natus sit earum dolor quia maxime repellendus amet veritatis quasi nisi illo, consequatur tenetur. Pariatur velit provident nemo quia.</p>
     <img class="resource-img" src="{% static './community/images/profile-pic-temp.png' %}" alt="Resource img">
   </div>
-  <a href="">
+  <a href="{{ resource.reference }}">
     <p class="resource-link">Resource reference.</p>
   </a>
 </main>
