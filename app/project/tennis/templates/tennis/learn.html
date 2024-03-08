@@ -53,7 +53,7 @@
         {% if resource.resource_type != "video" %}
           {% with first_section=resource.sections.first %}
             {% if first_section %}
-              <p class="resource-content">{{ first_section.content|slice:":120" }}...</p>
+              <p class="resource-content">{{ first_section.content|slice:":150" }}...</p>
             {% endif %}
           {% endwith %}
         {% endif %}
