@@ -24,27 +24,52 @@ header {
   }
 
   .auth {
+    text-align: right;
+
+    .logout {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      align-items: flex-end;
+
+      p {
+        margin: 0;
+      }
+
+      form {
+        margin: 0;
+      }
+    }
+
+    .auth-btns {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+
       button {
+        width: 100px;
+        margin: 0;
+
         &:hover {
           cursor: pointer;
           background-color: $brand-colour;
         }
+      }
+
     }
   }
 
-  
-
-  padding: 32px;
-
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
+  padding: 12px 32px;
 }
 
 header h1 {
   margin: 0;
 }
 
+// Button Styling.
 button,
 .btn {
   margin-bottom: 16px;
@@ -89,14 +114,6 @@ button:hover,
 
 a {
   color: #000000;
-}
-
-.auth {
-  text-align: right;
-}
-
-.login-btns button {
-  width: 100px;
 }
 
 nav {

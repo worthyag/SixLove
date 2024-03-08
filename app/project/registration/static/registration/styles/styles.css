@@ -10,10 +10,10 @@ body {
 header {
   background-color: #FFFFFF;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-  padding: 32px;
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
+  padding: 12px 32px;
 }
 header a {
   text-decoration: none;
@@ -24,7 +24,31 @@ header .brand-group .brand-name {
   font-family: "Paytone One", sans-serif;
   color: #578DDD;
 }
-header .auth button:hover {
+header .auth {
+  text-align: right;
+}
+header .auth .logout {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: flex-end;
+}
+header .auth .logout p {
+  margin: 0;
+}
+header .auth .logout form {
+  margin: 0;
+}
+header .auth .auth-btns {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+header .auth .auth-btns button {
+  width: 100px;
+  margin: 0;
+}
+header .auth .auth-btns button:hover {
   cursor: pointer;
   background-color: #578DDD;
 }
@@ -76,14 +100,6 @@ button:hover,
 
 a {
   color: #000000;
-}
-
-.auth {
-  text-align: right;
-}
-
-.login-btns button {
-  width: 100px;
 }
 
 nav {
