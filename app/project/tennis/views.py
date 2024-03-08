@@ -161,6 +161,11 @@ def resource(request, resource_id):
                 if section.section_type in ["bullet_points", "paragraph"]:
                     section.split_content = section.content.split("\n")
 
+        # print(type(sections))
+
+        # for section in sections:
+        #     print("hello")
+
         return render(
             request,
             "./tennis/resource.html",
