@@ -12,6 +12,32 @@
     <input type="text" name="resource-search" placeholder="Search resources" value="{{ search_query }}">
     <button type="submit">Search</button>
   </form>
+
+  <!-- Filter Option -->
+  <form method="get" class="filter-options">
+    <label for="filter">Filter by:</label>
+    <div class="filter-action-element">
+      <select name="filter" id="filter">
+        <option value="" {% if not filter_option %}selected{% endif %}>All</option>
+        <option value="fundamentals" {% if filter_option == 'fundamentals' %}selected{% endif %}>
+          Fundamentals
+        </option>
+        <option value="fitness" {% if filter_option == 'fitness' %}selected{% endif %}>
+          Fitness
+      </option>
+      <option value="stretch" {% if filter_option == 'stretch' %}selected{% endif %}>
+        Stretching
+      </option>
+      <option value="forehand" {% if filter_option == 'forehand' %}selected{% endif %}>
+        Forehand
+      </option>
+      <option value="backhand" {% if filter_option == 'backhand' %}selected{% endif %}>
+        Backhand
+      </option>
+      </select>
+      <button type="submit">Apply Filter</button>
+    </div>
+  </form>
   
   <div class="resources">
     {% for resource in resources %}
