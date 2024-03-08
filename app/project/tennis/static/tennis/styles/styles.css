@@ -56,6 +56,8 @@ main#learn .resources {
   display: flex;
   flex-wrap: wrap;
   gap: 24px;
+  justify-content: flex-start;
+  align-items: center;
 }
 main#learn .resources a {
   text-decoration: none;

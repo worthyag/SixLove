@@ -66,6 +66,9 @@ main#learn {
     flex-wrap: wrap;
     gap: 24px;
 
+    justify-content: flex-start;
+    align-items: center;
+
     a {
       text-decoration: none;
   
