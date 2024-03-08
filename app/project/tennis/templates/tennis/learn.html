@@ -11,8 +11,21 @@
 </style>
 {% endblock %}
 {% block content %}
-<main>
-  <h2>Learn</h2>
-  <p>Not implemented yet.</p>
+<main id="learn">
+  <h2>Discover</h2>
+
+  <!-- Search Form -->
+  <form class="search-form" action="" method="get">
+    <input type="text" name="resource-search" placeholder="Search resources" value="{{ search_query }}">
+    <button type="submit">Search</button>
+  </form>
+  
+  <div class="resources">
+    {% for resource in resources %}
+    <div class="resource">
+      <p>{{ resource }}</p>
+    </div>
+    {% endfor %}
+  </div>
 </main>
 {% endblock %}

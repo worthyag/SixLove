@@ -1,0 +1,117 @@
+main#learn {
+  margin-bottom: 32px;
+
+  .search-form {
+    display: flex;
+
+    input {
+      width: 90vw;
+      min-width: 200px;
+      padding: 8px 16px;
+
+      border-bottom-right-radius: 0;
+      border-top-right-radius: 0;
+      border-bottom-left-radius: 8px;
+      border-top-left-radius: 8px;
+      border: 1px solid $black;
+    }
+
+    input, button {
+      height: 50px;
+      font-size: 1.1rem;
+    }
+
+    button {
+      width: 10vw;
+      min-width: 91px;
+
+      border-bottom-left-radius: 0;
+      border-top-left-radius: 0;
+    }
+  }
+
+  .filter-options {
+    // display: flex;
+    // align-items: center;
+
+    .filter-action-element {
+      display: flex;
+      margin: 16px 0;
+
+      select {
+        width: 30vw;
+        min-width: 200px;
+
+        border-bottom-left-radius: 8px;
+        border-top-left-radius: 8px;
+      }
+
+      select, button {
+        height: 40px;
+        padding: 0 8px;
+      }
+
+      button {
+        width: 15vw;
+        min-width: 91px;
+  
+        border-bottom-left-radius: 0;
+        border-top-left-radius: 0;
+      }
+    }
+  }
+
+  .users {
+    // background-color: aqua;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    a {
+      text-decoration: none;
+  
+      .user-info {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+
+        border: 1px solid $black;
+        border-radius: 8px;
+        box-shadow: 4px 4px 14px #00000012;
+
+        &:hover {
+          box-shadow: 4px 4px 14px #0000004c;
+        }
+  
+        // background-color: hotpink;
+    
+        .user-photo {
+          width: 100px;
+          height: 100px;
+          object-fit: cover;
+          transform: scale(0.8);
+  
+          border-radius: 50%;
+          border: 1px solid $black;
+        }
+  
+        p {
+          margin: 0;
+        }
+  
+        .username {
+          font-weight: 700;
+        }
+
+        .name, .following {
+          font-weight: 300;
+        }
+
+        .following {
+          font-size: 0.85rem;
+        }
+      }
+    }
+  }
+  
+}

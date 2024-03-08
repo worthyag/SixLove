@@ -140,11 +140,14 @@ def success(request):
 
 @login_required
 def learn(request):
+    resources = models.Resource.objects.all().order_by("title")
+
     return render(
         request,
         "./tennis/learn.html",
         {
-            "title": "Learn"
+            "title": "Learn",
+            "resources": resources,
         }
     )
 
