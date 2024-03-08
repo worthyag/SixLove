@@ -10,6 +10,7 @@
   >
   <h1 class="resource-title">{{ title }}</h1>
 
+  {% if resource %}
   {% if resource.resource_type == "video" %}
     <iframe class="resource-video" src="{{ resource.video_url }}" frameborder="0"></iframe>
   {% elif resource.resource_type == "article" %}
@@ -42,5 +43,8 @@
   <a href="{{ resource.reference }}">
     <p class="resource-link">Resource reference.</p>
   </a>
+  {% else %}
+  <p>Resource does not exist.</p>
+  {% endif %}
 </main>
 {% endblock %}

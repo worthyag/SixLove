@@ -151,23 +151,35 @@ def learn(request):
 
 @login_required
 def resource(request, resource_id):
-    resource = get_object_or_404(models.Resource, id=resource_id)
-    sections = resource.article_sections.all(
-    ) if resource.resource_type == "article" else None
+    try:
+        resource = get_object_or_404(models.Resource, id=resource_id)
 
-    # Splitting content for sections with type "bullet_points" or "paragraph"
-    if sections is not None:
-        for section in sections:
-            if (section.section_type == 'bullet_points') or \
-                    (section.section_type == 'paragraph'):
-                section.split_content = section.content.split("\n")
+        sections = resource.article_sections.all(
+        ) if resource.resource_type == "article" else None
 
-    return render(
-        request,
-        "./tennis/resource.html",
-        {
-            "title": resource.title,
-            "resource": resource,
-            "sections": sections
-        }
-    )
+        # Splitting content for sections with type "bullet_points" or "paragraph"
+        if sections is not None:
+            for section in sections:
+                if (section.section_type == 'bullet_points') or \
+                        (section.section_type == 'paragraph'):
+                    section.split_content = section.content.split("\n")
+
+        return render(
+            request,
+            "./tennis/resource.html",
+            {
+                "title": resource.title,
+                "resource": resource,
+                "sections": sections
+            }
+        )
+    except:
+        return render(
+            request,
+            "./tennis/resource.html",
+            {
+                "title": "Resource Not Found",
+                "resource": None,
+                "sections": None
+            }
+        )
