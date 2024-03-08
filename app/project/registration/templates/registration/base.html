@@ -10,9 +10,12 @@
   </head>
   <body>
     <header>
-      <a href="{% url 'home' %}">
-        <h1>SixLove</h1>
-      </a>
+      <div class="brand-group">
+        <a href="{% url 'home' %}">
+          <img src="{% static './registration/images/sixlove-logo.svg' %}" alt="SixLove">
+        </a>
+        <a href="{% url 'home' %}" class="brand-name">SixLove</a>
+      </div>
       <div class="auth">
         {% if user.is_authenticated %}
         <div class="logout">
