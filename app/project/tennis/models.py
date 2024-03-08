@@ -64,7 +64,8 @@ class Resource(models.Model):
     tags = models.ManyToManyField("self", blank=True, choices=RESOURCE_TAGS,
                                   related_name="related_tags")
     reference = models.URLField()
-    video_url = models.URLField(blank=True, null=True)
+    # video_url = models.URLField(blank=True, null=True)
+    video_url = models.CharField(max_length=20, blank=True, null=True)
     article_image = models.ImageField(upload_to="article_images/",
                                       blank=True, null=True)
 
@@ -73,7 +74,7 @@ class Resource(models.Model):
     created_by = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.title
+        return f"{self.created_by} - {self.title}"
 
 
 class ArticleSection(models.Model):
@@ -86,11 +87,12 @@ class ArticleSection(models.Model):
     ]
 
     article = models.ForeignKey(Resource, on_delete=models.CASCADE,
-                                related_name="article_sections")
+                                related_name="article_sections",
+                                blank=True, null=True)
     section_type = models.CharField(max_length=15, choices=SECTION_TYPES)
     content = models.TextField(blank=True, null=True)
     image = models.ImageField(upload_to="article_images/",
                               blank=True, null=True)
 
     def __str__(self):
-        return f"{self.section_type} for {self.article.title}"
+        return f"{self.section_type} for {self.article.title if self.article else 'No Resource'}"

@@ -12,7 +12,7 @@
 
   {% if resource %}
   {% if resource.resource_type == "video" %}
-    <iframe class="resource-video" src="{{ resource.video_url }}" frameborder="0"></iframe>
+    <iframe class="resource-video" src="https://www.youtube.com/embed/{{ resource.video_url }}" frameborder="0"></iframe>
   {% elif resource.resource_type == "article" %}
     <img class="resource-img" src="{{ resource.article_img.url }}" alt="Article image">
 
