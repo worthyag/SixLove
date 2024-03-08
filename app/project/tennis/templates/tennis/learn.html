@@ -1,14 +1,7 @@
 {% extends '../registration/base.html' %}
+{% load static %}
 {% block extra_styles %}
-<style>
-  main {
-      padding: 16px 32px; 
-  }
-
-  .view-tennis-sessions-btn {
-    margin-top: 20px;
-  }
-</style>
+<link rel="stylesheet" href="{% static './tennis/styles/styles.css' %}">
 {% endblock %}
 {% block content %}
 <main id="learn">
