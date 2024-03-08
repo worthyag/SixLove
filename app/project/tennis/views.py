@@ -158,3 +158,19 @@ def resource(request):
             "title": "Resource Title"
         }
     )
+
+
+def resource2(request, resource_id):
+    resource = get_object_or_404(models.Resource, id=resource_id)
+    sections = resource.article_sections.all(
+    ) if resource.resource_type == "article" else None
+
+    return render(
+        request,
+        "./tennis/resource.html",
+        {
+            "title": resource.title,
+            "resource": resource,
+            "sections": sections
+        }
+    )
