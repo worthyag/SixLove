@@ -1,9 +1,36 @@
 const profileSettingsDiv = document.querySelector(".profile-settings-block");
+const usernameSettingsDiv = document.querySelector(".username-settings-block");
+const nameSettingsDiv = document.querySelector(".name-settings-block");
+const bioSettingsDiv = document.querySelector(".bio-settings-block");
+const dpSettingsDiv = document.querySelector(".dp-settings-block");
 
 profileSettingsDiv.addEventListener("click", (e) => {
-  console.log("How do you feel?");
+  console.log("Profile");
 
   editProfile(e.target, true);
+});
+
+usernameSettingsDiv.addEventListener("click", (e) => {
+  console.log("Username");
+
+  // editProfile(e.target, true);
+});
+
+nameSettingsDiv.addEventListener("click", (e) => {
+  console.log("Name");
+
+  // editProfile(e.target, true);
+});
+
+bioSettingsDiv.addEventListener("click", (e) => {
+  console.log("Bio");
+
+  // editProfile(e.target, true);
+});
+dpSettingsDiv.addEventListener("click", (e) => {
+  console.log("DP");
+
+  // editProfile(e.target, true);
 });
 
 function editProfile(btn, isEditing) {
