@@ -33,10 +33,9 @@ def check_tennis_session_achievements(sender, instance, **kwargs):
 
 def check_achievement(user, award_category_name, name, levels):
     """
-    Check and award achievements for a specific task.
+    Checks and awards achievements for a specific task.
     """
-    current_count = get_current_count(
-        user, award_category_name)  # Implement this function
+    current_count = get_current_count(user, award_category_name)
 
     award_category = models.AchievementCategory.objects.get(
         name=award_category_name
@@ -179,7 +178,7 @@ def check_achievement(user, award_category_name, name, levels):
 
 def award_achievement(user, award_category, name, level):
     """
-    Award an achievement to the user profile.
+    Awards an achievement to the user profile.
     """
     achievement = models.Achievement.objects.create(
         user_profile=user,
