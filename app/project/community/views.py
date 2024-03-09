@@ -400,10 +400,13 @@ def user(request, user_profile_id):
         user_profile = models.UserProfile.objects.get(id=user_profile_id)
         user_posts = models.UserPosts.objects.filter(
             user_profile=user_profile).order_by('-created_at')
+        user_awards = models.Achievement.objects.filter(
+            user_profile=user_profile).order_by('-completed_at')
 
     except models.UserProfile.DoesNotExist:
         user_profile = None
         user_posts = None
+        user_awards = None
 
     # If a user profile does not exist.
     if not user_profile:
@@ -460,6 +463,7 @@ def user(request, user_profile_id):
                     "title": f"{user_profile.username}'s Profile",
                     "user_profile": user_profile,
                     "user_posts": user_posts,
+                    "user_awards": user_awards,
                     "is_following": is_following,
                     "comment_form": comment_form,
                 }

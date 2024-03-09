@@ -114,30 +114,20 @@
   </div>
 
   <div class="achievements toggle-posts">
-    <div class="award">
-      <div class="award-img"></div>
-      <div class="award-info">
-        <p class="award-name">Award Name</p>
-        <p class="award-desc">Award description goes here...</p>
-        <p class="award-date">Awarded DD-MM-YYYY</p>
-      </div>
-    </div>
-    <div class="award">
-      <div class="award-img"></div>
-      <div class="award-info">
-        <p class="award-name">Award Name</p>
-        <p class="award-desc">Award description goes here...</p>
-        <p class="award-date">Awarded DD-MM-YYYY</p>
-      </div>
-    </div>
-    <div class="award">
-      <div class="award-img"></div>
-      <div class="award-info">
-        <p class="award-name">Award Name</p>
-        <p class="award-desc">Award description goes here...</p>
-        <p class="award-date">Awarded DD-MM-YYYY</p>
-      </div>
-    </div>
+    {% if user_awards %}
+      {% for award in user_awards %}
+        <div class="award">
+          <div class="award-img">
+            <img src="{{ award.category.image.url }}" alt="Award Picture">
+          </div>
+          <div class="award-info">
+            <p class="award-name">{{ award.name }}</p>
+            <p class="award-desc">{{ award.description }}</p>
+            <p class="award-date">Awarded {{ award.completed_at }}</p>
+          </div>
+        </div>
+      {% endfor %}
+    {% endif %}
   </div>
 
     <!-- Modals for viewing the post -->
