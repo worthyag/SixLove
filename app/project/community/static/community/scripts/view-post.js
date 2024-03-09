@@ -45,10 +45,16 @@ async function viewPost(url, infoDiv, index) {
   captionElement.textContent = infoDiv.querySelector(".captionText-data").innerText;
 
   // Updating comments.
+  const commentCountData = infoDiv.querySelector(".commentCount-data");
   const comments = infoDiv.querySelector(".comments-data").children;
-  postComments.textContent = "";
+  // postComments.textContent = "";
+  postCommentCount.textContent = "";
+  commentersUsername.textContent = "";
+  commentContent.textContent = "";
 
   for (const comment of comments) {
+    postCommentCount.textContent = commentCountData.innerText;
+
     const p = document.createElement("p");
     p.textContent = comment.innerText;
     p.classList.add("comment");
