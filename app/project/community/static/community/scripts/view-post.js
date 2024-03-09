@@ -21,6 +21,8 @@ async function viewPost(url, infoDiv, index) {
   const commentUserLink = modal.querySelector(".comment-user-link");
   const commentersUsername = modal.querySelector(".commenters-username");
   const commentContent = modal.querySelector(".comment-content");
+  const commentForm = modal.querySelector(".comment-form");
+  const postId = modal.querySelector(".hidden-id");
 
   // Fetching the updated like info for a specific post.
   try {
@@ -46,10 +48,16 @@ async function viewPost(url, infoDiv, index) {
   captionElement.textContent = infoDiv.querySelector(".captionText-data").innerText;
 
   // Updating comments.
+  const postIDData = infoDiv.querySelector(".postId-data");
   const commentCountData = infoDiv.querySelector(".commentCount-data");
   const commentersID = infoDiv.querySelector(".commentersID-data");
   const commentersUsernameData = infoDiv.querySelector(".commentersUsername-data");
   const commentContentData = infoDiv.querySelector(".commentContent-data");
+
+  if (commentForm) {
+    commentForm.setAttribute("data-post-id", postIDData.innerText);
+    postId.value = postIDData.innerText;
+  }
 
   const comments = infoDiv.querySelector(".comments-data").children;
   // postComments.textContent = "";

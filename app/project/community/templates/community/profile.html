@@ -77,6 +77,7 @@
           <span class="likes-data">{{ post.get_like_count }}</span>
           <span class="username-data">{{ post.user_profile.username }}</span>
           <span class="captionText-data">{{ post.post_caption }}</span>
+          <span class="postId-data">{{ post.id }}</span>
           <span class="commentCount-data">{{ post.get_comment_count }} comments</span>
           <div class="comments-data">
             {% for comment in post.comments.all %}

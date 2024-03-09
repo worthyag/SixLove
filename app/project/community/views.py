@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect, get_object_or_404
+from django.urls import reverse
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseBadRequest, JsonResponse
 from django.db.models import Exists, OuterRef, Q, Count, Max, F
@@ -388,6 +389,9 @@ def profile(request):
 @login_required
 def user(request, user_profile_id):
     """"""
+    # Initialising a new form.
+    comment_form = forms.CommentForm()
+
     # First checking whether a user profile exists.
     try:
         user_profile = models.UserProfile.objects.get(id=user_profile_id)
@@ -426,6 +430,25 @@ def user(request, user_profile_id):
         is_following = request_profile.following.filter(
             id=user_profile.id).exists()
 
+        if request.method == 'POST':
+            post_id = request.POST.get("post-id")
+
+            if 'comment-submit' in request.POST:
+                comment_form = forms.CommentForm(request.POST)
+
+                if comment_form.is_valid():
+                    content = comment_form.cleaned_data['content']
+
+                    post = get_object_or_404(
+                        models.UserPosts,
+                        id=int(post_id)
+                    )
+
+                    post.comment(user_profile=request_profile, content=content)
+                    return redirect(reverse("community:user", args=[user_profile_id]))
+                else:
+                    return HttpResponseBadRequest("Invalid form data")
+
         if request_profile != user_profile:
             return render(
                 request,
@@ -435,6 +458,7 @@ def user(request, user_profile_id):
                     "user_profile": user_profile,
                     "user_posts": user_posts,
                     "is_following": is_following,
+                    "comment_form": comment_form,
                 }
             )
         else:

@@ -88,6 +88,7 @@
           <span class="likes-data">{{ post.get_like_count }}</span>
           <span class="username-data">{{ post.user_profile.username }}</span>
           <span class="captionText-data">{{ post.post_caption }}</span>
+          <span class="postId-data">{{ post.id }}</span>
           <span class="commentCount-data">{{ post.get_comment_count }} comments</span>
           <div class="comments-data">
             {% for comment in post.comments.all %}
@@ -160,6 +161,18 @@
               <span class="username">username</span>
               <span class="caption-text">caption text will be placed...</span>
             </div>
+            <!-- Comment form -->
+            <form class="comment-form hide-comment-form" method="post" 
+            action=""
+            data-post-id="{{ post.id }}">
+              <span class="close-btn">&times;</span>
+              {% csrf_token %}
+              <div class="form-elements">
+                <input class="hidden-id" type="hidden" name="post-id" value="{{ post.id }}">
+                {{ comment_form.as_p }}
+              </div>
+              <button type="submit" name="comment-submit">Post Comment</button>
+            </form>
             <div class="post-comments">
               <span class="post-comments-count">View all 12 comments</span>
               <div class="expanded-comments">
