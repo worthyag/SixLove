@@ -372,27 +372,6 @@ def profile(request):
             # Initialising a new form.
             form = forms.UserPostsForm()
 
-        # try:
-        #     following_users = user_profile.following.all()
-
-        #     # Get posts from user's profile and users they are following.
-        #     following_posts = models.UserPosts.objects.filter(
-        #         user_profile__in=following_users) | models.UserPosts.objects.filter(
-        #         user_profile=user_profile)
-
-        #     # Annotating each post with info about whether the current user has liked it.
-        #     following_posts = following_posts.annotate(
-        #         user_has_liked=Exists(models.Like.objects.filter(
-        #             user_profile=user_profile, post=OuterRef("pk")
-        #         ))
-        #     )
-
-        #     # Ordering the posts and making sure that there are no duplicates.
-        #     following_posts = following_posts.order_by(
-        #         '-created_at').distinct()
-        # except:
-        #     following_posts = None
-
         return render(
             request,
             "./community/profile.html",
