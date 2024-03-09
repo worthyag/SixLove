@@ -1,6 +1,6 @@
 from django.core.management.base import BaseCommand
-from models import UserProfile
-from utils import check_achievement
+from community.models import UserProfile
+from community.utils import check_achievement
 
 
 class Command(BaseCommand):
