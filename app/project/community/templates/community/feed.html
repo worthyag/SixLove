@@ -73,7 +73,11 @@
             <span class="post-comments-count">{{ post.comment_count }} comments</span>
             <div class="expanded-comments">
               {% for comment in post.comments.all %}
-                <span class="comment"><span class="commenters-username">{{ comment.user_profile.username }} </span>{{ comment.content }}</span>
+                <span class="comment">
+                  <a href="{% url 'community:user' user_profile_id=comment.user_profile.id %}">
+                    <span class="commenters-username">{{ comment.user_profile.username }}</span>
+                  </a>
+                   {{ comment.content }}</span>
               {% endfor %}
             </div>
             
