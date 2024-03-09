@@ -243,6 +243,9 @@ def feed(request):
 @login_required
 def profile(request):
     """"""
+    # Initialising a new form.
+    comment_form = forms.CommentForm()
+
     # First checking whether a user profile exists.
     try:
         user_profile = models.UserProfile.objects.get(user=request.user)
@@ -347,8 +350,24 @@ def profile(request):
                 except models.UserProfile.DoesNotExist:
                     print("User profile does not exist.")
 
-            else:
-                pass
+            elif 'comment-submit' in request.POST:
+                request_profile = models.UserProfile.objects.get(
+                    user=request.user)
+
+                comment_form = forms.CommentForm(request.POST)
+
+                if comment_form.is_valid():
+                    content = comment_form.cleaned_data['content']
+
+                    post = get_object_or_404(
+                        models.UserPosts,
+                        id=int(post_id)
+                    )
+
+                    post.comment(user_profile=request_profile, content=content)
+                    return redirect("community:profile")
+                else:
+                    return HttpResponseBadRequest("Invalid form data")
         else:
             # Initialising a new form.
             form = forms.UserPostsForm()
@@ -381,7 +400,8 @@ def profile(request):
                 "title": "Profile",
                 "user_profile": user_profile,
                 "user_posts": user_posts,
-                "form": form
+                "form": form,
+                "comment_form": comment_form,
             }
         )
 

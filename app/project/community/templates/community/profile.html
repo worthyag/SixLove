@@ -16,6 +16,7 @@
 <script src="{% static './community/scripts/create-profile.js' %}" defer></script>
 <script src="{% static './community/scripts/post-menu.js' %}" defer></script>
 <script src="{% static './community/scripts/edit-delete-post.js' %}" defer></script>
+<script src="{% static './community/scripts/toggle-comment-form.js' %}" defer></script>
 {% endblock %}
 {% block content %}
 {% if user_profile %}
@@ -159,6 +160,18 @@
               <span class="username">username</span>
               <span class="caption-text">caption text will be placed...</span>
             </div>
+            <!-- Comment form -->
+            <form class="comment-form hide-comment-form" method="post" 
+            action=""
+            data-post-id="{{ post.id }}">
+              <span class="close-btn">&times;</span>
+              {% csrf_token %}
+              <div class="form-elements">
+                <input class="hidden-id" type="hidden" name="post-id" value="{{ post.id }}">
+                {{ comment_form.as_p }}
+              </div>
+              <button type="submit" name="comment-submit">Post Comment</button>
+            </form>
             <div class="post-comments">
               <span class="post-comments-count">View all 12 comments</span>
               <div class="expanded-comments">
