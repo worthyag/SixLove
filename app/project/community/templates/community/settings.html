@@ -4,6 +4,7 @@
 <link rel="stylesheet" href="{% static './community/styles/styles.css' %}">
 {% endblock %}
 {% block scripts %}
+<script src="{% static './community/scripts/settings.js' %}" defer></script>
 {% endblock %}
 {% block content %}
 <main id="settings">
@@ -15,7 +16,7 @@
     <a><span class="not-visible"></span></a>
   </div>
   <div class="setting-options">
-    <div class="setting-block">
+    <div class="setting-block profile-settings-block">
       <p>Update profile</p>
       <p class="arrow-right">></p>
     </div>
