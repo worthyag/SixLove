@@ -75,15 +75,55 @@ def get_current_count(user_profile, award_category):
     elif award_category == "Resources Read":
         pass
     elif award_category == "Backhand Sessions":
-        pass
+        backhand_sessions = TennisModels.TennisSession.objects.filter(
+            user=user_profile,
+            category="backhand",
+            is_completed=True
+        )
+
+        # Getting the count of the backhand tennis sessions.
+        return backhand_sessions.count()
+
     elif award_category == "Forehand Sessions":
-        pass
+        forehand_sessions = TennisModels.TennisSession.objects.filter(
+            user=user_profile,
+            category="forehand",
+            is_completed=True
+        )
+
+        # Getting the count of the forehand tennis sessions.
+        return forehand_sessions.count()
+
     elif award_category == "Serve Sessions":
-        pass
+        serve_sessions = TennisModels.TennisSession.objects.filter(
+            user=user_profile,
+            category="serve",
+            is_completed=True
+        )
+
+        # Getting the count of the serve tennis sessions.
+        return serve_sessions.count()
+
     elif award_category == "Volley Sessions":
-        pass
+        volley_sessions = TennisModels.TennisSession.objects.filter(
+            user=user_profile,
+            category="volley",
+            is_completed=True
+        )
+
+        # Getting the count of the volley tennis sessions.
+        return volley_sessions.count()
+
     elif award_category == "Slice Sessions":
-        pass
+        slice_sessions = TennisModels.TennisSession.objects.filter(
+            user=user_profile,
+            category="slice",
+            is_completed=True
+        )
+
+        # Getting the count of the slice tennis sessions.
+        return slice_sessions.count()
+
     elif award_category == "Smash Sessions":
         pass
     elif award_category == "Drop-Shot Sessions":
