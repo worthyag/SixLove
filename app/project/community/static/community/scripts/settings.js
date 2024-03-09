@@ -4,90 +4,51 @@ const nameSettingsDiv = document.querySelector(".name-settings-block");
 const bioSettingsDiv = document.querySelector(".bio-settings-block");
 const dpSettingsDiv = document.querySelector(".dp-settings-block");
 
-profileSettingsDiv.addEventListener("click", (e) => {
+profileSettingsDiv.addEventListener("click", () => {
   console.log("Profile");
-
-  editProfile(e.target, true);
+  editProfile();
 });
 
-usernameSettingsDiv.addEventListener("click", (e) => {
+usernameSettingsDiv.addEventListener("click", () => {
   console.log("Username");
-
-  editUsername(e.target, true);
+  editUsername();
 });
 
-nameSettingsDiv.addEventListener("click", (e) => {
+nameSettingsDiv.addEventListener("click", () => {
   console.log("Name");
-
-  editName(e.target, true);
+  editName();
 });
 
-bioSettingsDiv.addEventListener("click", (e) => {
+bioSettingsDiv.addEventListener("click", () => {
   console.log("Bio");
-
-  editBio(e.target, true);
+  editBio();
 });
-dpSettingsDiv.addEventListener("click", (e) => {
+dpSettingsDiv.addEventListener("click", () => {
   console.log("DP");
-
-  editDP(e.target, true);
+  editDP();
 });
 
-function editProfile(btn, isEditing) {
+function editProfile() {
   const modal = document.querySelector("#editProfileModal");
-  // const postToEdit = document.querySelector("#post-id-to-edit");
-  // const postId = btn.parentElement.parentElement
-  //                 .parentElement.nextElementSibling.children[0].textContent;
-
-  // postToEdit.value = postId;
-
-  // Disable the file input if the user is editing a post.
-  // const postPicElements = document.querySelectorAll("#id_post_picture");
-
-  // if (isEditing) {
-  //   for (const picElement of postPicElements) {
-  //     picElement.disabled =  true;
-  //   }
-  // } else {
-  //   for (const picElement of postPicElements) {
-  //     picElement.disabled =  false;
-  //   }
-  // }
-
-  // const elements = Array.from(postToEdit.parentElement.parentElement.children);
-  // const [input, pTag, ...rest] = elements;
-
-  // pTag.style.display = "none";
-
-
-  // const postCaptionElements = document.querySelectorAll("#id_post_caption");
-  // const postCaption = btn.parentElement.parentElement
-  //                     .parentElement.nextElementSibling.nextElementSibling
-  //                     .nextElementSibling.children[1].textContent;
-  
-  // for (const captionElement of postCaptionElements) {
-  //   captionElement.value = postCaption;
-  // }
-
   modal.style.display = "block";
 }
 
-function editUsername(btn, isEditing) {
+function editUsername() {
   const modal = document.querySelector("#editUsernameModal");
   modal.style.display = "block";
 }
 
-function editName(btn, isEditing) {
+function editName() {
   const modal = document.querySelector("#editProfileNameModal");
   modal.style.display = "block";
 }
 
-function editBio(btn, isEditing) {
+function editBio() {
   const modal = document.querySelector("#editBioModal");
   modal.style.display = "block";
 }
 
-function editDP(btn, isEditing) {
+function editDP() {
   const modal = document.querySelector("#editDPModal");
   modal.style.display = "block";
 }

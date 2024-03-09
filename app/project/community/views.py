@@ -491,11 +491,11 @@ def profile_settings(request):
     request_profile = models.UserProfile.objects.get(user=request.user)
 
     # Initialising new forms.
-    profile_form = forms.UserProfileForm()
-    username_form = forms.EditUsernameForm()
-    name_form = forms.EditProfileNameForm()
-    bio_form = forms.EditBioForm()
-    dp_form = forms.EditProfilePictureForm()
+    profile_form = forms.UserProfileForm(instance=request_profile)
+    username_form = forms.EditUsernameForm(instance=request_profile)
+    name_form = forms.EditProfileNameForm(instance=request_profile)
+    bio_form = forms.EditBioForm(instance=request_profile)
+    dp_form = forms.EditProfilePictureForm(instance=request_profile)
 
     if request.method == 'POST':
         if "edit-profile" in request.POST:
@@ -509,11 +509,10 @@ def profile_settings(request):
                 return redirect("community:profile-settings")
             else:
                 return HttpResponseBadRequest("Invalid form data")
-        
+
         elif "edit-username" in request.POST:
             username_form = forms.EditUsernameForm(request.POST,
-                                                 request.FILES,
-                                                 instance=request_profile)
+                                                   instance=request_profile)
 
             if username_form.is_valid():
                 username = username_form.save(commit=False)
@@ -521,11 +520,10 @@ def profile_settings(request):
                 return redirect("community:profile-settings")
             else:
                 return HttpResponseBadRequest("Invalid form data")
-            
+
         elif "edit-name" in request.POST:
             name_form = forms.EditProfileNameForm(request.POST,
-                                                 request.FILES,
-                                                 instance=request_profile)
+                                                  instance=request_profile)
 
             if name_form.is_valid():
                 name = name_form.save(commit=False)
@@ -533,11 +531,10 @@ def profile_settings(request):
                 return redirect("community:profile-settings")
             else:
                 return HttpResponseBadRequest("Invalid form data")
-            
+
         elif "edit-bio" in request.POST:
             bio_form = forms.EditBioForm(request.POST,
-                                                 request.FILES,
-                                                 instance=request_profile)
+                                         instance=request_profile)
 
             if bio_form.is_valid():
                 bio = bio_form.save(commit=False)
@@ -545,11 +542,11 @@ def profile_settings(request):
                 return redirect("community:profile-settings")
             else:
                 return HttpResponseBadRequest("Invalid form data")
-        
+
         elif "edit-dp" in request.POST:
             dp_form = forms.EditProfilePictureForm(request.POST,
-                                                 request.FILES,
-                                                 instance=request_profile)
+                                                   request.FILES,
+                                                   instance=request_profile)
 
             if dp_form.is_valid():
                 dp = dp_form.save(commit=False)
