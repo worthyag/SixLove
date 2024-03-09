@@ -509,6 +509,54 @@ def profile_settings(request):
                 return redirect("community:profile-settings")
             else:
                 return HttpResponseBadRequest("Invalid form data")
+        
+        elif "edit-username" in request.POST:
+            username_form = forms.EditUsernameForm(request.POST,
+                                                 request.FILES,
+                                                 instance=request_profile)
+
+            if username_form.is_valid():
+                username = username_form.save(commit=False)
+                username.save()
+                return redirect("community:profile-settings")
+            else:
+                return HttpResponseBadRequest("Invalid form data")
+            
+        elif "edit-name" in request.POST:
+            name_form = forms.EditProfileNameForm(request.POST,
+                                                 request.FILES,
+                                                 instance=request_profile)
+
+            if name_form.is_valid():
+                name = name_form.save(commit=False)
+                name.save()
+                return redirect("community:profile-settings")
+            else:
+                return HttpResponseBadRequest("Invalid form data")
+            
+        elif "edit-bio" in request.POST:
+            bio_form = forms.EditBioForm(request.POST,
+                                                 request.FILES,
+                                                 instance=request_profile)
+
+            if bio_form.is_valid():
+                bio = bio_form.save(commit=False)
+                bio.save()
+                return redirect("community:profile-settings")
+            else:
+                return HttpResponseBadRequest("Invalid form data")
+        
+        elif "edit-dp" in request.POST:
+            dp_form = forms.EditProfilePictureForm(request.POST,
+                                                 request.FILES,
+                                                 instance=request_profile)
+
+            if dp_form.is_valid():
+                dp = dp_form.save(commit=False)
+                dp.save()
+                return redirect("community:profile-settings")
+            else:
+                return HttpResponseBadRequest("Invalid form data")
 
     return render(
         request,
