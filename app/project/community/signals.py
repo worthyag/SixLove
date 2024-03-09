@@ -125,13 +125,44 @@ def get_current_count(user_profile, award_category):
         return slice_sessions.count()
 
     elif award_category == "Smash Sessions":
-        pass
+        smash_sessions = TennisModels.TennisSession.objects.filter(
+            user=user_profile,
+            category="smash",
+            is_completed=True
+        )
+
+        # Getting the count of the smash tennis sessions.
+        return smash_sessions.count()
+
     elif award_category == "Drop-Shot Sessions":
-        pass
+        drop_shot_sessions = TennisModels.TennisSession.objects.filter(
+            user=user_profile,
+            category="drop-shot",
+            is_completed=True
+        )
+
+        # Getting the count of the drop-shot tennis sessions.
+        return drop_shot_sessions.count()
+
     elif award_category == "Agility Sessions":
-        pass
+        agility_sessions = TennisModels.TennisSession.objects.filter(
+            user=user_profile,
+            category="agility",
+            is_completed=True
+        )
+
+        # Getting the count of the agility tennis sessions.
+        return agility_sessions.count()
+
     elif award_category == "Stamina Sessions":
-        pass
+        stamina_sessions = TennisModels.TennisSession.objects.filter(
+            user=user_profile,
+            category="stamina",
+            is_completed=True
+        )
+
+        # Getting the count of the stamina tennis sessions.
+        return stamina_sessions.count()
 
 
 def award_achievement(user_profile, award_category, name, level):
