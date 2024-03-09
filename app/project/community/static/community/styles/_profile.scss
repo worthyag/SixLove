@@ -179,24 +179,23 @@ main#profile {
       border-radius: 8px;
 
       width: max-content;
+      min-width: 450px;
       height: auto;
 
       padding: 8px 16px;
       background-color: $white;
 
       .award-img {
-        background-color: lightblue;
         width: 100px;
         height: 100px;
         border-radius: 8px;
-        border: 1px solid #00000033;
 
         img {
           width: 100px;
           height: 100px;
           object-fit: cover;
           border-radius: 8px;
-          border: 1px solid #00000033;
+          // border: 1px solid #00000033;
         }
       }
 
