@@ -9,9 +9,15 @@ main#profile {
 
     .settings-btn {
       align-self: flex-end;
+      padding: 8px;
+      border-radius: 8px;
 
       img {
         transform: scale(1.3);
+      }
+
+      &:hover {
+        background-color: $hover-colour;
       }
     }
 
