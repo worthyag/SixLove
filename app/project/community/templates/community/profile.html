@@ -75,9 +75,14 @@
           <span class="likes-data">{{ post.get_like_count }}</span>
           <span class="username-data">{{ post.user_profile.username }}</span>
           <span class="captionText-data">{{ post.post_caption }}</span>
+          <span class="commentCount-data">{{ post.get_comment_count }} comments</span>
           <div class="comments-data">
             {% for comment in post.comments.all %}
-            <span class="comments-data">{{ comment }}</span>
+            <span class="commentersID-data">{{ comment.user_profile.id }} comments</span>
+            <span>
+              <span class="commentersUsername-data">{{ comment.user_profile.username }}</span>
+              <span class="commentContent-data"> {{ comment.content }}</span>
+            </span>
             {% endfor %}
           </div>
           <span class="date-data">{{ post.created_at }}</span>
@@ -154,7 +159,19 @@
               <span class="username">username</span>
               <span class="caption-text">caption text will be placed...</span>
             </div>
-            <div class="post-comments">View all 12 comments</div>
+            <div class="post-comments">
+              <span class="post-comments-count">View all 12 comments</span>
+              <div class="expanded-comments">
+                <span class="comment">
+                  {% comment %}
+                  <!-- {% url 'community:user' user_profile_id=comment.user_profile.id %} -->
+                  {% endcomment %}
+                  <a href="">
+                    <span class="commenters-username">username</span>
+                  </a> <span class="comment-content">content</span>
+                </span>
+              </div>
+            </div>
             <div class="post-date">2 days ago</div>
           </div>
         </div>
