@@ -9,7 +9,22 @@ from django.contrib.auth import get_user_model
 
 class TennisSession(models.Model):
     """"""
+    TENNIS_SESSION_CATEGORIES = [
+        ("backhand", "Backhand"),
+        ("forehand", "Forehand"),
+        ("serve", "Serve"),
+        ("volley", "Volley"),
+        ("slice", "Slice"),
+        ("smash", "Smash"),
+        ("drop-shot", "Drop shot"),
+        ("agility", "Agility"),
+        ("stamina", "Stamina"),
+        ("other", "Other")
+    ]
+
     user = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
+    category = models.CharField(
+        max_length=100, choices=TENNIS_SESSION_CATEGORIES, default="other")
     title = models.CharField(max_length=150)
     notes = models.TextField()
     date = models.DateField()

@@ -8,7 +8,7 @@ class TennisSessionForm(forms.ModelForm):
     """
     class Meta:
         model = TennisSession
-        fields = ['title', 'notes', 'date', 'is_completed']
+        fields = ['category', 'title', 'notes', 'date', 'is_completed']
         widgets = {
             'date': forms.DateInput(attrs={'type': 'date'})
         }

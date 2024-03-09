@@ -19,8 +19,10 @@ def calendar(request):
     )
 
     # Convert the QuerySet to a list of dictionaries
-    tennis_sessions_data = [{'title': session.title, 'date': session.date.strftime("%Y-%m-%d"),
-                             'notes': session.notes, 'isCompleted': str(session.is_completed), 'id': session.id} for session in tennis_sessions]
+    tennis_sessions_data = [{'category': session.category,
+                            'title': session.title, 'date': session.date.strftime("%Y-%m-%d"),
+                             'notes': session.notes, 'isCompleted': str(session.is_completed),
+                             'id': session.id} for session in tennis_sessions]
 
     json_data = json.dumps(tennis_sessions_data)
 

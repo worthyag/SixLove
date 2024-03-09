@@ -245,8 +245,12 @@ function showSidePanel(day) {
       const sessionDiv = document.createElement('div');
       sessionDiv.classList.add("side-panel-session-div");
 
+      console.log(session);
+      console.log(session.category);
+
       sessionDiv.innerHTML = `
         <p><span>Title</span>: ${session.title}</p>
+        <p><span>Category</span>: ${session.category}</p>
         <p><span>Date</span>: ${getMonth(session.date.getMonth())[1]} ${session.date.getDate()}, ${session.date.getFullYear()} </p>
         <p><span>Notes</span>: ${session.notes}</p>
         <p><span>Completed</span>: ${session.isCompleted ? 'Yes' : 'No'}</p>
