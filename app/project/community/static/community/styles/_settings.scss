@@ -4,5 +4,52 @@ main#settings {
     align-items: center;
     justify-content: space-between;
 
+    .back-to-profile-btn {
+      padding: 8px;
+      border-radius: 8px;
+
+      &:hover {
+        background-color: $hover-colour;
+      }
+    }
+
+    .not-visible {
+      display: inline-block;
+      width: 32px;
+      padding: 8px;
+    }
+
+  }
+
+  .setting-options {
+    margin-top: 48px;
+
+    .setting-block {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      color: $dark-grey;
+
+      padding: 16px 32px;
+      border-radius: 8px;
+      box-shadow: 4px 4px 14px #00000012;
+
+      &:hover {
+        cursor: pointer;
+        box-shadow: 4px 4px 14px #0000004c;
+      }
+
+      p {
+        margin: 0;
+        font-size: 1.4rem;
+        font-weight: 500;
+      }
+
+      .arrow-right {
+        font-size: 1.6rem;
+        font-weight: 700;
+      }
+    }
   }
 }

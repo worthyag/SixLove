@@ -677,4 +677,41 @@ main#settings .settings-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+main#settings .settings-header .back-to-profile-btn {
+  padding: 8px;
+  border-radius: 8px;
+}
+main#settings .settings-header .back-to-profile-btn:hover {
+  background-color: #9ABCEF;
+}
+main#settings .settings-header .not-visible {
+  display: inline-block;
+  width: 32px;
+  padding: 8px;
+}
+main#settings .setting-options {
+  margin-top: 48px;
+}
+main#settings .setting-options .setting-block {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #3D3D3D;
+  padding: 16px 32px;
+  border-radius: 8px;
+  box-shadow: 4px 4px 14px rgba(0, 0, 0, 0.0705882353);
+}
+main#settings .setting-options .setting-block:hover {
+  cursor: pointer;
+  box-shadow: 4px 4px 14px rgba(0, 0, 0, 0.2980392157);
+}
+main#settings .setting-options .setting-block p {
+  margin: 0;
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+main#settings .setting-options .setting-block .arrow-right {
+  font-size: 1.6rem;
+  font-weight: 700;
 }/*# sourceMappingURL=styles.css.map */
