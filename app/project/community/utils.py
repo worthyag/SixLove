@@ -15,9 +15,26 @@ def check_achievement(user, award_category_name, name, levels):
         name=award_category_name
     )
 
+    # Getting the user profile of the user.
+    user_profile = models.UserProfile.objects.get(user=user)
+
     for level, threshold in enumerate(levels, start=1):
-        if current_count >= threshold:
-            award_achievement(user, award_category, name, level)
+        # Checking if the user has already received the achievement.
+        if not has_achievement(user_profile, award_category, level):
+            if current_count >= threshold:
+                award_achievement(user_profile, award_category, name, level)
+
+
+def has_achievement(user_profile, award_category, level):
+    """
+    Checks if the user has already received the achievement for
+    a specific category and level.
+    """
+    return models.Achievement.objects.filter(
+        user_profile=user_profile,
+        category=award_category,
+        level=level
+    ).exists()
 
 
 def get_current_count(user, award_category):
@@ -150,12 +167,12 @@ def get_current_count(user, award_category):
         return stamina_sessions.count()
 
 
-def award_achievement(user, award_category, name, level):
+def award_achievement(user_profile, award_category, name, level):
     """
     Awards an achievement to the user profile.
     """
     achievement = models.Achievement.objects.create(
-        user_profile=user,
+        user_profile=user_profile,
         category=award_category,
         name=f"{name} Lvl {level}",
         description=f"Achieved Level {level} for {name}.",
