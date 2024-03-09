@@ -52,6 +52,8 @@ def get_current_count(user, award_category):
     """
     # Implement logic to get the current count based on the task (e.g., completed sessions, posts, likes, comments, follows, followers)
     # ...
+    # Getting the user profile of the user.
+    user_profile = models.UserProfile.objects.get(user=user)
 
     if award_category == "Tennis Sessions":
         tennis_sessions = TennisModels.TennisSession.objects.filter(
@@ -63,19 +65,25 @@ def get_current_count(user, award_category):
         return tennis_sessions.count()
 
     elif award_category == "Created Posts":
-        user_profile = models.UserProfile.objects.get(user=user)
-
         # Getting the count of the users posts.
         return user_profile.user_posts.count()
 
     elif award_category == "Liked Posts":
-        pass
+        # Getting the count of the user's given likes.
+        return user_profile.like_set.count()
+
     elif award_category == "Comment Count":
-        pass
+        # Getting the count of the user's given comments.
+        return user_profile.comment_set.count()
+
     elif award_category == "Followed Count":
-        pass
+        # Getting the count of the user's followed users.
+        return user_profile.following.count()
+
     elif award_category == "Followers Count":
-        pass
+        # Getting the count of the user's followers.
+        return user_profile.followers.count()
+
     elif award_category == "Resources Read":
         pass
 
