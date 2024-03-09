@@ -18,6 +18,7 @@ async function viewPost(url, infoDiv, index) {
   const captionElement = modal.querySelector(".caption-text");
   const postComments = modal.querySelector(".post-comments");
   const postCommentCount = modal.querySelector(".post-comments-count");
+  const commentUserLink = modal.querySelector(".comment-user-link");
   const commentersUsername = modal.querySelector(".commenters-username");
   const commentContent = modal.querySelector(".comment-content");
 
@@ -46,6 +47,7 @@ async function viewPost(url, infoDiv, index) {
 
   // Updating comments.
   const commentCountData = infoDiv.querySelector(".commentCount-data");
+  const commentersID = infoDiv.querySelector(".commentersID-data");
   const commentersUsernameData = infoDiv.querySelector(".commentersUsername-data");
   const commentContentData = infoDiv.querySelector(".commentContent-data");
 
@@ -57,6 +59,8 @@ async function viewPost(url, infoDiv, index) {
 
   for (const comment of comments) {
     postCommentCount.textContent = commentCountData.innerText;
+    commentUserLink.setAttribute("href", commentersProfileUrl
+                                .replace("__commenters_id__", commentersID.innerText));
     commentersUsername.textContent = commentersUsernameData.innerText;
     commentContent.textContent = commentContentData.innerText;
   }

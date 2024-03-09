@@ -7,6 +7,8 @@
 <script>
   const toggleLikeUrl = "{% url 'community:toggle-like' post_id=0 %}".replace("0", "__post_id__");
   const likeInfoUrl = "{% url 'community:get-like-info' post_id=0 %}".replace("0", "__post_id__");
+  const commentersProfileUrl = "{% url 'community:user' user_profile_id=0 %}"
+                                .replace("0", "__commenters_id__");
 </script>
 <script src="{% static './community/scripts/toggle-like.js' %}" defer></script>
 <script src="{% static './community/scripts/toggle-posts.js' %}" defer></script>
@@ -78,7 +80,7 @@
           <span class="commentCount-data">{{ post.get_comment_count }} comments</span>
           <div class="comments-data">
             {% for comment in post.comments.all %}
-            <span class="commentersID-data">{{ comment.user_profile.id }} comments</span>
+            <span class="commentersID-data">{{ comment.user_profile.id }}</span>
             <span>
               <span class="commentersUsername-data">{{ comment.user_profile.username }}</span>
               <span class="commentContent-data"> {{ comment.content }}</span>
@@ -163,10 +165,7 @@
               <span class="post-comments-count">View all 12 comments</span>
               <div class="expanded-comments">
                 <span class="comment">
-                  {% comment %}
-                  <!-- {% url 'community:user' user_profile_id=comment.user_profile.id %} -->
-                  {% endcomment %}
-                  <a href="">
+                  <a class="comment-user-link" href="">
                     <span class="commenters-username">username</span>
                   </a> <span class="comment-content">content</span>
                 </span>
