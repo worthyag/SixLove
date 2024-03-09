@@ -490,11 +490,27 @@ def profile_settings(request):
     """"""
     request_profile = models.UserProfile.objects.get(user=request.user)
 
+    # Initialising a new form.
+    profile_form = forms.UserPostsForm()
+
+    if request.method == 'POST':
+        profile_form = forms.UserProfileForm(request.POST,
+                                    request.FILES,
+                                    instance=request_profile)
+        
+        if profile_form.is_valid():
+            profile = profile_form.save(commit=False)
+            profile.save()
+            return redirect("community:profile-settings")
+        else:
+            return HttpResponseBadRequest("Invalid form data")
+
     return render(
         request,
         "./community/settings.html",
         {
-            "title": f"{request_profile.username}'s settings"
+            "title": f"{request_profile.username}'s settings",
+            "profile_form": profile_form,
         }
     )
 
