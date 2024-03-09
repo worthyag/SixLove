@@ -19,9 +19,9 @@ async function viewPost(url, infoDiv, index) {
   const postComments = modal.querySelector(".post-comments");
   // const expandedComments = modal.querySelector(".expanded-comments");
   // const postCommentCount = modal.querySelector(".post-comments-count");
-  const commentUserLink = modal.querySelector(".comment-user-link");
-  const commentersUsername = modal.querySelector(".commenters-username");
-  const commentContent = modal.querySelector(".comment-content");
+  // const commentUserLink = modal.querySelector(".comment-user-link");
+  // const commentersUsername = modal.querySelector(".commenters-username");
+  // const commentContent = modal.querySelector(".comment-content");
   const commentForm = modal.querySelector(".comment-form");
   const postId = modal.querySelector(".hidden-id");
 
