@@ -22,8 +22,9 @@ class TennisSession(models.Model):
         ("other", "Other")
     ]
 
-    user = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
-    # users = models.ManyToManyField(get_user_model(), related_name="tennis_sessions")
+    # user = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
+    users = models.ManyToManyField(
+        get_user_model(), related_name="tennis_sessions")
     category = models.CharField(
         max_length=100, choices=TENNIS_SESSION_CATEGORIES, default="other")
     title = models.CharField(max_length=150)
