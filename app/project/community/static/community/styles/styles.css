@@ -671,4 +671,10 @@ main#connect .users a .user-info .name, main#connect .users a .user-info .follow
 }
 main#connect .users a .user-info .following {
   font-size: 0.85rem;
+}
+
+main#settings .settings-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }/*# sourceMappingURL=styles.css.map */
