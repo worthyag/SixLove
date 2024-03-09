@@ -5,7 +5,7 @@ from django.dispatch import receiver
 from tennis import models as TennisModels
 
 from . import models
-from .utils import get_current_count
+from .utils import check_achievement
 
 
 @receiver(post_save, sender=TennisModels.TennisSession)
@@ -31,19 +31,19 @@ def check_tennis_session_achievements(sender, instance, **kwargs):
 # ...
 
 
-def check_achievement(user, award_category_name, name, levels):
-    """
-    Checks and awards achievements for a specific task.
-    """
-    current_count = get_current_count(user, award_category_name)
+# def check_achievement(user, award_category_name, name, levels):
+#     """
+#     Checks and awards achievements for a specific task.
+#     """
+#     current_count = get_current_count(user, award_category_name)
 
-    award_category = models.AchievementCategory.objects.get(
-        name=award_category_name
-    )
+#     award_category = models.AchievementCategory.objects.get(
+#         name=award_category_name
+#     )
 
-    for level, threshold in enumerate(levels, start=1):
-        if current_count >= threshold:
-            award_achievement(user, award_category, name, level)
+#     for level, threshold in enumerate(levels, start=1):
+#         if current_count >= threshold:
+#             award_achievement(user, award_category, name, level)
 
 
 # def get_current_count(user, award_category):
@@ -176,15 +176,15 @@ def check_achievement(user, award_category_name, name, levels):
 #         return stamina_sessions.count()
 
 
-def award_achievement(user, award_category, name, level):
-    """
-    Awards an achievement to the user profile.
-    """
-    achievement = models.Achievement.objects.create(
-        user_profile=user,
-        category=award_category,
-        name=f"{name} Lvl {level}",
-        description=f"Achieved Level {level} for {name}.",
-        level=level
-    )
-    print(f"Achievement Awarded: {achievement}")
+# def award_achievement(user, award_category, name, level):
+#     """
+#     Awards an achievement to the user profile.
+#     """
+#     achievement = models.Achievement.objects.create(
+#         user_profile=user,
+#         category=award_category,
+#         name=f"{name} Lvl {level}",
+#         description=f"Achieved Level {level} for {name}.",
+#         level=level
+#     )
+#     print(f"Achievement Awarded: {achievement}")
