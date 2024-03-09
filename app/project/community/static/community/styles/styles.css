@@ -13,6 +13,12 @@ main#profile div.profile-top {
   flex-direction: column;
   gap: 32px;
 }
+main#profile div.profile-top .settings-btn {
+  align-self: flex-end;
+}
+main#profile div.profile-top .settings-btn img {
+  transform: scale(1.3);
+}
 main#profile div.profile-top div.profile-header {
   display: flex;
   justify-content: center;
