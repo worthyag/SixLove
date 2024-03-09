@@ -45,6 +45,7 @@
   {% for session in today_sessions %}
   <div class="session">
     <p><span>Title: </span>{{ session.title }}</p>
+    <p><span>Category: </span>{{ session.category }}</p>
     <p><span>Notes: </span>{{ session.notes }}</p>
     <p><span>Date: </span>{{ session.date }}</p>
     <p><span>is completed: </span>{{ session.is_completed }}</p>
@@ -70,6 +71,7 @@
   {% for session in upcoming_sessions %}
   <div class="session">
     <p><span>Title: </span>{{ session.title }}</p>
+    <p><span>Category: </span>{{ session.category }}</p>
     <p><span>Notes: </span>{{ session.notes }}</p>
     <p><span>Date: </span>{{ session.date }}</p>
     <p><span>is completed: </span>{{ session.is_completed }}</p>
@@ -86,6 +88,7 @@
   {% for session in past_sessions %}
   <div class="session">
     <p><span>Title: </span>{{ session.title }}</p>
+    <p><span>Category: </span>{{ session.category }}</p>
     <p><span>Notes: </span>{{ session.notes }}</p>
     <p><span>Date: </span>{{ session.date }}</p>
     <p><span>is completed: </span>{{ session.is_completed }}</p>
