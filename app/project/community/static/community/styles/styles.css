@@ -166,6 +166,14 @@ main#profile .achievements .award .award-img {
   border-radius: 8px;
   border: 1px solid rgba(0, 0, 0, 0.2);
 }
+main#profile .achievements .award .award-img img {
+  width: 100px;
+  height: 100px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
 main#profile .achievements .award .award-info .award-name {
   font-weight: 700;
 }

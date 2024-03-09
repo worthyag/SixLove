@@ -190,6 +190,14 @@ main#profile {
         height: 100px;
         border-radius: 8px;
         border: 1px solid #00000033;
+
+        img {
+          width: 100px;
+          height: 100px;
+          object-fit: cover;
+          border-radius: 8px;
+          border: 1px solid #00000033;
+        }
       }
 
       .award-info {
