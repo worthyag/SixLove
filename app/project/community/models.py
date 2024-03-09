@@ -77,13 +77,11 @@ class UserPosts(models.Model):
     post_caption = models.TextField()
     created_at = models.DateTimeField(default=timezone.now)
     likes = models.ManyToManyField(
-        UserProfile,
-        related_name='post_likes',
-        through='Like')
+        'Like',
+        related_name='post_likes')
     comments = models.ManyToManyField(
-        UserProfile,
-        related_name='post_comments',
-        through='Comment')
+        'Comment',
+        related_name='post_comments')
 
     def __str__(self):
         return f"{self.user_profile.username}'s post - {self.created_at}"
@@ -126,11 +124,11 @@ class UserPosts(models.Model):
         )
 
         if created:
-            self.likes.add(user_profile)
+            self.likes.add(like_instance)
             liked = True
         else:
             like_instance.delete()
-            self.likes.remove(user_profile)
+            self.likes.remove(like_instance)
             liked = False
 
         return liked
@@ -174,7 +172,7 @@ class Comment(models.Model):
     """"""
     user_profile = models.ForeignKey(UserProfile, on_delete=models.CASCADE)
     post = models.ForeignKey(UserPosts, on_delete=models.CASCADE)
-    text = models.TextField()
+    content = models.TextField()
     created_at = models.DateTimeField(default=timezone.now)
 
     def __str__(self):

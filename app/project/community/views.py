@@ -218,6 +218,10 @@ def feed(request):
         # Ordering the posts and making sure that there are no duplicates.
         following_posts = following_posts.order_by('-created_at').distinct()
 
+        for post in following_posts:
+            if post.user_profile.username == "worthy":
+                print(post.comments.all())
+
     except models.UserProfile.DoesNotExist:
         user_profile = None
         following_posts = None

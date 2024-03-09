@@ -45,4 +45,3 @@ for (const [index, likeButton] of likeButtons.entries()) {
     } 
   });
 }
-
