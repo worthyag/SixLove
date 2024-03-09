@@ -17,6 +17,9 @@ async function viewPost(url, infoDiv, index) {
   const usernameElement = modal.querySelector(".username");
   const captionElement = modal.querySelector(".caption-text");
   const postComments = modal.querySelector(".post-comments");
+  const postCommentCount = modal.querySelector(".post-comments-count");
+  const commentersUsername = modal.querySelector(".commenters-username");
+  const commentContent = modal.querySelector(".comment-content");
 
   // Fetching the updated like info for a specific post.
   try {
