@@ -133,12 +133,12 @@ class UserPosts(models.Model):
 
         return liked
 
-    def comment(self, user_profile, text):
+    def comment(self, user_profile, content):
         """"""
         comment_instance = Comment.objects.create(
             user_profile=user_profile,
             post=self,
-            text=text
+            content=content
         )
 
         self.comments.add(comment_instance)

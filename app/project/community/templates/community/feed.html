@@ -72,11 +72,9 @@
           <div class="post-comments">
             <span class="post-comments-count">{{ post.comment_count }} comments</span>
             <div class="expanded-comments">
-              {% with comments=post.comments.all %}
-              {% for comment in comments %}
-                <span>{{ comment.profile_name }}</span>
+              {% for comment in post.comments.all %}
+                <span class="comment"><span class="commenters-username">{{ comment.user_profile.username }} </span>{{ comment.content }}</span>
               {% endfor %}
-              {% endwith %}
             </div>
             
           </div>

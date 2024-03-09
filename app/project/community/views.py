@@ -179,14 +179,14 @@ def feed(request):
             comment_form = forms.CommentForm(request.POST)
 
             if comment_form.is_valid():
-                text = comment_form.cleaned_data['text']
+                content = comment_form.cleaned_data['content']
 
                 post = get_object_or_404(
                     models.UserPosts,
                     id=int(post_id)
                 )
 
-                post.comment(user_profile=request_profile, text=text)
+                post.comment(user_profile=request_profile, content=content)
                 return redirect("community:feed")
             else:
                 return HttpResponseBadRequest("Invalid form data")

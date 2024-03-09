@@ -166,11 +166,17 @@
         cursor: pointer;
       }
 
-      .comment {
-        font-size: 0.9rem;
+      .post-comments-count {
+        font-size: 0.80rem;
+      }
 
+      .comment {
         &:hover {
           cursor: pointer;
+        }
+
+        .commenters-username {
+          font-weight: bold;
         }
       }
     }

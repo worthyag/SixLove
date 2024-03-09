@@ -318,11 +318,14 @@ main#profile .modal .modal-content .post .post-comments {
 main#profile .modal .modal-content .post .post-comments:hover {
   cursor: pointer;
 }
-main#profile .modal .modal-content .post .post-comments .comment {
-  font-size: 0.9rem;
+main#profile .modal .modal-content .post .post-comments .post-comments-count {
+  font-size: 0.8rem;
 }
 main#profile .modal .modal-content .post .post-comments .comment:hover {
   cursor: pointer;
+}
+main#profile .modal .modal-content .post .post-comments .comment .commenters-username {
+  font-weight: bold;
 }
 main#profile .modal .modal-content .post .post-date {
   font-weight: 300;
@@ -557,11 +560,14 @@ main#feed .posts .post .post-comments {
 main#feed .posts .post .post-comments:hover {
   cursor: pointer;
 }
-main#feed .posts .post .post-comments .comment {
-  font-size: 0.9rem;
+main#feed .posts .post .post-comments .post-comments-count {
+  font-size: 0.8rem;
 }
 main#feed .posts .post .post-comments .comment:hover {
   cursor: pointer;
+}
+main#feed .posts .post .post-comments .comment .commenters-username {
+  font-weight: bold;
 }
 main#feed .posts .post .post-date {
   font-weight: 300;
