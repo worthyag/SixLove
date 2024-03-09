@@ -13,24 +13,24 @@ profileSettingsDiv.addEventListener("click", (e) => {
 usernameSettingsDiv.addEventListener("click", (e) => {
   console.log("Username");
 
-  // editProfile(e.target, true);
+  editUsername(e.target, true);
 });
 
 nameSettingsDiv.addEventListener("click", (e) => {
   console.log("Name");
 
-  // editProfile(e.target, true);
+  editName(e.target, true);
 });
 
 bioSettingsDiv.addEventListener("click", (e) => {
   console.log("Bio");
 
-  // editProfile(e.target, true);
+  editBio(e.target, true);
 });
 dpSettingsDiv.addEventListener("click", (e) => {
   console.log("DP");
 
-  // editProfile(e.target, true);
+  editDP(e.target, true);
 });
 
 function editProfile(btn, isEditing) {
@@ -69,5 +69,25 @@ function editProfile(btn, isEditing) {
   //   captionElement.value = postCaption;
   // }
 
+  modal.style.display = "block";
+}
+
+function editUsername(btn, isEditing) {
+  const modal = document.querySelector("#editUsernameModal");
+  modal.style.display = "block";
+}
+
+function editName(btn, isEditing) {
+  const modal = document.querySelector("#editProfileNameModal");
+  modal.style.display = "block";
+}
+
+function editBio(btn, isEditing) {
+  const modal = document.querySelector("#editBioModal");
+  modal.style.display = "block";
+}
+
+function editDP(btn, isEditing) {
+  const modal = document.querySelector("#editDPModal");
   modal.style.display = "block";
 }
