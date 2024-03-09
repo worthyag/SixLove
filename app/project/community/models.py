@@ -177,3 +177,28 @@ class Comment(models.Model):
 
     def __str__(self):
         return f"{self.user_profile.username}'s comment on {self.post.user_profile.username}'s post"
+
+
+class AchievementCategory(models.Model):
+    """"""
+    name = models.CharField(max_length=255)
+    description = models.TextField()
+    image = models.ImageField(upload_to='achievement_images/', 
+                              blank=True, null=True)
+
+    def __str__(self):
+        return self.name
+
+
+class Achievement(models.Model):
+    """"""
+    user_profile = models.ForeignKey("UserProfile", on_delete=models.CASCADE)
+    category = models.ForeignKey(AchievementCategory, on_delete=models.CASCADE)
+    name = models.CharField(max_length=255)
+    description = models.TextField()
+    level = models.PositiveIntegerField()
+    completed_at = models.DateTimeField(default=timezone.now)
+
+    def __str__(self):
+        return f"{self.user_profile.username} - {self.category.name} - {self.name} (Level {self.level})"
+
