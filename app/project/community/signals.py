@@ -59,8 +59,20 @@ def check_comments_achievements(sender, instance, **kwargs):
                       [1, 5, 10, 15, 20, 25])
 
 
-# Similar functions for other achievement checks (posts, likes, comments, follows, followers)
-# ...
+@receiver(post_save, sender=models.Follow)
+def check_follow_achievements(sender, instance, **kwargs):
+    user = instance.user
+    # Checking the followed count achievements.
+    check_achievement(user,
+                      "Followed Count",
+                      "Followed Count",
+                      [1, 2, 5, 10])
+
+    # Checking the followers count achievements.
+    check_achievement(user,
+                      "Followers Count",
+                      "Followers Count",
+                      [1, 2, 5, 10])
 
 
 # def check_achievement(user, award_category_name, name, levels):
