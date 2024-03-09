@@ -281,11 +281,13 @@ function editSession(sessionId) {
   const sessionIdInput = document.querySelector("#session-id");
   sessionIdInput.value = sessionId;
 
+  const categoryInput = document.querySelector("#id_category");
   const titleInput = document.querySelector("#id_title");
   const notesInput = document.querySelector("#id_notes");
   const dateInput = document.querySelectorAll("#id_date");
   const isCompletedInput = document.querySelector("#id_is_completed");
 
+  print(categoryInput);
   print(titleInput);
   print(notesInput);
   print(dateInput);
@@ -293,6 +295,7 @@ function editSession(sessionId) {
 
   tennisSessions.forEach(session => {
     if (session.id === sessionId) {
+      categoryInput.value = session.category;
       titleInput.value = session.title;
       notesInput.textContent = session.notes;
 
