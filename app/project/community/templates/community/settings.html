@@ -17,11 +17,27 @@
   </div>
   <div class="setting-options">
     <div class="setting-block profile-settings-block">
-      <p>Update profile</p>
+      <p>Edit profile</p>
+      <p class="arrow-right">></p>
+    </div>
+    <div class="setting-block username-settings-block">
+      <p>Edit username</p>
+      <p class="arrow-right">></p>
+    </div>
+    <div class="setting-block name-settings-block">
+      <p>Edit profile name</p>
+      <p class="arrow-right">></p>
+    </div>
+    <div class="setting-block bio-settings-block">
+      <p>Edit bio</p>
+      <p class="arrow-right">></p>
+    </div>
+    <div class="setting-block dp-settings-block">
+      <p>Edit profile picture</p>
       <p class="arrow-right">></p>
     </div>
   </div>
-  <!-- Modal for creating a profile -->
+  <!-- Modal for editing a profile. -->
   <div id="editProfileModal" class="modal">
     <div class="modal-content">
       <span class="close-btn" onclick="closeModal('#editProfileModal')">&times;</span>
@@ -29,7 +45,63 @@
         <form action="" method="post" novalidate enctype="multipart/form-data">
           {% csrf_token %} 
           {{ profile_form.as_p }}
-          <input class="btn" type="submit" value="Edit Profile" />
+          <input class="btn" type="submit" value="Edit Profile" name="edit-profile" />
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal for editing a user's username. -->
+  <div id="editUsernameModal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal('#editUsernameModal')">&times;</span>
+      <div id="modalContent">
+        <form action="" method="post" novalidate enctype="multipart/form-data">
+          {% csrf_token %} 
+          {{ username_form.as_p }}
+          <input class="btn" type="submit" value="Edit Username" name="edit-username" />
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal for editing a user's profile name. -->
+  <div id="editProfileNameModal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal('#editProfileNameModal')">&times;</span>
+      <div id="modalContent">
+        <form action="" method="post" novalidate enctype="multipart/form-data">
+          {% csrf_token %} 
+          {{ name_form.as_p }}
+          <input class="btn" type="submit" value="Edit Profile Name" name="edit-name" />
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal for editing a user's bio. -->
+  <div id="editBioModal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal('#editBioModal')">&times;</span>
+      <div id="modalContent">
+        <form action="" method="post" novalidate enctype="multipart/form-data">
+          {% csrf_token %} 
+          {{ bio_form.as_p }}
+          <input class="btn" type="submit" value="Edit Bio" name="edit-bio" />
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal for editing a user's profile picture. -->
+  <div id="editDPModal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal('#editDPModal')">&times;</span>
+      <div id="modalContent">
+        <form action="" method="post" novalidate enctype="multipart/form-data">
+          {% csrf_token %} 
+          {{ dp_form.as_p }}
+          <input class="btn" type="submit" value="Edit Profile Picture" name="edit-dp" />
         </form>
       </div>
     </div>

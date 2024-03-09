@@ -490,20 +490,25 @@ def profile_settings(request):
     """"""
     request_profile = models.UserProfile.objects.get(user=request.user)
 
-    # Initialising a new form.
+    # Initialising new forms.
     profile_form = forms.UserProfileForm()
+    username_form = forms.EditUsernameForm()
+    name_form = forms.EditProfileNameForm()
+    bio_form = forms.EditBioForm()
+    dp_form = forms.EditProfilePictureForm()
 
     if request.method == 'POST':
-        profile_form = forms.UserProfileForm(request.POST,
-                                    request.FILES,
-                                    instance=request_profile)
-        
-        if profile_form.is_valid():
-            profile = profile_form.save(commit=False)
-            profile.save()
-            return redirect("community:profile-settings")
-        else:
-            return HttpResponseBadRequest("Invalid form data")
+        if "edit-profile" in request.POST:
+            profile_form = forms.UserProfileForm(request.POST,
+                                                 request.FILES,
+                                                 instance=request_profile)
+
+            if profile_form.is_valid():
+                profile = profile_form.save(commit=False)
+                profile.save()
+                return redirect("community:profile-settings")
+            else:
+                return HttpResponseBadRequest("Invalid form data")
 
     return render(
         request,
@@ -511,6 +516,10 @@ def profile_settings(request):
         {
             "title": f"{request_profile.username}'s settings",
             "profile_form": profile_form,
+            "username_form": username_form,
+            "name_form": name_form,
+            "bio_form": bio_form,
+            "dp_form": dp_form,
         }
     )
 

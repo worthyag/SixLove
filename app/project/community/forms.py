@@ -64,3 +64,36 @@ class CommentForm(forms.ModelForm):
             'user_profile': forms.HiddenInput(),
             # 'post': forms.HiddenInput(),
         }
+
+
+class EditUsernameForm(forms.ModelForm):
+    """
+    Enables the user to update their username.
+    """
+    class Meta:
+        model = UserProfile
+        fields = ['username']
+
+class EditBioForm(forms.ModelForm):
+    """
+    Enables the user to update their bio.
+    """
+    class Meta:
+        model = UserProfile
+        fields = ['bio']
+
+class EditProfilePictureForm(forms.ModelForm):
+    """
+    Enables the user to update their profile picture.
+    """
+    class Meta:
+        model = UserProfile
+        fields = ['profile_picture']
+
+class EditProfileNameForm(forms.ModelForm):
+    """
+    Enables the user to update their profile name.
+    """
+    class Meta:
+        model = UserProfile
+        fields = ['profile_name']
