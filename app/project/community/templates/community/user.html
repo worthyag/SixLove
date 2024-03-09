@@ -87,7 +87,7 @@
           <span class="captionText-data">{{ post.post_caption }}</span>
           <div class="comments-data">
             {% for comment in post.comments.all %}
-            <span class="comments-data">{{ comment }}</span>
+            <span class="comments-data">{{ comment.content }}</span>
             {% endfor %}
           </div>
           <span class="date-data">{{ post.created_at }}</span>
