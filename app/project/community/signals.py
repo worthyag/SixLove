@@ -1,3 +1,4 @@
+from django.db.models import Count
 from django.db.models.signals import post_save
 from django.dispatch import receiver
 
@@ -53,7 +54,14 @@ def get_current_count(user_profile, award_category):
     # ...
 
     if award_category == "Tennis Sessions":
-        pass
+        tennis_sessions = TennisModels.TennisSession.objects.filter(
+            user=user_profile,
+            is_completed=True
+        )
+
+        # Getting the count of the tennis sessions.
+        return tennis_sessions.count()
+
     elif award_category == "Created Posts":
         pass
     elif award_category == "Liked Posts":
