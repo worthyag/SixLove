@@ -89,7 +89,10 @@
           <div class="comments-data">
             {% for comment in post.comments.all %}
             <span class="commentersID-data">{{ comment.user_profile.id }} comments</span>
-            <span><span class="commentersUsername-data">{{ comment.user_profile.username }}</span> {{ comment.content }}</span>
+            <span>
+              <span class="commentersUsername-data">{{ comment.user_profile.username }}</span>
+              <span class="commentContent-data"> {{ comment.content }}</span>
+            </span>
             {% endfor %}
           </div>
           <span class="date-data">{{ post.created_at }}</span>

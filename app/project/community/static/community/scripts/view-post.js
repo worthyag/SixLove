@@ -46,6 +46,9 @@ async function viewPost(url, infoDiv, index) {
 
   // Updating comments.
   const commentCountData = infoDiv.querySelector(".commentCount-data");
+  const commentersUsernameData = infoDiv.querySelector(".commentersUsername-data");
+  const commentContentData = infoDiv.querySelector(".commentContent-data");
+
   const comments = infoDiv.querySelector(".comments-data").children;
   // postComments.textContent = "";
   postCommentCount.textContent = "";
@@ -54,11 +57,8 @@ async function viewPost(url, infoDiv, index) {
 
   for (const comment of comments) {
     postCommentCount.textContent = commentCountData.innerText;
-
-    const p = document.createElement("p");
-    p.textContent = comment.innerText;
-    p.classList.add("comment");
-    postComments.appendChild(p);
+    commentersUsername.textContent = commentersUsernameData.innerText;
+    commentContent.textContent = commentContentData.innerText;
   }
 
   // Setting date.
