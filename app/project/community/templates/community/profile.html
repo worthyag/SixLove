@@ -22,7 +22,7 @@
 {% if user_profile %}
 <main id="profile">
   <div class="profile-top">
-    <a class="settings-btn" href="">
+    <a class="settings-btn" href="{% url 'community:profile-settings' %}">
       <img src="{% static './community/images/settings-icon.svg' %}" alt="Settings Page">
     </a>
     <div class="profile-header">

@@ -486,6 +486,20 @@ def user(request, user_profile_id):
 
 
 @login_required
+def profile_settings(request):
+    """"""
+    request_profile = models.UserProfile.objects.get(user=request.user)
+
+    return render(
+        request,
+        "./community/settings.html",
+        {
+            "title": f"{request_profile.username}'s settings"
+        }
+    )
+
+
+@login_required
 def toggle_like(request, post_id):
     """"""
     # Getting the user profile of the request user.
