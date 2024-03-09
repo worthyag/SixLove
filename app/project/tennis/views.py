@@ -14,7 +14,7 @@ from . import models
 def tennis(request):
     """"""
     tennis_sessions = models.TennisSession.objects.filter(
-        user=request.user).order_by("date")
+        users=request.user).order_by("date")
 
     today_sessions = [
         session for session in tennis_sessions if session.is_tennis_session_scheduled_today()
@@ -51,8 +51,20 @@ def add(request):
 
         if form.is_valid():
             session = form.save(commit=False)
-            session.user = request.user
+
+            # Returning a list of users.
+            users = form.cleaned_data.get("users", [])
+
+            # Checking if the request user is not already in the list before appending.
+            if request.user not in users:
+                # Setting the current user as one of the users.
+                users.append(request.user)
+
             session.save()
+
+            # Adding the users to the session's many-to-many relationship.
+            session.users.set(users)
+
             return redirect("tennis:success")
     else:
         # Initialising a new form.
@@ -75,7 +87,7 @@ def edit_tennis_session(request, tennis_session_id):
     try:
         selected_session = get_object_or_404(models.TennisSession,
                                              id=tennis_session_id,
-                                             user=request.user)
+                                             users=request.user)
     except models.TennisSession.DoesNotExist:
         return redirect("tennis:tennis")
     except:
@@ -86,7 +98,21 @@ def edit_tennis_session(request, tennis_session_id):
                                        instance=selected_session)
 
         if form.is_valid():
-            form.save()
+            session = form.save(commit=False)
+
+            # Returning a list of users.
+            users = form.cleaned_data.get("users", [])
+
+            # Checking if the request user is not already in the list before appending.
+            if request.user not in users:
+                # Setting the current user as one of the users.
+                users.append(request.user)
+
+            session.save()
+
+            # Adding the users to the session's many-to-many relationship.
+            session.users.set(users)
+
             return redirect("tennis:success")
     else:
         form = forms.TennisSessionForm(instance=selected_session)
@@ -108,7 +134,7 @@ def delete_tennis_session(request, tennis_session_id):
     try:
         selected_session = get_object_or_404(models.TennisSession,
                                              id=tennis_session_id,
-                                             user=request.user)
+                                             users=request.user)
     except models.TennisSession.DoesNotExist:
         return redirect("tennis:tennis")
     except:
