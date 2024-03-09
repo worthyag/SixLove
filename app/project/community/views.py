@@ -491,7 +491,7 @@ def profile_settings(request):
     request_profile = models.UserProfile.objects.get(user=request.user)
 
     # Initialising a new form.
-    profile_form = forms.UserPostsForm()
+    profile_form = forms.UserProfileForm()
 
     if request.method == 'POST':
         profile_form = forms.UserProfileForm(request.POST,

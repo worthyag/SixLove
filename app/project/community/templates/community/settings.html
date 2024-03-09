@@ -22,14 +22,14 @@
     </div>
   </div>
   <!-- Modal for creating a profile -->
-  <div id="createProfileModal" class="modal">
+  <div id="editProfileModal" class="modal">
     <div class="modal-content">
-      <span class="close-btn" onclick="closeModal('#createProfileModal')">&times;</span>
+      <span class="close-btn" onclick="closeModal('#editProfileModal')">&times;</span>
       <div id="modalContent">
         <form action="" method="post" novalidate enctype="multipart/form-data">
           {% csrf_token %} 
-          {{ form.as_p }}
-          <input class="btn" type="submit" value="Create Profile" />
+          {{ profile_form.as_p }}
+          <input class="btn" type="submit" value="Edit Profile" />
         </form>
       </div>
     </div>
