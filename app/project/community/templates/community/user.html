@@ -92,11 +92,13 @@
           <span class="commentCount-data">{{ post.get_comment_count }} comments</span>
           <div class="comments-data">
             {% for comment in post.comments.all %}
-            <span class="commentersID-data">{{ comment.user_profile.id }}</span>
-            <span>
-              <span class="commentersUsername-data">{{ comment.user_profile.username }}</span>
-              <span class="commentContent-data"> {{ comment.content }}</span>
-            </span>
+            <div>
+              <span class="commentersID-data">{{ comment.user_profile.id }}</span>
+              <span>
+                <span class="commentersUsername-data">{{ comment.user_profile.username }}</span>
+                <span class="commentContent-data"> {{ comment.content }}</span>
+              </span>
+            </div>
             {% endfor %}
           </div>
           <span class="date-data">{{ post.created_at }}</span>

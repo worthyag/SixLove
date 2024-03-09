@@ -17,7 +17,8 @@ async function viewPost(url, infoDiv, index) {
   const usernameElement = modal.querySelector(".username");
   const captionElement = modal.querySelector(".caption-text");
   const postComments = modal.querySelector(".post-comments");
-  const postCommentCount = modal.querySelector(".post-comments-count");
+  // const expandedComments = modal.querySelector(".expanded-comments");
+  // const postCommentCount = modal.querySelector(".post-comments-count");
   const commentUserLink = modal.querySelector(".comment-user-link");
   const commentersUsername = modal.querySelector(".commenters-username");
   const commentContent = modal.querySelector(".comment-content");
@@ -50,28 +51,59 @@ async function viewPost(url, infoDiv, index) {
   // Updating comments.
   const postIDData = infoDiv.querySelector(".postId-data");
   const commentCountData = infoDiv.querySelector(".commentCount-data");
-  const commentersID = infoDiv.querySelector(".commentersID-data");
-  const commentersUsernameData = infoDiv.querySelector(".commentersUsername-data");
-  const commentContentData = infoDiv.querySelector(".commentContent-data");
 
   if (commentForm) {
     commentForm.setAttribute("data-post-id", postIDData.innerText);
     postId.value = postIDData.innerText;
   }
 
-  const comments = infoDiv.querySelector(".comments-data").children;
-  // postComments.textContent = "";
-  postCommentCount.textContent = "";
-  commentersUsername.textContent = "";
-  commentContent.textContent = "";
+  const comments = Array.from(infoDiv.querySelector(".comments-data").children);
+  postComments.textContent = "";
+  // postCommentCount.textContent = "";
+  // commentersUsername.textContent = "";
+  // commentContent.textContent = "";
 
-  for (const comment of comments) {
-    postCommentCount.textContent = commentCountData.innerText;
-    commentUserLink.setAttribute("href", commentersProfileUrl
-                                .replace("__commenters_id__", commentersID.innerText));
-    commentersUsername.textContent = commentersUsernameData.innerText;
-    commentContent.textContent = commentContentData.innerText;
+  const postCommentCount = document.createElement("span");
+  postCommentCount.classList.add("post-comments-count");
+  postCommentCount.textContent = commentCountData.innerText;
+  postComments.appendChild(postCommentCount);
+
+  const br = document.createElement("br");
+  postComments.appendChild(br);
+
+  const expandedComments = document.createElement("span");
+  expandedComments.classList.add("expanded-comments");
+
+  for (const div of comments) {
+    const spans = Array.from(div.children);
+    const commentSpans = Array.from(spans[1].children);
+
+    const comment = document.createElement("span");
+    comment.classList.add("comment");
+
+    const link = document.createElement("a");
+    link.classList.add("comment-user-link");
+    link.setAttribute("href", commentersProfileUrl
+                                .replace("__commenters_id__", spans[0].innerText));
+    
+    const username = document.createElement("span");
+    username.classList.add("commenters-username");
+    username.textContent = commentSpans[0].innerText;
+    link.appendChild(username);
+    comment.appendChild(link);
+
+    const content = document.createElement("span");
+    content.classList.add("comment-content");
+    content.textContent = commentSpans[1].innerText;
+    comment.appendChild(content);
+
+    const br = document.createElement("br");
+    comment.appendChild(br);
+
+    expandedComments.appendChild(comment);
   }
+
+  postComments.appendChild(expandedComments);
 
   // Setting date.
   const date = infoDiv.querySelector(".date-data").innerText;

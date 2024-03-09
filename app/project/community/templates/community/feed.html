@@ -77,7 +77,7 @@
                   <a href="{% url 'community:user' user_profile_id=comment.user_profile.id %}">
                     <span class="commenters-username">{{ comment.user_profile.username }}</span>
                   </a>
-                   {{ comment.content }}</span>
+                   {{ comment.content }}</span><br>
               {% endfor %}
             </div>
             
