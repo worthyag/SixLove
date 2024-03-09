@@ -183,7 +183,7 @@ class AchievementCategory(models.Model):
     """"""
     name = models.CharField(max_length=255)
     description = models.TextField()
-    image = models.ImageField(upload_to='achievement_images/', 
+    image = models.ImageField(upload_to='achievement_images/',
                               blank=True, null=True)
 
     def __str__(self):
@@ -199,6 +199,9 @@ class Achievement(models.Model):
     level = models.PositiveIntegerField()
     completed_at = models.DateTimeField(default=timezone.now)
 
+    class Meta:
+        # Adding a unique constraint based on the user_profile, category, and level.
+        unique_together = ['user_profile', 'category', 'level']
+
     def __str__(self):
         return f"{self.user_profile.username} - {self.category.name} - {self.name} (Level {self.level})"
-
