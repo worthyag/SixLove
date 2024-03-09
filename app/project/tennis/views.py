@@ -47,7 +47,7 @@ def tennis(request):
 def add(request):
     """"""
     if request.method == 'POST':
-        form = forms.TennisSessionForm(request.POST)
+        form = forms.TennisSessionForm(request.user, request.POST)
 
         if form.is_valid():
             session = form.save(commit=False)
@@ -68,7 +68,7 @@ def add(request):
             return redirect("tennis:success")
     else:
         # Initialising a new form.
-        form = forms.TennisSessionForm()
+        form = forms.TennisSessionForm(request.user)
 
     return render(
         request,
@@ -94,7 +94,7 @@ def edit_tennis_session(request, tennis_session_id):
         return redirect("tennis:tennis")
 
     if request.method == "POST":
-        form = forms.TennisSessionForm(request.POST,
+        form = forms.TennisSessionForm(request.user, request.POST,
                                        instance=selected_session)
 
         if form.is_valid():

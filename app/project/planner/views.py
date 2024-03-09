@@ -41,7 +41,7 @@ def calendar(request):
                                                          users=request.user)
                 except:
                     return HttpResponseBadRequest("Invalid request")
-                form = TennisForms.TennisSessionForm(request.POST,
+                form = TennisForms.TennisSessionForm(request.user, request.POST,
                                                      instance=selected_session)
 
                 if form.is_valid():
@@ -65,7 +65,8 @@ def calendar(request):
                     return HttpResponseBadRequest("Invalid form data")
             else:
                 # Adding Tennis Session
-                form = TennisForms.TennisSessionForm(request.POST)
+                form = TennisForms.TennisSessionForm(
+                    request.user, request.POST)
 
                 if form.is_valid():
                     session = form.save(commit=False)
@@ -102,7 +103,7 @@ def calendar(request):
                 return redirect("planner:calendar")
     else:
         # Initialising a new form.
-        form = TennisForms.TennisSessionForm()
+        form = TennisForms.TennisSessionForm(request.user)
 
     return render(
         request,
