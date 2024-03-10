@@ -51,6 +51,8 @@ _Taking on the task of creating a tennis app that provides users with the tools 
       - [3.3.3 Goals Accomplished](#333-goals-accomplished)
 - [4 The Implementation](#4-the-implementation)
   - [4.1 The `registration` app](#41-the-registration-app)
+     - [4.1.1 The signup and login pages](#411-the-signup-and-login-pages)
+     - [4.1.2 The home page](#412-the-home-page)
   - [4.2 The `tennis` app](#42-the-tennis-app)
     - [4.2.1 The MVT Pattern](#421-the-mvt-pattern)
   - [4.3 The `planner` app](#43-the-planner-app)
@@ -1035,6 +1037,7 @@ User authentication is a primary requirement of the app. SixLove's purpose is to
 - **Sign up**- the page that allows the user to sign up.
 - **Login**- the page that authenticates the user.
 
+### 4.1.1 The signup and login pages
 In order to authenticate the users, I needed to first create a table in my database that would store users information. In Django, this is facilitated through the creation of a model. The UML diagram for users can be seen in **figure 28**. Django has its own user model, but for the purpose of this project, I wanted to create my own- or expand upon it rather. It was important that I created the modified user model before making migrations (specifically, before running migrations of the Django `auth` app), since it would result in an `ValueError` . This I learnt the hard way, when I created a mock trial of the app, and was forced to clear all the databases tables and delete the migrations folder. The **code snippet 1** displays the model that I created to store user information. It inherits from the `AbstractUser` class. The official Django site describes the class as a '_model [that] behaves identically to the default user model_' [18]. The documentation advises developers to setup a custom user model beforehand, in case they want to later customise it in the future.
 
 ```python
@@ -1246,6 +1249,8 @@ def user_login(request):
 **Code Snippet 4** The `signup` html template.
 
 With that completed, I had written most of the functionality for user authentication, and had a bare bone version of the `registration` app. I then created a superuser in order to conduct a manual pretest, then I wrote some unit tests to test everything thoroughly (this will be expanded on in [section 5.1.1](#511-the-registration-app), though I had written some unit tests as I went along.
+
+### 4.1.2 The home page
 
 The last implementation that I did for the `registration` app was create a landing and stats page (refer to figures # and #). The code for this is in the home view which was shown in
 **Code snippet 3**. When the user is authenticated a stats page is shown, and when their not a landing page is shown.
