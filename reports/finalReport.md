@@ -1041,7 +1041,7 @@ User authentication is a primary requirement of the app. SixLove's purpose is to
 In order to authenticate the users, I needed to first create a table in my database that would store users information. In Django, this is facilitated through the creation of a model. The UML diagram for users can be seen in **figure 28**. Django has its own user model, but for the purpose of this project, I wanted to create my own- or expand upon it rather. It was important that I created the modified user model before making migrations (specifically, before running migrations of the Django `auth` app), since it would result in an `ValueError` . This I learnt the hard way, when I created a mock trial of the app, and was forced to clear all the databases tables and delete the migrations folder. The **code snippet 1** displays the model that I created to store user information. It inherits from the `AbstractUser` class. The official Django site describes the class as a '_model [that] behaves identically to the default user model_' [18]. The documentation advises developers to setup a custom user model beforehand, in case they want to later customise it in the future.
 
 ```python
-...
+# more code...
 class CustomUser(AbstractUser):
     """A custom user class that inherits from Abstract User."""
     first_name = models.CharField(max_length=50)
@@ -1054,7 +1054,7 @@ class CustomUser(AbstractUser):
 Each attribute displayed in **code snippet 1** corresponds to a field within the database. In addition to the fields displayed, Django will add the other fields that are specified within `AbstractUser`, such as the user's `id` and `password` among some other things. With the database table created, I created a form that uses the `CustomUser` model to build a form with fields that correspond to the models attributes. **Code snippet 2** displays a reduced version of the code for the form.
 
 ```python
-...
+# more code...
 class CustomUserCreationForm(UserCreationForm):
     """A class that creates forms based on CustomUser model."""
     first_name = forms.CharField(required=True, max_length=50)
@@ -1073,7 +1073,7 @@ class CustomUserCreationForm(UserCreationForm):
 This form was used to create the forms displayed to the user, for both the login and sign up pages (which can be seen in **figures # and #**). I then created the views corresponding to the pages previously mentioned, **code snippet 3** displays a condensed version of the code for this.
 
 ```python
-...
+# more code...
 def home(request):
     """
     The view for the home page. Displays two different pages depending
