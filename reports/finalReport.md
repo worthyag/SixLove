@@ -1013,6 +1013,16 @@ I decided that I wanted to start building SixLove's functionality in a somewhat 
         <figcaption><strong>Figure #</strong> SixLove Profile Page (awards)</figcaption>
 </figure><br><br>
 
+<figure>
+    <img width="550" title="" src="./images/settings-page.png" alt="" data-align="center">
+        <figcaption><strong>Figure #</strong> SixLove Settings Page</figcaption>
+</figure><br><br>
+
+<figure>
+    <img width="550" title="" src="./images/settings-page-edit-bio.png" alt="" data-align="center">
+        <figcaption><strong>Figure #</strong> SixLove Settings Page Edit Bio</figcaption>
+</figure><br><br>
+
 ## 4.1 The `registration` app
 
 _Building the `CustomUser`._
