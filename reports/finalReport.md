@@ -732,9 +732,7 @@ Since SixLove is built with Django, the project has the following structure (**f
                 scripts/
                     calendar.js
                 styles/
-                    _base.scss
                     _calendar.scss
-                    _global.scss
                     _mixins.scss
                     _variables.scss
                     styles.css
@@ -742,7 +740,6 @@ Since SixLove is built with Django, the project has the following structure (**f
                     styles.scss
         /templates
             /planner
-                base.html
                 calendar.html
         __init__.py
         admin.py
@@ -756,13 +753,20 @@ Since SixLove is built with Django, the project has the following structure (**f
         /static
             /registration
                 scripts/
+					carousel.js
                 styles/
+                    _base.scss
+                    _index.scss
+                    _register.scss
+                    _variables.scss
+                    styles.css
+                    styles.css.map
+                    styles.scss
         /templates
             /registration
                 base.html
                 index.html
                 login.html
-                onboarding.html
                 signup.html
         __init__.py
         admin.py
@@ -776,15 +780,22 @@ Since SixLove is built with Django, the project has the following structure (**f
         /migrations
         /static
             /tennis
-                scripts/
                 styles/
+                    _learn.scss
+                    _resources.scss
+                    _session.scss
+                    _tennis.scss
+                    _variables.scss
+                    styles.css
+                    styles.css.map
+                    styles.scss
         /templates
             /tennis
-                base.html
                 add_tennis_session.html
                 delete_tennis_session.html
                 edit_tennis_session.html
                 learn.html
+				resource.html
                 success.html
                 tennis.html
         __init__.py
