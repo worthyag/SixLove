@@ -1247,10 +1247,19 @@ def user_login(request):
 
 With that completed, I had written most of the functionality for user authentication, and had a bare bone version of the `registration` app. I then created a superuser in order to conduct a manual pretest, then I wrote some unit tests to test everything thoroughly (this will be expanded on in [section 5.1.1](#511-the-registration-app), though I had written some unit tests as I went along.
 
-The last implementation that I did for the `registration` app was create a landing and stats page (these can be seen in figures # and #). The code for this is in the home view which was shown in
+The last implementation that I did for the `registration` app was create a landing and stats page (refer to figures # and #). The code for this is in the home view which was shown in
 **Code snippet 3**. When the user is authenticated a stats page is shown, and when their not a landing page is shown.
 
-The stats page is home to two charts. Chart 1 displays information about the number of tennis sessions a user has (which the user can then filter further) and chart 2 displays information about the tennis sessions per month (which can also be further filtered). Users can make use of these interactive charts to track their progress by doing some of the following things:
+The stats page is home to two charts. Chart 1 (doughnut) displays information about the number of tennis sessions a user has and chart 2 (line) displays information about the tennis sessions per month. Users can make use of these interactive charts to track their progress by doing some of the following things:
+- Compare the number of tennis sessions schedules for different categories.
+    - Filter for completed and uncompleted sessions.
+   - Filter for upcoming and past sessions.
+- Track the number of tennis sessions scheduled across the year.
+    - Filter for specific tennis session categories.
+
+Users can also hover over the charts for more information.
+
+
 
 ## 4.2 The `tennis` app
 
