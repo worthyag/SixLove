@@ -630,14 +630,15 @@ The SixLove app will have the following main pages:
     - Users can follow and unfollow other users here.
 - Home page
     - This is where users can view their stats, such as (but not limited to):
-        - Visualising the number of tennis sessions per month or comparing number forehand lessons to backhand lesson.
+        - Visualising the number of tennis sessions per month or comparing the number forehand lessons to backhand lesson.
     - Users are able to filter stats based on a variety of things.
 - Landing page
     - This is the page a user is directed to when they are not yet logged in, the page displays some of the benefits of SixLove to the user.
 - Tennis page
-  - Displays the users tennis schedule, and  whether or not they have a tennis session scheduled for today or not.
+  - Displays the users tennis schedule, and whether or not they have a tennis session scheduled for today or not.
   - Tennis sessions are displayed as a card, with notes and a date.
   - Users can add, edit, view, and delete tennis sessions here.
+  - There are also links to view their stats and calendar here.
 - Calendar page
   - Displays a calendar that allows users to add tennis sessions to their schedule.
   - Users can click on a day to add, edit, view, and delete a tennis session.
@@ -649,15 +650,15 @@ The SixLove app will have the following main pages:
   - Since users can follow / friend other users, the feed page displays the user’s post and the post of those they are following.
   - Users can like, comment, and interact with posts.
 - Settings page
-  - Users can alter their biography, picture, and privacy settings.
-  - User can alter their email etc.
+  - Users can alter their biography, picture, and other settings.
+  - User can alter their username etc.
+- Connect
+  - Enables users to search for and follow other users.
+      - Users can also filter the search list.
+  - Users are also able to view other users profiles here.
 - Other pages
   - Login page
   - Sign up page
-  - Home (Landing) page for when users first reach the site.
-- Connect
-  - Enables users to search for and follow other users.
-  - Users are also able to view other users profiles here.
 
 ### 3.1.5 Django structure
 
