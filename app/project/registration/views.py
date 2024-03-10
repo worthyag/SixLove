@@ -5,17 +5,35 @@ from django.contrib.auth import login
 # from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 # from django.contrib.auth import login, authenticate
 
+from tennis import models as TennisModels
+
 from .forms import CustomUserCreationForm
 # Create your views here.
 
 
 def home(request):
     """"""
+    tennis_sessions = TennisModels.TennisSession.objects.filter(
+        user=request.user
+    )
+
+    forehand_sessions = [
+        session for session in tennis_sessions if session.category == "forehand"]
+    backhand_sessions = [
+        session for session in tennis_sessions if session.category == "backhand"]
+
+    print(tennis_sessions)
+    print(forehand_sessions)
+    print(backhand_sessions)
+
     return render(
         request,
         "./registration/index.html",
         {
-            "title": "Home"
+            "title": "Home",
+            "tennis_sessions": tennis_sessions,
+            "forehand_sessions": forehand_sessions,
+            "backhand_sessions": backhand_sessions,
         }
     )
 

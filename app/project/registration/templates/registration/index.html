@@ -1,7 +1,66 @@
 {% extends './base.html' %} 
 {% block content %}
 <main>
+  {% if user.is_authenticated %}
+  <p style="display: none;" class="tennis-session-count">{{ tennis_sessions|length }}</p>
+  <p style="display: none;" class="forehand-session-count">{{ forehand_sessions|length }}</p>
+  <p style="display: none;" class="backhand-session-count">{{ backhand_sessions|length }}</p>
+
+  <div>
+    <canvas id="myChart"></canvas>
+  </div>
+
+  <div>
+    <canvas id="acquisitions"></canvas>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+    (async function() {
+      const ctx = document.getElementById('myChart');
+
+      const tennisSessionCount = parseInt(document.querySelector(".tennis-session-count").innerText);
+      const forehandSessionCount = parseInt(document.querySelector(".forehand-session-count").innerText);
+      const backhandSessionCount = parseInt(document.querySelector(".backhand-session-count").innerText);
+
+      const data = [
+        { 
+          category: "All", 
+          count: parseInt(document.querySelector(".tennis-session-count").innerText) 
+        },
+        { 
+          category: "Forehand", 
+          count: parseInt(document.querySelector(".forehand-session-count").innerText) 
+        },
+        { 
+          category: "Backhand", 
+          count: parseInt(document.querySelector(".backhand-session-count").innerText) 
+        },
+      ];
+
+
+      new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: data.map(row => row.category),
+          datasets: [{
+            label: '# of tennis sessions',
+            data: data.map(row => row.count),
+            borderWidth: 1
+          }]
+        },
+        options: {
+          scales: {
+            y: {
+              beginAtZero: true
+            }
+          }
+        }
+      });
+    })();
+  </script>
+  {% else %}
   <h2 >Welcome to SixLove</h2>
-  <p>This is the home page for SixLove, and welcome and enjoy!</p>
+  {% endif %}
 </main>
 {% endblock %}
