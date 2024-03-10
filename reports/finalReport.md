@@ -973,6 +973,26 @@ I decided that I wanted to start building SixLove's functionality in a somewhat 
         <figcaption><strong>Figure #</strong> SixLove Resource Page (article)</figcaption>
 </figure><br><br>
 
+<figure>
+    <img width="550" title="" src="./images/connect-page.png" alt="" data-align="center">
+        <figcaption><strong>Figure #</strong> SixLove Connect Page</figcaption>
+</figure><br><br>
+
+<figure>
+    <img width="550" title="" src="./images/user-page-posts.png" alt="" data-align="center">
+        <figcaption><strong>Figure #</strong> SixLove User Page (posts)</figcaption>
+</figure><br><br>
+
+<figure>
+    <img width="550" title="" src="./images/user-page-view-post.png" alt="" data-align="center">
+        <figcaption><strong>Figure #</strong> SixLove User Page View Post</figcaption>
+</figure><br><br>
+
+<figure>
+    <img width="550" title="" src="./images/user-page-awards.png" alt="" data-align="center">
+        <figcaption><strong>Figure #</strong> SixLove User Page (awards)</figcaption>
+</figure><br><br>
+
 ## 4.1 The `registration` app
 
 _Building the `CustomUser`._
