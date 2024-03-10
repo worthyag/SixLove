@@ -259,6 +259,25 @@ main#landing div.content .content-carousel .current {
   align-items: center;
   justify-content: center;
 }
+main#landing div.content .nav-dots {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+main#landing div.content .nav-dots .nav-dot {
+  background-color: #ddd;
+  color: #555;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 1px solid #578DDD;
+}
+main#landing div.content .nav-dots .filled {
+  background-color: #74edb4;
+  transform: scale(1.4);
+}
 main#landing div.content .stop-btn button {
   margin-bottom: 0;
 }
