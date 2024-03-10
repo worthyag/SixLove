@@ -1557,7 +1557,7 @@ The next order of business was to create the `tennis` app. The ability to add, e
 
 *The planner app also allows users to add, edit, and delete tennis sessions (this is expanded upon in [section 4.3](#43-the-planner-app).
 
-Like the `registration` app, I began with a model. **Figure 39** displays the fields and the name of the table that I created with the model (this is a simplified version of the TennisSession table displayed in **Figure 28**, since the friends aspect wasn't implemented at this stage). 
+Like the `registration` app, I began with a model. **Figure 39** displays the fields and the name of the table that I created with the model. 
 
 <img title="" src="images/TennisSessionUML.png" alt="">
 
@@ -1565,20 +1565,37 @@ Like the `registration` app, I began with a model. **Figure 39** displays the fi
 
 <br>
 
-When I started writing the code for the model, I realised that it would be better to make `isToday` a method rather than an attribute. This is because, `isToday` is dependent on the date, it is not an attribute of a the tennis session.  **Code snippet 5** displays the code for the model.
+When I started writing the code for the model, I realised that it would be better to make `isToday` a method rather than an attribute. This is because, `isToday` is dependent on the date, it is not an attribute of a the tennis session.  **Code snippet 8** displays the code for the model.
 
 ```python
-...
+# more code...
 class TennisSession(models.Model):
-    ...
+    """
+    Class that creates a tennis session object.
+    """
+    TENNIS_SESSION_CATEGORIES = [
+        ("backhand", "Backhand"),
+        ("forehand", "Forehand"),
+        ("serve", "Serve"),
+        ("volley", "Volley"),
+        ("slice", "Slice"),
+        ("smash", "Smash"),
+        ("drop-shot", "Drop shot"),
+        ("agility", "Agility"),
+        ("stamina", "Stamina"),
+        ("other", "Other")
+    ]
+
     user = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
+    category = models.CharField(
+        max_length=100, choices=TENNIS_SESSION_CATEGORIES, default="other")
     title = models.CharField(max_length=150)
     notes = models.TextField()
     date = models.DateField()
     is_completed = models.BooleanField(default=False)
 
     def is_tennis_session_scheduled_today(self):
-        ...
+        # more code...
         today = timezone.now()
 
         if type(self.date) != type(""):
@@ -1593,22 +1610,22 @@ class TennisSession(models.Model):
                     if today.day == int(self.date[8:11]):
                         return True
             return False
-    ...
+    # more code...
 ```
 
-**Code Snippet 5** The `TennisSession` model.<br>
+**Code Snippet 8** The `TennisSession` model.<br>
 
 <br>
 
-I also created a form that coincides with the model. It is the form used for all communication with the `TennisSession` database table (adding, editing, and deleting). **Code snippet 6** displays the form code.
+I also created a form that coincides with the model. It is the form used for all communication with the `TennisSession` database table (adding, editing, and deleting). **Code snippet 9** displays the form code.
 
 ```python
 ...
 class TennisSessionForm(forms.ModelForm):
-    ...
+    # more code...
     class Meta:
         model = TennisSession
-        fields = ['title', 'notes', 'date', 'is_completed']
+        fields = ['category', 'title', 'notes', 'date', 'is_completed']
         widgets = {
             'date': forms.DateInput(attrs={'type': 'date'})
         }

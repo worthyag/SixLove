@@ -8,7 +8,9 @@ from django.contrib.auth import get_user_model
 
 
 class TennisSession(models.Model):
-    """"""
+    """
+    Class that creates a tennis session object.
+    """
     TENNIS_SESSION_CATEGORIES = [
         ("backhand", "Backhand"),
         ("forehand", "Forehand"),
