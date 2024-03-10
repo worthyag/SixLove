@@ -1192,6 +1192,7 @@ def home(request):
 
 def signup(request):
     ...
+    # If the request method is post the signup form is submitted.
     if request.method == "POST":
         form = CustomUserCreationForm(request.POST)
 
@@ -1199,6 +1200,7 @@ def signup(request):
             user = form.save()
             login(request, user)
             return redirect("home")
+    # Else a signup form is created.
     else:
         form = CustomUserCreationForm()
 
@@ -1214,11 +1216,13 @@ def signup(request):
 
 def user_login(request):
     ...
+    # If the request method is post the login form is submitted.
     if request.method == "POST":
         form = AuthenticationForm(request, request.POST)
 
         if form.is_valid():
             # The same as the signup view.
+    # Else a login form is created.
     else:
         form = AuthenticationForm()
 
