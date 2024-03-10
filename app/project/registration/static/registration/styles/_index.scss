@@ -64,10 +64,8 @@ main#home {
 main#landing {
   margin: 0;
   padding: 0;
-  background-color: $brand-colour;
-  color: $white;
-  // height: calc(100vh - 105px);
-  // overflow-y: scroll;
+  background-color: $white;
+  color: $dark-grey;
 
   div.content {
     margin: 0 16px;
@@ -83,7 +81,6 @@ main#landing {
       font-weight: bold;
     }
 
-    // height: calc(100vh - 150px);
     box-sizing: border-box;
 
     display: flex;
@@ -102,6 +99,7 @@ main#landing {
         display: flex;
         justify-content: center;
         align-items: center;
+        gap: 32px;
   
         .arrow {
           font-size: 3rem;
@@ -124,6 +122,12 @@ main#landing {
   
         .display-content {
           display: none;
+          background-color: $brand-colour;
+          color: $white;
+
+          width: 750px;
+          border-radius: 16px;
+          border: 1px solid #e5e5e5;
   
           img {
             min-width: 300px;
@@ -131,11 +135,26 @@ main#landing {
             max-width: 300px;
   
             object-fit: cover;
+            padding: 12px 24px;
+            box-sizing: border-box;
           }
   
           .info {
             font-size: 1.2rem;
-            width: 75%;
+            width: 750px;
+            border-radius: 16px;
+            padding: 16px 32px;
+            box-sizing: border-box;
+
+            background-color: $white;
+            color: $dark-grey;
+
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+
+            border-top: 1px solid #00000033;
+            // border-left: 1px solid #00000033;
+            // border-right: 1px solid #00000033;
           }
         }
   
@@ -148,8 +167,6 @@ main#landing {
       }
   
       .nav-dots {
-        // margin-top: -15vh;
-  
         display: flex;
         flex-direction: row;
         justify-content: center;
@@ -188,20 +205,20 @@ main#landing {
         }
   
         .btn {
-          background-color: #a6734a;
+          background-color: #754aa6;
           color: #fff;
           font-size: 1.3rem;
           font-weight: 700;
   
           border: 2px solid #000;
-          box-shadow: 6px 6px 0 #f4c689;
+          box-shadow: 6px 6px 0 #c989f4;
   
           border-radius: 8px;
           padding: 8px 16px;
   
           &:hover {
             cursor: pointer;
-            background-color: #d5ad62;
+            background-color: #9762d5;
         }
         
         }

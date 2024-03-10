@@ -200,8 +200,8 @@ main#home section#number-of-sessions-chart div {
 main#landing {
   margin: 0;
   padding: 0;
-  background-color: #578DDD;
-  color: #FFFFFF;
+  background-color: #FFFFFF;
+  color: #3D3D3D;
 }
 main#landing div.content {
   margin: 0 16px;
@@ -231,6 +231,7 @@ main#landing div.content .carousel-div .content-carousel {
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 32px;
 }
 main#landing div.content .carousel-div .content-carousel .arrow {
   font-size: 3rem;
@@ -247,6 +248,11 @@ main#landing div.content .carousel-div .content-carousel .arrow:hover {
 }
 main#landing div.content .carousel-div .content-carousel .display-content {
   display: none;
+  background-color: #578DDD;
+  color: #FFFFFF;
+  width: 750px;
+  border-radius: 16px;
+  border: 1px solid #e5e5e5;
 }
 main#landing div.content .carousel-div .content-carousel .display-content img {
   min-width: 300px;
@@ -254,10 +260,20 @@ main#landing div.content .carousel-div .content-carousel .display-content img {
   max-width: 300px;
   -o-object-fit: cover;
      object-fit: cover;
+  padding: 12px 24px;
+  box-sizing: border-box;
 }
 main#landing div.content .carousel-div .content-carousel .display-content .info {
   font-size: 1.2rem;
-  width: 75%;
+  width: 750px;
+  border-radius: 16px;
+  padding: 16px 32px;
+  box-sizing: border-box;
+  background-color: #FFFFFF;
+  color: #3D3D3D;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
 }
 main#landing div.content .carousel-div .content-carousel .current {
   display: flex;
@@ -294,18 +310,18 @@ main#landing div.content .carousel-div .stop-btn button {
   margin-bottom: 0;
 }
 main#landing div.content .carousel-div .stop-btn .btn {
-  background-color: #a6734a;
+  background-color: #754aa6;
   color: #fff;
   font-size: 1.3rem;
   font-weight: 700;
   border: 2px solid #000;
-  box-shadow: 6px 6px 0 #f4c689;
+  box-shadow: 6px 6px 0 #c989f4;
   border-radius: 8px;
   padding: 8px 16px;
 }
 main#landing div.content .carousel-div .stop-btn .btn:hover {
   cursor: pointer;
-  background-color: #d5ad62;
+  background-color: #9762d5;
 }
 
 main#register {
