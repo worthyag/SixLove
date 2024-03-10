@@ -1,7 +1,25 @@
 {% extends './base.html' %} 
 {% block content %}
-<main>
+<main id="home">
   {% if user.is_authenticated %}
+  <!-- Filter Option -->
+  <form method="get" class="filter-options">
+    <label for="filter">Filter by:</label>
+    <div class="filter-action-element">
+      <select name="filter" id="filter">
+        <option value="" {% if not filter_option %}selected{% endif %}>All</option>
+        <option value="completed" {% if filter_option == 'completed' %}selected{% endif %}>
+          Completed Sessions
+        </option>
+        <option value="not_completed" {% if filter_option == 'not_completed' %}selected{% endif %}>
+          Uncompleted Sessions
+        </option>
+      </select>
+      <button type="submit">Apply Filter</button>
+    </div>
+  </form>
+
+
   <p style="display: none;" class="tennis-session-count">{{ tennis_sessions|length }}</p>
   <p style="display: none;" class="forehand-session-count">{{ forehand_sessions|length }}</p>
   <p style="display: none;" class="backhand-session-count">{{ backhand_sessions|length }}</p>
