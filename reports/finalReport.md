@@ -1074,7 +1074,12 @@ This form was used to create the forms displayed to the user, for both the login
 ```python
 ...
 def home(request):
-    """"""
+    """
+    The view for the home page. Displays two different pages depending
+    on the status of is_authenticated:
+        - Landing Page: gives potentials user the chance to learn about SixLove.
+        - Stats Page: where users can view their stats and progress.
+    """
     # Only displays the user's stats if they are authenticated.
     if request.user.is_authenticated:
         # Getting all the request user's tennis sessions.
@@ -1085,7 +1090,7 @@ def home(request):
         # CHART 1
         # ========
 
-        # To allow the user to pick the chart they want to see.
+        # To allow the user to filter the chart.
         filter_option = request.GET.get("filter", "")
 
         # Applying filters based on the filter_option.
@@ -1115,7 +1120,7 @@ def home(request):
         # CHART 2
         # ========
 
-        # To allow the user to pick the chart they want to see.
+        # To allow the user to filter the chart.
         filter_monthly = request.GET.get("filter-monthly", "")
 
         # Applying filters based on the filter_option.
