@@ -72,18 +72,45 @@ def home(request):
         tennis_sessions_per_month = tennis_sessions_per_month.filter(
             category="volley")
 
-    jan_sessions = tennis_sessions_per_month.filter(date__month=1)
-    feb_sessions = tennis_sessions_per_month.filter(date__month=2)
-    mar_sessions = tennis_sessions_per_month.filter(date__month=3)
-    apr_sessions = tennis_sessions_per_month.filter(date__month=4)
-    may_sessions = tennis_sessions_per_month.filter(date__month=5)
-    jun_sessions = tennis_sessions_per_month.filter(date__month=6)
-    jul_sessions = tennis_sessions_per_month.filter(date__month=7)
-    aug_sessions = tennis_sessions_per_month.filter(date__month=8)
-    sep_sessions = tennis_sessions_per_month.filter(date__month=9)
-    oct_sessions = tennis_sessions_per_month.filter(date__month=10)
-    nov_sessions = tennis_sessions_per_month.filter(date__month=11)
-    dec_sessions = tennis_sessions_per_month.filter(date__month=12)
+    elif filter_monthly == "slice":
+        tennis_sessions_per_month = tennis_sessions_per_month.filter(
+            category="slice")
+
+    elif filter_monthly == "smash":
+        tennis_sessions_per_month = tennis_sessions_per_month.filter(
+            category="smash")
+
+    elif filter_monthly == "drop-shot":
+        tennis_sessions_per_month = tennis_sessions_per_month.filter(
+            category="drop-shot")
+
+    elif filter_monthly == "agility":
+        tennis_sessions_per_month = tennis_sessions_per_month.filter(
+            category="agility")
+
+    elif filter_monthly == "stamina":
+        tennis_sessions_per_month = tennis_sessions_per_month.filter(
+            category="stamina")
+
+    elif filter_monthly == "other":
+        tennis_sessions_per_month = tennis_sessions_per_month.filter(
+            category="other")
+
+
+    current_year = timezone.now().year
+
+    jan_sessions = tennis_sessions_per_month.filter(date__year=current_year, date__month=1)
+    feb_sessions = tennis_sessions_per_month.filter(date__year=current_year, date__month=2)
+    mar_sessions = tennis_sessions_per_month.filter(date__year=current_year, date__month=3)
+    apr_sessions = tennis_sessions_per_month.filter(date__year=current_year, date__month=4)
+    may_sessions = tennis_sessions_per_month.filter(date__year=current_year, date__month=5)
+    jun_sessions = tennis_sessions_per_month.filter(date__year=current_year, date__month=6)
+    jul_sessions = tennis_sessions_per_month.filter(date__year=current_year, date__month=7)
+    aug_sessions = tennis_sessions_per_month.filter(date__year=current_year, date__month=8)
+    sep_sessions = tennis_sessions_per_month.filter(date__year=current_year, date__month=9)
+    oct_sessions = tennis_sessions_per_month.filter(date__year=current_year, date__month=10)
+    nov_sessions = tennis_sessions_per_month.filter(date__year=current_year, date__month=11)
+    dec_sessions = tennis_sessions_per_month.filter(date__year=current_year, date__month=12)
 
     return render(
         request,

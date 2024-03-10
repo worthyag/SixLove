@@ -73,6 +73,24 @@
         <option value="volley" {% if filter_monthly == 'volley' %}selected{% endif %}>
           Volley Sessions
         </option>
+        <option value="slice" {% if filter_monthly == 'slice' %}selected{% endif %}>
+          Slice Sessions
+        </option>
+        <option value="smash" {% if filter_monthly == 'smash' %}selected{% endif %}>
+          Smash Sessions
+        </option>
+        <option value="drop-shot" {% if filter_monthly == 'drop-shot' %}selected{% endif %}>
+          Drop Shot Sessions
+        </option>
+        <option value="agility" {% if filter_monthly == 'agility' %}selected{% endif %}>
+          Agility Sessions
+        </option>
+        <option value="stamina" {% if filter_monthly == 'stamina' %}selected{% endif %}>
+          Stamina Sessions
+        </option>
+        <option value="other" {% if filter_monthly == 'other' %}selected{% endif %}>
+          Other Sessions
+        </option>
       </select>
       <button type="submit">Apply Filter</button>
     </div>
@@ -214,7 +232,7 @@
 
 
       new Chart(ctx, {
-        type: 'bar',
+        type: 'line',
         data: {
           labels: data.map(row => row.month),
           datasets: [{
