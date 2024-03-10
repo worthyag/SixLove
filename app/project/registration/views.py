@@ -128,7 +128,7 @@ def home(request):
             request,
             "./registration/index.html",
             {
-                "title": f"Home | {request.user.name}",
+                "title": f"{request.user} - Home",
                 "tennis_sessions": tennis_sessions,
                 "filter_option": filter_option,
                 "filter_monthly": filter_monthly,
@@ -159,7 +159,7 @@ def home(request):
     else:
         return render(
             request,
-            "./registration/index.html", 
+            "./registration/index.html",
             {
                 "title": "Home"
             }
