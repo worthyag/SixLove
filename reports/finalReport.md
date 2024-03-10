@@ -948,6 +948,16 @@ I decided that I wanted to start building SixLove's functionality in a somewhat 
         <figcaption><strong>Figure #</strong> SixLove Tennis Page Add Tennis Session Form</figcaption>
 </figure><br><br>
 
+<figure>
+    <img width="550" title="" src="./images/feed-page.png" alt="" data-align="center">
+        <figcaption><strong>Figure #</strong> SixLove Feed Page</figcaption>
+</figure><br><br>
+
+<figure>
+    <img width="550" title="" src="./images/feed-page-create-post-form.png" alt="" data-align="center">
+        <figcaption><strong>Figure #</strong> SixLove Feed Page Create Post Modal</figcaption>
+</figure><br><br>
+
 ## 4.1 The `registration` app
 
 _Building the `CustomUser`._
