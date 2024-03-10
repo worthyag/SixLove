@@ -1071,6 +1071,94 @@ This form was used to create the forms displayed to the user, for both the login
 
 ```python
 ...
+def home(request):
+    """"""
+    if request.user.is_authenticated:
+        tennis_sessions = TennisModels.TennisSession.objects.filter(
+            user=request.user
+        )
+
+        # To allow the user to pick the chart they want to see.
+        filter_option = request.GET.get("filter", "")
+
+        # Applying filters based on the filter_option.
+        if filter_option == "completed":
+            tennis_sessions = tennis_sessions.filter(is_completed=True)
+
+        elif filter_option == "not_completed":
+            tennis_sessions = tennis_sessions.filter(is_completed=False)
+
+        elif filter_option == "upcoming":
+            tennis_sessions = tennis_sessions.filter(
+                date__gt=timezone.now().date())
+
+        elif filter_option == "past":
+            tennis_sessions = tennis_sessions.filter(
+                date__lt=timezone.now().date())
+
+        forehand_sessions = tennis_sessions.filter(category="forehand")
+        backhand_sessions = tennis_sessions.filter(category="backhand")
+        ...
+        other_sessions = tennis_sessions.filter(category="other")
+
+        tennis_sessions_per_month = TennisModels.TennisSession.objects.filter(
+            user=request.user
+        )
+
+        # To allow the user to pick the chart they want to see.
+        filter_monthly = request.GET.get("filter-monthly", "")
+
+        # Applying filters based on the filter_option.
+        if filter_monthly == "forehand":
+            tennis_sessions_per_month = tennis_sessions_per_month.filter(
+                category="forehand")
+        ...
+
+        elif filter_monthly == "stamina":
+            tennis_sessions_per_month = tennis_sessions_per_month.filter(
+                category="stamina")
+
+        elif filter_monthly == "other":
+            tennis_sessions_per_month = tennis_sessions_per_month.filter(
+                category="other")
+
+        current_year = timezone.now().year
+
+        jan_sessions = tennis_sessions_per_month.filter(
+            date__year=current_year, date__month=1)
+        feb_sessions = tennis_sessions_per_month.filter(
+            date__year=current_year, date__month=2)
+        ...
+
+        nov_sessions = tennis_sessions_per_month.filter(
+            date__year=current_year, date__month=11)
+        dec_sessions = tennis_sessions_per_month.filter(
+            date__year=current_year, date__month=12)
+
+        return render(
+            request,
+            "./registration/index.html",
+            {
+                "title": f"{request.user} - Home",
+                "tennis_sessions": tennis_sessions,
+                "filter_option": filter_option,
+                "filter_monthly": filter_monthly,
+                "forehand_sessions": forehand_sessions,
+                "backhand_sessions": backhand_sessions,
+                ...,
+                "nov_sessions": nov_sessions,
+                "dec_sessions": dec_sessions,
+            }
+        )
+    else:
+        return render(
+            request,
+            "./registration/index.html",
+            {
+                "title": "Home"
+            }
+        )
+
 
 
 
