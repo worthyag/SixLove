@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login
+from django.utils import timezone
 from django.db.models import Exists, OuterRef, Q, Count, Max, F
 
 # from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
@@ -23,33 +24,27 @@ def home(request):
 
     # Applying filters based on the filter_option.
     if filter_option == "completed":
-        tennis_sessions = tennis_sessions.filter(
-            is_completed=True)
+        tennis_sessions = tennis_sessions.filter(is_completed=True)
 
     elif filter_option == "not_completed":
-        tennis_sessions = tennis_sessions.filter(
-            is_completed=False)
+        tennis_sessions = tennis_sessions.filter(is_completed=False)
+        
+    elif filter_option == "upcoming":
+        tennis_sessions = tennis_sessions.filter(date__gt=timezone.now().date())
+        
+    elif filter_option == "past":
+        tennis_sessions = tennis_sessions.filter(date__lt=timezone.now().date())
 
-    forehand_sessions = [
-        session for session in tennis_sessions if session.category == "forehand"]
-    backhand_sessions = [
-        session for session in tennis_sessions if session.category == "backhand"]
-    serve_sessions = [
-        session for session in tennis_sessions if session.category == "serve"]
-    volley_sessions = [
-        session for session in tennis_sessions if session.category == "volley"]
-    slice_sessions = [
-        session for session in tennis_sessions if session.category == "slice"]
-    smash_sessions = [
-        session for session in tennis_sessions if session.category == "smash"]
-    drop_shot_sessions = [
-        session for session in tennis_sessions if session.category == "drop-shot"]
-    agility_sessions = [
-        session for session in tennis_sessions if session.category == "agility"]
-    stamina_sessions = [
-        session for session in tennis_sessions if session.category == "stamina"]
-    other_sessions = [
-        session for session in tennis_sessions if session.category == "other"]
+    forehand_sessions = tennis_sessions.filter(category="forehand")
+    backhand_sessions = tennis_sessions.filter(category="backhand")
+    serve_sessions = tennis_sessions.filter(category="serve")
+    volley_sessions = tennis_sessions.filter(category="volley")
+    slice_sessions = tennis_sessions.filter(category="slice")
+    smash_sessions = tennis_sessions.filter(category="smash")
+    drop_shot_sessions = tennis_sessions.filter(category="drop-shot")
+    agility_sessions = tennis_sessions.filter(category="agility")
+    stamina_sessions = tennis_sessions.filter(category="stamina")
+    other_sessions = tennis_sessions.filter(category="other")
 
     return render(
         request,

@@ -14,6 +14,12 @@
         <option value="not_completed" {% if filter_option == 'not_completed' %}selected{% endif %}>
           Uncompleted Sessions
         </option>
+        <option value="upcoming" {% if filter_option == 'upcoming' %}selected{% endif %}>
+          Upcoming Sessions
+        </option>
+        <option value="past" {% if filter_option == 'past' %}selected{% endif %}>
+          Past Sessions
+        </option>
       </select>
       <button type="submit">Apply Filter</button>
     </div>
