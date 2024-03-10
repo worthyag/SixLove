@@ -1,5 +1,8 @@
 {% extends './base.html' %} 
 {% load static %}
+{% block scripts %}
+<script src="{% static './registration/scripts/carousel.js %}"></script>
+{% endblock %}
 {% block content %}
 {% if user.is_authenticated %}
 <main id="home">
@@ -263,8 +266,11 @@
   <div class="content">
     <p class="larger">Got what it takes to become a competitive tennis player?</p>
 
-    <section class="content-slider">
+    <section class="content-carousel">
       <p class="left arrow">&larr;</p>
+      <div class="display-content current">
+        <img src="{% static './registration/images/app-pic.svg' %}" alt="Photo of the app.">
+      </div>
       <div class="display-content current">
         <img src="{% static './registration/images/app-pic.svg' %}" alt="Photo of the app.">
       </div>
