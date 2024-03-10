@@ -208,18 +208,32 @@ main#landing div.content {
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
 }
-main#landing div.content p {
+main#landing div.content p.action-msg {
   font-size: 1.5rem;
   font-weight: 500;
   padding: 16px 0;
   margin: 0;
+  width: 75%;
+  text-align: center;
+  margin-top: 32px;
 }
-main#landing div.content p.larger {
+main#landing div.content p.info {
+  padding: 16px 0;
+  margin: 0;
+}
+main#landing div.content p.why-sixlove {
   font-size: 1.7rem;
   font-weight: bold;
+  margin: 0;
+  margin-top: 24px;
+  text-align: center;
+  width: 100%;
+}
+main#landing div.content p a:hover {
+  color: #578DDD;
 }
 main#landing div.content .carousel-div {
   transform: scale(0.85);
@@ -227,6 +241,7 @@ main#landing div.content .carousel-div {
   flex-direction: column;
   gap: 32px;
   padding: 8px 0;
+  margin: -32px 0 -24px 0;
 }
 main#landing div.content .carousel-div .content-carousel {
   display: flex;

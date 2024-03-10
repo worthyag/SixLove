@@ -264,7 +264,7 @@
 {% else %}
 <main id="landing">
   <div class="content">
-    <!-- <p class="larger">Got what it takes to become a competitive tennis player?</p> -->
+    <p class="why-sixlove">Why Choose SixLove?</p>
 
     <div class="carousel-div">
       <section class="content-carousel">
@@ -275,11 +275,11 @@
         </div>
         <div class="display-content">
           <div class="increase"><img src="{% static './registration/images/feed-page.svg' %}" alt="Feed Page Still."></div>
-          <p class="info">Become part of a community.</p>
+          <p class="info">Become part of a thriving community.</p>
         </div>
         <div class="display-content">
           <div class="increase"><img src="{% static './registration/images/profile-page.svg' %}" alt="Profile Page Still."></div>
-          <p class="info">Allow others to connect with you.</p>
+          <p class="info">Enable other tennis players to connect with you.</p>
         </div>
         <div class="display-content">
           <div class="increase"><img src="{% static './registration/images/awards.svg' %}" alt="Achievements Still."></div>
@@ -292,7 +292,7 @@
         </div>
         <div class="display-content">
           <div><img src="{% static './registration/images/learn-page.svg' %}" alt="Learn Page Still."></div>
-          <p class="info">Learn from the FREE resources available to you.</p>
+          <p class="info">Learn from the FREE tennis resources available to you.</p>
         </div>
         <p class="right arrow">&rarr;</p>
       </section>
@@ -310,7 +310,8 @@
       </div>
     </div>
 
-    <!-- <p>Sign up and find out...</p> -->
+    <p class="action-msg">Wait are you waiting for, <a href="{% url 'signup' %}">sign up</a> today!</p>
+    <p><a href="{% url 'login' %}">Login</a> if you already have an account.</p>
   </div>
 </main>
 {% endif %}
