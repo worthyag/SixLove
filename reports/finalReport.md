@@ -1094,16 +1094,20 @@ def home(request):
         filter_option = request.GET.get("filter", "")
 
         # Applying filters based on the filter_option.
+        # Displays the tennis sessions that the user has completed.
         if filter_option == "completed":
             tennis_sessions = tennis_sessions.filter(is_completed=True)
 
+        # Displays the tennis sessions that the user has NOT completed.
         elif filter_option == "not_completed":
             tennis_sessions = tennis_sessions.filter(is_completed=False)
 
+        # Displays the user's upcoming tennis sessions.
         elif filter_option == "upcoming":
             tennis_sessions = tennis_sessions.filter(
                 date__gt=timezone.now().date())
 
+        # Displays the user's past tennis sessions.
         elif filter_option == "past":
             tennis_sessions = tennis_sessions.filter(
                 date__lt=timezone.now().date())
