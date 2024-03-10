@@ -958,6 +958,21 @@ I decided that I wanted to start building SixLove's functionality in a somewhat 
         <figcaption><strong>Figure #</strong> SixLove Feed Page Create Post Modal</figcaption>
 </figure><br><br>
 
+<figure>
+    <img width="550" title="" src="./images/learn-page.png" alt="" data-align="center">
+        <figcaption><strong>Figure #</strong> SixLove Learn Page</figcaption>
+</figure><br><br>
+
+<figure>
+    <img width="550" title="" src="./images/resource-page-video.png" alt="" data-align="center">
+        <figcaption><strong>Figure #</strong> SixLove Resource Page (video)</figcaption>
+</figure><br><br>
+
+<figure>
+    <img width="550" title="" src="./images/resource-page-article.png" alt="" data-align="center">
+        <figcaption><strong>Figure #</strong> SixLove Resource Page (article)</figcaption>
+</figure><br><br>
+
 ## 4.1 The `registration` app
 
 _Building the `CustomUser`._
