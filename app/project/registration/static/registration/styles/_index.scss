@@ -125,7 +125,8 @@ main#landing {
           background-color: $brand-colour;
           color: $white;
 
-          width: 750px;
+          width: 80vw;
+          max-width: 750px;
           border-radius: 16px;
           border: 1px solid #e5e5e5;
   
@@ -141,7 +142,9 @@ main#landing {
   
           .info {
             font-size: 1.2rem;
-            width: 750px;
+            
+            width: 80vw;
+            max-width: 750px;
             border-radius: 16px;
             padding: 16px 32px;
             box-sizing: border-box;
