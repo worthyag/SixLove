@@ -5,6 +5,10 @@
   <p style="display: none;" class="tennis-session-count">{{ tennis_sessions|length }}</p>
   <p style="display: none;" class="forehand-session-count">{{ forehand_sessions|length }}</p>
   <p style="display: none;" class="backhand-session-count">{{ backhand_sessions|length }}</p>
+  <p style="display: none;" class="serve-session-count">{{ serve_sessions|length }}</p>
+  <p style="display: none;" class="volley-session-count">{{ volley_sessions|length }}</p>
+  <p style="display: none;" class="slice-session-count">{{ slice_sessions|length }}</p>
+  <p style="display: none;" class="smash-session-count">{{ smash_sessions|length }}</p>
 
   <div>
     <canvas id="myChart"></canvas>
@@ -19,10 +23,6 @@
     (async function() {
       const ctx = document.getElementById('myChart');
 
-      const tennisSessionCount = parseInt(document.querySelector(".tennis-session-count").innerText);
-      const forehandSessionCount = parseInt(document.querySelector(".forehand-session-count").innerText);
-      const backhandSessionCount = parseInt(document.querySelector(".backhand-session-count").innerText);
-
       const data = [
         { 
           category: "All", 
@@ -35,6 +35,22 @@
         { 
           category: "Backhand", 
           count: parseInt(document.querySelector(".backhand-session-count").innerText) 
+        },
+        { 
+          category: "Serve", 
+          count: parseInt(document.querySelector(".serve-session-count").innerText) 
+        },
+        { 
+          category: "Volley", 
+          count: parseInt(document.querySelector(".volley-session-count").innerText) 
+        },
+        { 
+          category: "Slice", 
+          count: parseInt(document.querySelector(".slice-session-count").innerText) 
+        },
+        { 
+          category: "Smash", 
+          count: parseInt(document.querySelector(".smash-session-count").innerText) 
         },
       ];
 
