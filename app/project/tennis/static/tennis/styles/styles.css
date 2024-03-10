@@ -134,4 +134,26 @@ main#resource .resource-content span {
 }
 main#resource a .resource-link {
   margin-top: 48px;
+}
+
+main#tennis {
+  padding: 16px 32px;
+}
+main#tennis div.session {
+  box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.1882352941);
+  border-radius: 8px;
+  margin-bottom: 16px;
+  padding: 8px 16px;
+}
+main#tennis div.session:hover {
+  box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.3137254902);
+}
+main#tennis div.session span {
+  font-weight: bold;
+}
+main#tennis div.session p, main#tennis div.session a {
+  padding: 0 20px;
+}
+main#tennis a {
+  text-decoration: none;
 }/*# sourceMappingURL=styles.css.map */

@@ -1,0 +1,26 @@
+main#tennis {
+  padding: 16px 32px; 
+
+  div.session {
+    box-shadow: 4px 4px 20px #00000030;
+    border-radius: 8px;
+    margin-bottom: 16px;
+    padding: 8px 16px;
+
+    &:hover {
+      box-shadow: 4px 4px 20px #00000050;
+    }
+
+    span {
+      font-weight: bold;
+    }
+
+    p, a {
+      padding: 0 20px;
+    }
+  }
+
+  a {
+    text-decoration: none;
+  }
+}
