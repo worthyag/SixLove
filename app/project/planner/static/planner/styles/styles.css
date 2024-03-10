@@ -163,6 +163,7 @@
 .calendar-section .side-panel {
   display: none;
   position: fixed;
+  z-index: 2;
   top: 0;
   right: 0;
   width: 300px;
@@ -233,7 +234,7 @@
 .modal {
   display: none;
   position: fixed;
-  z-index: 2;
+  z-index: 3;
   top: 0;
   left: 0;
   width: 100%;
