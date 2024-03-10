@@ -198,11 +198,9 @@ main#landing {
   padding: 0;
   background-color: #578DDD;
   color: #FFFFFF;
-  height: calc(100vh - 105px);
 }
 main#landing div.content {
   margin: 0 16px;
-  height: calc(100vh - 150px);
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
