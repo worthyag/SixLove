@@ -1046,7 +1046,6 @@ class CustomUser(AbstractUser):
     email = models.EmailField(unique=True)
     date_of_birth = models.DateField(null=True, blank=True)
 ```
-
 **Code Snippet 1** The `CustomUser` model.<br/><br>
 
 Each attribute displayed in **code snippet 1** corresponds to a field within the database. In addition to the fields displayed, Django will add the other fields that are specified within `AbstractUser`, such as the user's `id` and `password` among some other things. With the database table created, I created a form that uses the `CustomUser` model to build a form with fields that correspond to the models attributes. **Code snippet 2** displays a reduced version of the code for the form.
@@ -1066,7 +1065,6 @@ class CustomUserCreationForm(UserCreationForm):
         fields = ('first_name', 'last_name', 'email',
                   'date_of_birth',) + UserCreationForm.Meta.fields
 ```
-
 **Code Snippet 2** The `CustomUserCreationForm` form.<br><br>
 
 This form was used to create the forms displayed to the user, for both the login and sign up pages (which can be seen in **figures # and #**). I then created the views corresponding to the pages previously mentioned, **code snippet 3** displays a condensed version of the code for this.
@@ -1230,7 +1228,6 @@ def user_login(request):
         # Similar to the signup view.
     )
 ```
-
 **Code Snippet 3** The `registration` app views.<br>
 
 <br>
@@ -1246,10 +1243,14 @@ def user_login(request):
 </form>
 ...
 ```
-
 **Code Snippet 4** The `signup` html template.
 
 With that completed, I had written most of the functionality for user authentication, and had a bare bone version of the `registration` app. I then created a superuser in order to conduct a manual pretest, then I wrote some unit tests to test everything thoroughly (this will be expanded on in [section 5.1.1](#511-the-registration-app), though I had written some unit tests as I went along.
+
+The last implementation that I did for the `registration` app was create a landing and stats page (these can be seen in figures # and #). The code for this is in the home view which was shown in
+**Code snippet 3**. When the user is authenticated a stats page is shown, and when their not a landing page is shown.
+
+The stats page is home to two charts. Chart 1 displays information about the number of tennis sessions a user has (which the user can then filter further) and chart 2 displays information about the tennis sessions per month (which can also be further filtered). Users can make use of these interactive charts to track their progress by doing some of the following things:
 
 ## 4.2 The `tennis` app
 
