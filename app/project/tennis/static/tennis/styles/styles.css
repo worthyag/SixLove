@@ -197,4 +197,29 @@ main#session form input[type=submit]:hover {
 }
 main#session .view-tennis-sessions-btn {
   margin-top: 20px;
+}
+
+main#delete {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 170px);
+  align-items: center;
+  justify-content: space-between;
+}
+main#delete .main-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  background-color: #578DDD;
+  color: #FFFFFF;
+  padding: 16px 32px;
+  border-radius: 8px;
+}
+main#delete .main-content p {
+  font-size: 1.7rem;
+}
+main#delete .back-btn-div {
+  align-self: flex-start;
+  margin-top: 20px;
 }/*# sourceMappingURL=styles.css.map */
