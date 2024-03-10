@@ -57,9 +57,9 @@
 
   <!-- Filter Monthly-->
   <form style="margin-top: 48px;" method="get" class="filter-options">
-    <label for="filter">Filter by:</label>
+    <label for="filter-monthly">Filter by:</label>
     <div class="filter-action-element">
-      <select name="filter" id="filter">
+      <select name="filter-monthly" id="filter-monthly">
         <option value="" {% if not filter_monthly %}selected{% endif %}>All</option>
         <option value="forehand" {% if filter_monthly == 'forehand' %}selected{% endif %}>
           Forehand Sessions

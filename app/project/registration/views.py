@@ -52,6 +52,26 @@ def home(request):
         user=request.user
     )
 
+    # To allow the user to pick the chart they want to see.
+    filter_monthly = request.GET.get("filter-monthly", "")
+
+    # Applying filters based on the filter_option.
+    if filter_monthly == "forehand":
+        tennis_sessions_per_month = tennis_sessions_per_month.filter(
+            category="forehand")
+
+    elif filter_monthly == "backhand":
+        tennis_sessions_per_month = tennis_sessions_per_month.filter(
+            category="backhand")
+
+    elif filter_monthly == "serve":
+        tennis_sessions_per_month = tennis_sessions_per_month.filter(
+            category="serve")
+
+    elif filter_monthly == "volley":
+        tennis_sessions_per_month = tennis_sessions_per_month.filter(
+            category="volley")
+
     jan_sessions = tennis_sessions_per_month.filter(date__month=1)
     feb_sessions = tennis_sessions_per_month.filter(date__month=2)
     mar_sessions = tennis_sessions_per_month.filter(date__month=3)
@@ -72,6 +92,7 @@ def home(request):
             "title": "Home",
             "tennis_sessions": tennis_sessions,
             "filter_option": filter_option,
+            "filter_monthly": filter_monthly,
             "forehand_sessions": forehand_sessions,
             "backhand_sessions": backhand_sessions,
             "serve_sessions": serve_sessions,
