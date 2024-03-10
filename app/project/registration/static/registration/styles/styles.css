@@ -217,4 +217,48 @@ main#landing div.content img {
   min-width: 200px;
   width: 40vw;
   max-width: 300px;
+}
+
+main#register {
+  display: flex;
+  flex-direction: column;
+  padding: 16px 32px;
+}
+main#register h2 {
+  align-self: center;
+  margin-bottom: 48px;
+}
+main#register form {
+  background-color: #578DDD;
+  color: #FFFFFF;
+  align-self: center;
+  width: 75vw;
+  max-width: 450px;
+  padding: 16px 32px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+}
+main#register form input, main#register form textarea, main#register form select {
+  width: 100%;
+  height: 2rem;
+  font-size: 0.9rem;
+}
+main#register form input#id_is_completed {
+  width: 30px;
+}
+main#register form label {
+  font-size: 1.2rem;
+  font-weight: bold;
+  width: 100%;
+}
+main#register form button, main#register form input[type=submit] {
+  align-self: center;
+  height: 2.5rem;
+}
+main#register form button:hover, main#register form input[type=submit]:hover {
+  background-color: #32ca6f;
+}
+main#register .view-tennis-sessions-btn {
+  margin-top: 20px;
 }/*# sourceMappingURL=styles.css.map */

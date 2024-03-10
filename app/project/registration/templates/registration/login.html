@@ -1,14 +1,7 @@
 {% extends './base.html' %} 
-{% block extra_styles %}
-<style>
-  main {
-    padding: 16px 32px;
-  }
-</style>
-{% endblock %}
 {% block content %}
-<main>
-  <h1>Login</h1>
+<main id="register">
+  <h2>Login</h2>
   <form action="" method="post">
     {% csrf_token %}
     {{ form.as_p }}
