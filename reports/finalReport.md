@@ -674,25 +674,45 @@ Since SixLove is built with Django, the project has the following structure (**f
         settings.py
         urls.py
         wsgi.py
+	/achievement_images
+	/article_images
     /community
+        /management
+			/commands
+                __init__.py
+                award_achievements.py
         /migrations
         /static
             /community
+				images/
                 scripts/
+                    create-post.js
+                    create-profile.js
+                    edit-delete-post.js
+                    follow-unfollow.js
+                    post-menu.js
+                    settings.js
+                    toggle-comment-form.js
+                    toggle-like.js
+                    toggle-posts.js
+                    view-post.js
                 styles/
-                    _base.scss
+                    _connect.scss
+                    _feed.scss
                     _global.scss
                     _mixins.scss
+                    _profile.scss
+                    _settings.scss
                     _variables.scss
                     styles.css
                     styles.css.map
                     styles.scss
-                /templates
-                    /community
-                        base.html
-                        connect.html
-                        profile.html
-                        feed.html
+        /templates
+            /community
+                base.html
+                connect.html
+                profile.html
+                feed.html
         __init__.py
         admin.py
         apps.py
@@ -715,10 +735,10 @@ Since SixLove is built with Django, the project has the following structure (**f
                     styles.css
                     styles.css.map
                     styles.scss
-                /templates
-                    /planner
-                        base.html
-                        calendar.html
+        /templates
+            /planner
+                base.html
+                calendar.html
         __init__.py
         admin.py
         apps.py
