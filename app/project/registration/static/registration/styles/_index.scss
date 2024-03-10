@@ -231,6 +231,8 @@ main#landing {
   main#landing {
     div.content {
       .carousel-div {
+        transform: scale(0.92);
+
         .content-carousel {
           .display-content {
             div {
@@ -256,10 +258,12 @@ main#landing {
 
           .left {
             left: 0;
+            margin-left: -48px;
           }
 
           .right {
             right: 0;
+            margin-right: -48px;
           }
 
         }

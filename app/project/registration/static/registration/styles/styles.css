@@ -333,6 +333,9 @@ main#landing div.content .carousel-div .stop-btn .btn:hover {
 }
 
 @media only screen and (max-width: 480px) {
+  main#landing div.content .carousel-div {
+    transform: scale(0.92);
+  }
   main#landing div.content .carousel-div .content-carousel .display-content div {
     transform: scale(0.62);
   }
@@ -351,9 +354,11 @@ main#landing div.content .carousel-div .stop-btn .btn:hover {
   }
   main#landing div.content .carousel-div .content-carousel .left {
     left: 0;
+    margin-left: -48px;
   }
   main#landing div.content .carousel-div .content-carousel .right {
     right: 0;
+    margin-right: -48px;
   }
 }
 main#register {
