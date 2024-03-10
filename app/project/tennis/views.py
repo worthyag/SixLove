@@ -12,20 +12,26 @@ from . import models
 # Create your views here.
 @login_required
 def tennis(request):
-    """"""
+    """
+    The view for the tennis page.
+    """
+    # Getting all the tennis sessions for the request user.
     tennis_sessions = models.TennisSession.objects.filter(
         user=request.user).order_by("date")
 
+    # Filtering for tennis sessions today.
     today_sessions = [
         session for session in tennis_sessions if session.is_tennis_session_scheduled_today()
     ]
     is_today = "No tennis sessions scheduled for today." if len(
         today_sessions) == 0 else ""
 
+    # Filtering for upcoming tennis sessions.
     upcoming_sessions = [session for session in tennis_sessions
                          if not session.is_tennis_session_scheduled_today() and
                          session.date > datetime.date.today()]
 
+    # Filtering for past tennis sessions.
     past_sessions = [session for session in tennis_sessions
                      if not session.is_tennis_session_scheduled_today() and
                      session.date < datetime.date.today()]

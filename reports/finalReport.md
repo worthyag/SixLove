@@ -1620,7 +1620,7 @@ class TennisSession(models.Model):
 I also created a form that coincides with the model. It is the form used for all communication with the `TennisSession` database table (adding, editing, and deleting). **Code snippet 9** displays the form code.
 
 ```python
-...
+# more code...
 class TennisSessionForm(forms.ModelForm):
     # more code...
     class Meta:
@@ -1631,32 +1631,36 @@ class TennisSessionForm(forms.ModelForm):
         }
 ```
 
-**Code Snippet 6** The `TennisSessionForm` form.<br>
+**Code Snippet 9** The `TennisSessionForm` form.<br>
 
 <br>
 
 Most of the work for both the `registration` and `tennis` app was focused on creating models and forms. My primary focus was on how the data would be stored, and figuring out the most effective ways to design the database and its interactions- resulting in a lot of my time being allocated to that. This allowed the implementation to feel more intuitive and less complex.
 
-With the database table and its corresponding form completed, I created the views. **Code snippet 7** displays the tennis view. All of the views use the `@login_required` decorator. Decorators are a way to modify the behaviour of functions or methods in Python, and the `@login_required` decorator is provided by Django to protect views  (functions), since users are required to be logged in. All the views within the `tennis` app, are only accessible to users that are logged in.
+With the database table and its corresponding form completed, I created the views. **Code snippet 10** displays the tennis view. All of the views use the `@login_required` decorator. Decorators are a way to modify the behaviour of functions or methods in Python, and the `@login_required` decorator is provided by Django to protect views  (functions), since users are required to be logged in. All the views within the `tennis` app, are only accessible to users that are logged in.
 
 ```python
 ...
 @login_required
 def tennis(request):
-    ...
+    # more code...
+    # Getting all the tennis sessions for the request user.
     tennis_sessions = models.TennisSession.objects.filter(
         user=request.user).order_by("date")
 
+    # Filtering for tennis sessions today.
     today_sessions = [
         session for session in tennis_sessions if session.is_tennis_session_scheduled_today()
     ]
     is_today = "No tennis sessions scheduled for today." if len(
         today_sessions) == 0 else ""
 
+    # Filtering for upcoming tennis sessions.
     upcoming_sessions = [session for session in tennis_sessions
                          if not session.is_tennis_session_scheduled_today() and
                          session.date > datetime.date.today()]
 
+    # Filtering for past tennis sessions.
     past_sessions = [session for session in tennis_sessions
                      if not session.is_tennis_session_scheduled_today() and
                      session.date < datetime.date.today()]
@@ -1674,7 +1678,7 @@ def tennis(request):
     )
 ```
 
-**Code Snippet 7** The `tennis` view of the `tennis` app.<br>
+**Code Snippet 10** The `tennis` view of the `tennis` app.<br>
 
 <br>
 
