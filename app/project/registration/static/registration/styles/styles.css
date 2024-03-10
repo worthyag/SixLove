@@ -169,4 +169,16 @@ main#home .filter-options .filter-action-element button {
   min-width: 91px;
   border-bottom-left-radius: 0;
   border-top-left-radius: 0;
+}
+main#home section#number-of-sessions-chart {
+  display: flex;
+  flex-direction: column;
+}
+main#home section#number-of-sessions-chart div {
+  align-self: center;
+  width: 100%;
+  max-width: 700px;
+}
+main#home section#monthly-sessions-chart form {
+  margin-top: 100px;
 }/*# sourceMappingURL=styles.css.map */

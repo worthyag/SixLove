@@ -29,4 +29,21 @@ main#home {
       }
     }
   }
+
+  section#number-of-sessions-chart {
+    display: flex;
+    flex-direction: column;
+
+    div {
+      align-self: center;
+      width: 100%; 
+      max-width: 700px;
+    }
+  }
+
+  section#monthly-sessions-chart {
+    form {
+      margin-top: 100px;
+    }
+  }
 }

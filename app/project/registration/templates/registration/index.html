@@ -2,30 +2,6 @@
 {% block content %}
 <main id="home">
   {% if user.is_authenticated %}
-  <!-- Filter Option -->
-  <form method="get" class="filter-options">
-    <label for="filter">Filter by:</label>
-    <div class="filter-action-element">
-      <select name="filter" id="filter">
-        <option value="" {% if not filter_option %}selected{% endif %}>All</option>
-        <option value="completed" {% if filter_option == 'completed' %}selected{% endif %}>
-          Completed Sessions
-        </option>
-        <option value="not_completed" {% if filter_option == 'not_completed' %}selected{% endif %}>
-          Uncompleted Sessions
-        </option>
-        <option value="upcoming" {% if filter_option == 'upcoming' %}selected{% endif %}>
-          Upcoming Sessions
-        </option>
-        <option value="past" {% if filter_option == 'past' %}selected{% endif %}>
-          Past Sessions
-        </option>
-      </select>
-      <button type="submit">Apply Filter</button>
-    </div>
-  </form>
-
-
   <p style="display: none;" class="tennis-session-count">{{ tennis_sessions|length }}</p>
   <p style="display: none;" class="forehand-session-count">{{ forehand_sessions|length }}</p>
   <p style="display: none;" class="backhand-session-count">{{ backhand_sessions|length }}</p>
@@ -51,56 +27,82 @@
   <p style="display: none;" class="nov-session-count">{{ nov_sessions|length }}</p>
   <p style="display: none;" class="dec-session-count">{{ dec_sessions|length }}</p>
 
-  <div>
-    <canvas id="myChart"></canvas>
-  </div>
-
-  <!-- Filter Monthly-->
-  <form style="margin-top: 48px;" method="get" class="filter-options">
-    <label for="filter-monthly">Filter by:</label>
-    <div class="filter-action-element">
-      <select name="filter-monthly" id="filter-monthly">
-        <option value="" {% if not filter_monthly %}selected{% endif %}>All</option>
-        <option value="forehand" {% if filter_monthly == 'forehand' %}selected{% endif %}>
-          Forehand Sessions
-        </option>
-        <option value="backhand" {% if filter_monthly == 'backhand' %}selected{% endif %}>
-          Backhand Sessions
-        </option>
-        <option value="serve" {% if filter_monthly == 'serve' %}selected{% endif %}>
-          Serve Sessions
-        </option>
-        <option value="volley" {% if filter_monthly == 'volley' %}selected{% endif %}>
-          Volley Sessions
-        </option>
-        <option value="slice" {% if filter_monthly == 'slice' %}selected{% endif %}>
-          Slice Sessions
-        </option>
-        <option value="smash" {% if filter_monthly == 'smash' %}selected{% endif %}>
-          Smash Sessions
-        </option>
-        <option value="drop-shot" {% if filter_monthly == 'drop-shot' %}selected{% endif %}>
-          Drop Shot Sessions
-        </option>
-        <option value="agility" {% if filter_monthly == 'agility' %}selected{% endif %}>
-          Agility Sessions
-        </option>
-        <option value="stamina" {% if filter_monthly == 'stamina' %}selected{% endif %}>
-          Stamina Sessions
-        </option>
-        <option value="other" {% if filter_monthly == 'other' %}selected{% endif %}>
-          Other Sessions
-        </option>
-      </select>
-      <button type="submit">Apply Filter</button>
+  <section id="number-of-sessions-chart">
+    <a href="{% url 'home' %}#number-of-sessions-chart">
+      <button>Go to the Monthly Session Chart</button>
+    </a>
+    <!-- Filter Option -->
+    <form method="get" class="filter-options">
+      <label for="filter">Filter by:</label>
+      <div class="filter-action-element">
+        <select name="filter" id="filter">
+          <option value="" {% if not filter_option %}selected{% endif %}>All</option>
+          <option value="completed" {% if filter_option == 'completed' %}selected{% endif %}>
+            Completed Sessions
+          </option>
+          <option value="not_completed" {% if filter_option == 'not_completed' %}selected{% endif %}>
+            Uncompleted Sessions
+          </option>
+          <option value="upcoming" {% if filter_option == 'upcoming' %}selected{% endif %}>
+            Upcoming Sessions
+          </option>
+          <option value="past" {% if filter_option == 'past' %}selected{% endif %}>
+            Past Sessions
+          </option>
+        </select>
+        <button type="submit">Apply Filter</button>
+      </div>
+    </form>
+    <div>
+      <canvas id="myChart"></canvas>
     </div>
-  </form>
+  </section>
 
-  
-
-  <div>
-    <canvas id="monthlyTennisSessions"></canvas>
-  </div>
+  <section id="monthly-sessions-chart">
+    <!-- Filter Monthly-->
+    <form method="get" class="filter-options">
+      <label for="filter-monthly">Filter by:</label>
+      <div class="filter-action-element">
+        <select name="filter-monthly" id="filter-monthly">
+          <option value="" {% if not filter_monthly %}selected{% endif %}>All</option>
+          <option value="forehand" {% if filter_monthly == 'forehand' %}selected{% endif %}>
+            Forehand Sessions
+          </option>
+          <option value="backhand" {% if filter_monthly == 'backhand' %}selected{% endif %}>
+            Backhand Sessions
+          </option>
+          <option value="serve" {% if filter_monthly == 'serve' %}selected{% endif %}>
+            Serve Sessions
+          </option>
+          <option value="volley" {% if filter_monthly == 'volley' %}selected{% endif %}>
+            Volley Sessions
+          </option>
+          <option value="slice" {% if filter_monthly == 'slice' %}selected{% endif %}>
+            Slice Sessions
+          </option>
+          <option value="smash" {% if filter_monthly == 'smash' %}selected{% endif %}>
+            Smash Sessions
+          </option>
+          <option value="drop-shot" {% if filter_monthly == 'drop-shot' %}selected{% endif %}>
+            Drop Shot Sessions
+          </option>
+          <option value="agility" {% if filter_monthly == 'agility' %}selected{% endif %}>
+            Agility Sessions
+          </option>
+          <option value="stamina" {% if filter_monthly == 'stamina' %}selected{% endif %}>
+            Stamina Sessions
+          </option>
+          <option value="other" {% if filter_monthly == 'other' %}selected{% endif %}>
+            Other Sessions
+          </option>
+        </select>
+        <button type="submit">Apply Filter</button>
+      </div>
+    </form>
+    <div>
+      <canvas id="monthlyTennisSessions"></canvas>
+    </div>
+  </section>
 
 
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -157,7 +159,7 @@
 
 
       new Chart(ctx, {
-        type: 'bar',
+        type: 'doughnut',
         data: {
           labels: data.map(row => row.category),
           datasets: [{
