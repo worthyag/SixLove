@@ -296,7 +296,7 @@ main#landing div.content .carousel-div .nav-dots .nav-dot {
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  border: 1px solid #578DDD;
+  border: 1px solid #FFFFFF;
 }
 main#landing div.content .carousel-div .nav-dots .filled {
   background-color: #74edb4;
@@ -326,6 +326,24 @@ main#landing div.content .carousel-div .stop-btn .btn:hover {
   background-color: #9762d5;
 }
 
+@media only screen and (max-width: 480px) {
+  main#landing div.content .carousel-div .content-carousel .display-content .info {
+    height: 450px;
+    overflow-y: scroll;
+  }
+  main#landing div.content .carousel-div .content-carousel .arrow {
+    z-index: 1;
+    position: absolute;
+    transform: scale(0.7);
+    margin-top: -64px;
+  }
+  main#landing div.content .carousel-div .content-carousel .left {
+    left: 0;
+  }
+  main#landing div.content .carousel-div .content-carousel .right {
+    right: 0;
+  }
+}
 main#register {
   display: flex;
   flex-direction: column;

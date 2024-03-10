@@ -83,7 +83,7 @@ main#landing {
     justify-content: space-between;
     align-items: center;
 
-    .carousel-div{
+    .carousel-div {
       display: flex;
       flex-direction: column;
       gap: 32px;
@@ -110,7 +110,7 @@ main#landing {
           &:hover {
             background-color: #54d39a;
             cursor: pointer;
-        }
+          }
         
         }
   
@@ -177,7 +177,7 @@ main#landing {
           height: 10px;
           border-radius: 50%;
   
-          border: 1px solid $brand-colour;
+          border: 1px solid $white;
         }
   
         .filled {
@@ -213,6 +213,39 @@ main#landing {
             cursor: pointer;
             background-color: #9762d5;
         }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  main#landing {
+    div.content {
+      .carousel-div {
+        .content-carousel {
+          .display-content {
+            .info {
+              height: 450px;
+              overflow-y: scroll;
+            }
+          }
+
+          .arrow {
+            z-index: 1;
+            position: absolute;
+            transform: scale(0.7);
+            margin-top: -64px;
+          }
+
+          .left {
+            left: 0;
+          }
+
+          .right {
+            right: 0;
+          }
+
         }
       }
     }
