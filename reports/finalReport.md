@@ -1115,7 +1115,7 @@ def home(request):
         # Enables the tennis sessions to be further filtered by the session category.
         forehand_sessions = tennis_sessions.filter(category="forehand")
         backhand_sessions = tennis_sessions.filter(category="backhand")
-        ...
+        # ...more logic
         other_sessions = tennis_sessions.filter(category="other")
 
         # CHART 2
@@ -1133,7 +1133,8 @@ def home(request):
         if filter_monthly == "forehand":
             tennis_sessions_per_month = tennis_sessions_per_month.filter(
                 category="forehand")
-        ...
+        
+        #...more logic
 
         # Displays the user's stamina sessions.
         elif filter_monthly == "stamina":
@@ -1154,7 +1155,8 @@ def home(request):
         # Displays tennis sessions in February.
         feb_sessions = tennis_sessions_per_month.filter(
             date__year=current_year, date__month=2)
-        ...
+        
+        # more code...
 
         # Displays tennis sessions in November.
         nov_sessions = tennis_sessions_per_month.filter(
@@ -1173,7 +1175,7 @@ def home(request):
                 "filter_monthly": filter_monthly,
                 "forehand_sessions": forehand_sessions,
                 "backhand_sessions": backhand_sessions,
-                ...,
+                # more key-value pairs...
                 "nov_sessions": nov_sessions,
                 "dec_sessions": dec_sessions,
             }
@@ -1192,7 +1194,7 @@ def home(request):
 
 
 def signup(request):
-    ...
+    # more code...
     # If the request method is post the signup form is submitted.
     if request.method == "POST":
         form = CustomUserCreationForm(request.POST)
@@ -1216,7 +1218,7 @@ def signup(request):
 
 
 def user_login(request):
-    ...
+    # more code...
     # If the request method is post the login form is submitted.
     if request.method == "POST":
         form = AuthenticationForm(request, request.POST)
@@ -1238,13 +1240,13 @@ def user_login(request):
 **Code snippet 3** displays how I use the form to create users and authenticate users. I passed the form to a html file (more specifically a Django template file), where it was then rendered (**code snippet 4** shows some of the code for the signup template).
 
 ```python
-...
+# more code...
 <form method="post">
     {% csrf_token %}
     {{ form.as_p }}
     <button type="submit">Sign Up</button>
 </form>
-...
+# more code...
 ```
 **Code Snippet 4** The `signup` html template.
 
@@ -1262,21 +1264,21 @@ The stats page is home to two charts (I built these charts using `Chart.js`). Ch
 - Track the number of tennis sessions scheduled across the year.
     - Filter for specific tennis session categories.
 
-Users can also hover over the charts for more information.
+Users can also hover over the charts for more information. **Code Snippet 5** displays the django template associated with the stats page. Data is passed from the home view to the template, the neccesary data is then extracted and fed to the `Chart` object.
 
 ```html
 <!-- First checking whether the user is authenticated. -->
 {% if user.is_authenticated %}
 <main id="home">
-    <!-- Reading in the data from the home view and putting it into elements
+<!-- Reading in the data from the home view and putting it into elements
     to be easily accessed by JavaScript and Chart.js. -->
   <p style="display: none;" class="tennis-session-count">{{ tennis_sessions|length }}</p>
-  ...
+  <!-- ...more p elements -->
   <p style="display: none;" class="stamina-session-count">{{ stamina_sessions|length }}</p>
   <p style="display: none;" class="other-session-count">{{ other_sessions|length }}</p>
 
   <p style="display: none;" class="jan-session-count">{{ jan_sessions|length }}</p>
- ...
+  <!-- ...more p elements -->
   <p style="display: none;" class="nov-session-count">{{ nov_sessions|length }}</p>
   <p style="display: none;" class="dec-session-count">{{ dec_sessions|length }}</p>
 
@@ -1295,7 +1297,7 @@ Users can also hover over the charts for more information.
           <option value="completed" {% if filter_option == 'completed' %}selected{% endif %}>
             Completed Sessions
           </option>
-          ...
+          <!-- more options... -->
           <option value="past" {% if filter_option == 'past' %}selected{% endif %}>
             Past Sessions
           </option>
@@ -1324,7 +1326,7 @@ Users can also hover over the charts for more information.
           <option value="forehand" {% if filter_monthly == 'forehand' %}selected{% endif %}>
             Forehand Sessions
           </option>
-          ...
+          <!-- more options... -->
           <option value="other" {% if filter_monthly == 'other' %}selected{% endif %}>
             Other Sessions
           </option>
@@ -1354,7 +1356,7 @@ Users can also hover over the charts for more information.
           category: "Forehand", 
           count: parseInt(document.querySelector(".forehand-session-count").innerText) 
         },
-        ...
+        // more categories...
         { 
           category: "Other", 
           count: parseInt(document.querySelector(".other-session-count").innerText) 
@@ -1395,7 +1397,7 @@ Users can also hover over the charts for more information.
           month: "February", 
           count: parseInt(document.querySelector(".feb-session-count").innerText) 
         },
-        ...
+        // more months...
         { 
           month: "December", 
           count: parseInt(document.querySelector(".dec-session-count").innerText) 
@@ -1429,6 +1431,96 @@ Users can also hover over the charts for more information.
 <br>
 
 The landing page is home to a carousel that I built from scratch using HTML, SCSS, and JavaScript. The carousel provides potential users with information about the SixLove app, so that they can decide whether they want to sign up or not. The carousel is automated but users have the option to stop the slides and navigate using the buttons instead.
+
+```html
+<!-- If the user is not authenticated the following is displayed. -->
+{% else %}
+<main id="landing">
+  <div class="content">
+    <!-- more code... -->
+    <div class="carousel-div">
+      <section class="content-carousel">
+        <p class="left arrow">&larr;</p>
+        <div class="display-content current">
+          <div class="increase"><img src="{% static './registration/images/home-page.svg' %}" alt="Home page still."></div>
+          <p class="info">Get progress analytics.</p>
+        </div>
+        <!-- more divs... -->
+        <div class="display-content">
+          <div><img src="{% static './registration/images/learn-page.svg' %}" alt="Learn Page Still."></div>
+          <p class="info">Learn from the FREE tennis resources available to you.</p>
+        </div>
+        <p class="right arrow">&rarr;</p>
+      </section>
+      <section class="nav-dots">
+        <div class="nav-dot filled"></div>
+        <!-- more nav dots... -->
+        <div class="nav-dot"></div>
+      </section>
+      <div class="stop-btn">
+        <button class="start-slides btn">Start Slides</button>
+        <button class="stop-slides btn">Stop Slides</button>
+      </div>
+    </div>
+    ...
+</main>
+{% endif %}
+```
+**Code Snippet 6** The `home - landing` html template.<br>
+<br>
+
+```javascript
+const contents = document.querySelectorAll('.display-content');
+// ...other variables
+
+leftArrow.addEventListener('click', previousContent);
+rightArrow.addEventListener('click', nextContent);
+
+let automate = setInterval(nextContent, 3000);
+startBtn.addEventListener('click', () => {automate = setInterval(nextContent, 5000);});
+stopBtn.addEventListener('click', () => {clearTimeout(automate)});
+
+function previousContent() {
+    let pos = sliderContents.length;
+
+    for (let i = sliderContents.length - 1; i >= 0; i--) {        
+        if (sliderContents[i].classList.contains('current')) {
+            sliderContents[i].classList.toggle('current');
+            navDots[i].classList.toggle('filled');
+            pos = i-1;
+
+            if (pos === -1) {
+                pos = sliderContents.length - 1;
+            }
+            break;
+        }
+    }
+
+    sliderContents[pos].classList.toggle('current');
+    navDots[pos].classList.toggle('filled');
+}
+
+function nextContent() {
+    let pos = -1;
+
+    for (let i = 0; i < sliderContents.length; i++) {        
+        if (sliderContents[i].classList.contains('current')) {
+            sliderContents[i].classList.toggle('current');
+            navDots[i].classList.toggle('filled');
+            pos = i+1;
+
+            if (pos === sliderContents.length) {
+                pos = 0;
+            }
+            break;
+        }
+    }
+
+    sliderContents[pos].classList.toggle('current');
+    navDots[pos].classList.toggle('filled');
+}
+```
+
 
 ## 4.2 The `tennis` app
 
