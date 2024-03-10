@@ -93,9 +93,12 @@ main#landing {
 
     .content-carousel {
       display: flex;
+      justify-content: center;
       align-items: center;
 
       .display-content {
+        display: none;
+
         img {
           min-width: 300px;
           width: 40vw;
@@ -106,6 +109,13 @@ main#landing {
           font-size: 1.2rem;
         }
       }
+
+      .current {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
     }
 
     .stop-btn {

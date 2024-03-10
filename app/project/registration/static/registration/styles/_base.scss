@@ -2,6 +2,10 @@
   font-family: $primary-font;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
 }

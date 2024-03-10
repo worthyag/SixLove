@@ -3,6 +3,10 @@
   font-family: "Open Sans", sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
 }
@@ -219,7 +223,11 @@ main#landing div.content p.larger {
 }
 main#landing div.content .content-carousel {
   display: flex;
+  justify-content: center;
   align-items: center;
+}
+main#landing div.content .content-carousel .display-content {
+  display: none;
 }
 main#landing div.content .content-carousel .display-content img {
   min-width: 300px;
@@ -228,6 +236,12 @@ main#landing div.content .content-carousel .display-content img {
 }
 main#landing div.content .content-carousel .display-content .info {
   font-size: 1.2rem;
+}
+main#landing div.content .content-carousel .current {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 main#landing div.content .stop-btn button {
   margin-bottom: 0;
