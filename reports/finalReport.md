@@ -678,13 +678,13 @@ Since SixLove is built with Django, the project has the following structure (**f
 	/article_images
     /community
         /management
-			/commands
+            /commands
                 __init__.py
                 award_achievements.py
         /migrations
         /static
             /community
-				images/
+                images/
                 scripts/
                     create-post.js
                     create-profile.js
@@ -713,17 +713,17 @@ Since SixLove is built with Django, the project has the following structure (**f
                 feed.html
                 profile.html
                 settings.html
-				user.html
+                user.html
         __init__.py
         admin.py
         apps.py
         context_processors.py
         forms.py
         models.py
-		signals.py
+        signals.py
         tests.py
         urls.py
-		utils.py
+        utils.py
         views.py
     /planner
         /migrations
@@ -753,7 +753,7 @@ Since SixLove is built with Django, the project has the following structure (**f
         /static
             /registration
                 scripts/
-					carousel.js
+                    carousel.js
                 styles/
                     _base.scss
                     _index.scss
@@ -795,7 +795,7 @@ Since SixLove is built with Django, the project has the following structure (**f
                 delete_tennis_session.html
                 edit_tennis_session.html
                 learn.html
-				resource.html
+                resource.html
                 success.html
                 tennis.html
         __init__.py
