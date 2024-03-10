@@ -51,7 +51,11 @@ def tennis(request):
 
 @login_required
 def add(request):
-    """"""
+    """
+    The view for the add tennis session page.
+    """
+    # If the request method is post the form will be submitted if not
+    # a new form will be created.
     if request.method == 'POST':
         form = forms.TennisSessionForm(request.POST)
 
@@ -76,6 +80,9 @@ def add(request):
 
 @login_required
 def edit_tennis_session(request, tennis_session_id):
+    """
+    The view for the edit tennis session page.
+    """
     # Stops users from user navigating to the edit page for a tennis
     # session that doesn't exist or doesn't belong to them.
     try:
@@ -109,6 +116,9 @@ def edit_tennis_session(request, tennis_session_id):
 
 @login_required
 def delete_tennis_session(request, tennis_session_id):
+    """
+    The view for the delete tennis session page.
+    """
     # Stops users from user navigating to the delete page for a tennis
     # session that doesn't exist or doesn't belong to them.
     try:

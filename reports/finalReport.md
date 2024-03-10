@@ -1640,7 +1640,7 @@ Most of the work for both the `registration` and `tennis` app was focused on cre
 With the database table and its corresponding form completed, I created the views. **Code snippet 10** displays the tennis view. All of the views use the `@login_required` decorator. Decorators are a way to modify the behaviour of functions or methods in Python, and the `@login_required` decorator is provided by Django to protect views  (functions), since users are required to be logged in. All the views within the `tennis` app, are only accessible to users that are logged in.
 
 ```python
-...
+# more code...
 @login_required
 def tennis(request):
     # more code...
@@ -1682,12 +1682,14 @@ def tennis(request):
 
 <br>
 
-In addition to using the `@login_required` decorator, **code snippet 7** demonstrates how I further filter information based on the user who sent the request. This is to make sure that users can only see tennis sessions associated with their account. **Code snippet 8**, displays some of the other views within the `tennis` app (the success and learn views are not displayed).
+In addition to using the `@login_required` decorator, **code snippet 10** demonstrates how I further filter information based on the user who sent the request. This is to make sure that users can only see tennis sessions associated with their account. **Code snippet 11**, displays some of the other views within the `tennis` app (the success and learn views are not displayed).
 
 ```python
 @login_required
 def add(request):
-    ...
+    # more code...
+    # If the request method is post the form will be submitted if not
+    # a new form will be created.
     if request.method == 'POST':
         form = forms.TennisSessionForm(request.POST)
 
@@ -1712,6 +1714,7 @@ def add(request):
 
 @login_required
 def edit_tennis_session(request, tennis_session_id):
+    # more code...
     # Stops users from user navigating to the edit page for a tennis
     # session that doesn't exist or doesn't belong to them.
     try:
@@ -1740,6 +1743,7 @@ def edit_tennis_session(request, tennis_session_id):
 
 @login_required
 def delete_tennis_session(request, tennis_session_id):
+    # more code...
     # Stops users from user navigating to the delete page for a tennis
     # session that doesn't exist or doesn't belong to them.
     try:
@@ -1755,7 +1759,7 @@ def delete_tennis_session(request, tennis_session_id):
     )
 ```
 
-**Code Snippet 8** The `add_tennis_session`, `edit_tennis_session`, and `delete_tennis_session` views of the `tennis` app.<br>
+**Code Snippet 11** The `add_tennis_session`, `edit_tennis_session`, and `delete_tennis_session` views of the `tennis` app.<br>
 
 <br>
 
