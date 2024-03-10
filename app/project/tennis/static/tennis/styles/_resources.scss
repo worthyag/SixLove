@@ -53,3 +53,15 @@ main#resource {
     }
   }
 }
+
+@media only screen and (max-width: 480px) {
+  main#resource {
+    .resource-video {
+      width: 80vw;
+    }
+
+    .resource-content {
+      width: 90%;
+    }
+  }
+}
