@@ -906,39 +906,11 @@ For this evaluation metric, the SixLove app will be evaluated against it's initi
 
 _Core functionality development._
 
-I decided that I wanted to start building SixLove's functionality in a somewhat chronological order. Chronological order referring to the user's flow, for instance, what route would potential users take when navigating the app? That meant starting with the landing page, then moving on to the sign up and login pages, then to the pages that allow the users to add, edit, and delete tennis sessions. I have previously stated SixLove's aims and objectives, and at their very core user authentication and tennis sessions play a huge role in whether the aims and objectives are met, so using this approach made the most logical sense. I must mention however, at this stage my goal was to program the functionality, therefore I did very minimal styling- currently the user interface is not fully fleshed out (or quite minimal- refer to **figures 31** to **38** to see what I mean), and there will be upcoming changes to the wireframes based on user input and accessibility matters.
+I decided that I wanted to start building SixLove's functionality in a somewhat chronological order. Chronological order referring to the user's flow, for instance, what route would potential users take when navigating the app? That meant starting with the landing page, then moving on to the sign up and login pages, then to the pages that allow the users to add, edit, and delete tennis sessions. I have previously stated SixLove's aims and objectives, and at their very core user authentication and tennis sessions play a huge role in whether the aims and objectives are met, so using this approach made the most logical sense. 
 
-<img title="" src="images/calendar-page.png" alt="">
+I must mention however, at this stage my goal was to program the functionality, therefore I did very minimal styling (the complete UI design can de seen in [section 3.1](#311-Wireframin) and the video accompanying this report). 
+currently the user interface is not fully fleshed out (or quite minimal- refer to **figures 31** to **38** to see what I mean), and there will be upcoming changes to the wireframes based on user input and accessibility matters.
 
-**Figure 31** The project's current calendar page. (Screenshot of the developer tools view to get a view of the whole page- 50% zoom).<br><br>
-
-<img title="" src="images/calendar-page-side-panel.png" alt="">
-
-**Figure 32** The project's current side panel for the calendar page. (Screenshot of the developer tools view to get a view of the whole page- 50% zoom).<br><br>
-
-<img title="" src="images/calendar-page-edit-session.png" alt="">
-
-**Figure 33** The project's current edit tennis session popup for the calendar page. (Screenshot of the developer tools view to get a view of the whole page- 50% zoom).<br><br>
-
-<img title="" src="images/calendar-page-add-session.png" alt="">
-
-**Figure 34** The project's current add tennis session popup for the calendar page. (Screenshot of the developer tools view to get a view of the whole page- 50% zoom).<br><br>
-
-<img title="" src="images/calendar-page-delete-session.png" alt="">
-
-**Figure 35** The project's current delete tennis session popup for the calendar page. (Screenshot of the developer tools view to get a view of the whole page- 50% zoom).<br><br>
-
-<img title="" src="images/tennis-page.png" alt="">
-
-**Figure 36** The project's current tennis page. (Screenshot of the developer tools view to get a view of the whole page- 50% zoom).<br><br>
-
-<img title="" src="images/login-page.png" alt="">
-
-**Figure 37** The project's current login page. (Screenshot of the developer tools view to get a view of the whole page- 50% zoom).<br><br>
-
-<img title="" src="images/sign-up-page.png" alt="">
-
-**Figure 38** The project's current sign up page. (Screenshot of the developer tools view to get a view of the whole page- 50% zoom).<br><br>
 
 ## 4.1 The `registration` app
 
