@@ -221,12 +221,18 @@ main#landing div.content p.larger {
   font-size: 1.7rem;
   font-weight: bold;
 }
-main#landing div.content .content-carousel {
+main#landing div.content .carousel-div {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding: 100px 0;
+}
+main#landing div.content .carousel-div .content-carousel {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-main#landing div.content .content-carousel .arrow {
+main#landing div.content .carousel-div .content-carousel .arrow {
   font-size: 3rem;
   background-color: #3e9c94;
   color: #fff;
@@ -235,38 +241,38 @@ main#landing div.content .content-carousel .arrow {
   padding: 8px 16px;
   border-radius: 50%;
 }
-main#landing div.content .content-carousel .arrow:hover {
+main#landing div.content .carousel-div .content-carousel .arrow:hover {
   background-color: #54d39a;
   cursor: pointer;
 }
-main#landing div.content .content-carousel .display-content {
+main#landing div.content .carousel-div .content-carousel .display-content {
   display: none;
 }
-main#landing div.content .content-carousel .display-content img {
+main#landing div.content .carousel-div .content-carousel .display-content img {
   min-width: 300px;
   width: 40vw;
   max-width: 300px;
   -o-object-fit: cover;
      object-fit: cover;
 }
-main#landing div.content .content-carousel .display-content .info {
+main#landing div.content .carousel-div .content-carousel .display-content .info {
   font-size: 1.2rem;
   width: 75%;
 }
-main#landing div.content .content-carousel .current {
+main#landing div.content .carousel-div .content-carousel .current {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
-main#landing div.content .nav-dots {
+main#landing div.content .carousel-div .nav-dots {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   gap: 8px;
 }
-main#landing div.content .nav-dots .nav-dot {
+main#landing div.content .carousel-div .nav-dots .nav-dot {
   background-color: #ddd;
   color: #555;
   width: 10px;
@@ -274,12 +280,32 @@ main#landing div.content .nav-dots .nav-dot {
   border-radius: 50%;
   border: 1px solid #578DDD;
 }
-main#landing div.content .nav-dots .filled {
+main#landing div.content .carousel-div .nav-dots .filled {
   background-color: #74edb4;
   transform: scale(1.4);
 }
-main#landing div.content .stop-btn button {
+main#landing div.content .carousel-div .stop-btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 16px;
+}
+main#landing div.content .carousel-div .stop-btn button {
   margin-bottom: 0;
+}
+main#landing div.content .carousel-div .stop-btn .btn {
+  background-color: #a6734a;
+  color: #fff;
+  font-size: 1.3rem;
+  font-weight: 700;
+  border: 2px solid #000;
+  box-shadow: 6px 6px 0 #f4c689;
+  border-radius: 8px;
+  padding: 8px 16px;
+}
+main#landing div.content .carousel-div .stop-btn .btn:hover {
+  cursor: pointer;
+  background-color: #d5ad62;
 }
 
 main#register {
