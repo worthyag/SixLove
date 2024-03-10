@@ -29,6 +29,14 @@ def home(request):
         session for session in tennis_sessions if session.category == "slice"]
     smash_sessions = [
         session for session in tennis_sessions if session.category == "smash"]
+    drop_shot_sessions = [
+        session for session in tennis_sessions if session.category == "drop-shot"]
+    agility_sessions = [
+        session for session in tennis_sessions if session.category == "agility"]
+    stamina_sessions = [
+        session for session in tennis_sessions if session.category == "stamina"]
+    other_sessions = [
+        session for session in tennis_sessions if session.category == "other"]
 
     return render(
         request,
@@ -42,6 +50,10 @@ def home(request):
             "volley_sessions": volley_sessions,
             "slice_sessions": slice_sessions,
             "smash_sessions": smash_sessions,
+            "drop_shot_sessions": drop_shot_sessions,
+            "agility_sessions": agility_sessions,
+            "stamina_sessions": stamina_sessions,
+            "other_sessions": other_sessions,
         }
     )
 

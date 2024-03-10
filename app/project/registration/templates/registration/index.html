@@ -9,14 +9,15 @@
   <p style="display: none;" class="volley-session-count">{{ volley_sessions|length }}</p>
   <p style="display: none;" class="slice-session-count">{{ slice_sessions|length }}</p>
   <p style="display: none;" class="smash-session-count">{{ smash_sessions|length }}</p>
+  <p style="display: none;" class="drop-shot-session-count">{{ drop_shot_sessions|length }}</p>
+  <p style="display: none;" class="agility-session-count">{{ agility_sessions|length }}</p>
+  <p style="display: none;" class="stamina-session-count">{{ stamina_sessions|length }}</p>
+  <p style="display: none;" class="other-session-count">{{ other_sessions|length }}</p>
 
   <div>
     <canvas id="myChart"></canvas>
   </div>
 
-  <div>
-    <canvas id="acquisitions"></canvas>
-  </div>
 
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script>
@@ -52,6 +53,22 @@
           category: "Smash", 
           count: parseInt(document.querySelector(".smash-session-count").innerText) 
         },
+        { 
+          category: "Drop Shot", 
+          count: parseInt(document.querySelector(".drop-shot-session-count").innerText) 
+        },
+        { 
+          category: "Agility", 
+          count: parseInt(document.querySelector(".agility-session-count").innerText) 
+        },
+        { 
+          category: "Stamina", 
+          count: parseInt(document.querySelector(".stamina-session-count").innerText) 
+        },
+        { 
+          category: "Other", 
+          count: parseInt(document.querySelector(".other-session-count").innerText) 
+        },
       ];
 
 
@@ -60,7 +77,7 @@
         data: {
           labels: data.map(row => row.category),
           datasets: [{
-            label: '# of tennis sessions',
+            label: 'Number of tennis sessions',
             data: data.map(row => row.count),
             borderWidth: 1
           }]
