@@ -1551,7 +1551,9 @@ The next order of business was to create the `tennis` app. The ability to add, e
 
 - Success- the page that lets users know that they successfully completed their task.
 
-- Learn- the page that provides users with learning / tennis resources.
+- Learn- the page that provides users with a collection of learning / tennis resources.
+
+- Resource- the page that displays a resource.
 
 *The planner app also allows users to add, edit, and delete tennis sessions (this is expanded upon in [section 4.3](#43-the-planner-app).
 
