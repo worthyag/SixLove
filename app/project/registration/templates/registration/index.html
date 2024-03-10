@@ -63,6 +63,7 @@
       </div>
     </form>
     <div>
+      <!-- Where chart 1 will be displayed. -->
       <canvas id="myChart"></canvas>
     </div>
   </section>
@@ -114,6 +115,7 @@
       </div>
     </form>
     <div>
+      <!-- Where chart 2 will be displayed. -->
       <canvas id="monthlyTennisSessions"></canvas>
     </div>
   </section>
@@ -124,6 +126,7 @@
     (async function() {
       const ctx = document.getElementById('myChart');
 
+      // The chart data taken from the elements.
       const data = [
         { 
           category: "All", 
@@ -171,7 +174,7 @@
         },
       ];
 
-
+      // Creating a new chart and populating with the data.
       new Chart(ctx, {
         type: 'doughnut',
         data: {
@@ -195,6 +198,7 @@
     (async function() {
       const ctx = document.getElementById('monthlyTennisSessions');
 
+      // The chart data taken from the elements.
       const data = [
         { 
           month: "January", 
@@ -246,7 +250,7 @@
         },
       ];
 
-
+      // Creating a new chart and populating with the data.
       new Chart(ctx, {
         type: 'line',
         data: {

@@ -1304,6 +1304,7 @@ Users can also hover over the charts for more information.
       </div>
     </form>
     <div>
+      <!-- Where chart 1 will be displayed. -->
       <canvas id="myChart"></canvas>
     </div>
   </section>
@@ -1332,6 +1333,7 @@ Users can also hover over the charts for more information.
       </div>
     </form>
     <div>
+        <!-- Where chart 2 will be displayed. -->
       <canvas id="monthlyTennisSessions"></canvas>
     </div>
   </section>
@@ -1342,6 +1344,7 @@ Users can also hover over the charts for more information.
     (async function() {
       const ctx = document.getElementById('myChart');
 
+      // The chart data taken from the elements.
       const data = [
         { 
           category: "All", 
@@ -1358,7 +1361,7 @@ Users can also hover over the charts for more information.
         },
       ];
 
-
+      // Creating a new chart and populating with the data.
       new Chart(ctx, {
         type: 'doughnut',
         data: {
@@ -1382,6 +1385,7 @@ Users can also hover over the charts for more information.
     (async function() {
       const ctx = document.getElementById('monthlyTennisSessions');
 
+      // The chart data taken from the elements.
       const data = [
         { 
           month: "January", 
@@ -1398,7 +1402,7 @@ Users can also hover over the charts for more information.
         },
       ];
 
-
+      // Creating a new chart and populating with the data.
       new Chart(ctx, {
         type: 'line',
         data: {
