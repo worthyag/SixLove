@@ -85,6 +85,11 @@ main#learn .resources a .resource .resource-tag {
   border-radius: 8px;
 }
 
+@media only screen and (max-width: 480px) {
+  main#learn .resources {
+    justify-content: center;
+  }
+}
 main#resource {
   display: flex;
   flex-direction: column;

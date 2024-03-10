@@ -1,7 +1,7 @@
 {% extends './base.html' %} 
 {% block content %}
+{% if user.is_authenticated %}
 <main id="home">
-  {% if user.is_authenticated %}
   <p style="display: none;" class="tennis-session-count">{{ tennis_sessions|length }}</p>
   <p style="display: none;" class="forehand-session-count">{{ forehand_sessions|length }}</p>
   <p style="display: none;" class="backhand-session-count">{{ backhand_sessions|length }}</p>
@@ -256,8 +256,13 @@
       });
     })();
   </script>
-  {% else %}
-  <h2 >Welcome to SixLove</h2>
-  {% endif %}
 </main>
+{% else %}
+<main id="landing">
+  <div class="content">
+    <p>Got what it takes to become a competitive tennis player?</p>
+    <p>Sign up and find out.</p>
+  </div>
+</main>
+{% endif %}
 {% endblock %}

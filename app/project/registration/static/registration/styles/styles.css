@@ -191,4 +191,18 @@ main#home section#number-of-sessions-chart div {
   align-self: center;
   width: 100%;
   max-width: 700px;
+}
+
+main#landing {
+  margin: 0;
+  padding: 0;
+  background-color: #578DDD;
+  color: #FFFFFF;
+  height: calc(100vh - 105px);
+}
+main#landing div.content {
+  padding: 16px 32px;
+}
+main#landing div.content p {
+  margin: 0;
 }/*# sourceMappingURL=styles.css.map */
