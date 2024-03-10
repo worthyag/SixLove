@@ -5,6 +5,7 @@ from .models import CustomUser
 
 
 class CustomUserCreationForm(UserCreationForm):
+    """A class that creates forms based on CustomUser model."""
     first_name = forms.CharField(required=True, max_length=50)
     last_name = forms.CharField(max_length=50)
     email = forms.EmailField(required=True)

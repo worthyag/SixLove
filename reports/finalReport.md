@@ -1040,6 +1040,7 @@ In order to authenticate the users, I needed to first create a table in my datab
 ```python
 ...
 class CustomUser(AbstractUser):
+    """A custom user class that inherits from Abstract User."""
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
     email = models.EmailField(unique=True)
@@ -1053,6 +1054,7 @@ Each attribute displayed in **code snippet 1** corresponds to a field within the
 ```python
 ...
 class CustomUserCreationForm(UserCreationForm):
+    """A class that creates forms based on CustomUser model."""
     first_name = forms.CharField(required=True, max_length=50)
     last_name = forms.CharField(max_length=50)
     email = forms.EmailField(required=True)
