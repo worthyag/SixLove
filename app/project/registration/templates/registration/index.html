@@ -27,10 +27,10 @@
   <p style="display: none;" class="nov-session-count">{{ nov_sessions|length }}</p>
   <p style="display: none;" class="dec-session-count">{{ dec_sessions|length }}</p>
 
+  <a href="#monthly-sessions-chart">
+    <button>Go to the Monthly Session Chart</button>
+  </a>
   <section id="number-of-sessions-chart">
-    <a href="{% url 'home' %}#number-of-sessions-chart">
-      <button>Go to the Monthly Session Chart</button>
-    </a>
     <!-- Filter Option -->
     <form method="get" class="filter-options">
       <label for="filter">Filter by:</label>
@@ -58,6 +58,9 @@
     </div>
   </section>
 
+  <a href="#number-of-sessions-chart">
+    <button>Go to the Number of Sessions Chart</button>
+  </a>
   <section id="monthly-sessions-chart">
     <!-- Filter Monthly-->
     <form method="get" class="filter-options">

@@ -2,6 +2,13 @@ main#home {
   .filter-options {
     // display: flex;
     // align-items: center;
+    button {
+      background-color: #000000;
+
+      &:hover {
+        background-color: $brand-colour;
+      }
+    }
 
     .filter-action-element {
       display: flex;
@@ -29,10 +36,18 @@ main#home {
       }
     }
   }
+  
+  button {
+    background-color: $brand-colour;
+    &:hover {
+      background-color: $violet;
+    }
+  }
 
   section#number-of-sessions-chart {
     display: flex;
     flex-direction: column;
+    margin-bottom: 100px;
 
     div {
       align-self: center;
@@ -41,9 +56,7 @@ main#home {
     }
   }
 
-  section#monthly-sessions-chart {
-    form {
-      margin-top: 100px;
-    }
-  }
+  // section#monthly-sessions-chart {
+  //   margin-top: 100px;
+  // }
 }
