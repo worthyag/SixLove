@@ -55,7 +55,32 @@
     <canvas id="myChart"></canvas>
   </div>
 
-  <div style="margin-top: 48px;">
+  <!-- Filter Monthly-->
+  <form style="margin-top: 48px;" method="get" class="filter-options">
+    <label for="filter">Filter by:</label>
+    <div class="filter-action-element">
+      <select name="filter" id="filter">
+        <option value="" {% if not filter_monthly %}selected{% endif %}>All</option>
+        <option value="forehand" {% if filter_monthly == 'forehand' %}selected{% endif %}>
+          Forehand Sessions
+        </option>
+        <option value="backhand" {% if filter_monthly == 'backhand' %}selected{% endif %}>
+          Backhand Sessions
+        </option>
+        <option value="serve" {% if filter_monthly == 'serve' %}selected{% endif %}>
+          Serve Sessions
+        </option>
+        <option value="volley" {% if filter_monthly == 'volley' %}selected{% endif %}>
+          Volley Sessions
+        </option>
+      </select>
+      <button type="submit">Apply Filter</button>
+    </div>
+  </form>
+
+  
+
+  <div>
     <canvas id="monthlyTennisSessions"></canvas>
   </div>
 
