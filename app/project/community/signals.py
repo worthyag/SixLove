@@ -31,7 +31,7 @@ def check_tennis_session_achievements(sender, instance, **kwargs):
 
 @receiver(post_save, sender=models.UserPosts)
 def check_posts_achievements(sender, instance, **kwargs):
-    user = instance.user
+    user = instance.user_profile.user
     # Checking the number of created posts achievements.
     check_achievement(user,
                       "Created Posts",
@@ -41,7 +41,7 @@ def check_posts_achievements(sender, instance, **kwargs):
 
 @receiver(post_save, sender=models.Like)
 def check_likes_achievements(sender, instance, **kwargs):
-    user = instance.user
+    user = instance.user_profile.user
     # Checking the number of given likes achievements.
     check_achievement(user,
                       "Liked Posts",
@@ -51,7 +51,7 @@ def check_likes_achievements(sender, instance, **kwargs):
 
 @receiver(post_save, sender=models.Comment)
 def check_comments_achievements(sender, instance, **kwargs):
-    user = instance.user
+    user = instance.user_profile.user
     # Checking the number of given comments achievements.
     check_achievement(user,
                       "Comment Count",
@@ -61,7 +61,7 @@ def check_comments_achievements(sender, instance, **kwargs):
 
 @receiver(post_save, sender=models.Follow)
 def check_follow_achievements(sender, instance, **kwargs):
-    user = instance.user
+    user = instance.followed_by.user
     # Checking the followed count achievements.
     check_achievement(user,
                       "Followed Count",
