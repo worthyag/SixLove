@@ -11,6 +11,9 @@ main#feed {
     justify-content: center;
     align-items: center;
 
+    padding: 24px 0;
+    overflow-y: scroll;
+
     // To put on top of the buttons.
     z-index: 2;
 

@@ -191,6 +191,8 @@ main#profile .modal {
   background-color: rgba(0, 0, 0, 0.7);
   justify-content: center;
   align-items: center;
+  padding: 24px 0;
+  overflow-y: scroll;
   z-index: 2;
 }
 main#profile .modal .modal-content {
@@ -404,6 +406,8 @@ main#feed .modal {
   background-color: rgba(0, 0, 0, 0.7);
   justify-content: center;
   align-items: center;
+  padding: 24px 0;
+  overflow-y: scroll;
   z-index: 2;
 }
 main#feed .modal .modal-content {
@@ -734,6 +738,8 @@ main#settings .modal {
   background-color: rgba(0, 0, 0, 0.7);
   justify-content: center;
   align-items: center;
+  padding: 24px 0;
+  overflow-y: scroll;
   z-index: 2;
 }
 main#settings .modal .modal-content {
