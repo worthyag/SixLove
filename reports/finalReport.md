@@ -108,8 +108,8 @@ Users that this project was conceptualised for- include but are not limited to:
 **Figure 1** displays a persona for a user within the `novice tennis player` category, this person is a senior and is learning tennis for fitness and to socialise.
 
 <figure>
-	<img title="" src="./images/user-persona-1.png" alt="" data-align="center">
-        <figcaption><span style="font-weight: bold;">Figure 1</span>Novice Tennis Player User Persona</figcaption>
+	<img style="border: 1px solid #00000033;" title="" src="./images/user-persona-1.png" alt="" data-align="center">
+        <figcaption><strong>Figure 1</strong> Novice Tennis Player User Persona</figcaption>
 </figure><br><br>
 
 <img title="" src="./images/solution-1.png" alt="" data-align="center">
