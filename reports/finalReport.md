@@ -632,6 +632,8 @@ The SixLove app will have the following main pages:
     - This is where users can view their stats, such as (but not limited to):
         - Visualising the number of tennis sessions per month or comparing number forehand lessons to backhand lesson.
     - Users are able to filter stats based on a variety of things.
+- Landing page
+    - This is the page a user is directed to when they are not yet logged in, the page displays some of the benefits of SixLove to the user.
 - Tennis page
   - Displays the users tennis schedule, and  whether or not they have a tennis session scheduled for today or not.
   - Tennis sessions are displayed as a card, with notes and a date.
