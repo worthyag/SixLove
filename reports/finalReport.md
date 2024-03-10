@@ -1285,7 +1285,8 @@ Users can also hover over the charts for more information.
     <button>Go to the Monthly Session Chart</button>
   </a>
   <section id="number-of-sessions-chart">
-    <!-- Filter Option -->
+    <!-- The form that enables users to add filters, the data is passed to the
+    Django view. -->
     <form method="get" class="filter-options">
       <label for="filter">Filter by:</label>
       <div class="filter-action-element">
@@ -1312,7 +1313,8 @@ Users can also hover over the charts for more information.
     <button>Go to the Number of Sessions Chart</button>
   </a>
   <section id="monthly-sessions-chart">
-    <!-- Filter Monthly-->
+    <!-- The form that enables users to add filters, the data is passed to the
+    Django view. -->
     <form method="get" class="filter-options">
       <label for="filter-monthly">Filter by:</label>
       <div class="filter-action-element">
