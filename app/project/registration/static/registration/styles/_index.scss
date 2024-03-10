@@ -71,8 +71,14 @@ main#landing {
   div.content {
     p {
       font-size: 1.5rem;
+      font-weight: 500;
       padding: 16px 0;
       margin: 0;
+    }
+
+    p.larger {
+      font-size: 1.7rem;
+      font-weight: bold;
     }
 
     height: calc(100vh - 150px);

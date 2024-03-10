@@ -210,8 +210,13 @@ main#landing div.content {
 }
 main#landing div.content p {
   font-size: 1.5rem;
+  font-weight: 500;
   padding: 16px 0;
   margin: 0;
+}
+main#landing div.content p.larger {
+  font-size: 1.7rem;
+  font-weight: bold;
 }
 main#landing div.content img {
   min-width: 200px;
