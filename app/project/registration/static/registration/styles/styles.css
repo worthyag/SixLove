@@ -201,6 +201,7 @@ main#landing {
   height: calc(100vh - 105px);
 }
 main#landing div.content {
+  margin: 0 16px;
   height: calc(100vh - 150px);
   box-sizing: border-box;
   display: flex;
@@ -219,7 +220,7 @@ main#landing div.content p.larger {
   font-weight: bold;
 }
 main#landing div.content img {
-  min-width: 200px;
+  min-width: 300px;
   width: 40vw;
   max-width: 300px;
 }
