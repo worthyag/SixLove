@@ -1473,16 +1473,23 @@ The landing page is home to a carousel that I built from scratch using HTML, SCS
 const contents = document.querySelectorAll('.display-content');
 // ...other variables
 
+// Calling the appropriate functions whenever the user clicks 
+// on the arrow buttons.
 leftArrow.addEventListener('click', previousContent);
 rightArrow.addEventListener('click', nextContent);
 
+// Handles the automation.
 let automate = setInterval(nextContent, 3000);
 startBtn.addEventListener('click', () => {automate = setInterval(nextContent, 5000);});
 stopBtn.addEventListener('click', () => {clearTimeout(automate)});
 
 function previousContent() {
+    /**
+     * Function that displays the previous slide (content).
+     */
     let pos = sliderContents.length;
 
+    // Iterates over the slides and displays the content.   
     for (let i = sliderContents.length - 1; i >= 0; i--) {        
         if (sliderContents[i].classList.contains('current')) {
             sliderContents[i].classList.toggle('current');
@@ -1501,8 +1508,12 @@ function previousContent() {
 }
 
 function nextContent() {
+    /**
+     * Function that displays the next slide (content).
+     */
     let pos = -1;
 
+    // Iterates over the slides and displays the content.
     for (let i = 0; i < sliderContents.length; i++) {        
         if (sliderContents[i].classList.contains('current')) {
             sliderContents[i].classList.toggle('current');
@@ -1520,6 +1531,8 @@ function nextContent() {
     navDots[pos].classList.toggle('filled');
 }
 ```
+**Code Snippet 7** The `carousel.js` file.<br>
+<br>
 
 
 ## 4.2 The `tennis` app
