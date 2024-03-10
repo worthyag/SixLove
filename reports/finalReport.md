@@ -1425,6 +1425,8 @@ Users can also hover over the charts for more information.
   </script>
 </main>
 ```
+**Code Snippet 5** The `home - stats` html template.<br>
+<br>
 
 The landing page is home to a carousel that I built from scratch using HTML, SCSS, and JavaScript. The carousel provides potential users with information about the SixLove app, so that they can decide whether they want to sign up or not. The carousel is automated but users have the option to stop the slides and navigate using the buttons instead.
 
