@@ -478,7 +478,7 @@ _Though this is subject to change due to unforeseeable circumstances._
     
     - For wireframing, ideation, and creating a design system.
   
-  - HTML, CSS / SCSS, Bootstrap, JavaScript
+  - HTML, CSS / SCSS, JavaScript
     
     - For styling, user interactivity, and calendar functionality.
 
