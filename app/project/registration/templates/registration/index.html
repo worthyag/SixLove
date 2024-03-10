@@ -1,7 +1,7 @@
 {% extends './base.html' %} 
 {% load static %}
 {% block scripts %}
-<script src="{% static './registration/scripts/carousel.js' %}"></script>
+<script src="{% static './registration/scripts/carousel.js' %}" defer></script>
 {% endblock %}
 {% block content %}
 {% if user.is_authenticated %}
@@ -276,7 +276,7 @@
         </div>
         <div class="display-content">
           <img src="{% static './registration/images/app-pic.svg' %}" alt="Photo of the app.">
-          <p class="info">Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet neque, doloribus modi voluptates, eligendi alias nisi veritatis sunt ad magnam velit aliquid consequatur laboriosam accusantium. Voluptate doloremque impedit alias, tempora incidunt similique in nostrum, vel molestiae atque corrupti quas voluptas repellat nihil vero iusto ad nesciunt qui quidem voluptatibus iure.
+          <p class="info">Sequi in, dicta, repudiandae ut officiis sint pariatur quidem culpa facilis quo a? Ab in necessitatibus aliquid unde temporibus dolorum ex minima ad hic, voluptatem repudiandae dolorem quis earum alias blanditiis laborum quo animi optio maiores nam adipisci quae eligendi delectus facilis. In ut cupiditate, pariatur obcaecati consequatur tempore possimus dolores dolorum ipsum ullam, expedita quo quasi.
           </p>
         </div>
         <p class="right arrow">&rarr;</p>

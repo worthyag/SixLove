@@ -1,8 +1,10 @@
 const contents = document.querySelectorAll('.display-content');
 let sliderContents = Array.from(contents);
 
-const leftArrow = document.querySelector('.left')
-const rightArrow = document.querySelector('.right')
+const leftArrow = document.querySelector('.left');
+const rightArrow = document.querySelector('.right');
+
+console.log(leftArrow);
 
 const dots = document.querySelectorAll('.nav-dot');
 let navDots = Array.from(dots);
@@ -14,7 +16,7 @@ const stopBtn = document.querySelector(".stop-slides")
 leftArrow.addEventListener('click', previousContent);
 rightArrow.addEventListener('click', nextContent);
 
-let automate = setInterval(nextContent, 5000);
+let automate = setInterval(nextContent, 3000);
 startBtn.addEventListener('click', () => {automate = setInterval(nextContent, 5000);});
 stopBtn.addEventListener('click', () => {clearTimeout(automate)});
 
