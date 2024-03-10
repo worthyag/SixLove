@@ -709,16 +709,21 @@ Since SixLove is built with Django, the project has the following structure (**f
                     styles.scss
         /templates
             /community
-                base.html
                 connect.html
-                profile.html
                 feed.html
+                profile.html
+                settings.html
+				user.html
         __init__.py
         admin.py
         apps.py
+        context_processors.py
+        forms.py
         models.py
+		signals.py
         tests.py
         urls.py
+		utils.py
         views.py
     /planner
         /migrations
