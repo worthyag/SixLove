@@ -54,7 +54,9 @@ _Taking on the task of creating a tennis app that provides users with the tools 
      - [4.1.1 The signup and login pages](#411-the-signup-and-login-pages)
      - [4.1.2 The home page](#412-the-home-page)
   - [4.2 The `tennis` app](#42-the-tennis-app)
-    - [4.2.1 The MVT Pattern](#421-the-mvt-pattern)
+    - [4.2.1 The tennis pages](#421-the-tennis-pages)
+    - [4.2.2 The MVT Pattern](#422-the-mvt-pattern)
+    - [4.2.3 The learn and resource pages](#423-the-learn-and-resource-pages)
   - [4.3 The `planner` app](#43-the-planner-app)
 - [5 Evaluation](#5-evaluation)
   - [5.1 Unit testing](#51-unit-testing)
@@ -1041,7 +1043,6 @@ User authentication is a primary requirement of the app. SixLove's purpose is to
 In order to authenticate the users, I needed to first create a table in my database that would store users information. In Django, this is facilitated through the creation of a model. The UML diagram for users can be seen in **figure 28**. Django has its own user model, but for the purpose of this project, I wanted to create my own- or expand upon it rather. It was important that I created the modified user model before making migrations (specifically, before running migrations of the Django `auth` app), since it would result in an `ValueError` . This I learnt the hard way, when I created a mock trial of the app, and was forced to clear all the databases tables and delete the migrations folder. The **code snippet 1** displays the model that I created to store user information. It inherits from the `AbstractUser` class. The official Django site describes the class as a '_model [that] behaves identically to the default user model_' [18]. The documentation advises developers to setup a custom user model beforehand, in case they want to later customise it in the future.
 
 ```python
-# more code...
 class CustomUser(AbstractUser):
     """A custom user class that inherits from Abstract User."""
     first_name = models.CharField(max_length=50)
@@ -1054,7 +1055,6 @@ class CustomUser(AbstractUser):
 Each attribute displayed in **code snippet 1** corresponds to a field within the database. In addition to the fields displayed, Django will add the other fields that are specified within `AbstractUser`, such as the user's `id` and `password` among some other things. With the database table created, I created a form that uses the `CustomUser` model to build a form with fields that correspond to the models attributes. **Code snippet 2** displays a reduced version of the code for the form.
 
 ```python
-# more code...
 class CustomUserCreationForm(UserCreationForm):
     """A class that creates forms based on CustomUser model."""
     first_name = forms.CharField(required=True, max_length=50)
@@ -1073,7 +1073,6 @@ class CustomUserCreationForm(UserCreationForm):
 This form was used to create the forms displayed to the user, for both the login and sign up pages (which can be seen in **figures # and #**). I then created the views corresponding to the pages previously mentioned, **code snippet 3** displays a condensed version of the code for this.
 
 ```python
-# more code...
 def home(request):
     """
     The view for the home page. Displays two different pages depending
@@ -1240,13 +1239,11 @@ def user_login(request):
 **Code snippet 3** displays how I use the form to create users and authenticate users. I passed the form to a html file (more specifically a Django template file), where it was then rendered (**code snippet 4** shows some of the code for the signup template).
 
 ```python
-# more code...
 <form method="post">
     {% csrf_token %}
     {{ form.as_p }}
     <button type="submit">Sign Up</button>
 </form>
-# more code...
 ```
 **Code Snippet 4** The `signup` html template.
 
@@ -1557,6 +1554,8 @@ The next order of business was to create the `tennis` app. The ability to add, e
 
 *The planner app also allows users to add, edit, and delete tennis sessions (this is expanded upon in [section 4.3](#43-the-planner-app).
 
+### 4.2.1 The tennis pages
+
 Like the `registration` app, I began with a model. **Figure 39** displays the fields and the name of the table that I created with the model. 
 
 <img title="" src="images/TennisSessionUML.png" alt="">
@@ -1568,7 +1567,6 @@ Like the `registration` app, I began with a model. **Figure 39** displays the fi
 When I started writing the code for the model, I realised that it would be better to make `isToday` a method rather than an attribute. This is because, `isToday` is dependent on the date, it is not an attribute of a the tennis session.  **Code snippet 8** displays the code for the model.
 
 ```python
-# more code...
 class TennisSession(models.Model):
     """
     Class that creates a tennis session object.
@@ -1620,7 +1618,6 @@ class TennisSession(models.Model):
 I also created a form that coincides with the model. It is the form used for all communication with the `TennisSession` database table (adding, editing, and deleting). **Code snippet 9** displays the form code.
 
 ```python
-# more code...
 class TennisSessionForm(forms.ModelForm):
     # more code...
     class Meta:
@@ -1640,7 +1637,6 @@ Most of the work for both the `registration` and `tennis` app was focused on cre
 With the database table and its corresponding form completed, I created the views. **Code snippet 10** displays the tennis view. All of the views use the `@login_required` decorator. Decorators are a way to modify the behaviour of functions or methods in Python, and the `@login_required` decorator is provided by Django to protect views  (functions), since users are required to be logged in. All the views within the `tennis` app, are only accessible to users that are logged in.
 
 ```python
-# more code...
 @login_required
 def tennis(request):
     # more code...
@@ -1763,9 +1759,9 @@ def delete_tennis_session(request, tennis_session_id):
 
 <br>
 
-The views displayed in **code snippet 8** are those that specifically deal with the tennis sessions. These are the views that provide the users with the ability interact with the tennis sessions. These views communicate with the `TennisSession` database table. Other than the `delete` view, the views pass a form to their associated HTML templates. These templates contain forms that allow users to make changes to their tennis sessions, in a similar fashion to **code snippet 4**.
+The views displayed in **code snippet 11** are those that specifically deal with the tennis sessions. These are the views that provide the users with the ability interact with the tennis sessions. These views communicate with the `TennisSession` database table. Other than the `delete` view, the views pass a form to their associated HTML templates. These templates contain forms that allow users to make changes to their tennis sessions, in a similar fashion to **code snippet 4**.
 
-I also added the variable in **code snippet 9** to the settings file to ensure that the user is always redirected to the home (landing) page when they logout. The settings file is a file that "_contains all the configuration of your Django installation_" [19].
+I also added the variable in **code snippet 12** to the settings file to ensure that the user is always redirected to the home (landing) page when they logout. The settings file is a file that "_contains all the configuration of your Django installation_" [19].
 
 ```python
 # Redirects the user to the home page when they log out.
@@ -1778,7 +1774,7 @@ LOGOUT_REDIRECT_URL = "home"
 
 I then wrote some unit tests to ensure that the `tennis` app was working as aspected (refer to [section 5.1.2](#512-the-tennis-app)), though I wrote some unit tests whenever I wrote new functionality.
 
-### 4.2.1 The MVT Pattern
+### 4.2.2 The MVT Pattern
 
 _The structure my project follows._
 
@@ -1795,6 +1791,8 @@ A **model** in Django is defined as the "_the interface of your data_"[20]. It i
 A **view** in Django is the user interface (UI). More specifically, it is a "_handler function that accepts HTTP requests, processes them, and returns the HTTP response_" [23]. The view uses models to retrieve data, and then renders them to the UI using templates. Views in Django also have the functionality to create HTML pages, populating a HTML template dynamically- this is what I have done so far.
 
 A **template** in Django is a "_file that defines the structure of the UI_" [23]. It can be a file of any type, though in this project I have used HTML files. Templates are able to receive data from the view and render it to the UI.
+
+### 4.2.3 The learn and resource pages
 
 ## 4.3 The `planner` app
 
