@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login
+from django.db.models import Exists, OuterRef, Q, Count, Max, F
 
 # from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 # from django.contrib.auth import login, authenticate
@@ -16,6 +17,18 @@ def home(request):
     tennis_sessions = TennisModels.TennisSession.objects.filter(
         user=request.user
     )
+
+    # To allow the user to pick the chart they want to see.
+    filter_option = request.GET.get("filter", "")
+
+    # Applying filters based on the filter_option.
+    if filter_option == "completed":
+        tennis_sessions = tennis_sessions.filter(
+            is_completed=True)
+
+    elif filter_option == "not_completed":
+        tennis_sessions = tennis_sessions.filter(
+            is_completed=False)
 
     forehand_sessions = [
         session for session in tennis_sessions if session.category == "forehand"]
@@ -44,6 +57,7 @@ def home(request):
         {
             "title": "Home",
             "tennis_sessions": tennis_sessions,
+            "filter_option": filter_option,
             "forehand_sessions": forehand_sessions,
             "backhand_sessions": backhand_sessions,
             "serve_sessions": serve_sessions,
