@@ -4,8 +4,11 @@
 <script src="{% static './registration/scripts/carousel.js' %}" defer></script>
 {% endblock %}
 {% block content %}
+<!-- First checking whether the user is authenticated. -->
 {% if user.is_authenticated %}
 <main id="home">
+  <!-- Reading in the data from the home view and putting it into elements
+    to be easily accessed by JavaScript and Chart.js. -->
   <p style="display: none;" class="tennis-session-count">{{ tennis_sessions|length }}</p>
   <p style="display: none;" class="forehand-session-count">{{ forehand_sessions|length }}</p>
   <p style="display: none;" class="backhand-session-count">{{ backhand_sessions|length }}</p>
@@ -31,6 +34,7 @@
   <p style="display: none;" class="nov-session-count">{{ nov_sessions|length }}</p>
   <p style="display: none;" class="dec-session-count">{{ dec_sessions|length }}</p>
 
+  <!-- Button that takes users to Chart 2. -->
   <a href="#monthly-sessions-chart">
     <button>Go to the Monthly Session Chart</button>
   </a>
@@ -62,6 +66,7 @@
     </div>
   </section>
 
+  <!-- Button that takes users to Chart 1. -->
   <a href="#number-of-sessions-chart">
     <button>Go to the Number of Sessions Chart</button>
   </a>

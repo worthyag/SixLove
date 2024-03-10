@@ -1248,11 +1248,11 @@ def user_login(request):
 ```
 **Code Snippet 4** The `signup` html template.
 
-With that completed, I had written most of the functionality for user authentication, and had a bare bone version of the `registration` app. I then created a superuser in order to conduct a manual pretest, then I wrote some unit tests to test everything thoroughly (this will be expanded on in [section 5.1.1](#511-the-registration-app), though I had written some unit tests as I went along.
+With that completed, I had written most of the functionality for user authentication. I then created a superuser in order to conduct a manual pretest, then I wrote some unit tests to test everything thoroughly (this will be expanded on in [section 5.1.1](#511-the-registration-app), though I had written some unit tests as I went along.
 
 ### 4.1.2 The home page
 
-The last implementation that I did for the `registration` app was create a landing and stats page (refer to figures # and #). The code for this is in the home view which was shown in
+The last implementation that I did for the `registration` app was creating a landing and stats page (refer to figures # and #). The code for this is in the home view which was shown in
 **Code snippet 3**. When the user is authenticated a stats page is shown, and when their not a landing page is shown.
 
 The stats page is home to two charts (I built these charts using `Chart.js`). Chart 1 (doughnut) displays information about the number of tennis sessions a user has and chart 2 (line) displays information about the tennis sessions per month. Users can make use of these interactive charts to track their progress by doing some of the following things:
@@ -1263,6 +1263,162 @@ The stats page is home to two charts (I built these charts using `Chart.js`). Ch
     - Filter for specific tennis session categories.
 
 Users can also hover over the charts for more information.
+
+```html
+<!-- First checking whether the user is authenticated. -->
+{% if user.is_authenticated %}
+<main id="home">
+    <!-- Reading in the data from the home view and putting it into elements
+    to be easily accessed by JavaScript and Chart.js. -->
+  <p style="display: none;" class="tennis-session-count">{{ tennis_sessions|length }}</p>
+  ...
+  <p style="display: none;" class="stamina-session-count">{{ stamina_sessions|length }}</p>
+  <p style="display: none;" class="other-session-count">{{ other_sessions|length }}</p>
+
+  <p style="display: none;" class="jan-session-count">{{ jan_sessions|length }}</p>
+ ...
+  <p style="display: none;" class="nov-session-count">{{ nov_sessions|length }}</p>
+  <p style="display: none;" class="dec-session-count">{{ dec_sessions|length }}</p>
+
+    <!-- Button that takes users to Chart 2. -->
+  <a href="#monthly-sessions-chart">
+    <button>Go to the Monthly Session Chart</button>
+  </a>
+  <section id="number-of-sessions-chart">
+    <!-- Filter Option -->
+    <form method="get" class="filter-options">
+      <label for="filter">Filter by:</label>
+      <div class="filter-action-element">
+        <select name="filter" id="filter">
+          <option value="" {% if not filter_option %}selected{% endif %}>All</option>
+          <option value="completed" {% if filter_option == 'completed' %}selected{% endif %}>
+            Completed Sessions
+          </option>
+          ...
+          <option value="past" {% if filter_option == 'past' %}selected{% endif %}>
+            Past Sessions
+          </option>
+        </select>
+        <button type="submit">Apply Filter</button>
+      </div>
+    </form>
+    <div>
+      <canvas id="myChart"></canvas>
+    </div>
+  </section>
+
+  <!-- Button that takes users to Chart 1s. -->
+  <a href="#number-of-sessions-chart">
+    <button>Go to the Number of Sessions Chart</button>
+  </a>
+  <section id="monthly-sessions-chart">
+    <!-- Filter Monthly-->
+    <form method="get" class="filter-options">
+      <label for="filter-monthly">Filter by:</label>
+      <div class="filter-action-element">
+        <select name="filter-monthly" id="filter-monthly">
+          <option value="" {% if not filter_monthly %}selected{% endif %}>All</option>
+          <option value="forehand" {% if filter_monthly == 'forehand' %}selected{% endif %}>
+            Forehand Sessions
+          </option>
+          ...
+          <option value="other" {% if filter_monthly == 'other' %}selected{% endif %}>
+            Other Sessions
+          </option>
+        </select>
+        <button type="submit">Apply Filter</button>
+      </div>
+    </form>
+    <div>
+      <canvas id="monthlyTennisSessions"></canvas>
+    </div>
+  </section>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+    (async function() {
+      const ctx = document.getElementById('myChart');
+
+      const data = [
+        { 
+          category: "All", 
+          count: parseInt(document.querySelector(".tennis-session-count").innerText) 
+        },
+        { 
+          category: "Forehand", 
+          count: parseInt(document.querySelector(".forehand-session-count").innerText) 
+        },
+        ...
+        { 
+          category: "Other", 
+          count: parseInt(document.querySelector(".other-session-count").innerText) 
+        },
+      ];
+
+
+      new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+          labels: data.map(row => row.category),
+          datasets: [{
+            label: 'Number of tennis sessions',
+            data: data.map(row => row.count),
+            borderWidth: 1
+          }]
+        },
+        options: {
+          scales: {
+            y: {
+              beginAtZero: true
+            }
+          }
+        }
+      });
+    })();
+
+    (async function() {
+      const ctx = document.getElementById('monthlyTennisSessions');
+
+      const data = [
+        { 
+          month: "January", 
+          count: parseInt(document.querySelector(".jan-session-count").innerText) 
+        },
+        { 
+          month: "February", 
+          count: parseInt(document.querySelector(".feb-session-count").innerText) 
+        },
+        ...
+        { 
+          month: "December", 
+          count: parseInt(document.querySelector(".dec-session-count").innerText) 
+        },
+      ];
+
+
+      new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: data.map(row => row.month),
+          datasets: [{
+            label: 'Tennis Sessions per Month',
+            data: data.map(row => row.count),
+            borderWidth: 1
+          }]
+        },
+        options: {
+          scales: {
+            y: {
+              beginAtZero: true
+            }
+          }
+        }
+      });
+    })();
+  </script>
+</main>
+```
 
 The landing page is home to a carousel that I built from scratch using HTML, SCSS, and JavaScript. The carousel provides potential users with information about the SixLove app, so that they can decide whether they want to sign up or not. The carousel is automated but users have the option to stop the slides and navigate using the buttons instead.
 
