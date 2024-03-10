@@ -919,7 +919,7 @@ I decided that I wanted to start building SixLove's functionality in a somewhat 
 </figure><br><br>
 
 <figure>
-    <img  width="550"title="" src="./images/signup-page-top.png" alt="" data-align="center">
+    <img  width="550"title="" src="./images/sign-up-page-top.png" alt="" data-align="center">
         <figcaption><strong>Figure #</strong> SixLove Signup Page</figcaption>
 </figure><br><br>
 
