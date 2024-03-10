@@ -201,8 +201,20 @@ main#landing {
   height: calc(100vh - 105px);
 }
 main#landing div.content {
-  padding: 16px 32px;
+  height: calc(100vh - 150px);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
 }
 main#landing div.content p {
+  font-size: 1.5rem;
+  padding: 16px 0;
   margin: 0;
+}
+main#landing div.content img {
+  min-width: 200px;
+  width: 40vw;
+  max-width: 300px;
 }/*# sourceMappingURL=styles.css.map */
