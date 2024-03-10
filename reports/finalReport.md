@@ -909,33 +909,43 @@ _Core functionality development._
 I decided that I wanted to start building SixLove's functionality in a somewhat chronological order. Chronological order referring to the user's flow, for instance, what route would potential users take when navigating the app? That meant starting with the landing page, then moving on to the sign up and login pages, then to the pages that allow the users to add, edit, and delete tennis sessions. I have previously stated SixLove's aims and objectives, and at their very core user authentication and tennis sessions play a huge role in whether the aims and objectives are met, so using this approach made the most logical sense.  Once I completed the core features, I created the other features going app by app. The figures below display the final UI design for SixLove, and the following sub-sections expand on the implementations.
 
 <figure>
-    <img width="650" title="" src="./images/landing-page-top.png" alt="" data-align="center">
+    <img width="550" title="" src="./images/landing-page-top.png" alt="" data-align="center">
         <figcaption><strong>Figure #</strong> SixLove Landing Page (top)</figcaption>
 </figure><br><br>
 
 <figure>
-    <img width="650" title="" src="./images/landing-page-bottom.png" alt="" data-align="center">
+    <img width="550" title="" src="./images/landing-page-bottom.png" alt="" data-align="center">
         <figcaption><strong>Figure #</strong> SixLove Landing Page (bottom)</figcaption>
 </figure><br><br>
 
 <figure>
-    <img  width="650"title="" src="./images/signup-page-top.png" alt="" data-align="center">
+    <img  width="550"title="" src="./images/signup-page-top.png" alt="" data-align="center">
         <figcaption><strong>Figure #</strong> SixLove Signup Page</figcaption>
 </figure><br><br>
 
 <figure>
-    <img width="650" title="" src="./images/login-page.png" alt="" data-align="center">
+    <img width="550" title="" src="./images/login-page.png" alt="" data-align="center">
         <figcaption><strong>Figure #</strong> SixLove Login Page</figcaption>
 </figure><br><br>
 
 <figure>
-    <img width="650" title="" src="./images/home-stats-page-top.png" alt="" data-align="center">
+    <img width="550" title="" src="./images/home-stats-page-top.png" alt="" data-align="center">
         <figcaption><strong>Figure #</strong> SixLove Home / Stats Page (top)</figcaption>
 </figure><br><br>
 
 <figure>
-    <img width="650" title="" src="./images/home-stats-page-bottom.png" alt="" data-align="center">
+    <img width="550" title="" src="./images/home-stats-page-bottom.png" alt="" data-align="center">
         <figcaption><strong>Figure #</strong> SixLove Home / Stats Page (mid) </figcaption>
+</figure><br><br>
+
+<figure>
+    <img width="550" title="" src="./images/tennis-page.png" alt="" data-align="center">
+        <figcaption><strong>Figure #</strong> SixLove Tennis Page</figcaption>
+</figure><br><br>
+
+<figure>
+    <img width="550" title="" src="./images/tennis-page-add-form.png" alt="" data-align="center">
+        <figcaption><strong>Figure #</strong> SixLove Tennis Page Add Tennis Session Form</figcaption>
 </figure><br><br>
 
 ## 4.1 The `registration` app
