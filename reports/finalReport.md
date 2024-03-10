@@ -1177,6 +1177,7 @@ def home(request):
                 "dec_sessions": dec_sessions,
             }
         )
+    # Displays something else if the user is not authenticated.
     else:
         return render(
             request,
