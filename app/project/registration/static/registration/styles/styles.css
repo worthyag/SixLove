@@ -266,6 +266,7 @@ main#landing div.content .carousel-div .content-carousel .display-content img {
 }
 main#landing div.content .carousel-div .content-carousel .display-content .info {
   font-size: 1.2rem;
+  font-weight: 400;
   width: 80vw;
   max-width: 750px;
   border-radius: 16px;
