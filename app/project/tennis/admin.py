@@ -6,15 +6,9 @@ from .models import TennisSession, Resource, ArticleSection, Tag
 
 class TennisSessionAdmin(admin.ModelAdmin):
     """"""
-    list_display = ["title", "display_users",
-                    "category", "date", "is_completed"]
-    list_filter = ["is_completed", "users", "category"]
+    list_display = ["title", "user", "category", "date", "is_completed"]
+    list_filter = ["is_completed", "user", "category"]
     search_fields = ["title"]
-
-    def display_users(self, obj):
-        return ', '.join([user.username for user in obj.users.all()])
-
-    display_users.short_description = 'Users'
 
 
 admin.site.register(TennisSession, TennisSessionAdmin)
