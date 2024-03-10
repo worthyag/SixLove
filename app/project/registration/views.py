@@ -22,13 +22,12 @@ def home(request):
     """
     # Only displays the user's stats if they are authenticated.
     if request.user.is_authenticated:
+        # CHART 1
+        # ========
         # Getting all the request user's tennis sessions.
         tennis_sessions = TennisModels.TennisSession.objects.filter(
             user=request.user
         )
-
-        # CHART 1
-        # ========
 
         # To allow the user to filter the chart.
         filter_option = request.GET.get("filter", "")
@@ -52,6 +51,7 @@ def home(request):
             tennis_sessions = tennis_sessions.filter(
                 date__lt=timezone.now().date())
 
+        # Enables the tennis sessions to be further filtered by the session category.
         forehand_sessions = tennis_sessions.filter(category="forehand")
         backhand_sessions = tennis_sessions.filter(category="backhand")
         serve_sessions = tennis_sessions.filter(category="serve")
@@ -63,81 +63,104 @@ def home(request):
         stamina_sessions = tennis_sessions.filter(category="stamina")
         other_sessions = tennis_sessions.filter(category="other")
 
+        # CHART 2
+        # ========
+        # Getting all the request user's tennis sessions for the chart 2.
         tennis_sessions_per_month = TennisModels.TennisSession.objects.filter(
             user=request.user
         )
 
-        # CHART 2
-        # ========
-
         # To allow the user to filter the chart.
         filter_monthly = request.GET.get("filter-monthly", "")
 
-        # Applying filters based on the filter_option.
+        # Applying filters based on the filter_monthly.
+        # Displays the user's forehand tennis sessions.
         if filter_monthly == "forehand":
             tennis_sessions_per_month = tennis_sessions_per_month.filter(
                 category="forehand")
 
+        # Displays the user's backhand tennis sessions.
         elif filter_monthly == "backhand":
             tennis_sessions_per_month = tennis_sessions_per_month.filter(
                 category="backhand")
 
+        # Displays the user's serve tennis sessions.
         elif filter_monthly == "serve":
             tennis_sessions_per_month = tennis_sessions_per_month.filter(
                 category="serve")
 
+        # Displays the user's volley tennis sessions.
         elif filter_monthly == "volley":
             tennis_sessions_per_month = tennis_sessions_per_month.filter(
                 category="volley")
 
+        # Displays the user's slice tennis sessions.
         elif filter_monthly == "slice":
             tennis_sessions_per_month = tennis_sessions_per_month.filter(
                 category="slice")
 
+        # Displays the user's smash tennis sessions.
         elif filter_monthly == "smash":
             tennis_sessions_per_month = tennis_sessions_per_month.filter(
                 category="smash")
 
+        # Displays the user's drop-shot tennis sessions.
         elif filter_monthly == "drop-shot":
             tennis_sessions_per_month = tennis_sessions_per_month.filter(
                 category="drop-shot")
 
+        # Displays the user's agility sessions.
         elif filter_monthly == "agility":
             tennis_sessions_per_month = tennis_sessions_per_month.filter(
                 category="agility")
 
+        # Displays the user's stamina sessions.
         elif filter_monthly == "stamina":
             tennis_sessions_per_month = tennis_sessions_per_month.filter(
                 category="stamina")
 
+        # Displays the user's other tennis sessions types.
         elif filter_monthly == "other":
             tennis_sessions_per_month = tennis_sessions_per_month.filter(
                 category="other")
 
         current_year = timezone.now().year
 
+        # Enables the tennis sessions to be further filtered by the date (months).
+        # Displays tennis sessions in January.
         jan_sessions = tennis_sessions_per_month.filter(
             date__year=current_year, date__month=1)
+        # Displays tennis sessions in February.
         feb_sessions = tennis_sessions_per_month.filter(
             date__year=current_year, date__month=2)
+        # Displays tennis sessions in March.
         mar_sessions = tennis_sessions_per_month.filter(
             date__year=current_year, date__month=3)
+        # Displays tennis sessions in April.
         apr_sessions = tennis_sessions_per_month.filter(
             date__year=current_year, date__month=4)
+        # Displays tennis sessions in May.
         may_sessions = tennis_sessions_per_month.filter(
             date__year=current_year, date__month=5)
+        # Displays tennis sessions in June.
         jun_sessions = tennis_sessions_per_month.filter(
             date__year=current_year, date__month=6)
+        # Displays tennis sessions in July.
         jul_sessions = tennis_sessions_per_month.filter(
             date__year=current_year, date__month=7)
+        # Displays tennis sessions in August.
         aug_sessions = tennis_sessions_per_month.filter(
             date__year=current_year, date__month=8)
+        # Displays tennis sessions in September.
         sep_sessions = tennis_sessions_per_month.filter(
             date__year=current_year, date__month=9)
+        # Displays tennis sessions in October.
         oct_sessions = tennis_sessions_per_month.filter(
             date__year=current_year, date__month=10)
+        # Displays tennis sessions in November.
         nov_sessions = tennis_sessions_per_month.filter(
             date__year=current_year, date__month=11)
+        # Displays tennis sessions in December.
         dec_sessions = tennis_sessions_per_month.filter(
             date__year=current_year, date__month=12)
 
