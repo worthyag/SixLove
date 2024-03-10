@@ -1067,19 +1067,11 @@ class CustomUserCreationForm(UserCreationForm):
 
 **Code Snippet 2** The `CustomUserCreationForm` form.<br><br>
 
-This form was used to create the forms displayed to the user, for both the login and sign up pages (which can be seen in **figures 36 and 37**). I then created the views corresponding to the pages previously mentioned, **code snippet 3** displays a condensed version of the code for this.
+This form was used to create the forms displayed to the user, for both the login and sign up pages (which can be seen in **figures # and #**). I then created the views corresponding to the pages previously mentioned, **code snippet 3** displays a condensed version of the code for this.
 
 ```python
 ...
-def home(request):
-    ...
-    return render(
-        request,
-        "./registration/index.html",
-        {
-            "title": "Home"
-        }
-    )
+
 
 
 def signup(request):
@@ -1102,10 +1094,6 @@ def signup(request):
             "form": form
         }
     )
-
-
-def onboarding(request):
-    # Similar to the home view.
 
 
 def user_login(request):
