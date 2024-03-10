@@ -252,7 +252,7 @@ main#profile {
   }
 }
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 480px) {
   main#profile {
     div.profile-top {
       padding: 12px 16px;
@@ -278,10 +278,8 @@ main#profile {
     .achievements {
       .award {
         flex-direction: column;
-
-        .award-img {
-          width: 100%;
-        }
+        width: max-content;
+        min-width: 350px;
 
       }
     }
