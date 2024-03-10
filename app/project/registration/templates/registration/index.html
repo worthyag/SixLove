@@ -38,8 +38,25 @@
   <p style="display: none;" class="stamina-session-count">{{ stamina_sessions|length }}</p>
   <p style="display: none;" class="other-session-count">{{ other_sessions|length }}</p>
 
+  <p style="display: none;" class="jan-session-count">{{ jan_sessions|length }}</p>
+  <p style="display: none;" class="feb-session-count">{{ feb_sessions|length }}</p>
+  <p style="display: none;" class="mar-session-count">{{ mar_sessions|length }}</p>
+  <p style="display: none;" class="apr-session-count">{{ apr_sessions|length }}</p>
+  <p style="display: none;" class="may-session-count">{{ may_sessions|length }}</p>
+  <p style="display: none;" class="jun-session-count">{{ jun_sessions|length }}</p>
+  <p style="display: none;" class="jul-session-count">{{ jul_sessions|length }}</p>
+  <p style="display: none;" class="aug-session-count">{{ aug_sessions|length }}</p>
+  <p style="display: none;" class="sep-session-count">{{ sep_sessions|length }}</p>
+  <p style="display: none;" class="oct-session-count">{{ oct_sessions|length }}</p>
+  <p style="display: none;" class="nov-session-count">{{ nov_sessions|length }}</p>
+  <p style="display: none;" class="dec-session-count">{{ dec_sessions|length }}</p>
+
   <div>
     <canvas id="myChart"></canvas>
+  </div>
+
+  <div style="margin-top: 48px;">
+    <canvas id="monthlyTennisSessions"></canvas>
   </div>
 
 
@@ -102,6 +119,81 @@
           labels: data.map(row => row.category),
           datasets: [{
             label: 'Number of tennis sessions',
+            data: data.map(row => row.count),
+            borderWidth: 1
+          }]
+        },
+        options: {
+          scales: {
+            y: {
+              beginAtZero: true
+            }
+          }
+        }
+      });
+    })();
+
+    (async function() {
+      const ctx = document.getElementById('monthlyTennisSessions');
+
+      const data = [
+        { 
+          month: "January", 
+          count: parseInt(document.querySelector(".jan-session-count").innerText) 
+        },
+        { 
+          month: "February", 
+          count: parseInt(document.querySelector(".feb-session-count").innerText) 
+        },
+        { 
+          month: "March", 
+          count: parseInt(document.querySelector(".mar-session-count").innerText) 
+        },
+        { 
+          month: "April", 
+          count: parseInt(document.querySelector(".apr-session-count").innerText) 
+        },
+        { 
+          month: "May", 
+          count: parseInt(document.querySelector(".may-session-count").innerText) 
+        },
+        { 
+          month: "June", 
+          count: parseInt(document.querySelector(".jun-session-count").innerText) 
+        },
+        { 
+          month: "July", 
+          count: parseInt(document.querySelector(".jul-session-count").innerText) 
+        },
+        { 
+          month: "August", 
+          count: parseInt(document.querySelector(".aug-session-count").innerText) 
+        },
+        { 
+          month: "September", 
+          count: parseInt(document.querySelector(".sep-session-count").innerText) 
+        },
+        { 
+          month: "October", 
+          count: parseInt(document.querySelector(".oct-session-count").innerText) 
+        },
+        { 
+          month: "November", 
+          count: parseInt(document.querySelector(".nov-session-count").innerText) 
+        },
+        { 
+          month: "December", 
+          count: parseInt(document.querySelector(".dec-session-count").innerText) 
+        },
+      ];
+
+
+      new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: data.map(row => row.month),
+          datasets: [{
+            label: 'Tennis Sessions per Month',
             data: data.map(row => row.count),
             borderWidth: 1
           }]
