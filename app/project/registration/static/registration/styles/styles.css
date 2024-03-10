@@ -226,6 +226,19 @@ main#landing div.content .content-carousel {
   justify-content: center;
   align-items: center;
 }
+main#landing div.content .content-carousel .arrow {
+  font-size: 3rem;
+  background-color: #3e9c94;
+  color: #fff;
+  border: 4px solid #000;
+  box-shadow: 8px 4px 0 #7ec0de;
+  padding: 8px 16px;
+  border-radius: 50%;
+}
+main#landing div.content .content-carousel .arrow:hover {
+  background-color: #54d39a;
+  cursor: pointer;
+}
 main#landing div.content .content-carousel .display-content {
   display: none;
 }
@@ -233,9 +246,12 @@ main#landing div.content .content-carousel .display-content img {
   min-width: 300px;
   width: 40vw;
   max-width: 300px;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 main#landing div.content .content-carousel .display-content .info {
   font-size: 1.2rem;
+  width: 75%;
 }
 main#landing div.content .content-carousel .current {
   display: flex;
