@@ -217,10 +217,20 @@ main#landing div.content p.larger {
   font-size: 1.7rem;
   font-weight: bold;
 }
-main#landing div.content img {
+main#landing div.content .content-carousel {
+  display: flex;
+  align-items: center;
+}
+main#landing div.content .content-carousel .display-content img {
   min-width: 300px;
   width: 40vw;
   max-width: 300px;
+}
+main#landing div.content .content-carousel .display-content .info {
+  font-size: 1.2rem;
+}
+main#landing div.content .stop-btn button {
+  margin-bottom: 0;
 }
 
 main#register {

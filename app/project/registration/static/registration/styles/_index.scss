@@ -91,10 +91,27 @@ main#landing {
     justify-content: space-between;
     align-items: center;
 
-    img {
-      min-width: 300px;
-      width: 40vw;
-      max-width: 300px;
+    .content-carousel {
+      display: flex;
+      align-items: center;
+
+      .display-content {
+        img {
+          min-width: 300px;
+          width: 40vw;
+          max-width: 300px;
+        }
+
+        .info {
+          font-size: 1.2rem;
+        }
+      }
+    }
+
+    .stop-btn {
+      button {
+        margin-bottom: 0;
+      }
     }
   }
 
