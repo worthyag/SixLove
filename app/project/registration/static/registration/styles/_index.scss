@@ -1,7 +1,5 @@
 main#home {
   .filter-options {
-    // display: flex;
-    // align-items: center;
     button {
       background-color: #000000;
 
@@ -56,9 +54,6 @@ main#home {
     }
   }
 
-  // section#monthly-sessions-chart {
-  //   margin-top: 100px;
-  // }
 }
 
 main#landing {
@@ -110,7 +105,6 @@ main#landing {
           box-shadow: 8px 4px 0 #7ec0de;
   
           padding: 8px 16px;
-          // width: fit-content;
           border-radius: 50%;
   
           &:hover {
@@ -142,7 +136,7 @@ main#landing {
   
           .info {
             font-size: 1.2rem;
-            
+
             width: 80vw;
             max-width: 750px;
             border-radius: 16px;
@@ -156,8 +150,6 @@ main#landing {
             border-top-right-radius: 0;
 
             border-top: 1px solid #00000033;
-            // border-left: 1px solid #00000033;
-            // border-right: 1px solid #00000033;
           }
         }
   
@@ -200,8 +192,6 @@ main#landing {
         justify-content: center;
   
         gap: 16px;
-  
-        // margin-top: 40px;
         
         button {
           margin-bottom: 0;
@@ -223,12 +213,8 @@ main#landing {
             cursor: pointer;
             background-color: #9762d5;
         }
-        
         }
       }
     }
-
   }
-
-  
 }
