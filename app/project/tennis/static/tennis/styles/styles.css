@@ -156,4 +156,45 @@ main#tennis div.session p, main#tennis div.session a {
 }
 main#tennis a {
   text-decoration: none;
+}
+
+main#session {
+  display: flex;
+  flex-direction: column;
+  padding: 16px 32px;
+}
+main#session h2 {
+  align-self: center;
+  margin-bottom: 48px;
+}
+main#session form {
+  background-color: #578DDD;
+  color: #FFFFFF;
+  align-self: center;
+  width: 75vw;
+  max-width: 450px;
+  padding: 16px 32px;
+  border-radius: 8px;
+}
+main#session form input, main#session form textarea, main#session form select {
+  width: 100%;
+  height: 2rem;
+  font-size: 0.9rem;
+}
+main#session form input#id_is_completed {
+  width: 30px;
+}
+main#session form label {
+  font-size: 1.2rem;
+  font-weight: bold;
+  width: 100%;
+}
+main#session form input[type=submit] {
+  height: 2.5rem;
+}
+main#session form input[type=submit]:hover {
+  background-color: #32ca6f;
+}
+main#session .view-tennis-sessions-btn {
+  margin-top: 20px;
 }/*# sourceMappingURL=styles.css.map */
