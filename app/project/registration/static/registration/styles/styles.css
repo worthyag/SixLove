@@ -270,8 +270,12 @@ main#landing div.content .carousel-div .content-carousel .display-content div im
      object-fit: cover;
 }
 main#landing div.content .carousel-div .content-carousel .display-content .info {
-  font-size: 1.2rem;
-  font-weight: 400;
+  font-size: 1.6rem;
+  font-weight: 600;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 80vw;
   max-width: 750px;
   border-radius: 16px;
@@ -312,6 +316,7 @@ main#landing div.content .carousel-div .stop-btn {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  margin-top: 48px;
   gap: 16px;
 }
 main#landing div.content .carousel-div .stop-btn button {
@@ -343,7 +348,7 @@ main#landing div.content .carousel-div .stop-btn .btn:hover {
     transform: scale(0.8);
   }
   main#landing div.content .carousel-div .content-carousel .display-content .info {
-    height: 100px;
+    height: 150px;
     overflow-y: scroll;
   }
   main#landing div.content .carousel-div .content-carousel .arrow {
