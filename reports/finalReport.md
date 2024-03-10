@@ -909,22 +909,22 @@ _Core functionality development._
 I decided that I wanted to start building SixLove's functionality in a somewhat chronological order. Chronological order referring to the user's flow, for instance, what route would potential users take when navigating the app? That meant starting with the landing page, then moving on to the sign up and login pages, then to the pages that allow the users to add, edit, and delete tennis sessions. I have previously stated SixLove's aims and objectives, and at their very core user authentication and tennis sessions play a huge role in whether the aims and objectives are met, so using this approach made the most logical sense.  Once I completed the core features, I created the other features going app by app. The figures below display the final UI design for SixLove, and the following sub-sections expand on the implementations.
 
 <figure>
-    <img title="" src="./images/landing-page-top.png" alt="" data-align="center">
+    <img width="450" title="" src="./images/landing-page-top.png" alt="" data-align="center">
         <figcaption><strong>Figure #</strong> SixLove Landing Page (top)</figcaption>
 </figure><br><br>
 
 <figure>
-    <img title="" src="./images/landing-page-bottom.png" alt="" data-align="center">
+    <img width="450" title="" src="./images/landing-page-bottom.png" alt="" data-align="center">
         <figcaption><strong>Figure #</strong> SixLove Landing Page (bottom)</figcaption>
 </figure><br><br>
 
 <figure>
-    <img title="" src="./images/signup-page.png" alt="" data-align="center">
+    <img  width="450"title="" src="./images/signup-page.png" alt="" data-align="center">
         <figcaption><strong>Figure #</strong> SixLove Signup Page</figcaption>
 </figure><br><br>
 
 <figure>
-    <img title="" src="./images/login-page.png" alt="" data-align="center">
+    <img width="450" title="" src="./images/login-page.png" alt="" data-align="center">
         <figcaption><strong>Figure #</strong> SixLove Login Page</figcaption>
 </figure><br><br>
 
