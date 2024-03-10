@@ -1029,13 +1029,11 @@ _Building the `CustomUser`._
 
 User authentication is a primary requirement of the app. SixLove's purpose is to allow its users to keep track of their tennis sessions, follow a training schedule, and feel a sense of community. User authentication is needed for this to work. Users can only keep track of their sessions if they are able to log in. In addition, users should only be able to access their tennis sessions and not another user's one (other than in the case of joint sessions). User authentication is housed within the `registration` app. The app has the following pages:
 
-- Home- the page that the user lands on when they navigate to the SixLove web application as a new or logged out user.
-
-- Sign up- the page that allows the user to sign up.
-
-- Onboarding- subject to change, however currently, it is the page that gains information about the user to help create a schedule.
-
-- Login- the page that authenticates the user.
+- **Home**
+    - The page that the user lands on when they navigate to the SixLove web application as a new or logged out user.
+    - The stats page for users that are authenticated.
+- **Sign up**- the page that allows the user to sign up.
+- **Login**- the page that authenticates the user.
 
 In order to authenticate the users, I needed to first create a table in my database that would store users information. In Django, this is facilitated through the creation of a model. The UML diagram for users can be seen in **figure 28**. Django has its own user model, but for the purpose of this project, I wanted to create my own- or expand upon it rather. It was important that I created the modified user model before making migrations (specifically, before running migrations of the Django `auth` app), since it would result in an `ValueError` . This I learnt the hard way, when I created a mock trial of the app, and was forced to clear all the databases tables and delete the migrations folder. The **code snippet 1** displays the model that I created to store user information. It inherits from the `AbstractUser` class. The official Django site describes the class as a '_model [that] behaves identically to the default user model_' [18]. The documentation advises developers to setup a custom user model beforehand, in case they want to later customise it in the future.
 
