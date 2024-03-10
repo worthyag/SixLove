@@ -625,6 +625,13 @@ The SixLove app will have the following main pages:
   - It also displays the users followers and following.
   - Users are able to toggle between viewing their posts and viewing their achievements / awards.
   - There is also a button that links to the setting page.
+- User page
+    - This is similar to the profile page, however it displays the profiles of users other than the account user.
+    - Users can follow and unfollow other users here.
+- Home page
+    - This is where users can view their stats, such as (but not limited to):
+        - Visualising the number of tennis sessions per month or comparing number forehand lessons to backhand lesson.
+    - Users are able to filter stats based on a variety of things.
 - Tennis page
   - Displays the users tennis schedule, and  whether or not they have a tennis session scheduled for today or not.
   - Tennis sessions are displayed as a card, with notes and a date.
@@ -646,8 +653,9 @@ The SixLove app will have the following main pages:
   - Login page
   - Sign up page
   - Home (Landing) page for when users first reach the site.
-- Onboarding
-  - When users sign up, they will get asked questions regarding their tennis goals. 
+- Connect
+  - Enables users to search for and follow other users.
+  - Users are also able to view other users profiles here.
 
 ### 3.1.5 Django structure
 
