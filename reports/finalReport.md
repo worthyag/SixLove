@@ -1250,7 +1250,7 @@ With that completed, I had written most of the functionality for user authentica
 The last implementation that I did for the `registration` app was create a landing and stats page (refer to figures # and #). The code for this is in the home view which was shown in
 **Code snippet 3**. When the user is authenticated a stats page is shown, and when their not a landing page is shown.
 
-The stats page is home to two charts. Chart 1 (doughnut) displays information about the number of tennis sessions a user has and chart 2 (line) displays information about the tennis sessions per month. Users can make use of these interactive charts to track their progress by doing some of the following things:
+The stats page is home to two charts (I built these charts using `Chart.js`). Chart 1 (doughnut) displays information about the number of tennis sessions a user has and chart 2 (line) displays information about the tennis sessions per month. Users can make use of these interactive charts to track their progress by doing some of the following things:
 - Compare the number of tennis sessions schedules for different categories.
     - Filter for completed and uncompleted sessions.
    - Filter for upcoming and past sessions.
@@ -1259,7 +1259,7 @@ The stats page is home to two charts. Chart 1 (doughnut) displays information ab
 
 Users can also hover over the charts for more information.
 
-
+The landing page is home to a carousel that I built from scratch using HTML, SCSS, and JavaScript. The carousel provides potential users with information about the SixLove app, so that they can decide whether they want to sign up or not. The carousel is automated but users have the option to stop the slides and navigate using the buttons instead.
 
 ## 4.2 The `tennis` app
 
