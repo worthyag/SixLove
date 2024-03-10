@@ -112,19 +112,23 @@ Users that this project was conceptualised for- include but are not limited to:
         <figcaption><strong>Figure 1</strong> Novice Tennis Player User Persona</figcaption>
 </figure><br><br>
 
-<img title="" src="./images/solution-1.png" alt="" data-align="center">
-
-**Figure 2** Potential SixLove Solution <br><br>
+<figure>
+    <img style="border: 1px solid #00000033;" title="" src="./images/solution-1.png" alt="" data-align="center">
+        <figcaption><strong>Figure 2</strong> Potential SixLove Solution</figcaption>
+</figure><br><br>
 
 **Figure 3** displays a persona for a user within the `novice tennis player` category, this person is in his late 20s and is learning tennis since he has recently developed a passion for it, and is very competitive and wants to beat his friend that has been playing tennis for much longer.
 
-<img title="" src="./images/user-persona-2.png" alt="" data-align="center">
+<figure>
+    <img style="border: 1px solid #00000033;" title="" src="./images/user-persona-2.png" alt="" data-align="center">
+        <figcaption><strong>Figure 3</strong> Novice Tennis Player User Persona</figcaption>
+</figure><br><br>
 
-**Figure 3** Novice Tennis Player User Persona <br><br>
+<figure>
+    <img style="border: 1px solid #00000033;" title="" src="./images/solution-2.png" alt="" data-align="center">
+        <figcaption><strong>Figure 4</strong> Potential SixLove Solution</figcaption>
+</figure><br><br>
 
-<img title="" src="./images/solution-2.png" alt="" data-align="center">
-
-**Figure 4** Potential SixLove Solution <br><br>
 
 ### 1.3.2 Tennis Enthusiasts
 
