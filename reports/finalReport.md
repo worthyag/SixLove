@@ -1073,10 +1073,15 @@ This form was used to create the forms displayed to the user, for both the login
 ...
 def home(request):
     """"""
+    # Only displays the user's stats if they are authenticated.
     if request.user.is_authenticated:
+        # Getting all the request user's tennis sessions.
         tennis_sessions = TennisModels.TennisSession.objects.filter(
             user=request.user
         )
+
+        # CHART 1
+        # ========
 
         # To allow the user to pick the chart they want to see.
         filter_option = request.GET.get("filter", "")
@@ -1104,6 +1109,9 @@ def home(request):
         tennis_sessions_per_month = TennisModels.TennisSession.objects.filter(
             user=request.user
         )
+
+        # CHART 2
+        # ========
 
         # To allow the user to pick the chart they want to see.
         filter_monthly = request.GET.get("filter-monthly", "")
