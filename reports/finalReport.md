@@ -1658,15 +1658,13 @@ The next order of business was to create the `tennis` app. The ability to add, e
 
 ### 4.2.1 The tennis pages
 
-Like the `registration` app, I began with a model. **Figure 39** displays the fields and the name of the table that I created with the model. 
+Like the `registration` app, I began with a model. **Figure 77** displays the fields and the name of the table that I created with the model. 
+<figure>
+	<img title="" src="images/TennisSessionUML.png" alt="">
+	<figcaption><strong>Figure 77</strong> TennisSession UML table.</figcaption>
+</figure>
 
-<img title="" src="images/TennisSessionUML.png" alt="">
-
-**Figure 39** TennisSession UML table.<br>
-
-<br>
-
-When I started writing the code for the model, I realised that it would be better to make `isToday` a method rather than an attribute. This is because, `isToday` is dependent on the date, it is not an attribute of a the tennis session.  **Code snippet 8** displays the code for the model.
+When I started writing the code for the model, I realised that it would be better to make `isToday` a method rather than an attribute. This is because, `isToday` is dependent on the date, it is not an attribute of a the tennis session.  **Figure 78** displays the code for the model.
 
 ```python
 class TennisSession(models.Model):
@@ -1713,11 +1711,11 @@ class TennisSession(models.Model):
     # more code...
 ```
 
-**Code Snippet 8** The `TennisSession` model.<br>
+**Figure 78** The `TennisSession` model.<br>
 
 <br>
 
-I also created a form that coincides with the model. It is the form used for all communication with the `TennisSession` database table (adding, editing, and deleting). **Code snippet 9** displays the form code.
+I also created a form that coincides with the model. It is the form used for all communication with the `TennisSession` database table (adding, editing, and deleting). **Figure 79** displays the form code.
 
 ```python
 class TennisSessionForm(forms.ModelForm):
@@ -1730,13 +1728,13 @@ class TennisSessionForm(forms.ModelForm):
         }
 ```
 
-**Code Snippet 9** The `TennisSessionForm` form.<br>
+**Figure 79** The `TennisSessionForm` form.<br>
 
 <br>
 
 Most of the work for both the `registration` and `tennis` app was focused on creating models and forms. My primary focus was on how the data would be stored, and figuring out the most effective ways to design the database and its interactions- resulting in a lot of my time being allocated to that. This allowed the implementation to feel more intuitive and less complex.
 
-With the database table and its corresponding form completed, I created the views. **Code snippet 10** displays the tennis view. All of the views use the `@login_required` decorator. Decorators are a way to modify the behaviour of functions or methods in Python, and the `@login_required` decorator is provided by Django to protect views  (functions), since users are required to be logged in. All the views within the `tennis` app, are only accessible to users that are logged in.
+With the database table and its corresponding form completed, I created the views. **Figure 80** displays the tennis view. All of the views use the `@login_required` decorator. Decorators are a way to modify the behaviour of functions or methods in Python, and the `@login_required` decorator is provided by Django to protect views  (functions), since users are required to be logged in. All the views within the `tennis` app, are only accessible to users that are logged in.
 
 ```python
 @login_required
@@ -1776,11 +1774,11 @@ def tennis(request):
     )
 ```
 
-**Code Snippet 10** The `tennis` view of the `tennis` app.<br>
+**Figure 80** The `tennis` view of the `tennis` app.<br>
 
 <br>
 
-In addition to using the `@login_required` decorator, **code snippet 10** demonstrates how I further filter information based on the user who sent the request. This is to make sure that users can only see tennis sessions associated with their account. **Code snippet 11**, displays some of the other views within the `tennis` app (the success and learn views are not displayed).
+In addition to using the `@login_required` decorator, **figure 80** demonstrates how I further filter information based on the user who sent the request. This is to make sure that users can only see tennis sessions associated with their account. **Figure 81**, displays some of the other views within the `tennis` app (the success and learn views are not displayed).
 
 ```python
 @login_required
@@ -1857,20 +1855,20 @@ def delete_tennis_session(request, tennis_session_id):
     )
 ```
 
-**Code Snippet 11** The `add_tennis_session`, `edit_tennis_session`, and `delete_tennis_session` views of the `tennis` app.<br>
+**Figure 81** The `add_tennis_session`, `edit_tennis_session`, and `delete_tennis_session` views of the `tennis` app.<br>
 
 <br>
 
-The views displayed in **code snippet 11** are those that specifically deal with the tennis sessions. These are the views that provide the users with the ability interact with the tennis sessions. These views communicate with the `TennisSession` database table. Other than the `delete` view, the views pass a form to their associated HTML templates. These templates contain forms that allow users to make changes to their tennis sessions, in a similar fashion to **code snippet 4**.
+The views displayed in **Figure 81** are those that specifically deal with the tennis sessions. These are the views that provide the users with the ability interact with the tennis sessions. These views communicate with the `TennisSession` database table. Other than the `delete` view, the views pass a form to their associated HTML templates. These templates contain forms that allow users to make changes to their tennis sessions, in a similar fashion to **Figure 73**.
 
-I also added the variable in **code snippet 12** to the settings file to ensure that the user is always redirected to the home (landing) page when they logout. The settings file is a file that "_contains all the configuration of your Django installation_" [19].
+I also added the variable in **Figure 82** to the settings file to ensure that the user is always redirected to the home (landing) page when they logout. The settings file is a file that "_contains all the configuration of your Django installation_" [19].
 
 ```python
 # Redirects the user to the home page when they log out.
 LOGOUT_REDIRECT_URL = "home"
 ```
 
-**Code Snippet 12** The `LOGOUT_REDIRECT_URL` variable located in the settings file.<br>
+**Figure 82** The `LOGOUT_REDIRECT_URL` variable located in the settings file.<br>
 
 <br>
 
@@ -1880,13 +1878,13 @@ I then wrote some unit tests to ensure that the `tennis` app was working as aspe
 
 _The structure my project follows._
 
-At this point, it is clear to see that there is a pattern emerging. I begin by creating some model(s), then I create some view(s) that seems to be linked to some template that I have created. This is the Django work cycle. Django has a model-view-template (MVT) architecture, as displayed in **figure 40**.
+At this point, it is clear to see that there is a pattern emerging. I begin by creating some model(s), then I create some view(s) that seems to be linked to some template that I have created. This is the Django work cycle. Django has a model-view-template (MVT) architecture, as displayed in **figure 83**.
 
-<img title="" src="images/django-structure.png" alt="">
+<figure>
+	<img title="" src="images/django-structure.png" alt="">
+	<figcaption><strong>Figure 83</strong> Django project structure.</figcaption>
+</figure>
 
-**Figure 40** Django project structure.<br>
-
-<br>
 
 A **model** in Django is defined as the "_the interface of your data_"[20]. It is an "_object that defines the structure of the data in a Django app_"[23]. This means that models are in charge of maintaining all of an application’s data and enables you to perform add, edit, delete, and view operations on the data.
 
@@ -1899,7 +1897,7 @@ The last pages to implement were the learn and resource pages (refer to figures 
 
 To implement the pages I needed to first gather the resources. I researched many APIs but none of them had the features that I needed (they mostly consisted of live match scores and court locators rather than training guides). Therefore I decided to gather my own resources to ensure that they were suitable for the app. I didn't want to create static pages with data, as I wanted the users to be able to search and filter the resources. To achieve this I created three models: `Tag`, `Resource`, and `ArticleSection`. 
 
-The `Tag` model creates the tag that will be associated with a resource (this is used to filter the resources by tags). The `Resource` model creates the resource that can then be displayed to the user. There are two types of resources (videos and articles). Each resource has the attributes displayed in **Code snippet 13**. The `Resource` is associated with with zero or many `ArticleSection`s through the `sections` attribute. The `ArticleSection` model creates the parts that make up an article.
+The `Tag` model creates the tag that will be associated with a resource (this is used to filter the resources by tags). The `Resource` model creates the resource that can then be displayed to the user. There are two types of resources (videos and articles). Each resource has the attributes displayed in **figure 84**. The `Resource` is associated with with zero or many `ArticleSection`s through the `sections` attribute. The `ArticleSection` model creates the parts that make up an article.
 
 ```python
 class Tag(models.Model):
@@ -1975,10 +1973,10 @@ class ArticleSection(models.Model):
             {self.content[:20] if self.content else 'No Content'}"
 
 ```
-**Code Snippet 13** The `Tag`, `Resource`, and `ArticleSection` models.<br>
+**Figure 84** The `Tag`, `Resource`, and `ArticleSection` models.<br>
 <br>
 
-With the resources created I registered the models to the `admin.site` so that I could populate the database with resources. I then created the views (refer to **Code Snippet 14**) necessary to process the data, and the templates (refer to **Code Snippets 15** and **16**) needed to create an interface for the users.
+With the resources created I registered the models to the `admin.site` so that I could populate the database with resources. I then created the views (refer to **Figure 85**) necessary to process the data, and the templates (refer to **Figure 86** and **87**) needed to create an interface for the users.
 
 ```python
 @login_required
@@ -2054,7 +2052,7 @@ def resource(request, resource_id):
             }
         )
 ```
-**Code Snippet 14** The `learn` and `resource` views.<br>
+**Figure 85** The `learn` and `resource` views.<br>
 <br>
 
 
@@ -2105,7 +2103,7 @@ def resource(request, resource_id):
   </div>
 </main>
 ```
-**Code Snippet 15** The `learn` template.<br>
+**Figure 86** The `learn` template.<br>
 <br>
 
 ```html
@@ -2143,7 +2141,7 @@ def resource(request, resource_id):
   <!-- More code... -->
 </main>
 ```
-**Code Snippet 16** The `resource` template.<br>
+**Figure 87** The `resource` template.<br>
 <br>
 
 
