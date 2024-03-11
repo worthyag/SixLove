@@ -1876,6 +1876,8 @@ class ArticleSection(models.Model):
 **Code Snippet 13** The `Tag`, `Resource`, and `ArticleSection` models.<br>
 <br>
 
+With the resources created I registered the models to the `admin.site` so that I could populate the database with resources. I then created the views necessary to process the data, and create an interface for the users.
+
 
 ## 4.3 The `planner` app
 
