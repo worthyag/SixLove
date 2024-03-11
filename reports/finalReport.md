@@ -146,7 +146,7 @@ Users that this project was conceptualised for- include but are not limited to:
 **Figure 5** displays a persona for a user within the `tennis enthusiast` category who is deeply passionate about tennis, this person is a young adult and they already play tennis here and there, but are looking to take it more seriously.
 
 <figure>
-    <img style="border: 1px solid #00000033;" title="" src="./images/solution-2.png" alt="" data-align="center"
+    <img style="border: 1px solid #00000033;" title="" src="./images/user-persona-3.png" alt="" data-align="center"
         <figcaption><strong>Figure 5</strong> Tennis Enthusiast User Persona</figcaption>
 </figure><br><br>
 
