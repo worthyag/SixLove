@@ -1876,14 +1876,12 @@ class ArticleSection(models.Model):
 **Code Snippet 13** The `Tag`, `Resource`, and `ArticleSection` models.<br>
 <br>
 
-With the resources created I registered the models to the `admin.site` so that I could populate the database with resources. I then created the views necessary to process the data, and create an interface for the users.
+With the resources created I registered the models to the `admin.site` so that I could populate the database with resources. I then created the views (refer to **Code Snippet 14**) necessary to process the data, and create an interface for the users.
 
 ```python
 @login_required
 def learn(request):
     """The view for the learn page."""
-    # resources = models.Resource.objects.all().order_by("title")
-
     # To allow the user to search through the list of resources.
     # Getting the search query from the request.
     query = request.GET.get("resource-search", "")
@@ -1902,30 +1900,8 @@ def learn(request):
             tags__name__in={"forehand", "backhand", "serve"}
         ).order_by("title")
 
-    elif filter_option == "fitness":
-        resources = resources.filter(
-            tags__name__in=["agility", "stretching"]
-        ).order_by("title")
-
-    elif filter_option == "stretch":
-        resources = resources.filter(
-            tags__name="stretching"
-        ).order_by("title")
-
-    elif filter_option == "forehand":
-        resources = resources.filter(
-            tags__name="forehand"
-        ).order_by("title")
-
-    elif filter_option == "backhand":
-        resources = resources.filter(
-            tags__name="backhand"
-        ).order_by("title")
-
-    elif filter_option == "volley":
-        resources = resources.filter(
-            tags__name="volley"
-        ).order_by("title")
+    # more logic...
+    
     elif filter_option == "slice":
         resources = resources.filter(
             tags__name="slice"
@@ -1977,6 +1953,120 @@ def resource(request, resource_id):
         )
 ```
 **Code Snippet 14** The `learn` and `resource` views.<br>
+<br>
+
+I then created the django templates
+
+```html
+<main id="learn">
+  <h2>Discover</h2>
+
+  <!-- Search Form -->
+  <form class="search-form" action="" method="get">
+    <input type="text" name="resource-search" placeholder="Search resources" value="{{ search_query }}">
+    <button type="submit">Search</button>
+  </form>
+
+  <!-- Filter Option -->
+  <form method="get" class="filter-options">
+    <label for="filter">Filter by:</label>
+    <div class="filter-action-element">
+      <select name="filter" id="filter">
+        <option value="" {% if not filter_option %}selected{% endif %}>All</option>
+        <option value="fundamentals" {% if filter_option == 'fundamentals' %}selected{% endif %}>
+          Fundamentals
+        </option>
+        <option value="fitness" {% if filter_option == 'fitness' %}selected{% endif %}>
+          Fitness
+        </option>
+        <option value="stretch" {% if filter_option == 'stretch' %}selected{% endif %}>
+          Stretching
+        </option>
+        <option value="forehand" {% if filter_option == 'forehand' %}selected{% endif %}>
+          Forehand
+        </option>
+        <option value="backhand" {% if filter_option == 'backhand' %}selected{% endif %}>
+          Backhand
+        </option>
+        <option value="volley" {% if filter_option == 'volley' %}selected{% endif %}>
+          Volley
+        </option>
+        <option value="slice" {% if filter_option == 'slice' %}selected{% endif %}>
+          Slice
+        </option>
+      </select>
+      <button type="submit">Apply Filter</button>
+    </div>
+  </form>
+  
+  <div class="resources">
+    {% for resource in resources %}
+    <a href="{% url 'tennis:resource' resource_id=resource.id %}">
+      <div class="resource">
+        <p class="resource-title">{{ resource.title }}</p>
+        {% if resource.resource_type != "video" %}
+          {% with first_section=resource.sections.first %}
+            {% if first_section %}
+              <p class="resource-content">{{ first_section.content|slice:":150" }}...</p>
+            {% endif %}
+          {% endwith %}
+        {% endif %}
+        <p class="resource-tag">{{ resource.tags.first.name }}</p>
+      </div>
+    </a>
+    {% endfor %}
+  </div>
+</main>
+```
+**Code Snippet 15** The `learn` template.<br>
+<br>
+
+```html
+<main id="resource">
+  <a class="back-btn" href="{% url 'tennis:learn' %}"
+    ><button>Back to Learn</button></a
+  >
+  <h1 class="resource-title">{{ title }}</h1>
+
+  {% if resource %}
+  {% if resource.resource_type == "video" %}
+    <iframe class="resource-video" src="https://www.youtube.com/embed/{{ resource.video_url }}" frameborder="0"></iframe>
+  {% elif resource.resource_type == "article" %}
+    <img class="resource-img" src="/{{resource.article_image }}" alt="Article image">
+
+    {% if sections != None %}
+      <div class="resource-content">
+        <!-- Iterating through sections for articles -->
+        {% for section in sections %}
+          <!-- Rendering section content based on section_type -->
+          {% if section.section_type == "heading" %}
+            <p class="subheading">{{ section.content }}</p>
+          {% elif section.section_type == "paragraph" %}
+            {% for para in section.split_content %}
+                <p>{{ para }}</p>
+              {% endfor %}
+          {% elif section.section_type == "image" %}
+            <img src="{{ section.image.url }}" alt="Section Image">
+          {% elif section.section_type == "bullet_points" %}
+            <ul>
+              {% for point in section.split_content %}
+                <li>{{ point }}</li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+        {% endfor %}
+      </div>
+    {% endif %}
+  {% endif %}
+  <a href="{{ resource.reference }}" target="_blank">
+    <p class="resource-link">Resource reference.</p>
+  </a>
+  {% else %}
+  <p>Resource does not exist.</p>
+  {% endif %}
+</main>
+```
+**Code Snippet 16** The `resource` template.<br>
 <br>
 
 
