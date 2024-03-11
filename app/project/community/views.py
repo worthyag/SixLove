@@ -12,7 +12,9 @@ from . import forms
 
 @login_required
 def connect(request):
-    """"""
+    """
+    The connect page view.
+    """
     # Getting the profile of the request user.
     request_profile = models.UserProfile.objects.get(user=request.user)
 
@@ -87,7 +89,9 @@ def connect(request):
 
 @login_required
 def feed(request):
-    """"""
+    """
+    The feed page view.
+    """
     # Initialising a new form.
     form = forms.UserPostsForm()
     comment_form = forms.CommentForm()
@@ -242,7 +246,9 @@ def feed(request):
 
 @login_required
 def profile(request):
-    """"""
+    """
+    The profile page view.
+    """
     # Initialising a new form.
     comment_form = forms.CommentForm()
 
@@ -391,7 +397,9 @@ def profile(request):
 
 @login_required
 def user(request, user_profile_id):
-    """"""
+    """
+    The user page view.
+    """
     # Initialising a new form.
     comment_form = forms.CommentForm()
 
@@ -474,7 +482,9 @@ def user(request, user_profile_id):
 
 @login_required
 def profile_settings(request):
-    """"""
+    """
+    The settings page view.
+    """
     request_profile = models.UserProfile.objects.get(user=request.user)
 
     # Initialising new forms.
@@ -558,7 +568,9 @@ def profile_settings(request):
 
 @login_required
 def toggle_like(request, post_id):
-    """"""
+    """
+    View that toggles a like (called when the like button is clicked).
+    """
     # Getting the user profile of the request user.
     user_profile = get_object_or_404(models.UserProfile, user=request.user)
     # Getting the post object using the post id.
@@ -592,7 +604,9 @@ def toggle_like(request, post_id):
 
 @login_required
 def toggle_follow(request, user_profile_id):
-    """"""
+    """
+    View that toggles a follow (called when the (un)follow button is clicked).
+    """
     # Getting the user profile of the request user.
     request_profile = get_object_or_404(models.UserProfile, user=request.user)
 
@@ -619,7 +633,9 @@ def toggle_follow(request, user_profile_id):
 
 @login_required
 def get_like_info(request, post_id):
-    """"""
+    """
+    View that extracts data about from a like.
+    """
     # Getting the post.
     post = get_object_or_404(models.UserPosts, id=post_id)
 
