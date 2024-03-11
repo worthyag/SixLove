@@ -17,11 +17,6 @@ async function viewPost(url, infoDiv, index) {
   const usernameElement = modal.querySelector(".username");
   const captionElement = modal.querySelector(".caption-text");
   const postComments = modal.querySelector(".post-comments");
-  // const expandedComments = modal.querySelector(".expanded-comments");
-  // const postCommentCount = modal.querySelector(".post-comments-count");
-  // const commentUserLink = modal.querySelector(".comment-user-link");
-  // const commentersUsername = modal.querySelector(".commenters-username");
-  // const commentContent = modal.querySelector(".comment-content");
   const commentForm = modal.querySelector(".comment-form");
   const postId = modal.querySelector(".hidden-id");
 
@@ -59,9 +54,6 @@ async function viewPost(url, infoDiv, index) {
 
   const comments = Array.from(infoDiv.querySelector(".comments-data").children);
   postComments.textContent = "";
-  // postCommentCount.textContent = "";
-  // commentersUsername.textContent = "";
-  // commentContent.textContent = "";
 
   const postCommentCount = document.createElement("span");
   postCommentCount.classList.add("post-comments-count");
