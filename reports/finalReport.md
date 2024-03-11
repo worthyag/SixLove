@@ -1009,121 +1009,121 @@ For this evaluation metric, the SixLove app will be evaluated against it's initi
 
 _Core functionality development._
 
-I decided that I wanted to start building SixLove's functionality in a somewhat chronological order. Chronological order referring to the user's flow, for instance, what route would potential users take when navigating the app? That meant starting with the landing page, then moving on to the sign up and login pages, then to the pages that allow the users to add, edit, and delete tennis sessions. I have previously stated SixLove's aims and objectives, and at their very core user authentication and tennis sessions play a huge role in whether the aims and objectives are met, so using this approach made the most logical sense.  Once I completed the core features, I created the other features going app by app. The figures below display the final UI design for SixLove, and the following sub-sections expand on the implementations.
+I decided that I wanted to start building SixLove's functionality in a somewhat chronological order. Chronological order referring to the user's flow, for instance, what route would potential users take when navigating the app? That meant starting with the landing page, then moving on to the sign up and login pages, then to the pages that allow the users to add, edit, and delete tennis sessions. I have previously stated SixLove's aims and objectives, and at their very core user authentication and tennis sessions play a huge role in whether the aims and objectives are met, so using this approach made the most logical sense.  Once I completed the core features, I created the other features going app by app. The figures (**figures 47 to 69**) below display the final UI design for SixLove, and the following sub-sections expand on the implementations.
 
 <figure>
     <img width="550" title="" src="./images/landing-page-top.png" alt="" data-align="center">
-        <figcaption><strong>Figure #</strong> SixLove Landing Page (top)</figcaption>
+        <figcaption><strong>Figure 47</strong> SixLove Landing Page (top)</figcaption>
 </figure><br><br>
 
 <figure>
     <img width="550" title="" src="./images/landing-page-bottom.png" alt="" data-align="center">
-        <figcaption><strong>Figure #</strong> SixLove Landing Page (bottom)</figcaption>
+        <figcaption><strong>Figure 48</strong> SixLove Landing Page (bottom)</figcaption>
 </figure><br><br>
 
 <figure>
     <img  width="550"title="" src="./images/sign-up-page-top.png" alt="" data-align="center">
-        <figcaption><strong>Figure #</strong> SixLove Signup Page</figcaption>
+        <figcaption><strong>Figure 49</strong> SixLove Signup Page</figcaption>
 </figure><br><br>
 
 <figure>
     <img width="550" title="" src="./images/login-page.png" alt="" data-align="center">
-        <figcaption><strong>Figure #</strong> SixLove Login Page</figcaption>
+        <figcaption><strong>Figure 50</strong> SixLove Login Page</figcaption>
 </figure><br><br>
 
 <figure>
     <img width="550" title="" src="./images/home-stats-page-top.png" alt="" data-align="center">
-        <figcaption><strong>Figure #</strong> SixLove Home / Stats Page (top)</figcaption>
+        <figcaption><strong>Figure 51</strong> SixLove Home / Stats Page (top)</figcaption>
 </figure><br><br>
 
 <figure>
     <img width="550" title="" src="./images/home-stats-page-bottom.png" alt="" data-align="center">
-        <figcaption><strong>Figure #</strong> SixLove Home / Stats Page (mid) </figcaption>
+        <figcaption><strong>Figure 52</strong> SixLove Home / Stats Page (mid) </figcaption>
 </figure><br><br>
 
 <figure>
     <img width="550" title="" src="./images/tennis-page.png" alt="" data-align="center">
-        <figcaption><strong>Figure #</strong> SixLove Tennis Page</figcaption>
+        <figcaption><strong>Figure 53</strong> SixLove Tennis Page</figcaption>
 </figure><br><br>
 
 <figure>
     <img width="550" title="" src="./images/tennis-page-add-form.png" alt="" data-align="center">
-        <figcaption><strong>Figure #</strong> SixLove Tennis Page Add Tennis Session Form</figcaption>
+        <figcaption><strong>Figure 54</strong> SixLove Tennis Page Add Tennis Session Form</figcaption>
 </figure><br><br>
 
 <figure>
     <img width="550" title="" src="./images/feed-page.png" alt="" data-align="center">
-        <figcaption><strong>Figure #</strong> SixLove Feed Page</figcaption>
+        <figcaption><strong>Figure 55</strong> SixLove Feed Page</figcaption>
 </figure><br><br>
 
 <figure>
     <img width="550" title="" src="./images/feed-page-create-post-form.png" alt="" data-align="center">
-        <figcaption><strong>Figure #</strong> SixLove Feed Page Create Post Modal</figcaption>
+        <figcaption><strong>Figure 56</strong> SixLove Feed Page Create Post Modal</figcaption>
 </figure><br><br>
 
 <figure>
     <img width="550" title="" src="./images/learn-page.png" alt="" data-align="center">
-        <figcaption><strong>Figure #</strong> SixLove Learn Page</figcaption>
+        <figcaption><strong>Figure 57</strong> SixLove Learn Page</figcaption>
 </figure><br><br>
 
 <figure>
     <img width="550" title="" src="./images/resource-page-video.png" alt="" data-align="center">
-        <figcaption><strong>Figure #</strong> SixLove Resource Page (video)</figcaption>
+        <figcaption><strong>Figure 58</strong> SixLove Resource Page (video)</figcaption>
 </figure><br><br>
 
 <figure>
     <img width="550" title="" src="./images/resource-page-article.png" alt="" data-align="center">
-        <figcaption><strong>Figure #</strong> SixLove Resource Page (article)</figcaption>
+        <figcaption><strong>Figure 59</strong> SixLove Resource Page (article)</figcaption>
 </figure><br><br>
 
 <figure>
     <img width="550" title="" src="./images/connect-page.png" alt="" data-align="center">
-        <figcaption><strong>Figure #</strong> SixLove Connect Page</figcaption>
+        <figcaption><strong>Figure 60</strong> SixLove Connect Page</figcaption>
 </figure><br><br>
 
 <figure>
     <img width="550" title="" src="./images/user-page-posts.png" alt="" data-align="center">
-        <figcaption><strong>Figure #</strong> SixLove User Page (posts)</figcaption>
+        <figcaption><strong>Figure 61</strong> SixLove User Page (posts)</figcaption>
 </figure><br><br>
 
 <figure>
     <img width="550" title="" src="./images/user-page-view-post.png" alt="" data-align="center">
-        <figcaption><strong>Figure #</strong> SixLove User Page View Post</figcaption>
+        <figcaption><strong>Figure 62</strong> SixLove User Page View Post</figcaption>
 </figure><br><br>
 
 <figure>
     <img width="550" title="" src="./images/user-page-awards.png" alt="" data-align="center">
-        <figcaption><strong>Figure #</strong> SixLove User Page (awards)</figcaption>
+        <figcaption><strong>Figure 63</strong> SixLove User Page (awards)</figcaption>
 </figure><br><br>
 
 <figure>
     <img width="550" title="" src="./images/profile-page.png" alt="" data-align="center">
-        <figcaption><strong>Figure #</strong> SixLove Profile Page</figcaption>
+        <figcaption><strong>Figure 64</strong> SixLove Profile Page</figcaption>
 </figure><br><br>
 
 <figure>
     <img width="550" title="" src="./images/profile-page-view-post.png" alt="" data-align="center">
-        <figcaption><strong>Figure #</strong> SixLove Profile Page View Post</figcaption>
+        <figcaption><strong>Figure 65</strong> SixLove Profile Page View Post</figcaption>
 </figure><br><br>
 
 <figure>
     <img width="550" title="" src="./images/profile-page-edit-post.png" alt="" data-align="center">
-        <figcaption><strong>Figure #</strong> SixLove Profile Page Edit Post</figcaption>
+        <figcaption><strong>Figure 66</strong> SixLove Profile Page Edit Post</figcaption>
 </figure><br><br>
 
 <figure>
     <img width="550" title="" src="./images/profile-page-awards.png" alt="" data-align="center">
-        <figcaption><strong>Figure #</strong> SixLove Profile Page (awards)</figcaption>
+        <figcaption><strong>Figure 67</strong> SixLove Profile Page (awards)</figcaption>
 </figure><br><br>
 
 <figure>
     <img width="550" title="" src="./images/settings-page.png" alt="" data-align="center">
-        <figcaption><strong>Figure #</strong> SixLove Settings Page</figcaption>
+        <figcaption><strong>Figure 68</strong> SixLove Settings Page</figcaption>
 </figure><br><br>
 
 <figure>
     <img width="550" title="" src="./images/settings-page-edit-bio.png" alt="" data-align="center">
-        <figcaption><strong>Figure #</strong> SixLove Settings Page Edit Bio</figcaption>
+        <figcaption><strong>Figure 69</strong> SixLove Settings Page Edit Bio</figcaption>
 </figure><br><br>
 
 ## 4.1 The `registration` app
