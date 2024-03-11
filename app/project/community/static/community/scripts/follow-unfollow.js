@@ -12,7 +12,7 @@ followButton.addEventListener("click", (e) => {
 
 // Function to handle follow or unfollow action
 function toggleFollow(userProfileId, action, followButton) {
-  // Sending an AJAX request to the Django backend to toggle follow status.
+  // Sending an request to the Django backend to toggle follow status.
   fetch(toggleFollowUrl.replace("__user_profile_id__", userProfileId), {
       method: 'POST',
       headers: {
