@@ -3893,9 +3893,8 @@ The purpose of the achievements system is to motivate users and help them stay c
     - The helper functions I created to use in the `signals.py` file.
 - `signals.py`
     - Checks whether certain actions have occured.
-- `context_processors.py`
 - modified `app.py`
-- modified `settings.py`
+    - The `ready` function connects the signal handlers so that they are registered when the SixLove starts.
 
 
 ```python
@@ -3913,23 +3912,16 @@ The purpose of the achievements system is to motivate users and help them stay c
 
 
 ```python
+class CommunityConfig(AppConfig):
+    # More code...
+    def ready(self):
+        import community.signals
 ```
-**Code Snippet 43** The `context_processors.py` file.<br>
+**Code Snippet 43** The modified `app.py` file.<br>
 
 <br>
 
-```python
-```
-**Code Snippet 44** The modified `app.py` file.<br>
 
-<br>
-
-
-```python
-```
-**Code Snippet 45** The modified `settings.py` file.<br>
-
-<br>
 
 
 
