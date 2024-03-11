@@ -2412,8 +2412,11 @@ With the tennis session functionality implemented, I was ready to extend it to t
 
 The `community` app has the following pages:
 
-- Calendar- the page that displays a calendar to the user.
-- Calendar- the page that displays a calendar to the user.
+- Connect- the page that gives the user access to other users.
+- Feed- the page that displays posts of the user and who they are following.
+- Profile- profile of the user (houses the navigation to the settings page).
+- Settings- the page that enables users to update their settings..
+- User- a public profile for each the user.
 
 
 # 5 Evaluation
