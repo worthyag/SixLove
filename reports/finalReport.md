@@ -4867,6 +4867,95 @@ class CalendarViewTest(TestCase):
 
 <br>
 
+### 5.1.4 The `community` app
+
+_The app that connects users._
+
+Testing was essential for the community since there was a lot of complex functionality. **Code snippet 21** displays the unit tests that I conducted.
+
+```python
+...
+class CommunityViewsTest(TestCase):
+    """Testing the community views."""
+
+    def setUp(self) -> None:
+        """"""
+        # Every test needs access to the request factory.
+        self.factory = RequestFactory()
+        self.user = CustomUser.objects.create(
+            username="testuser",
+            password="testpassword"
+        )
+
+    def helper_get_response_community_views(self, view):
+        """
+        A helper function that produces a response for the community view
+        and logs the user in. (To reduce code repetition).
+        """
+        # Creating an instance of a GET request.
+        request = self.factory.get(reverse(f"community:{view}"))
+
+        # Simulating a logged-in user manually.
+        request.user = self.user
+
+        if view == "connect":
+            # Testing the view.
+            response = views.connect(request)
+        elif view == "feed":
+            # Testing the view.
+            response = views.feed(request)
+        elif view == "profile":
+            # Testing the view.
+            response = views.profile(request)
+        elif view == "user":
+            # Testing the view.
+            response = views.user(request)
+        elif view == "profile_settings":
+            # Testing the view.
+            response = views.profile_settings(request)
+
+        return response
+
+    def test_connect_view_loads(self):
+        """"""
+        # Generating the response / logging in.
+        response = self.helper_get_response_community_views("connect")
+
+        self.assertEqual(response.status_code, 200)
+
+    def test_feed_view_loads(self):
+        """"""
+        # Generating the response / logging in.
+        response = self.helper_get_response_community_views("feed")
+
+        self.assertEqual(response.status_code, 200)
+
+    def test_profile_view_loads(self):
+        """"""
+        # Generating the response / logging in.
+        response = self.helper_get_response_community_views("profile")
+
+        self.assertEqual(response.status_code, 200)
+
+    def test_user_view_loads(self):
+        """"""
+        # Generating the response / logging in.
+        response = self.helper_get_response_community_views("user")
+
+        self.assertEqual(response.status_code, 200)
+
+    def test_profile_settings_view_loads(self):
+        """"""
+        # Generating the response / logging in.
+        response = self.helper_get_response_community_views("profile_settings")
+
+        self.assertEqual(response.status_code, 200)
+
+```
+**Code Snippet 21** Tests for the `community` app.<br>
+
+<br>
+
 ## 5.2 Overall project evaluation
 
 _Where my head is currently at._
