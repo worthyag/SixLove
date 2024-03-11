@@ -602,6 +602,63 @@ The wireframing and design in SixLove utilises a mobile first approach. This app
 
 **Figure 26** SixLove's feed page.<br><br>
 
+The next following figures (figures # to #) display SixLove's final iterations.
+
+<figure>
+    <img title="" src="./images/home-page-wireframe.png" alt="" data-align="center">
+        <figcaption><strong>Figure #</strong> Home Page</figcaption>
+</figure><br><br>
+
+<figure>
+    <img title="" src="./images/feed-page-wireframe2.png" alt="" data-align="center">
+        <figcaption><strong>Figure #</strong> Feed Page</figcaption>
+</figure><br><br>
+
+<figure>
+    <img title="" src="./images/profile-page-wireframe2.png" alt="" data-align="center">
+        <figcaption><strong>Figure #</strong> Profile Page</figcaption>
+</figure><br><br>
+
+<figure>
+    <img title="" src="./images/user-page-wireframe.png" alt="" data-align="center">
+        <figcaption><strong>Figure #</strong> User Page</figcaption>
+</figure><br><br>
+
+<figure>
+    <img title="" src="./images/settings-page-wireframe.png" alt="" data-align="center">
+        <figcaption><strong>Figure #</strong> Settings Page</figcaption>
+</figure><br><br>
+
+<figure>
+    <img title="" src="./images/calendar-page-wireframe.png" alt="" data-align="center">
+        <figcaption><strong>Figure #</strong> Calendar Page</figcaption>
+</figure><br><br>
+
+<figure>
+    <img title="" src="./images/learn-page-wireframe.png" alt="" data-align="center">
+        <figcaption><strong>Figure #</strong> Learn Page</figcaption>
+</figure><br><br>
+
+<figure>
+    <img title="" src="./images/landing-page-wireframe.png" alt="" data-align="center">
+        <figcaption><strong>Figure #</strong> Landing Page</figcaption>
+</figure><br><br>
+
+<figure>
+    <img title="" src="./images/tennis-page-wireframe.png" alt="" data-align="center">
+        <figcaption><strong>Figure #</strong> Tennis Page</figcaption>
+</figure><br><br>
+
+<figure>
+    <img title="" src="./images/connect-page-wireframe.png" alt="" data-align="center">
+        <figcaption><strong>Figure #</strong> Connect Page</figcaption>
+</figure><br><br>
+
+<figure>
+    <img title="" src="./images/auth-pages-wireframe.png" alt="" data-align="center">
+        <figcaption><strong>Figure #</strong> Authentication Pages</figcaption>
+</figure><br><br>
+
 ### 3.1.2 Entity-Relationship Diagram
 
  **Figure 27** displays the entities and relationships that the SixLove app will potentially / initially have. Here is a brief summary of some of the potential relationships:
