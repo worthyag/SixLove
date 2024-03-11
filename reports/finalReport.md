@@ -4978,10 +4978,7 @@ Based on the Goals Accomplised metric discussed in [section 3.3.3](#333-goals-ac
         <figcaption><strong>Figure #</strong> Objectives Completition Evaluated</figcaption>
 </figure><br><br>
 
-<figure>
-	<img style="border: 1px solid #00000033;" title="" src="./images/feature-rank-chart-evaluated.png" alt="" data-align="center">
-        <figcaption><strong>Figure #</strong> Feature Evaluation Criteria</figcaption>
-</figure><br><br>
+
 
 ### 5.2.1 Proposed changes
 
@@ -4991,9 +4988,9 @@ The main focus of SixLove is to guide users with little to no tennis experience 
 
 In terms of TNLP, one solution I propose is to dedicate a page to TNLP, and give users examples of training schedules and ideas. SixLove could also reward users that follow a somewhat consistent regiment through an awards system. 
 
-In terms of structure, there seems to be a fine line. The following aim "_SixLove should provide a structured and comprehensive training program_" can potentially clash with this aim "_SixLove users should be able to add tennis sessions and create their own schedule_". A way around this is to add more structure to the `TennisSession` model itself. Instead of just the `title`, `notes`, `date`, and `is_complete` attributes, there could also be a `fundamentals` attribute which would manifest as a selector element. This `fundamentals` attribute would have the fundamental tennis strokes as options (for example, forehand, backhand etc)- this would represent the focus of the tennis session. In this way, users gain a little structure without losing flexibility. Adding to that,  the `fundamentals` attribute would be useful for data visualisation and progress tracking. This is because users would be able to filter past tennis sessions or view graphs to see what fundamental strokes they had been working on, and what hadn’t been covered as much.
+In terms of structure, there seems to be a fine line. The following aim "_SixLove should provide a structured and comprehensive training program_" can potentially clash with this aim "_SixLove users should be able to add tennis sessions and create their own schedule_". My way around this was to add more structure to the `TennisSession` model itself. Instead of just the `title`, `notes`, `date`, and `is_complete` attributes, there was also a `categories` attribute which manifested as a selector element. This `categories` attribute has the fundamental tennis strokes as options (for example, forehand, backhand etc)- and represents the focus of the tennis session. In this way, users gain a little structure without losing flexibility. Adding to that,  the `categories` attribute was useful for data visualisation and progress tracking. This is because users are able to filter past tennis sessions or view graphs to see what fundamental strokes they had been working on, and what hadn’t been covered as much.
 
-To go a step further, I could also add a `rank` attribute, allowing users to rate their skill level for the chosen fundamental stroke when they add the tennis session. This would enable users to track their progression in terms of skill development. It would also result in four (1, 2, 3, 5) of the five principles of TNLP being covered (refer to [section 2.2.1](#221-the-theory)).
+To go a step further, I would also add a `rank` attribute, allowing users to rate their skill level for the chosen fundamental stroke when they add the tennis session. This would enable users to track their progression in terms of skill development. It would also result in four (1, 2, 3, 5) of the five principles of TNLP being covered (refer to [section 2.2.1](#221-the-theory)).
 
 # 6 Conclusion
 
