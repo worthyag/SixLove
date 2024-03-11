@@ -1878,6 +1878,107 @@ class ArticleSection(models.Model):
 
 With the resources created I registered the models to the `admin.site` so that I could populate the database with resources. I then created the views necessary to process the data, and create an interface for the users.
 
+```python
+@login_required
+def learn(request):
+    """The view for the learn page."""
+    # resources = models.Resource.objects.all().order_by("title")
+
+    # To allow the user to search through the list of resources.
+    # Getting the search query from the request.
+    query = request.GET.get("resource-search", "")
+
+    # To allow the user to filter the resources.
+    filter_option = request.GET.get("filter", "")
+
+    # Querying the data.
+    resources = models.Resource.objects.filter(
+        Q(title__icontains=query) | Q(tags__name__icontains=query)
+    )
+
+    # Applying additional filters based on the filter_option.
+    if filter_option == "fundamentals":
+        resources = resources.filter(
+            tags__name__in={"forehand", "backhand", "serve"}
+        ).order_by("title")
+
+    elif filter_option == "fitness":
+        resources = resources.filter(
+            tags__name__in=["agility", "stretching"]
+        ).order_by("title")
+
+    elif filter_option == "stretch":
+        resources = resources.filter(
+            tags__name="stretching"
+        ).order_by("title")
+
+    elif filter_option == "forehand":
+        resources = resources.filter(
+            tags__name="forehand"
+        ).order_by("title")
+
+    elif filter_option == "backhand":
+        resources = resources.filter(
+            tags__name="backhand"
+        ).order_by("title")
+
+    elif filter_option == "volley":
+        resources = resources.filter(
+            tags__name="volley"
+        ).order_by("title")
+    elif filter_option == "slice":
+        resources = resources.filter(
+            tags__name="slice"
+        ).order_by("title")
+
+    return render(
+        request,
+        "./tennis/learn.html",
+        {
+            "title": "Learn",
+            "resources": resources,
+            "search_query": query,
+            "filter_option": filter_option,
+        }
+    )
+
+
+@login_required
+def resource(request, resource_id):
+    """The view for the resource page."""
+    try:
+        resource = get_object_or_404(models.Resource, id=resource_id)
+        sections = resource.sections.all() if resource.resource_type == "article" else None
+
+        # Splitting content for sections with type "bullet_points" or "paragraph".
+        if sections is not None:
+            for section in sections:
+                if section.section_type in ["bullet_points", "paragraph"]:
+                    section.split_content = section.content.split("\n")
+
+        return render(
+            request,
+            "./tennis/resource.html",
+            {
+                "title": resource.title,
+                "resource": resource,
+                "sections": sections
+            }
+        )
+    except:
+        return render(
+            request,
+            "./tennis/resource.html",
+            {
+                "title": "Resource Not Found",
+                "resource": None,
+                "sections": None
+            }
+        )
+```
+**Code Snippet 14** The `learn` and `resource` views.<br>
+<br>
+
 
 ## 4.3 The `planner` app
 

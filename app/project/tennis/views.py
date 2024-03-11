@@ -146,6 +146,7 @@ def delete_tennis_session(request, tennis_session_id):
 
 @login_required
 def success(request):
+    """The view for the success page."""
     return render(
         request,
         "./tennis/success.html",
@@ -157,6 +158,7 @@ def success(request):
 
 @login_required
 def learn(request):
+    """The view for the learn page."""
     # resources = models.Resource.objects.all().order_by("title")
 
     # To allow the user to search through the list of resources.
@@ -220,20 +222,16 @@ def learn(request):
 
 @login_required
 def resource(request, resource_id):
+    """The view for the resource page."""
     try:
         resource = get_object_or_404(models.Resource, id=resource_id)
         sections = resource.sections.all() if resource.resource_type == "article" else None
 
-        # Splitting content for sections with type "bullet_points" or "paragraph"
+        # Splitting content for sections with type "bullet_points" or "paragraph".
         if sections is not None:
             for section in sections:
                 if section.section_type in ["bullet_points", "paragraph"]:
                     section.split_content = section.content.split("\n")
-
-        # print(type(sections))
-
-        # for section in sections:
-        #     print("hello")
 
         return render(
             request,
