@@ -1795,7 +1795,9 @@ A **template** in Django is a "_file that defines the structure of the UI_" [23]
 ### 4.2.3 The learn and resource pages
 The last pages to implement were the learn and resource pages (refer to figures # and #). The whole purpose of the learn page was to provide users with resources to aid their tennis training. Novice LP (and TNLP) are simple in nature and do not require expert supervision, however there are many things in tennis that would require a novice to further research.
 
-To implement the pages I needed to first gather the resources. I researched many APIs but none of them had the features that I needed (they mostly consisted of live match scores and court locators rather than training tips). Therefore I decided to gather my own resources to ensure that they were suitable to the app. I didn't want to simple create static pages with data, as I wanted the users to be able to search through and filter the resources. To achieve this I created three models: `Tag`, `Resource`, and `ArticleSection`. **Code snippet 13** displays the three models.
+To implement the pages I needed to first gather the resources. I researched many APIs but none of them had the features that I needed (they mostly consisted of live match scores and court locators rather than training guides). Therefore I decided to gather my own resources to ensure that they were suitable for the app. I didn't want to create static pages with data, as I wanted the users to be able to search and filter the resources. To achieve this I created three models: `Tag`, `Resource`, and `ArticleSection`. 
+
+The `Tag` model creates the tag that will be associated with a resource (this is used to filter the resources by tags). The `Resource` model creates the resource that can then be displayed to the user. There are two types of resources (videos and articles). Each resource has the attributes displayed in **Code snippet 13**. The `Resource` is associated with with zero or many `ArticleSection`s through the `sections` attribute. The `ArticleSection` model creates the parts that make up an article.
 
 ```python
 class Tag(models.Model):
@@ -1873,6 +1875,7 @@ class ArticleSection(models.Model):
 ```
 **Code Snippet 13** The `Tag`, `Resource`, and `ArticleSection` models.<br>
 <br>
+
 
 ## 4.3 The `planner` app
 
