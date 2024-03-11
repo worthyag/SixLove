@@ -4993,11 +4993,18 @@ In terms of structure, there seems to be a fine line. The following aim "_SixLov
 
 To go a step further, I would also add a `rank` attribute, allowing users to rate their skill level for the chosen fundamental stroke when they add the tennis session. This would enable users to track their progression in terms of skill development. It would also result in four (1, 2, 3, 5) of the five principles of TNLP being covered (refer to [section 2.2.1](#221-the-theory)).
 
+Since I have created an achievemnets systems, going forward I would like to implement notifications, so that users are notified when certain actions happen rather than checking their profile for changes. I would also like to add privacy features, so that users have the option to hide or display their profile to users they choose.
+
 # 6 Conclusion
 
 _To conclude..._
 
-At this point of the project a lot has done but there is still more functionality to write. Outside of that, the questions posed in the [section 5.2.1](#521-proposed-changes) also highlight a slight discrepancy in the project's aims and objectives. Going forward, I will be focusing on the community and learning aspect of the app, which will most likely result in changes to the models that I have already built. I will also focus on the UI, ensuring that SixLove users have a good user experience. The goal is to make the UI very intuitive and accessible, with important tasks having simple user flows. In addition, I will be spending a lot of my time on the report, making sure that concepts are explained in a concise manner, and that my project core is clearly depicted.
+At this point the project is complete for now. The questions posed in the [section 5.2.1](#521-proposed-changes) highlight a slight discrepancy in the project's aims and objectives. 
+
+Going forward, I will be focusing on the community and learning aspect of the app, which will most likely result in changes to the models that I have already built. I will also focus on the UI, ensuring that SixLove users have a good user experience. The goal is to make the UI very intuitive and accessible, with important tasks having simple user flows. In addition, I will be spending a lot of my time on the report, making sure that concepts are explained in a concise manner, and that my project core is clearly depicted.
+
+At this point the project is complete (for now). Coming into this I had no experience with Django and I learnt a lot from this project. I am happy with what I produced but their is definitely space for extensibility. I would have liked to have added joint sessions, so that is a bit of a sore spot for me.
+
 
 # 7 References
 
