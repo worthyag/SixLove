@@ -4999,11 +4999,7 @@ Since I have created an achievemnets systems, going forward I would like to impl
 
 _To conclude..._
 
-At this point the project is complete for now. The questions posed in the [section 5.2.1](#521-proposed-changes) highlight a slight discrepancy in the project's aims and objectives. 
-
-Going forward, I will be focusing on the community and learning aspect of the app, which will most likely result in changes to the models that I have already built. I will also focus on the UI, ensuring that SixLove users have a good user experience. The goal is to make the UI very intuitive and accessible, with important tasks having simple user flows. In addition, I will be spending a lot of my time on the report, making sure that concepts are explained in a concise manner, and that my project core is clearly depicted.
-
-At this point the project is complete (for now). Coming into this I had no experience with Django and I learnt a lot from this project. I am happy with what I produced but their is definitely space for extensibility. I would have liked to have added joint sessions, so that is a bit of a sore spot for me.
+At this point the project is complete (for now). Coming into this I had no experience with Django and I learnt a lot from this project. I am happy with what I produced but there is definitely space for extensibility. I would have liked to add joint sessions, so that is a bit of a sore spot for me. There are also different approaches that I could have taken. I did all the styling of the app with CSS and SCSS/SASS, and if I were to do it again I would consider using a library to save time. I also wish that I had involved users more in this process, and that is definittely something that I would change. Overall, SixLove was a success and I hope to take it further in the future.
 
 
 # 7 References
