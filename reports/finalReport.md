@@ -1768,7 +1768,7 @@ I also added the variable in **code snippet 12** to the settings file to ensure 
 LOGOUT_REDIRECT_URL = "home"
 ```
 
-**Code Snippet 9** The `LOGOUT_REDIRECT_URL` variable located in the settings file.<br>
+**Code Snippet 12** The `LOGOUT_REDIRECT_URL` variable located in the settings file.<br>
 
 <br>
 
@@ -1795,7 +1795,88 @@ A **template** in Django is a "_file that defines the structure of the UI_" [23]
 ### 4.2.3 The learn and resource pages
 The last pages to implement were the learn and resource pages (refer to figures # and #). The whole purpose of the learn page was to provide users with resources to aid their tennis training. Novice LP (and TNLP) are simple in nature and do not require expert supervision, however there are many things in tennis that would require a novice to further research.
 
-To implement the pages I needed to first gather the resources. I researched many APIs but none of them had the features that I needed (they mostly consisted of live match scores and court locators rather than training tips). Therefore I decided to gather my own resources to ensure that they were suitable to the app. I didn't want to simple create static pages with data, as I wanted the users to be able to search through and filter the resources. To achieve this I created two models: `Tag` and `Resource`.
+To implement the pages I needed to first gather the resources. I researched many APIs but none of them had the features that I needed (they mostly consisted of live match scores and court locators rather than training tips). Therefore I decided to gather my own resources to ensure that they were suitable to the app. I didn't want to simple create static pages with data, as I wanted the users to be able to search through and filter the resources. To achieve this I created three models: `Tag`, `Resource`, and `ArticleSection`. **Code snippet 13** displays the three models.
+
+```python
+class Tag(models.Model):
+    """"""
+    RESOURCE_TAGS = [
+        ("backhand", "Backhand"),
+        ("forehand", "Forehand"),
+        ("warm_up", "Warm Up"),
+        ("cool_down", "Cool Down"),
+        ("stretching", "Stretching"),
+        ("serve", "Serve"),
+        ("agility", "Agility"),
+        ("volley", "Volley"),
+        ("slice", "Slice"),
+        ("stamina", "Stamina"),
+        ("tnlp", "TNLP"),
+        ("other", "Other")
+    ]
+
+    name = models.CharField(max_length=255, unique=True, choices=RESOURCE_TAGS)
+
+    def __str__(self):
+        return self.name
+
+
+class Resource(models.Model):
+    """"""
+    RESOURCE_TYPES = [
+        ("video", "Video"),
+        ("article", "Article")
+    ]
+
+    title = models.CharField(max_length=255)
+    resource_type = models.CharField(max_length=20, choices=RESOURCE_TYPES)
+    tags = models.ManyToManyField(Tag, blank=True)
+    reference = models.URLField()
+    # video_url = models.URLField(blank=True, null=True)
+    video_url = models.CharField(max_length=20, blank=True, null=True)
+    article_image = models.ImageField(upload_to="article_images/",
+                                      blank=True, null=True)
+
+    # created_at = models.DateTimeField(auto_now_add=True)
+    # created_by = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
+
+    # Many-to-Many relationship with ArticleSection
+    sections = models.ManyToManyField(
+        "ArticleSection", blank=True, related_name="resources")
+
+    def __str__(self):
+        """"""
+        return f"{self.title}"
+
+
+class ArticleSection(models.Model):
+    """"""
+    SECTION_TYPES = [
+        ("heading", "Heading"),
+        ("paragraph", "Paragraph"),
+        ("image", "Image"),
+        ("bullet_points", "Bullet Points")
+    ]
+
+    resource = models.ForeignKey(Resource, on_delete=models.CASCADE,
+                                 related_name="article_sections",
+                                 default=None)
+    section_type = models.CharField(max_length=15, choices=SECTION_TYPES)
+    content = models.TextField(blank=True, null=True)
+    image = models.ImageField(upload_to="article_images/",
+                              blank=True, null=True)
+
+    class Meta:
+        ordering = ['resource', 'id']
+
+    def __str__(self):
+        """"""
+        return f"{self.section_type} - {self.resource.title} - \
+            {self.content[:20] if self.content else 'No Content'}"
+
+```
+**Code Snippet 13** The ...<br>
+<br>
 
 ## 4.3 The `planner` app
 

@@ -115,9 +115,6 @@ class ArticleSection(models.Model):
         ("bullet_points", "Bullet Points")
     ]
 
-    # article = models.ForeignKey(Resource, on_delete=models.CASCADE,
-    # related_name="article_sections",
-    # blank=True, null=True)
     resource = models.ForeignKey(Resource, on_delete=models.CASCADE,
                                  related_name="article_sections",
                                  default=None)
