@@ -2756,6 +2756,14 @@ class EditProfileNameForm(forms.ModelForm):
 
 
 I then created the following views:
+- `connect`
+- `feed`
+- `profile`
+- `user`
+- `profile_settings`
+- `toggle_like`
+- `toggle_follow`
+- `get_like_info`
 
 
 
