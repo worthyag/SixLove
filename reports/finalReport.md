@@ -3466,9 +3466,7 @@ Then, I created the following templates (refer to **Code Snippets 26** to **30**
   const toggleLikeUrl = "{% url 'community:toggle-like' post_id=0 %}".replace("0", "__post_id__");
 </script>
 <script src="{% static './community/scripts/toggle-like.js' %}" defer></script>
-<script src="{% static './community/scripts/create-post.js' %}" defer></script>
-<script src="{% static './community/scripts/post-menu.js' %}" defer></script>
-<script src="{% static './community/scripts/edit-delete-post.js' %}" defer></script>
+<!-- More scripts... -->
 <script src="{% static './community/scripts/toggle-comment-form.js' %}" defer></script>
 {% endblock %}
 {% block content %}
@@ -3563,44 +3561,16 @@ Then, I created the following templates (refer to **Code Snippets 26** to **30**
       </div>
     </div>
 
-    <!-- Modal for deleting a post -->
+    <!-- Modal for deleting a post. -->
     <div id="deletePostModal" class="modal">
-      <div class="modal-content">
-        <span class="close-btn" onclick="closeModal('#deletePostModal')">&times;</span>
-        <div id="modalContent">
-          <form action="" method="post" novalidate enctype="multipart/form-data">
-            {% csrf_token %} 
-            {{ form.as_p }}
-            <div style="display: none;">
-              <label for="post-id">ID: </label>
-              <input type="hidden" type="text" name="post-id" id="post-id" value="delete">
-              <input type="hidden" type="text" name="post-id-to-delete" id="post-id-to-delete" value="X">
-            </div>
-            <p>Are you sure you would like to delete this post?</p>
-            <input class="btn" type="submit" value="Delete Post" />
-          </form>
-        </div>
-      </div>
+      <!-- Similar to the edit modal. -->
     </div>
   {% else %}
     <!-- More code... -->
   {% endif %}
   <!-- Modal for creating a post -->
   <div id="createPostModal" class="modal">
-    <div class="modal-content">
-      <span class="close-btn" onclick="closeModal('#createPostModal')">&times;</span>
-      <div id="modalContent">
-        <form action="" method="post" novalidate enctype="multipart/form-data">
-          {% csrf_token %} 
-          {{ form.as_p }}
-          <div style="display: none;">
-            <label for="post-id">ID: </label>
-            <input type="hidden" type="text" name="post-id" id="post-id" value="create">
-          </div>
-          <input class="btn" type="submit" value="Create Post" />
-        </form>
-      </div>
-    </div>
+    <!-- Similar to the other modals. -->
   </div>
 {% else %}
   <!-- More code... -->
@@ -3619,6 +3589,203 @@ Then, I created the following templates (refer to **Code Snippets 26** to **30**
 <br>
 
 ```html
+<!-- more code... -->
+<script>
+  const toggleLikeUrl = "{% url 'community:toggle-like' post_id=0 %}".replace("0", "__post_id__");
+  const likeInfoUrl = "{% url 'community:get-like-info' post_id=0 %}".replace("0", "__post_id__");
+  const commentersProfileUrl = "{% url 'community:user' user_profile_id=0 %}"
+                                .replace("0", "__commenters_id__");
+</script>
+<script src="{% static './community/scripts/toggle-like.js' %}" defer></script>
+<!-- More scripts... -->
+<script src="{% static './community/scripts/toggle-comment-form.js' %}" defer></script>
+{% endblock %}
+{% block content %}
+<!-- Checking whether a user profile exists for the request user. -->
+{% if user_profile %}
+<main id="profile">
+  <div class="profile-top">
+    <a class="settings-btn" href="{% url 'community:profile-settings' %}">
+      <img src="{% static './community/images/settings-icon.svg' %}" alt="Settings Page">
+    </a>
+    <div class="profile-header">
+      <div class="profile-photo">
+        <img
+          src="{{ user_profile.profile_picture.url }}"
+          alt="Profile Photo"
+        />
+      </div>
+      <div class="profile-username-action-btns">
+        <p class="profile-username">{{ user_profile.username }}</p>
+      </div>
+    </div>
+    <div class="info">
+      <div class="profile-name">{{ user_profile.profile_name }}</div>
+      <div class="profile-bio">{{ user_profile.bio }}</div>
+    </div>
+
+    <div class="followers-following">
+      <div class="followers">
+        <div class="follower-text ff-text">followers</div>
+        <div class="follower-count ff-count">{{ user_profile.get_followers_count }}</div>
+      </div>
+      <div class="following">
+        <div class="following-text ff-text">following</div>
+        <div class="following-count ff-count">{{ user_profile.get_following_count }}</div>
+      </div>
+    </div>
+  </div>
+  <div class="toggle-container">
+    <div class="toggle-feed-view">
+      <button class="posts-btn active">
+        <img
+          src="{% static './community/images/menu.png' %}"
+          alt="Post menu icon"
+        />
+      </button>
+      <button class="achievements-btn">
+        <img
+          src="{% static './community/images/achievements-icon.png' %}"
+          alt="Achievements icon"
+        />
+      </button>
+    </div>
+  </div>
+  <!-- Displaying the user posts. -->
+  <div class="feed">
+    {% if user_posts%}
+      {% for post in user_posts %}
+      <div class="feed-post">
+        <img src="{{ post.post_picture.url }}" alt="user post">
+        <div class="post-details" style="display: none;">
+          <span class="likes-data">{{ post.get_like_count }}</span>
+          <span class="username-data">{{ post.user_profile.username }}</span>
+          <span class="captionText-data">{{ post.post_caption }}</span>
+          <span class="postId-data">{{ post.id }}</span>
+          <span class="commentCount-data">{{ post.get_comment_count }} comments</span>
+          <div class="comments-data">
+            {% for comment in post.comments.all %}
+            <div>
+              <span class="commentersID-data">{{ comment.user_profile.id }}</span>
+              <span>
+                <span class="commentersUsername-data">{{ comment.user_profile.username }}</span>
+                <span class="commentContent-data"> {{ comment.content }}</span>
+              </span>
+            </div>
+            {% endfor %}
+          </div>
+          <span class="date-data">{{ post.created_at }}</span>
+          <span class="post-id-data">{{ post.id }}</span>
+          <span class="user_has_liked-data">{{ post.user_has_liked }}</span>
+        </div>
+      </div>
+      {% endfor %}
+    {% else %}
+    <p>No posts yet.</p>
+    {% endif %}
+  
+  </div>
+
+  <!-- Displaying the user's achievements. -->
+  <div class="achievements toggle-posts">
+    {% if user_awards %}
+      {% for award in user_awards %}
+        <div class="award">
+          <div class="award-img">
+            <img src="{{ award.category.image.url }}" alt="Award Picture">
+          </div>
+          <div class="award-info">
+            <p class="award-name">{{ award.name }}</p>
+            <p class="award-desc">{{ award.description }}</p>
+            <p class="award-date">Awarded {{ award.completed_at }}</p>
+          </div>
+        </div>
+      {% endfor %}
+    {% endif %}
+  </div>
+
+    <!-- Modal for viewing the post -->
+    <div id="viewPostModal" class="modal">
+      <div class="modal-content">
+        <span class="close-btn" onclick="closeModal('#viewPostModal')">&times;</span>
+        <div id="modalContent">
+          <div class="post">
+            <div class="post-img">
+              <img src="" alt="user post">
+            </div>
+            <div class="post-btns">
+              <div class="interactive-btns">
+                <button class="post-like-btn"><img src="{% static './community/images/liked-icon.svg'%}" alt="like button"></button>
+                <button class="post-comment-btn"><img src="{% static './community/images/comments-icon.svg'%}" alt="comment button"></button>
+              </div>
+              <div class="post-action-group">
+                <button class="post-more-btn"><img src="{% static './community/images/more-icon.svg'%}" alt="more button"></button>
+                <div class="post-action-btns hide-action-btns">
+                  <span class="edit-post-btn">Edit Post</span>
+                  <span class="delete-post-btn">Delete Post</span>
+                </div>
+              </div>
+            </div>
+            <div class="post-id-details" style="display: none;">
+              <span class="post-id-data">X</span>
+            </div>
+            <div class="post-likes"><span class="like-count">124</span> likes</div>
+            <div class="post-caption">
+              <span class="username">username</span>
+              <span class="caption-text">caption text will be placed...</span>
+            </div>
+            <!-- Comment form -->
+            <form class="comment-form hide-comment-form" method="post" 
+            action=""
+            data-post-id="{{ post.id }}">
+              <span class="close-btn">&times;</span>
+              {% csrf_token %}
+              <div class="form-elements">
+                <input class="hidden-id" type="hidden" name="post-id" value="{{ post.id }}">
+                {{ comment_form.as_p }}
+              </div>
+              <button type="submit" name="comment-submit">Post Comment</button>
+            </form>
+            <div class="post-comments">
+              <span class="post-comments-count">View all 12 comments</span>
+              <div class="expanded-comments">
+                <span class="comment">
+                  <a class="comment-user-link" href="">
+                    <span class="commenters-username">username</span>
+                  </a> <span class="comment-content">content</span>
+                </span>
+              </div>
+            </div>
+            <div class="post-date">2 days ago</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal for editing a post -->
+    <!-- Modal for deleting a post -->
+
+  </main>
+{% else %}
+<main id="profile">
+  <p>You haven't created your user profile yet.</p>
+  <button class="create-profile-btn">Create Profile</button>
+
+  <!-- Modal for creating a profile -->
+  <div id="createProfileModal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal('#createProfileModal')">&times;</span>
+      <div id="modalContent">
+        <form action="" method="post" novalidate enctype="multipart/form-data">
+          {% csrf_token %} 
+          {{ form.as_p }}
+          <input class="btn" type="submit" value="Create Profile" />
+        </form>
+      </div>
+    </div>
+  </div>
+</main>
+<!-- More code... -->
 ```
 **Code Snippet 28** The `profile.html` template.<br>
 
@@ -3635,6 +3802,9 @@ Then, I created the following templates (refer to **Code Snippets 26** to **30**
 **Code Snippet 30** The `user.html` template.<br>
 
 <br>
+
+
+The following are the scripts to accompany some of the templates:
 
 
 
