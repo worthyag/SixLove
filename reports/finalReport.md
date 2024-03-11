@@ -269,9 +269,10 @@ _Scoping out the current market._
 
 ### 2.1.1 TennisPAL
 
-<img title="" src="./images/tennis-pal.png" alt="" data-align="center" width="420">
-
-**Figure 15** TennisPAL's User Interface<br><br>
+<figure>
+    <img title="" src="./images/tennis-pal.png" alt="" data-align="center" width="420">
+        <figcaption><strong>Figure 15</strong> TennisPAL's User Interface</figcaption>
+</figure><br><br>
 
 TennisPAL is an app designed specifically for tennis players. It includes features for finding tennis partners and tracking match scores. It also allows users to improve their game through training exercises. **Figure 15** displays TennisPAL's user interface.
 
@@ -325,9 +326,10 @@ TennisPAL is an app designed specifically for tennis players. It includes featur
 
 ### 2.1.2 MyFitnessPal
 
-<img title="" src="./images/my-fitness-pal.jpg" alt="" data-align="center" width="427">
-
-**Figure 16** MyFitnessPal's User Interface<br><br>
+<figure>
+    <img title="" src="./images/my-fitness-pal.jpg" alt="" data-align="center" width="427">
+        <figcaption><strong>Figure 16</strong> MyFitnessPal's User Interface</figcaption>
+</figure><br><br>
 
 MyFitnessPal is not tennis specific. However, it is a popular fitness app that allows users to track workouts, set fitness goals, and log nutrition. Tennis players can use the app to monitor their overall fitness and nutrition. **Figure 16** displays MyFitnessPal's user interface.
 
@@ -373,9 +375,10 @@ MyFitnessPal is not tennis specific. However, it is a popular fitness app that a
 
 ### 2.1.3 TopCourt
 
-<img title="" src="./images/top-court.png" alt="" data-align="center" width="445">
-
-**Figure 17** TopCourt's User Interface<br><br>
+<figure>
+    <img title="" src="./images/top-court.png" alt="" data-align="center" width="445">
+        <figcaption><strong>Figure 17</strong> TopCourt's User Interface</figcaption>
+</figure><br><br>
 
 TopCourt offers video lessons from professional tennis players. This helps users improve their skill and fitness on the court. It also motivates novice tennis players, since they get the opportunity to learn from the very best. **Figure 17** displays TopCourt's user interface.
 
@@ -413,9 +416,10 @@ TopCourt offers video lessons from professional tennis players. This helps users
 
 ### 2.1.4 Nike Training Club
 
-<img title="" src="./images/nike-training-club.jpg" alt="" data-align="center" width="470">
-
-**Figure 18** Nike Training Club's User Interface<br><br>
+<figure>
+    <img title="" src="./images/nike-training-club.jpg" alt="" data-align="center" width="470">
+        <figcaption><strong>Figure 18</strong> Nike Training Club's User Interface</figcaption>
+</figure><br><br>
 
 Nike Training Club is a general fitness app that offers a variety of workout routines, including some designed for specific sports. Tennis players are able to use the app to find workouts that focus on agility, strength, and endurance. **Figure 18** displays Nike Training Club's user interface.
 
@@ -569,9 +573,10 @@ The wireframing and design in SixLove utilises a mobile first approach. This app
 
 **Figure 19** displays SixLove's landing page, login page, and sign up page. The designs are quite rudimentary (for now), since the focus was on designing for optimal app functionality. **Figure 19** displays the first iteration for the aforementioned pages. The next iteration for these pages will be making adjustments to the size of input elements and font-size.
 
-<img title="" src="./images/login-page-wireframe.png" alt="" data-align="center">
-
-**Figure 19** SixLove's Landing, login, and signup pages.<br><br>
+<figure>
+    <img title="" src="./images/login-page-wireframe.png" alt="" data-align="center">
+        <figcaption><strong>Figure 19</strong> SixLove's Landing, login, and signup pages.</figcaption>
+</figure><br><br>
 
 **Figure 20** displays SixLove's profile page and settings page. This too is the 1st iteration. The figures highlights the decisions to be made between the two settings logo based on any user feedback.  The settings icon on the left seems to be a lot more intuitive, however the other icon is fairly prevalent in apps that are commonly used.
 
