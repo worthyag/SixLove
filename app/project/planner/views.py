@@ -13,12 +13,14 @@ from tennis import forms as TennisForms
 
 @login_required
 def calendar(request):
-    """"""
+    """
+    The view for the calendar page.
+    """
     tennis_sessions = TennisModels.TennisSession.objects.filter(
         user=request.user
     )
 
-    # Convert the QuerySet to a list of dictionaries
+    # Convert the QuerySet to a list of dictionaries.
     tennis_sessions_data = [{'category': session.category,
                             'title': session.title, 'date': session.date.strftime("%Y-%m-%d"),
                              'notes': session.notes, 'isCompleted': str(session.is_completed),
