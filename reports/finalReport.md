@@ -767,7 +767,7 @@ The SixLove app will have the following main pages:
 
 _The overall code structure._
 
-Since SixLove is built with Django, the project has the following structure (**figure 29**).
+Since SixLove is built with Django, the project has the following structure (**figure 40**).
 
 ```
 /project
@@ -913,12 +913,11 @@ Since SixLove is built with Django, the project has the following structure (**f
 /venv
 .gitignore
 ```
-
-**Figure 29** The project's structure.<br>
+**Figure 40** The project's structure.<br>
 
 <br>
 
-**Figure 29** displays a parent `project` folder with many children folders that follow a similar structure. An application built with Django is a project that is made up of a collection of apps. A Django project is defined as a "_collection of configuration and apps for a particular website_" [21]. A Django app is a "_web application that does something_"[21]. The difference between the two is that a project "_can contain multiple apps_" [21], whereas an app "_can be in multiple projects_"[21]. SixLove will be made up of the following apps:
+**Figure 40** displays a parent `project` folder with many children folders that follow a similar structure. An application built with Django is a project that is made up of a collection of apps. A Django project is defined as a "_collection of configuration and apps for a particular website_" [21]. A Django app is a "_web application that does something_"[21]. The difference between the two is that a project "_can contain multiple apps_" [21], whereas an app "_can be in multiple projects_"[21]. SixLove will be made up of the following apps:
 
 - Project
   
@@ -946,11 +945,12 @@ I chose to use Django for this project since I like its focus on modularity, and
 
 _My project roadmap._
 
-**Figure 30** displays the SixLove's Gantt chart that contains all the major tasks and when they should be completed. Most tasks are given a duration of at least 4 to 7 days. The chart also doesn't allow work to be assigned on the weekends, and weekends are not accounted for when displaying how many days a task has been given.
+**Figure 41** displays the SixLove's Gantt chart that contains all the major tasks and when they should be completed. Most tasks are given a duration of at least 4 to 7 days. The chart also doesn't allow work to be assigned on the weekends, and weekends are not accounted for when displaying how many days a task has been given.
 
-<img title="" src="./workplan/FP-workplan.png" alt="" data-align="center">
-
-**Figure 30** The project's Gantt Chart.<br><br>
+<figure>
+    <img title="" src="./workplan/FP-workplan.png" alt="" data-align="center">
+        <figcaption><strong>Figure 41</strong> The project's Gantt Chart.</figcaption>
+</figure><br><br>
 
 ## 3.3 Evaluation strategy
 
@@ -970,35 +970,40 @@ I will expand upon these in the following sections.
  
 ### 3.3.1 Functionality
 
-Functionality refers to functionality testing which is where all features are evaluated based on predefined categories. For this project, functionality testing will conducted in the form of unit testing- refer to [section 5.1](#sixloves-users)), and according to the evaluation displayed in **figures 31** and **32**.
+Functionality refers to functionality testing which is where all features are evaluated based on predefined categories. For this project, functionality testing will conducted in the form of unit testing- refer to [section 5.1](#sixloves-users)), and according to the evaluation displayed in **figures 42** and **43**.
 
-<img title="" src="./images/feature-rank-chart.png" alt="" data-align="center" width="300px">
+<figure>
+    <img title="" src="./images/feature-rank-chart.png" alt="" data-align="center" width="300px">
+        <figcaption><strong>Figure 42</strong> The Evaluation of Features Table.</figcaption>
+</figure><br><br>
 
-  **Figure 31** The Evaluation of Features Table.<br><br>
-
-  <img title="" src="./images/feature-eval-criteria.png" alt="" data-align="center">
-
-  **Figure 32** Feature Evaluation Criteria.<br><br>
+<figure>
+    <img title="" src="./images/feature-eval-criteria.png" alt="" data-align="center">
+        <figcaption><strong>Figure 43</strong> Feature Evaluation Criteria.</figcaption>
+</figure><br><br>
 
 ### 3.3.2 Usability
 
-Usability refers to usability testing, which will display itself in the form of task evaluation. **Figure 33** displays the survey that will be filled by users for specific tasks. The survey results will then be evaluated in order to evaluate the overall usability of SixLove.
+Usability refers to usability testing, which will display itself in the form of task evaluation. **Figure 44** displays the survey that will be filled by users for specific tasks. The survey results will then be evaluated in order to evaluate the overall usability of SixLove.
  
-  <img title="" src="./images/usability-survey.png" alt="" data-align="center">
-
-  **Figure 33** Usability Survey.<br><br>
+<figure>
+	<img title="" src="./images/usability-survey.png" alt="" data-align="center">
+        <figcaption><strong>Figure 44</strong> Usability Survey.</figcaption>
+</figure><br><br>
 
 ### 3.3.3 Goals Accomplished
 
-For this evaluation metric, the SixLove app will be evaluated against it's initial aims and objectives (and requirements). It will be decided whether or not SixLove delivered the planned functionality (or how much of its functionality has been completed). **Figures 34** and **35** display the table that will be filled in to evaluation the project.
+For this evaluation metric, the SixLove app will be evaluated against it's initial aims and objectives (and requirements). It will be decided whether or not SixLove delivered the planned functionality (or how much of its functionality has been completed). **Figures 45** and **46** display the table that will be filled in to evaluation the project.
 
-  <img title="" src="./images/aims-evaluation.png" alt="" data-align="center">
+<figure>
+    <img title="" src="./images/aims-evaluation.png" alt="" data-align="center">
+        <figcaption><strong>Figure 45</strong> Aims Evaluation Table.</figcaption>
+</figure><br><br>
 
-  **Figure 34** Aims Evaluation Table.<br><br>
-
-  <img title="" src="./images/objectives-evaluation.png" alt="" data-align="center">
-
-  **Figure 35** Objectives Evaluation Table.<br><br>
+<figure>
+    <img title="" src="./images/objectives-evaluation.png" alt="" data-align="center">
+        <figcaption><strong>Figure 46</strong> Objectives Evaluation Table.</figcaption>
+</figure><br><br>
 
 # 4 The Implementation
 
