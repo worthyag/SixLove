@@ -4961,7 +4961,12 @@ class CommunityViewsTest(TestCase):
 
 _Where my head is currently at._
 
-Based on the aims and objectives of SixLove the project is about two thirds complete in terms of development, though most of the objectives and aims left to achieve centre around community and the UI. The UI aspect of the project is not very hefty (since most the planning and designing is done), it is just important that the UI is built with users and accessibility in mind. The UI will be developed iteratively taking user feedback and making appropriate changes. Therefore it seems that more time will be spent on the community aspect, which will not only result in the addition of another app, but will also reflect changes project wide. 
+Based on the Goals Accomplised metric discussed in [section 3.3.3](#333-goals-accomplished), my project got the following results:
+- Aims Completion Evaluated (refer to **figure #**).
+    - 34/36 = 94% complete.
+- Objectives Completition Evaluated (refer to **figure #**).
+    - 33/36 = 92% complete.
+
 
 <figure>
 	<img title="" src="./images/aims-evaluation-evaluated.png" alt="" data-align="center">
