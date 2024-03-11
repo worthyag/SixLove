@@ -1126,6 +1126,21 @@ I decided that I wanted to start building SixLove's functionality in a somewhat 
         <figcaption><strong>Figure 69</strong> SixLove Settings Page Edit Bio</figcaption>
 </figure><br><br>
 
+<figure>
+    <img width="550" title="" src="./images/calendar-page-bottom.png" alt="" data-align="center">
+        <figcaption><strong>Figure 70</strong> SixLove Calendar Page Bottom</figcaption>
+</figure><br><br>
+
+<figure>
+    <img width="550" title="" src="./images/calendar-page-side-panel.png" alt="" data-align="center">
+        <figcaption><strong>Figure 71</strong> SixLove Calendar Page Side Panel</figcaption>
+</figure><br><br>
+
+<figure>
+    <img width="550" title="" src="./images/calendar-page-edit-form.png" alt="" data-align="center">
+        <figcaption><strong>Figure 72</strong> SixLove Calendar Page Edit Form</figcaption>
+</figure><br><br>
+
 ## 4.1 The `registration` app
 
 _Building the `CustomUser`._
@@ -1149,9 +1164,9 @@ class CustomUser(AbstractUser):
     email = models.EmailField(unique=True)
     date_of_birth = models.DateField(null=True, blank=True)
 ```
-**Figure 70** The `CustomUser` model.<br/><br>
+**Figure 72** The `CustomUser` model.<br/><br>
 
-Each attribute displayed in **figure 70** corresponds to a field within the database. In addition to the fields displayed, Django will add the other fields that are specified within `AbstractUser`, such as the user's `id` and `password` among some other things. With the database table created, I created a form that uses the `CustomUser` model to build a form with fields that correspond to the models attributes. **Figure 71** displays a reduced version of the code for the form.
+Each attribute displayed in **figure 72** corresponds to a field within the database. In addition to the fields displayed, Django will add the other fields that are specified within `AbstractUser`, such as the user's `id` and `password` among some other things. With the database table created, I created a form that uses the `CustomUser` model to build a form with fields that correspond to the models attributes. **Figure 73** displays a reduced version of the code for the form.
 
 ```python
 class CustomUserCreationForm(UserCreationForm):
@@ -1167,9 +1182,9 @@ class CustomUserCreationForm(UserCreationForm):
         fields = ('first_name', 'last_name', 'email',
                   'date_of_birth',) + UserCreationForm.Meta.fields
 ```
-**Figure 71** The `CustomUserCreationForm` form.<br><br>
+**Figure 73** The `CustomUserCreationForm` form.<br><br>
 
-This form was used to create the forms displayed to the user, for both the login and sign up pages (which can be seen in **figures 49 and 50**). I then created the views corresponding to the pages previously mentioned, **figure 72** displays a condensed version of the code for this.
+This form was used to create the forms displayed to the user, for both the login and sign up pages (which can be seen in **figures 49 and 50**). I then created the views corresponding to the pages previously mentioned, **figure 74** displays a condensed version of the code for this.
 
 ```python
 def home(request):
@@ -1335,11 +1350,11 @@ def user_login(request):
         # Similar to the signup view.
     )
 ```
-**Figure 72** The `registration` app views.<br>
+**Figure 74** The `registration` app views.<br>
 
 <br>
 
-**Figure 72** displays how I use the form to create users and authenticate users. I passed the form to a html file (more specifically a Django template file), where it was then rendered (**figure 73** shows some of the code for the signup template).
+**Figure 74** displays how I use the form to create users and authenticate users. I passed the form to a html file (more specifically a Django template file), where it was then rendered (**figure 75** shows some of the code for the signup template).
 
 ```python
 <form method="post">
@@ -1348,13 +1363,13 @@ def user_login(request):
     <button type="submit">Sign Up</button>
 </form>
 ```
-**Figure 73** The `signup` html template.
+**Figure 75** The `signup` html template.
 
 With that completed, I had written most of the functionality for user authentication. I then created a superuser in order to conduct a manual pretest, then I wrote some unit tests to test everything thoroughly (this will be expanded on in [section 5.1.1](#511-the-registration-app), though I had written some unit tests as I went along.
 
 ### 4.1.2 The home page
 
-The last implementation that I did for the `registration` app was creating a landing and stats page (refer to **figures 47**, **48**, **51** and **52**). The code for this is in the home view which was shown in **figure 72**. When the user is authenticated a stats page is shown, and when their not a landing page is shown.
+The last implementation that I did for the `registration` app was creating a landing and stats page (refer to **figures 47**, **48**, **51** and **52**). The code for this is in the home view which was shown in **figure 74**. When the user is authenticated a stats page is shown, and when their not a landing page is shown.
 
 The stats page is home to two charts (I built these charts using `Chart.js`). Chart 1 (doughnut) displays information about the number of tennis sessions a user has and chart 2 (line) displays information about the tennis sessions per month. Users can make use of these interactive charts to track their progress by doing some of the following things:
 - Compare the number of tennis sessions schedules for different categories.
@@ -1363,7 +1378,7 @@ The stats page is home to two charts (I built these charts using `Chart.js`). Ch
 - Track the number of tennis sessions scheduled across the year.
     - Filter for specific tennis session categories.
 
-Users can also hover over the charts for more information. **Figure 74** displays the django template associated with the stats page. Data is passed from the home view to the template, the neccesary data is then extracted and fed to the `Chart` object.
+Users can also hover over the charts for more information. **Figure 76** displays the django template associated with the stats page. Data is passed from the home view to the template, the neccesary data is then extracted and fed to the `Chart` object.
 
 ```html
 <!-- First checking whether the user is authenticated. -->
@@ -1526,10 +1541,10 @@ Users can also hover over the charts for more information. **Figure 74** display
   </script>
 </main>
 ```
-**Figure 74** The `home - stats` html template.<br>
+**Figure 76** The `home - stats` html template.<br>
 <br>
 
-The landing page is home to a carousel that I built from scratch using HTML, SCSS, and JavaScript. The carousel provides potential users with information about the SixLove app, so that they can decide whether they want to sign up or not. The carousel is automated but users have the option to stop the slides and navigate using the buttons instead. **Figure 75** and **figure 76** display the logic for this.
+The landing page is home to a carousel that I built from scratch using HTML, SCSS, and JavaScript. The carousel provides potential users with information about the SixLove app, so that they can decide whether they want to sign up or not. The carousel is automated but users have the option to stop the slides and navigate using the buttons instead. **Figure 77** and **figure 78** display the logic for this.
 
 ```html
 <!-- If the user is not authenticated the following is displayed. -->
@@ -1565,7 +1580,7 @@ The landing page is home to a carousel that I built from scratch using HTML, SCS
 </main>
 {% endif %}
 ```
-**Figure 75** The `home - landing` html template.<br>
+**Figure 77** The `home - landing` html template.<br>
 <br>
 
 ```javascript
@@ -1630,7 +1645,7 @@ function nextContent() {
     navDots[pos].classList.toggle('filled');
 }
 ```
-**Figure 76** The `carousel.js` file.<br>
+**Figure 78** The `carousel.js` file.<br>
 <br>
 
 
@@ -1658,13 +1673,13 @@ The next order of business was to create the `tennis` app. The ability to add, e
 
 ### 4.2.1 The tennis pages
 
-Like the `registration` app, I began with a model. **Figure 77** displays the fields and the name of the table that I created with the model. 
+Like the `registration` app, I began with a model. **Figure 79** displays the fields and the name of the table that I created with the model. 
 <figure>
 	<img title="" src="images/TennisSessionUML.png" alt="">
 	<figcaption><strong>Figure 77</strong> TennisSession UML table.</figcaption>
 </figure>
 
-When I started writing the code for the model, I realised that it would be better to make `isToday` a method rather than an attribute. This is because, `isToday` is dependent on the date, it is not an attribute of a the tennis session.  **Figure 78** displays the code for the model.
+When I started writing the code for the model, I realised that it would be better to make `isToday` a method rather than an attribute. This is because, `isToday` is dependent on the date, it is not an attribute of a the tennis session.  **Figure 80** displays the code for the model.
 
 ```python
 class TennisSession(models.Model):
@@ -1711,11 +1726,11 @@ class TennisSession(models.Model):
     # more code...
 ```
 
-**Figure 78** The `TennisSession` model.<br>
+**Figure 80** The `TennisSession` model.<br>
 
 <br>
 
-I also created a form that coincides with the model. It is the form used for all communication with the `TennisSession` database table (adding, editing, and deleting). **Figure 79** displays the form code.
+I also created a form that coincides with the model. It is the form used for all communication with the `TennisSession` database table (adding, editing, and deleting). **Figure 81** displays the form code.
 
 ```python
 class TennisSessionForm(forms.ModelForm):
@@ -1734,7 +1749,7 @@ class TennisSessionForm(forms.ModelForm):
 
 Most of the work for both the `registration` and `tennis` app was focused on creating models and forms. My primary focus was on how the data would be stored, and figuring out the most effective ways to design the database and its interactions- resulting in a lot of my time being allocated to that. This allowed the implementation to feel more intuitive and less complex.
 
-With the database table and its corresponding form completed, I created the views. **Figure 80** displays the tennis view. All of the views use the `@login_required` decorator. Decorators are a way to modify the behaviour of functions or methods in Python, and the `@login_required` decorator is provided by Django to protect views  (functions), since users are required to be logged in. All the views within the `tennis` app, are only accessible to users that are logged in.
+With the database table and its corresponding form completed, I created the views. **Figure 82** displays the tennis view. All of the views use the `@login_required` decorator. Decorators are a way to modify the behaviour of functions or methods in Python, and the `@login_required` decorator is provided by Django to protect views  (functions), since users are required to be logged in. All the views within the `tennis` app, are only accessible to users that are logged in.
 
 ```python
 @login_required
@@ -1774,11 +1789,11 @@ def tennis(request):
     )
 ```
 
-**Figure 80** The `tennis` view of the `tennis` app.<br>
+**Figure 82** The `tennis` view of the `tennis` app.<br>
 
 <br>
 
-In addition to using the `@login_required` decorator, **figure 80** demonstrates how I further filter information based on the user who sent the request. This is to make sure that users can only see tennis sessions associated with their account. **Figure 81**, displays some of the other views within the `tennis` app (the success and learn views are not displayed).
+In addition to using the `@login_required` decorator, **figure 82** demonstrates how I further filter information based on the user who sent the request. This is to make sure that users can only see tennis sessions associated with their account. **Figure 83**, displays some of the other views within the `tennis` app (the success and learn views are not displayed).
 
 ```python
 @login_required
@@ -1855,20 +1870,20 @@ def delete_tennis_session(request, tennis_session_id):
     )
 ```
 
-**Figure 81** The `add_tennis_session`, `edit_tennis_session`, and `delete_tennis_session` views of the `tennis` app.<br>
+**Figure 83** The `add_tennis_session`, `edit_tennis_session`, and `delete_tennis_session` views of the `tennis` app.<br>
 
 <br>
 
-The views displayed in **Figure 81** are those that specifically deal with the tennis sessions. These are the views that provide the users with the ability interact with the tennis sessions. These views communicate with the `TennisSession` database table. Other than the `delete` view, the views pass a form to their associated HTML templates. These templates contain forms that allow users to make changes to their tennis sessions, in a similar fashion to **Figure 73**.
+The views displayed in **Figure 83** are those that specifically deal with the tennis sessions. These are the views that provide the users with the ability interact with the tennis sessions. These views communicate with the `TennisSession` database table. Other than the `delete` view, the views pass a form to their associated HTML templates. These templates contain forms that allow users to make changes to their tennis sessions, in a similar fashion to **Figure 75**.
 
-I also added the variable in **Figure 82** to the settings file to ensure that the user is always redirected to the home (landing) page when they logout. The settings file is a file that "_contains all the configuration of your Django installation_" [19].
+I also added the variable in **Figure 84** to the settings file to ensure that the user is always redirected to the home (landing) page when they logout. The settings file is a file that "_contains all the configuration of your Django installation_" [19].
 
 ```python
 # Redirects the user to the home page when they log out.
 LOGOUT_REDIRECT_URL = "home"
 ```
 
-**Figure 82** The `LOGOUT_REDIRECT_URL` variable located in the settings file.<br>
+**Figure 84** The `LOGOUT_REDIRECT_URL` variable located in the settings file.<br>
 
 <br>
 
@@ -1878,11 +1893,11 @@ I then wrote some unit tests to ensure that the `tennis` app was working as aspe
 
 _The structure my project follows._
 
-At this point, it is clear to see that there is a pattern emerging. I begin by creating some model(s), then I create some view(s) that seems to be linked to some template that I have created. This is the Django work cycle. Django has a model-view-template (MVT) architecture, as displayed in **figure 83**.
+At this point, it is clear to see that there is a pattern emerging. I begin by creating some model(s), then I create some view(s) that seems to be linked to some template that I have created. This is the Django work cycle. Django has a model-view-template (MVT) architecture, as displayed in **figure 85**.
 
 <figure>
 	<img title="" src="images/django-structure.png" alt="">
-	<figcaption><strong>Figure 83</strong> Django project structure.</figcaption>
+	<figcaption><strong>Figure 85</strong> Django project structure.</figcaption>
 </figure>
 
 
@@ -1973,10 +1988,10 @@ class ArticleSection(models.Model):
             {self.content[:20] if self.content else 'No Content'}"
 
 ```
-**Figure 84** The `Tag`, `Resource`, and `ArticleSection` models.<br>
+**Figure 86** The `Tag`, `Resource`, and `ArticleSection` models.<br>
 <br>
 
-With the resources created I registered the models to the `admin.site` so that I could populate the database with resources. I then created the views (refer to **Figure 85**) necessary to process the data, and the templates (refer to **Figure 86** and **87**) needed to create an interface for the users.
+With the resources created I registered the models to the `admin.site` so that I could populate the database with resources. I then created the views (refer to **Figure 87**) necessary to process the data, and the templates (refer to **Figure 88** and **89**) needed to create an interface for the users.
 
 ```python
 @login_required
@@ -2052,7 +2067,7 @@ def resource(request, resource_id):
             }
         )
 ```
-**Figure 85** The `learn` and `resource` views.<br>
+**Figure 87** The `learn` and `resource` views.<br>
 <br>
 
 
@@ -2103,7 +2118,7 @@ def resource(request, resource_id):
   </div>
 </main>
 ```
-**Figure 86** The `learn` template.<br>
+**Figure 88** The `learn` template.<br>
 <br>
 
 ```html
@@ -2141,7 +2156,7 @@ def resource(request, resource_id):
   <!-- More code... -->
 </main>
 ```
-**Figure 87** The `resource` template.<br>
+**Figure 89** The `resource` template.<br>
 <br>
 
 
@@ -2167,7 +2182,7 @@ I wanted users to be able to interact with the calendar. My aim was to build a c
 
 I originally wanted to use the 'FullCalendar' javascript library to build the calendar, however I didn't want to deal with the licensing. I then decided to use the calendar python library, more specifically the HTMLCalendar. However, after reading the documentation, and researching other projects that had incorporated it, it did not feel right for this project.  Though I know that I could have built upon it, the library felt too limited. In the end, I decided to build a calendar from scratch myself, in order to focus on the things needed for SixLove. Building a calendar from scratch also allowed me to make alterations with ease- especially since I knew all the workings of it.
 
-I did not have to create a model for the `planner` app since it works with the models already created. Therefore I began by creating a simple view, so that I could begin working on the calendar itself. The first stage was to work on the logic for the calendar interface. At this stage, my goal was to build a calendar using HTML and CSS/SCSS, that displayed the date above it and a date picker beneath it. Once I hard coded the calendar, I then modified my code, to use javascript to dynamically render the calendar. I created a `buildCalendar()` function that rendered the calendar based on a specific date. **Figure 88** displays the most important parts of the function.
+I did not have to create a model for the `planner` app since it works with the models already created. Therefore I began by creating a simple view, so that I could begin working on the calendar itself. The first stage was to work on the logic for the calendar interface. At this stage, my goal was to build a calendar using HTML and CSS/SCSS, that displayed the date above it and a date picker beneath it. Once I hard coded the calendar, I then modified my code, to use javascript to dynamically render the calendar. I created a `buildCalendar()` function that rendered the calendar based on a specific date. **Figure 90** displays the most important parts of the function.
 
 ```javascript
 function buildCalendar() {
@@ -2231,11 +2246,11 @@ function buildCalendar() {
 }
 ```
 
-**Figure 88** The `BuildCalendar` function.<br>
+**Figure 90** The `BuildCalendar` function.<br>
 
 <br>
 
-The next thing I did was add functionality to the arrows, so that the users could navigate to different months using the arrows. I also adding functionality to the date picker and the today button. **Figure 89** displays some of the code for that functionality.
+The next thing I did was add functionality to the arrows, so that the users could navigate to different months using the arrows. I also adding functionality to the date picker and the today button. **Figure 91** displays some of the code for that functionality.
 
 ```javascript
 function updateDatePicker() {
@@ -2278,11 +2293,11 @@ todayBtn.addEventListener("click", () => {
 // more code...
 ```
 
-**Figure 89** Added functionality to the arrows, date picker and today button.<br>
+**Figure 91** Added functionality to the arrows, date picker and today button.<br>
 
 <br>
 
-Once the calendar was fully functional, the next stage was to incorporate the tennis sessions with the calendar. I began by creating a side panel (**figure 90**) and three modals (**figure 91**). The side panel displays the tennis sessions to the user when they click on a day - though at this stage it just displayed the message "No tennis sessions scheduled", and the `add tennis session` button. The three modals refers to the `add session modal` (**figure 33**), the `edit session modal` (**figure 32**), and the `delete session modal` (**figure 34**). I incorporated the modals with the form created by the `TennisSessionForm` class previously written in order to communicate with the `TennisSession` database table with ease (though I did add some changes to the forms).
+Once the calendar was fully functional, the next stage was to incorporate the tennis sessions with the calendar. I began by creating a side panel (**figure 92**) and three modals (**figure 93**). The side panel displays the tennis sessions to the user when they click on a day - though at this stage it just displayed the message "No tennis sessions scheduled", and the `add tennis session` button. The three modals refers to the `add session modal` (**figure 33**), the `edit session modal` (**figure 32**), and the `delete session modal` (**figure 34**). I incorporated the modals with the form created by the `TennisSessionForm` class previously written in order to communicate with the `TennisSession` database table with ease (though I did add some changes to the forms).
 
 ```javascript
 function showSidePanel(day) {
@@ -2330,7 +2345,7 @@ function closeSidePanel() {
 }
 ```
 
-**Figure 90** Side panel javascript functionality.<br>
+**Figure 92** Side panel javascript functionality.<br>
 
 <br>
 
@@ -2356,7 +2371,7 @@ function closeSidePanel() {
   </div>
 ```
 
-**Figure 91** Edit modal HTML.<br>
+**Figure 93** Edit modal HTML.<br>
 
 <br>
 
