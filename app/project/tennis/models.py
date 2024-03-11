@@ -34,7 +34,9 @@ class TennisSession(models.Model):
     is_completed = models.BooleanField(default=False)
 
     def is_tennis_session_scheduled_today(self):
-        """"""
+        """
+        Returns whether a tennis session is scheduled today.
+        """
         today = timezone.now()
 
         if type(self.date) != type(""):
@@ -56,7 +58,9 @@ class TennisSession(models.Model):
 
 
 class Tag(models.Model):
-    """"""
+    """
+    Creates a tag to be used by the resource.
+    """
     RESOURCE_TAGS = [
         ("backhand", "Backhand"),
         ("forehand", "Forehand"),
@@ -79,7 +83,9 @@ class Tag(models.Model):
 
 
 class Resource(models.Model):
-    """"""
+    """
+    Creates a resource.
+    """
     RESOURCE_TYPES = [
         ("video", "Video"),
         ("article", "Article")
@@ -89,15 +95,9 @@ class Resource(models.Model):
     resource_type = models.CharField(max_length=20, choices=RESOURCE_TYPES)
     tags = models.ManyToManyField(Tag, blank=True)
     reference = models.URLField()
-    # video_url = models.URLField(blank=True, null=True)
     video_url = models.CharField(max_length=20, blank=True, null=True)
     article_image = models.ImageField(upload_to="article_images/",
                                       blank=True, null=True)
-
-    # created_at = models.DateTimeField(auto_now_add=True)
-    # created_by = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
-
-    # Many-to-Many relationship with ArticleSection
     sections = models.ManyToManyField(
         "ArticleSection", blank=True, related_name="resources")
 
@@ -107,7 +107,9 @@ class Resource(models.Model):
 
 
 class ArticleSection(models.Model):
-    """"""
+    """
+    Creates the parts that builds the resource.
+    """
     SECTION_TYPES = [
         ("heading", "Heading"),
         ("paragraph", "Paragraph"),

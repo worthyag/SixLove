@@ -1799,7 +1799,7 @@ To implement the pages I needed to first gather the resources. I researched many
 
 ```python
 class Tag(models.Model):
-    """"""
+    # more code...
     RESOURCE_TAGS = [
         ("backhand", "Backhand"),
         ("forehand", "Forehand"),
@@ -1822,7 +1822,7 @@ class Tag(models.Model):
 
 
 class Resource(models.Model):
-    """"""
+    # more code...
     RESOURCE_TYPES = [
         ("video", "Video"),
         ("article", "Article")
@@ -1832,15 +1832,9 @@ class Resource(models.Model):
     resource_type = models.CharField(max_length=20, choices=RESOURCE_TYPES)
     tags = models.ManyToManyField(Tag, blank=True)
     reference = models.URLField()
-    # video_url = models.URLField(blank=True, null=True)
     video_url = models.CharField(max_length=20, blank=True, null=True)
     article_image = models.ImageField(upload_to="article_images/",
                                       blank=True, null=True)
-
-    # created_at = models.DateTimeField(auto_now_add=True)
-    # created_by = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
-
-    # Many-to-Many relationship with ArticleSection
     sections = models.ManyToManyField(
         "ArticleSection", blank=True, related_name="resources")
 
@@ -1850,7 +1844,9 @@ class Resource(models.Model):
 
 
 class ArticleSection(models.Model):
-    """"""
+    """
+    Creates the parts that builds the resource.
+    """
     SECTION_TYPES = [
         ("heading", "Heading"),
         ("paragraph", "Paragraph"),
@@ -1875,7 +1871,7 @@ class ArticleSection(models.Model):
             {self.content[:20] if self.content else 'No Content'}"
 
 ```
-**Code Snippet 13** The ...<br>
+**Code Snippet 13** The `Tag`, `Resource`, and `ArticleSection` models.<br>
 <br>
 
 ## 4.3 The `planner` app
