@@ -66,6 +66,17 @@ class CommentForm(forms.ModelForm):
         }
 
 
+class EditProfileForm(forms.ModelForm):
+    """
+    Creates a user profile for the user.
+    """
+
+    class Meta:
+        model = UserProfile
+        fields = ['username', 'profile_name',
+                  'profile_picture', 'bio']
+
+
 class EditUsernameForm(forms.ModelForm):
     """
     Enables the user to update their username.
@@ -73,6 +84,7 @@ class EditUsernameForm(forms.ModelForm):
     class Meta:
         model = UserProfile
         fields = ['username']
+
 
 class EditBioForm(forms.ModelForm):
     """
@@ -82,6 +94,7 @@ class EditBioForm(forms.ModelForm):
         model = UserProfile
         fields = ['bio']
 
+
 class EditProfilePictureForm(forms.ModelForm):
     """
     Enables the user to update their profile picture.
@@ -89,6 +102,7 @@ class EditProfilePictureForm(forms.ModelForm):
     class Meta:
         model = UserProfile
         fields = ['profile_picture']
+
 
 class EditProfileNameForm(forms.ModelForm):
     """
