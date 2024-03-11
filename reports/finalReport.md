@@ -4244,21 +4244,21 @@ async function viewPost(url, infoDiv, index) {
 <br>
 
 
-The last thing that I implemented was the achievements system. I have already shown the models for it and the code that displays an achievement to the user, however there was much more to the functionality. The way that the system works is that a user gets achievements (awards) when they complete certain actions. Figures # to # displays the actions that need to be met by the user and the award they achieve.
+The last thing that I implemented was the achievements system. I have already shown the models for it and the code that displays an achievement to the user, however there was much more to the functionality. The way that the system works is that a user gets achievements (awards) when they complete certain actions. **Figures 107** to **109** displays the actions that need to be met by the user and the award they achieve.
 
 <figure>
 	<img style="border: 1px solid #00000033;" title="" src="./images/award-rules-1.png" alt="" data-align="center">
-        <figcaption><strong>Figure #</strong> The achievements and the actions needed to get them (1)</figcaption>
+        <figcaption><strong>Figure 107</strong> The achievements and the actions needed to get them (1)</figcaption>
 </figure><br><br>
 
 <figure>
 	<img style="border: 1px solid #00000033;" title="" src="./images/award-rules-2.png" alt="" data-align="center">
-        <figcaption><strong>Figure #</strong> The achievements and the actions needed to get them (2)</figcaption>
+        <figcaption><strong>Figure 108</strong> The achievements and the actions needed to get them (2)</figcaption>
 </figure><br><br>
 
 <figure>
 	<img style="border: 1px solid #00000033;" title="" src="./images/award-rules-3.png" alt="" data-align="center">
-        <figcaption><strong>Figure #</strong> The achievements and the actions needed to get them (3)</figcaption>
+        <figcaption><strong>Figure 109</strong> The achievements and the actions needed to get them (3)</figcaption>
 </figure><br><br>
 
 <figure>
@@ -4268,11 +4268,11 @@ The last thing that I implemented was the achievements system. I have already sh
 
 
 The purpose of the achievements system is to motivate users and help them stay connected. In order for the achievements to be awarded I had to make use of Django signals. I used them to trigger specific functions whenever a user made a particular action. In order to complete the functionality for the achievements I created the following files:
-- `utils.py` (refer to **figure 107**)
+- `utils.py` (refer to **figure 110**)
     - The helper functions I created to use in the `signals.py` file.
-- `signals.py` (refer to **figure 108**)
+- `signals.py` (refer to **figure 111**)
     - Checks whether certain actions have occured.
-- modified `app.py` (refer to **figure 109**)
+- modified `app.py` (refer to **figure 112**)
     - The `ready` function connects the signal handlers so that they are registered when the SixLove starts.
 
 
@@ -4454,7 +4454,7 @@ def award_achievement(user_profile, award_category, name, level):
     print(f"Achievement Awarded: {achievement}")
 
 ```
-**Figure 107** The `utils.py` file.<br>
+**Figure 110** The `utils.py` file.<br>
 
 <br>
 
@@ -4527,7 +4527,7 @@ def check_follow_achievements(sender, instance, **kwargs):
                       "Followers Count",
                       [1, 2, 5, 10])
 ```
-**Figure 108** The `signals.py` file.<br>
+**Figure 111** The `signals.py` file.<br>
 
 <br>
 
@@ -4538,7 +4538,7 @@ class CommunityConfig(AppConfig):
     def ready(self):
         import community.signals
 ```
-**Figure 109** The modified `app.py` file.<br>
+**Figure 113** The modified `app.py` file.<br>
 
 <br>
 
@@ -4558,7 +4558,7 @@ _Testing the code._
 
 _The app that focuses on the user._
 
-Once I finished a significant portion of the `registration` app functionality. I wrote some unit tests. The `test_existing_user_can_logout()` test displayed in **code snippet 17** allowed me to realise that there was a problem with when my page redirects. The page was only redirecting due to line of code displayed in **code snippet 16**.
+Once I finished a significant portion of the `registration` app functionality. I wrote some unit tests. The `test_existing_user_can_logout()` test displayed in **figure 113** allowed me to realise that there was a problem with when my page redirects. The page was only redirecting due to line of code displayed in **figure 114**.
 
 ```html
 <form style="margin-top: 24px;" method="post" 
@@ -4566,7 +4566,7 @@ action="{% url 'logout' %}?next={% url 'home' %}">
 </form>
 ```
 
-**Code Snippet 16** Previous code.<br>
+**Figure 113** Previous code.<br>
 
 <br>
 
@@ -4584,11 +4584,11 @@ def test_existing_user_can_logout(self):
         self.assertRedirects(response, reverse("home"))
 ```
 
-**Code Snippet 17** The `test_existing_user_can_logout()` test.<br>
+**Figure 114** The `test_existing_user_can_logout()` test.<br>
 
 <br>
 
-I wanted to keep redirection functionality outside of the templates, therefore I didn't want to use `next` since it is set in the template. In addition, it wasn’t producing the redirection code (302)- and so was producing an error, because technically it wasn’t redirecting. I solved this issue by adding the line of code in **code snippet 9**, and removing the `?next={% url 'home' %}` from **code snippet 16**. **Code snippet 18** displays some of the other unit testing that I did for the `registration` app.
+I wanted to keep redirection functionality outside of the templates, therefore I didn't want to use `next` since it is set in the template. In addition, it wasn’t producing the redirection code (302)- and so was producing an error, because technically it wasn’t redirecting. I solved this issue by adding the line of code in **Figure 84**, and removing the `?next={% url 'home' %}`. **Figure 115** displays some of the other unit testing that I did for the `registration` app.
 
 ```python
 ...
@@ -4697,7 +4697,7 @@ class RegistrationUserAuthenticationTests(TestCase):
         self.assertEqual(response.status_code, 200)
 ```
 
-**Code Snippet 18** Tests for the `registration` app.<br>
+**Figure 115** Tests for the `registration` app.<br>
 
 <br>
 
@@ -4705,7 +4705,7 @@ class RegistrationUserAuthenticationTests(TestCase):
 
 _The app that houses the learning resources and tennis sessions._
 
-For the `tennis` app it was important for me to test the functionality of the tennis sessions. The unit tests can be seen in **code snippet 19**. I began the tests however by testing whether certain messages were displayed to the user since I wrote those tests as I was going along. I then tested the add, edit, and delete functionality that can be seen in the code snippet.
+For the `tennis` app it was important for me to test the functionality of the tennis sessions. The unit tests can be seen in **figure 116**. I began the tests however by testing whether certain messages were displayed to the user since I wrote those tests as I was going along. I then tested the add, edit, and delete functionality that can be seen in the code snippet.
 
 ```python
 ...
@@ -4856,7 +4856,7 @@ class DeleteTennisSessionViewTest(TestCase):
         self.assertEqual(response.status_code, 302)
 ```
 
-**Code Snippet 19** Tests for the `tennis` app.<br>
+**Figure 116** Tests for the `tennis` app.<br>
 
 <br>
 
@@ -4864,7 +4864,7 @@ class DeleteTennisSessionViewTest(TestCase):
 
 _The app that houses the calendar._
 
-In terms of the `planner` app it was imperative that I tested that the page loaded without error, and that users were able to use the calendar to add, edit, view, and delete tennis sessions. I also had to ensure that those changes were in fact reflected in the database. **Code snippet 20** displays the unit tests that I conducted.
+In terms of the `planner` app it was imperative that I tested that the page loaded without error, and that users were able to use the calendar to add, edit, view, and delete tennis sessions. I also had to ensure that those changes were in fact reflected in the database. **figure 117** displays the unit tests that I conducted.
 
 ```python
 ...
@@ -4986,7 +4986,7 @@ class CalendarViewTest(TestCase):
         self.assertEqual(response.status_code, 400)
 ```
 
-**Code Snippet 20** Tests for the `planner` app.<br>
+**Figure 118** Tests for the `planner` app.<br>
 
 <br>
 
@@ -4994,7 +4994,7 @@ class CalendarViewTest(TestCase):
 
 _The app that connects users._
 
-Testing was essential for the community since there was a lot of complex functionality. **Code snippet 21** displays the unit tests that I conducted.
+Testing was essential for the community since there was a lot of complex functionality. **Figure 119** displays the unit tests that I conducted.
 
 ```python
 ...
@@ -5075,7 +5075,7 @@ class CommunityViewsTest(TestCase):
         self.assertEqual(response.status_code, 200)
 
 ```
-**Code Snippet 21** Tests for the `community` app.<br>
+**Figure 119** Tests for the `community` app.<br>
 
 <br>
 
@@ -5084,20 +5084,20 @@ class CommunityViewsTest(TestCase):
 _Where my head is currently at._
 
 Based on the Goals Accomplised metric discussed in [section 3.3.3](#333-goals-accomplished), my project got the following results:
-- Aims Completion Evaluated (refer to **figure #**).
+- Aims Completion Evaluated (refer to **figure 120**).
     - 34/36 = 94% complete.
-- Objectives Completition Evaluated (refer to **figure #**).
+- Objectives Completition Evaluated (refer to **figure 121**).
     - 33/36 = 92% complete.
 
 
 <figure>
 	<img title="" src="./images/aims-evaluation-evaluated.png" alt="" data-align="center">
-        <figcaption><strong>Figure #</strong> Aims Completition Evaluated</figcaption>
+        <figcaption><strong>Figure 120</strong> Aims Completition Evaluated</figcaption>
 </figure><br><br>
 
 <figure>
 	<img title="" src="./images/objectives-evaluation-evaluated.png" alt="" data-align="center">
-        <figcaption><strong>Figure #</strong> Objectives Completition Evaluated</figcaption>
+        <figcaption><strong>Figure 121</strong> Objectives Completition Evaluated</figcaption>
 </figure><br><br>
 
 In terms of the _Aims Completion Evaluation_, I lost points on the first and fifth aims. This is because though I added measures to create a structured training program, there is still a lot of room for improvement. I also didn't finish implementing the joint sessions. To be fair, I implemented it, but due to already having data in the `TennisSessions` table and other problems that Django was shouting about, I put it aside. In order to implement it, I would have had to delete, recreate, and repopulate the database which I wasn't willing to do so close to submission. Going forward, I would use a different method to implement joint sessions (I used a many-to-many attribute in the model). I lost points on the _Objectives Completion Evaluation_ for the same reasons.
