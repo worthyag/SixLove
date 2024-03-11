@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from django.urls import reverse
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login
 from django.utils import timezone
@@ -8,6 +9,7 @@ from django.db.models import Exists, OuterRef, Q, Count, Max, F
 # from django.contrib.auth import login, authenticate
 
 from tennis import models as TennisModels
+from community import models as CommunityModels
 
 from .forms import CustomUserCreationForm
 # Create your views here.
@@ -217,8 +219,10 @@ def signup(request):
 
         if form.is_valid():
             user = form.save()
+            user_profile, created = CommunityModels.UserProfile.objects.get_or_create(
+                user=user)
             login(request, user)
-            return redirect("home")
+            return redirect(reverse("community:profile"))
     # Else a signup form is created.
     else:
         form = CustomUserCreationForm()

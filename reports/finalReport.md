@@ -1202,8 +1202,10 @@ def signup(request):
 
         if form.is_valid():
             user = form.save()
+            user_profile, created = CommunityModels.UserProfile.objects.get_or_create(
+                user=user)
             login(request, user)
-            return redirect("home")
+            return redirect(reverse("community:profile"))
     # Else a signup form is created.
     else:
         form = CustomUserCreationForm()
@@ -1225,7 +1227,9 @@ def user_login(request):
         form = AuthenticationForm(request, request.POST)
 
         if form.is_valid():
-            # The same as the signup view.
+            user = form.get_user()
+            login(request, user)
+            return redirect("home")
     # Else a login form is created.
     else:
         form = AuthenticationForm()
