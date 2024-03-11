@@ -147,12 +147,12 @@ Users that this project was conceptualised for- include but are not limited to:
 
 <figure>
     <img style="border: 1px solid #00000033;" title="" src="./images/solution-2.png" alt="" data-align="center"
-        <figcaption><strong>Figure 4</strong> Tennis Enthusiast User Persona</figcaption>
+        <figcaption><strong>Figure 5</strong> Tennis Enthusiast User Persona</figcaption>
 </figure><br><br>
 
 <figure>
     <img title="" src="./images/solution-3.png" alt="" data-align="center">
-        <figcaption><strong>Figure 4</strong> Potential SixLove Solution</figcaption>
+        <figcaption><strong>Figure 6</strong> Potential SixLove Solution</figcaption>
 </figure><br><br>
 
 
@@ -161,47 +161,58 @@ Users that this project was conceptualised for- include but are not limited to:
 
 **Figure 7** displays a persona for a user within the `fitness enthusiast` category, this person is in their mid 30s to 50s and is learning tennis to lose weight and implement healthy practices into their lives.
 
-<img title="" src="./images/user-persona-4.png" alt="" data-align="center">
+<figure>
+    <img title="" src="./images/user-persona-4.png" alt="" data-align="center">
+        <figcaption><strong>Figure 7</strong> Fitness Enthusiast User Persona</figcaption>
+</figure><br><br>
 
-**Figure 7** Fitness Enthusiast User Persona <br><br>
-
-<img title="" src="./images/solution-4.png" alt="" data-align="center">
-
-**Figure 8** Potential SixLove Solution <br><br>
+<figure>
+    <img title="" src="./images/solution-4.png" alt="" data-align="center">
+        <figcaption><strong>Figure 8</strong> Potential SixLove Solution</figcaption>
+</figure><br><br>
 
 ### 1.3.4 Aspiring Amateur Tennis Competitors
 
 **Figure 9** displays a persona for a user within the `aspiring amateur tennis competitor` category, this person is in her early teens and is learning tennis to either become a professional tennis player or earn a tennis scholarship for university.
 
-<img title="" src="./images/user-persona-5.png" alt="" data-align="center">
+<figure>
+    <img title="" src="./images/user-persona-5.png" alt="" data-align="center">
+        <figcaption><strong>Figure 9</strong> Aspiring Amateur Tennis Competitors User Persona</figcaption>
+</figure><br><br>
 
-**Figure 9** Aspiring Amateur Tennis Competitors User Persona <br><br>
+<figure>
+    <img title="" src="./images/solution-5.png" alt="" data-align="center">
+        <figcaption><strong>Figure 10</strong> Potential SixLove Solution</figcaption>
+</figure><br><br>
 
-<img title="" src="./images/solution-5.png" alt="" data-align="center">
-
-**Figure 10** Potential SixLove Solution <br><br>
 
 ### 1.3.5 Other Potential Users
 
 **Figure 11** displays a persona for a user within the `parent of young player` category, this person is a dad that has a very young child that is interested in playing tennis, the child watches the sport, and dreams of becoming a tennis player. The dad wants to be able to have all his child's tennis needs in one place, and want positive feedback / reinforcement for his child when completing tennis sessions.
 
-<img title="" src="./images/user-persona-6.png" alt="" data-align="center">
+<figure>
+    <img title="" src="./images/user-persona-6.png" alt="" data-align="center">
+        <figcaption><strong>Figure 11</strong> Other Potential Users User Persona</figcaption>
+</figure><br><br>
 
-**Figure 11** Other Potential Users User Persona <br><br>
+<figure>
+    <img title="" src="./images/solution-6.png" alt="" data-align="center">
+        <figcaption><strong>Figure 12</strong> Potential SixLove Solution</figcaption>
+</figure><br><br>
 
-<img title="" src="./images/solution-6.png" alt="" data-align="center">
-
-**Figure 12** Potential SixLove Solution <br><br>
 
 **Figure 13** displays a persona for a user within the `busy professional category`, this person is in their 40s to 50s and is learning tennis to stay in shape and because they have always wanted to learn it.
 
-<img title="" src="./images/user-persona-7.png" alt="" data-align="center">
+<figure>
+    <img title="" src="./images/user-persona-7.png" alt="" data-align="center">
+        <figcaption><strong>Figure 13</strong> Other Potential Users User Persona</figcaption>
+</figure><br><br>
 
-**Figure 13** Other Potential Users User Persona <br><br>
+<figure>
+    <img title="" src="./images/solution-7.png" alt="" data-align="center">
+        <figcaption><strong>Figure 14</strong> Potential SixLove Solution</figcaption>
+</figure><br><br>
 
-<img title="" src="./images/solution-7.png" alt="" data-align="center">
-
-**Figure 14** Potential SixLove Solution <br><br>
 
 There are of course other potential users or other ways to group the users, but the personas in [section 1.3](#sixloves-users) provide good examples of SixLove's target audiences.
 
