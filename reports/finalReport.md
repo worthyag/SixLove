@@ -3266,7 +3266,7 @@ def profile_settings(request):
     request_profile = models.UserProfile.objects.get(user=request.user)
 
     # Initialising new forms.
-    profile_form = forms.UserProfileForm(instance=request_profile)
+    profile_form = forms.EditProfileForm(instance=request_profile)
     username_form = forms.EditUsernameForm(instance=request_profile)
     name_form = forms.EditProfileNameForm(instance=request_profile)
     bio_form = forms.EditBioForm(instance=request_profile)
@@ -3274,7 +3274,7 @@ def profile_settings(request):
 
     if request.method == 'POST':
         if "edit-profile" in request.POST:
-            profile_form = forms.UserProfileForm(request.POST,
+            profile_form = forms.EditProfileForm(request.POST,
                                                  request.FILES,
                                                  instance=request_profile)
 
