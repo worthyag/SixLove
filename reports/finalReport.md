@@ -2413,15 +2413,15 @@ Once I completed most of the calendar functionality, I wrote some unit tests tha
 ## 4.4 The `community` app
 _Implementing the social aspect._
 
-The last app I implemented was the `community` app. The goal of this app was add social features to the app. This app enables users to do the following:
-- Follow/unfollow other users.
+The last app I implemented was the `community` app. The goal of this app was to add social features to the SixLove. This app enables users to do the following:
+- Follow / unfollow other users.
 - View the profiles of other users.
 - Create, edit, view, and delete posts.
 - View their achievements / awards.
 - Interact with their posts and others.
     - Like posts.
     - Comment on posts.
-- Create, and edit a user profile.
+- Create and edit a user profile.
 - Connect with other users.
 
 The `community` app has the following pages:
@@ -2432,8 +2432,217 @@ The `community` app has the following pages:
 - Settings
 - User
 
-### 4.4.1 The profile page
+I began by creating the following models:
+- `UserProfile`
+    - Each user can create one `userprofile` which is then used to store all their activity and data necessary for the `community` app.
+- `UserPosts`
+    - Used to create posts, its stores data pertaining to post interaction and creation.
+- `Follow`
+    - Houses the relationship between users.
+- `Like`
+    - Stores data about a like such as the post, the user, and the date.
+- `Comment`
+    - Stores data about a comment such as the post, the user, and the date.
+- `AchievementCategory`
+    - The achievement category used by the `Achievement` model.
+- `Achievement`
+    - Used to create achievements, it stores the date recieved, the `userprofile` (and so user) it was awarded to, and many other things.
 
+What the models consist of is displayed in **Code Snippet 23**.
+
+```python
+from django.db import models
+from django.contrib.auth import get_user_model
+from django.utils import timezone
+
+# Create your models here.
+
+
+class UserProfile(models.Model):
+    """"""
+    user = models.OneToOneField(get_user_model(), on_delete=models.CASCADE)
+    profile_picture = models.ImageField(
+        upload_to='profile_pics/',
+        default='./community/images/profile-pic-temp.png'
+    )
+    bio = models.TextField(blank=True)
+    username = models.CharField(max_length=50)
+    profile_name = models.CharField(max_length=50)
+
+    # Represents the many-to-many relationships between users for followers and following.
+    # Allows me to retrieve the set of users who are followers and whom a user is following.
+    followers = models.ManyToManyField(
+        'self', symmetrical=False, related_name='followers_set', blank=True)
+    following = models.ManyToManyField(
+        'self', symmetrical=False, related_name='following_set', blank=True)
+
+    def __str__(self):
+        return self.username
+
+    def follow(self, user_to_follow):
+        """"""
+        self.following.add(user_to_follow)
+        user_to_follow.followers.add(self)
+
+    def unfollow(self, user_to_unfollow):
+        """"""
+        self.following.remove(user_to_unfollow)
+        user_to_unfollow.followers.remove(self)
+
+    def toggle_follow(self, other_user_profile):
+        """"""
+        if self.following.filter(id=other_user_profile.id).exists():
+            self.unfollow(other_user_profile)
+            return False
+        else:
+            self.follow(other_user_profile)
+            return True
+
+    # Dynamically get the follower count.
+    def get_followers_count(self):
+        """"""
+        return self.followers.count()
+
+    # Dynamically get the following count.
+    def get_following_count(self):
+        """"""
+        return self.following.count()
+
+
+class Follow(models.Model):
+    """"""
+    follower = models.ForeignKey(
+        UserProfile, related_name="followed_by", on_delete=models.CASCADE)
+    followed = models.ForeignKey(
+        UserProfile, related_name="following_user", on_delete=models.CASCADE)
+
+    def __str__(self):
+        return f'{self.follower} follows {self.followed}'
+
+
+class UserPosts(models.Model):
+    """"""
+    user_profile = models.ForeignKey(
+        UserProfile, on_delete=models.CASCADE, related_name='user_posts')
+    post_picture = models.ImageField(
+        upload_to='post_pics/'
+    )
+    post_caption = models.TextField()
+    created_at = models.DateTimeField(default=timezone.now)
+    likes = models.ManyToManyField(
+        'Like',
+        related_name='post_likes')
+    comments = models.ManyToManyField(
+        'Comment',
+        related_name='post_comments')
+
+    def __str__(self):
+        return f"{self.user_profile.username}'s post - {self.created_at}"
+
+    def delete(self, *args, **kwargs):
+        """"""
+        # Deleting the associated picture when the post is deleted.
+        try:
+            storage, path = self.post_picture.storage, self.post_picture.path
+            super(UserPosts, self).delete(*args, **kwargs)
+            storage.delete(path)
+        except FileNotFoundError:
+            print("File does not exist.")
+
+
+    def toggle_like(self, user_profile):
+        """Toggle like on the post."""
+        like_instance, created = Like.objects.get_or_create(
+            user_profile=user_profile,
+            post=self
+        )
+
+        if created:
+            self.likes.add(like_instance)
+            liked = True
+        else:
+            like_instance.delete()
+            self.likes.remove(like_instance)
+            liked = False
+
+        return liked
+
+    def comment(self, user_profile, content):
+        """"""
+        comment_instance = Comment.objects.create(
+            user_profile=user_profile,
+            post=self,
+            content=content
+        )
+
+        self.comments.add(comment_instance)
+
+    def remove_comment(self, comment_instance):
+        """"""
+        if comment_instance in self.comments.all():
+            comment_instance.delete()
+            self.comments.remove(comment_instance)
+
+    def get_like_count(self):
+        """"""
+        return self.likes.count()
+
+    def get_comment_count(self):
+        """"""
+        return self.comments.count()
+
+
+class Like(models.Model):
+    """"""
+    user_profile = models.ForeignKey(UserProfile, on_delete=models.CASCADE)
+    post = models.ForeignKey(UserPosts, on_delete=models.CASCADE)
+    created_at = models.DateTimeField(default=timezone.now)
+
+    def __str__(self):
+        return f"{self.user_profile.username} likes {self.post.user_profile.username}'s post"
+
+
+class Comment(models.Model):
+    """"""
+    user_profile = models.ForeignKey(UserProfile, on_delete=models.CASCADE)
+    post = models.ForeignKey(UserPosts, on_delete=models.CASCADE)
+    content = models.TextField()
+    created_at = models.DateTimeField(default=timezone.now)
+
+    def __str__(self):
+        return f"{self.user_profile.username}'s comment on {self.post.user_profile.username}'s post"
+
+
+class AchievementCategory(models.Model):
+    """"""
+    name = models.CharField(max_length=255)
+    description = models.TextField()
+    image = models.ImageField(upload_to='achievement_images/',
+                              blank=True, null=True)
+
+    def __str__(self):
+        return self.name
+
+
+class Achievement(models.Model):
+    """"""
+    user_profile = models.ForeignKey("UserProfile", on_delete=models.CASCADE)
+    category = models.ForeignKey(AchievementCategory, on_delete=models.CASCADE)
+    name = models.CharField(max_length=255)
+    description = models.TextField()
+    level = models.PositiveIntegerField()
+    completed_at = models.DateTimeField(default=timezone.now)
+
+    class Meta:
+        # Adding a unique constraint based on the user_profile, category, and level.
+        unique_together = ['user_profile', 'category', 'level']
+
+    def __str__(self):
+        return f"{self.user_profile.username} - {self.category.name} - {self.name} (Level {self.level})"
+```
+
+
+### 4.4.1 The profile page
 
 ### 4.4.2 The feed page
 ### 4.4.3 The user page
