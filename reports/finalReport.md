@@ -1793,6 +1793,9 @@ A **view** in Django is the user interface (UI). More specifically, it is a "_ha
 A **template** in Django is a "_file that defines the structure of the UI_" [23]. It can be a file of any type, though in this project I have used HTML files. Templates are able to receive data from the view and render it to the UI.
 
 ### 4.2.3 The learn and resource pages
+The last pages to implement were the learn and resource pages (refer to figures # and #). The whole purpose of the learn page was to provide users with resources to aid their tennis training. Novice LP (and TNLP) are simple in nature and do not require expert supervision, however there are many things in tennis that would require a novice to further research.
+
+To implement the pages I needed to first gather the resources. I researched many APIs but none of them had the features that I needed (they mostly consisted of live match scores and court locators rather than training tips). Therefore I decided to gather my own resources to ensure that they were suitable to the app. I didn't want to simple create static pages with data, as I wanted the users to be able to search through and filter the resources. To achieve this I created two models: `Tag` and `Resource`.
 
 ## 4.3 The `planner` app
 
