@@ -3889,8 +3889,10 @@ The last thing that I implemented was the achievements system. I have already sh
 </figure><br><br>
 
 The purpose of the achievements system is to motivate users and help them stay connected. In order for the achievements to be awarded I had to make use of Django signals. I used them to trigger specific functions whenever a user made a particular action. In order to complete the functionality for the achievements I created the following files:
-- `signals.py`
 - `utils.py`
+    - The helper functions I created to use in the `signals.py` file.
+- `signals.py`
+    - Checks whether certain actions have occured.
 - `context_processors.py`
 - modified `app.py`
 - modified `settings.py`
@@ -3898,14 +3900,14 @@ The purpose of the achievements system is to motivate users and help them stay c
 
 ```python
 ```
-**Code Snippet 41** The `signals.py` file.<br>
+**Code Snippet 41** The `utils.py` file.<br>
 
 <br>
 
 
 ```python
 ```
-**Code Snippet 42** The `utils.py` file.<br>
+**Code Snippet 42** The `signals.py` file.<br>
 
 <br>
 
