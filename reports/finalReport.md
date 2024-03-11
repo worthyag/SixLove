@@ -3866,7 +3866,29 @@ The following are the scripts that I wrote to accompany some of the templates:
 - `toggle-posts.js`
 - `view-posts`
 
-The last thing that I implemented was the achievements system. I have already shown the models for it and the code that displays an achievement to the user, however there was much more to the functionality. The way that the system works is that a user gets achievements (awards) when they complete certain actions.
+The last thing that I implemented was the achievements system. I have already shown the models for it and the code that displays an achievement to the user, however there was much more to the functionality. The way that the system works is that a user gets achievements (awards) when they complete certain actions. Figures # to # displays the actions that need to be met by the user and the award they achieve.
+
+<figure>
+	<img style="border: 1px solid #00000033;" title="" src="./images/award-rules-1.png" alt="" data-align="center">
+        <figcaption><strong>Figure #</strong> The achievements and the actions needed to get them (1)</figcaption>
+</figure><br><br>
+
+<figure>
+	<img style="border: 1px solid #00000033;" title="" src="./images/award-rules-2.png" alt="" data-align="center">
+        <figcaption><strong>Figure #</strong> The achievements and the actions needed to get them (2)</figcaption>
+</figure><br><br>
+
+<figure>
+	<img style="border: 1px solid #00000033;" title="" src="./images/award-rules-3.png" alt="" data-align="center">
+        <figcaption><strong>Figure #</strong> The achievements and the actions needed to get them (3)</figcaption>
+</figure><br><br>
+
+<figure>
+	<img style="border: 1px solid #00000033;" title="" src="./images/award-rules-4.png" alt="" data-align="center">
+        <figcaption><strong>Figure #</strong> The achievements and the actions needed to get them (4)</figcaption>
+</figure><br><br>
+
+
 
 In order to complete the functionality for the achievements I created the following files:
 - `signals.py`
