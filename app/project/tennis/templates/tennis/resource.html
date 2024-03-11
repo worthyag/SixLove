@@ -16,6 +16,7 @@
   {% elif resource.resource_type == "article" %}
     <img class="resource-img" src="/{{resource.article_image }}" alt="Article image">
 
+    <!-- If the resource is not a video do the following. -->
     {% if sections != None %}
       <div class="resource-content">
         <!-- Iterating through sections for articles -->

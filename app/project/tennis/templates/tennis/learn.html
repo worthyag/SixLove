@@ -45,6 +45,7 @@
     </div>
   </form>
   
+  <!-- Populating page with resource cards. -->
   <div class="resources">
     {% for resource in resources %}
     <a href="{% url 'tennis:resource' resource_id=resource.id %}">

@@ -1959,8 +1959,7 @@ I then created the django templates
 
 ```html
 <main id="learn">
-  <h2>Discover</h2>
-
+  <!-- More code... -->
   <!-- Search Form -->
   <form class="search-form" action="" method="get">
     <input type="text" name="resource-search" placeholder="Search resources" value="{{ search_query }}">
@@ -1976,21 +1975,7 @@ I then created the django templates
         <option value="fundamentals" {% if filter_option == 'fundamentals' %}selected{% endif %}>
           Fundamentals
         </option>
-        <option value="fitness" {% if filter_option == 'fitness' %}selected{% endif %}>
-          Fitness
-        </option>
-        <option value="stretch" {% if filter_option == 'stretch' %}selected{% endif %}>
-          Stretching
-        </option>
-        <option value="forehand" {% if filter_option == 'forehand' %}selected{% endif %}>
-          Forehand
-        </option>
-        <option value="backhand" {% if filter_option == 'backhand' %}selected{% endif %}>
-          Backhand
-        </option>
-        <option value="volley" {% if filter_option == 'volley' %}selected{% endif %}>
-          Volley
-        </option>
+        <!-- More options... -->
         <option value="slice" {% if filter_option == 'slice' %}selected{% endif %}>
           Slice
         </option>
@@ -1999,6 +1984,7 @@ I then created the django templates
     </div>
   </form>
   
+  <!-- Populating page with resource cards. -->
   <div class="resources">
     {% for resource in resources %}
     <a href="{% url 'tennis:resource' resource_id=resource.id %}">
@@ -2023,17 +2009,14 @@ I then created the django templates
 
 ```html
 <main id="resource">
-  <a class="back-btn" href="{% url 'tennis:learn' %}"
-    ><button>Back to Learn</button></a
-  >
-  <h1 class="resource-title">{{ title }}</h1>
-
+  <!-- More code... -->
   {% if resource %}
   {% if resource.resource_type == "video" %}
     <iframe class="resource-video" src="https://www.youtube.com/embed/{{ resource.video_url }}" frameborder="0"></iframe>
   {% elif resource.resource_type == "article" %}
     <img class="resource-img" src="/{{resource.article_image }}" alt="Article image">
 
+    <!-- If the resource is not a video do the following. -->
     {% if sections != None %}
       <div class="resource-content">
         <!-- Iterating through sections for articles -->
@@ -2056,14 +2039,7 @@ I then created the django templates
           {% endif %}
         {% endfor %}
       </div>
-    {% endif %}
-  {% endif %}
-  <a href="{{ resource.reference }}" target="_blank">
-    <p class="resource-link">Resource reference.</p>
-  </a>
-  {% else %}
-  <p>Resource does not exist.</p>
-  {% endif %}
+  <!-- More code... -->
 </main>
 ```
 **Code Snippet 16** The `resource` template.<br>
