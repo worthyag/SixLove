@@ -1354,8 +1354,7 @@ With that completed, I had written most of the functionality for user authentica
 
 ### 4.1.2 The home page
 
-The last implementation that I did for the `registration` app was creating a landing and stats page (refer to figures # and #). The code for this is in the home view which was shown in
-**Code snippet 3**. When the user is authenticated a stats page is shown, and when their not a landing page is shown.
+The last implementation that I did for the `registration` app was creating a landing and stats page (refer to **figures 47**, **48**, **51** and **52**). The code for this is in the home view which was shown in **figure 72**. When the user is authenticated a stats page is shown, and when their not a landing page is shown.
 
 The stats page is home to two charts (I built these charts using `Chart.js`). Chart 1 (doughnut) displays information about the number of tennis sessions a user has and chart 2 (line) displays information about the tennis sessions per month. Users can make use of these interactive charts to track their progress by doing some of the following things:
 - Compare the number of tennis sessions schedules for different categories.
@@ -1364,7 +1363,7 @@ The stats page is home to two charts (I built these charts using `Chart.js`). Ch
 - Track the number of tennis sessions scheduled across the year.
     - Filter for specific tennis session categories.
 
-Users can also hover over the charts for more information. **Code Snippet 5** displays the django template associated with the stats page. Data is passed from the home view to the template, the neccesary data is then extracted and fed to the `Chart` object.
+Users can also hover over the charts for more information. **Figure 74** displays the django template associated with the stats page. Data is passed from the home view to the template, the neccesary data is then extracted and fed to the `Chart` object.
 
 ```html
 <!-- First checking whether the user is authenticated. -->
@@ -1527,10 +1526,10 @@ Users can also hover over the charts for more information. **Code Snippet 5** di
   </script>
 </main>
 ```
-**Code Snippet 5** The `home - stats` html template.<br>
+**Figure 74** The `home - stats` html template.<br>
 <br>
 
-The landing page is home to a carousel that I built from scratch using HTML, SCSS, and JavaScript. The carousel provides potential users with information about the SixLove app, so that they can decide whether they want to sign up or not. The carousel is automated but users have the option to stop the slides and navigate using the buttons instead. **Code Snippets 6** and **7** display the logic for this.
+The landing page is home to a carousel that I built from scratch using HTML, SCSS, and JavaScript. The carousel provides potential users with information about the SixLove app, so that they can decide whether they want to sign up or not. The carousel is automated but users have the option to stop the slides and navigate using the buttons instead. **Figure 75** and **figure 76** display the logic for this.
 
 ```html
 <!-- If the user is not authenticated the following is displayed. -->
@@ -1566,7 +1565,7 @@ The landing page is home to a carousel that I built from scratch using HTML, SCS
 </main>
 {% endif %}
 ```
-**Code Snippet 6** The `home - landing` html template.<br>
+**Figure 75** The `home - landing` html template.<br>
 <br>
 
 ```javascript
@@ -1631,7 +1630,7 @@ function nextContent() {
     navDots[pos].classList.toggle('filled');
 }
 ```
-**Code Snippet 7** The `carousel.js` file.<br>
+**Figure 76** The `carousel.js` file.<br>
 <br>
 
 
