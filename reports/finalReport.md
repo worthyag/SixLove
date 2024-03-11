@@ -2451,13 +2451,6 @@ I began by creating the following models:
 What the models consist of is displayed in **Code Snippet 23**.
 
 ```python
-from django.db import models
-from django.contrib.auth import get_user_model
-from django.utils import timezone
-
-# Create your models here.
-
-
 class UserProfile(models.Model):
     """"""
     user = models.OneToOneField(get_user_model(), on_delete=models.CASCADE)
@@ -2640,6 +2633,130 @@ class Achievement(models.Model):
     def __str__(self):
         return f"{self.user_profile.username} - {self.category.name} - {self.name} (Level {self.level})"
 ```
+**Code Snippet 23** The `community` app models.<br>
+
+<br>
+
+Next, I created the following forms to go with the models:
+- `UserProfileForm`
+    - Enables users to craete a user profile.
+- `UserPostsForm`
+    - Used for creating posts.
+- `CommentForm`
+    - Used to create a comment.
+- `EditUsernameForm`
+    - Used by the settings page to update a user's username.
+- `EditBioForm`
+    - Used by the settings page to update a user's bio.
+- `EditProfilePictureForm`
+    - Used by the settings page to update a user's picture.
+- `EditProfileNameForm`
+    - Used by the settings page to update a user's profile name.
+
+
+A closer look of the forms can be seen in **Code Snippet 24**.
+
+```python
+class UserPostsForm(forms.ModelForm):
+    """
+    Creates (adds) / updates a user post to the database.
+    """
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['user_profile'].required = False
+        self.fields['post_picture'].required = False
+
+    class Meta:
+        model = UserPosts
+        fields = ['user_profile', 'post_picture', 'post_caption', 'created_at']
+
+        widgets = {
+            'user_profile': forms.HiddenInput(),
+            'created_at': forms.HiddenInput(),
+        }
+
+
+class UserProfileForm(forms.ModelForm):
+    """
+    Creates a user profile for the user.
+    """
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['user'].required = False
+        self.fields['followers'].required = False
+        self.fields['following'].required = False
+
+    class Meta:
+        model = UserProfile
+        fields = ['user', 'username', 'profile_name',
+                  'profile_picture', 'bio',
+                  'followers', 'following']
+
+        widgets = {
+            'user': forms.HiddenInput(),
+            'followers': forms.HiddenInput(),
+            'following': forms.HiddenInput(),
+        }
+
+
+class CommentForm(forms.ModelForm):
+    """"""
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['user_profile'].required = False
+        self.fields['post'].required = False
+
+    class Meta:
+        model = Comment
+        fields = ['user_profile', 'post', 'content']
+
+        widgets = {
+            'user_profile': forms.HiddenInput(),
+        }
+
+
+class EditUsernameForm(forms.ModelForm):
+    """
+    Enables the user to update their username.
+    """
+    class Meta:
+        model = UserProfile
+        fields = ['username']
+
+class EditBioForm(forms.ModelForm):
+    """
+    Enables the user to update their bio.
+    """
+    class Meta:
+        model = UserProfile
+        fields = ['bio']
+
+class EditProfilePictureForm(forms.ModelForm):
+    """
+    Enables the user to update their profile picture.
+    """
+    class Meta:
+        model = UserProfile
+        fields = ['profile_picture']
+
+class EditProfileNameForm(forms.ModelForm):
+    """
+    Enables the user to update their profile name.
+    """
+    class Meta:
+        model = UserProfile
+        fields = ['profile_name']
+```
+**Code Snippet 24** The `community` app forms.<br>
+
+<br>
+
+
+I then created the following views:
+
 
 
 ### 4.4.1 The profile page
