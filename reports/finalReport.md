@@ -3866,6 +3866,8 @@ The following are the scripts that I wrote to accompany some of the templates:
 - `toggle-posts.js`
 - `view-posts`
 
+The last thing that I implemented was the achievements system. I have already shown the models for it and the code that displays an achievement to the user, however there was much more to the functionality. The way that the system works is that a user gets achievements (awards) when they complete certain actions.
+
 In order to complete the functionality for the achievements I created the following files:
 - `signals.py`
 - `utils.py`
