@@ -3412,7 +3412,7 @@ def get_like_info(request, post_id):
 
 <br>
 
-Then, I created the following templates (refer to **Code Snippets 26** to **30**):
+Then, I created the following templates (refer to **Code Snippets 26** to **30**) to render an interface to the users:
 - `connect.html`
 - `feed.html`
 - `profile.html`
@@ -3792,19 +3792,86 @@ Then, I created the following templates (refer to **Code Snippets 26** to **30**
 <br>
 
 ```html
+<!-- More code... -->
+{% block scripts %}
+<script src="{% static './community/scripts/settings.js' %}" defer></script>
+{% endblock %}
+{% block content %}
+<main id="settings">
+  <div class="settings-header">
+    <a class="back-to-profile-btn" href="{% url 'community:profile' %}">
+      <img src="{% static './community/images/back-button-icon.svg' %}" alt="Profile Page">
+    </a>
+    <h2>Settings</h2>
+    <a><span class="not-visible"></span></a>
+  </div>
+  <div class="setting-options">
+    <div class="setting-block profile-settings-block">
+      <p>Edit profile</p>
+      <p class="arrow-right">></p>
+    </div>
+    <!-- More divs... -->
+    <div class="setting-block dp-settings-block">
+      <p>Edit profile picture</p>
+      <p class="arrow-right">></p>
+    </div>
+  </div>
+  <!-- Modal for editing a profile. -->
+  <!-- Modal for editing a user's username. -->
+  <!-- Modal for editing a user's profile name. -->
+  <!-- Modal for editing a user's bio. -->
+  <!-- Modal for editing a user's profile picture. -->
+  <!-- More code... -->
 ```
 **Code Snippet 29** The `settings.html` template.<br>
 
 <br>
 
 ```html
+<!-- More code... -->
+<script>
+  const toggleLikeUrl = "{% url 'community:toggle-like' post_id=0 %}".replace("0", "__post_id__");
+  const likeInfoUrl = "{% url 'community:get-like-info' post_id=0 %}".replace("0", "__post_id__");
+  const commentersProfileUrl = "{% url 'community:user' user_profile_id=0 %}"
+                                .replace("0", "__commenters_id__");
+  const toggleFollowUrl = "{% url 'community:toggle-follow' user_profile_id=0 %}"
+                          .replace("0", "__user_profile_id__");
+</script>
+<script src="{% static './community/scripts/toggle-like.js' %}" defer></script>
+<!-- More scripts... -->
+<script src="{% static './community/scripts/toggle-comment-form.js' %}" defer></script>
+{% endblock %}
+{% block content %}
+{% if user_profile %}
+<main id="profile">
+  <!-- Similar to the profile page but with an additional follow button. -->
+  <!-- Modals for viewing the post -->
+ </main>
+ <!-- More code... -->
 ```
 **Code Snippet 30** The `user.html` template.<br>
 
 <br>
 
 
-The following are the scripts to accompany some of the templates:
+The following are the scripts that I wrote to accompany some of the templates:
+- `create-post.js`
+- `create-profile.js`
+- `edit-delete-post.js`
+- `follow-unfollow.js`
+- `post-menu.js`
+- `settings.js`
+- `toggle-comment-form.js`
+- `toggle-like.js`
+- `toggle-posts.js`
+- `view-posts`
+
+In order to complete the functionality for the achievements I created the following files:
+- `signals.py`
+- `utils.py`
+- `context_processors.py`
+- modified `app.py`
+- modified `settings.py`
 
 
 
