@@ -2155,7 +2155,7 @@ The `planner` app has the following pages:
 
 - Calendar
 
-As mentioned earlier the `planner` app also allows user to add, edit, and delete tennis sessions, this is all facilitated through the interactive calendar that is located on the calendar page (**figures 31** to **35** display the calendar page).
+As mentioned earlier the `planner` app also allows user to add, edit, and delete tennis sessions, this is all facilitated through the interactive calendar that is located on the calendar page.
 
 I wanted users to be able to interact with the calendar. My aim was to build a calendar that allows users to do the following:
 
@@ -2167,7 +2167,7 @@ I wanted users to be able to interact with the calendar. My aim was to build a c
 
 I originally wanted to use the 'FullCalendar' javascript library to build the calendar, however I didn't want to deal with the licensing. I then decided to use the calendar python library, more specifically the HTMLCalendar. However, after reading the documentation, and researching other projects that had incorporated it, it did not feel right for this project.  Though I know that I could have built upon it, the library felt too limited. In the end, I decided to build a calendar from scratch myself, in order to focus on the things needed for SixLove. Building a calendar from scratch also allowed me to make alterations with ease- especially since I knew all the workings of it.
 
-I did not have to create a model for the `planner` app since it works with the models already created. Therefore I began by creating a simple view, so that I could begin working on the calendar itself. The first stage was to work on the logic for the calendar interface. At this stage, my goal was to build a calendar using HTML and CSS/SCSS, that displayed the date above it and a date picker beneath it. Once I hard coded the calendar, I then modified my code, to use javascript to dynamically render the calendar. I created a `buildCalendar()` function that rendered the calendar based on a specific date. **Code snippet 17** displays the most important parts of the function.
+I did not have to create a model for the `planner` app since it works with the models already created. Therefore I began by creating a simple view, so that I could begin working on the calendar itself. The first stage was to work on the logic for the calendar interface. At this stage, my goal was to build a calendar using HTML and CSS/SCSS, that displayed the date above it and a date picker beneath it. Once I hard coded the calendar, I then modified my code, to use javascript to dynamically render the calendar. I created a `buildCalendar()` function that rendered the calendar based on a specific date. **Figure 88** displays the most important parts of the function.
 
 ```javascript
 function buildCalendar() {
@@ -2231,11 +2231,11 @@ function buildCalendar() {
 }
 ```
 
-**Code Snippet 17** The `BuildCalendar` function.<br>
+**Figure 88** The `BuildCalendar` function.<br>
 
 <br>
 
-The next thing I did was add functionality to the arrows, so that the users could navigate to different months using the arrows. I also adding functionality to the date picker and the today button. **Code snippet 18** displays some of the code for that functionality.
+The next thing I did was add functionality to the arrows, so that the users could navigate to different months using the arrows. I also adding functionality to the date picker and the today button. **Figure 89** displays some of the code for that functionality.
 
 ```javascript
 function updateDatePicker() {
@@ -2278,11 +2278,11 @@ todayBtn.addEventListener("click", () => {
 // more code...
 ```
 
-**Code Snippet 18** Added functionality to the arrows, date picker and today button.<br>
+**Figure 89** Added functionality to the arrows, date picker and today button.<br>
 
 <br>
 
-Once the calendar was fully functional, the next stage was to incorporate the tennis sessions with the calendar. I began by creating a side panel (**code snippet 19**) and three modals (**code snippet 20**). The side panel displays the tennis sessions to the user when they click on a day (refer to **figure 31**)- though at this stage it just displayed the message "No tennis sessions scheduled", and the `add tennis session` button. The three modals refers to the `add session modal` (**figure 33**), the `edit session modal` (**figure 32**), and the `delete session modal` (**figure 34**). I incorporated the modals with the form created by the `TennisSessionForm` class previously written in order to communicate with the `TennisSession` database table with ease (though I did add some changes to the forms).
+Once the calendar was fully functional, the next stage was to incorporate the tennis sessions with the calendar. I began by creating a side panel (**figure 90**) and three modals (**figure 91**). The side panel displays the tennis sessions to the user when they click on a day - though at this stage it just displayed the message "No tennis sessions scheduled", and the `add tennis session` button. The three modals refers to the `add session modal` (**figure 33**), the `edit session modal` (**figure 32**), and the `delete session modal` (**figure 34**). I incorporated the modals with the form created by the `TennisSessionForm` class previously written in order to communicate with the `TennisSession` database table with ease (though I did add some changes to the forms).
 
 ```javascript
 function showSidePanel(day) {
@@ -2330,7 +2330,7 @@ function closeSidePanel() {
 }
 ```
 
-**Code Snippet 19** Side panel javascript functionality.<br>
+**Figure 90** Side panel javascript functionality.<br>
 
 <br>
 
@@ -2356,7 +2356,7 @@ function closeSidePanel() {
   </div>
 ```
 
-**Code Snippet 20** Edit modal HTML.<br>
+**Figure 91** Edit modal HTML.<br>
 
 <br>
 
