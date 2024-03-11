@@ -64,6 +64,7 @@ _Taking on the task of creating a tennis app that provides users with the tools 
     - [5.1.1 The `registration` app](#511-the-registration-app)
     - [5.1.2 The `tennis` app](#512-the-tennis-app)
     - [5.1.3 The `planner` app](#513-the-planner-app)
+    - [5.1.4 The `community` app](#514-the-community-app)
   - [5.2 Overall project evaluation](#52-overall-project-evaluation)
     - [5.2.1 Proposed changes](#521-proposed-changes)
 - [6 Conclusion](#6-conclusion)
@@ -4961,6 +4962,21 @@ class CommunityViewsTest(TestCase):
 _Where my head is currently at._
 
 Based on the aims and objectives of SixLove the project is about two thirds complete in terms of development, though most of the objectives and aims left to achieve centre around community and the UI. The UI aspect of the project is not very hefty (since most the planning and designing is done), it is just important that the UI is built with users and accessibility in mind. The UI will be developed iteratively taking user feedback and making appropriate changes. Therefore it seems that more time will be spent on the community aspect, which will not only result in the addition of another app, but will also reflect changes project wide. 
+
+<figure>
+	<img title="" src="./images/aims-evaluation-evaluated.png" alt="" data-align="center">
+        <figcaption><strong>Figure #</strong> Aims Completition Evaluated</figcaption>
+</figure><br><br>
+
+<figure>
+	<img title="" src="./images/objectives-evaluation-evaluated.png" alt="" data-align="center">
+        <figcaption><strong>Figure #</strong> Objectives Completition Evaluated</figcaption>
+</figure><br><br>
+
+<figure>
+	<img style="border: 1px solid #00000033;" title="" src="./images/feature-rank-chart-evaluated.png" alt="" data-align="center">
+        <figcaption><strong>Figure #</strong> Feature Evaluation Criteria</figcaption>
+</figure><br><br>
 
 ### 5.2.1 Proposed changes
 
