@@ -580,99 +580,107 @@ The wireframing and design in SixLove utilises a mobile first approach. This app
 
 **Figure 20** displays SixLove's profile page and settings page. This too is the 1st iteration. The figures highlights the decisions to be made between the two settings logo based on any user feedback.  The settings icon on the left seems to be a lot more intuitive, however the other icon is fairly prevalent in apps that are commonly used.
 
-<img title="" src="./images/profile-page-wireframe.png" alt="" data-align="center">
-
-**Figure 20** SixLove's profile and settings pages.<br><br>
+<figure>
+    <img title="" src="./images/profile-page-wireframe.png" alt="" data-align="center">
+        <figcaption><strong>Figure 20</strong> SixLove's profile and settings pages.</figcaption>
+</figure><br><br>
 
 **Figures 21 to 23** display SixLove's tennis program page. Each figure represents an iteration. **Figure 21** was the first iteration of the page and **figure 23** the most recent. The annotations on the figures themselves explain why certain changes were made, but in general the goal was to increase the accessibility of the design based on the user feedback. The `+` buttons in the day boxes of the calendar were brought about as a concern. Therefore the following iterations, were primarily focused on the size of input elements and making the app more accessible.
 
-<img title="" src="./images/tennis-page-wireframe-1.png" alt="" data-align="center">
+<figure>
+    <img title="" src="./images/tennis-page-wireframe-1.png" alt="" data-align="center">
+        <figcaption><strong>Figure 21</strong> SixLove's tennis program page (1st iteration).</figcaption>
+</figure><br><br>
 
-**Figure 21** SixLove's tennis program page (1st iteration).<br><br>
+<figure>
+    <img title="" src="./images/tennis-page-wireframe-2.png" alt="" data-align="center">
+        <figcaption><strong>Figure 22</strong> SixLove's tennis program page (2nd iteration).</figcaption>
+</figure><br><br>
 
-<img title="" src="./images/tennis-page-wireframe-2.png" alt="" data-align="center">
-
-**Figure 22** SixLove's tennis program page (2nd iteration).<br><br>
-
-<img title="" src="./images/tennis-page-wireframe-3.png" alt="" data-align="center">
-
-**Figure 23** SixLove's tennis program page (3rd iteration).<br><br>
+<figure>
+    <img title="" src="./images/tennis-page-wireframe-3.png" alt="" data-align="center">
+        <figcaption><strong>Figure 23</strong> SixLove's tennis program page (3rd iteration).</figcaption>
+</figure><br><br>
 
 **Figure 24** displays SixLove's learning resources page, the aim of this page is to be a hub of information for users so that SixLove can be a sort of one stop shop. It was found that many people prefer to have all their functionality is one place, rather than in many places. Providing users with this bundled functionality aids in increasing their user experience.
 
-<img title="" src="./images/learning-page-wireframe.png" alt="" data-align="center">
-
-**Figure 24** SixLove's learning resources page.<br><br>
+<figure>
+    <img title="" src="./images/learning-page-wireframe.png" alt="" data-align="center">
+        <figcaption><strong>Figure 24</strong> SixLove's learning resources page.</figcaption>
+</figure><br><br>
 
 **Figure 25** displays SixLove's history page. The design is quite elementary since it is in its first iteration. The goal of the page is to allow users to look at their past tennis sessions. But rather than just listing them there, a date input is provided so that they can filter for specific days. 
 
 *Side note: the history page will be scrapped in favour of the  calendar having its own page. The tennis page will no longer house the calendar, and history can be seen on both the calendar and tennis pages.
 
-<img title="" src="./images/history-page-wireframe.png" alt="" data-align="center">
-
-**Figure 25** SixLove's history page.<br><br>
+<figure>
+    <img title="" src="./images/history-page-wireframe.png" alt="" data-align="center">
+        <figcaption><strong>Figure 25</strong> SixLove's history page.</figcaption>
+</figure><br><br>
 
 **Figure 26** displays SixLove's feed page. This is an important part of the app. It was essential to hone in on the community aspect of sports and fitness. Community is something that is integral in our lives and impacts us greatly. It was found that people who were "_actively involved in initiatives utilising community engagement approaches experienced positive benefits, in terms of physical and emotional health and well-being, self-confidence, self-esteem, social relationships and individual empowerment_" [17]. Therefore incorporating community in a sports app seemed fitting.
 
-<img title="" src="./images/feed-page-wireframe.png" alt="" data-align="center">
+<figure>
+    <img title="" src="./images/feed-page-wireframe.png" alt="" data-align="center">
+        <figcaption><strong>Figure 26</strong> SixLove's feed page.</figcaption>
+</figure><br><br>
 
-**Figure 26** SixLove's feed page.<br><br>
 
-The next following figures (figures # to #) display SixLove's final iterations.
+The following figures (**figures 27** to **37**) display SixLove's final iterations.
 
 <figure>
     <img title="" src="./images/home-page-wireframe.png" alt="" data-align="center">
-        <figcaption><strong>Figure #</strong> Home Page</figcaption>
+        <figcaption><strong>Figure 27</strong> Home Page</figcaption>
 </figure><br><br>
 
 <figure>
     <img title="" src="./images/feed-page-wireframe2.png" alt="" data-align="center">
-        <figcaption><strong>Figure #</strong> Feed Page</figcaption>
+        <figcaption><strong>Figure 28</strong> Feed Page</figcaption>
 </figure><br><br>
 
 <figure>
     <img title="" src="./images/profile-page-wireframe2.png" alt="" data-align="center">
-        <figcaption><strong>Figure #</strong> Profile Page</figcaption>
+        <figcaption><strong>Figure 29</strong> Profile Page</figcaption>
 </figure><br><br>
 
 <figure>
     <img title="" src="./images/user-page-wireframe.png" alt="" data-align="center">
-        <figcaption><strong>Figure #</strong> User Page</figcaption>
+        <figcaption><strong>Figure 30</strong> User Page</figcaption>
 </figure><br><br>
 
 <figure>
     <img title="" src="./images/settings-page-wireframe.png" alt="" data-align="center">
-        <figcaption><strong>Figure #</strong> Settings Page</figcaption>
+        <figcaption><strong>Figure 31</strong> Settings Page</figcaption>
 </figure><br><br>
 
 <figure>
     <img title="" src="./images/calendar-page-wireframe.png" alt="" data-align="center">
-        <figcaption><strong>Figure #</strong> Calendar Page</figcaption>
+        <figcaption><strong>Figure 32</strong> Calendar Page</figcaption>
 </figure><br><br>
 
 <figure>
     <img title="" src="./images/learn-page-wireframe.png" alt="" data-align="center">
-        <figcaption><strong>Figure #</strong> Learn Page</figcaption>
+        <figcaption><strong>Figure 33</strong> Learn Page</figcaption>
 </figure><br><br>
 
 <figure>
     <img title="" src="./images/landing-page-wireframe.png" alt="" data-align="center">
-        <figcaption><strong>Figure #</strong> Landing Page</figcaption>
+        <figcaption><strong>Figure 34</strong> Landing Page</figcaption>
 </figure><br><br>
 
 <figure>
     <img title="" src="./images/tennis-page-wireframe.png" alt="" data-align="center">
-        <figcaption><strong>Figure #</strong> Tennis Page</figcaption>
+        <figcaption><strong>Figure 35</strong> Tennis Page</figcaption>
 </figure><br><br>
 
 <figure>
     <img title="" src="./images/connect-page-wireframe.png" alt="" data-align="center">
-        <figcaption><strong>Figure #</strong> Connect Page</figcaption>
+        <figcaption><strong>Figure 36</strong> Connect Page</figcaption>
 </figure><br><br>
 
 <figure>
     <img title="" src="./images/auth-pages-wireframe.png" alt="" data-align="center">
-        <figcaption><strong>Figure #</strong> Authentication Pages</figcaption>
+        <figcaption><strong>Figure 37</strong> Authentication Pages</figcaption>
 </figure><br><br>
 
 ### 3.1.2 Entity-Relationship Diagram
