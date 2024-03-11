@@ -685,7 +685,7 @@ The following figures (**figures 27** to **37**) display SixLove's final iterat
 
 ### 3.1.2 Entity-Relationship Diagram
 
- **Figure 27** displays the entities and relationships that the SixLove app will potentially / initially have. Here is a brief summary of some of the potential relationships:
+ **Figure 38** displays the entities and relationships that the SixLove app will potentially / initially have. Here is a brief summary of some of the potential relationships:
 
 - Each user can have multiple posts, followers, tennis sessions, and history entries.
 
@@ -699,19 +699,21 @@ The following figures (**figures 27** to **37**) display SixLove's final iterat
 
 - Each feed entry connects a user to a post.
 
-<img title="" src="./images/SixLoveER.png" alt="" data-align="center">
-
-**Figure 27** The project's Entity Relationship Diagram.<br><br>
+<figure>
+    <img title="" src="./images/SixLoveER.png" alt="" data-align="center">
+        <figcaption><strong>Figure 38</strong> The project's Entity Relationship Diagram.</figcaption>
+</figure><br><br>
 
 ### 3.1.3 Database Tables
 
 _The tables that will be turned into models._
 
-**Figure 28** displays a tabular version of the entity relation diagram, while highlighting the primary keys and foreign keys. It was important to establish a database schema earlier on in the process, since it can be altered further down the line, and the SixLove application relies heavily on data.
+**Figure 39** displays a tabular version of the entity relation diagram, while highlighting the primary keys and foreign keys. It was important to establish a database schema earlier on in the process, since it can be altered further down the line, and the SixLove application relies heavily on data.
 
-<img title="" src="images/SixLoveUML.png" alt="">
-
-**Figure 28** The project's UML Diagram.<br><br>
+<figure>
+    <img title="" src="images/SixLoveUML.png" alt="">
+        <figcaption><strong>Figure 39</strong> The project's UML Diagram.</figcaption>
+</figure><br><br>
 
 ### 3.1.4 SixLove Pages
 
