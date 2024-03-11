@@ -2297,7 +2297,7 @@ todayBtn.addEventListener("click", () => {
 
 <br>
 
-Once the calendar was fully functional, the next stage was to incorporate the tennis sessions with the calendar. I began by creating a side panel (**figure 92**) and three modals (**figure 93**). The side panel displays the tennis sessions to the user when they click on a day - though at this stage it just displayed the message "No tennis sessions scheduled", and the `add tennis session` button. The three modals refers to the `add session modal` (**figure 33**), the `edit session modal` (**figure 32**), and the `delete session modal` (**figure 34**). I incorporated the modals with the form created by the `TennisSessionForm` class previously written in order to communicate with the `TennisSession` database table with ease (though I did add some changes to the forms).
+Once the calendar was fully functional, the next stage was to incorporate the tennis sessions with the calendar. I began by creating a side panel (**figure 92**) and three modals (**figure 93**). The side panel displays the tennis sessions to the user when they click on a day - though at this stage it just displayed the message "No tennis sessions scheduled", and the `add tennis session` button. The three modals refers to the `add session modal`, the `edit session modal`, and the `delete session modal`. I incorporated the modals with the form created by the `TennisSessionForm` class previously written in order to communicate with the `TennisSession` database table with ease (though I did add some changes to the forms).
 
 ```javascript
 function showSidePanel(day) {
@@ -2375,7 +2375,7 @@ function closeSidePanel() {
 
 <br>
 
-I then had to make sure that the tennis session data was being sent to calendar page, and that the calendar view (**code snippet 21**) knew what to do depending on which modal was submitting the form. This logic was achieved through the use of a hidden id input that I added to the form. This meant that the calendar view knew which sessions to edit and which sessions to delete, though this wasn't necessary for adding tennis sessions.
+I then had to make sure that the tennis session data was being sent to calendar page, and that the calendar view (**figure 94**) knew what to do depending on which modal was submitting the form. This logic was achieved through the use of a hidden id input that I added to the form. This meant that the calendar view knew which sessions to edit and which sessions to delete, though this wasn't necessary for adding tennis sessions.
 
 ```python
 @login_required
@@ -2458,11 +2458,11 @@ def calendar(request):
     )
 ```
 
-**Code Snippet 21** The `calendar` view.<br>
+**Figure 94** The `calendar` view.<br>
 
 <br>
 
-With that, I wrote corresponding javascript code (**code snippet 22**) that provided the interactivity needed for the user to be able to add, edit, delete, and view their tennis sessions.
+With that, I wrote corresponding javascript code (**figure 95**) that provided the interactivity needed for the user to be able to add, edit, delete, and view their tennis sessions.
 
 ```javascript
 function editSession(sessionId) {
@@ -2512,7 +2512,7 @@ function addSession(day) {
 }
 ```
 
-**Code Snippet 22** The functionality for the modals.<br>
+**Figure 95** The functionality for the modals.<br>
 
 <br>
 
@@ -2557,7 +2557,7 @@ I began by creating the following models:
 - `Achievement`
     - Used to create achievements, it stores the date recieved, the `userprofile` (and so user) it was awarded to, and many other things.
 
-What the models consist of is displayed in **Code Snippet 23**.
+What the models consist of is displayed in **figure 96**.
 
 ```python
 class UserProfile(models.Model):
@@ -2742,7 +2742,7 @@ class Achievement(models.Model):
     def __str__(self):
         return f"{self.user_profile.username} - {self.category.name} - {self.name} (Level {self.level})"
 ```
-**Code Snippet 23** The `community` app models.<br>
+**Figure 96** The `community` app models.<br>
 
 <br>
 
@@ -2763,7 +2763,7 @@ Next, I created the following forms to go with the models:
     - Used by the settings page to update a user's profile name.
 
 
-A closer look of the forms can be seen in **Code Snippet 24**.
+A closer look of the forms can be seen in **figure 97**.
 
 ```python
 class UserPostsForm(forms.ModelForm):
@@ -2868,12 +2868,12 @@ class EditProfileNameForm(forms.ModelForm):
         model = UserProfile
         fields = ['profile_name']
 ```
-**Code Snippet 24** The `community` app forms.<br>
+**Figure 97** The `community` app forms.<br>
 
 <br>
 
 
-I then created the following views (refer to **Code Snippet 25**):
+I then created the following views (refer to **figure 98**):
 - `connect`
     - Provides the interface for users to query and filter SixLove's users.
     - Handles the user's queries.
@@ -3531,11 +3531,11 @@ def get_like_info(request, post_id):
 ```
 
 
-**Code Snippet 25** The `community` app views.<br>
+**Figure 98** The `community` app views.<br>
 
 <br>
 
-Then, I created the following templates (refer to **Code Snippets 26** to **30**) to render an interface to the users:
+Then, I created the following templates (refer to **figure 99** to **103**) to render an interface to the users:
 - `connect.html`
 - `feed.html`
 - `profile.html`
@@ -3579,7 +3579,7 @@ Then, I created the following templates (refer to **Code Snippets 26** to **30**
   </div>
 </main>
 ```
-**Code Snippet 26** The `connect.html` template.<br>
+**Figure 99** The `connect.html` template.<br>
 
 <br>
 
@@ -3707,7 +3707,7 @@ Then, I created the following templates (refer to **Code Snippets 26** to **30**
   }
 </script>
 ```
-**Code Snippet 27** The `feed.html` template.<br>
+**Figure 100** The `feed.html` template.<br>
 
 <br>
 
@@ -3910,7 +3910,7 @@ Then, I created the following templates (refer to **Code Snippets 26** to **30**
 </main>
 <!-- More code... -->
 ```
-**Code Snippet 28** The `profile.html` template.<br>
+**Figure 101** The `profile.html` template.<br>
 
 <br>
 
@@ -3946,7 +3946,7 @@ Then, I created the following templates (refer to **Code Snippets 26** to **30**
   <!-- Modal for editing a user's profile picture. -->
   <!-- More code... -->
 ```
-**Code Snippet 29** The `settings.html` template.<br>
+**Figure 102** The `settings.html` template.<br>
 
 <br>
 
@@ -3972,7 +3972,7 @@ Then, I created the following templates (refer to **Code Snippets 26** to **30**
  </main>
  <!-- More code... -->
 ```
-**Code Snippet 30** The `user.html` template.<br>
+**Figure 103** The `user.html` template.<br>
 
 <br>
 
@@ -3986,7 +3986,7 @@ The following are the scripts that I wrote to accompany some of the templates:
     - Displays the create post modal.
     - Populate the edit post modal.
     - Displays the delete post modal.
-- `follow-unfollow.js` (refer to **Code Snippet 31**)
+- `follow-unfollow.js` (refer to **figure 104**)
     - Handles follow and unfollow functionality.
 - `post-menu.js`
     - Displays the menu for the post.
@@ -3994,11 +3994,11 @@ The following are the scripts that I wrote to accompany some of the templates:
     - Displays the modals for the settings page.
 - `toggle-comment-form.js`
     - Displays the comment form.
-- `toggle-like.js` (refer to **Code Snippet 32**)
+- `toggle-like.js` (refer to **figure 105**)
     - Handles like and unlike functionality.
 - `toggle-posts.js`
     - Toggles between viewing posts and viewing achievements.
-- `view-posts.js` (refer to **Code Snippet 33**)
+- `view-posts.js` (refer to **figure 106**)
     - Populates the posts on the feed page.
     - Displays whether a user has liked a post or not.
 
@@ -4058,7 +4058,7 @@ function getCookie(name) {
   if (parts.length === 2) return parts.pop().split(';').shift();
 }
 ```
-**Code Snippet 31** The `follow-unfollow.js` file.<br>
+**Figure 104** The `follow-unfollow.js` file.<br>
 
 <br>
 
@@ -4110,7 +4110,7 @@ for (const [index, likeButton] of likeButtons.entries()) {
   });
 }
 ```
-**Code Snippet 32** The `toggle-like.js` file.<br>
+**Figure 105** The `toggle-like.js` file.<br>
 
 <br>
 
@@ -4239,7 +4239,7 @@ async function viewPost(url, infoDiv, index) {
 }
 
 ```
-**Code Snippet 33** The `view-posts.js` file.<br>
+**Figure 106** The `view-posts.js` file.<br>
 
 <br>
 
@@ -4268,11 +4268,11 @@ The last thing that I implemented was the achievements system. I have already sh
 
 
 The purpose of the achievements system is to motivate users and help them stay connected. In order for the achievements to be awarded I had to make use of Django signals. I used them to trigger specific functions whenever a user made a particular action. In order to complete the functionality for the achievements I created the following files:
-- `utils.py` (refer to **Code Snippet 34**)
+- `utils.py` (refer to **figure 107**)
     - The helper functions I created to use in the `signals.py` file.
-- `signals.py` (refer to **Code Snippet 35**)
+- `signals.py` (refer to **figure 108**)
     - Checks whether certain actions have occured.
-- modified `app.py` (refer to **Code Snippet 36**)
+- modified `app.py` (refer to **figure 109**)
     - The `ready` function connects the signal handlers so that they are registered when the SixLove starts.
 
 
@@ -4454,7 +4454,7 @@ def award_achievement(user_profile, award_category, name, level):
     print(f"Achievement Awarded: {achievement}")
 
 ```
-**Code Snippet 34** The `utils.py` file.<br>
+**Figure 107** The `utils.py` file.<br>
 
 <br>
 
@@ -4527,7 +4527,7 @@ def check_follow_achievements(sender, instance, **kwargs):
                       "Followers Count",
                       [1, 2, 5, 10])
 ```
-**Code Snippet 35** The `signals.py` file.<br>
+**Figure 108** The `signals.py` file.<br>
 
 <br>
 
@@ -4538,7 +4538,7 @@ class CommunityConfig(AppConfig):
     def ready(self):
         import community.signals
 ```
-**Code Snippet 36** The modified `app.py` file.<br>
+**Figure 109** The modified `app.py` file.<br>
 
 <br>
 
