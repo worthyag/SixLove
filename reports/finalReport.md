@@ -59,11 +59,6 @@ _Taking on the task of creating a tennis app that provides users with the tools 
     - [4.2.3 The learn and resource pages](#423-the-learn-and-resource-pages)
   - [4.3 The `planner` app](#43-the-planner-app)
   - [4.4 The `community` app](#44-the-community-app) 
-    - [4.4.1 The profile page](#441-the-profile-page) 
-    - [4.4.2 The feed page](#442-the-feed-page) 
-    - [4.4.3 The user page](#443-the-user-page) 
-    - [4.4.4 The connect page](#444-the-connect-page) 
-    - [4.4.5 The settings page](#445-the-settings-page) 
 - [5 Evaluation](#5-evaluation)
   - [5.1 Unit testing](#51-unit-testing)
     - [5.1.1 The `registration` app](#511-the-registration-app)
@@ -3413,18 +3408,235 @@ def get_like_info(request, post_id):
 ```
 
 
-**Code Snippet 25** The `community` app viewss.<br>
+**Code Snippet 25** The `community` app views.<br>
+
+<br>
+
+Then, I created the following templates (refer to **Code Snippets 26** to **30**):
+- `connect.html`
+- `feed.html`
+- `profile.html`
+- `settings.html`
+- `user.html`
+
+
+```html
+<main id="connect">
+  <!-- More code... -->
+  <!-- Search Form -->
+  <form class="search-form" action="" method="get">
+    <input type="text" name="user-search" placeholder="Search users" value="{{ search_query }}">
+    <button type="submit">Search</button>
+  </form>
+
+  <!-- Filter Users -->
+  <form method="get" class="filter-options">
+   <!-- Similar to the resource page... -->
+  </form>
+
+  <div class="users">
+    {% for user_profile_id, user_profile_data in user_profiles_data.items %}
+    <a href="{% url 'community:user' user_profile_id=user_profile_id %}">
+      <div class="user-info">
+        <img class="user-photo" src="{{ user_profile_data.profile_picture }}" alt="" />
+        <div class="user-dets">
+          <p class="username">{{ user_profile_data.username }}</p>
+          <p class="name">{{ user_profile_data.profile_name }}</p>
+          {% if request_profile_id ==  user_profile_id%}
+            <p class="following">Your profile</p>
+          {% elif user_profile_data.is_following %}
+            <p class="following">Following</p>
+          {% else %}
+            <p class="following">Not following</p>
+          {% endif %}
+        </div>
+      </div>
+    </a>
+    {% endfor %}
+  </div>
+</main>
+```
+**Code Snippet 26** The `connect.html` template.<br>
+
+<br>
+
+```html
+<!-- More code... -->
+<script>
+  const toggleLikeUrl = "{% url 'community:toggle-like' post_id=0 %}".replace("0", "__post_id__");
+</script>
+<script src="{% static './community/scripts/toggle-like.js' %}" defer></script>
+<script src="{% static './community/scripts/create-post.js' %}" defer></script>
+<script src="{% static './community/scripts/post-menu.js' %}" defer></script>
+<script src="{% static './community/scripts/edit-delete-post.js' %}" defer></script>
+<script src="{% static './community/scripts/toggle-comment-form.js' %}" defer></script>
+{% endblock %}
+{% block content %}
+
+<main id="feed">
+{% if user_profile %}
+  {% if posts %}
+    <button class="create-post-btn">Create New Post</button>
+    <div class="posts">
+      {% for post in posts %}
+        <div class="post">
+          <div class="post-img">
+            <img src="{{ post.post_picture.url }}" alt="User post">
+          </div>
+          <div class="post-btns">
+            <div class="interactive-btns">
+              {% if post.user_has_liked %}
+                <button class="post-like-btn"><img src="{% static './community/images/liked-icon.svg'%}" alt="like button"></button>
+              {% else %}
+                <button class="post-like-btn"><img src="{% static './community/images/like-icon.svg'%}" alt="like button"></button>
+              {% endif %}
+              <button class="post-comment-btn"><img src="{% static './community/images/comments-icon.svg'%}" alt="comment button"></button>
+            </div>
+            {% if user_profile == post.user_profile %}
+            <div class="post-action-group">
+              <button class="post-more-btn"><img src="{% static './community/images/more-icon.svg'%}" alt="more button"></button>
+              <div class="post-action-btns hide-action-btns">
+                <span class="edit-post-btn">Edit Post</span>
+                <span class="delete-post-btn">Delete Post</span>
+              </div>
+            </div>
+            {% endif %}
+          </div>
+          <div class="post-id-details" style="display: none;">
+            <span class="post-id-data">{{ post.id }}</span>
+          </div>
+          <div class="post-likes"><span class="like-count">{{ post.get_like_count }}</span> likes</div>
+          <div class="post-caption">
+            <span class="username">
+              <a href="{% url 'community:user' user_profile_id=post.user_profile.id %}">
+                {{ post.user_profile.username }}
+              </a>
+            </span>
+            <span class="caption-text">{{ post.post_caption }}</span>
+          </div>
+          <!-- Comment form -->
+          <form class="comment-form hide-comment-form" method="post" 
+          action=""
+          data-post-id="{{ post.id }}">
+            <span class="close-btn">&times;</span>
+            {% csrf_token %}
+            <div class="form-elements">
+              <input class="hidden-id" type="hidden" name="post-id" value="{{ post.id }}">
+              {{ comment_form.as_p }}
+            </div>
+            <button type="submit" name="comment-submit">Post Comment</button>
+          </form>
+          <div class="post-comments">
+            <span class="post-comments-count">{{ post.comment_count }} comments</span>
+            <div class="expanded-comments">
+              {% for comment in post.comments.all %}
+                <span class="comment">
+                  <a href="{% url 'community:user' user_profile_id=comment.user_profile.id %}">
+                    <span class="commenters-username">{{ comment.user_profile.username }}</span>
+                  </a>
+                   {{ comment.content }}</span><br>
+              {% endfor %}
+            </div>
+            
+          </div>
+          <div class="post-date">{{ post.created_at }}</div>
+        </div>
+      {% endfor %}
+    </div>
+
+    <!-- Modal for editing a post -->
+    <div id="editPostModal" class="modal">
+      <div class="modal-content">
+        <span class="close-btn" onclick="closeModal('#editPostModal')">&times;</span>
+        <div id="modalContent">
+          <form action="" method="post" novalidate enctype="multipart/form-data">
+            {% csrf_token %} 
+            {{ form.as_p }}
+            <div style="display: none;">
+              <label for="post-id">ID: </label>
+              <input type="hidden" type="text" name="post-id" id="post-id" value="edit">
+              <input type="hidden" type="text" name="post-id-to-edit" id="post-id-to-edit" value="X">
+            </div>
+            <input class="btn" type="submit" value="Edit Post" />
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal for deleting a post -->
+    <div id="deletePostModal" class="modal">
+      <div class="modal-content">
+        <span class="close-btn" onclick="closeModal('#deletePostModal')">&times;</span>
+        <div id="modalContent">
+          <form action="" method="post" novalidate enctype="multipart/form-data">
+            {% csrf_token %} 
+            {{ form.as_p }}
+            <div style="display: none;">
+              <label for="post-id">ID: </label>
+              <input type="hidden" type="text" name="post-id" id="post-id" value="delete">
+              <input type="hidden" type="text" name="post-id-to-delete" id="post-id-to-delete" value="X">
+            </div>
+            <p>Are you sure you would like to delete this post?</p>
+            <input class="btn" type="submit" value="Delete Post" />
+          </form>
+        </div>
+      </div>
+    </div>
+  {% else %}
+    <!-- More code... -->
+  {% endif %}
+  <!-- Modal for creating a post -->
+  <div id="createPostModal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal('#createPostModal')">&times;</span>
+      <div id="modalContent">
+        <form action="" method="post" novalidate enctype="multipart/form-data">
+          {% csrf_token %} 
+          {{ form.as_p }}
+          <div style="display: none;">
+            <label for="post-id">ID: </label>
+            <input type="hidden" type="text" name="post-id" id="post-id" value="create">
+          </div>
+          <input class="btn" type="submit" value="Create Post" />
+        </form>
+      </div>
+    </div>
+  </div>
+{% else %}
+  <!-- More code... -->
+{% endif %}
+</main>
+  
+<script>
+  function closeModal(id) {
+    const closeBtn = document.querySelector(id);
+    closeBtn.style.display = "none";
+  }
+</script>
+```
+**Code Snippet 27** The `feed.html` template.<br>
+
+<br>
+
+```html
+```
+**Code Snippet 28** The `profile.html` template.<br>
+
+<br>
+
+```html
+```
+**Code Snippet 29** The `settings.html` template.<br>
+
+<br>
+
+```html
+```
+**Code Snippet 30** The `user.html` template.<br>
 
 <br>
 
 
-
-### 4.4.1 The profile page
-
-### 4.4.2 The feed page
-### 4.4.3 The user page
-### 4.4.4 The connect page
-### 4.4.5 The settings page
 
 
 # 5 Evaluation
