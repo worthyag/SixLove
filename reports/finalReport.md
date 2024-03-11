@@ -3874,7 +3874,10 @@ The following are the scripts that I wrote to accompany some of the templates:
 - `toggle-like.js` (refer to **Code Snippet 32**)
     - Handles like and unlike functionality.
 - `toggle-posts.js`
-- `view-posts`
+    - Toggles between viewing posts and viewing achievements.
+- `view-posts.js` (refer to **Code Snippet 33**)
+    - Populates the posts on the feed page.
+    - Displays whether a user has liked a post or not.
 
 The last thing that I implemented was the achievements system. I have already shown the models for it and the code that displays an achievement to the user, however there was much more to the functionality. The way that the system works is that a user gets achievements (awards) when they complete certain actions. Figures # to # displays the actions that need to be met by the user and the award they achieve.
 
@@ -3900,11 +3903,11 @@ The last thing that I implemented was the achievements system. I have already sh
 
 
 The purpose of the achievements system is to motivate users and help them stay connected. In order for the achievements to be awarded I had to make use of Django signals. I used them to trigger specific functions whenever a user made a particular action. In order to complete the functionality for the achievements I created the following files:
-- `utils.py` (refer to **Code Snippet 41**)
+- `utils.py` (refer to **Code Snippet 34**)
     - The helper functions I created to use in the `signals.py` file.
-- `signals.py` (refer to **Code Snippet 42**)
+- `signals.py` (refer to **Code Snippet 35**)
     - Checks whether certain actions have occured.
-- modified `app.py` (refer to **Code Snippet 43**)
+- modified `app.py` (refer to **Code Snippet 36**)
     - The `ready` function connects the signal handlers so that they are registered when the SixLove starts.
 
 
@@ -4086,7 +4089,7 @@ def award_achievement(user_profile, award_category, name, level):
     print(f"Achievement Awarded: {achievement}")
 
 ```
-**Code Snippet 41** The `utils.py` file.<br>
+**Code Snippet 34** The `utils.py` file.<br>
 
 <br>
 
@@ -4159,7 +4162,7 @@ def check_follow_achievements(sender, instance, **kwargs):
                       "Followers Count",
                       [1, 2, 5, 10])
 ```
-**Code Snippet 42** The `signals.py` file.<br>
+**Code Snippet 35** The `signals.py` file.<br>
 
 <br>
 
@@ -4170,7 +4173,7 @@ class CommunityConfig(AppConfig):
     def ready(self):
         import community.signals
 ```
-**Code Snippet 43** The modified `app.py` file.<br>
+**Code Snippet 36** The modified `app.py` file.<br>
 
 <br>
 
