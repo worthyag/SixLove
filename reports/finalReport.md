@@ -72,6 +72,11 @@ _Taking on the task of creating a tennis app that provides users with the tools 
 
 <!-- /code_chunk_output -->
 
+The following is the link to the SixLove repository:
+https://github.com/worthyag/SixLove/
+(The code can be found within the `app` folder).
+
+
 # 1 Aims, objectives, and background
 
 ## 1.1 Introduction and background
