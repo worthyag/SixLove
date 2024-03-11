@@ -2456,7 +2456,7 @@ class UserProfile(models.Model):
     user = models.OneToOneField(get_user_model(), on_delete=models.CASCADE)
     profile_picture = models.ImageField(
         upload_to='profile_pics/',
-        default='./community/images/profile-pic-temp.png'
+        default='profile_pics/images/profile-pic-temp.png'
     )
     bio = models.TextField(blank=True)
     username = models.CharField(max_length=50)
@@ -2716,6 +2716,15 @@ class CommentForm(forms.ModelForm):
         widgets = {
             'user_profile': forms.HiddenInput(),
         }
+
+class EditProfileForm(forms.ModelForm):
+    """
+    Enables the user to update their profile.
+    """
+    class Meta:
+        model = UserProfile
+        fields = ['username', 'profile_name',
+                  'profile_picture', 'bio']
 
 
 class EditUsernameForm(forms.ModelForm):
