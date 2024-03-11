@@ -1139,7 +1139,7 @@ User authentication is a primary requirement of the app. SixLove's purpose is to
 - **Login**- the page that authenticates the user.
 
 ### 4.1.1 The signup and login pages
-In order to authenticate the users, I needed to first create a table in my database that would store users information. In Django, this is facilitated through the creation of a model. The UML diagram for users can be seen in **figure 28**. Django has its own user model, but for the purpose of this project, I wanted to create my own- or expand upon it rather. It was important that I created the modified user model before making migrations (specifically, before running migrations of the Django `auth` app), since it would result in an `ValueError` . This I learnt the hard way, when I created a mock trial of the app, and was forced to clear all the databases tables and delete the migrations folder. The **code snippet 1** displays the model that I created to store user information. It inherits from the `AbstractUser` class. The official Django site describes the class as a '_model [that] behaves identically to the default user model_' [18]. The documentation advises developers to setup a custom user model beforehand, in case they want to later customise it in the future.
+In order to authenticate the users, I needed to first create a table in my database that would store users information. In Django, this is facilitated through the creation of a model. The UML diagram for users can be seen in **figure 39**. Django has its own user model, but for the purpose of this project, I wanted to create my own- or expand upon it rather. It was important that I created the modified user model before making migrations (specifically, before running migrations of the Django `auth` app), since it would result in an `ValueError` . This I learnt the hard way, when I created a mock trial of the app, and was forced to clear all the databases tables and delete the migrations folder. The **figure 70** displays the model that I created to store user information. It inherits from the `AbstractUser` class. The official Django site describes the class as a '_model [that] behaves identically to the default user model_' [18]. The documentation advises developers to setup a custom user model beforehand, in case they want to later customise it in the future.
 
 ```python
 class CustomUser(AbstractUser):
@@ -1149,9 +1149,9 @@ class CustomUser(AbstractUser):
     email = models.EmailField(unique=True)
     date_of_birth = models.DateField(null=True, blank=True)
 ```
-**Code Snippet 1** The `CustomUser` model.<br/><br>
+**Figure 70** The `CustomUser` model.<br/><br>
 
-Each attribute displayed in **code snippet 1** corresponds to a field within the database. In addition to the fields displayed, Django will add the other fields that are specified within `AbstractUser`, such as the user's `id` and `password` among some other things. With the database table created, I created a form that uses the `CustomUser` model to build a form with fields that correspond to the models attributes. **Code snippet 2** displays a reduced version of the code for the form.
+Each attribute displayed in **figure 70** corresponds to a field within the database. In addition to the fields displayed, Django will add the other fields that are specified within `AbstractUser`, such as the user's `id` and `password` among some other things. With the database table created, I created a form that uses the `CustomUser` model to build a form with fields that correspond to the models attributes. **Figure 71** displays a reduced version of the code for the form.
 
 ```python
 class CustomUserCreationForm(UserCreationForm):
@@ -1167,9 +1167,9 @@ class CustomUserCreationForm(UserCreationForm):
         fields = ('first_name', 'last_name', 'email',
                   'date_of_birth',) + UserCreationForm.Meta.fields
 ```
-**Code Snippet 2** The `CustomUserCreationForm` form.<br><br>
+**Figure 71** The `CustomUserCreationForm` form.<br><br>
 
-This form was used to create the forms displayed to the user, for both the login and sign up pages (which can be seen in **figures # and #**). I then created the views corresponding to the pages previously mentioned, **code snippet 3** displays a condensed version of the code for this.
+This form was used to create the forms displayed to the user, for both the login and sign up pages (which can be seen in **figures 49 and 50**). I then created the views corresponding to the pages previously mentioned, **figure 72** displays a condensed version of the code for this.
 
 ```python
 def home(request):
@@ -1335,11 +1335,11 @@ def user_login(request):
         # Similar to the signup view.
     )
 ```
-**Code Snippet 3** The `registration` app views.<br>
+**Figure 72** The `registration` app views.<br>
 
 <br>
 
-**Code snippet 3** displays how I use the form to create users and authenticate users. I passed the form to a html file (more specifically a Django template file), where it was then rendered (**code snippet 4** shows some of the code for the signup template).
+**Figure 72** displays how I use the form to create users and authenticate users. I passed the form to a html file (more specifically a Django template file), where it was then rendered (**figure 73** shows some of the code for the signup template).
 
 ```python
 <form method="post">
@@ -1348,7 +1348,7 @@ def user_login(request):
     <button type="submit">Sign Up</button>
 </form>
 ```
-**Code Snippet 4** The `signup` html template.
+**Figure 73** The `signup` html template.
 
 With that completed, I had written most of the functionality for user authentication. I then created a superuser in order to conduct a manual pretest, then I wrote some unit tests to test everything thoroughly (this will be expanded on in [section 5.1.1](#511-the-registration-app), though I had written some unit tests as I went along.
 
