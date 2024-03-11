@@ -4978,6 +4978,7 @@ Based on the Goals Accomplised metric discussed in [section 3.3.3](#333-goals-ac
         <figcaption><strong>Figure #</strong> Objectives Completition Evaluated</figcaption>
 </figure><br><br>
 
+In terms of the _Aims Completion Evaluation_, I lost points on the first and fifth aims. This is because though I added measures to create a structured training program, there is still a lot of room for improvement. I also didn't finish implementing the joint sessions. To be fair, I implemented it, but due to already having data in the `TennisSessions` table and other problems that Django was shouting about, I put it aside. In order to implement it, I would have had to delete, recreate, and repopulate the database which I wasn't willing to do so close to submission. Going forward, I would use a different method to implement joint sessions (I used a many-to-many attribute in the model). I lost points on the _Objectives Completion Evaluation_ for the same reasons.
 
 
 ### 5.2.1 Proposed changes
