@@ -145,13 +145,17 @@ Users that this project was conceptualised for- include but are not limited to:
 
 **Figure 5** displays a persona for a user within the `tennis enthusiast` category who is deeply passionate about tennis, this person is a young adult and they already play tennis here and there, but are looking to take it more seriously.
 
-<img title="" src="./images/user-persona-3.png" alt="" data-align="center">
+<figure>
+    <img style="border: 1px solid #00000033;" title="" src="./images/solution-2.png" alt="" data-align="center"
+        <figcaption><strong>Figure 4</strong> Tennis Enthusiast User Persona</figcaption>
+</figure><br><br>
 
-**Figure 5** Tennis Enthusiast User Persona <br><br>
+<figure>
+    <img title="" src="./images/solution-3.png" alt="" data-align="center">
+        <figcaption><strong>Figure 4</strong> Potential SixLove Solution</figcaption>
+</figure><br><br>
 
-<img title="" src="./images/solution-3.png" alt="" data-align="center">
 
-**Figure 6** Potential SixLove Solution <br><br>
 
 ### 1.3.3 Fitness Enthusiasts
 
