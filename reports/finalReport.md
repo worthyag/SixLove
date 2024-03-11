@@ -1539,7 +1539,7 @@ _The creation of the `TennisSession` database table._
 
 The next order of business was to create the `tennis` app. The ability to add, edit, and delete tennis sessions is the heart of SixLove. Users must be able to add tennis sessions to their calendar, and also view and update their schedule. The `tennis` app has the following pages:
 
-- Tennis- the page that displays the user's tennis sessions.
+- Tennis
 
 - Add- the page where users can add tennis sessions.
 
@@ -2054,7 +2054,7 @@ With the tennis session functionality implemented, I was ready to extend it to t
 
 The `planner` app has the following pages:
 
-- Calendar- the page that displays a calendar to the user.
+- Calendar
 
 As mentioned earlier the `planner` app also allows user to add, edit, and delete tennis sessions, this is all facilitated through the interactive calendar that is located on the calendar page (**figures 31** to **35** display the calendar page).
 
@@ -2408,15 +2408,23 @@ Once I completed most of the calendar functionality, I wrote some unit tests tha
 ## 4.4 The `community` app
 _Implementing the social aspect._
 
-With the tennis session functionality implemented, I was ready to extend it to the calendar page. The goal for the calendar page was to allow users to view and interact with their tennis sessions in a more user-friendly manner.
+The last app I implemented was the `community` app. The goal of this app was add social features to the app. This app enables users to do the following:
+- Follow/unfollow other users.
+- View the profiles of other users.
+- Create, edit, view, and delete posts.
+- View their achievements / awards.
+- Interact with their posts and others.
+    - Like posts.
+    - Comment on posts.
+- Create, and edit a user profile.
+- Connect with other users.
 
 The `community` app has the following pages:
 
-- Connect- the page that gives the user access to other users.
-- Feed- the page that displays posts of the user and who they are following.
-- Profile- profile of the user (houses the navigation to the settings page).
-- Settings- the page that enables users to update their settings..
-- User- a public profile for each the user.
+- Connect
+- Feed
+- Profile
+- Settings
 
 
 # 5 Evaluation
