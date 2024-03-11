@@ -59,6 +59,11 @@ _Taking on the task of creating a tennis app that provides users with the tools 
     - [4.2.3 The learn and resource pages](#423-the-learn-and-resource-pages)
   - [4.3 The `planner` app](#43-the-planner-app)
   - [4.4 The `community` app](#44-the-community-app) 
+    - [4.4.1 The profile page](#441-the-profile-page) 
+    - [4.4.2 The feed page](#442-the-feed-page) 
+    - [4.4.3 The user page](#443-the-user-page) 
+    - [4.4.4 The connect page](#444-the-connect-page) 
+    - [4.4.5 The settings page](#445-the-settings-page) 
 - [5 Evaluation](#5-evaluation)
   - [5.1 Unit testing](#51-unit-testing)
     - [5.1.1 The `registration` app](#511-the-registration-app)
@@ -2425,6 +2430,15 @@ The `community` app has the following pages:
 - Feed
 - Profile
 - Settings
+- User
+
+### 4.4.1 The profile page
+
+
+### 4.4.2 The feed page
+### 4.4.3 The user page
+### 4.4.4 The connect page
+### 4.4.5 The settings page
 
 
 # 5 Evaluation
