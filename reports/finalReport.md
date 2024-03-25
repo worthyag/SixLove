@@ -5121,7 +5121,7 @@ Since I have created an achievemnets systems, going forward I would like to impl
 
 _To conclude..._
 
-At this point the project is complete (for now). Coming into this I had no experience with Django and I learnt a lot from this project. I am happy with what I produced but there is definitely space for extensibility. I would have liked to add joint sessions, so that is a bit of a sore spot for me. There are also different approaches that I could have taken. I did all the styling of the app with CSS and SCSS/SASS, and if I were to do it again I would consider using a library to save time. I also wish that I had involved users more in this process, and that is definittely something that I would change. Overall, SixLove was a success and I hope to take it further in the future.
+At this point the project is complete (for now). Coming into this I had no experience with Django and I learnt a lot from this project. I am happy with what I produced but there is definitely space for extensibility. I would have liked to add joint sessions, so that is a bit of a sore spot for me. There are also different approaches that I could have taken. I did all the styling of the app with CSS and SCSS/SASS, and if I were to do it again I would consider using a library to save time. I also wish that I had involved users more in this process, and that is definitely something that I would change. Overall, SixLove was a success and I hope to take it further in the future.
 
 
 # 7 References
