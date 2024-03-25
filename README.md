@@ -1,5 +1,5 @@
 # SixLove
 
-<video width="320" height="240" controls>
-  <source src="./video/final-project-video.mp4" type="video/mp4">
-</video>
+[https://example.com/video.mp4](https://github.com/worthyag/SixLove/blob/main/video/final-project-video.mp4)https://github.com/worthyag/SixLove/blob/main/video/final-project-video.mp4
+
+Press play to see the video.
